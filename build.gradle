@@ -15,11 +15,11 @@ tasks.named('wrapper', Wrapper).configure {
     distributionType = Wrapper.DistributionType.BIN
 }
 
-version = mod_version
+version = "v${mod_version}"
 group = mod_group_id
 
 base {
-    archivesName = mod_id
+    archivesName = 'Halcyon'
 }
 
 // Mojang ships Java 21 to end users starting in 1.20.5, so mods should target Java 21.
@@ -36,7 +36,7 @@ tasks.named('jarJar') {
 }
 tasks.register('deleteSlimJar') {
     doLast {
-        delete "$buildDir/libs/datanessence-${version}-${slimClassifier}.jar"
+        delete "$buildDir/libs/Halcyon-${version}-${slimClassifier}.jar"
     }
     dependsOn tasks.named('jarJar')
 }
