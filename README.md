@@ -1,7 +1,7 @@
-# Data and Essence
+# HALCYON: Data & Essence
 ## Mod Overview
-Data and Essence (DnE) is about harnessing the four kinds of Essence - a magical force or energy - to make tools, machinery, and discoveries. You learn from the Data of the Ancients that came before you, and gradually uncover the history of where they came from, where they went, and what they left behind.
-In both aesthetic and mechanics, DnE is magitech: a blend of technology and magic, of engineering and arcana. Sturdy obsidian constructions accentuated with copper plating and filigree, adorned and connected with glowing wires, lasers, and floating gemstones and lenses, dot the halls of your factories and laboratories, as the Ancients’ once were outfitted. Through your machines, you work wonders.
+Halcyon, formerly Data and Essence (DnE) is about harnessing the four kinds of Essence - a magical force or energy - to make tools, machinery, and discoveries. You learn from the Data of the Ancients that came before you, and gradually uncover the history of where they came from, where they went, and what they left behind.
+In both aesthetic and mechanics, Halcyon is magitech: a blend of technology and magic, of engineering and arcana. Sturdy obsidian constructions accentuated with copper plating and filigree, adorned and connected with glowing wires, lasers, and floating gemstones and lenses, dot the halls of your factories and laboratories, as the Ancients’ once were outfitted. Through your machines, you work wonders.
 
 Over the course of progression, you will work with more types of Essence and more complex mechanics, gaining access to more powerful machinery and equipment. This culminates in discovering a way to travel outside of your realm, to one where Essence permeates everything within it. Exploration of this other realm yields some of the most powerful things in the mod, as well as deeper insight into the origins of Essence and the Ancients you've been learning from.
 

@@ -113,6 +113,8 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 .add(BlockRegistry.SHIELDLESS_ANCIENT_GLYPH_STONE_ESSENCE.get())
                 .add(BlockRegistry.SHIELDLESS_ANCIENT_GLYPH_STONE_MAKUTUIN.get())
                 .add(BlockRegistry.COPPER_VENT.get())
+                .add(BlockRegistry.SURVEY_TUNNELER.get())
+                .add(BlockRegistry.COPPER_VENT.get())
                 .add(BlockRegistry.SHIELDLESS_ANCIENT_GLYPH_STONE_MAKUTUIN.get())
                 .add(BlockRegistry.ENDER_PEARL_DESTINATION.get())
                 .add(BlockRegistry.TRAVERSITE_ROAD_STAIRS_OPAL.get())

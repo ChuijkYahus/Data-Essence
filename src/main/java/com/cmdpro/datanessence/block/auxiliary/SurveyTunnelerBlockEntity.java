@@ -1,5 +1,7 @@
 package com.cmdpro.datanessence.block.auxiliary;
 
+import com.cmdpro.databank.model.animation.DatabankAnimationReference;
+import com.cmdpro.databank.model.animation.DatabankAnimationState;
 import com.cmdpro.datanessence.api.essence.EssenceBlockEntity;
 import com.cmdpro.datanessence.api.essence.EssenceStorage;
 import com.cmdpro.datanessence.api.essence.container.SingleEssenceContainer;
@@ -19,13 +21,27 @@ import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 
 public class SurveyTunnelerBlockEntity extends BlockEntity implements EssenceBlockEntity {
+    public DatabankAnimationState animState = new DatabankAnimationState("idle")
+            .addAnim( new DatabankAnimationReference(
+                    "idle",
+                    (state, anim) -> {},
+                    (state, anim) -> {}))
+            .addAnim( new DatabankAnimationReference(
+                    "axle_turn",
+                    (state, anim) -> {},
+                    (state, anim) -> {}))
+            .addAnim( new DatabankAnimationReference(
+                    "gears_turn",
+                    (state, anim) -> {},
+                    (state, anim) -> {}));
+
     public SingleEssenceContainer storage = new SingleEssenceContainer(EssenceTypeRegistry.ESSENCE.get(), 1000);
 
-    int maxDepth;      // deepest Y we will go to (usually world min Y)
-    int currentDepth;  // current Y we’re working at
-    boolean isDone;    // no more work to do
-    int breakTime;     // ticks needed to break current block
-    int progress;      // how many progress “ticks” we have on current block
+    public int maxDepth;      // deepest Y we will go to (usually world min Y)
+    public int currentDepth;  // current Y we’re working at
+    public boolean isDone;    // no more work to do
+    public int breakTime;     // ticks needed to break current block
+    public int progress;      // how many progress “ticks” we have on current block
 
     @Override
     public EssenceStorage getStorage() {
@@ -44,10 +60,25 @@ public class SurveyTunnelerBlockEntity extends BlockEntity implements EssenceBlo
 
         this.isDone = false;
         this.breakTime = -1;
-        this.progress = 0;
+        this.progress = -1;
     }
 
+    //just to be safe
+    @Override
+    public void onLoad() {
+        super.onLoad();
+        if (this.level != null) {
+            this.animState.setLevel(this.level);
+        }
+    }
+
+
     public static void tick(Level world, BlockPos pos, BlockState state, SurveyTunnelerBlockEntity tunneler) {
+        // Make sure animation time uses this world's clock
+        if (tunneler.animState.level != world) {
+            tunneler.animState.setLevel(world);
+        }
+
         if (world.isClientSide) {
             clientTick(world, pos, state, tunneler);
             return;
@@ -66,7 +97,7 @@ public class SurveyTunnelerBlockEntity extends BlockEntity implements EssenceBlo
         // If we somehow went below min Y, stop
         if (tunneler.currentDepth < tunneler.maxDepth) {
             tunneler.isDone = true;
-            tunneler.progress = -1;
+            tunneler.progress = 0;
             return;
         }
 
@@ -128,10 +159,23 @@ public class SurveyTunnelerBlockEntity extends BlockEntity implements EssenceBlo
                 tunneler.progress = -1;
             }
         }
+        tunneler.updateBlock();
     }
 
     public static void clientTick(Level world, BlockPos pos, BlockState state, SurveyTunnelerBlockEntity tunneler) {
+        if (!world.isClientSide) return;
 
+        boolean hasFuel = tunneler.storage.getEssence(EssenceTypeRegistry.ESSENCE.get()) >= 1;
+        boolean isDigging = tunneler.progress >= 0;
+        //idk eset tweak this yourself im super confused and i am not gonna do this rn, works strangely
+        // 😔😔😔😔
+        //nvm it works now
+        //delete this
+        if (hasFuel && isDigging) {
+            tunneler.animState.setAnim("gears_turn");
+        } else {
+            tunneler.animState.setAnim("idle");
+        }
     }
 
     /**
@@ -206,4 +250,14 @@ public class SurveyTunnelerBlockEntity extends BlockEntity implements EssenceBlo
         breakTime = tag.getInt("BreakTime");
         progress = tag.getInt("Progress");
     }
+
+    //idk if this helps at all
+    protected void updateBlock() {
+        if (this.level == null) return;
+        BlockState blockState = level.getBlockState(this.getBlockPos());
+        level.sendBlockUpdated(this.getBlockPos(), blockState, blockState, 3);
+        setChanged();
+    }
+
+
 }
