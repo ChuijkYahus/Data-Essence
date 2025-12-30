@@ -391,7 +391,7 @@
   "data_tablet.pages.essence_burner.page2.text": " ◇ 会从以下方向接受物品输入：下、东、南、西、北\n ◇ 能量源：源质碎片。\n ◇ 冷却剂：无。\n ◇ 消耗物：源质碎片、熔炉燃料（如煤炭、木炭等）。\n ◇ 风险：无。",
   "data_tablet.pages.essence_derivation_spike.flavor": " ◇ 我们要更多哒咔",
   "data_tablet.pages.essence_derivation_spike.name": "源质派流尖刺",
-  "data_tablet.pages.essence_derivation_spike.page1.text": "尽管源质汲取器对于小型构造来说已经足够，但如果消耗高到必须要加入十几台，就显得不切实际了。所以，源质派流尖刺闪亮登场。这种构造体在正确组装后，给予其高红石信号，可让它执行与前身汲取器一样的功能，效能在方方面面上都是前身的大约四倍。\n\n由于其产出速度显著高于其前身，必须向其供应足量冷却剂，否则会产生严重的事故。",
+  "data_tablet.pages.essence_derivation_spike.page1.text": "尽管源质汲取器对于小型构造来说已经足够，但如果消耗高到必须要加入十几台，就显得不切实际了。所以，源质派流尖刺闪亮登场。这种构造体在正确组装后，给予其高红石信号，即可让它执行与前身汲取器一样的功能，效能在方方面面上都是前身的大约四倍。\n\n由于其产出速度显著高于其前身，必须向其供应足量冷却剂，否则会产生严重的事故。",
   "data_tablet.pages.essence_derivation_spike.page2.text": " ◇ 能量源：尖刺周围水平方向11x11区域内的生物。\n ◇ 冷却剂：冷却水。\n ◇ 风险：被汲取。\n ◇ 修复材料：铜。",
   "data_tablet.pages.essence_leech.name": "源质汲取器",
   "data_tablet.pages.essence_leech.page1.text": "我们已经知道，世界上的生物拥有源质，虽然处于惰性状态。可以设计一种设备汲取这种源质——对生物来说汲取的是工业源质。这种生产手段比碎片燃烧室更精细。",
