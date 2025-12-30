@@ -4,7 +4,7 @@
   },
   "tab": "datanessence:machinery_transformation",
   "x": 0,
-  "y": 0,
+  "y": -2,
   "pages": [
     {
       "type": "datanessence:item",
@@ -32,7 +32,8 @@
     "translate": "data_tablet.pages.ecliptrum.flavor"
   },
   "parents": [
-    "datanessence:machinery/synthesis_chamber"
+    "datanessence:machinery/synthesis_chamber",
+    "datanessence:machinery_transformation/lunar_strikes"
   ],
   "critical": true,
   "completion_stages": [

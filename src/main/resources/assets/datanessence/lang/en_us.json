@@ -556,6 +556,10 @@
   "data_tablet.pages.ecliptrum.name": "Metal of the Moon",
   "data_tablet.pages.ecliptrum.page1.incomplete_text": "Copper is insufficient for our needs going forward - it proves inefficient at conducting other Essence types. We have been performing tests on a variety of local resources and noted that one of the rarer metals from deeper in the world may be worthy of investigation. By itself, this metal is not sturdy enough for most constructs, and may need reinforcement somehow.",
   "data_tablet.pages.ecliptrum.page1.text": "Copper, while plentiful and useful, proves less efficient at channeling Essence types other than Industrial. Our research into what can be done for Lunar led us into the development of a special synthesis of gold and iron which we have called Ecliptrum. This alloy shines a pale yellow, almost like the moon whose Essence it was forged to conduct. It seems to exhibit light-reflecting qualities.",
+  "data_tablet.pages.lunar_strikes.flavor": " ◇ Pale light",
+  "data_tablet.pages.lunar_strikes.name": "Lunar Strikes",
+  "data_tablet.pages.lunar_strikes.page1.incomplete_text": "I noticed something strange in the night. A flash of pale yellow, as if the moonlight had become a tangible thing. The rest of my squadron suggested I investigate myself; they are occupied with... greater things.",
+  "data_tablet.pages.lunar_strikes.page1.text": "A strange phenomenon occurs at times when the moon is full: a strike of strange, pale Essence straight from the moon. This Lunar Strike heralds the impact of a small meteorite, sparking with Lunar Essence. This meteor occasionally grows crystals nearby. They are similar to typical Essence Crystals, but with Lunar Essence's signature color. They shatter into Lunar Essence Shards, which can be burned as per usual for a new form of Essence... though it may be wise to keep some for future experiments. The meteors are fleeting, and tend to vanish in the sunlight.",
 
   "_comment.data_tablet_pages.tools": "Tools and Utilities category texts.",
   "data_tablet.pages.charger.name": "Charging Equipment",

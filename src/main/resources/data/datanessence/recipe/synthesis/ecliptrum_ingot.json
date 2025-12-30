@@ -1,7 +1,7 @@
 {
   "type": "datanessence:synthesis",
   "essenceCost": {
-    "datanessence:essence": 100
+    "datanessence:lunar_essence": 100
   },
   "input": { "tag": "c:ingots/iron" },
   "input2": { "tag": "c:ingots/gold" },
