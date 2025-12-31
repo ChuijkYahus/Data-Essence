@@ -1,4 +1,4 @@
-// 1.21.1	2025-12-28T20:09:06.120565873	Loot Tables
+// 1.21.1	2025-12-31T03:55:30.647900821	Loot Tables
 8a85700f294ec15ec1248a1449114b14eab3e2da data/datanessence/loot_table/blocks/aether_rune.json
 9609efe61385ebb3de54f11712e3baea7e1409d0 data/datanessence/loot_table/blocks/ancient_glyph_stone_blank.json
 10297d9c29f46c19c997dfe74ad062c709006c22 data/datanessence/loot_table/blocks/ancient_glyph_stone_blank_shieldless.json
@@ -124,5 +124,6 @@ ab605e4e3a9b61ab410ec5432357313df82357db data/datanessence/loot_table/blocks/tra
 79520676cdef899226b1394203ad881f5c962d41 data/datanessence/loot_table/blocks/vacuum.json
 60d3f9ce8c66c217521101901a03424244e3e536 data/datanessence/loot_table/blocks/vermilion_grass.json
 c7cf74417bd64df18cafe0f6d162e0d3d436f3d9 data/datanessence/loot_table/blocks/vermilion_sprout.json
+632067a1d83e9eddd9a3b156f974322ba47dc5e5 data/datanessence/loot_table/blocks/vivid_lotus.json
 6a6f9cb53d8618b18c656eb862190792df2930bc data/datanessence/loot_table/blocks/yellow_pearlescent_grass.json
 7dd3e247cdb7c4d45fcf65335d21492dc2f65f55 data/datanessence/loot_table/blocks/yellow_pearlescent_spiral.json

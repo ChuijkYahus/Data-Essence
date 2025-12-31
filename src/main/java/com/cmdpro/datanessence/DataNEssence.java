@@ -273,7 +273,7 @@ public class DataNEssence
             //event.accept(ItemRegistry.NATURAL_ESSENCE_BOMB.get());
             //event.accept(ItemRegistry.EXOTIC_ESSENCE_BOMB.get());
             event.accept(ItemRegistry.ESSENCE_SWORD.get());
-            event.accept(ItemRegistry.FALLING_MOON.get());
+            //event.accept(ItemRegistry.FALLING_MOON.get());
             // Rods
             event.accept(ItemRegistry.ILLUMINATION_ROD.get());
             event.accept(ItemRegistry.REPULSION_ROD.get());
@@ -338,7 +338,7 @@ public class DataNEssence
             event.accept(ItemRegistry.COAL_LUMP.get());
             event.accept(ItemRegistry.TRAVERSITE_ROAD_CHUNK.get());
             // Sanctuary
-            event.accept(ItemRegistry.WEIGHTY_MAGNETITE.get());
+            //event.accept(ItemRegistry.WEIGHTY_MAGNETITE.get());
 
             // Buckets
             event.accept(FluidRegistry.GENDERFLUID.bucket.get());
@@ -355,27 +355,28 @@ public class DataNEssence
             event.accept(BlockRegistry.LENSING_CRYSTAL_ORE.get());
             event.accept(BlockRegistry.FROZEN_MOONLIGHT.get());
             event.accept(BlockRegistry.TETHERGRASS.get());
+            event.accept(BlockRegistry.VIVID_LOTUS.get());
             event.accept(BlockRegistry.LUNAR_CRYSTAL_SEED.get());
             // World - Sanctuary
-            event.accept(BlockRegistry.VERMILION_GRASS_BLOCK.get());
-            event.accept(BlockRegistry.SANCTUARY_DIRT.get());
-            event.accept(BlockRegistry.SANCTUARY_SAND.get());
-            event.accept(BlockRegistry.RED_PEARLESCENT_SAND.get());
-            event.accept(BlockRegistry.GREEN_PEARLESCENT_SAND.get());
-            event.accept(BlockRegistry.BLUE_PEARLESCENT_SAND.get());
-            event.accept(BlockRegistry.DEEP_SANCTUARY_SAND.get());
-            event.accept(BlockRegistry.ASTRAL_GOOP.get());
-            event.accept(BlockRegistry.VERMILION_SPROUT.get());
-            event.accept(BlockRegistry.TALL_SANCTUARY_GRASS.get());
-            event.accept(BlockRegistry.CYAN_PEARLESCENT_SPIRAL.get());
-            event.accept(BlockRegistry.MAGENTA_PEARLESCENT_SPIRAL.get());
-            event.accept(BlockRegistry.YELLOW_PEARLESCENT_SPIRAL.get());
-            event.accept(BlockRegistry.CYAN_PEARLESCENT_GRASS.get());
-            event.accept(BlockRegistry.MAGENTA_PEARLESCENT_GRASS.get());
-            event.accept(BlockRegistry.YELLOW_PEARLESCENT_GRASS.get());
-            event.accept(BlockRegistry.SPIRE_GLASS.get());
-            event.accept(BlockRegistry.CRYSTALLINE_LOG.get());
-            event.accept(BlockRegistry.CRYSTALLINE_LEAVES.get());
+//            event.accept(BlockRegistry.VERMILION_GRASS_BLOCK.get());
+//            event.accept(BlockRegistry.SANCTUARY_DIRT.get());
+//            event.accept(BlockRegistry.SANCTUARY_SAND.get());
+//            event.accept(BlockRegistry.RED_PEARLESCENT_SAND.get());
+//            event.accept(BlockRegistry.GREEN_PEARLESCENT_SAND.get());
+//            event.accept(BlockRegistry.BLUE_PEARLESCENT_SAND.get());
+//            event.accept(BlockRegistry.DEEP_SANCTUARY_SAND.get());
+//            event.accept(BlockRegistry.ASTRAL_GOOP.get());
+//            event.accept(BlockRegistry.VERMILION_SPROUT.get());
+//            event.accept(BlockRegistry.TALL_SANCTUARY_GRASS.get());
+//            event.accept(BlockRegistry.CYAN_PEARLESCENT_SPIRAL.get());
+//            event.accept(BlockRegistry.MAGENTA_PEARLESCENT_SPIRAL.get());
+//            event.accept(BlockRegistry.YELLOW_PEARLESCENT_SPIRAL.get());
+//            event.accept(BlockRegistry.CYAN_PEARLESCENT_GRASS.get());
+//            event.accept(BlockRegistry.MAGENTA_PEARLESCENT_GRASS.get());
+//            event.accept(BlockRegistry.YELLOW_PEARLESCENT_GRASS.get());
+//            event.accept(BlockRegistry.SPIRE_GLASS.get());
+//            event.accept(BlockRegistry.CRYSTALLINE_LOG.get());
+//            event.accept(BlockRegistry.CRYSTALLINE_LEAVES.get());
 
             // Generators
             event.accept(BlockRegistry.ESSENCE_BURNER.get());

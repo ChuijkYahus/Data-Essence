@@ -6,6 +6,7 @@
 		"0": "datanessence:block/vivid_lotus_2",
 		"particle": "datanessence:block/vivid_lotus_2"
 	},
+	"render_type": "minecraft:cutout",
 	"elements": [
 		{
 			"name": "lilypad",
