@@ -38,7 +38,7 @@ public class RFNodeBlockEntity extends BaseCapabilityPointBlockEntity {
                 if (senderEnergy == null || receiverEnergy == null)
                     continue;
 
-                int transferred = receiverEnergy.receiveEnergy( Math.max(senderEnergy.getEnergyStored(), transferAmount) , false);
+                int transferred = receiverEnergy.receiveEnergy( Math.clamp(senderEnergy.getEnergyStored(), 0, transferAmount) , false);
                 senderEnergy.extractEnergy(transferred, false);
             }
         }
