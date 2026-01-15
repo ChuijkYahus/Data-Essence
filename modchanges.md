@@ -7,4 +7,5 @@
 - Renamed Essence Burner to Shard Burner, and reworded its tablet entry (Esét)
 
 ### Fixes
-- Fixed erroneously larger values than the actual averages displaying in Mineral Purification recipe cards (Esét) 
+- Fixed erroneously larger values than the actual averages displaying in Mineral Purification recipe cards (Esét)
+- Essence Furnace doesn't get strange when inserting items before Essence anymore (Esét)
