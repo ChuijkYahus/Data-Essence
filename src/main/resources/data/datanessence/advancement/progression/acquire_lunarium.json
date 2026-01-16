@@ -11,9 +11,9 @@
     },
     "hidden": false
   },
-  "parent": "datanessence:progression/acquire_lunar_essence_shard",
+  "parent": "datanessence:progression/acquire_ecliptrum",
   "criteria": {
-    "has_shard": {
+    "has_lunarium": {
       "trigger": "minecraft:inventory_changed",
       "conditions": { "items": [ { "items": ["datanessence:lunarium" ] } ] }
     }

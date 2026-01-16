@@ -84,7 +84,7 @@ public class EssenceDerivationSpikeBlockEntity extends BlockEntity implements Es
         world.playSound(null, pos, SoundEvents.ANVIL_BREAK, SoundSource.BLOCKS);
         for (LivingEntity entity : world.getEntitiesOfClass(LivingEntity.class, AABB.ofSize(pos.getCenter().add(0, 1, 0), 11, 3, 11))) {
             if (entity.isAlive())
-                entity.hurt(entity.damageSources().source(DamageTypeRegistry.essenceSiphoned), 20);
+                entity.hurt(entity.damageSources().source(DamageTypeRegistry.overheatFailure), 20);
         }
         isBroken = true;
     }
@@ -94,6 +94,7 @@ public class EssenceDerivationSpikeBlockEntity extends BlockEntity implements Es
         hasRedstone = this.getLevel().hasNeighborSignal(pos);
         return hasRedstone;
     }
+
     public boolean isAbleToWork() {
         return(hasRedstone && hasStructure && !isBroken);
     }

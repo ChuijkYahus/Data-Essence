@@ -11,7 +11,7 @@
     },
     "hidden": false
   },
-  "parent": "datanessence:progression/acquire_ecliptrum",
+  "parent": "datanessence:progression/acquire_synthesis_chamber",
   "criteria": {
     "has_shard": {
       "trigger": "minecraft:inventory_changed",
