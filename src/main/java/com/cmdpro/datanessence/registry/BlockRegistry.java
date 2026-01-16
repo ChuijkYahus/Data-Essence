@@ -90,7 +90,9 @@ public class BlockRegistry {
 
     // Generators
     public static final Supplier<Block> ESSENCE_BURNER = register("essence_burner",
-            () -> new EssenceBurner(getMachineProperties()),
+            () -> new EssenceBurner(getMachineProperties().lightLevel(
+                    (state -> state.getValue(EssenceBurner.LIT) ? 13 : 0)
+            )),
             object -> () -> new BlockItem(object.get(), new Item.Properties()));
     public static final Supplier<Block> ESSENCE_LEECH = register("essence_leech",
             () -> new EssenceLeech(getMachineProperties()),
@@ -131,7 +133,9 @@ public class BlockRegistry {
             () -> new SynthesisChamber(getMachineProperties()),
             object -> () -> new BlockItem(object.get(), new Item.Properties()));
     public static final Supplier<Block> ESSENCE_FURNACE = register("essence_furnace",
-            () -> new EssenceFurnace(getMachineProperties()),
+            () -> new EssenceFurnace(getMachineProperties().lightLevel(
+                    (state -> state.getValue(EssenceFurnace.LIT) ? 13 : 0)
+            )),
             object -> () -> new BlockItem(object.get(), new Item.Properties()));
     public static final Supplier<Block> FLUID_SPILLER = register("fluid_spiller",
             () -> new FluidSpiller(getMachineProperties()),
