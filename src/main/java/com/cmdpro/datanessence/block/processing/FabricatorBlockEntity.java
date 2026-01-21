@@ -51,6 +51,10 @@ public class FabricatorBlockEntity extends BaseFabricatorBlockEntity implements 
         return new FabricatorMenu(pContainerId, pInventory, this);
     }
 
+    public boolean isCrafting() {
+        return time >= 0;
+    }
+
     @Override
     public List<EssenceType> getSupportedEssenceTypes() {
         return List.of(EssenceTypeRegistry.ESSENCE.get());
