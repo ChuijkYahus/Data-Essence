@@ -137,6 +137,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItemWithSubdirectory(ItemRegistry.EXOTIC_ESSENCE_BOMB, "bombs");
 
         simpleItemWithSubdirectory(ItemRegistry.SPEED_UPGRADE, "sigils");
+        simpleItemWithSubdirectory(ItemRegistry.SPEED_UPGRADE_2, "sigils");
         simpleItemWithSubdirectory(ItemRegistry.FILTER_UPGRADE, "sigils");
 
         simpleItem(ItemRegistry.LENSING_CRYSTAL);
