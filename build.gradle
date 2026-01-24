@@ -142,6 +142,7 @@ dependencies {
     implementation "blank:databank-${databank_version}"
     compileOnly "dev.emi:emi-neoforge:${emi_version}:api"
     localRuntime "dev.emi:emi-neoforge:${emi_version}"
+    implementation "maven.modrinth:curios:9.5.1+1.21.1"
 
     implementation "maven.modrinth:iris:1.8.1+1.21.1-neoforge"
     implementation "maven.modrinth:sodium:mc1.21.1-0.6.7-neoforge"
@@ -155,8 +156,8 @@ dependencies {
     if (pastel_enabled == "true") {
         implementation "maven.modrinth:pastel-mod:${pastel_version}"
         runtimeOnly "maven.modrinth:modonomicon:1.21.1-1.114.4"
-        runtimeOnly "maven.modrinth:curios:9.5.1+1.21.1"
         runtimeOnly "maven.modrinth:cloth-config:15.0.140+neoforge"
+        runtimeOnly "maven.modrinth:exclusions-lib:1.1.0-NEO"
     } else {
         compileOnly "maven.modrinth:pastel-mod:${pastel_version}"
     }
