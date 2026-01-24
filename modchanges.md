@@ -6,6 +6,7 @@
 - Critical Data shows different icon frames in Data Banks (Esét)
 - Essence Furnace and Shard Burners now emit light when working (Esét)
 - Renamed Essence Burner to Shard Burner, and reworded its tablet entry (Esét)
+- Retextured and adjusted recipe for Illumination Rod (Esét)
 - Tweaked Fabricator texture, giving it some oxidization and bringing the amethyst cube in line with Pastel amethyst (Esét)
 - Tweaked Fluid Bulb side texture to differentiate it from Fluidic Glass (Esét)
 
