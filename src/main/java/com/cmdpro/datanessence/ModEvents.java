@@ -11,6 +11,7 @@ import com.cmdpro.datanessence.api.pearlnetwork.PearlNetworkBlockEntity;
 import com.cmdpro.datanessence.api.util.DataTabletUtil;
 import com.cmdpro.datanessence.api.util.PlayerDataUtil;
 import com.cmdpro.datanessence.block.auxiliary.DataBank;
+import com.cmdpro.datanessence.block.auxiliary.TwiningLanternBlockEntity;
 import com.cmdpro.datanessence.block.technical.StructureProtector;
 import com.cmdpro.datanessence.block.transportation.TraversiteRoad;
 import com.cmdpro.datanessence.block.technical.StructureProtectorBlockEntity;
@@ -38,6 +39,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
@@ -50,13 +52,16 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.Vec3;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.AddReloadListenerEvent;
 import net.neoforged.neoforge.event.ItemAttributeModifierEvent;
 import net.neoforged.neoforge.event.OnDatapackSyncEvent;
 import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
+import net.neoforged.neoforge.event.entity.living.FinalizeSpawnEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDestroyBlockEvent;
+import net.neoforged.neoforge.event.entity.living.MobSpawnEvent;
 import net.neoforged.neoforge.event.entity.player.AdvancementEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
@@ -330,5 +335,29 @@ public class ModEvents {
         if (event.getItemStack().getItem() instanceof AdjustableAttributes item) {
             item.adjustAttributes(event);
         }
+    }
+
+    // for the Twining Lantern's industrial effect
+    @SubscribeEvent
+    public static void cancelMobSpawns(FinalizeSpawnEvent event) {
+        var pos = new Vec3( event.getX(), event.getY(), event.getZ() );
+        var entity = event.getEntity();
+
+        if (entity.getType().getCategory() == MobCategory.MONSTER) {
+            List<TwiningLanternBlockEntity> twiningLanterns = ( (ServerLevel) event.getLevel()).getData(AttachmentTypeRegistry.TWINING_LANTERNS.get());
+
+            for (TwiningLanternBlockEntity lantern : twiningLanterns) {
+
+                if (lantern.industrialTicksLeft > 0 ) {
+                    AABB area = AABB.encapsulatingFullBlocks(lantern.corner1, lantern.corner2);
+
+                    if ( area.contains(pos) ) {
+                        event.setCanceled(true);
+                    }
+                }
+
+            }
+        }
+
     }
 }

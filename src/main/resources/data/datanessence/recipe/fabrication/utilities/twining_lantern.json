@@ -1,0 +1,20 @@
+{
+  "type": "datanessence:shaped_fabrication_recipe",
+  "essenceCost": {
+    "datanessence:essence": 200
+  },
+  "time": 160,
+  "entry": "datanessence:tools/twining_lantern",
+  "pattern": [
+    " P ",
+    "RLR",
+    " E "
+  ],
+  "key": {
+    "L": { "item": "datanessence:lensing_crystal" },
+    "R": { "item": "datanessence:conductance_rod" },
+    "P": { "item": "datanessence:capacitance_panel" },
+    "E": { "item": "datanessence:essence_pathways" }
+  },
+  "result": { "id": "datanessence:twining_lantern", "count": 4 }
+}

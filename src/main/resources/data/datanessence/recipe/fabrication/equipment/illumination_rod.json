@@ -5,14 +5,14 @@
   },
   "entry": "datanessence:tools/illumination_rod",
   "pattern": [
-    " GE",
+    " GT",
     "LOG",
     "OL "
   ],
   "time": 200,
   "key": {
     "G": { "item": "minecraft:glowstone_dust" },
-    "E": { "item": "datanessence:essence_pathways" },
+    "T": { "item": "datanessence:twining_lantern" },
     "O": { "item": "datanessence:polished_obsidian" },
     "L": { "item": "datanessence:lensing_crystal" }
   },

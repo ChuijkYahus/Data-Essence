@@ -416,6 +416,7 @@ public class DataNEssence
             event.accept(BlockRegistry.ENGRAVED_POLISHED_OBSIDIAN.get());
             event.accept(BlockRegistry.OBSIDIAN_FRAMED_GLASS.get());
             event.accept(BlockRegistry.FLUIDIC_GLASS.get());
+            event.accept(BlockRegistry.TWINING_LANTERN.get());
             event.accept(BlockRegistry.LIGHT_FIXTURE.get());
             event.accept(BlockRegistry.DEWLAMP.get());
             event.accept(BlockRegistry.PATTERNED_COPPER.get());

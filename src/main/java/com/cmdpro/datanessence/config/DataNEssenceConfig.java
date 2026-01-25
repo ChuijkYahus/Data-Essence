@@ -26,6 +26,13 @@ public class DataNEssenceConfig {
         essenceBatteryMaxValue = buildInteger(builder, "essenceBatteryMax", 10000, 1, 1000000, "The capacity for all Essence Batteries.");
         maxNodeWiresValue = buildInteger(builder, "maxNodeWires", 4, 1, 50, "Connection limit for all Nodes - a Node cannot have more Wires than this.");
         wireDistanceLimitValue = buildInteger(builder, "wireDistanceLimit", 24, 1, 64, "Distance limit for wire length, in blocks.");
+        twiningLanternFuelRatioValue = buildInteger(
+                builder,
+                "twiningLanternFuelRatio",
+                20,
+                1,
+                1200, // one irl minute
+                "How many fuel ticks one point of Essence is worth in the Twining Lantern.");
     }
 
     private static ModConfigSpec.BooleanValue buildBoolean(ModConfigSpec.Builder builder, String name, boolean defaultValue, String comment) {
@@ -46,12 +53,14 @@ public class DataNEssenceConfig {
     public static int essenceBatteryMax = 50;
     public static int maxNodeWires = 4;
     public static int wireDistanceLimit = 24;
+    public static int twiningLanternFuelRatio = 20;
     public final ModConfigSpec.IntValue fluidPointTransferValue;
     public final ModConfigSpec.IntValue essencePointTransferValue;
     public final ModConfigSpec.IntValue itemPointTransferValue;
     public final ModConfigSpec.IntValue essenceBatteryMaxValue;
     public final ModConfigSpec.IntValue maxNodeWiresValue;
     public final ModConfigSpec.IntValue wireDistanceLimitValue;
+    public final ModConfigSpec.IntValue twiningLanternFuelRatioValue;
 
     public static void bake(ModConfig config) {
         try {
@@ -61,6 +70,7 @@ public class DataNEssenceConfig {
             essenceBatteryMax = COMMON.essenceBatteryMaxValue.get();
             maxNodeWires = COMMON.maxNodeWiresValue.get();
             wireDistanceLimit = COMMON.wireDistanceLimitValue.get();
+            twiningLanternFuelRatio = COMMON.twiningLanternFuelRatioValue.get();
         } catch (Exception e) {
             DataNEssence.LOGGER.warn("[DATANESSENCE] Failed to load config!");
             e.printStackTrace();

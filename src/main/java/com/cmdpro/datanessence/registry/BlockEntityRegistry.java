@@ -244,6 +244,10 @@ public class BlockEntityRegistry {
             register("survey_tunneler", () ->
                     BlockEntityType.Builder.of(SurveyTunnelerBlockEntity::new,
                             BlockRegistry.SURVEY_TUNNELER.get()).build(null));
+    public static final Supplier<BlockEntityType<TwiningLanternBlockEntity>> TWINING_LANTERN =
+            register("twining_lantern", () ->
+                    BlockEntityType.Builder.of(TwiningLanternBlockEntity::new,
+                            BlockRegistry.TWINING_LANTERN.get()).build(null));
 
 
     private static <T extends BlockEntityType<?>> Supplier<T> register(final String name, final Supplier<T> blockentity) {
