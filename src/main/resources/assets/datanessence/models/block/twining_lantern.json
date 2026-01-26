@@ -1,12 +1,12 @@
 {
 	"format_version": "1.9.0",
 	"credit": "~Esét Kalenko",
+	"render_type": "minecraft:cutout",
 	"texture_size": [64, 64],
 	"textures": {
 		"0": "datanessence:block/twining_lantern",
 		"particle": "datanessence:block/twining_lantern"
 	},
-	"render_type": "minecraft:cutout",
 	"elements": [
 		{
 			"name": "base",
@@ -33,6 +33,18 @@
 				"south": {"uv": [0, 5, 1.5, 6.5], "texture": "#0"},
 				"west": {"uv": [1.5, 5, 3, 6.5], "texture": "#0"},
 				"up": {"uv": [6.5, 4.5, 5, 3], "texture": "#0"}
+			}
+		},
+		{
+			"name": "sides_in",
+			"from": [11, 7, 11],
+			"to": [5, 1, 5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [14, 7, 12]},
+			"faces": {
+				"north": {"uv": [1.75, 1.5, 3.25, 0], "texture": "#0"},
+				"east": {"uv": [1.75, 1.5, 3.25, 0], "texture": "#0"},
+				"south": {"uv": [1.75, 1.5, 3.25, 0], "texture": "#0"},
+				"west": {"uv": [1.75, 1.5, 3.25, 0], "texture": "#0"}
 			}
 		},
 		{
@@ -115,13 +127,13 @@
 			"name": "base",
 			"origin": [8, 8, 8],
 			"color": 0,
-			"children": [0, 1, 2]
+			"children": [0, 1, 2, 3]
 		},
 		{
 			"name": "EVIL PYRAMID",
 			"origin": [8, 8, 8],
 			"color": 0,
-			"children": [3, 4, 5, 6, 7, 8]
+			"children": [4, 5, 6, 7, 8, 9]
 		}
 	]
 }

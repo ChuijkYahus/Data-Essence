@@ -1,12 +1,12 @@
 {
 	"format_version": "1.9.0",
 	"credit": "~Esét Kalenko",
+	"render_type": "minecraft:cutout",
 	"texture_size": [64, 64],
 	"textures": {
 		"0": "datanessence:block/twining_lantern",
 		"particle": "datanessence:block/twining_lantern"
 	},
-	"render_type": "minecraft:cutout",
 	"elements": [
 		{
 			"name": "base",
@@ -108,6 +108,18 @@
 				"south": {"uv": [6.75, 6.5, 8.5, 6.75], "texture": "#0"},
 				"west": {"uv": [6.75, 6.75, 8.5, 7], "texture": "#0"}
 			}
+		},
+		{
+			"name": "sides_in",
+			"from": [11, 12, 11],
+			"to": [5, 6, 5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [14, 12, 12]},
+			"faces": {
+				"north": {"uv": [1.75, 1.5, 3.25, 0], "texture": "#0"},
+				"east": {"uv": [1.75, 1.5, 3.25, 0], "texture": "#0"},
+				"south": {"uv": [1.75, 1.5, 3.25, 0], "texture": "#0"},
+				"west": {"uv": [1.75, 1.5, 3.25, 0], "texture": "#0"}
+			}
 		}
 	],
 	"groups": [
@@ -122,6 +134,7 @@
 			"origin": [8, 8, 8],
 			"color": 0,
 			"children": [3, 4, 5, 6, 7, 8]
-		}
+		},
+		9
 	]
 }
