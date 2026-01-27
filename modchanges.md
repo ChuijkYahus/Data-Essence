@@ -15,5 +15,6 @@
 - Tweaked Fluid Bulb side texture to differentiate it from Fluidic Glass (Esét)
 
 ### Fixes
+- Documented Filter Sigils' ability to filter fluids (Esét)
 - Fixed erroneously larger values than the actual averages displaying in Mineral Purification recipe cards (Esét)
 - Essence Furnace doesn't get strange when inserting items before Essence anymore (Esét)
