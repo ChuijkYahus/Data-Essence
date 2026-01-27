@@ -70,4 +70,12 @@ public class SymbolTypes {
                 SymbolType.getSymbolLocation(SymbolType.SYMBOL_LOCATION, 32, 208)
         ));
     }
+
+    public static SymbolType SHAR = SymbolTypes.symbols.get( DataNEssence.locate("shar") );
+    public static SymbolType BESAR = SymbolTypes.symbols.get( DataNEssence.locate("besar") );
+    public static SymbolType NULA = SymbolTypes.symbols.get( DataNEssence.locate("nula") );
+    public static SymbolType ENIRO = SymbolTypes.symbols.get( DataNEssence.locate("eniro") );
+    public static SymbolType IPARI = SymbolTypes.symbols.get( DataNEssence.locate("ipari") );
+    public static SymbolType KORU = SymbolTypes.symbols.get( DataNEssence.locate("koru") );
+    public static SymbolType ARU = SymbolTypes.symbols.get( DataNEssence.locate("aru") );
 }

@@ -1,4 +1,5 @@
 ### Additions
+- Added color accessibility indicator to Luminous Redirection data bank puzzle (Esét)
 - Added Fabricator working vfx (Multyfora)
 - Added Mushrooms and Vines to Plant Siphon fuel map (Esét)
 - Added sound for using a Redirector (Esét, K King)

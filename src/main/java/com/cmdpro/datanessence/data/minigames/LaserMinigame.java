@@ -2,6 +2,9 @@ package com.cmdpro.datanessence.data.minigames;
 
 import com.cmdpro.datanessence.DataNEssence;
 import com.cmdpro.datanessence.api.databank.Minigame;
+import com.cmdpro.datanessence.api.misc.SymbolType;
+import com.cmdpro.datanessence.api.misc.SymbolTypes;
+import com.cmdpro.datanessence.config.DataNEssenceClientConfig;
 import com.cmdpro.datanessence.screen.DataBankScreen;
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
@@ -204,11 +207,13 @@ public class LaserMinigame extends Minigame {
             }
         }
     }
+
     public void addBeam(Beam beam) {
         if (beam != null) {
             beams.add(beam);
         }
     }
+
     public static class Tile {
         public Vector2i pos;
         public int type;
@@ -217,49 +222,62 @@ public class LaserMinigame extends Minigame {
         public Tile(Vector2i pos, int type, int color) {
             this(pos, type, color, getFirstValidRotation(type).getIndex());
         }
+
         public Tile(Vector2i pos, int type, int color, int rotation) {
             this.pos = pos;
             this.type = type;
             this.color = color;
             this.rotation = rotation;
         }
+
         public Tile(Vector2i pos, TileType type, BeamColor color) {
             this(pos, type, color, getFirstValidRotation(type.getIndex()));
         }
+
         public Tile(Vector2i pos, TileType type, BeamColor color, TileRotation rotation) {
             this(pos, type.getIndex(), color.getIndex(), rotation.getIndex());
         }
+
         public BeamColor getColor() {
             return BeamColor.getColor(color);
         }
+
         public TileRotation getRotation() {
             return TileRotation.getRotation(rotation);
         }
+
         public TileType getType() {
             return TileType.getType(type);
         }
+
         public TileRotation[] getValidRotations() {
             return getValidRotations(type);
         }
+
         public static TileRotation[] getValidRotations(int type) {
             return TileType.getType(type).validRotations;
         }
+
         public static TileRotation getFirstValidRotation(int type) {
             Optional<TileRotation> rotation = Arrays.stream(getValidRotations(type)).findFirst();
             return rotation.orElse(TileRotation.UP);
         }
+
         public boolean canPlayerRotate() {
             return canPlayerRotate(getType());
         }
+
         public float getRotationAngle() {
             if (getType() == TileType.MIRROR) {
                 return rotation == 3 ? -90 : 0;
             }
             return getRotation().rotation;
         }
+
         public static boolean canPlayerRotate(TileType type) {
             return type.canPlayerRotate;
         }
+
         public void rotate(int amount) {
             TileRotation[] rotations = getValidRotations();
             int index = Arrays.stream(rotations).toList().indexOf(getRotation());
@@ -269,6 +287,7 @@ public class LaserMinigame extends Minigame {
             }
             this.rotation = rotations[rotation].getIndex();
         }
+
         public void render(DataBankScreen screen, GuiGraphics pGuiGraphics, float pPartialTick, int pMouseX, int pMouseY, int x, int y, boolean hovered) {
             int u = switch (getType()) {
                 case EMITTER -> 11;
@@ -284,11 +303,13 @@ public class LaserMinigame extends Minigame {
                 case EMITTER, GOAL, FILTER -> true;
                 default -> false;
             };
+
             if (hovered) {
                 pGuiGraphics.blit(TEXTURE, x, y, u, v+11, 10, 10);
             } else {
                 pGuiGraphics.blit(TEXTURE, x, y, u, v, 10, 10);
             }
+
             if (colorOverlay) {
                 float[] color = RenderSystem.getShaderColor().clone();
                 Color tileColor = getColor().color;
@@ -299,11 +320,43 @@ public class LaserMinigame extends Minigame {
                 RenderSystem.setShaderColor(red, green, blue, alpha);
                 pGuiGraphics.blit(TEXTURE, x, y, u, v+22, 10, 10);
                 RenderSystem.setShaderColor(color[0], color[1], color[2], color[3]);
+
+                // accessibility symbol render
+                if ( hovered ) {
+                    pGuiGraphics.pose().mulPose(Axis.ZP.rotationDegrees( -getRotationAngle() ));
+
+                    pGuiGraphics.blit(TEXTURE, x-12, y, 46, 0, 12, 12);
+                    switch (getColor()) {
+                        case WHITE:
+                            SymbolTypes.ARU.blitSmall(pGuiGraphics, x-10, y+2);
+                            break;
+                        case YELLOW:
+                            SymbolTypes.KORU.blitSmall(pGuiGraphics, x-10, y+2);
+                            break;
+                        case MAGENTA:
+                            SymbolTypes.IPARI.blitSmall(pGuiGraphics, x-10, y+2);
+                            break;
+                        case CYAN:
+                            SymbolTypes.ENIRO.blitSmall(pGuiGraphics, x-10, y+2);
+                            break;
+                        case BLUE:
+                            SymbolTypes.NULA.blitSmall(pGuiGraphics, x-10, y+2);
+                            break;
+                        case GREEN:
+                            SymbolTypes.BESAR.blitSmall(pGuiGraphics, x-10, y+2);
+                            break;
+                        case RED:
+                        default:
+                            SymbolTypes.SHAR.blitSmall(pGuiGraphics, x-10, y+2);
+                            break;
+                    }
+                }
             }
         }
-        public void renderPost(DataBankScreen screen, GuiGraphics pGuiGraphics, float pPartialTick, int pMouseX, int pMouseY, int x, int y, boolean hovered) {
 
+        public void renderPost(DataBankScreen screen, GuiGraphics pGuiGraphics, float pPartialTick, int pMouseX, int pMouseY, int x, int y, boolean hovered) {
         }
+
         public Beam.BeamModificationResult modifyBeam(LaserMinigame minigame, Beam beam, int depth) {
             Optional<BeamColor> beamColor = Optional.empty();
             Optional<TileRotation> beamRotation = Optional.empty();
