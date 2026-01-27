@@ -2,6 +2,7 @@
 - Added Fabricator working vfx (Multyfora)
 - Added Mushrooms and Vines to Plant Siphon fuel map (Esét)
 - Added sound for using a Redirector (Esét, K King)
+- Added tutorial data entry for using Nodes (Esét)
 - Added Twining Lanterns, new decorative lights that have certain functions when powered (Esét)
 - Pastel Pure Resources can be processed in the Mineral Purification Chamber (Esét)
 

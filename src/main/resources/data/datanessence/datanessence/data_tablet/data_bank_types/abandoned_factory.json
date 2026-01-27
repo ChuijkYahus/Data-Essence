@@ -43,12 +43,14 @@
     "datanessence:tier_2/mineral_purification_chamber",
     "datanessence:tier_2/node_upgrades",
     "datanessence:tier_2/synthesis_chamber",
+    "datanessence:tier_2/twining_lantern",
     "datanessence:tier_2/warp_capsule",
     { "value": "datanessence:tier_1/mod_integration_opalescence", "required": false },
     { "value": "datanessence:tier_2/mod_integration_ae2", "required": false },
     { "value": "datanessence:tier_2/mod_integration_mekanism", "required": false },
     { "value": "datanessence:tier_2/mod_integration_oritech_alloying", "required": false },
     { "value": "datanessence:tier_2/mod_integration_pastel_intro", "required": false },
+    { "value": "datanessence:tier_2/mod_integration_pastel_shard_reconstruction", "required": false },
     { "value": "datanessence:tier_2/mod_integration_refinedstorage", "required": false }
   ]
 }

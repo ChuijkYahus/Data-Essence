@@ -1,0 +1,10 @@
+{
+  "icon": {
+    "id": "datanessence:twining_lantern"
+  },
+  "tier": 2,
+  "name": {
+    "translate": "data_tablet.pages.twining_lantern.name"
+  },
+  "entry": "datanessence:tools/twining_lantern"
+}
