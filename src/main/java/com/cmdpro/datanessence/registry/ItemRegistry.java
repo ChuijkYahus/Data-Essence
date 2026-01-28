@@ -85,6 +85,7 @@ public class ItemRegistry {
     public static final Supplier<Item> DIAMOND_SHARD = register("diamond_shard", () -> new Item(new Item.Properties()));
     public static final Supplier<Item> EMERALD_SHARD = register("emerald_shard", () -> new Item(new Item.Properties()));
     public static final Supplier<Item> COAL_LUMP = register("coal_lump", () -> new FuelItem(new Item.Properties(), 200));
+    public static final Supplier<Item> QUARTZ_FLAKE = register("quartz_flake", () -> new Item(new Item.Properties()));
 
     // Misc
     public static final Supplier<Item> COGNIZANT_CUBE = register("cognizant_cube", () -> new CognizantCube(new Item.Properties().stacksTo(1)));

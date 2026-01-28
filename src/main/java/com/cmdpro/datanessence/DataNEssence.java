@@ -323,6 +323,7 @@ public class DataNEssence
             event.accept(ItemRegistry.DIAMOND_SHARD.get());
             event.accept(ItemRegistry.EMERALD_SHARD.get());
             event.accept(ItemRegistry.COAL_LUMP.get());
+            event.accept(ItemRegistry.QUARTZ_FLAKE.get());
             event.accept(ItemRegistry.TRAVERSITE_ROAD_CHUNK.get());
 
             // Buckets

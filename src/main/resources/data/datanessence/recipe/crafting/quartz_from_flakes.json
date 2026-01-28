@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "ccc",
+    "c c",
+    "ccc"
+  ],
+  "key": {
+    "c": { "item": "datanessence:quartz_flake" }
+  },
+  "result": { "id": "minecraft:quartz" }
+}

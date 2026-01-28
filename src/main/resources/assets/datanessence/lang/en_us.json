@@ -1,6 +1,6 @@
 {
-  "creativemodetab.datanessence_blocks": "Data & Essence: Blocks",
-  "creativemodetab.datanessence_items": "Data & Essence: Items",
+  "creativemodetab.datanessence_blocks": "Halcyon: Blocks",
+  "creativemodetab.datanessence_items": "Halcyon: Items",
 
   "datanessence.essence_types.unknown": "???",
   "datanessence.essence_types.essence": "Industrial Essence",
@@ -91,6 +91,7 @@
   "item.datanessence.precision_lens": "Laser Lens: Counting",
   "item.datanessence.primitive_anti_gravity_pack": "Primitive Antigravity Pack",
   "item.datanessence.propeller": "Propeller",
+  "item.datanessence.quartz_flake": "Quartz Flake",
   "item.datanessence.reflective_panel": "Reflective Panel",
   "item.datanessence.rod_mold": "Mold: Conductance Rod",
   "item.datanessence.speed_upgrade": "Universal Upgrade Sigil: Speed",

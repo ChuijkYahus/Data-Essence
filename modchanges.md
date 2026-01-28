@@ -1,7 +1,9 @@
 ### Additions
 - Added color accessibility indicator to Luminous Redirection data bank puzzle (Esét)
 - Added Fabricator working vfx (Multyfora)
+- Added Halcyon to Data & Essence (i.e. renamed the mod) (Esét)
 - Added Mushrooms and Vines to Plant Siphon fuel map (Esét)
+- Added Quartz to Mineral Purification Chamber (Esét)
 - Added sound for using a Redirector (Esét, K King)
 - Added tutorial data entry for using Nodes (Esét)
 - Added Twining Lanterns, new decorative lights that have certain functions when powered (Esét)
