@@ -55,6 +55,7 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.attachment.IAttachmentHolder;
 import net.neoforged.neoforge.event.AddReloadListenerEvent;
 import net.neoforged.neoforge.event.ItemAttributeModifierEvent;
 import net.neoforged.neoforge.event.OnDatapackSyncEvent;
@@ -340,14 +341,14 @@ public class ModEvents {
     // for the Twining Lantern's industrial effect
     @SubscribeEvent
     public static void cancelMobSpawns(FinalizeSpawnEvent event) {
-        if (!(event.getLevel() instanceof ServerLevel))
+        if (!(event.getLevel() instanceof IAttachmentHolder))
             return;
 
         var pos = new Vec3( event.getX(), event.getY(), event.getZ() );
         var entity = event.getEntity();
 
         if (entity.getType().getCategory() == MobCategory.MONSTER) {
-            List<TwiningLanternBlockEntity> twiningLanterns = ( (ServerLevel) event.getLevel()).getData(AttachmentTypeRegistry.TWINING_LANTERNS.get());
+            List<TwiningLanternBlockEntity> twiningLanterns = ( (ServerLevel) event.getLevel().getLevel()).getData(AttachmentTypeRegistry.TWINING_LANTERNS.get());
 
             for (TwiningLanternBlockEntity lantern : twiningLanterns) {
 
