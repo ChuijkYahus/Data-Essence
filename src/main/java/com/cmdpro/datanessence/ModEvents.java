@@ -340,6 +340,9 @@ public class ModEvents {
     // for the Twining Lantern's industrial effect
     @SubscribeEvent
     public static void cancelMobSpawns(FinalizeSpawnEvent event) {
+        if (!(event.getLevel() instanceof ServerLevel))
+            return;
+
         var pos = new Vec3( event.getX(), event.getY(), event.getZ() );
         var entity = event.getEntity();
 
