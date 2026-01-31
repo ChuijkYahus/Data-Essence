@@ -446,6 +446,7 @@
   "data_tablet.pages.lunar_essence_battery.name": "Lunar Essence Batteries",
   "data_tablet.pages.lunar_essence_battery.page1.text": "Like the Industrial Essence Battery that came before it, this Battery is a modified Essence Buffer that can only hold Lunar Essence, but a considerable quantity of it. Its visual design is markedly different from its predecessor, featuring a window to view the contents instead of its storage matrix being visible throughout.",
   "data_tablet.pages.lunar_essence_transfer.name": "Lunar Essence Transfer",
+  "data_tablet.pages.lunar_essence_transfer.page1.incomplete_text": "In theory it should be a simple matter to adapt our existing Industrial Nodes to transfer this new Lunar Essence. In practice, copper serves an incredibly poor conductor here, and so it takes much more effort to coax the metal to our will. However, we suspect we'll need to be able to transfer Lunar to acquire a better node material.... Sometimes, one must be inefficient to be efficient.",
   "data_tablet.pages.lunar_essence_transfer.page1.text": "As we have Wires and Nodes for Industrial Essence, the same basic design carries over to Lunar Essence, as well. However, instead of copper for the nodes, they instead must be plated with Ecliptrum. The wires, curiously, work satisfactorily as-is, though of course needing a different coating material.",
 
   "_comment.data_tablet.pages.integration": "Mod Integration category texts.",

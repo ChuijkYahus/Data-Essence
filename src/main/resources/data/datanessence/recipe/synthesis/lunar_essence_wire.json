@@ -7,5 +7,6 @@
   "input2": { "item": "datanessence:lunar_essence_shard" },
   "time": 100,
   "result": { "id": "datanessence:lunar_essence_wire", "count": 4 },
-  "entry": "datanessence:essence_manipulation/lunar_essence_transfer"
+  "entry": "datanessence:essence_manipulation/lunar_essence_transfer",
+  "completion_stage": 0
 }
