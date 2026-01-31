@@ -24,7 +24,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.Set;
 
-@EventBusSubscriber(modid = "datanessence", value = Dist.CLIENT)
+@EventBusSubscriber(modid = DataNEssence.MOD_ID, value = Dist.CLIENT)
 public class ItemSparkRenderer {
 
     private static final Random RANDOM = new Random();
@@ -33,6 +33,7 @@ public class ItemSparkRenderer {
     private static float lastMouseX = 0;
     private static float lastMouseY = 0;
 
+    // TODO make this a tag or perhaps a data map (for multiple types) ~Esét
     private static Set<Item> sparkingItems = null;
 
     private static Set<Item> getSparkingItems() {
