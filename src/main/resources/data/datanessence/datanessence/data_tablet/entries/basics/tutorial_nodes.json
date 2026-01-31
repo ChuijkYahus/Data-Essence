@@ -1,0 +1,23 @@
+{
+  "icon": {
+    "id": "datanessence:essence_point"
+  },
+  "tab": "datanessence:basics",
+  "x": -2,
+  "y": -1,
+  "pages": [
+    {
+      "type": "datanessence:text",
+      "text": {
+        "translate": "data_tablet.pages.tutorial_nodes.page1.text"
+      }
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.tutorial_nodes.name"
+  },
+  "flavor": {
+    "translate": "data_tablet.pages.tutorial_nodes.flavor"
+  },
+  "is_default": true
+}

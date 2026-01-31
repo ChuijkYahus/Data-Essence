@@ -43,6 +43,7 @@
     "datanessence:tier_2/mineral_purification_chamber",
     "datanessence:tier_2/node_upgrades",
     "datanessence:tier_2/synthesis_chamber",
+    "datanessence:tier_2/twining_lantern",
     "datanessence:tier_2/warp_capsule",
     "datanessence:tier_3/ecliptrum",
     "datanessence:tier_3/lunar_essence_battery",
@@ -52,6 +53,7 @@
     { "value": "datanessence:tier_2/mod_integration_mekanism", "required": false },
     { "value": "datanessence:tier_2/mod_integration_oritech_alloying", "required": false },
     { "value": "datanessence:tier_2/mod_integration_pastel_intro", "required": false },
+    { "value": "datanessence:tier_2/mod_integration_pastel_shard_reconstruction", "required": false },
     { "value": "datanessence:tier_2/mod_integration_refinedstorage", "required": false }
   ]
 }

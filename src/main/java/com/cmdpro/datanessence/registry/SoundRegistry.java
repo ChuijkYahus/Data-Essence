@@ -37,6 +37,7 @@ public class SoundRegistry {
     public static final Holder<SoundEvent> HAMMER_AND_CHISEL_MINE = createBasicSound("item.hammer_and_chisel.mine");
     public static final Holder<SoundEvent> COGNIZANT_CUBE_SHAKE = createBasicSound("item.cognizant_cube.shake");
     public static final Holder<SoundEvent> COGNIZANT_CUBE_MESSAGE = createBasicSound("item.cognizant_cube.message");
+    public static final Holder<SoundEvent> REDIRECTOR_USE = createBasicSound("item.essence_redirector.use");
 
     public static final Holder<SoundEvent> FALLING_MOON_CHARGE_0_1 = createBasicSound("item.falling_moon.charge0-1");
     public static final Holder<SoundEvent> FALLING_MOON_CHARGE_1_2 = createBasicSound("item.falling_moon.charge1-2");

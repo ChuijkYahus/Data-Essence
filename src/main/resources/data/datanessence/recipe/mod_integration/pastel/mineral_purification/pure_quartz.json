@@ -9,5 +9,5 @@
     "input": { "item": "pastel:pure_quartz" },
     "time": 300,
     "result": { "id": "minecraft:quartz", "count": 2 },
-    "nuggetResult": { "id": "minecraft:quartz", "count": 5 }
+    "nuggetResult": { "id": "datanessence:quartz_flake", "count": 5 }
 }

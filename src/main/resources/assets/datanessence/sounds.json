@@ -534,5 +534,11 @@
             "random/bow"
         ],
         "subtitle": "subtitle.datanessence.item.exotic_essence_bomb.throw"
+    },
+    "item.essence_redirector.use": {
+        "sounds": [
+            "datanessence:item/essence_redirector/redirector_use"
+        ],
+        "subtitle": "subtitle.datanessence.item.essence_redirector.use"
     }
 }

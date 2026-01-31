@@ -2,6 +2,7 @@ package com.cmdpro.datanessence.registry;
 
 import com.cmdpro.datanessence.DataNEssence;
 import com.cmdpro.datanessence.api.misc.BlockPosNetworks;
+import com.cmdpro.datanessence.block.auxiliary.TwiningLanternBlockEntity;
 import com.cmdpro.datanessence.block.technical.StructureProtectorBlockEntity;
 import com.cmdpro.datanessence.item.equipment.GrapplingHook;
 import com.mojang.serialization.Codec;
@@ -21,6 +22,8 @@ public class AttachmentTypeRegistry {
             DataNEssence.MOD_ID);
     public static final Supplier<AttachmentType<ArrayList<StructureProtectorBlockEntity>>> STRUCTURE_CONTROLLERS =
             register("structure_controllers", () -> AttachmentType.builder(() -> new ArrayList<StructureProtectorBlockEntity>()).build());
+    public static final Supplier<AttachmentType<ArrayList<TwiningLanternBlockEntity>>> TWINING_LANTERNS =
+            register("twining_lanterns", () -> AttachmentType.builder(() -> new ArrayList<TwiningLanternBlockEntity>()).build());
 
     public static final Supplier<AttachmentType<BlockPosNetworks>> ESSENCE_NODE_NETWORKS =
             register("essence_node_networks", () -> AttachmentType.builder(() -> new BlockPosNetworks(new DefaultDirectedGraph<>(DefaultEdge.class))).serialize(BlockPosNetworks.CODEC).build());

@@ -174,6 +174,8 @@ public class FluidBottlerBlockEntity extends BlockEntity implements MenuProvider
                 }
                 if (stack.is(Items.GLASS_BOTTLE)) {
                     if (pBlockEntity.fluidHandler.getFluid().getAmount() >= 250) {
+
+                        // TODO dehardcode. whuh :rivstare:
                         if (pBlockEntity.fluidHandler.getFluid().is(Fluids.WATER)) {
                             ItemStack bottle = PotionContents.createItemStack(Items.POTION, Potions.WATER);
                             if (pBlockEntity.outputItemHandler.insertItem(0, bottle, true).isEmpty()) {

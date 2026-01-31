@@ -1,6 +1,8 @@
 package com.cmdpro.datanessence.item.equipment;
 
 import com.cmdpro.datanessence.api.block.RedirectorInteractable;
+import com.cmdpro.datanessence.registry.SoundRegistry;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.context.UseOnContext;
@@ -23,13 +25,15 @@ public class EssenceRedirector extends Item {
 
         if ( block.getBlock() instanceof RedirectorInteractable ri ) {
             if ( ri.onRedirectorUse(context) ) {
+                // mmmmaybe leave sound playing up to individual interactions? works for now though
+                world.playSound(null, context.getClickedPos(), SoundRegistry.REDIRECTOR_USE.value(), SoundSource.PLAYERS);
                 return InteractionResult.SUCCESS;
             }
         }
 
-        // as we do not currently have any suitable TEs i don't know if this one works.
         if ( tile instanceof RedirectorInteractable ri ) {
             if ( ri.onRedirectorUse(context) ) {
+                world.playSound(null, context.getClickedPos(), SoundRegistry.REDIRECTOR_USE.value(), SoundSource.PLAYERS);
                 return InteractionResult.SUCCESS;
             }
         }

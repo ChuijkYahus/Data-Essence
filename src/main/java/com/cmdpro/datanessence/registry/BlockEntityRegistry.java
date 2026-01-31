@@ -247,6 +247,10 @@ public class BlockEntityRegistry {
             register("survey_tunneler", () ->
                     BlockEntityType.Builder.of(SurveyTunnelerBlockEntity::new,
                             BlockRegistry.SURVEY_TUNNELER.get()).build(null));
+    public static final Supplier<BlockEntityType<TwiningLanternBlockEntity>> TWINING_LANTERN =
+            register("twining_lantern", () ->
+                    BlockEntityType.Builder.of(TwiningLanternBlockEntity::new,
+                            BlockRegistry.TWINING_LANTERN.get()).build(null));
     public static final Supplier<BlockEntityType<EssenceDerivationSpikeBlockEntity>> ESSENCE_DERIVATION_SPIKE =
             register("essence_derivation_spike", () ->
                     BlockEntityType.Builder.of(EssenceDerivationSpikeBlockEntity::new,

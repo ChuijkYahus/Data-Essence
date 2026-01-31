@@ -1,0 +1,32 @@
+{
+  "icon": {
+    "id": "datanessence:twining_lantern"
+  },
+  "tab": "datanessence:tools",
+  "x": 0,
+  "y": 3,
+  "pages": [
+    {
+      "type": "datanessence:item",
+      "item": { "id": "datanessence:twining_lantern" },
+      "text": {
+        "translate": "data_tablet.pages.twining_lantern.page1.text"
+      }
+    },
+    {
+      "type": "datanessence:crafting",
+      "recipes": [
+        "datanessence:fabrication/utilities/twining_lantern"
+      ]
+    }
+  ],
+  "flavor": {
+    "translate": "data_tablet.pages.twining_lantern.flavor"
+  },
+  "name": {
+    "translate": "data_tablet.pages.twining_lantern.name"
+  },
+  "parents": [
+    "datanessence:basics/lensing_crystals"
+  ]
+}

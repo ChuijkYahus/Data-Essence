@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "datanessence:block/twining_lantern"
+    },
+    "hanging=true": {
+      "model": "datanessence:block/twining_lantern_hanging"
+    }
+  }
+}

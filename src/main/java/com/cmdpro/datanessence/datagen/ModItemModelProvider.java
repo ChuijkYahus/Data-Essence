@@ -130,6 +130,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItemWithSubdirectory(ItemRegistry.DIAMOND_SHARD, "intermediates");
         simpleItemWithSubdirectory(ItemRegistry.EMERALD_SHARD, "intermediates");
         simpleItemWithSubdirectory(ItemRegistry.COAL_LUMP, "intermediates");
+        simpleItemWithSubdirectory(ItemRegistry.QUARTZ_FLAKE, "intermediates");
 
         simpleItemWithSubdirectory(ItemRegistry.ESSENCE_BOMB, "bombs");
         simpleItemWithSubdirectory(ItemRegistry.LUNAR_ESSENCE_BOMB, "bombs");
