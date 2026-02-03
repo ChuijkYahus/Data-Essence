@@ -1,4 +1,4 @@
-## Elegy for Transformative Ancestors - Midgame Update
+## Elegy for Transformative Ancestors - Midgame Update, Part I
 ### Additions
 - Added Ecliptrum material
 - Added Lunar Essence Shards and Crystal
@@ -12,3 +12,4 @@
 - Added Lunarium machine
 - Added enhanced Speed node upgrade sigil that boosts a node's transfer rate by 4x
 - Added RF Nodes and Wires
+- Added Hue Shifter (Pastel integration)
