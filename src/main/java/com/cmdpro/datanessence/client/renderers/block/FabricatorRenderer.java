@@ -150,7 +150,7 @@ public class FabricatorRenderer extends DatabankBlockEntityRenderer<FabricatorBl
                 pPoseStack.popPose();
             }
         }
-
+        pPoseStack.popPose();
     }
 
     public static class Model extends DatabankBlockEntityModel<FabricatorBlockEntity> {
