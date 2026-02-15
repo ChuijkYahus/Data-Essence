@@ -348,6 +348,7 @@ public class ModEvents {
         var entity = event.getEntity();
 
         if (entity.getType().getCategory() == MobCategory.MONSTER) {
+            // she getLevel on my event til i getLevel
             List<TwiningLanternBlockEntity> twiningLanterns = ( (ServerLevel) event.getLevel().getLevel()).getData(AttachmentTypeRegistry.TWINING_LANTERNS.get());
 
             for (TwiningLanternBlockEntity lantern : twiningLanterns) {
