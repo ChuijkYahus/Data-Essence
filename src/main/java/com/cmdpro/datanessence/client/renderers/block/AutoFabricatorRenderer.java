@@ -48,7 +48,7 @@ public class AutoFabricatorRenderer extends DatabankBlockEntityRenderer<AutoFabr
         @Override
         public void setupModelPose(AutoFabricatorBlockEntity pEntity, float partialTick) {
             pEntity.animState.updateAnimDefinitions(getModel());
-            if (pEntity.craftingProgress >= 0) {
+            if (pEntity.craftingProgress >= 0 && pEntity.hasLevel() && !pEntity.getLevel().hasNeighborSignal(pEntity.getBlockPos())) {
                 pEntity.animState.setAnim("crafting");
             } else {
                 pEntity.animState.setAnim("idle");

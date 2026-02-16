@@ -299,47 +299,52 @@ public class AutoFabricatorBlockEntity extends BlockEntity implements MenuProvid
             checkRecipes();
         }
     }
-    public static void tick(Level pLevel, BlockPos pPos, BlockState pState, AutoFabricatorBlockEntity pBlockEntity) {
-        if (!pLevel.isClientSide()) {
-            BufferUtil.getEssenceFromBuffersBelow(pBlockEntity, List.of(EssenceTypeRegistry.ESSENCE.get(), EssenceTypeRegistry.LUNAR_ESSENCE.get(), EssenceTypeRegistry.NATURAL_ESSENCE.get(), EssenceTypeRegistry.EXOTIC_ESSENCE.get()));
 
-            for ( var lockedSlot : pBlockEntity.getLockable() ) {
+    public static void tick(Level world, BlockPos pos, BlockState state, AutoFabricatorBlockEntity fabricator) {
+
+        if (!world.isClientSide()) {
+            BufferUtil.getEssenceFromBuffersBelow(fabricator, List.of(EssenceTypeRegistry.ESSENCE.get(), EssenceTypeRegistry.LUNAR_ESSENCE.get(), EssenceTypeRegistry.NATURAL_ESSENCE.get(), EssenceTypeRegistry.EXOTIC_ESSENCE.get()));
+
+            for ( var lockedSlot : fabricator.getLockable() ) {
                 if (!lockedSlot.locked)
                     return;
             }
 
-            BufferUtil.getItemsFromBuffersBelow(pBlockEntity, pBlockEntity.itemHandler);
+            BufferUtil.getItemsFromBuffersBelow(fabricator, fabricator.itemHandler);
 
-            if (pBlockEntity.recipe != null && hasNotReachedStackLimit(pBlockEntity, pBlockEntity.recipe.getResultItem(pLevel.registryAccess()))) {
+            if (world.hasNeighborSignal(pos))
+                return;
+
+            if (fabricator.recipe != null && hasNotReachedStackLimit(fabricator, fabricator.recipe.getResultItem(world.registryAccess()))) {
                 boolean enoughEssence = true;
-                for (Map.Entry<ResourceLocation, Float> i : pBlockEntity.essenceCost.entrySet()) {
+                for (Map.Entry<ResourceLocation, Float> i : fabricator.essenceCost.entrySet()) {
                     EssenceType type = DataNEssenceRegistries.ESSENCE_TYPE_REGISTRY.get(i.getKey());
-                    if (pBlockEntity.storage.getEssence(type) < i.getValue()) {
+                    if (fabricator.storage.getEssence(type) < i.getValue()) {
                         enoughEssence = false;
                     }
                 }
-                pBlockEntity.enoughEssence = enoughEssence;
-                if (pBlockEntity.recipe.matches(pBlockEntity.getCraftingInv().asCraftInput(), pBlockEntity.level)) {
-                    pBlockEntity.craftingProgress++;
-                    for (Map.Entry<ResourceLocation, Float> i : pBlockEntity.essenceCost.entrySet()) {
+                fabricator.enoughEssence = enoughEssence;
+                if (fabricator.recipe.matches(fabricator.getCraftingInv().asCraftInput(), fabricator.level)) {
+                    fabricator.craftingProgress++;
+                    for (Map.Entry<ResourceLocation, Float> i : fabricator.essenceCost.entrySet()) {
                         EssenceType type = DataNEssenceRegistries.ESSENCE_TYPE_REGISTRY.get(i.getKey());
-                        pBlockEntity.storage.removeEssence(type, i.getValue()/pBlockEntity.maxTime);
+                        fabricator.storage.removeEssence(type, i.getValue()/fabricator.maxTime);
                     }
                 } else {
-                    pBlockEntity.craftingProgress = -1;
+                    fabricator.craftingProgress = -1;
                 }
             } else {
-                pBlockEntity.craftingProgress = -1;
+                fabricator.craftingProgress = -1;
             }
-            if (pBlockEntity.craftingProgress >= pBlockEntity.maxTime) {
-                pBlockEntity.tryCraft();
-                pBlockEntity.craftingProgress = 0;
+            if (fabricator.craftingProgress >= fabricator.maxTime) {
+                fabricator.tryCraft();
+                fabricator.craftingProgress = 0;
             }
-            pBlockEntity.updateBlock();
+            fabricator.updateBlock();
         } else {
-            if (pBlockEntity.craftingProgress >= 0 && pBlockEntity.essenceCost != null) {
-                if ( pBlockEntity.essenceCost.containsKey(DataNEssenceRegistries.ESSENCE_TYPE_REGISTRY.getKey(EssenceTypeRegistry.ESSENCE.get())) )
-                    ClientHandler.markIndustrialFactorySong(pPos);
+            if (fabricator.craftingProgress >= 0 && fabricator.essenceCost != null) {
+                if ( fabricator.essenceCost.containsKey(DataNEssenceRegistries.ESSENCE_TYPE_REGISTRY.getKey(EssenceTypeRegistry.ESSENCE.get())) )
+                    ClientHandler.markIndustrialFactorySong(pos);
             }
         }
     }
