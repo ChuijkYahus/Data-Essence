@@ -317,6 +317,7 @@ public class AutoFabricatorBlockEntity extends BlockEntity implements MenuProvid
 
             if (fabricator.recipe != null && hasNotReachedStackLimit(fabricator, fabricator.recipe.getResultItem(world.registryAccess()))) {
                 boolean enoughEssence = true;
+
                 for (Map.Entry<ResourceLocation, Float> i : fabricator.essenceCost.entrySet()) {
                     EssenceType type = DataNEssenceRegistries.ESSENCE_TYPE_REGISTRY.get(i.getKey());
                     if (fabricator.storage.getEssence(type) < i.getValue()) {
@@ -324,7 +325,12 @@ public class AutoFabricatorBlockEntity extends BlockEntity implements MenuProvid
                     }
                 }
                 fabricator.enoughEssence = enoughEssence;
+
                 if (fabricator.recipe.matches(fabricator.getCraftingInv().asCraftInput(), fabricator.level)) {
+
+                    if (!isRecipeComplete(fabricator))
+                        return;
+
                     fabricator.craftingProgress++;
                     for (Map.Entry<ResourceLocation, Float> i : fabricator.essenceCost.entrySet()) {
                         EssenceType type = DataNEssenceRegistries.ESSENCE_TYPE_REGISTRY.get(i.getKey());
@@ -333,6 +339,7 @@ public class AutoFabricatorBlockEntity extends BlockEntity implements MenuProvid
                 } else {
                     fabricator.craftingProgress = -1;
                 }
+
             } else {
                 fabricator.craftingProgress = -1;
             }
@@ -348,11 +355,29 @@ public class AutoFabricatorBlockEntity extends BlockEntity implements MenuProvid
             }
         }
     }
+
+    /**
+     * Returns whether all of the locked slots in this machine are filled with an item
+     */
+    private static boolean isRecipeComplete(AutoFabricatorBlockEntity fabber) {
+        boolean areAllSlotsFilled = true;
+
+        for ( var slotIndex : fabber.itemHandler.lockedSlots.keySet() ) {
+            for (var slot : fabber.getLockable()) {
+                if ( slot.locked && slot.getStackInSlot(slotIndex).isEmpty() )
+                    areAllSlotsFilled = false;
+            }
+        }
+
+        return areAllSlotsFilled;
+    }
+
     protected void updateBlock() {
         BlockState blockState = level.getBlockState(this.getBlockPos());
         this.level.sendBlockUpdated(this.getBlockPos(), blockState, blockState, 3);
         this.setChanged();
     }
+
     private static boolean hasNotReachedStackLimit(AutoFabricatorBlockEntity entity, ItemStack toAdd) {
         if (toAdd.is(entity.outputItemHandler.getStackInSlot(0).getItem())) {
             return entity.outputItemHandler.getStackInSlot(0).getCount() + toAdd.getCount() <= entity.outputItemHandler.getStackInSlot(0).getMaxStackSize();
