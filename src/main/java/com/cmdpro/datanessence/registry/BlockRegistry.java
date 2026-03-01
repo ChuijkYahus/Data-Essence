@@ -421,6 +421,9 @@ public class BlockRegistry {
     public static final Supplier<Block> MAKUTUIN_RUNNER = register("makutuin_runner",
             () -> new MakutuinRunner(BlockBehaviour.Properties.ofFullCopy(Blocks.RED_CARPET)),
             object -> () -> new BlockItem(object.get(), new Item.Properties()));
+    public static final Supplier<Block> MAKUTUIN_RUNNER_CROSS = register("makutuin_runner_cross",
+            () -> new MakutuinRunnerCross(BlockBehaviour.Properties.ofFullCopy(Blocks.RED_CARPET)),
+            object -> () -> new BlockItem(object.get(), new Item.Properties()));
 
 
     private static <T extends Block> Supplier<T> registerBlock(final String name,

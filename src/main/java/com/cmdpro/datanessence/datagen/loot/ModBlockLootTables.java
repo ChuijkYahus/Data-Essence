@@ -139,6 +139,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         dropSelf(BlockRegistry.SURVEY_TUNNELER.get());
         dropSelf(BlockRegistry.TWINING_LANTERN.get());
         dropSelf(BlockRegistry.MAKUTUIN_RUNNER.get());
+        dropSelf(BlockRegistry.MAKUTUIN_RUNNER_CROSS.get());
 
         this.add(BlockRegistry.TETHERGRASS.get(),
                 block -> createTethergrassDrops(block, ItemRegistry.BONDING_POWDER.get()));
