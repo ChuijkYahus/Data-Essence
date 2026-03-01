@@ -418,6 +418,11 @@ public class BlockRegistry {
             object -> () -> new BlockItem(object.get(), new Item.Properties()));
     public static final Supplier<Block> EMPTY_CRYOCHAMBER_ROUTER = registerBlock("empty_cryochamber_router",
             () -> new EmptyCryochamberRouter(BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_BLOCK).noOcclusion()));
+    public static final Supplier<Block> MAKUTUIN_RUNNER = register("makutuin_runner",
+            () -> new MakutuinRunner(BlockBehaviour.Properties.ofFullCopy(Blocks.RED_CARPET)),
+            object -> () -> new BlockItem(object.get(), new Item.Properties()));
+
+
     private static <T extends Block> Supplier<T> registerBlock(final String name,
                                                                      final Supplier<? extends T> block) {
         return BLOCKS.register(name, block);

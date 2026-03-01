@@ -1,4 +1,4 @@
-// 1.21.1	2026-01-28T07:56:46.186353522	Loot Tables
+// 1.21.1	2026-02-28T20:13:29.576540484	Loot Tables
 8a85700f294ec15ec1248a1449114b14eab3e2da data/datanessence/loot_table/blocks/aether_rune.json
 9609efe61385ebb3de54f11712e3baea7e1409d0 data/datanessence/loot_table/blocks/ancient_glyph_stone_blank.json
 10297d9c29f46c19c997dfe74ad062c709006c22 data/datanessence/loot_table/blocks/ancient_glyph_stone_blank_shieldless.json
@@ -77,6 +77,7 @@ cfa965b97908bb81593914643c4325f7191186cd data/datanessence/loot_table/blocks/len
 99f29ecb9a74a1ff89eb7d8b1f9a6d120f43c091 data/datanessence/loot_table/blocks/limited_item_buffer.json
 061a0b59143e9c7ca9643e221fd069a02b5de4ee data/datanessence/loot_table/blocks/lunar_essence_battery.json
 7122cc53668c8a584d5d86f73545270ff3436096 data/datanessence/loot_table/blocks/lunar_essence_point.json
+cf02700f3055620df8be3e63379e612d4ecf06ce data/datanessence/loot_table/blocks/makutuin_runner.json
 e8582d58a5c40ffb3c9938fd850279fe8301c2fe data/datanessence/loot_table/blocks/melter.json
 5143a208d7a58b46306c886ac293a181b7bcb62b data/datanessence/loot_table/blocks/metal_shaper.json
 fd2e4b1a9190655e502e9db90752954b3ca1d625 data/datanessence/loot_table/blocks/mineral_purification_chamber.json
