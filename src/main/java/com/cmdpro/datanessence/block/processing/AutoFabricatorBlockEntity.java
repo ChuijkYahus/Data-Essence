@@ -234,14 +234,8 @@ public class AutoFabricatorBlockEntity extends BlockEntity implements MenuProvid
                 ItemStack remainderItem = remaining.get(l + k * craftingInput.width());
                 if (!existingItem.isEmpty()) {
                     itemHandler.extractItem(i1, 1, false);
-                    existingItem = itemHandler.getStackInSlot(i1); // we re-check this slot after crafting
-                }
-
-                if (!existingItem.isEmpty()) {
                     ItemEntity entity = new ItemEntity(level, (float) getBlockPos().getX() + 0.5f, (float) getBlockPos().getY() + 1f, (float) getBlockPos().getZ() + 0.5f, remainderItem);
                     level.addFreshEntity(entity);
-                } else {
-                    itemHandler.insertItem(i1, remainderItem, false);
                 }
             }
         }
