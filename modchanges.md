@@ -1,4 +1,5 @@
 ### Additions
+- Added "arcane resonance seeking" upgrade for the Signal Tracker, allowing it to find certain structures from other mods (Esét)
 - Added Makutuin Runner carpet-type block (Esét)
 
 ### Changes

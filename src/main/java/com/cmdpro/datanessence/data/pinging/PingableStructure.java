@@ -22,20 +22,26 @@ public class PingableStructure {
     public Color color1;
     public Color color2;
     public PingableStructureIcon icon;
-    public PingableStructure(ResourceKey<Structure> structure, ResourceKey<Advancement> advancement, Optional<ResourceKey<Advancement>> requiredAdvancement, Color color1, Color color2, PingableStructureIcon icon) {
+    public boolean requiresUpgrade;
+
+    public PingableStructure(ResourceKey<Structure> structure, ResourceKey<Advancement> advancement, Optional<ResourceKey<Advancement>> requiredAdvancement, Color color1, Color color2, PingableStructureIcon icon, boolean requiresUpgrade) {
         this.structure = structure;
         this.advancement = advancement;
         this.requiredAdvancement = requiredAdvancement;
         this.color1 = color1;
         this.color2 = color2;
         this.icon = icon;
+        this.requiresUpgrade = requiresUpgrade;
     }
+
     public static class PingableStructureIcon {
+
         public static final MapCodec<PingableStructureIcon> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
                 ResourceLocation.CODEC.fieldOf("texture").forGetter((obj) -> obj.texture),
                 Codec.INT.fieldOf("u").forGetter((obj) -> obj.u),
                 Codec.INT.fieldOf("v").forGetter((obj) -> obj.v)
         ).apply(instance, PingableStructureIcon::new));
+
         public static final StreamCodec<RegistryFriendlyByteBuf, PingableStructureIcon> STREAM_CODEC = StreamCodec.of((buffer, value) -> {
             buffer.writeResourceLocation(value.texture);
             buffer.writeInt(value.u);
@@ -46,9 +52,11 @@ public class PingableStructure {
             int v = buffer.readInt();
             return new PingableStructureIcon(texture, u, v);
         });
+
         public ResourceLocation texture;
         public int u;
         public int v;
+
         protected PingableStructureIcon(ResourceLocation texture, int u, int v) {
             this.texture = texture;
             this.u = u;

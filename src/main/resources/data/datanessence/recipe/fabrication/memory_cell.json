@@ -1,0 +1,16 @@
+{
+  "type": "datanessence:shapeless_fabrication_recipe",
+  "essenceCost": {
+    "datanessence:essence": 150
+  },
+  "entry": "datanessence:basics/components",
+  "ingredients": [
+    { "item": "datanessence:wire_spool" },
+    { "item": "datanessence:bonding_powder" },
+    { "item": "datanessence:bonding_powder" },
+    { "item": "datanessence:lensing_crystal" },
+    { "item": "datanessence:lensing_crystal" }
+  ],
+  "time": 80,
+  "result": { "id": "datanessence:memory_cell" }
+}

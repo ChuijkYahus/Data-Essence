@@ -32,6 +32,7 @@
       "datanessence:fabrication/equipment/illumination_rod",
       "datanessence:fabrication/equipment/locator",
       "datanessence:fabrication/equipment/primitive_antigravity_pack",
+      "datanessence:fabrication/equipment/signal_tracker_resonance_receptor",
       "datanessence:fabrication/equipment/transcendental_tether",
       "datanessence:fabrication/equipment/thermometer",
       "datanessence:fabrication/equipment/traversite_trudgers",
@@ -64,6 +65,7 @@
       "datanessence:fabrication/machines/mineral_purification_chamber",
       "datanessence:fabrication/machines/synthesis_chamber",
       "datanessence:fabrication/machines/vacuum",
+      "datanessence:fabrication/memory_cell",
       "datanessence:fabrication/points/essence_point",
       "datanessence:fabrication/points/fluid_point",
       "datanessence:fabrication/points/item_point",
@@ -107,6 +109,7 @@
       "datanessence:synthesis/lens_healing",
       "datanessence:synthesis/lens_precision",
       "datanessence:synthesis/logical_matrix",
-      "datanessence:synthesis/lunar_essence_wire"
+      "datanessence:synthesis/lunar_essence_wire",
+      "datanessence:synthesis/prepared_panel"
     ]
 }
