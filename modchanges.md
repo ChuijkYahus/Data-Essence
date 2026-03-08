@@ -11,6 +11,7 @@
 - Hammer and Chisel recipe changed to require only one diamond (Esét)
 - Overhauled visuals of Auto-Fabricator (Esét)
 - Renamed Essence to Tidal Energy, and subsequently cast off the "Data & Essence" title in all but on a technical level (Esét)
+- Rewrote a bunch of the Data Tablet (Esét)
 
 ### Fixes
 - Fixed Auto-Fabricator's remainder handling... AGAIN (Esét)
