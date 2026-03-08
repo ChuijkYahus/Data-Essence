@@ -24,7 +24,7 @@ import java.util.EnumMap;
 import java.util.List;
 import java.util.function.Supplier;
 
-@EventBusSubscriber(modid = DataNEssence.MOD_ID, bus = EventBusSubscriber.Bus.GAME)
+@EventBusSubscriber(modid = DataNEssence.MOD_ID)
 public class PotionRegistry {
     public static final DeferredRegister<Potion> POTIONS = DeferredRegister.create(BuiltInRegistries.POTION,
             DataNEssence.MOD_ID);

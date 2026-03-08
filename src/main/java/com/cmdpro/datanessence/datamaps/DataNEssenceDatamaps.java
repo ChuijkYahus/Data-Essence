@@ -8,7 +8,7 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.registries.datamaps.DataMapType;
 import net.neoforged.neoforge.registries.datamaps.RegisterDataMapTypesEvent;
 
-@EventBusSubscriber(modid = DataNEssence.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(modid = DataNEssence.MOD_ID)
 public class DataNEssenceDatamaps {
     public static final DataMapType<Item, PlantSiphonEssenceMap> PLANT_SIPHON_ESSENCE = DataMapType.builder(
             DataNEssence.locate("plant_siphon_essence"),
