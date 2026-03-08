@@ -1,4 +1,4 @@
-// 1.21.1	2025-12-31T03:55:30.647900821	Loot Tables
+// 1.21.1	2026-03-08T15:49:07.032142076	Loot Tables
 8a85700f294ec15ec1248a1449114b14eab3e2da data/datanessence/loot_table/blocks/aether_rune.json
 9609efe61385ebb3de54f11712e3baea7e1409d0 data/datanessence/loot_table/blocks/ancient_glyph_stone_blank.json
 10297d9c29f46c19c997dfe74ad062c709006c22 data/datanessence/loot_table/blocks/ancient_glyph_stone_blank_shieldless.json
@@ -92,6 +92,8 @@ cfa965b97908bb81593914643c4325f7191186cd data/datanessence/loot_table/blocks/len
 82460389d1f27587379117c2b34b125d3c8eecf1 data/datanessence/loot_table/blocks/lunarium.json
 dc4a387bc6b751838b832b094533a851315838c3 data/datanessence/loot_table/blocks/magenta_pearlescent_grass.json
 963e669d8ca26badcad721ff071bf148132d5bac data/datanessence/loot_table/blocks/magenta_pearlescent_spiral.json
+cf02700f3055620df8be3e63379e612d4ecf06ce data/datanessence/loot_table/blocks/makutuin_runner.json
+759371e9baf631b3bf4649bc64bc34c1efba1558 data/datanessence/loot_table/blocks/makutuin_runner_cross.json
 e8582d58a5c40ffb3c9938fd850279fe8301c2fe data/datanessence/loot_table/blocks/melter.json
 5143a208d7a58b46306c886ac293a181b7bcb62b data/datanessence/loot_table/blocks/metal_shaper.json
 fd2e4b1a9190655e502e9db90752954b3ca1d625 data/datanessence/loot_table/blocks/mineral_purification_chamber.json
@@ -121,6 +123,7 @@ ab605e4e3a9b61ab410ec5432357313df82357db data/datanessence/loot_table/blocks/tra
 655c9a718b212c895dd73792586c583116e48635 data/datanessence/loot_table/blocks/traversite_road_slab_opal.json
 09f699ac4c5e1ef56306e338be39495e4734015f data/datanessence/loot_table/blocks/traversite_road_stairs.json
 4cbc2175b2fe6caaaa5c1453c4ad50a6ad16fd04 data/datanessence/loot_table/blocks/traversite_road_stairs_opal.json
+75bec7a94db7809d48fa72fbbf240b660adca9fc data/datanessence/loot_table/blocks/twining_lantern.json
 79520676cdef899226b1394203ad881f5c962d41 data/datanessence/loot_table/blocks/vacuum.json
 60d3f9ce8c66c217521101901a03424244e3e536 data/datanessence/loot_table/blocks/vermilion_grass.json
 c7cf74417bd64df18cafe0f6d162e0d3d436f3d9 data/datanessence/loot_table/blocks/vermilion_sprout.json
