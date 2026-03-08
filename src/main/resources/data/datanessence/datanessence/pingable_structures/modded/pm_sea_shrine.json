@@ -1,0 +1,17 @@
+{
+  "structure": "primalmagick:sea_shrine",
+  "advancement": "primalmagick:story/discover_all_shrines",
+  "requiredAdvancement": "primalmagick:story/root",
+  "requiresUpgrade": true,
+  "color1": [
+    60, 106, 214
+  ],
+  "color2": [
+    22, 106, 145
+  ],
+  "icon": {
+    "texture": "datanessence:textures/gui/structure_icons_modded.png",
+    "u": 0,
+    "v": 0
+  }
+}

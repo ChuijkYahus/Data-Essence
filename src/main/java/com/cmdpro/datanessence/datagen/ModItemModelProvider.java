@@ -55,6 +55,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ItemRegistry.MOLD_PANEL);
         simpleItem(ItemRegistry.HAMMER_AND_CHISEL);
         simpleItem(ItemRegistry.LOCATOR);
+        simpleItem(ItemRegistry.LOCATOR_UPGRADE);
         simpleItem(ItemRegistry.ECLIPTRUM_INGOT);
         simpleItem(ItemRegistry.ESSENCE_METER);
         simpleItem(ItemRegistry.ORE_SCANNER);
@@ -119,6 +120,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItemWithSubdirectory(ItemRegistry.COPPER_SHELL, "components");
         simpleItemWithSubdirectory(ItemRegistry.ESSENCE_PATHWAYS, "components");
         simpleItemWithSubdirectory(ItemRegistry.ASSEMBLY_ACTUATOR, "components");
+        simpleItemWithSubdirectory(ItemRegistry.PREPARED_PANEL, "components");
+        simpleItemWithSubdirectory(ItemRegistry.MEMORY_CELL, "components");
         simpleItemWithSubdirectory(ItemRegistry.TRANSFORMATIVE_ROD, "components");
         simpleItemWithSubdirectory(ItemRegistry.REFLECTIVE_PANEL, "components");
         simpleItemWithSubdirectory(ItemRegistry.ECLIPTRUM_COG, "components");

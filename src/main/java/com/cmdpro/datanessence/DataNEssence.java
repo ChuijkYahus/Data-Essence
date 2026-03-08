@@ -302,6 +302,7 @@ public class DataNEssence
             event.accept(ItemRegistry.ATTRACTING_LENS.get());
             event.accept(ItemRegistry.BURNING_LENS.get());
             event.accept(ItemRegistry.PRECISION_LENS.get());
+            event.accept(ItemRegistry.LOCATOR_UPGRADE.get());
             event.accept(ItemRegistry.SPEED_UPGRADE.get());
             event.accept(ItemRegistry.SPEED_UPGRADE_2.get());
             event.accept(ItemRegistry.FILTER_UPGRADE.get());
@@ -321,7 +322,9 @@ public class DataNEssence
             event.accept(ItemRegistry.PROPELLER.get());
             event.accept(ItemRegistry.EXCITER.get());
             event.accept(ItemRegistry.ESSENCE_PATHWAYS.get());
+            event.accept(ItemRegistry.PREPARED_PANEL.get());
             event.accept(ItemRegistry.ASSEMBLY_ACTUATOR.get());
+            event.accept(ItemRegistry.MEMORY_CELL.get());
             event.accept(ItemRegistry.HEATING_COIL.get());
             event.accept(ItemRegistry.EXTRICATION_ROD.get());
             event.accept(ItemRegistry.IRON_DRILL.get());
@@ -489,6 +492,8 @@ public class DataNEssence
             event.accept(BlockRegistry.SHIELDLESS_ANCIENT_GLYPH_STONE_BLANK.get());
             event.accept(BlockRegistry.SHIELDLESS_ANCIENT_GLYPH_STONE_MAKUTUIN.get());
             event.accept(BlockRegistry.SHIELDLESS_ANCIENT_GLYPH_STONE_ESSENCE.get());
+            event.accept(BlockRegistry.MAKUTUIN_RUNNER.get());
+            event.accept(BlockRegistry.MAKUTUIN_RUNNER_CROSS.get());
             event.accept(BlockRegistry.COMPUTER.get());
             event.accept(BlockRegistry.ANCIENT_DATA_BANK.get());
             event.accept(BlockRegistry.STRUCTURE_PROTECTOR.get());

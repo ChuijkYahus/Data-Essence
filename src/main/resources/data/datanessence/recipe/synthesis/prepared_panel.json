@@ -1,0 +1,11 @@
+{
+  "type": "datanessence:synthesis",
+  "essenceCost": {
+    "datanessence:essence": 200
+  },
+  "input": { "item": "datanessence:capacitance_panel" },
+  "input2": { "item": "datanessence:capacitance_panel" },
+  "time": 50,
+  "result": { "id": "datanessence:prepared_panel", "count": 1 },
+  "entry": "datanessence:basics/components"
+}

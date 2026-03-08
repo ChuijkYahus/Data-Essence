@@ -18,14 +18,20 @@ import net.neoforged.neoforge.network.handling.IPayloadContext;
 import java.util.Map;
 
 public record PingableSync(Map<ResourceLocation, PingableStructure> structures) implements Message {
+
     public static PingableSync read(FriendlyByteBuf buf) {
-        Map<ResourceLocation, PingableStructure> structures = buf.readMap(ResourceLocation.STREAM_CODEC, (pBuffer) -> PingableStructureSerializer.STREAM_CODEC.decode((RegistryFriendlyByteBuf)pBuffer));
+        Map<ResourceLocation, PingableStructure> structures =
+                buf.readMap(ResourceLocation.STREAM_CODEC, (pBuffer)
+                        -> PingableStructureSerializer.STREAM_CODEC.decode((RegistryFriendlyByteBuf)pBuffer));
         return new PingableSync(structures);
     }
 
     public static void write(RegistryFriendlyByteBuf buf, PingableSync obj) {
-        buf.writeMap(obj.structures, ResourceLocation.STREAM_CODEC, (pBuffer, pValue) -> PingableStructureSerializer.STREAM_CODEC.encode((RegistryFriendlyByteBuf)pBuffer, pValue));
+        buf.writeMap(obj.structures, ResourceLocation.STREAM_CODEC,
+                (pBuffer, pValue)
+                        -> PingableStructureSerializer.STREAM_CODEC.encode((RegistryFriendlyByteBuf)pBuffer, pValue));
     }
+
     @Override
     public void handleClient(Minecraft minecraft, Player player, IPayloadContext ctx) {
         ClientHandler.handle(this);
@@ -35,6 +41,7 @@ public record PingableSync(Map<ResourceLocation, PingableStructure> structures) 
     public Type<? extends CustomPacketPayload> type() {
         return TYPE;
     }
+
     public static final Type<PingableSync> TYPE = new Type<>(DataNEssence.locate("pingable_sync"));
 
     private static class ClientHandler {

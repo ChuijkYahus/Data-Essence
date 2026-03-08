@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "datanessence:block/makutuin_runner",
+      "y": 90
+    },
+    "axis=z": {
+      "model": "datanessence:block/makutuin_runner",
+      "y": 0
+    }
+  }
+}

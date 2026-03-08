@@ -28,7 +28,8 @@
       "type": "datanessence:crafting",
       "recipes": [
         "datanessence:fabrication/logical_matrix",
-        "datanessence:fabrication/wire_spool"
+        "datanessence:fabrication/wire_spool",
+        "datanessence:fabrication/memory_cell"
       ]
     },
     {
@@ -42,7 +43,8 @@
       "type": "datanessence:crafting",
       "recipes": [
         "datanessence:synthesis/assembly_actuator",
-        "datanessence:synthesis/logical_matrix"
+        "datanessence:synthesis/logical_matrix",
+        "datanessence:synthesis/prepared_panel"
       ]
     }
   ],

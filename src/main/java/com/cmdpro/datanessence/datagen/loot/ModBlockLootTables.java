@@ -145,6 +145,8 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         dropSelf(BlockRegistry.ESSENCE_READER.get());
         dropSelf(BlockRegistry.SURVEY_TUNNELER.get());
         dropSelf(BlockRegistry.TWINING_LANTERN.get());
+        dropSelf(BlockRegistry.MAKUTUIN_RUNNER.get());
+        dropSelf(BlockRegistry.MAKUTUIN_RUNNER_CROSS.get());
         dropSelf(BlockRegistry.ESSENCE_DERIVATION_SPIKE.get());
         dropSelf(BlockRegistry.LUNAR_CRYSTAL_SEED.get());
         dropSelf(BlockRegistry.ECLIPTRUM_BLOCK.get());

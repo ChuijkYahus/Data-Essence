@@ -6,13 +6,13 @@
   "entry": "datanessence:tools/mineral_finding_rod",
   "pattern": [
     " DL",
-    " ME",
-    "R  "
+    " RE",
+    "M  "
   ],
   "time": 300,
   "key": {
     "R": { "item": "datanessence:conductance_rod" },
-    "M": { "item": "datanessence:logical_matrix" },
+    "M": { "item": "datanessence:memory_cell" },
     "L": { "item": "datanessence:lensing_crystal" },
     "D": { "item": "minecraft:diamond" },
     "E": { "item": "minecraft:emerald" }

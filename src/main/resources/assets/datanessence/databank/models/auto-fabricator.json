@@ -5,7 +5,7 @@
       "looping": true,
       "animation": [
         {
-          "bone": "arm3pt2",
+          "bone": "right_arm",
           "target": "rotation",
           "keyframes": [
             {
@@ -13,14 +13,14 @@
               "target": [
                 0,
                 0,
-                142.5
+                -20
               ],
               "interpolation": "linear"
             }
           ]
         },
         {
-          "bone": "arm2pt2",
+          "bone": "right_forearm",
           "target": "rotation",
           "keyframes": [
             {
@@ -28,37 +28,37 @@
               "target": [
                 0,
                 0,
-                -142.5
+                -45
               ],
               "interpolation": "linear"
             }
           ]
         },
         {
-          "bone": "arm1pt2",
+          "bone": "left_arm",
           "target": "rotation",
           "keyframes": [
             {
               "timestamp": 0,
               "target": [
-                -142.5,
                 0,
-                0
+                0,
+                20
               ],
               "interpolation": "linear"
             }
           ]
         },
         {
-          "bone": "arm4pt2",
+          "bone": "left_forearm",
           "target": "rotation",
           "keyframes": [
             {
               "timestamp": 0,
               "target": [
-                142.5,
                 0,
-                0
+                0,
+                45
               ],
               "interpolation": "linear"
             }
@@ -67,36 +67,102 @@
       ]
     },
     "crafting": {
-      "length": 0.75,
+      "length": 1.0833333333333333,
       "looping": true,
       "animation": [
         {
-          "bone": "arm1",
+          "bone": "right_arm",
           "target": "rotation",
           "keyframes": [
             {
               "timestamp": 0,
               "target": [
-                2.5,
+                0,
+                0,
+                -15
+              ],
+              "interpolation": "linear"
+            },
+            {
+              "timestamp": 0.624,
+              "target": [
+                0,
+                0,
+                -15
+              ],
+              "interpolation": "linear"
+            },
+            {
+              "timestamp": 0.625,
+              "target": [
+                0,
+                0,
+                25
+              ],
+              "interpolation": "linear"
+            }
+          ]
+        },
+        {
+          "bone": "right_forearm",
+          "target": "rotation",
+          "keyframes": [
+            {
+              "timestamp": 0,
+              "target": [
+                7.4717833073,
+                -0.6518169914,
+                77.4574383886
+              ],
+              "interpolation": "linear"
+            },
+            {
+              "timestamp": 0.624,
+              "target": [
+                7.4717833073,
+                -0.6518169914,
+                77.4574383886
+              ],
+              "interpolation": "linear"
+            },
+            {
+              "timestamp": 0.625,
+              "target": [
+                -15.8393274592,
+                3.4553272208,
+                45.2011292916
+              ],
+              "interpolation": "linear"
+            }
+          ]
+        },
+        {
+          "bone": "crafting_dais",
+          "target": "rotation",
+          "keyframes": [
+            {
+              "timestamp": 0,
+              "target": [
+                0,
                 0,
                 0
               ],
               "interpolation": "linear"
             },
             {
-              "timestamp": 0.375,
+              "timestamp": 0.624,
               "target": [
-                -2.5,
+                0,
                 0,
                 0
               ],
               "interpolation": "linear"
             },
             {
-              "timestamp": 0.75,
+              "timestamp": 0.625,
               "target": [
-                2.5,
                 0,
+                -42.5,
                 0
               ],
               "interpolation": "linear"
@@ -104,191 +170,32 @@
           ]
         },
         {
-          "bone": "arm2",
-          "target": "rotation",
+          "bone": "crafting_dais",
+          "target": "position",
           "keyframes": [
             {
               "timestamp": 0,
               "target": [
                 0,
-                0,
-                2.5
-              ],
-              "interpolation": "linear"
-            },
-            {
-              "timestamp": 0.375,
-              "target": [
-                0,
-                0,
-                -2.5
-              ],
-              "interpolation": "linear"
-            },
-            {
-              "timestamp": 0.75,
-              "target": [
-                0,
-                0,
-                2.5
-              ],
-              "interpolation": "linear"
-            }
-          ]
-        },
-        {
-          "bone": "arm3",
-          "target": "rotation",
-          "keyframes": [
-            {
-              "timestamp": 0,
-              "target": [
-                0,
-                0,
-                -2.5
-              ],
-              "interpolation": "linear"
-            },
-            {
-              "timestamp": 0.375,
-              "target": [
-                0,
-                0,
-                2.5
-              ],
-              "interpolation": "linear"
-            },
-            {
-              "timestamp": 0.75,
-              "target": [
-                0,
-                0,
-                -2.5
-              ],
-              "interpolation": "linear"
-            }
-          ]
-        },
-        {
-          "bone": "arm3pt2",
-          "target": "rotation",
-          "keyframes": [
-            {
-              "timestamp": 0,
-              "target": [
-                0,
-                0,
-                -115
-              ],
-              "interpolation": "linear"
-            },
-            {
-              "timestamp": 0.25,
-              "target": [
-                4.533592026,
-                2.110887807,
-                -114.916433794
-              ],
-              "interpolation": "linear"
-            },
-            {
-              "timestamp": 0.5,
-              "target": [
-                4.533592026,
-                2.110887807,
-                -109.916433794
-              ],
-              "interpolation": "linear"
-            },
-            {
-              "timestamp": 0.75,
-              "target": [
-                0,
-                0,
-                -115
-              ],
-              "interpolation": "linear"
-            }
-          ]
-        },
-        {
-          "bone": "arm2pt2",
-          "target": "rotation",
-          "keyframes": [
-            {
-              "timestamp": 0,
-              "target": [
-                0,
-                0,
-                115
-              ],
-              "interpolation": "linear"
-            },
-            {
-              "timestamp": 0.25,
-              "target": [
-                -6.804231426,
-                3.162198012,
-                114.811966078
-              ],
-              "interpolation": "linear"
-            },
-            {
-              "timestamp": 0.5,
-              "target": [
-                -6.804231426,
-                3.162198012,
-                119.811966078
-              ],
-              "interpolation": "linear"
-            },
-            {
-              "timestamp": 0.75,
-              "target": [
-                0,
-                0,
-                115
-              ],
-              "interpolation": "linear"
-            }
-          ]
-        },
-        {
-          "bone": "arm1pt2",
-          "target": "rotation",
-          "keyframes": [
-            {
-              "timestamp": 0,
-              "target": [
-                115,
-                0,
+                0.75,
                 0
               ],
               "interpolation": "linear"
             },
             {
-              "timestamp": 0.25,
+              "timestamp": 0.624,
               "target": [
-                120,
                 0,
+                0.75,
                 0
               ],
               "interpolation": "linear"
             },
             {
-              "timestamp": 0.5,
+              "timestamp": 0.625,
               "target": [
-                120,
-                5,
-                0
-              ],
-              "interpolation": "linear"
-            },
-            {
-              "timestamp": 0.75,
-              "target": [
-                115,
                 0,
+                0.5,
                 0
               ],
               "interpolation": "linear"
@@ -296,75 +203,66 @@
           ]
         },
         {
-          "bone": "arm4",
+          "bone": "left_arm",
           "target": "rotation",
           "keyframes": [
             {
               "timestamp": 0,
               "target": [
-                -2.5,
                 0,
-                0
+                0,
+                12.5
               ],
               "interpolation": "linear"
             },
             {
-              "timestamp": 0.375,
+              "timestamp": 0.624,
               "target": [
-                2.5,
                 0,
-                0
+                0,
+                12.5
               ],
               "interpolation": "linear"
             },
             {
-              "timestamp": 0.75,
+              "timestamp": 0.625,
               "target": [
-                -2.5,
-                0,
-                0
+                -1.4426127944,
+                -29.9685204146,
+                15.3861411476
               ],
               "interpolation": "linear"
             }
           ]
         },
         {
-          "bone": "arm4pt2",
+          "bone": "left_forearm",
           "target": "rotation",
           "keyframes": [
             {
               "timestamp": 0,
               "target": [
-                -115,
                 0,
-                0
+                0,
+                -45
               ],
               "interpolation": "linear"
             },
             {
-              "timestamp": 0.25,
+              "timestamp": 0.624,
               "target": [
-                -107.5,
                 0,
-                0
+                0,
+                -45
               ],
               "interpolation": "linear"
             },
             {
-              "timestamp": 0.5,
+              "timestamp": 0.625,
               "target": [
-                -107.5,
-                -5,
-                0
-              ],
-              "interpolation": "linear"
-            },
-            {
-              "timestamp": 0.75,
-              "target": [
-                -115,
-                0,
-                0
+                -22.1915656251,
+                -3.810243016,
+                -79.2524863734
               ],
               "interpolation": "linear"
             }
@@ -373,7 +271,7 @@
       ]
     },
     "hand": {
-      "length": 4.083333333333333,
+      "length": 4.08333,
       "looping": true,
       "animation": [
         {
@@ -394,10 +292,6 @@
       ]
     }
   },
-  "textureSize": [
-    64,
-    64
-  ],
   "parts": [
     {
       "type": "databank:group",
@@ -415,7 +309,7 @@
       "children": [
         {
           "type": "databank:group",
-          "name": "output",
+          "name": "machine",
           "rotation": [
             0,
             0,
@@ -423,13 +317,13 @@
           ],
           "offset": [
             0,
-            15,
+            0,
             0
           ],
           "children": [
             {
-              "type": "databank:cube",
-              "name": "cube",
+              "type": "databank:group",
+              "name": "crafting_dais",
               "rotation": [
                 0,
                 0,
@@ -437,203 +331,249 @@
               ],
               "offset": [
                 0,
-                -14,
-                -7
+                0,
+                0
+              ],
+              "children": [
+                {
+                  "type": "databank:cube",
+                  "name": "dais",
+                  "rotation": [
+                    0,
+                    0.7853981633974483,
+                    0
+                  ],
+                  "offset": [
+                    0,
+                    3,
+                    0
+                  ],
+                  "texOffset": [
+                    0,
+                    19
+                  ],
+                  "mirror": false,
+                  "origin": [
+                    -5,
+                    0,
+                    -5
+                  ],
+                  "dimensions": [
+                    10,
+                    2,
+                    10
+                  ],
+                  "inflate": 0
+                },
+                {
+                  "type": "databank:cube",
+                  "name": "crafting_plate",
+                  "rotation": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "offset": [
+                    -0.5,
+                    3.25,
+                    0.5
+                  ],
+                  "texOffset": [
+                    -7,
+                    0
+                  ],
+                  "mirror": false,
+                  "origin": [
+                    -3,
+                    1.7599999999999998,
+                    -4
+                  ],
+                  "dimensions": [
+                    7,
+                    0,
+                    7
+                  ],
+                  "inflate": 0
+                },
+                {
+                  "type": "databank:cube",
+                  "name": "piston",
+                  "rotation": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "offset": [
+                    0,
+                    1,
+                    0
+                  ],
+                  "texOffset": [
+                    30,
+                    19
+                  ],
+                  "mirror": false,
+                  "origin": [
+                    -2,
+                    0,
+                    -2
+                  ],
+                  "dimensions": [
+                    4,
+                    2,
+                    4
+                  ],
+                  "inflate": 0
+                }
+              ]
+            },
+            {
+              "type": "databank:cube",
+              "name": "base",
+              "rotation": [
+                0,
+                0,
+                0
+              ],
+              "offset": [
+                0,
+                0,
+                0
               ],
               "texOffset": [
                 0,
-                20
+                0
               ],
               "mirror": false,
               "origin": [
                 -8,
-                13,
-                -1
+                0,
+                -8
               ],
               "dimensions": [
                 16,
-                2,
+                3,
                 16
               ],
               "inflate": 0
             },
             {
               "type": "databank:cube",
-              "name": "cube1",
+              "name": "output",
               "rotation": [
                 0,
                 0,
                 0
               ],
               "offset": [
-                -6,
-                -3,
-                -6
-              ],
-              "texOffset": [
-                12,
-                0
-              ],
-              "mirror": false,
-              "origin": [
-                -1,
-                -9,
-                -1
-              ],
-              "dimensions": [
-                1,
-                11,
-                1
-              ],
-              "inflate": 0
-            },
-            {
-              "type": "databank:cube",
-              "name": "cube2",
-              "rotation": [
-                0,
-                0,
-                0
-              ],
-              "offset": [
-                7,
-                -3,
-                -6
-              ],
-              "texOffset": [
-                8,
-                0
-              ],
-              "mirror": false,
-              "origin": [
-                -1,
-                -9,
-                -1
-              ],
-              "dimensions": [
-                1,
-                11,
-                1
-              ],
-              "inflate": 0
-            },
-            {
-              "type": "databank:cube",
-              "name": "cube3",
-              "rotation": [
-                0,
-                0,
-                0
-              ],
-              "offset": [
-                -6,
-                -3,
-                7
+                0.5,
+                16,
+                -0.5
               ],
               "texOffset": [
                 0,
-                0
-              ],
-              "mirror": false,
-              "origin": [
-                -1,
-                -9,
-                -1
-              ],
-              "dimensions": [
-                1,
-                11,
-                1
-              ],
-              "inflate": 0
-            },
-            {
-              "type": "databank:cube",
-              "name": "cube4",
-              "rotation": [
-                0,
-                0,
-                0
-              ],
-              "offset": [
-                7,
-                -3,
-                7
-              ],
-              "texOffset": [
-                4,
-                0
-              ],
-              "mirror": false,
-              "origin": [
-                -1,
-                -9,
-                -1
-              ],
-              "dimensions": [
-                1,
-                11,
-                1
-              ],
-              "inflate": 0
-            },
-            {
-              "type": "databank:cube",
-              "name": "cube5",
-              "rotation": [
-                0,
-                0,
-                0
-              ],
-              "offset": [
-                0,
-                -3,
-                0
-              ],
-              "texOffset": [
-                30,
-                38
-              ],
-              "mirror": false,
-              "origin": [
-                -3,
-                -2,
-                -3
-              ],
-              "dimensions": [
-                6,
-                2,
-                6
-              ],
-              "inflate": 0
-            },
-            {
-              "type": "databank:cube",
-              "name": "cube6",
-              "rotation": [
-                0,
-                0,
-                0
-              ],
-              "offset": [
-                0,
-                -3,
-                0
-              ],
-              "texOffset": [
-                0,
-                38
+                31
               ],
               "mirror": false,
               "origin": [
                 -5,
-                0,
-                -5
+                -0.009999999999999787,
+                -4
               ],
               "dimensions": [
-                10,
-                2,
-                10
+                9,
+                2.0000000000000018,
+                9
+              ],
+              "inflate": 0
+            },
+            {
+              "type": "databank:cube",
+              "name": "output_in",
+              "rotation": [
+                0,
+                0,
+                0
+              ],
+              "offset": [
+                0.5,
+                16,
+                -0.5
+              ],
+              "texOffset": [
+                36,
+                33
+              ],
+              "mirror": false,
+              "origin": [
+                -4,
+                0.9899999999999984,
+                -3
+              ],
+              "dimensions": [
+                7,
+                1,
+                7
+              ],
+              "inflate": 0
+            },
+            {
+              "type": "databank:cube",
+              "name": "southframe",
+              "rotation": [
+                -0.2617993877991494,
+                0,
+                0
+              ],
+              "offset": [
+                0,
+                3,
+                8
+              ],
+              "texOffset": [
+                0,
+                42
+              ],
+              "mirror": false,
+              "origin": [
+                -2.5,
+                0,
+                0
+              ],
+              "dimensions": [
+                5,
+                14,
+                0
+              ],
+              "inflate": 0
+            },
+            {
+              "type": "databank:cube",
+              "name": "northframe",
+              "rotation": [
+                0.2617993877991494,
+                0,
+                0
+              ],
+              "offset": [
+                0,
+                3,
+                -8
+              ],
+              "texOffset": [
+                0,
+                42
+              ],
+              "mirror": false,
+              "origin": [
+                -2.5,
+                0,
+                0
+              ],
+              "dimensions": [
+                5,
+                14,
+                0
               ],
               "inflate": 0
             }
@@ -641,24 +581,24 @@
         },
         {
           "type": "databank:group",
-          "name": "arm4",
+          "name": "right_arm",
           "rotation": [
             0,
             0,
             0
           ],
           "offset": [
-            0,
-            4,
-            -6
+            8,
+            2,
+            0
           ],
           "children": [
             {
               "type": "databank:cube",
-              "name": "cube7",
+              "name": "upperarm",
               "rotation": [
                 0,
-                0,
+                -1.5707963267948966,
                 0
               ],
               "offset": [
@@ -668,38 +608,68 @@
               ],
               "texOffset": [
                 0,
-                38
+                4
               ],
               "mirror": false,
               "origin": [
-                -1,
                 0,
-                -1
+                -1,
+                -3
               ],
               "dimensions": [
-                2,
-                4,
-                2
+                0,
+                8,
+                4
               ],
               "inflate": 0
             },
             {
-              "type": "databank:group",
-              "name": "arm4pt2",
+              "type": "databank:cube",
+              "name": "elbow",
               "rotation": [
                 0,
                 0,
                 0
               ],
               "offset": [
+                2,
+                5,
+                0.5
+              ],
+              "texOffset": [
+                8,
+                12
+              ],
+              "mirror": false,
+              "origin": [
+                -2,
+                -1,
+                -1
+              ],
+              "dimensions": [
+                3,
+                3,
+                1
+              ],
+              "inflate": 0
+            },
+            {
+              "type": "databank:group",
+              "name": "right_forearm",
+              "rotation": [
                 0,
-                3.9000000000000004,
+                0,
                 0
+              ],
+              "offset": [
+                2,
+                6,
+                -0.5
               ],
               "children": [
                 {
                   "type": "databank:cube",
-                  "name": "cube8",
+                  "name": "forearm",
                   "rotation": [
                     0,
                     0,
@@ -708,24 +678,54 @@
                   "offset": [
                     0,
                     0,
-                    0
+                    0.5
                   ],
                   "texOffset": [
                     0,
-                    20
+                    23
                   ],
                   "mirror": false,
                   "origin": [
-                    -1,
+                    -4,
                     0,
-                    -1
+                    0
                   ],
                   "dimensions": [
-                    2,
-                    5,
-                    2
+                    4,
+                    6,
+                    0
                   ],
-                  "inflate": -0.1
+                  "inflate": 0
+                },
+                {
+                  "type": "databank:cube",
+                  "name": "fingers",
+                  "rotation": [
+                    0,
+                    0,
+                    0.7853981633974483
+                  ],
+                  "offset": [
+                    -0.75,
+                    4.25,
+                    0.5
+                  ],
+                  "texOffset": [
+                    0,
+                    19
+                  ],
+                  "mirror": false,
+                  "origin": [
+                    -2,
+                    0,
+                    0
+                  ],
+                  "dimensions": [
+                    3,
+                    4,
+                    0
+                  ],
+                  "inflate": 0
                 }
               ]
             }
@@ -733,312 +733,162 @@
         },
         {
           "type": "databank:group",
-          "name": "arm3",
+          "name": "left_arm",
           "rotation": [
             0,
             0,
             0
           ],
           "offset": [
-            -6,
-            4,
-            0
-          ],
-          "children": [
-            {
-              "type": "databank:cube",
-              "name": "cube9",
-              "rotation": [
-                0,
-                0,
-                0
-              ],
-              "offset": [
-                0,
-                0,
-                0
-              ],
-              "texOffset": [
-                40,
-                46
-              ],
-              "mirror": false,
-              "origin": [
-                -1,
-                0,
-                -1
-              ],
-              "dimensions": [
-                2,
-                4,
-                2
-              ],
-              "inflate": 0
-            },
-            {
-              "type": "databank:group",
-              "name": "arm3pt2",
-              "rotation": [
-                0,
-                0,
-                0
-              ],
-              "offset": [
-                0,
-                3.9000000000000004,
-                0
-              ],
-              "children": [
-                {
-                  "type": "databank:cube",
-                  "name": "cube10",
-                  "rotation": [
-                    0,
-                    0,
-                    0
-                  ],
-                  "offset": [
-                    0,
-                    0,
-                    0
-                  ],
-                  "texOffset": [
-                    8,
-                    27
-                  ],
-                  "mirror": false,
-                  "origin": [
-                    -1,
-                    0,
-                    -1
-                  ],
-                  "dimensions": [
-                    2,
-                    5,
-                    2
-                  ],
-                  "inflate": -0.1
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "databank:group",
-          "name": "arm2",
-          "rotation": [
-            0,
-            0,
-            0
-          ],
-          "offset": [
-            6,
-            4,
-            0
-          ],
-          "children": [
-            {
-              "type": "databank:cube",
-              "name": "cube11",
-              "rotation": [
-                0,
-                0,
-                0
-              ],
-              "offset": [
-                0,
-                0,
-                0
-              ],
-              "texOffset": [
-                48,
-                0
-              ],
-              "mirror": false,
-              "origin": [
-                -1,
-                0,
-                -1
-              ],
-              "dimensions": [
-                2,
-                4,
-                2
-              ],
-              "inflate": 0
-            },
-            {
-              "type": "databank:group",
-              "name": "arm2pt2",
-              "rotation": [
-                0,
-                0,
-                0
-              ],
-              "offset": [
-                0,
-                3.9000000000000004,
-                0
-              ],
-              "children": [
-                {
-                  "type": "databank:cube",
-                  "name": "cube12",
-                  "rotation": [
-                    0,
-                    0,
-                    0
-                  ],
-                  "offset": [
-                    0,
-                    0,
-                    0
-                  ],
-                  "texOffset": [
-                    0,
-                    27
-                  ],
-                  "mirror": false,
-                  "origin": [
-                    -1,
-                    0,
-                    -1
-                  ],
-                  "dimensions": [
-                    2,
-                    5,
-                    2
-                  ],
-                  "inflate": -0.1
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "databank:group",
-          "name": "arm1",
-          "rotation": [
-            0,
-            0,
-            0
-          ],
-          "offset": [
-            0,
-            4,
-            6
-          ],
-          "children": [
-            {
-              "type": "databank:cube",
-              "name": "cube13",
-              "rotation": [
-                0,
-                0,
-                0
-              ],
-              "offset": [
-                0,
-                0,
-                0
-              ],
-              "texOffset": [
-                48,
-                6
-              ],
-              "mirror": false,
-              "origin": [
-                -1,
-                0,
-                -1
-              ],
-              "dimensions": [
-                2,
-                4,
-                2
-              ],
-              "inflate": 0
-            },
-            {
-              "type": "databank:group",
-              "name": "arm1pt2",
-              "rotation": [
-                0,
-                0,
-                0
-              ],
-              "offset": [
-                0,
-                3.9000000000000004,
-                0
-              ],
-              "children": [
-                {
-                  "type": "databank:cube",
-                  "name": "cube14",
-                  "rotation": [
-                    0,
-                    0,
-                    0
-                  ],
-                  "offset": [
-                    0,
-                    0,
-                    0
-                  ],
-                  "texOffset": [
-                    8,
-                    20
-                  ],
-                  "mirror": false,
-                  "origin": [
-                    -1,
-                    0,
-                    -1
-                  ],
-                  "dimensions": [
-                    2,
-                    5,
-                    2
-                  ],
-                  "inflate": -0.1
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "databank:cube",
-          "name": "cube15",
-          "rotation": [
-            0,
-            0,
-            0
-          ],
-          "offset": [
-            0,
-            0,
-            0
-          ],
-          "texOffset": [
-            0,
-            0
-          ],
-          "mirror": false,
-          "origin": [
             -8,
-            0,
-            -8
+            2,
+            0
           ],
-          "dimensions": [
-            16,
-            4,
-            16
-          ],
-          "inflate": 0
+          "children": [
+            {
+              "type": "databank:cube",
+              "name": "upperarm1",
+              "rotation": [
+                0,
+                1.5707963267948966,
+                0
+              ],
+              "offset": [
+                0,
+                0,
+                0
+              ],
+              "texOffset": [
+                0,
+                4
+              ],
+              "mirror": false,
+              "origin": [
+                0,
+                -1,
+                -3
+              ],
+              "dimensions": [
+                0,
+                8,
+                4
+              ],
+              "inflate": 0
+            },
+            {
+              "type": "databank:cube",
+              "name": "elbow1",
+              "rotation": [
+                0,
+                -3.141592653589793,
+                0
+              ],
+              "offset": [
+                -2,
+                5,
+                -0.5
+              ],
+              "texOffset": [
+                8,
+                12
+              ],
+              "mirror": false,
+              "origin": [
+                -2,
+                -1,
+                -1
+              ],
+              "dimensions": [
+                3,
+                3,
+                1
+              ],
+              "inflate": 0
+            },
+            {
+              "type": "databank:group",
+              "name": "left_forearm",
+              "rotation": [
+                0,
+                0,
+                0
+              ],
+              "offset": [
+                -2,
+                6,
+                -0.5
+              ],
+              "children": [
+                {
+                  "type": "databank:cube",
+                  "name": "forearm1",
+                  "rotation": [
+                    0,
+                    -3.141592653589793,
+                    0
+                  ],
+                  "offset": [
+                    0,
+                    0,
+                    0.5
+                  ],
+                  "texOffset": [
+                    48,
+                    10
+                  ],
+                  "mirror": false,
+                  "origin": [
+                    -4,
+                    0,
+                    0
+                  ],
+                  "dimensions": [
+                    4,
+                    6,
+                    0
+                  ],
+                  "inflate": 0
+                },
+                {
+                  "type": "databank:cube",
+                  "name": "fingers1",
+                  "rotation": [
+                    0,
+                    0,
+                    -0.7853981633974483
+                  ],
+                  "offset": [
+                    0.75,
+                    4.25,
+                    0.5
+                  ],
+                  "texOffset": [
+                    48,
+                    6
+                  ],
+                  "mirror": false,
+                  "origin": [
+                    -1,
+                    0,
+                    0
+                  ],
+                  "dimensions": [
+                    3,
+                    4,
+                    0
+                  ],
+                  "inflate": 0
+                }
+              ]
+            }
+          ]
         }
       ]
     }
+  ],
+  "textureSize": [
+    64,
+    64
   ],
   "version": 1
 }

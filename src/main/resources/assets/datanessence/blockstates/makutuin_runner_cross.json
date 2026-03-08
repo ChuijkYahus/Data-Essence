@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "datanessence:block/makutuin_runner_cross",
+      "y": 90
+    },
+    "axis=z": {
+      "model": "datanessence:block/makutuin_runner_cross",
+      "y": 0
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+	"format_version": "1.9.0",
+	"credit": "~Esét Kalenko",
+	"textures": {
+		"0": "datanessence:block/deco/makutuin_runner",
+		"1": "datanessence:block/deco/makutuin_runner_cross",
+		"particle": "datanessence:block/deco/makutuin_runner"
+	},
+	"elements": [
+		{
+			"from": [1, 0, 0],
+			"to": [15, 1, 16],
+			"faces": {
+				"north": {"uv": [0, 14, 14, 15], "texture": "#0"},
+				"east": {"uv": [0, 1, 16, 2], "rotation": 180, "texture": "#0"},
+				"south": {"uv": [0, 15, 14, 16], "texture": "#0"},
+				"west": {"uv": [0, 1, 16, 2], "texture": "#0"},
+				"up": {"uv": [0, 1, 16, 15], "rotation": 90, "texture": "#1"},
+				"down": {"uv": [0, 1, 16, 15], "rotation": 270, "texture": "#1"}
+			}
+		},
+		{
+			"from": [0, 0.01, 1],
+			"to": [16, 1.01, 15],
+			"faces": {
+				"north": {"uv": [0, 14, 14, 15], "texture": "#0"},
+				"east": {"uv": [0, 15, 14, 16], "rotation": 180, "texture": "#0"},
+				"south": {"uv": [0, 15, 14, 16], "texture": "#0"},
+				"west": {"uv": [0, 15, 14, 16], "texture": "#0"},
+				"up": {"uv": [1, 0, 15, 16], "rotation": 90, "texture": "#1"},
+				"down": {"uv": [1, 0, 15, 16], "rotation": 270, "texture": "#1"}
+			}
+		}
+	]
+}

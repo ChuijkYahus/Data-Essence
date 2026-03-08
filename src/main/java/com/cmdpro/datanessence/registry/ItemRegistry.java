@@ -33,7 +33,10 @@ public class ItemRegistry {
     public static final Supplier<Item> ECLIPTRUM_MOLD_ROD = register("rod_mold_ecliptrum", () -> new Item(new Item.Properties().component(DataComponentRegistry.MOLD, DataNEssence.locate("metal_shaping/transformative_rod"))));
     public static final Supplier<Item> ECLIPTRUM_MOLD_PANEL = register("panel_mold_ecliptrum", () -> new Item(new Item.Properties().component(DataComponentRegistry.MOLD, DataNEssence.locate("metal_shaping/reflective_panel"))));
     public static final Supplier<Item> THERMOMETER = register("thermometer", () -> new Thermometer(new Item.Properties().stacksTo(1)));
-    public static final Supplier<Item> LOCATOR = register("locator", () -> new Locator(new Item.Properties().stacksTo(1)));
+    public static final Supplier<Item> LOCATOR = register("locator", () -> new Locator(new Item.Properties()
+            .stacksTo(1)
+            .component(DataComponentRegistry.SIGNAL_TRACKER_MODE, false)
+            .component(DataComponentRegistry.SIGNAL_TRACKER_UPGRADED, false)));
     public static final Supplier<Item> ESSENCE_METER = register("essence_meter", () -> new EssenceMeter(new Item.Properties().stacksTo(1)));
 
     // Equipment
@@ -95,6 +98,8 @@ public class ItemRegistry {
     public static final Supplier<Item> EXTRICATION_ROD = register("extrication_rod", () -> new Item(new Item.Properties()));
     public static final Supplier<Item> FROZEN_MOONLIGHT_CHUNK = register("frozen_moonlight_chunk", () -> new Item(new Item.Properties()));
     public static final Supplier<Item> TRANSFORMATIVE_GEL = register("transformative_gel", () -> new Item(new Item.Properties()));
+    public static final Supplier<Item> PREPARED_PANEL = register("prepared_panel", () -> new Item(new Item.Properties()));
+    public static final Supplier<Item> MEMORY_CELL = register("memory_cell", () -> new Item(new Item.Properties()));
 
     // Ore Processing Intermediates and Nuggets
     public static final Supplier<Item> COPPER_NUGGET = register("copper_nugget", () -> new Item(new Item.Properties()));
@@ -107,6 +112,7 @@ public class ItemRegistry {
     public static final Supplier<Item> WEIGHTY_MAGNETITE = register("weighty_magnetite", () -> new Item(new Item.Properties()));
 
     // Misc
+    public static final Supplier<Item> LOCATOR_UPGRADE = register("signal_tracker_resonance_receptor", () -> new LocatorUpgrade(new Item.Properties()));
     public static final Supplier<Item> COGNIZANT_CUBE = register("cognizant_cube", () -> new CognizantCube(new Item.Properties().stacksTo(1)));
     public static final Supplier<Item> MUSIC_DISC_PLAYER = register("music_disc_player", () -> new MusicDiscPlayer(new Item.Properties().stacksTo(1).component(DataComponents.CONTAINER, ItemContainerContents.EMPTY)));
     public static final Supplier<Item> TRAVERSITE_ROAD_CHUNK = register("traversite_road_chunk", () -> new TraversiteRoadChunk(new Item.Properties()));

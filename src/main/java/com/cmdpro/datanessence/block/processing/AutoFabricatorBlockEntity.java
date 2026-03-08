@@ -234,14 +234,8 @@ public class AutoFabricatorBlockEntity extends BlockEntity implements MenuProvid
                 ItemStack remainderItem = remaining.get(l + k * craftingInput.width());
                 if (!existingItem.isEmpty()) {
                     itemHandler.extractItem(i1, 1, false);
-                    existingItem = itemHandler.getStackInSlot(i1); // we re-check this slot after crafting
-                }
-
-                if (!existingItem.isEmpty()) {
                     ItemEntity entity = new ItemEntity(level, (float) getBlockPos().getX() + 0.5f, (float) getBlockPos().getY() + 1f, (float) getBlockPos().getZ() + 0.5f, remainderItem);
                     level.addFreshEntity(entity);
-                } else {
-                    itemHandler.insertItem(i1, remainderItem, false);
                 }
             }
         }
@@ -299,55 +293,85 @@ public class AutoFabricatorBlockEntity extends BlockEntity implements MenuProvid
             checkRecipes();
         }
     }
-    public static void tick(Level pLevel, BlockPos pPos, BlockState pState, AutoFabricatorBlockEntity pBlockEntity) {
-        if (!pLevel.isClientSide()) {
-            BufferUtil.getEssenceFromBuffersBelow(pBlockEntity, List.of(EssenceTypeRegistry.ESSENCE.get(), EssenceTypeRegistry.LUNAR_ESSENCE.get(), EssenceTypeRegistry.NATURAL_ESSENCE.get(), EssenceTypeRegistry.EXOTIC_ESSENCE.get()));
 
-            for ( var lockedSlot : pBlockEntity.getLockable() ) {
+    public static void tick(Level world, BlockPos pos, BlockState state, AutoFabricatorBlockEntity fabricator) {
+
+        if (!world.isClientSide()) {
+            BufferUtil.getEssenceFromBuffersBelow(fabricator, List.of(EssenceTypeRegistry.ESSENCE.get(), EssenceTypeRegistry.LUNAR_ESSENCE.get(), EssenceTypeRegistry.NATURAL_ESSENCE.get(), EssenceTypeRegistry.EXOTIC_ESSENCE.get()));
+
+            for ( var lockedSlot : fabricator.getLockable() ) {
                 if (!lockedSlot.locked)
                     return;
             }
 
-            BufferUtil.getItemsFromBuffersBelow(pBlockEntity, pBlockEntity.itemHandler);
+            BufferUtil.getItemsFromBuffersBelow(fabricator, fabricator.itemHandler);
 
-            if (pBlockEntity.recipe != null && hasNotReachedStackLimit(pBlockEntity, pBlockEntity.recipe.getResultItem(pLevel.registryAccess()))) {
+            if (world.hasNeighborSignal(pos))
+                return;
+
+            if (fabricator.recipe != null && hasNotReachedStackLimit(fabricator, fabricator.recipe.getResultItem(world.registryAccess()))) {
                 boolean enoughEssence = true;
-                for (Map.Entry<ResourceLocation, Float> i : pBlockEntity.essenceCost.entrySet()) {
+
+                for (Map.Entry<ResourceLocation, Float> i : fabricator.essenceCost.entrySet()) {
                     EssenceType type = DataNEssenceRegistries.ESSENCE_TYPE_REGISTRY.get(i.getKey());
-                    if (pBlockEntity.storage.getEssence(type) < i.getValue()) {
+                    if (fabricator.storage.getEssence(type) < i.getValue()) {
                         enoughEssence = false;
                     }
                 }
-                pBlockEntity.enoughEssence = enoughEssence;
-                if (pBlockEntity.recipe.matches(pBlockEntity.getCraftingInv().asCraftInput(), pBlockEntity.level)) {
-                    pBlockEntity.craftingProgress++;
-                    for (Map.Entry<ResourceLocation, Float> i : pBlockEntity.essenceCost.entrySet()) {
+                fabricator.enoughEssence = enoughEssence;
+
+                if (fabricator.recipe.matches(fabricator.getCraftingInv().asCraftInput(), fabricator.level)) {
+
+                    if (!isRecipeComplete(fabricator))
+                        return;
+
+                    fabricator.craftingProgress++;
+                    for (Map.Entry<ResourceLocation, Float> i : fabricator.essenceCost.entrySet()) {
                         EssenceType type = DataNEssenceRegistries.ESSENCE_TYPE_REGISTRY.get(i.getKey());
-                        pBlockEntity.storage.removeEssence(type, i.getValue()/pBlockEntity.maxTime);
+                        fabricator.storage.removeEssence(type, i.getValue()/fabricator.maxTime);
                     }
                 } else {
-                    pBlockEntity.craftingProgress = -1;
+                    fabricator.craftingProgress = -1;
                 }
+
             } else {
-                pBlockEntity.craftingProgress = -1;
+                fabricator.craftingProgress = -1;
             }
-            if (pBlockEntity.craftingProgress >= pBlockEntity.maxTime) {
-                pBlockEntity.tryCraft();
-                pBlockEntity.craftingProgress = 0;
+            if (fabricator.craftingProgress >= fabricator.maxTime) {
+                fabricator.tryCraft();
+                fabricator.craftingProgress = 0;
             }
-            pBlockEntity.updateBlock();
+            fabricator.updateBlock();
         } else {
-            if (pBlockEntity.craftingProgress >= 0 && pBlockEntity.essenceCost != null) {
-                if ( pBlockEntity.essenceCost.containsKey(DataNEssenceRegistries.ESSENCE_TYPE_REGISTRY.getKey(EssenceTypeRegistry.ESSENCE.get())) )
-                    ClientHandler.markIndustrialFactorySong(pPos);
+            if (fabricator.craftingProgress >= 0 && fabricator.essenceCost != null) {
+                if ( fabricator.essenceCost.containsKey(DataNEssenceRegistries.ESSENCE_TYPE_REGISTRY.getKey(EssenceTypeRegistry.ESSENCE.get())) )
+                    ClientHandler.markIndustrialFactorySong(pos);
             }
         }
     }
+
+    /**
+     * Returns whether all of the locked slots in this machine are filled with an item
+     */
+    private static boolean isRecipeComplete(AutoFabricatorBlockEntity fabber) {
+        boolean areAllSlotsFilled = true;
+
+        for ( var slotIndex : fabber.itemHandler.lockedSlots.keySet() ) {
+            for (var slot : fabber.getLockable()) {
+                if ( slot.locked && slot.getStackInSlot(slotIndex).isEmpty() )
+                    areAllSlotsFilled = false;
+            }
+        }
+
+        return areAllSlotsFilled;
+    }
+
     protected void updateBlock() {
         BlockState blockState = level.getBlockState(this.getBlockPos());
         this.level.sendBlockUpdated(this.getBlockPos(), blockState, blockState, 3);
         this.setChanged();
     }
+
     private static boolean hasNotReachedStackLimit(AutoFabricatorBlockEntity entity, ItemStack toAdd) {
         if (toAdd.is(entity.outputItemHandler.getStackInSlot(0).getItem())) {
             return entity.outputItemHandler.getStackInSlot(0).getCount() + toAdd.getCount() <= entity.outputItemHandler.getStackInSlot(0).getMaxStackSize();
