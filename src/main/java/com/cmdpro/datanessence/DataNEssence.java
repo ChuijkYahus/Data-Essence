@@ -34,7 +34,7 @@ import static com.cmdpro.datanessence.integration.DataNEssenceIntegration.*;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod("datanessence")
-@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, modid = DataNEssence.MOD_ID)
+@EventBusSubscriber(modid = DataNEssence.MOD_ID)
 public class DataNEssence
 {
     public static final String MOD_ID = "datanessence";

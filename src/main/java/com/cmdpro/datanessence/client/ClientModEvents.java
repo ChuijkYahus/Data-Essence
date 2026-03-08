@@ -46,7 +46,7 @@ import java.awt.*;
 
 import static com.cmdpro.datanessence.integration.DataNEssenceIntegration.hasOpalescence;
 
-@EventBusSubscriber(value = Dist.CLIENT, modid = DataNEssence.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(value = Dist.CLIENT, modid = DataNEssence.MOD_ID)
 public class ClientModEvents {
     @SubscribeEvent
     public static void registerGuiLayers(RegisterGuiLayersEvent event) {
