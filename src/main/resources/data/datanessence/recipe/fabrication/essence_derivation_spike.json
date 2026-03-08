@@ -5,11 +5,11 @@
   "entry": "datanessence:essence_manipulation/essence_derivation_spike",
   "pattern": [
     " R ",
-    "CGC",
+    "PGP",
     "OEO"
   ],
   "key": {
-    "C": { "item": "datanessence:capacitance_panel" },
+    "P": { "item": "datanessence:prepared_panel" },
     "G": { "item": "datanessence:ecliptrum_cog_assembly_2x" },
     "R": { "item": "datanessence:extrication_rod" },
     "E": { "item": "datanessence:essence_shard" },

@@ -6,13 +6,13 @@
   "entry": "datanessence:tools/repulsion_rod",
   "pattern": [
     " lL",
-    " Ml",
-    "R  "
+    " Rl",
+    "M  "
   ],
   "key": {
     "l": { "item": "datanessence:lensing_crystal" },
     "R": { "item": "datanessence:transformative_rod" },
-    "M": { "item": "datanessence:logical_matrix" },
+    "M": { "item": "datanessence:memory_cell" },
     "L": { "item": "datanessence:lunar_essence_shard" }
   },
   "result": { "id": "datanessence:repulsion_rod" }

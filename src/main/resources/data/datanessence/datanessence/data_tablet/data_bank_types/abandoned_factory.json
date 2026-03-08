@@ -46,6 +46,7 @@
     "datanessence:tier_2/twining_lantern",
     "datanessence:tier_2/warp_capsule",
     "datanessence:tier_3/ecliptrum",
+    "datanessence:tier_3/essence_derivation_spike",
     "datanessence:tier_3/lunar_essence_battery",
     "datanessence:tier_3/lunar_essence_transfer",
     { "value": "datanessence:tier_1/mod_integration_opalescence", "required": false },
