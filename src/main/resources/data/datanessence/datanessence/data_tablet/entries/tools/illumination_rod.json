@@ -25,6 +25,7 @@
   },
   "parents": [
     "datanessence:basics/lensing_crystals",
+    "datanessence:basics/bonding_powder",
     "datanessence:tools/charger"
   ]
 }

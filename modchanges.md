@@ -1,9 +1,11 @@
 ### Additions
 - Added "arcane resonance seeking" upgrade for the Signal Tracker, allowing it to find certain structures from other mods (Esét)
 - Added Makutuin Runner carpet-type block (Esét)
+- Added some more advanced crafting components (Esét)
 
 ### Changes
 - Added Runners and an additional loot chest to Arekko's Vault (Esét)
+- All Rod recipes now require a new advanced crafting component (Esét)
 - Auto-Fabricators can be disabled by applying redstone (Esét)
 - Auto-Fabricators won't craft until all their locked slots are filled (Esét)
 - Hammer and Chisel recipe changed to require only one diamond (Esét)
