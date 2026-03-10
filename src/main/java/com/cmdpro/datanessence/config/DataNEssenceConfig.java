@@ -72,7 +72,7 @@ public class DataNEssenceConfig {
             wireDistanceLimit = COMMON.wireDistanceLimitValue.get();
             twiningLanternFuelRatio = COMMON.twiningLanternFuelRatioValue.get();
         } catch (Exception e) {
-            DataNEssence.LOGGER.warn("[DATANESSENCE] Failed to load config!");
+            DataNEssence.LOGGER.warn("[HALCYON] Failed to load config!");
             e.printStackTrace();
         }
     }

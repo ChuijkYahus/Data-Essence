@@ -268,7 +268,7 @@ public abstract class BaseFabricatorBlockEntity extends BlockEntity implements E
     public boolean isNotTryingToCraftBrokenRecipe() {
         var isBroken = (recipe.getResultItem(level.registryAccess()).isEmpty() || recipe.getIngredients().stream().allMatch(Ingredient::hasNoItems));
         if (isBroken && !level.isClientSide)
-            DataNEssence.LOGGER.warn("[DATANESSENCE] Fabricator at {}, {}, {} is trying to craft \"{}\", which has an erroneously empty ingredient list or result! It is highly advised to correct or remove this recipe to prevent further errors.", this.worldPosition.getX(), this.worldPosition.getY(), this.worldPosition.getZ(), recipe);
+            DataNEssence.LOGGER.warn("[HALCYON] Fabricator at {}, {}, {} is trying to craft \"{}\", which has an erroneously empty ingredient list or result! It is highly advised to correct or remove this recipe to prevent further errors.", this.worldPosition.getX(), this.worldPosition.getY(), this.worldPosition.getZ(), recipe);
         return !isBroken;
     }
 
