@@ -1,0 +1,22 @@
+{
+  "display": {
+    "icon": {
+      "id": "datanessence:logical_matrix"
+    },
+    "frame": "goal",
+    "title": {
+      "translate": "advancements.datanessence.craft_logical_matrix.title"
+    },
+    "description": {
+      "translate": "advancements.datanessence.craft_logical_matrix.description"
+    },
+    "hidden": false
+  },
+  "parent": "datanessence:progression/acquire_fabricator",
+  "criteria": {
+    "craft": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": { "items": [ { "items": ["datanessence:logical_matrix" ] } ] }
+    }
+  }
+}

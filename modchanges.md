@@ -1,7 +1,11 @@
 ### Additions
 - Added "arcane resonance seeking" upgrade for the Signal Tracker, allowing it to find certain structures from other mods (Esét)
 - Added Makutuin Runner carpet-type block (Esét)
+- Added many new advancements (Esét)
 - Added some more advanced crafting components (Esét)
+
+### Removals
+- Removed the "maximize" command; it never truly worked right (Esét)
 
 ### Changes
 - Added Runners and an additional loot chest to Arekko's Vault (Esét)
@@ -12,6 +16,7 @@
 - Overhauled visuals of Auto-Fabricator (Esét)
 - Renamed Essence to Tidal Energy, and subsequently cast off the "Data & Essence" title in all but on a technical level (Esét)
 - Rewrote a bunch of the Data Tablet (Esét)
+- Slowed progression; made more entries incomplete (Esét)
 
 ### Fixes
 - Fixed Auto-Fabricator's remainder handling... AGAIN (Esét)

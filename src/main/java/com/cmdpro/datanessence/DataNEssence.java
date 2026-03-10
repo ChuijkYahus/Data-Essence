@@ -77,6 +77,7 @@ public class DataNEssence
         FluidRegistry.FLUIDS.register(bus);
         PotionRegistry.POTIONS.register(bus);
         HiddenConditionRegistry.HIDDEN_CONDITIONS.register(bus);
+        HalcyonCriteria.register(bus);
         random = RandomSource.create();
 
         DataNEssenceIntegration.init();

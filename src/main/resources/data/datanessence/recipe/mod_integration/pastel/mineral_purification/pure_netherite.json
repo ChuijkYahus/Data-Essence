@@ -6,7 +6,7 @@
         }
     ],
     "type": "datanessence:mineral_purification",
-    "input": { "item": "pastel:pure_netherite" },
+    "input": { "item": "pastel:pure_netherite_scrap" },
     "time": 300,
     "result": { "id": "minecraft:netherite_scrap" },
     "nuggetResult": { "id": "minecraft:netherite_scrap", "count": 5 }
