@@ -19,7 +19,7 @@
     }
   ],
   "name": {
-    "translate": "data_tablet.pages.tag_filter.name"
+    "translate": "data_tablet.pages.advanced_filtering.name"
   },
   "parents": [
     "datanessence:machinery/item_filter"

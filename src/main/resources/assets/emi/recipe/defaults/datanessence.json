@@ -80,6 +80,7 @@
       "datanessence:fabrication/utilities/twining_lantern",
       "datanessence:fabrication/sigils/filter",
       "datanessence:fabrication/sigils/speed",
+      "datanessence:fabrication/tag_filter",
       "datanessence:fabrication/wire_spool",
       "datanessence:fluid_mixing/genderfluid",
       "datanessence:infusion/essence_pathways",
