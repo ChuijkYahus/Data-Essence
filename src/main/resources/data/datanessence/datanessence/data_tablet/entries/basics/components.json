@@ -5,6 +5,7 @@
   "tab": "datanessence:basics",
   "x": -3,
   "y": 0,
+  "critical": true,
   "pages": [
     {
       "type": "datanessence:text",
@@ -53,5 +54,28 @@
   },
   "parents": [
     "datanessence:basics/fabricator"
+  ],
+  "completion_stages": [
+    {
+      "completion_advancements": [
+        "datanessence:progression/craft_logical_matrix"
+      ],
+      "pages": [
+        {
+          "type": "datanessence:text",
+          "text": {
+            "translate": "data_tablet.pages.components.page1.incomplete_text"
+          }
+        },
+        {
+          "type": "datanessence:crafting",
+          "recipes": [
+            "datanessence:crafting/capacitance_panel",
+            "datanessence:crafting/conductance_rod",
+            "datanessence:fabrication/logical_matrix"
+          ]
+        }
+      ]
+    }
   ]
 }

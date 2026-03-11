@@ -30,6 +30,6 @@
     "translate": "data_tablet.pages.essence_breaker.flavor"
   },
   "parents": [
-    "datanessence:essence_manipulation/essence_transfer"
+    "datanessence:basics/components"
   ]
 }

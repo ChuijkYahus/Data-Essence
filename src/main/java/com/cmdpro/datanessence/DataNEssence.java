@@ -267,6 +267,7 @@ public class DataNEssence
             event.accept(ItemRegistry.ESSENCE_METER.get());
             event.accept(ItemRegistry.MOLD_PANEL.get());
             event.accept(ItemRegistry.MOLD_ROD.get());
+            event.accept(ItemRegistry.TAG_FILTER_LABEL.get());
             //event.accept(ItemRegistry.THERMOMETER.get());
             event.accept(ItemRegistry.HAMMER_AND_CHISEL.get());
             event.accept(ItemRegistry.ORE_SCANNER.get());

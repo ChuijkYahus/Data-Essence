@@ -36,6 +36,7 @@ public class ItemRegistry {
             .component(DataComponentRegistry.SIGNAL_TRACKER_MODE, false)
             .component(DataComponentRegistry.SIGNAL_TRACKER_UPGRADED, false)));
     public static final Supplier<Item> ESSENCE_METER = register("essence_meter", () -> new EssenceMeter(new Item.Properties().stacksTo(1)));
+    public static final Supplier<Item> TAG_FILTER_LABEL = register("tag_filter", () -> new TagFilterLabel(new Item.Properties()));
 
     // Equipment
     public static final Supplier<Item> ESSENCE_SWORD = register("essence_sword", () -> new EssenceSword(new Item.Properties().stacksTo(1)));

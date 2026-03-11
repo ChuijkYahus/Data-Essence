@@ -11,7 +11,7 @@
     },
     "hidden": false
   },
-  "parent": "datanessence:progression/acquire_fabricator",
+  "parent": "datanessence:progression/craft_logical_matrix",
   "criteria": {
     "has_data_drive": {
       "trigger": "minecraft:inventory_changed",

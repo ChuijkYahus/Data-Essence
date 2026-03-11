@@ -11,7 +11,7 @@
     },
     "hidden": false
   },
-  "parent": "datanessence:progression/acquire_fabricator",
+  "parent": "datanessence:progression/craft_logical_matrix",
   "criteria": {
     "placed_fluid_collector": {
       "trigger": "minecraft:placed_block",

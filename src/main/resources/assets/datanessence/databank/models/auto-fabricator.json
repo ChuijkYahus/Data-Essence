@@ -67,7 +67,7 @@
       ]
     },
     "crafting": {
-      "length": 1.0833333333333333,
+      "length": 1.5,
       "looping": true,
       "animation": [
         {
@@ -84,20 +84,11 @@
               "interpolation": "linear"
             },
             {
-              "timestamp": 0.624,
+              "timestamp": 1.5,
               "target": [
                 0,
                 0,
                 -15
-              ],
-              "interpolation": "linear"
-            },
-            {
-              "timestamp": 0.625,
-              "target": [
-                0,
-                0,
-                25
               ],
               "interpolation": "linear"
             }
@@ -110,27 +101,63 @@
             {
               "timestamp": 0,
               "target": [
-                7.4717833073,
-                -0.6518169914,
-                77.4574383886
+                0,
+                0,
+                87.5
               ],
               "interpolation": "linear"
             },
             {
-              "timestamp": 0.624,
+              "timestamp": 0.25,
               "target": [
-                7.4717833073,
-                -0.6518169914,
-                77.4574383886
+                12.4539205436,
+                -1.0808891363,
+                92.3820597709
               ],
               "interpolation": "linear"
             },
             {
-              "timestamp": 0.625,
+              "timestamp": 0.5,
               "target": [
-                -15.8393274592,
-                3.4553272208,
-                45.2011292916
+                0.0763278256,
+                -0.8621246835,
+                83.9047953776
+              ],
+              "interpolation": "linear"
+            },
+            {
+              "timestamp": 0.875,
+              "target": [
+                -12.2801031532,
+                2.1483400988,
+                97.4630753084
+              ],
+              "interpolation": "linear"
+            },
+            {
+              "timestamp": 1.125,
+              "target": [
+                -7.4725826582,
+                0.319036446,
+                86.0400099199
+              ],
+              "interpolation": "linear"
+            },
+            {
+              "timestamp": 1.25,
+              "target": [
+                0.1303939405,
+                1.0734934368,
+                96.4902783182
+              ],
+              "interpolation": "linear"
+            },
+            {
+              "timestamp": 1.5,
+              "target": [
+                0,
+                0,
+                87.5
               ],
               "interpolation": "linear"
             }
@@ -150,52 +177,10 @@
               "interpolation": "linear"
             },
             {
-              "timestamp": 0.624,
+              "timestamp": 1.5,
               "target": [
                 0,
-                0,
-                0
-              ],
-              "interpolation": "linear"
-            },
-            {
-              "timestamp": 0.625,
-              "target": [
-                0,
-                -42.5,
-                0
-              ],
-              "interpolation": "linear"
-            }
-          ]
-        },
-        {
-          "bone": "crafting_dais",
-          "target": "position",
-          "keyframes": [
-            {
-              "timestamp": 0,
-              "target": [
-                0,
-                0.75,
-                0
-              ],
-              "interpolation": "linear"
-            },
-            {
-              "timestamp": 0.624,
-              "target": [
-                0,
-                0.75,
-                0
-              ],
-              "interpolation": "linear"
-            },
-            {
-              "timestamp": 0.625,
-              "target": [
-                0,
-                0.5,
+                180,
                 0
               ],
               "interpolation": "linear"
@@ -211,25 +196,52 @@
               "target": [
                 0,
                 0,
-                12.5
+                25
               ],
               "interpolation": "linear"
             },
             {
-              "timestamp": 0.624,
+              "timestamp": 0.375,
               "target": [
-                0,
-                0,
-                12.5
+                -7.6092410198,
+                -5.8134425986,
+                -12.1519075305
               ],
               "interpolation": "linear"
             },
             {
-              "timestamp": 0.625,
+              "timestamp": 0.75,
               "target": [
-                -1.4426127944,
-                -29.9685204146,
-                15.3861411476
+                9.8907589802,
+                -5.8134425986,
+                -12.1519075305
+              ],
+              "interpolation": "linear"
+            },
+            {
+              "timestamp": 1,
+              "target": [
+                -5.9061606799,
+                -3.8756283991,
+                0.2320616463
+              ],
+              "interpolation": "linear"
+            },
+            {
+              "timestamp": 1.25,
+              "target": [
+                4.5469196601,
+                -1.9378141995,
+                12.6160308231
+              ],
+              "interpolation": "linear"
+            },
+            {
+              "timestamp": 1.5,
+              "target": [
+                0,
+                0,
+                25
               ],
               "interpolation": "linear"
             }
@@ -244,25 +256,88 @@
               "target": [
                 0,
                 0,
-                -45
+                -95
               ],
               "interpolation": "linear"
             },
             {
-              "timestamp": 0.624,
+              "timestamp": 0.20833333333333334,
               "target": [
                 0,
                 0,
-                -45
+                -95.97
               ],
               "interpolation": "linear"
             },
             {
-              "timestamp": 0.625,
+              "timestamp": 0.4166666666666667,
               "target": [
-                -22.1915656251,
-                -3.810243016,
-                -79.2524863734
+                0,
+                0,
+                -78.1
+              ],
+              "interpolation": "linear"
+            },
+            {
+              "timestamp": 0.5416666666666666,
+              "target": [
+                0,
+                0,
+                -73.81
+              ],
+              "interpolation": "linear"
+            },
+            {
+              "timestamp": 0.75,
+              "target": [
+                0,
+                0,
+                -80
+              ],
+              "interpolation": "linear"
+            },
+            {
+              "timestamp": 1,
+              "target": [
+                0,
+                0,
+                -72.5
+              ],
+              "interpolation": "linear"
+            },
+            {
+              "timestamp": 1.125,
+              "target": [
+                0,
+                0,
+                -93.12
+              ],
+              "interpolation": "linear"
+            },
+            {
+              "timestamp": 1.25,
+              "target": [
+                0,
+                0,
+                -88.75
+              ],
+              "interpolation": "linear"
+            },
+            {
+              "timestamp": 1.4166666666666667,
+              "target": [
+                0,
+                0,
+                -100.42
+              ],
+              "interpolation": "linear"
+            },
+            {
+              "timestamp": 1.5,
+              "target": [
+                0,
+                0,
+                -95
               ],
               "interpolation": "linear"
             }
@@ -482,7 +557,7 @@
               ],
               "dimensions": [
                 9,
-                2.0000000000000018,
+                1.9999999999999982,
                 9
               ],
               "inflate": 0

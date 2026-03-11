@@ -1,4 +1,4 @@
-// 1.21.1	2026-03-07T13:28:13.567273816	Item Models: datanessence
+// 1.21.1	2026-03-11T14:39:36.593602226	Item Models: datanessence
 801fa8d0e9ae7e6c0f2ec1e83133257158c467a8 assets/datanessence/models/item/acceleration_lens.json
 42e19f03380a5b483a179ea05813050a7348f5f5 assets/datanessence/models/item/ancient_lantern.json
 dabf087382678b82cf3270c905fa9dd54ed369bc assets/datanessence/models/item/ancient_rock_bricks.json
@@ -77,6 +77,7 @@ d2b4d0ca682ceeed67b2f05546457443fb9253d6 assets/datanessence/models/item/signal_
 1b09ec0be74ff44bbe133a0ef3f32cf87cde6661 assets/datanessence/models/item/speed_upgrade.json
 cccabab1270cb85664204724c134f6d86b2fe5a6 assets/datanessence/models/item/spire_glass.json
 b9cd749dfe2480f68743cf1e9db11372fd24808d assets/datanessence/models/item/sprite_book_flora.json
+23fa584f4e82d31b58e656c02c208718440231bb assets/datanessence/models/item/tag_filter.json
 aee2e6631d57b8fc41df275db6b27a783c52c54f assets/datanessence/models/item/thermometer.json
 894bb815cb1c1a32b5ec497aecb61aae0d9bf179 assets/datanessence/models/item/trans_tether.json
 429578dfe5f5fddfaf6ab2713a5ca40c739fb14c assets/datanessence/models/item/trans_tether_charged.json

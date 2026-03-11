@@ -11,7 +11,7 @@
     },
     "hidden": false
   },
-  "parent": "datanessence:progression/craft_logical_matrix",
+  "parent": "datanessence:progression/use_data_drive",
   "criteria": {
     "has_infuser": {
       "trigger": "minecraft:inventory_changed",

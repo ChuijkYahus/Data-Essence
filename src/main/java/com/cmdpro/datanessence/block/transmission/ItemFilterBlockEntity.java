@@ -1,6 +1,7 @@
 package com.cmdpro.datanessence.block.transmission;
 
 import com.cmdpro.datanessence.api.node.ICustomItemPointBehaviour;
+import com.cmdpro.datanessence.item.BaseFilterLabel;
 import com.cmdpro.datanessence.registry.BlockEntityRegistry;
 import com.cmdpro.datanessence.screen.ItemFilterMenu;
 import net.minecraft.core.BlockPos;
@@ -137,12 +138,18 @@ public class ItemFilterBlockEntity extends BlockEntity implements MenuProvider, 
             }
         }
     }
-    public static boolean filterMatches(ItemStack stack, ItemStack stack2) {
-        if (stack.isEmpty() || stack2.isEmpty()) {
+
+    public static boolean filterMatches(ItemStack candidate, ItemStack filter) {
+        if (candidate.isEmpty() || filter.isEmpty()) {
             return false;
         }
-        return ItemStack.isSameItem(stack, stack2);
+
+        if (filter.getItem() instanceof BaseFilterLabel)
+            return ((BaseFilterLabel) filter.getItem()).labelMatches(filter, candidate);
+
+        return ItemStack.isSameItem(candidate, filter);
     }
+
     @Override
     public Component getDisplayName() {
         return Component.empty();

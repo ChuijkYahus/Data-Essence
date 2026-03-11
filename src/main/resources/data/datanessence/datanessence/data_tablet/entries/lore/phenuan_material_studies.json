@@ -36,5 +36,8 @@
   ],
   "name": {
     "translate": "data_tablet.pages.phenuan_material_studies.name"
-  }
+  },
+  "parents": [
+    "datanessence:basics/components"
+  ]
 }
