@@ -11,7 +11,7 @@
     },
     "hidden": false
   },
-  "parent": "datanessence:progression/place_essence_burner",
+  "parent": "datanessence:progression/craft_logical_matrix",
   "criteria": {
     "has_leech": {
       "trigger": "minecraft:inventory_changed",

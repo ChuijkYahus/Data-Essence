@@ -5,6 +5,7 @@
   "tab": "datanessence:machinery",
   "x": 0,
   "y": 2,
+  "critical": true,
   "pages": [
     {
       "type": "datanessence:item",
@@ -29,5 +30,26 @@
   },
   "parents": [
     "datanessence:machinery/automation"
+  ],
+  "completion_stages": [
+    {
+      "completion_advancements": [
+        "datanessence:progression/acquire_infuser"
+      ],
+      "pages": [
+        {
+          "type": "datanessence:text",
+          "text": {
+            "translate": "data_tablet.pages.infuser.page1.incomplete_text"
+          }
+        },
+        {
+          "type": "datanessence:crafting",
+          "recipes": [
+            "datanessence:fabrication/machines/infuser"
+          ]
+        }
+      ]
+    }
   ]
 }

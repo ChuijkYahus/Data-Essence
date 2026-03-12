@@ -4,6 +4,7 @@
     "datanessence:essence": 5
   },
   "entry": "datanessence:basics/components",
+  "completion_stage": 0,
   "pattern": [
     "PP",
     "RP"

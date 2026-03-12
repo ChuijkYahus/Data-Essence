@@ -96,10 +96,6 @@ public class DataNEssenceCommands {
                                     return chargeItem(command, EntityArgument.getPlayer(command, "target"));
                                 }))
                 )
-                .then(Commands.literal("maximize")
-                        .executes(command -> {
-                            return maximize(command);
-                        }))
                 .then(Commands.literal("dev")
                         .then(Commands.literal("entry_editor")
                                 .executes(command -> {
@@ -140,6 +136,7 @@ public class DataNEssenceCommands {
         }
         return Command.SINGLE_SUCCESS;
     }
+
     private static int checkoverlaps(CommandContext<CommandSourceStack> command) {
         boolean foundIssues = false;
         for (Entry i : Entries.entries.values()) {
@@ -159,6 +156,7 @@ public class DataNEssenceCommands {
         }
         return Command.SINGLE_SUCCESS;
     }
+
     private static int givedragonpart(CommandContext<CommandSourceStack> command) {
         if(command.getSource().getEntity() instanceof Player) {
             Player player;
@@ -187,6 +185,7 @@ public class DataNEssenceCommands {
         }
         return Command.SINGLE_SUCCESS;
     }
+
     private static int settier(CommandContext<CommandSourceStack> command) {
         if(command.getSource().getEntity() instanceof Player) {
             Player player = (Player) command.getSource().getEntity();
@@ -198,6 +197,7 @@ public class DataNEssenceCommands {
         }
         return Command.SINGLE_SUCCESS;
     }
+
     private static int resetlearned(CommandContext<CommandSourceStack> command){
         if(command.getSource().getEntity() instanceof Player) {
             Player player;
@@ -284,37 +284,6 @@ public class DataNEssenceCommands {
             DataTabletUtil.checkForTierUpgrades(player);
             command.getSource().sendSuccess(() -> {
                 return Component.translatable("commands.datanessence.unlock_all", player.getName());
-            }, true);
-        }
-        return Command.SINGLE_SUCCESS;
-    }
-
-    private static int maximize(CommandContext<CommandSourceStack> command) {
-        if (command.getSource().getEntity() instanceof Player) {
-            Player player = (Player) command.getSource().getEntity();
-
-            command.getSource().sendSuccess(() -> {
-                return Component.translatable("commands.datanessence.maximize", player.getName());
-            }, true);
-
-            DataTabletUtil.setTier(player, 8);
-            command.getSource().sendSuccess(() -> {
-                return Component.translatable("commands.datanessence.set_tier", 8, player.getName());
-            }, true);
-
-            for (Entry entry : Entries.entries.values()) {
-                DataTabletUtil.unlockEntryAndParents(player, entry.id, entry.completionStages.size());
-            }
-            command.getSource().sendSuccess(() -> {
-                return Component.translatable("commands.datanessence.unlock_all", player.getName());
-            }, true);
-
-            player.setData(AttachmentTypeRegistry.HAS_HORNS, true);
-            player.setData(AttachmentTypeRegistry.HAS_TAIL, true);
-            player.setData(AttachmentTypeRegistry.HAS_WINGS, true);
-            ModMessages.sendToPlayersTrackingEntityAndSelf(new DragonPartsSync(player.getId(), player.getData(AttachmentTypeRegistry.HAS_HORNS), player.getData(AttachmentTypeRegistry.HAS_TAIL), player.getData(AttachmentTypeRegistry.HAS_WINGS)), (ServerPlayer)player);
-            command.getSource().sendSuccess(() -> {
-                return Component.translatable("commands.datanessence.give_all_dragon_parts", player.getName());
             }, true);
         }
         return Command.SINGLE_SUCCESS;

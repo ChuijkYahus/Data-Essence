@@ -10,10 +10,6 @@ import com.cmdpro.datanessence.client.shaders.MachineOutputShader;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.animation.AnimationDefinition;
-import net.minecraft.client.model.geom.ModelLayerLocation;
-import net.minecraft.client.model.geom.ModelPart;
-import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.renderer.LightTexture;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
@@ -48,7 +44,10 @@ public class AutoFabricatorRenderer extends DatabankBlockEntityRenderer<AutoFabr
         @Override
         public void setupModelPose(AutoFabricatorBlockEntity pEntity, float partialTick) {
             pEntity.animState.updateAnimDefinitions(getModel());
-            if (pEntity.craftingProgress >= 0 && pEntity.hasLevel() && !pEntity.getLevel().hasNeighborSignal(pEntity.getBlockPos())) {
+            if (pEntity.craftingProgress >= 0
+                    && pEntity.hasLevel()
+                    && pEntity.areSlotsLocked()
+                    && !pEntity.getLevel().hasNeighborSignal(pEntity.getBlockPos())) {
                 pEntity.animState.setAnim("crafting");
             } else {
                 pEntity.animState.setAnim("idle");

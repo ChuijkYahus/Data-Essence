@@ -4,6 +4,7 @@ import com.cmdpro.datanessence.DataNEssence;
 import com.cmdpro.datanessence.api.node.block.BaseCapabilityPointBlockEntity;
 import com.cmdpro.datanessence.api.node.ICustomItemPointBehaviour;
 import com.cmdpro.datanessence.config.DataNEssenceConfig;
+import com.cmdpro.datanessence.item.BaseFilterLabel;
 import com.cmdpro.datanessence.registry.BlockEntityRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.ItemStack;
@@ -91,18 +92,37 @@ public class ItemPointBlockEntity extends BaseCapabilityPointBlockEntity {
         boolean movedAnything = false;
 
         for (int o = 0; o < sourceHandler.getSlots(); o++) {
-            ItemStack copy = sourceHandler.extractItem(o, transferAmount, true).copy();
-            if (allowedItemstacks != null && allowedItemstacks.stream().noneMatch((stack) -> ItemStack.isSameItem(stack, copy))) {
-                continue;
+            ItemStack candidate = sourceHandler.extractItem(o, transferAmount, true).copy();
+
+            if (allowedItemstacks != null) {
+                boolean shouldSkip = true;
+
+                for ( ItemStack allowedStack : allowedItemstacks ) {
+                    var item = allowedStack.getItem();
+                    if ( item instanceof BaseFilterLabel && ((BaseFilterLabel) item).labelMatches(allowedStack, candidate) ) {
+                        shouldSkip = false;
+                        break;
+                    }
+
+                    if ( !(item instanceof BaseFilterLabel) && ItemStack.isSameItem(allowedStack, candidate) ) {
+                        shouldSkip = false;
+                        break;
+                    }
+
+                }
+
+                if (shouldSkip)
+                    continue;
             }
-            if (!copy.isEmpty()) {
-                ItemStack copy2 = copy.copy();
+
+            if (!candidate.isEmpty()) {
+                ItemStack copy2 = candidate.copy();
                 int p = 0;
                 while (p < destHandler.getSlots()) {
-                    ItemStack copyCopy = copy.copy();
+                    ItemStack copyCopy = candidate.copy();
                     int remaining = destHandler.insertItem(p, copyCopy, false).getCount();
-                    copy.setCount(remaining);
-                    if (copy2.getCount() - copy.getCount() > 0) {
+                    candidate.setCount(remaining);
+                    if (copy2.getCount() - candidate.getCount() > 0) {
                         movedAnything = true;
                     }
                     if (remaining <= 0) {
@@ -111,7 +131,7 @@ public class ItemPointBlockEntity extends BaseCapabilityPointBlockEntity {
                     p++;
                 }
                 if (movedAnything) {
-                    sourceHandler.extractItem(o, copy2.getCount() - copy.getCount(), false);
+                    sourceHandler.extractItem(o, copy2.getCount() - candidate.getCount(), false);
                     break;
                 }
             }

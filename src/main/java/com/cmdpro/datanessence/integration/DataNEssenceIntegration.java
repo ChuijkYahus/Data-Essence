@@ -25,13 +25,13 @@ public class DataNEssenceIntegration {
         hasPastel = ModList.get().isLoaded("pastel");
 
         if (hasMekanism) {
-            DataNEssence.LOGGER.info("[DATANESSENCE] Mekanism detected; enabling integration features. Careful with your reactors!");
+            DataNEssence.LOGGER.info("[HALCYON] Mekanism detected; enabling integration features. Careful with your reactors!");
              BLOCK_CHEMICAL = BlockCapability.createSided(ResourceLocation.fromNamespaceAndPath(MekanismAPI.MEKANISM_MODID, "chemical_handler"), IChemicalHandler.class);
         }
         if (hasOpalescence)
-            DataNEssence.LOGGER.info("[DATANESSENCE] Opalescence detected; enabling integration features. I hear this rock is a favorite of dragons!");
+            DataNEssence.LOGGER.info("[HALCYON] Opalescence detected; enabling integration features. I hear this rock is a favorite of dragons!");
         if (hasPastel)
-            DataNEssence.LOGGER.info("[DATANESSENCE] Pastel detected; enabling integration features. Are you an Artist, or a Researcher, or both?");
+            DataNEssence.LOGGER.info("[HALCYON] Pastel detected; enabling integration features. Are you an Artist, or a Factory Conductor, or both?");
     }
     public static class OpalescenseIntegration {
         public static int getOpalBlockColor(BlockState state, BlockAndTintGetter blockAndTintGetter, BlockPos pos, int tintIndex) {

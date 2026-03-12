@@ -87,4 +87,11 @@ public class DataComponentRegistry {
                     .networkSynchronized(ByteBufCodecs.BOOL)
                     .cacheEncoding()
             );
+
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<String>> FILTER_STRING =
+            DATA_COMPONENTS.registerComponentType("filter_string", builder -> builder
+                    .persistent(Codec.STRING)
+                    .networkSynchronized(ByteBufCodecs.STRING_UTF8)
+                    .cacheEncoding()
+            );
 }

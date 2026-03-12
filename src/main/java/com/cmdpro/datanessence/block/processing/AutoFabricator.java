@@ -28,9 +28,9 @@ public class AutoFabricator extends Block implements EntityBlock {
     }
 
     private static final VoxelShape SHAPE = Shapes.or(
-            Block.box(0, 0, 0, 16, 2, 16),
-            Block.box(0, 14, 0, 16, 16, 16),
-            Block.box(1, 2, 1, 15, 14, 15)
+            Block.box(0, 0, 0, 16, 3, 16),
+            Block.box(3.5, 16, 3.5, 12.5, 18, 12.5),
+            Block.box(3, 3, 3, 13, 5, 13)
     );
 
     @Override

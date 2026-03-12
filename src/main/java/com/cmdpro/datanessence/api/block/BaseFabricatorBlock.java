@@ -2,9 +2,12 @@ package com.cmdpro.datanessence.api.block;
 
 import com.cmdpro.datanessence.block.processing.FabricatorBlockEntity;
 import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -48,6 +51,16 @@ public abstract class BaseFabricatorBlock extends Block implements EntityBlock, 
             BaseFabricatorBlockEntity.use(state, world, pos, player, hand);
         }
         return true;
+    }
+
+    @Override
+    public void setPlacedBy(Level world, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack itemStack) {
+        if (placer instanceof ServerPlayer) {
+            BlockEntity blockEntity = world.getBlockEntity(pos);
+            if (blockEntity instanceof BaseFabricatorBlockEntity fabber) {
+                fabber.setPlacerID( (ServerPlayer) placer );
+            }
+        }
     }
 
     @Nullable

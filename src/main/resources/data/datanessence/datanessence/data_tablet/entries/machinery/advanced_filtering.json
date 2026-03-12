@@ -1,0 +1,27 @@
+{
+  "icon": {
+    "id": "datanessence:tag_filter"
+  },
+  "tab": "datanessence:machinery",
+  "x": -3,
+  "y": -6,
+  "pages": [
+    {
+      "type": "datanessence:item",
+      "item": { "id": "datanessence:tag_filter" },
+      "text": { "translate": "data_tablet.pages.advanced_filtering.page1.text" }
+    },
+    {
+      "type": "datanessence:crafting",
+      "recipes": [
+        "datanessence:fabrication/tag_filter"
+      ]
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.advanced_filtering.name"
+  },
+  "parents": [
+    "datanessence:machinery/item_filter"
+  ]
+}

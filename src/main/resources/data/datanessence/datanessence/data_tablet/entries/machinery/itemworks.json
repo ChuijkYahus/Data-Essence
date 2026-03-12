@@ -30,7 +30,6 @@
     "translate": "data_tablet.pages.itemworks.name"
   },
   "parents": [
-    "datanessence:basics/fabricator",
-    "datanessence:essence_manipulation/essence_transfer"
+    "datanessence:basics/components"
   ]
 }

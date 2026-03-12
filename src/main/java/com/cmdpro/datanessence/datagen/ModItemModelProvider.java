@@ -59,6 +59,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ItemRegistry.ECLIPTRUM_INGOT);
         simpleItem(ItemRegistry.ESSENCE_METER);
         simpleItem(ItemRegistry.ORE_SCANNER);
+        simpleItem(ItemRegistry.TAG_FILTER_LABEL);
 
         simpleItemWithSubdirectory(ItemRegistry.ESSENCE_WIRE, "wires");
         simpleItemWithSubdirectory(ItemRegistry.LUNAR_ESSENCE_WIRE, "wires");

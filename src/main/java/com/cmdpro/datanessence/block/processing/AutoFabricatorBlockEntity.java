@@ -294,15 +294,21 @@ public class AutoFabricatorBlockEntity extends BlockEntity implements MenuProvid
         }
     }
 
+    public boolean areSlotsLocked() {
+        for ( var lockedSlot : getLockable() ) {
+            if (!lockedSlot.locked)
+                return false;
+        }
+        return true;
+    }
+
     public static void tick(Level world, BlockPos pos, BlockState state, AutoFabricatorBlockEntity fabricator) {
 
         if (!world.isClientSide()) {
             BufferUtil.getEssenceFromBuffersBelow(fabricator, List.of(EssenceTypeRegistry.ESSENCE.get(), EssenceTypeRegistry.LUNAR_ESSENCE.get(), EssenceTypeRegistry.NATURAL_ESSENCE.get(), EssenceTypeRegistry.EXOTIC_ESSENCE.get()));
 
-            for ( var lockedSlot : fabricator.getLockable() ) {
-                if (!lockedSlot.locked)
-                    return;
-            }
+            if (!fabricator.areSlotsLocked())
+                return;
 
             BufferUtil.getItemsFromBuffersBelow(fabricator, fabricator.itemHandler);
 

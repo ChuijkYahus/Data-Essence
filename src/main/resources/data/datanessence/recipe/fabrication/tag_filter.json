@@ -1,0 +1,17 @@
+{
+  "type": "datanessence:shaped_fabrication_recipe",
+  "essenceCost": {
+    "datanessence:essence": 5
+  },
+  "time": 60,
+  "entry": "datanessence:machinery/advanced_filtering",
+  "pattern": [
+    " N",
+    "P "
+  ],
+  "key": {
+    "N": { "tag": "c:nuggets/copper" },
+    "P": { "item": "minecraft:paper" }
+  },
+  "result": { "id": "datanessence:tag_filter" }
+}

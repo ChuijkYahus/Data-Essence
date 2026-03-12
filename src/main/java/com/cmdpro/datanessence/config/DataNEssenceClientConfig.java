@@ -64,7 +64,7 @@ public class DataNEssenceClientConfig {
             colorAssist = CLIENT.colorAssistValue.get();
             factorySongVolume = CLIENT.factorySongVolumeValue.get();
         } catch (Exception e) {
-            DataNEssence.LOGGER.warn("[DATANESSENCE] Failed to load client config!");
+            DataNEssence.LOGGER.warn("[HALCYON] Failed to load client config!");
             e.printStackTrace();
         }
     }
