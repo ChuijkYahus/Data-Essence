@@ -1,0 +1,33 @@
+{
+  "icon": {
+    "id": "datanessence:signal_tracker_resonance_receptor"
+  },
+  "tab": "datanessence:basics",
+  "x": 4,
+  "y": -3,
+  "pages": [
+    {
+      "type": "datanessence:text",
+      "text": {
+        "translate": "data_tablet.pages.signal_tracker_resonance_receptor.page1.text"
+      }
+    },
+    {
+      "type": "datanessence:crafting",
+      "recipes": [
+        "datanessence:fabrication/equipment/signal_tracker_resonance_receptor"
+      ]
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.signal_tracker_resonance_receptor.name"
+  },
+  "flavor": {
+    "translate": "data_tablet.pages.signal_tracker_resonance_receptor.flavor"
+  },
+  "parents": [
+    "datanessence:basics/locator",
+    "datanessence:basics/lensing_crystal",
+    "datanessence:basics/plants"
+  ]
+}

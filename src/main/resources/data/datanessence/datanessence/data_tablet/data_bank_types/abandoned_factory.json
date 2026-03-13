@@ -1,5 +1,6 @@
 {
   "add": [
+    "datanessence:tier_1/advanced_filtering",
     "datanessence:tier_1/automation",
     "datanessence:tier_1/buffers",
     "datanessence:tier_1/charger",

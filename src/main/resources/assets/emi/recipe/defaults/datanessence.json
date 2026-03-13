@@ -17,6 +17,7 @@
       "datanessence:crafting/obsidian_framed_glass",
       "datanessence:crafting/panel_mold",
       "datanessence:crafting/propeller",
+      "datanessence:crafting/quartz_flake",
       "datanessence:crafting/rod_mold",
       "datanessence:entropic_processing/traversite_road_chunk",
       "datanessence:fabrication/data_drive",
@@ -31,7 +32,9 @@
       "datanessence:fabrication/equipment/essence_sword",
       "datanessence:fabrication/equipment/illumination_rod",
       "datanessence:fabrication/equipment/locator",
+      "datanessence:fabrication/equipment/mineral_finding_rod",
       "datanessence:fabrication/equipment/primitive_antigravity_pack",
+      "datanessence:fabrication/equipment/signal_tracker_resonance_receptor",
       "datanessence:fabrication/equipment/transcendental_tether",
       "datanessence:fabrication/equipment/thermometer",
       "datanessence:fabrication/equipment/traversite_trudgers",
@@ -62,8 +65,10 @@
       "datanessence:fabrication/machines/melter",
       "datanessence:fabrication/machines/metal_shaper",
       "datanessence:fabrication/machines/mineral_purification_chamber",
+      "datanessence:fabrication/machines/survey_tunneler",
       "datanessence:fabrication/machines/synthesis_chamber",
       "datanessence:fabrication/machines/vacuum",
+      "datanessence:fabrication/memory_cell",
       "datanessence:fabrication/points/essence_point",
       "datanessence:fabrication/points/fluid_point",
       "datanessence:fabrication/points/item_point",
@@ -75,6 +80,7 @@
       "datanessence:fabrication/utilities/twining_lantern",
       "datanessence:fabrication/sigils/filter",
       "datanessence:fabrication/sigils/speed",
+      "datanessence:fabrication/tag_filter",
       "datanessence:fabrication/wire_spool",
       "datanessence:fluid_mixing/genderfluid",
       "datanessence:infusion/essence_pathways",
@@ -107,6 +113,7 @@
       "datanessence:synthesis/lens_healing",
       "datanessence:synthesis/lens_precision",
       "datanessence:synthesis/logical_matrix",
-      "datanessence:synthesis/lunar_essence_wire"
+      "datanessence:synthesis/lunar_essence_wire",
+      "datanessence:synthesis/prepared_panel"
     ]
 }

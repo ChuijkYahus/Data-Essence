@@ -1,0 +1,40 @@
+{
+  "display": {
+    "icon": {
+      "id": "datanessence:logical_matrix"
+    },
+    "frame": "goal",
+    "title": {
+      "translate": "advancements.datanessence.craft_logical_matrix.title"
+    },
+    "description": {
+      "translate": "advancements.datanessence.craft_logical_matrix.description"
+    },
+    "hidden": false
+  },
+  "parent": "datanessence:progression/acquire_fabricator",
+  "criteria": {
+    "craft": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": { "items": [ { "items": ["datanessence:logical_matrix" ] } ] }
+    },
+    "has_burner": {
+      "trigger": "databank:has_advancement",
+      "conditions": {
+        "advancement": "datanessence:progression/place_essence_burner"
+      }
+    },
+    "has_fabricator": {
+      "trigger": "databank:has_advancement",
+      "conditions": {
+        "advancement": "datanessence:progression/acquire_fabricator"
+      }
+    },
+    "has_node_and_wire": {
+      "trigger": "databank:has_advancement",
+      "conditions": {
+        "advancement": "datanessence:progression/acquire_essence_node_and_wire"
+      }
+    }
+  }
+}

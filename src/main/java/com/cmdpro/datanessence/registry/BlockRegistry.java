@@ -385,7 +385,12 @@ public class BlockRegistry {
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.OBSIDIAN)),
             object -> () -> new BlockItem(object.get(), new Item.Properties()));
     public static final Supplier<Block> LIGHT_FIXTURE = register("essence_light_fixture",
-            () -> new LightFixture(BlockBehaviour.Properties.ofFullCopy(Blocks.OBSIDIAN).instabreak().noOcclusion().lightLevel((blockState) -> { return 15;})),
+            () -> new LightFixture(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_YELLOW)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .instabreak()
+                    .noOcclusion()
+                    .lightLevel((blockState) -> { return 15;})),
             object -> () -> new BlockItem(object.get(), new Item.Properties()));
 
     // Copper Deco
@@ -418,6 +423,14 @@ public class BlockRegistry {
             object -> () -> new BlockItem(object.get(), new Item.Properties()));
     public static final Supplier<Block> EMPTY_CRYOCHAMBER_ROUTER = registerBlock("empty_cryochamber_router",
             () -> new EmptyCryochamberRouter(BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_BLOCK).noOcclusion()));
+    public static final Supplier<Block> MAKUTUIN_RUNNER = register("makutuin_runner",
+            () -> new MakutuinRunner(BlockBehaviour.Properties.ofFullCopy(Blocks.RED_CARPET)),
+            object -> () -> new BlockItem(object.get(), new Item.Properties()));
+    public static final Supplier<Block> MAKUTUIN_RUNNER_CROSS = register("makutuin_runner_cross",
+            () -> new MakutuinRunnerCross(BlockBehaviour.Properties.ofFullCopy(Blocks.RED_CARPET)),
+            object -> () -> new BlockItem(object.get(), new Item.Properties()));
+
+
     private static <T extends Block> Supplier<T> registerBlock(final String name,
                                                                      final Supplier<? extends T> block) {
         return BLOCKS.register(name, block);

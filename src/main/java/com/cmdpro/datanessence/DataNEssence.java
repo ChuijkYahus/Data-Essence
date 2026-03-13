@@ -34,7 +34,7 @@ import static com.cmdpro.datanessence.integration.DataNEssenceIntegration.*;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod("datanessence")
-@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, modid = DataNEssence.MOD_ID)
+@EventBusSubscriber(modid = DataNEssence.MOD_ID)
 public class DataNEssence
 {
     public static final String MOD_ID = "datanessence";
@@ -77,6 +77,7 @@ public class DataNEssence
         FluidRegistry.FLUIDS.register(bus);
         PotionRegistry.POTIONS.register(bus);
         HiddenConditionRegistry.HIDDEN_CONDITIONS.register(bus);
+        HalcyonCriteria.register(bus);
         random = RandomSource.create();
 
         DataNEssenceIntegration.init();
@@ -266,6 +267,7 @@ public class DataNEssence
             event.accept(ItemRegistry.ESSENCE_METER.get());
             event.accept(ItemRegistry.MOLD_PANEL.get());
             event.accept(ItemRegistry.MOLD_ROD.get());
+            event.accept(ItemRegistry.TAG_FILTER_LABEL.get());
             //event.accept(ItemRegistry.THERMOMETER.get());
             event.accept(ItemRegistry.HAMMER_AND_CHISEL.get());
             event.accept(ItemRegistry.ORE_SCANNER.get());
@@ -300,6 +302,7 @@ public class DataNEssence
             event.accept(ItemRegistry.ATTRACTING_LENS.get());
             event.accept(ItemRegistry.BURNING_LENS.get());
             event.accept(ItemRegistry.PRECISION_LENS.get());
+            event.accept(ItemRegistry.LOCATOR_UPGRADE.get());
             event.accept(ItemRegistry.SPEED_UPGRADE.get());
             event.accept(ItemRegistry.FILTER_UPGRADE.get());
 
@@ -315,7 +318,9 @@ public class DataNEssence
             event.accept(ItemRegistry.PROPELLER.get());
             event.accept(ItemRegistry.EXCITER.get());
             event.accept(ItemRegistry.ESSENCE_PATHWAYS.get());
+            event.accept(ItemRegistry.PREPARED_PANEL.get());
             event.accept(ItemRegistry.ASSEMBLY_ACTUATOR.get());
+            event.accept(ItemRegistry.MEMORY_CELL.get());
             event.accept(ItemRegistry.HEATING_COIL.get());
             event.accept(ItemRegistry.IRON_DRILL.get());
             event.accept(ItemRegistry.LENS.get());
@@ -448,6 +453,8 @@ public class DataNEssence
             event.accept(BlockRegistry.SHIELDLESS_ANCIENT_GLYPH_STONE_BLANK.get());
             event.accept(BlockRegistry.SHIELDLESS_ANCIENT_GLYPH_STONE_MAKUTUIN.get());
             event.accept(BlockRegistry.SHIELDLESS_ANCIENT_GLYPH_STONE_ESSENCE.get());
+            event.accept(BlockRegistry.MAKUTUIN_RUNNER.get());
+            event.accept(BlockRegistry.MAKUTUIN_RUNNER_CROSS.get());
             event.accept(BlockRegistry.COMPUTER.get());
             event.accept(BlockRegistry.ANCIENT_DATA_BANK.get());
             event.accept(BlockRegistry.STRUCTURE_PROTECTOR.get());

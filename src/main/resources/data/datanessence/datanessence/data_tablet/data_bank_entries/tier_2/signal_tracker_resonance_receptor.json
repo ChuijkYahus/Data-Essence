@@ -1,0 +1,10 @@
+{
+  "icon": {
+    "id": "datanessence:signal_tracker_resonance_receptor"
+  },
+  "tier": 2,
+  "name": {
+    "translate": "data_tablet.pages.signal_tracker_resonance_receptor.name"
+  },
+  "entry": "datanessence:basics/signal_tracker_resonance_receptor"
+}

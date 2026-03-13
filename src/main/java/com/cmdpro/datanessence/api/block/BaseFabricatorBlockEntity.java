@@ -10,6 +10,7 @@ import com.cmdpro.datanessence.api.util.BufferUtil;
 import com.cmdpro.datanessence.api.util.DataTabletUtil;
 import com.cmdpro.datanessence.recipe.IFabricationRecipe;
 import com.cmdpro.datanessence.recipe.NonMenuCraftingContainer;
+import com.cmdpro.datanessence.registry.HalcyonCriteria;
 import com.cmdpro.datanessence.registry.RecipeRegistry;
 import com.cmdpro.datanessence.registry.SoundRegistry;
 import net.minecraft.client.Minecraft;
@@ -18,12 +19,12 @@ import net.minecraft.client.resources.sounds.SoundInstance;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.Connection;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.*;
 import net.minecraft.world.entity.item.ItemEntity;
@@ -43,8 +44,16 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
-public abstract class BaseFabricatorBlockEntity extends BlockEntity implements EssenceBlockEntity {
+public abstract class BaseFabricatorBlockEntity extends BlockEntity implements EssenceBlockEntity, PlayerOwned {
     public MultiEssenceContainer storage = new MultiEssenceContainer(getSupportedEssenceTypes(), getMaxEssence());
+    public int time;
+    public int maxTime;
+    public Recipe<CraftingInput> recipe;
+    public boolean enoughEssence;
+    public Map<ResourceLocation, Float> essenceCost;
+    public ItemStack item;
+    protected UUID placer;
+
     @Override
     public EssenceStorage getStorage() {
         return storage;
@@ -75,6 +84,7 @@ public abstract class BaseFabricatorBlockEntity extends BlockEntity implements E
             checkRecipes();
         }
     }
+
     private ClientHandler clientHandler;
 
     private final CombinedInvWrapper combinedInvWrapper = new CombinedInvWrapper(itemHandler);
@@ -112,6 +122,7 @@ public abstract class BaseFabricatorBlockEntity extends BlockEntity implements E
     }
 
     public abstract List<EssenceType> getSupportedEssenceTypes();
+
     public abstract float getMaxEssence();
 
     public BaseFabricatorBlockEntity(BlockEntityType<?> type, BlockPos pos, BlockState state) {
@@ -123,6 +134,7 @@ public abstract class BaseFabricatorBlockEntity extends BlockEntity implements E
     public ClientboundBlockEntityDataPacket getUpdatePacket(){
         return ClientboundBlockEntityDataPacket.create(this);
     }
+
     @Override
     public void onDataPacket(Connection connection, ClientboundBlockEntityDataPacket pkt, HolderLookup.Provider pRegistries){
         CompoundTag tag = pkt.getTag();
@@ -141,6 +153,7 @@ public abstract class BaseFabricatorBlockEntity extends BlockEntity implements E
             essenceCost = null;
         }
     }
+
     @Override
     public CompoundTag getUpdateTag(HolderLookup.Provider pRegistries) {
         CompoundTag tag = new CompoundTag();
@@ -163,16 +176,19 @@ public abstract class BaseFabricatorBlockEntity extends BlockEntity implements E
         tag.put("inventory", itemHandler.serializeNBT(pRegistries));
         tag.put("EssenceStorage", storage.toNbt());
         tag.putInt("time", time);
+        PlayerOwned.writePlacer(tag, placer);
         super.saveAdditional(tag, pRegistries);
     }
+
     @Override
     public void loadAdditional(CompoundTag nbt, HolderLookup.Provider pRegistries) {
         super.loadAdditional(nbt, pRegistries);
         itemHandler.deserializeNBT(pRegistries, nbt.getCompound("inventory"));
         storage.fromNbt(nbt.getCompound("EssenceStorage"));
+        placer = PlayerOwned.readPlacer(nbt);
         time = nbt.getInt("time");
     }
-    public ItemStack item;
+
     public SimpleContainer getInv() {
         SimpleContainer inventory = new SimpleContainer(itemHandler.getSlots());
         for (int i = 0; i < itemHandler.getSlots(); i++) {
@@ -180,6 +196,7 @@ public abstract class BaseFabricatorBlockEntity extends BlockEntity implements E
         }
         return inventory;
     }
+
     public CraftingContainer getCraftingInv() {
         List<ItemStack> items = new ArrayList<>();
         for (int i = 0; i < 9; i++) {
@@ -188,6 +205,7 @@ public abstract class BaseFabricatorBlockEntity extends BlockEntity implements E
         CraftingContainer inventory = new NonMenuCraftingContainer(items, 3, 3);
         return inventory;
     }
+
     public static InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand) {
         BlockEntity blockEntity = pLevel.getBlockEntity(pPos);
         if (!pLevel.isClientSide) {
@@ -216,6 +234,7 @@ public abstract class BaseFabricatorBlockEntity extends BlockEntity implements E
         }
         return InteractionResult.sidedSuccess(pLevel.isClientSide());
     }
+
     public void tryCraft() {
         CraftingInput craftingInput = getCraftingInv().asCraftInput();
         ItemStack result = recipe.assemble(craftingInput, level.registryAccess()).copy();
@@ -249,17 +268,16 @@ public abstract class BaseFabricatorBlockEntity extends BlockEntity implements E
                     itemHandler.insertItem(i1, remainderItem, false);
                 }
             }
+
+            var placer = (ServerPlayer) getPlacerIfOnline();
+            if (placer != null)
+                HalcyonCriteria.FABRICATOR_RECIPE_CRAFTED.trigger(placer, result);
         }
 
         ItemEntity entity = new ItemEntity(level, (float) getBlockPos().getX() + 0.5f, (float) getBlockPos().getY() + 1f, (float) getBlockPos().getZ() + 0.5f, result);
         level.addFreshEntity(entity);
         level.playSound(null, getBlockPos(), SoundRegistry.FABRICATOR_CRAFT.value(), SoundSource.BLOCKS, 2, 1);
     }
-    public int time;
-    public int maxTime;
-    public Recipe<CraftingInput> recipe;
-    public boolean enoughEssence;
-    public Map<ResourceLocation, Float> essenceCost;
 
     /** Some modpacks contain broken recipes with empty ingredients or empty results.
      * Because that results in an Incredibly Annoying barrage of sounds from this block, let's just not do anything when that happens.
@@ -268,7 +286,7 @@ public abstract class BaseFabricatorBlockEntity extends BlockEntity implements E
     public boolean isNotTryingToCraftBrokenRecipe() {
         var isBroken = (recipe.getResultItem(level.registryAccess()).isEmpty() || recipe.getIngredients().stream().allMatch(Ingredient::hasNoItems));
         if (isBroken && !level.isClientSide)
-            DataNEssence.LOGGER.warn("[DATANESSENCE] Fabricator at {}, {}, {} is trying to craft \"{}\", which has an erroneously empty ingredient list or result! It is highly advised to correct or remove this recipe to prevent further errors.", this.worldPosition.getX(), this.worldPosition.getY(), this.worldPosition.getZ(), recipe);
+            DataNEssence.LOGGER.warn("[HALCYON] Fabricator at {}, {}, {} is trying to craft \"{}\", which has an erroneously empty ingredient list or result! It is highly advised to correct or remove this recipe to prevent further errors.", this.worldPosition.getX(), this.worldPosition.getY(), this.worldPosition.getZ(), recipe);
         return !isBroken;
     }
 
@@ -312,13 +330,25 @@ public abstract class BaseFabricatorBlockEntity extends BlockEntity implements E
             }
         }
     }
+
     protected void updateBlock() {
         BlockState blockState = level.getBlockState(this.getBlockPos());
         this.level.sendBlockUpdated(this.getBlockPos(), blockState, blockState, Block.UPDATE_ALL);
         this.setChanged();
     }
+
     private static boolean hasNotReachedStackLimit(BaseFabricatorBlockEntity entity) {
         return entity.itemHandler.getStackInSlot(2).getCount() < entity.itemHandler.getStackInSlot(2).getMaxStackSize();
+    }
+
+    @Override
+    public UUID getPlacerID() {
+        return placer;
+    }
+
+    @Override
+    public void setPlacerID(Player player) {
+        this.placer = player.getUUID();
     }
 
     private static class ClientHandler {

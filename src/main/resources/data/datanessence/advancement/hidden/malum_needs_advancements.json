@@ -1,0 +1,8 @@
+{
+  "criteria": {
+    "has_sss": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": { "items": [ { "items": ["malum:soul_stained_steel_ingot" ] } ] }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "icon": {
+    "id": "datanessence:tag_filter"
+  },
+  "tier": 1,
+  "name": {
+    "translate": "data_tablet.pages.advanced_filtering.name"
+  },
+  "entry": "datanessence:machinery/advanced_filtering"
+}

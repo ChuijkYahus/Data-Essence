@@ -75,4 +75,23 @@ public class DataComponentRegistry {
                     .cacheEncoding()
             );
 
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<Boolean>> SIGNAL_TRACKER_MODE =
+            DATA_COMPONENTS.registerComponentType("mode", builder -> builder
+                    .persistent(Codec.BOOL)
+                    .networkSynchronized(ByteBufCodecs.BOOL)
+                    .cacheEncoding()
+            );
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<Boolean>> SIGNAL_TRACKER_UPGRADED =
+            DATA_COMPONENTS.registerComponentType("upgraded", builder -> builder
+                    .persistent(Codec.BOOL)
+                    .networkSynchronized(ByteBufCodecs.BOOL)
+                    .cacheEncoding()
+            );
+
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<String>> FILTER_STRING =
+            DATA_COMPONENTS.registerComponentType("filter_string", builder -> builder
+                    .persistent(Codec.STRING)
+                    .networkSynchronized(ByteBufCodecs.STRING_UTF8)
+                    .cacheEncoding()
+            );
 }
