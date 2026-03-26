@@ -4,9 +4,14 @@
   "essenceCost": {
     "datanessence:essence": 50.0
   },
-  "input": {
-    "item": "minecraft:diorite"
-  },
+  "input": [
+    {
+      "item": "minecraft:diorite"
+    },
+    {
+      "item": "minecraft:calcite"
+    }
+  ],
   "result": {
     "count": 1,
     "id": "datanessence:traversite_road"

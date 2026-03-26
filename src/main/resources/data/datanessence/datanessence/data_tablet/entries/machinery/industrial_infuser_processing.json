@@ -15,9 +15,10 @@
     {
       "type": "datanessence:crafting",
       "recipes": [
-        "datanessence:infusion/netherite_scrap",
+        "datanessence:infusion/charcoal",
         "datanessence:infusion/glowstone_dust",
         "datanessence:infusion/gravel_extraction",
+        "datanessence:infusion/netherite_scrap",
         "datanessence:infusion/redstone"
       ]
     }
