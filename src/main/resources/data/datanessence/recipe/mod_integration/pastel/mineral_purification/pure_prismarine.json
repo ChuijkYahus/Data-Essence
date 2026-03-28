@@ -8,6 +8,6 @@
     "type": "datanessence:mineral_purification",
     "input": { "item": "pastel:pure_prismarine" },
     "time": 300,
-    "result": { "id": "minecraft:prismarine_shard", "count": 2 },
-    "nuggetResult": { "id": "minecraft:prismarine_shard", "count": 5 }
+    "result": { "id": "minecraft:prismarine_crystals", "count": 2 },
+    "nuggetResult": { "id": "minecraft:prismarine_crystals", "count": 5 }
 }

@@ -7,3 +7,4 @@
 - Updated zh_cn (ChuijkYahus)
 
 ### Fixes
+- Fixed Pure Prismarine (Pastel) in the Mineral Purification Chamber giving Prismarine Shards instead of Crystals (Esét)
