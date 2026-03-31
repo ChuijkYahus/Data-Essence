@@ -3,7 +3,6 @@ package com.cmdpro.datanessence.item.equipment;
 import com.cmdpro.datanessence.DataNEssence;
 import com.cmdpro.datanessence.api.item.ItemEssenceContainer;
 import com.cmdpro.datanessence.registry.ArmorMaterialRegistry;
-import com.cmdpro.datanessence.registry.EssenceTypeRegistry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -25,6 +24,7 @@ public class PrimitiveAntiGravityPack extends ArmorItem {
     public static final AttributeModifier GRAVITY_MODIFIER = new AttributeModifier(GRAVITY_ATTRIBUTE, -0.8, AttributeModifier.Operation.ADD_MULTIPLIED_BASE);
     public static final AttributeModifier FALL_HEIGHT_MODIFIER = new AttributeModifier(FALL_HEIGHT_ATTRIBUTE, 2.0, AttributeModifier.Operation.ADD_MULTIPLIED_BASE);
     public static ResourceLocation FUEL_ESSENCE_TYPE = DataNEssence.locate("essence");
+
     public PrimitiveAntiGravityPack(Properties pProperties) {
         super(ArmorMaterialRegistry.PRIMITIVE_ANTI_GRAVITY_PACK, Type.CHESTPLATE, pProperties.component(DataComponentRegistry.ESSENCE_STORAGE, new ItemEssenceContainer(List.of(FUEL_ESSENCE_TYPE), 2500)));
     }
@@ -34,19 +34,20 @@ public class PrimitiveAntiGravityPack extends ArmorItem {
         super.inventoryTick(pStack, pLevel, pEntity, pSlotId, pIsSelected);
         if (pEntity instanceof LivingEntity ent && ent.fallDistance > 0f) {
             if (ent.getItemBySlot(EquipmentSlot.CHEST).equals(pStack)) {
-                if (ItemEssenceContainer.getEssence(pStack, FUEL_ESSENCE_TYPE) >= 0.1) {
+                if (ItemEssenceContainer.getEssence(pStack, FUEL_ESSENCE_TYPE) > 0) {
                     ItemEssenceContainer.removeEssence(pStack, FUEL_ESSENCE_TYPE, 0.1f);
                 }
             }
         }
     }
+
     @Override
     public ItemAttributeModifiers getDefaultAttributeModifiers(ItemStack stack) {
         ItemAttributeModifiers.Builder builder = ItemAttributeModifiers.builder();
         for (ItemAttributeModifiers.Entry i : super.getDefaultAttributeModifiers(stack).modifiers()) {
             builder.add(i.attribute(), i.modifier(), i.slot());
         }
-        if (ItemEssenceContainer.getEssence(stack, FUEL_ESSENCE_TYPE) > 0) {
+        if (ItemEssenceContainer.getEssence(stack, FUEL_ESSENCE_TYPE) >= 0.1f) {
             builder.add(Attributes.GRAVITY, GRAVITY_MODIFIER, EquipmentSlotGroup.CHEST);
             builder.add(Attributes.SAFE_FALL_DISTANCE, FALL_HEIGHT_MODIFIER, EquipmentSlotGroup.CHEST);
         }

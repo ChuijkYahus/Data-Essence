@@ -7,3 +7,4 @@
 - Updated zh_cn (ChuijkYahus)
 
 ### Fixes
+- Fixed Primitive Antigravity Pack's fuel effectively being infinite (Esét)
