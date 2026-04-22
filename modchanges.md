@@ -10,3 +10,4 @@
 - Fixed Primitive Antigravity Pack's fuel effectively being infinite (Esét)
 - Fixed incorrect Quartz Flakes:Nether Quartz crafting ratio (Esét)
 - Fixed Auto-Fabricator's item sidedness being incorrect for new model (Esét)
+- Fixed Makutuin Runner Carpets not rotating with the structures they are placed within (Esét)
