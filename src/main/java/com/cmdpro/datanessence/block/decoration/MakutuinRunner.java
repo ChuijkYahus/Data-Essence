@@ -44,6 +44,16 @@ public class MakutuinRunner extends Block {
 
     @Override
     protected BlockState rotate(BlockState state, Rotation rot) {
-        return RotatedPillarBlock.rotatePillar(state, rot);
+        switch (rot) {
+            case COUNTERCLOCKWISE_90:
+            case CLOCKWISE_90:
+                return switch (state.getValue(FACING)) {
+                    case X -> state.setValue(FACING, Direction.Axis.Z);
+                    case Z -> state.setValue(FACING, Direction.Axis.X);
+                    default -> state;
+                };
+            default:
+                return state;
+        }
     }
 }
