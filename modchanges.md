@@ -1,2 +1,2 @@
 ### Fixes
-- Fixed Makutuin Runner Carpets not rotating with the structures they are placed within, for real this time (Esét)
+- Fixed Pure Zinc (Pastel) not being processable in the Mineral Purification Chamber (Esét)
