@@ -167,10 +167,7 @@ public class SurveyTunnelerBlockEntity extends BlockEntity implements EssenceBlo
 
         boolean hasFuel = tunneler.storage.getEssence(EssenceTypeRegistry.ESSENCE.get()) >= 1;
         boolean isDigging = tunneler.progress >= 0;
-        //idk eset tweak this yourself im super confused and i am not gonna do this rn, works strangely
-        // 😔😔😔😔
-        //nvm it works now
-        //delete this
+
         if (hasFuel && isDigging) {
             tunneler.animState.setAnim("gears_turn");
         } else {
