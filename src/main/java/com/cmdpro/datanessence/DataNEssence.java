@@ -271,29 +271,29 @@ public class DataNEssence
             event.accept(ItemRegistry.ORE_SCANNER.get());
             // Combat Tools
             event.accept(ItemRegistry.ESSENCE_BOMB.get());
-            event.accept(ItemRegistry.LUNAR_ESSENCE_BOMB.get());
+            //event.accept(ItemRegistry.LUNAR_ESSENCE_BOMB.get());
             //event.accept(ItemRegistry.NATURAL_ESSENCE_BOMB.get());
             //event.accept(ItemRegistry.EXOTIC_ESSENCE_BOMB.get());
             event.accept(ItemRegistry.ESSENCE_SWORD.get());
             //event.accept(ItemRegistry.FALLING_MOON.get());
             // Rods
             event.accept(ItemRegistry.ILLUMINATION_ROD.get());
-            event.accept(ItemRegistry.REPULSION_ROD.get());
+            //event.accept(ItemRegistry.REPULSION_ROD.get());
             // Exploration Tools
             event.accept(ItemRegistry.WARP_CAPSULE.get());
             event.accept(ItemRegistry.PRIMITIVE_ANTI_GRAVITY_PACK.get());
-            event.accept(ItemRegistry.ANTI_GRAVITY_PACK.get());
+            //event.accept(ItemRegistry.ANTI_GRAVITY_PACK.get());
             event.accept(ItemRegistry.TRAVERSITE_TRUDGERS.get());
             event.accept(ItemRegistry.GRAPPLING_HOOK.get());
 
             // Wires
             event.accept(ItemRegistry.ESSENCE_WIRE.get());
-            event.accept(ItemRegistry.LUNAR_ESSENCE_WIRE.get());
+            //event.accept(ItemRegistry.LUNAR_ESSENCE_WIRE.get());
             //event.accept(ItemRegistry.NATURAL_ESSENCE_WIRE.get());
             //event.accept(ItemRegistry.EXOTIC_ESSENCE_WIRE.get());
             event.accept(ItemRegistry.ITEM_WIRE.get());
             event.accept(ItemRegistry.FLUID_WIRE.get());
-            event.accept(ItemRegistry.RF_WIRE.get());
+            //event.accept(ItemRegistry.RF_WIRE.get());
             if (hasMekanism)
                 event.accept(ItemRegistry.CHEMICAL_WIRE.get());
 
@@ -306,15 +306,15 @@ public class DataNEssence
             event.accept(ItemRegistry.PRECISION_LENS.get());
             event.accept(ItemRegistry.LOCATOR_UPGRADE.get());
             event.accept(ItemRegistry.SPEED_UPGRADE.get());
-            event.accept(ItemRegistry.SPEED_UPGRADE_2.get());
+            //event.accept(ItemRegistry.SPEED_UPGRADE_2.get());
             event.accept(ItemRegistry.FILTER_UPGRADE.get());
 
             // Materials
             event.accept(ItemRegistry.ESSENCE_SHARD.get());
-            event.accept(ItemRegistry.LUNAR_ESSENCE_SHARD.get());
+            //event.accept(ItemRegistry.LUNAR_ESSENCE_SHARD.get());
             event.accept(ItemRegistry.LENSING_CRYSTAL.get());
-            event.accept(ItemRegistry.FROZEN_MOONLIGHT_CHUNK.get());
-            event.accept(ItemRegistry.TRANSFORMATIVE_GEL.get());
+            //event.accept(ItemRegistry.FROZEN_MOONLIGHT_CHUNK.get());
+            //event.accept(ItemRegistry.TRANSFORMATIVE_GEL.get());
             event.accept(ItemRegistry.BONDING_POWDER.get());
             event.accept(ItemRegistry.CAPACITANCE_PANEL.get());
             event.accept(ItemRegistry.CONDUCTANCE_ROD.get());
@@ -328,14 +328,14 @@ public class DataNEssence
             event.accept(ItemRegistry.ASSEMBLY_ACTUATOR.get());
             event.accept(ItemRegistry.MEMORY_CELL.get());
             event.accept(ItemRegistry.HEATING_COIL.get());
-            event.accept(ItemRegistry.EXTRICATION_ROD.get());
+            //event.accept(ItemRegistry.EXTRICATION_ROD.get());
             event.accept(ItemRegistry.IRON_DRILL.get());
-            event.accept(ItemRegistry.ECLIPTRUM_INGOT.get());
-            event.accept(ItemRegistry.REFLECTIVE_PANEL.get());
-            event.accept(ItemRegistry.TRANSFORMATIVE_ROD.get());
-            event.accept(ItemRegistry.ECLIPTRUM_COG.get());
-            event.accept(ItemRegistry.ECLIPTRUM_COG_ASSEMBLY_2X.get());
-            event.accept(ItemRegistry.ECLIPTRUM_COG_ASSEMBLY_4X.get());
+//            event.accept(ItemRegistry.ECLIPTRUM_INGOT.get());
+//            event.accept(ItemRegistry.REFLECTIVE_PANEL.get());
+//            event.accept(ItemRegistry.TRANSFORMATIVE_ROD.get());
+//            event.accept(ItemRegistry.ECLIPTRUM_COG.get());
+//            event.accept(ItemRegistry.ECLIPTRUM_COG_ASSEMBLY_2X.get());
+//            event.accept(ItemRegistry.ECLIPTRUM_COG_ASSEMBLY_4X.get());
             event.accept(ItemRegistry.LENS.get());
             event.accept(ItemRegistry.COPPER_NUGGET.get());
             event.accept(ItemRegistry.DIAMOND_SHARD.get());
@@ -357,12 +357,12 @@ public class DataNEssence
         if (event.getTabKey() == CreativeModeTabRegistry.getKey(CreativeModeTabRegistry.BLOCKS.get())) {
             // World - Phenua
             event.accept(BlockRegistry.ESSENCE_CRYSTAL.get());
-            event.accept(BlockRegistry.LUNAR_ESSENCE_CRYSTAL.get());
+            //event.accept(BlockRegistry.LUNAR_ESSENCE_CRYSTAL.get());
             event.accept(BlockRegistry.LENSING_CRYSTAL_ORE.get());
-            event.accept(BlockRegistry.FROZEN_MOONLIGHT.get());
+            //event.accept(BlockRegistry.FROZEN_MOONLIGHT.get());
             event.accept(BlockRegistry.TETHERGRASS.get());
-            event.accept(BlockRegistry.VIVID_LOTUS.get());
-            event.accept(BlockRegistry.LUNAR_CRYSTAL_SEED.get());
+            //event.accept(BlockRegistry.VIVID_LOTUS.get());
+            //event.accept(BlockRegistry.LUNAR_CRYSTAL_SEED.get());
             // World - Sanctuary
 //            event.accept(BlockRegistry.VERMILION_GRASS_BLOCK.get());
 //            event.accept(BlockRegistry.SANCTUARY_DIRT.get());
@@ -388,11 +388,11 @@ public class DataNEssence
             event.accept(BlockRegistry.ESSENCE_BURNER.get());
             event.accept(BlockRegistry.ESSENCE_LEECH.get());
             event.accept(BlockRegistry.INDUSTRIAL_PLANT_SIPHON.get());
-            event.accept(BlockRegistry.ESSENCE_DERIVATION_SPIKE.get());
+            //event.accept(BlockRegistry.ESSENCE_DERIVATION_SPIKE.get());
 
             // Machines
             event.accept(BlockRegistry.FABRICATOR.get());
-            event.accept(BlockRegistry.LUNARIUM.get());
+            //event.accept(BlockRegistry.LUNARIUM.get());
             event.accept(BlockRegistry.INFUSER.get());
             event.accept(BlockRegistry.FLUID_COLLECTOR.get());
             event.accept(BlockRegistry.FLUID_SPILLER.get());
@@ -412,17 +412,17 @@ public class DataNEssence
             event.accept(BlockRegistry.MELTER.get());
             event.accept(BlockRegistry.DRYING_TABLE.get());
             event.accept(BlockRegistry.SURVEY_TUNNELER.get());
-            event.accept(BlockRegistry.CRYSTALLINE_CRADLE.get());
+            //event.accept(BlockRegistry.CRYSTALLINE_CRADLE.get());
 
             // Logistics
             event.accept(BlockRegistry.ITEM_FILTER.get());
             event.accept(BlockRegistry.ESSENCE_POINT.get());
-            event.accept(BlockRegistry.LUNAR_ESSENCE_POINT.get());
+            //event.accept(BlockRegistry.LUNAR_ESSENCE_POINT.get());
             //event.accept(BlockRegistry.NATURAL_ESSENCE_POINT.get());
             //event.accept(BlockRegistry.EXOTIC_ESSENCE_POINT.get());
             event.accept(BlockRegistry.ITEM_POINT.get());
             event.accept(BlockRegistry.FLUID_POINT.get());
-            event.accept(BlockRegistry.RF_NODE.get());
+            //event.accept(BlockRegistry.RF_NODE.get());
             if (hasMekanism)
                 event.accept(BlockRegistry.CHEMICAL_NODE.get());
             event.accept(BlockRegistry.ESSENCE_BUFFER.get());
@@ -435,7 +435,7 @@ public class DataNEssence
 
             // Storage Blocks
             event.accept(BlockRegistry.ESSENCE_BATTERY.get());
-            event.accept(BlockRegistry.LUNAR_ESSENCE_BATTERY.get());
+            //event.accept(BlockRegistry.LUNAR_ESSENCE_BATTERY.get());
             //event.accept(BlockRegistry.NATURAL_ESSENCE_BATTERY.get());
             //event.accept(BlockRegistry.EXOTIC_ESSENCE_BATTERY.get());
             event.accept(BlockRegistry.FLUID_TANK.get());
@@ -466,7 +466,7 @@ public class DataNEssence
             event.accept(BlockRegistry.LIGHT_FIXTURE.get());
             event.accept(BlockRegistry.DEWLAMP.get());
             event.accept(BlockRegistry.PATTERNED_COPPER.get());
-            event.accept(BlockRegistry.ECLIPTRUM_BLOCK.get());
+            //event.accept(BlockRegistry.ECLIPTRUM_BLOCK.get());
             event.accept(BlockRegistry.COPPER_VENT.get());
             event.accept(BlockRegistry.DECO_ESSENCE_BUFFER.get());
             event.accept(BlockRegistry.DECO_ITEM_BUFFER.get());
