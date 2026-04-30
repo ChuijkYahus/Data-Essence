@@ -1,0 +1,14 @@
+{
+  "type": "datanessence:infusion",
+  "entry": "datanessence:machinery/industrial_infuser_processing",
+  "essenceCost": {
+    "datanessence:essence": 80.0
+  },
+  "input": {
+    "tag": "minecraft:logs_that_burn"
+  },
+  "result": {
+    "count": 2,
+    "id": "minecraft:charcoal"
+  }
+}

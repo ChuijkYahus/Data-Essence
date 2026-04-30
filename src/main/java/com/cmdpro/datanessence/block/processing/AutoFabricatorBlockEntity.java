@@ -416,6 +416,6 @@ public class AutoFabricatorBlockEntity extends BlockEntity implements MenuProvid
 
     @Override
     public List<Direction> getValidInputDirections() {
-        return List.of(Direction.DOWN, Direction.UP);
+        return List.of(Direction.DOWN);
     }
 }
