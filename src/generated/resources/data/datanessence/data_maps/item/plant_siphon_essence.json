@@ -108,6 +108,16 @@
       "amount_per_tick": 4.0,
       "ticks": 25
     },
+    "pastel:fissure_plum": {
+      "neoforge:conditions": [
+        {
+          "type": "neoforge:mod_loaded",
+          "modid": "pastel"
+        }
+      ],
+      "amount_per_tick": 2.0,
+      "ticks": 20
+    },
     "pastel:germinated_jade_vine_bulb": {
       "neoforge:conditions": [
         {
@@ -187,6 +197,16 @@
       ],
       "amount_per_tick": 4.0,
       "ticks": 50
+    },
+    "pastel:sawblade_holly_berry": {
+      "neoforge:conditions": [
+        {
+          "type": "neoforge:mod_loaded",
+          "modid": "pastel"
+        }
+      ],
+      "amount_per_tick": 2.0,
+      "ticks": 20
     },
     "pastel:vegetal": {
       "neoforge:conditions": [
