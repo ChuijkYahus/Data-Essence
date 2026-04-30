@@ -61,7 +61,12 @@ public class BlockRegistry {
     }
 
     public static BlockBehaviour.Properties getShieldlessAncientRockProperties() {
-        return BlockBehaviour.Properties.ofFullCopy(Blocks.OBSIDIAN).mapColor(MapColor.COLOR_PURPLE).sound(SoundType.DEEPSLATE_TILES).explosionResistance(360000f);
+        return BlockBehaviour.Properties.of()
+                .requiresCorrectToolForDrops()
+                .strength(50.0F, 360000f)
+                .sound(SoundType.DEEPSLATE_TILES)
+                .mapColor(MapColor.COLOR_PURPLE)
+                .instrument(NoteBlockInstrument.BASEDRUM);
     }
 
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(BuiltInRegistries.BLOCK,

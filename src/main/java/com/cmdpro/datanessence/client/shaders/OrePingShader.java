@@ -7,10 +7,9 @@ import com.cmdpro.databank.rendering.ShaderHelper;
 import com.cmdpro.databank.shaders.PostShaderInstance;
 import com.cmdpro.datanessence.DataNEssence;
 import com.cmdpro.datanessence.networking.packet.s2c.AddScannedOre;
-import com.cmdpro.datanessence.registry.TagRegistry;
+import com.cmdpro.datanessence.registry.HalcyonTags;
 import com.mojang.blaze3d.pipeline.MainTarget;
 import com.mojang.blaze3d.pipeline.RenderTarget;
-import com.mojang.blaze3d.platform.Lighting;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.ByteBufferBuilder;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -18,10 +17,6 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.*;
-import net.minecraft.client.renderer.block.BlockRenderDispatcher;
-import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
-import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
@@ -29,7 +24,6 @@ import net.minecraft.world.level.BlockAndTintGetter;
 import net.minecraft.world.level.ColorResolver;
 import net.minecraft.world.level.LightLayer;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -103,7 +97,7 @@ public class OrePingShader extends PostShaderInstance {
                     int value = i.getValue();
                     if (value <= 0) {
                         BlockState state = Minecraft.getInstance().level.getBlockState(pos);
-                        if (state.is(TagRegistry.Blocks.SCANNABLE_ORES)) {
+                        if (state.is(HalcyonTags.Blocks.SCANNABLE_ORES)) {
                             renderBlock(state, pos, event.getPoseStack(), event.getPartialTick(), createOrePingBufferSource());
                         }
                     }
@@ -153,7 +147,7 @@ public class OrePingShader extends PostShaderInstance {
                 return Blocks.AIR.defaultBlockState();
             }
             BlockState state = Minecraft.getInstance().level.getBlockState(pos);
-            if (state.is(TagRegistry.Blocks.SCANNABLE_ORES)) {
+            if (state.is(HalcyonTags.Blocks.SCANNABLE_ORES)) {
                 return state;
             }
             return Blocks.AIR.defaultBlockState();

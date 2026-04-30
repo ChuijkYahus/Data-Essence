@@ -7,7 +7,7 @@ import com.cmdpro.datanessence.block.transmission.EssenceBufferBlockEntity;
 import com.cmdpro.datanessence.block.transmission.FluidBufferBlockEntity;
 import com.cmdpro.datanessence.block.transmission.ItemBufferBlockEntity;
 import com.cmdpro.datanessence.networking.packet.s2c.vfx.PlayBufferTransferParticle;
-import com.cmdpro.datanessence.registry.TagRegistry;
+import com.cmdpro.datanessence.registry.HalcyonTags;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -27,7 +27,7 @@ public class BufferUtil {
                 if (transferredAmount > 0f)
                     PacketDistributor.sendToPlayersNear((ServerLevel) buffer.getLevel(), null, buffer.getBlockPos().getX(), buffer.getBlockPos().getY(), buffer.getBlockPos().getZ(), 16d, new PlayBufferTransferParticle(buffer.getBlockPos(), new Color(0xE236EF)));
             }
-            if (!container.getLevel().getBlockState(container.getBlockPos().offset(0, -i, 0)).is(TagRegistry.Blocks.BUFFER_DETECTION_PASS)) {
+            if (!container.getLevel().getBlockState(container.getBlockPos().offset(0, -i, 0)).is(HalcyonTags.Blocks.BUFFER_DETECTION_PASS)) {
                 break;
             }
         }
@@ -42,7 +42,7 @@ public class BufferUtil {
                         PacketDistributor.sendToPlayersNear((ServerLevel) buffer.getLevel(), null, buffer.getBlockPos().getX(), buffer.getBlockPos().getY(), buffer.getBlockPos().getZ(), 16d, new PlayBufferTransferParticle(buffer.getBlockPos(), new Color(0xE236EF)));
                 }
             }
-            if (!container.getLevel().getBlockState(container.getBlockPos().offset(0, -i, 0)).is(TagRegistry.Blocks.BUFFER_DETECTION_PASS)) {
+            if (!container.getLevel().getBlockState(container.getBlockPos().offset(0, -i, 0)).is(HalcyonTags.Blocks.BUFFER_DETECTION_PASS)) {
                 break;
             }
         }
@@ -60,7 +60,7 @@ public class BufferUtil {
                 if (transferredSomething)
                     PacketDistributor.sendToPlayersNear((ServerLevel) buffer.getLevel(), null, buffer.getBlockPos().getX(), buffer.getBlockPos().getY(), buffer.getBlockPos().getZ(), 16d, new PlayBufferTransferParticle(buffer.getBlockPos(), new Color(0xEF4D3D)));
             }
-            if (!container.getLevel().getBlockState(container.getBlockPos().offset(0, -i, 0)).is(TagRegistry.Blocks.BUFFER_DETECTION_PASS)) {
+            if (!container.getLevel().getBlockState(container.getBlockPos().offset(0, -i, 0)).is(HalcyonTags.Blocks.BUFFER_DETECTION_PASS)) {
                 break;
             }
         }
@@ -78,7 +78,7 @@ public class BufferUtil {
                 if (transferredSomething)
                     PacketDistributor.sendToPlayersNear((ServerLevel) buffer.getLevel(), null, buffer.getBlockPos().getX(), buffer.getBlockPos().getY(), buffer.getBlockPos().getZ(), 16d, new PlayBufferTransferParticle(buffer.getBlockPos(), new Color(0x56BAE9)));
             }
-            if (!container.getLevel().getBlockState(container.getBlockPos().offset(0, -i, 0)).is(TagRegistry.Blocks.BUFFER_DETECTION_PASS)) {
+            if (!container.getLevel().getBlockState(container.getBlockPos().offset(0, -i, 0)).is(HalcyonTags.Blocks.BUFFER_DETECTION_PASS)) {
                 break;
             }
         }

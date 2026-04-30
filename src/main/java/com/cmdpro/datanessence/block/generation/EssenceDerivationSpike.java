@@ -1,6 +1,6 @@
 package com.cmdpro.datanessence.block.generation;
 
-import com.cmdpro.datanessence.registry.TagRegistry;
+import com.cmdpro.datanessence.registry.HalcyonTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -63,7 +63,7 @@ public class EssenceDerivationSpike extends Block implements EntityBlock {
     protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
 
         if ( world.getBlockEntity(pos) instanceof EssenceDerivationSpikeBlockEntity spike && spike.isBroken ) {
-            if ( stack.is(TagRegistry.Items.COPPER_PARTS) ) {
+            if ( stack.is(HalcyonTags.Items.COPPER_PARTS) ) {
                 spike.isBroken = false;
                 world.playSound(null, pos, SoundEvents.SMITHING_TABLE_USE, SoundSource.BLOCKS);
                 stack.shrink(1);

@@ -1,10 +1,8 @@
 package com.cmdpro.datanessence.block.world;
 
-import com.cmdpro.databank.megablock.MegablockCoreUtil;
-import com.cmdpro.datanessence.registry.TagRegistry;
+import com.cmdpro.datanessence.registry.HalcyonTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.entity.player.Player;
@@ -14,7 +12,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.GrowingPlantBodyBlock;
 import net.minecraft.world.level.block.LiquidBlockContainer;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -87,7 +84,7 @@ public class PearlescentSpiral extends Block implements LiquidBlockContainer {
 
     @Override
     protected boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
-        if (!level.getBlockState(pos.below()).is(this) && !level.getBlockState(pos.below()).is(TagRegistry.Blocks.SANCTUARY_SAND)) {
+        if (!level.getBlockState(pos.below()).is(this) && !level.getBlockState(pos.below()).is(HalcyonTags.Blocks.SANCTUARY_SAND)) {
             return false;
         }
         return super.canSurvive(state, level, pos);

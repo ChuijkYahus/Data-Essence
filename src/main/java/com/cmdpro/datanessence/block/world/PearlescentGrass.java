@@ -1,17 +1,12 @@
 package com.cmdpro.datanessence.block.world;
 
-import com.cmdpro.datanessence.registry.BlockRegistry;
-import com.cmdpro.datanessence.registry.ParticleRegistry;
-import com.cmdpro.datanessence.registry.TagRegistry;
+import com.cmdpro.datanessence.registry.HalcyonTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.FluidTags;
-import net.minecraft.util.Mth;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.LiquidBlockContainer;
@@ -20,7 +15,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
-import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
 
 public class PearlescentGrass extends TallGrassBlock implements LiquidBlockContainer {
@@ -55,7 +49,7 @@ public class PearlescentGrass extends TallGrassBlock implements LiquidBlockConta
     }
     @Override
     protected boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
-        if (!level.getBlockState(pos.below()).is(TagRegistry.Blocks.SANCTUARY_SAND)) {
+        if (!level.getBlockState(pos.below()).is(HalcyonTags.Blocks.SANCTUARY_SAND)) {
             return false;
         }
         return super.canSurvive(state, level, pos);

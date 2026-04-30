@@ -3,7 +3,7 @@ package com.cmdpro.datanessence.datagen;
 import com.cmdpro.datanessence.DataNEssence;
 import com.cmdpro.datanessence.registry.BlockRegistry;
 import com.cmdpro.datanessence.registry.ItemRegistry;
-import com.cmdpro.datanessence.registry.TagRegistry;
+import com.cmdpro.datanessence.registry.HalcyonTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
@@ -36,15 +36,15 @@ public class ModItemTagGenerator extends ItemTagsProvider {
         this.tag(ItemTags.FREEZE_IMMUNE_WEARABLES)
                 .add(ItemRegistry.TRAVERSITE_TRUDGERS.get());
 
-        this.tag(TagRegistry.Items.EXPLOSIVE_MATERIAL)
+        this.tag(HalcyonTags.Items.EXPLOSIVE_MATERIAL)
                 .add(Items.GUNPOWDER)
                 .addOptionalTag(ResourceLocation.fromNamespaceAndPath("c", "dusts/sulfur"));
 
-        this.tag(TagRegistry.Items.COPPER_PARTS)
+        this.tag(HalcyonTags.Items.COPPER_PARTS)
                 .add(ItemRegistry.CAPACITANCE_PANEL.get())
                 .add(ItemRegistry.CONDUCTANCE_ROD.get())
                 .add(Items.COPPER_INGOT);
-        this.tag(TagRegistry.Items.ECLIPTRUM_PARTS)
+        this.tag(HalcyonTags.Items.ECLIPTRUM_PARTS)
                 .add(ItemRegistry.TRANSFORMATIVE_ROD.get())
                 .add(ItemRegistry.REFLECTIVE_PANEL.get())
                 .add(ItemRegistry.ECLIPTRUM_INGOT.get())
@@ -52,74 +52,74 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                 .add(ItemRegistry.ECLIPTRUM_COG_ASSEMBLY_2X.get())
                 .add(ItemRegistry.ECLIPTRUM_COG_ASSEMBLY_4X.get());
 
-        this.tag(TagRegistry.Items.SHAPED_POLISHED_OBSIDIAN_BLOCKS)
+        this.tag(HalcyonTags.Items.SHAPED_POLISHED_OBSIDIAN_BLOCKS)
                 .add(BlockRegistry.POLISHED_OBSIDIAN_COLUMN.get().asItem())
                 .add(BlockRegistry.ENGRAVED_POLISHED_OBSIDIAN.get().asItem())
                 .add(BlockRegistry.POLISHED_OBSIDIAN_BRICKS.get().asItem())
                 .add(BlockRegistry.POLISHED_OBSIDIAN_TRACT.get().asItem())
                 .add(BlockRegistry.POLISHED_OBSIDIAN_TILES.get().asItem());
 
-        this.tag(TagRegistry.Items.POLISHED_OBSIDIAN_BLOCKS)
-                .addTag(TagRegistry.Items.SHAPED_POLISHED_OBSIDIAN_BLOCKS)
+        this.tag(HalcyonTags.Items.POLISHED_OBSIDIAN_BLOCKS)
+                .addTag(HalcyonTags.Items.SHAPED_POLISHED_OBSIDIAN_BLOCKS)
                 .add(BlockRegistry.POLISHED_OBSIDIAN.get().asItem());
 
-        this.tag(TagRegistry.Items.MAKES_WHITE_DYE)
+        this.tag(HalcyonTags.Items.MAKES_WHITE_DYE)
                 .add(Items.LILY_OF_THE_VALLEY)
                 .add(Items.BONE_MEAL);
-        this.tag(TagRegistry.Items.MAKES_LIGHT_GRAY_DYE)
+        this.tag(HalcyonTags.Items.MAKES_LIGHT_GRAY_DYE)
                 .add(Items.AZURE_BLUET)
                 .add(Items.WHITE_TULIP)
                 .add(Items.OXEYE_DAISY);
-        this.tag(TagRegistry.Items.MAKES_GRAY_DYE);
+        this.tag(HalcyonTags.Items.MAKES_GRAY_DYE);
                 // vanilla has nothing that directly makes gray???
-        this.tag(TagRegistry.Items.MAKES_BLACK_DYE)
+        this.tag(HalcyonTags.Items.MAKES_BLACK_DYE)
                 .add(Items.INK_SAC)
                 .add(Items.WITHER_ROSE)
                 .add(Items.CHARCOAL);
-        this.tag(TagRegistry.Items.MAKES_BROWN_DYE)
+        this.tag(HalcyonTags.Items.MAKES_BROWN_DYE)
                 .add(Items.COCOA_BEANS)
                 .add(Items.BROWN_MUSHROOM);
-        this.tag(TagRegistry.Items.MAKES_RED_DYE)
+        this.tag(HalcyonTags.Items.MAKES_RED_DYE)
                 .add(Items.POPPY)
                 .add(Items.RED_TULIP)
                 .add(Items.ROSE_BUSH)
                 .add(Items.BEETROOT)
                 .add(Items.RED_MUSHROOM)
                 .add(Items.CRIMSON_FUNGUS);
-        this.tag(TagRegistry.Items.MAKES_ORANGE_DYE)
+        this.tag(HalcyonTags.Items.MAKES_ORANGE_DYE)
                 .add(Items.ORANGE_TULIP)
                 .add(Items.TORCHFLOWER);
-        this.tag(TagRegistry.Items.MAKES_YELLOW_DYE)
+        this.tag(HalcyonTags.Items.MAKES_YELLOW_DYE)
                 .add(Items.SUNFLOWER)
                 .add(Items.DANDELION);
-        this.tag(TagRegistry.Items.MAKES_LIME_DYE);
+        this.tag(HalcyonTags.Items.MAKES_LIME_DYE);
                 // nothing for lime either!
-        this.tag(TagRegistry.Items.MAKES_GREEN_DYE)
+        this.tag(HalcyonTags.Items.MAKES_GREEN_DYE)
                 .add(Items.CACTUS)
                 .add(Items.SHORT_GRASS)
                 .add(Items.TALL_GRASS)
                 .add(Items.FERN)
                 .add(Items.LARGE_FERN);
-        this.tag(TagRegistry.Items.MAKES_CYAN_DYE)
+        this.tag(HalcyonTags.Items.MAKES_CYAN_DYE)
                 .add(Items.PITCHER_PLANT)
                 .add(Items.WARPED_FUNGUS);
-        this.tag(TagRegistry.Items.MAKES_LIGHT_BLUE_DYE)
+        this.tag(HalcyonTags.Items.MAKES_LIGHT_BLUE_DYE)
                 .add(Items.BLUE_ORCHID);
-        this.tag(TagRegistry.Items.MAKES_BLUE_DYE)
+        this.tag(HalcyonTags.Items.MAKES_BLUE_DYE)
                 .add(Items.LAPIS_LAZULI)
                 .add(Items.CORNFLOWER);
-        this.tag(TagRegistry.Items.MAKES_PURPLE_DYE);
+        this.tag(HalcyonTags.Items.MAKES_PURPLE_DYE);
                 // again, nothing
-        this.tag(TagRegistry.Items.MAKES_MAGENTA_DYE)
+        this.tag(HalcyonTags.Items.MAKES_MAGENTA_DYE)
                 .add(Items.ALLIUM)
                 .add(Items.LILAC)
                 .add(Items.SPORE_BLOSSOM);
-        this.tag(TagRegistry.Items.MAKES_PINK_DYE)
+        this.tag(HalcyonTags.Items.MAKES_PINK_DYE)
                 .add(Items.PEONY)
                 .add(Items.PINK_PETALS)
                 .add(Items.PINK_TULIP);
 
-        this.tag(TagRegistry.Items.HIDDEN_RESOURCES)
+        this.tag(HalcyonTags.Items.HIDDEN_RESOURCES)
                 .add(ItemRegistry.LENSING_CRYSTAL.get())
                 .add(ItemRegistry.BONDING_POWDER.get())
                 .add(ItemRegistry.FROZEN_MOONLIGHT_CHUNK.get());
@@ -134,5 +134,44 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                 .add(BlockRegistry.SPIRE_GLASS.get().asItem());
         this.tag(Tags.Items.MUSIC_DISCS)
                 .add(ItemRegistry.UNDER_THE_SKY_MUSIC_DISC.get());
+
+        this.tag(HalcyonTags.Items.WIP)
+                .add(ItemRegistry.THERMOMETER.get())
+                .add(ItemRegistry.LUNAR_ESSENCE_BOMB.get())
+                .add(ItemRegistry.NATURAL_ESSENCE_BOMB.get())
+                .add(ItemRegistry.EXOTIC_ESSENCE_BOMB.get())
+                .add(ItemRegistry.FALLING_MOON.get())
+                .add(ItemRegistry.REPULSION_ROD.get())
+                .add(ItemRegistry.ANTI_GRAVITY_PACK.get())
+                .add(ItemRegistry.LUNAR_ESSENCE_WIRE.get())
+                .add(ItemRegistry.NATURAL_ESSENCE_WIRE.get())
+                .add(ItemRegistry.EXOTIC_ESSENCE_WIRE.get())
+                .add(ItemRegistry.RF_WIRE.get())
+                .add(ItemRegistry.SPEED_UPGRADE_2.get())
+                .add(ItemRegistry.LUNAR_ESSENCE_SHARD.get())
+                .add(ItemRegistry.FROZEN_MOONLIGHT_CHUNK.get())
+                .add(ItemRegistry.TRANSFORMATIVE_GEL.get())
+                .add(ItemRegistry.EXTRICATION_ROD.get())
+                .add(ItemRegistry.ECLIPTRUM_INGOT.get())
+                .add(ItemRegistry.REFLECTIVE_PANEL.get())
+                .add(ItemRegistry.TRANSFORMATIVE_ROD.get())
+                .add(ItemRegistry.ECLIPTRUM_COG.get())
+                .add(ItemRegistry.ECLIPTRUM_COG_ASSEMBLY_2X.get())
+                .add(ItemRegistry.ECLIPTRUM_COG_ASSEMBLY_4X.get())
+                .add(BlockRegistry.LUNAR_ESSENCE_CRYSTAL.get().asItem())
+                .add(BlockRegistry.FROZEN_MOONLIGHT.get().asItem())
+                .add(BlockRegistry.VIVID_LOTUS.get().asItem())
+                .add(BlockRegistry.LUNAR_CRYSTAL_SEED.get().asItem())
+                .add(BlockRegistry.ESSENCE_DERIVATION_SPIKE.get().asItem())
+                .add(BlockRegistry.LUNARIUM.get().asItem())
+                .add(BlockRegistry.CRYSTALLINE_CRADLE.get().asItem())
+                .add(BlockRegistry.LUNAR_ESSENCE_POINT.get().asItem())
+                .add(BlockRegistry.NATURAL_ESSENCE_POINT.get().asItem())
+                .add(BlockRegistry.EXOTIC_ESSENCE_POINT.get().asItem())
+                .add(BlockRegistry.RF_NODE.get().asItem())
+                .add(BlockRegistry.LUNAR_ESSENCE_BATTERY.get().asItem())
+                .add(BlockRegistry.NATURAL_ESSENCE_BATTERY.get().asItem())
+                .add(BlockRegistry.EXOTIC_ESSENCE_BATTERY.get().asItem())
+                .add(BlockRegistry.ECLIPTRUM_BLOCK.get().asItem());
     }
 }

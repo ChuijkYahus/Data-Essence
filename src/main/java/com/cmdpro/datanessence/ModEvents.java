@@ -7,10 +7,8 @@ import com.cmdpro.datanessence.api.item.AdjustableAttributes;
 import com.cmdpro.datanessence.api.node.block.BaseCapabilityPoint;
 import com.cmdpro.datanessence.api.node.block.BaseEssencePoint;
 import com.cmdpro.datanessence.api.pearlnetwork.PearlNetworkBlock;
-import com.cmdpro.datanessence.api.pearlnetwork.PearlNetworkBlockEntity;
 import com.cmdpro.datanessence.api.util.DataTabletUtil;
 import com.cmdpro.datanessence.api.util.PlayerDataUtil;
-import com.cmdpro.datanessence.block.auxiliary.DataBank;
 import com.cmdpro.datanessence.block.auxiliary.TwiningLanternBlockEntity;
 import com.cmdpro.datanessence.block.technical.StructureProtector;
 import com.cmdpro.datanessence.block.transportation.TraversiteRoad;
@@ -18,7 +16,6 @@ import com.cmdpro.datanessence.block.technical.StructureProtectorBlockEntity;
 import com.cmdpro.datanessence.data.computers.ComputerTypeManager;
 import com.cmdpro.datanessence.data.pinging.PingableStructureManager;
 import com.cmdpro.datanessence.entity.LunarStrike;
-import com.cmdpro.datanessence.item.equipment.AntiGravityPack;
 import com.cmdpro.datanessence.item.equipment.EssenceMeter;
 import com.cmdpro.datanessence.item.equipment.EssenceRedirector;
 import com.cmdpro.datanessence.item.equipment.GrapplingHook;
@@ -37,7 +34,6 @@ import com.cmdpro.datanessence.data.datatablet.DataTabManager;
 import com.cmdpro.datanessence.data.datatablet.Entries;
 import com.cmdpro.datanessence.data.datatablet.Entry;
 import com.cmdpro.datanessence.data.datatablet.EntryManager;
-import com.cmdpro.datanessence.registry.ItemRegistry;
 import com.cmdpro.datanessence.registry.SoundRegistry;
 import com.cmdpro.datanessence.registry.EntityRegistry;
 import net.minecraft.core.BlockPos;
@@ -48,13 +44,11 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
-import net.minecraft.world.InteractionResult;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -69,7 +63,6 @@ import net.neoforged.neoforge.event.OnDatapackSyncEvent;
 import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
 import net.neoforged.neoforge.event.entity.living.FinalizeSpawnEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDestroyBlockEvent;
-import net.neoforged.neoforge.event.entity.living.MobSpawnEvent;
 import net.neoforged.neoforge.event.entity.player.AdvancementEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
@@ -78,8 +71,6 @@ import net.neoforged.neoforge.event.level.BlockEvent;
 import net.neoforged.neoforge.event.level.ExplosionEvent;
 import net.neoforged.neoforge.event.tick.EntityTickEvent;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
-import org.spongepowered.asm.mixin.injection.struct.InjectorGroupInfo;
-import org.w3c.dom.Attr;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -163,7 +154,7 @@ public class ModEvents {
     public static void preventBreakingProtectedBlocks(BlockEvent.BreakEvent event) {
 
         if (!event.getPlayer().isCreative()) {
-            if (!event.getLevel().getBlockState(event.getPos()).is( TagRegistry.Blocks.STRUCTURE_PROTECTOR_IGNORED )) {
+            if (!event.getLevel().getBlockState(event.getPos()).is( HalcyonTags.Blocks.STRUCTURE_PROTECTOR_IGNORED )) {
                 if (!event.getLevel().isClientSide()) {
                     if (((Level) event.getLevel()).hasData(AttachmentTypeRegistry.STRUCTURE_CONTROLLERS)) {
                         List<StructureProtectorBlockEntity> ents = ((Level) event.getLevel()).getData(AttachmentTypeRegistry.STRUCTURE_CONTROLLERS);
@@ -186,7 +177,7 @@ public class ModEvents {
         boolean creative = event.getEntity() instanceof Player player && player.isCreative(); // ...this does not block fake players does it? should it? ~Eset
 
         if (!creative) {
-            if (!event.getLevel().isClientSide() && !event.getPlacedBlock().is( TagRegistry.Blocks.STRUCTURE_PROTECTOR_IGNORED ) ) {
+            if (!event.getLevel().isClientSide() && !event.getPlacedBlock().is( HalcyonTags.Blocks.STRUCTURE_PROTECTOR_IGNORED ) ) {
                 if (((Level)event.getLevel()).hasData(AttachmentTypeRegistry.STRUCTURE_CONTROLLERS)) {
                     List<StructureProtectorBlockEntity> ents = ((Level) event.getLevel()).getData(AttachmentTypeRegistry.STRUCTURE_CONTROLLERS);
                     for (StructureProtectorBlockEntity i : ents) {

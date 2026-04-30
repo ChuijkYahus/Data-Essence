@@ -2,7 +2,6 @@ package com.cmdpro.datanessence.registry;
 
 import com.cmdpro.datanessence.DataNEssence;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
@@ -10,7 +9,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 
-public class TagRegistry {
+public class HalcyonTags {
     public static class Blocks {
         public static final TagKey<Block> BUFFER_DETECTION_PASS = tag("buffer_detection_pass");
         public static final TagKey<Block> HAMMER_AND_CHISEL_COLLECTABLE = tag("hammer_and_chisel_collectable"); // for the Hammer and Chisel tool
@@ -59,6 +58,9 @@ public class TagRegistry {
 
         // Advancement trigger materials
         public static final TagKey<Item> HIDDEN_RESOURCES = tag ("hidden_resources");
+
+        // Unfinished content; will be hidden from recipe viewers and given a tooltip
+        public static final TagKey<Item> WIP = tag ("wip");
 
         private static TagKey<Item> tag(String name) {
             return ItemTags.create(DataNEssence.locate(name));

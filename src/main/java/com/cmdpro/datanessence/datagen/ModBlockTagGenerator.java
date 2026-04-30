@@ -2,7 +2,7 @@ package com.cmdpro.datanessence.datagen;
 
 import com.cmdpro.datanessence.DataNEssence;
 import com.cmdpro.datanessence.registry.BlockRegistry;
-import com.cmdpro.datanessence.registry.TagRegistry;
+import com.cmdpro.datanessence.registry.HalcyonTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
@@ -136,12 +136,12 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 .add(BlockRegistry.LENSING_CRYSTAL_ORE.get());
         this.tag(BlockTags.NEEDS_IRON_TOOL)
                 .add(BlockRegistry.ASTRAL_GOOP.get());
-        this.tag(TagRegistry.Blocks.BUFFER_DETECTION_PASS)
+        this.tag(HalcyonTags.Blocks.BUFFER_DETECTION_PASS)
                 .add(BlockRegistry.ITEM_BUFFER.get())
                 .add(BlockRegistry.FLUID_BUFFER.get())
                 .add(BlockRegistry.ESSENCE_BUFFER.get())
                 .add(BlockRegistry.LIMITED_ITEM_BUFFER.get());
-        this.tag(TagRegistry.Blocks.HAMMER_AND_CHISEL_COLLECTABLE)
+        this.tag(HalcyonTags.Blocks.HAMMER_AND_CHISEL_COLLECTABLE)
                 .add(Blocks.OBSIDIAN)
                 .add(Blocks.CRYING_OBSIDIAN)
                 .add(BlockRegistry.OBSIDIAN_FRAMED_GLASS.get())
@@ -172,14 +172,14 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 .add(BlockRegistry.SHIELDLESS_ANCIENT_GLYPH_STONE_ESSENCE.get())
                 .add(BlockRegistry.SHIELDLESS_ANCIENT_GLYPH_STONE_MAKUTUIN.get())
                 .add(BlockRegistry.ANCIENT_GLYPH_STONE_ESSENCE.get());
-        this.tag(TagRegistry.Blocks.CRYSTALLINE_CRADLE_BREAKABLE)
+        this.tag(HalcyonTags.Blocks.CRYSTALLINE_CRADLE_BREAKABLE)
                 .add(BlockRegistry.ESSENCE_CRYSTAL.get())
                 .add(BlockRegistry.LUNAR_ESSENCE_CRYSTAL.get());
         this.tag(Tags.Blocks.ORES)
                 .add(BlockRegistry.LENSING_CRYSTAL_ORE.get());
         this.tag(Tags.Blocks.ORES_IN_GROUND_STONE)
                 .add(BlockRegistry.LENSING_CRYSTAL_ORE.get());
-        this.tag(TagRegistry.Blocks.SCANNABLE_ORES)
+        this.tag(HalcyonTags.Blocks.SCANNABLE_ORES)
                 .addTag(Tags.Blocks.ORES)
                 .add(BlockRegistry.ESSENCE_CRYSTAL.get());
         this.tag(BlockTags.MINEABLE_WITH_SHOVEL)
@@ -199,24 +199,24 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 .add(BlockRegistry.RED_PEARLESCENT_SAND.get())
                 .add(BlockRegistry.GREEN_PEARLESCENT_SAND.get())
                 .add(BlockRegistry.BLUE_PEARLESCENT_SAND.get());
-        this.tag(TagRegistry.Blocks.PEARLESCENT_SAND)
+        this.tag(HalcyonTags.Blocks.PEARLESCENT_SAND)
                 .add(BlockRegistry.RED_PEARLESCENT_SAND.get())
                 .add(BlockRegistry.GREEN_PEARLESCENT_SAND.get())
                 .add(BlockRegistry.BLUE_PEARLESCENT_SAND.get());
-        this.tag(TagRegistry.Blocks.SANCTUARY_SAND)
+        this.tag(HalcyonTags.Blocks.SANCTUARY_SAND)
                 .add(BlockRegistry.SANCTUARY_SAND.get())
                 .add(BlockRegistry.DEEP_SANCTUARY_SAND.get())
                 .add(BlockRegistry.RED_PEARLESCENT_SAND.get())
                 .add(BlockRegistry.GREEN_PEARLESCENT_SAND.get())
                 .add(BlockRegistry.BLUE_PEARLESCENT_SAND.get());
-        this.tag(TagRegistry.Blocks.SANCTUARY_CARVER_REPLACEABLES)
+        this.tag(HalcyonTags.Blocks.SANCTUARY_CARVER_REPLACEABLES)
                 .add(BlockRegistry.ASTRAL_GOOP.get())
                 .add(Blocks.STONE);
 
-        this.tag(TagRegistry.Blocks.STRUCTURE_PROTECTOR_IGNORED)
-                .addTag(TagRegistry.Blocks.PUZZLE_COMPONENTS)
+        this.tag(HalcyonTags.Blocks.STRUCTURE_PROTECTOR_IGNORED)
+                .addTag(HalcyonTags.Blocks.PUZZLE_COMPONENTS)
                 .add(BlockRegistry.STRUCTURE_PROTECTOR.get());
 
-        this.tag(TagRegistry.Blocks.PUZZLE_COMPONENTS);
+        this.tag(HalcyonTags.Blocks.PUZZLE_COMPONENTS);
     }
 }

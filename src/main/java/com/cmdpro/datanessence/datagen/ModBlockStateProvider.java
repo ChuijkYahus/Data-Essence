@@ -46,8 +46,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         parentedBlockWithItem(BlockRegistry.SHIELDLESS_ANCIENT_ROCK_BRICKS, DataNEssence.locate("ancient_rock_bricks"));
         parentedBlockWithItem(BlockRegistry.SHIELDLESS_ANCIENT_ROCK_TILES, DataNEssence.locate("ancient_rock_tiles"));
-        parentedBlockWithItem(BlockRegistry.SHIELDLESS_ANCIENT_ROCK_COLUMN, DataNEssence.locate("ancient_rock_column"));
-        parentedBlockWithItem(BlockRegistry.SHIELDLESS_ENERGIZED_ANCIENT_ROCK_COLUMN, DataNEssence.locate("energized_ancient_rock_column"));
+        //parentedBlockWithItem(BlockRegistry.SHIELDLESS_ANCIENT_ROCK_COLUMN, DataNEssence.locate("ancient_rock_column")); // these 2 also do not gen properly. :slugdead:
+        //parentedBlockWithItem(BlockRegistry.SHIELDLESS_ENERGIZED_ANCIENT_ROCK_COLUMN, DataNEssence.locate("energized_ancient_rock_column"));
         parentedBlockWithItem(BlockRegistry.SHIELDLESS_ANCIENT_LANTERN, DataNEssence.locate("ancient_lantern"));
         //parentedBlockWithItem(BlockRegistry.SHIELDLESS_ANCIENT_SHELF, DataNEssence.locate("ancient_shelf")); // does not gen properly, multi-model block. done manually for now
         parentedBlockWithItem(BlockRegistry.SHIELDLESS_ANCIENT_WINDOW, DataNEssence.locate("ancient_window"));

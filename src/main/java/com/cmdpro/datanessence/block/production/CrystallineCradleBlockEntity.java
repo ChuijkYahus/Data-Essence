@@ -1,12 +1,11 @@
 package com.cmdpro.datanessence.block.production;
 
-import com.cmdpro.datanessence.DataNEssence;
 import com.cmdpro.datanessence.api.essence.EssenceBlockEntity;
 import com.cmdpro.datanessence.api.essence.EssenceStorage;
 import com.cmdpro.datanessence.api.essence.container.SingleEssenceContainer;
 import com.cmdpro.datanessence.registry.BlockEntityRegistry;
 import com.cmdpro.datanessence.registry.EssenceTypeRegistry;
-import com.cmdpro.datanessence.registry.TagRegistry;
+import com.cmdpro.datanessence.registry.HalcyonTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
@@ -14,7 +13,6 @@ import net.minecraft.network.Connection;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.util.Mth;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.NoteBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -90,7 +88,7 @@ public class CrystallineCradleBlockEntity extends BlockEntity implements Essence
                     closest = closest.add(closest.vectorTo(pos.getCenter()).scale(0.2f));
                     if (closest.distanceTo(pos.getCenter()) <= range && furthest.distanceTo(pos.getCenter()) >= range) {
                         BlockState breakState = world.getBlockState(i);
-                        if (breakState.is(TagRegistry.Blocks.CRYSTALLINE_CRADLE_BREAKABLE)) {
+                        if (breakState.is(HalcyonTags.Blocks.CRYSTALLINE_CRADLE_BREAKABLE)) {
                             if (tile.getStorage().getEssence(EssenceTypeRegistry.ESSENCE.get()) >= tile.breakCost) {
                                 world.destroyBlock(i, true);
                                 tile.getStorage().removeEssence(EssenceTypeRegistry.ESSENCE.get(), tile.breakCost);

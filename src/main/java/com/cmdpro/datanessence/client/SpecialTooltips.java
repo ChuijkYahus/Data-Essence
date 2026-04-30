@@ -5,6 +5,7 @@ import com.cmdpro.datanessence.api.essence.EssenceType;
 import com.cmdpro.datanessence.datamaps.DataNEssenceDatamaps;
 import com.cmdpro.datanessence.datamaps.PlantSiphonEssenceMap;
 import com.cmdpro.datanessence.registry.EssenceTypeRegistry;
+import com.cmdpro.datanessence.registry.HalcyonTags;
 import com.cmdpro.datanessence.screen.IndustrialPlantSiphonScreen;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
@@ -23,10 +24,15 @@ import java.util.function.Supplier;
 
 @EventBusSubscriber(value = Dist.CLIENT, modid = DataNEssence.MOD_ID)
 public class SpecialTooltips {
+    private static final HashMap<Function<ItemTooltipEvent, Boolean>, Consumer<ItemTooltipEvent>> TOOLTIPS = new HashMap<>();
+
     public static final Function<ItemTooltipEvent, Boolean> PLANT_SIPHON_CONDITION = (event) ->
             event.getItemStack().getItemHolder().getData(DataNEssenceDatamaps.PLANT_SIPHON_ESSENCE) != null
             && Minecraft.getInstance().screen instanceof IndustrialPlantSiphonScreen;
-    private static final HashMap<Function<ItemTooltipEvent, Boolean>, Consumer<ItemTooltipEvent>> TOOLTIPS = new HashMap<>();
+
+    public static final Function<ItemTooltipEvent, Boolean> WIP_CONDITION = (event) ->
+            event.getItemStack().is(HalcyonTags.Items.WIP);
+
     static {
         TOOLTIPS.put(PLANT_SIPHON_CONDITION, (event) -> {
             PlantSiphonEssenceMap map = event.getItemStack().getItemHolder().getData(DataNEssenceDatamaps.PLANT_SIPHON_ESSENCE);
@@ -41,7 +47,22 @@ public class SpecialTooltips {
                 event.getToolTip().add(Component.translatable("tooltip.datanessence.plant_siphon_display.values", Component.literal(format.format(map.amountPerTick())).withColor(numberColor.getRGB()), Component.literal(String.valueOf(map.ticks())).withColor(numberColor.getRGB()), essence.name.copy().withColor(essenceColor.getRGB())).withColor(textColor.getRGB()));
             }
         });
+
+        TOOLTIPS.put( WIP_CONDITION, (event) -> {
+            event.getToolTip().add(
+                    Component.translatable("tooltip.datanessence.wip_1")
+                            .withColor(0xE83A27) // maybe make this flash between red and white every 2 seconds
+            );
+            event.getToolTip().add(
+                    Component.translatable("tooltip.datanessence.wip_2")
+                            .withStyle(ChatFormatting.ITALIC)
+                            .withColor(0xFFEA99)
+            );
+        });
     }
+
+
+
     @SubscribeEvent
     public static void onTooltipEvent(ItemTooltipEvent event) {
         for (var i : TOOLTIPS.entrySet()) {

@@ -2,7 +2,6 @@ package com.cmdpro.datanessence.worldgen.features;
 
 import com.cmdpro.datanessence.block.world.EssenceCrystal;
 import com.cmdpro.datanessence.registry.BlockRegistry;
-import com.cmdpro.datanessence.registry.TagRegistry;
 import com.mojang.serialization.Codec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -11,7 +10,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
-import net.neoforged.neoforge.common.Tags;
 
 public class EssenceCrystalFeature extends Feature<NoneFeatureConfiguration> {
     public EssenceCrystalFeature(Codec<NoneFeatureConfiguration> pCodec) {

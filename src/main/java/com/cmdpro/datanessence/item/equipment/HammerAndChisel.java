@@ -3,7 +3,7 @@ package com.cmdpro.datanessence.item.equipment;
 import com.cmdpro.datanessence.block.technical.StructureProtectorBlockEntity;
 import com.cmdpro.datanessence.registry.AttachmentTypeRegistry;
 import com.cmdpro.datanessence.registry.SoundRegistry;
-import com.cmdpro.datanessence.registry.TagRegistry;
+import com.cmdpro.datanessence.registry.HalcyonTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
@@ -29,7 +29,7 @@ public class HammerAndChisel extends Item {
     public boolean chiselBlock(Level world, BlockPos target, ItemStack stack, Player player) {
         BlockState targetState = world.getBlockState(target);
 
-        if (targetState.is(TagRegistry.Blocks.HAMMER_AND_CHISEL_COLLECTABLE)) {
+        if (targetState.is(HalcyonTags.Blocks.HAMMER_AND_CHISEL_COLLECTABLE)) {
             stack.hurtAndBreak(1, player, player.getEquipmentSlotForItem(stack));
             // somehow save the block coord to the tool
             return true;
@@ -55,7 +55,7 @@ public class HammerAndChisel extends Item {
     public boolean hammerBlock(Level world, BlockPos target, ItemStack stack, Player player, EquipmentSlot hand) {
         BlockState targetState = world.getBlockState(target);
 
-        if (targetState.is(TagRegistry.Blocks.HAMMER_AND_CHISEL_COLLECTABLE) && !isPositionStructureProtected(world, target)) {
+        if (targetState.is(HalcyonTags.Blocks.HAMMER_AND_CHISEL_COLLECTABLE) && !isPositionStructureProtected(world, target)) {
             stack.hurtAndBreak(1, player, hand);
             world.destroyBlock(target, true);
             return true;

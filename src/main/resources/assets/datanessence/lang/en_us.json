@@ -810,6 +810,8 @@
   "tooltip.datanessence.plant_siphon_display.values": "  Produces %1$s %3$s for %2$s ticks",
   "tooltip.datanessence.fluid_tank.contains": "%s / %s of %s",
   "tooltip.datanessence.fluid_tank.empty": "Empty",
+  "tooltip.datanessence.wip_1": "⚠ This feature is WIP! ⚠",
+  "tooltip.datanessence.wip_2": "Attempting to use it may produce unintended results. If you are a pack dev, you should not be touching this.",
 
 
   "subtitle.datanessence.block.entropic_processor.working": "Entropic Processor grinds",
@@ -889,6 +891,7 @@
   "tag.item.datanessence.makes_pink_dye": "Makes Pink Dye",
   "tag.item.datanessence.hidden_resources": "Hidden Resources",
   "tag.item.datanessence.sanctuary_resources": "Sanctuary Resources",
+  "tag.item.datanessence.wip": "Work in Progress - Don't Touch!",
 
   "emi.info.datanessence.ancient_items_are_loot_only": "This is an Ancient item. It cannot be crafted, and must instead be found.\nTry searching inside structures built from an otherworldly, purple rock.",
   "emi.info.datanessence.hammer_and_chisel": "The Hammer and Chisel is a tool that can gather certain blocks, such as Obsidian and its derivatives, far more expeditiously than most other pieces of equipment. Use it on a suitable block to cause it to drop instantly.",

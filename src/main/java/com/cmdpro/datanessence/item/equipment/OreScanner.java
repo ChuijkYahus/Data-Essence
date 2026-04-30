@@ -4,22 +4,14 @@ import com.cmdpro.databank.DatabankUtils;
 import com.cmdpro.databank.hidden.types.BlockHiddenType;
 import com.cmdpro.datanessence.DataNEssence;
 import com.cmdpro.datanessence.api.item.ItemEssenceContainer;
-import com.cmdpro.datanessence.data.pinging.PingableStructureManager;
-import com.cmdpro.datanessence.data.pinging.StructurePing;
 import com.cmdpro.datanessence.networking.ModMessages;
 import com.cmdpro.datanessence.networking.packet.s2c.AddScannedOre;
 import com.cmdpro.datanessence.networking.packet.s2c.CreatePingShader;
-import com.cmdpro.datanessence.networking.packet.s2c.PingStructures;
 import com.cmdpro.datanessence.registry.DataComponentRegistry;
 import com.cmdpro.datanessence.registry.EssenceTypeRegistry;
 import com.cmdpro.datanessence.registry.SoundRegistry;
-import com.cmdpro.datanessence.registry.TagRegistry;
-import net.minecraft.advancements.AdvancementHolder;
+import com.cmdpro.datanessence.registry.HalcyonTags;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Holder;
-import net.minecraft.core.HolderSet;
-import net.minecraft.core.Registry;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.resources.ResourceLocation;
@@ -35,13 +27,10 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.levelgen.structure.Structure;
 import net.minecraft.world.phys.AABB;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Optional;
 
 public class OreScanner extends Item {
     public static ResourceLocation FUEL_ESSENCE_TYPE = DataNEssence.locate("essence");
@@ -65,7 +54,7 @@ public class OreScanner extends Item {
                     if (hiddenBlock != null) {
                         state = DatabankUtils.changeBlockType(state, hiddenBlock);
                     }
-                    if (state.is(TagRegistry.Blocks.SCANNABLE_ORES)) {
+                    if (state.is(HalcyonTags.Blocks.SCANNABLE_ORES)) {
                         ores.put(new BlockPos(i), (int)(bounds.getCenter().distanceTo(i.getCenter())*2f));
                     }
                 }
