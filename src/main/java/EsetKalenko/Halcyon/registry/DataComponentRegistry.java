@@ -1,0 +1,82 @@
+package EsetKalenko.Halcyon.registry;
+
+import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.api.item.ItemEssenceContainer;
+import com.mojang.serialization.Codec;
+import net.minecraft.core.component.DataComponentType;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.network.codec.ByteBufCodecs;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.world.item.component.ItemContainerContents;
+import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import net.neoforged.neoforge.fluids.SimpleFluidContent;
+
+public class DataComponentRegistry {
+    public static final DeferredRegister.DataComponents DATA_COMPONENTS = DeferredRegister.createDataComponents(DataNEssence.MOD_ID);
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<ResourceLocation>> DATA_ID = DATA_COMPONENTS.registerComponentType("data_id", builder -> builder
+            .persistent(ResourceLocation.CODEC)
+            .networkSynchronized(ResourceLocation.STREAM_CODEC)
+            .cacheEncoding()
+    );
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<Integer>> DATA_INCOMPLETE = DATA_COMPONENTS.registerComponentType("data_incomplete", builder -> builder
+            .persistent(Codec.INT)
+            .networkSynchronized(ByteBufCodecs.INT)
+            .cacheEncoding()
+    );
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<ResourceLocation>> MOLD = DATA_COMPONENTS.registerComponentType("mold", builder -> builder
+            .persistent(ResourceLocation.CODEC)
+            .networkSynchronized(ResourceLocation.STREAM_CODEC)
+            .cacheEncoding()
+    );
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<ItemEssenceContainer>> ESSENCE_STORAGE = DATA_COMPONENTS.registerComponentType("essence_storage", builder -> builder
+            .persistent(ItemEssenceContainer.CODEC.codec())
+            .networkSynchronized(ItemEssenceContainer.STREAM_CODEC)
+            .cacheEncoding()
+    );
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<ResourceKey<SoundEvent>>> PLAYING_MUSIC = DATA_COMPONENTS.registerComponentType("playing_sound", builder -> builder
+            .persistent(ResourceKey.codec(Registries.SOUND_EVENT))
+            .networkSynchronized(ResourceKey.streamCodec(Registries.SOUND_EVENT))
+            .cacheEncoding()
+    );
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<ItemContainerContents>> FILTER_STACK = DATA_COMPONENTS.registerComponentType("filter_stack", builder -> builder
+            .persistent(ItemContainerContents.CODEC)
+            .networkSynchronized(ItemContainerContents.STREAM_CODEC)
+            .cacheEncoding()
+    );
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<Float>> STORED_ESSENCE =
+            DATA_COMPONENTS.registerComponentType("stored_essence", builder -> builder
+                    .persistent(Codec.FLOAT)
+                    .networkSynchronized(ByteBufCodecs.FLOAT)
+                    .cacheEncoding()
+            );
+
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<SimpleFluidContent>> STORED_FLUID =
+            DATA_COMPONENTS.registerComponentType("stored_fluid", builder -> builder
+                    .persistent(SimpleFluidContent.CODEC)
+                    .networkSynchronized(SimpleFluidContent.STREAM_CODEC)
+                    .cacheEncoding()
+            );
+
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<Boolean>> SIGNAL_TRACKER_MODE =
+            DATA_COMPONENTS.registerComponentType("mode", builder -> builder
+                    .persistent(Codec.BOOL)
+                    .networkSynchronized(ByteBufCodecs.BOOL)
+                    .cacheEncoding()
+            );
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<Boolean>> SIGNAL_TRACKER_UPGRADED =
+            DATA_COMPONENTS.registerComponentType("upgraded", builder -> builder
+                    .persistent(Codec.BOOL)
+                    .networkSynchronized(ByteBufCodecs.BOOL)
+                    .cacheEncoding()
+            );
+
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<String>> FILTER_STRING =
+            DATA_COMPONENTS.registerComponentType("filter_string", builder -> builder
+                    .persistent(Codec.STRING)
+                    .networkSynchronized(ByteBufCodecs.STRING_UTF8)
+                    .cacheEncoding()
+            );
+}

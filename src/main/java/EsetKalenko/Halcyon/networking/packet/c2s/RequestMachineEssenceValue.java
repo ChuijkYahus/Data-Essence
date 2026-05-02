@@ -1,0 +1,38 @@
+package EsetKalenko.Halcyon.networking.packet.c2s;
+
+import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.networking.Message;
+import EsetKalenko.Halcyon.networking.ModMessages;
+import EsetKalenko.Halcyon.networking.packet.s2c.MachineEssenceValueSync;
+import net.minecraft.core.BlockPos;
+import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.server.level.ServerPlayer;
+import net.neoforged.neoforge.network.handling.IPayloadContext;
+
+public record RequestMachineEssenceValue(BlockPos blockPos) implements Message {
+
+    public static RequestMachineEssenceValue read(RegistryFriendlyByteBuf buf) {
+        BlockPos blockPos = buf.readBlockPos();
+        return new RequestMachineEssenceValue(blockPos);
+    }
+
+    @Override
+    public void handleServer(MinecraftServer server, ServerPlayer player, IPayloadContext ctx) {
+        MachineEssenceValueSync packet = MachineEssenceValueSync.create(player.level(), blockPos);
+        if (packet != null) {
+            ModMessages.sendToPlayer(packet, player);
+        }
+    }
+
+    public static void write(RegistryFriendlyByteBuf buf, RequestMachineEssenceValue obj) {
+        buf.writeBlockPos(obj.blockPos);
+    }
+
+    @Override
+    public Type<? extends CustomPacketPayload> type() {
+        return TYPE;
+    }
+    public static final Type<RequestMachineEssenceValue> TYPE = new Type<>(DataNEssence.locate("request_machine_essence_value"));
+}

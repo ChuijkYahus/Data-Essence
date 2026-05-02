@@ -1,0 +1,82 @@
+package EsetKalenko.Halcyon.integration.mekanism;
+
+import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.api.node.block.BaseCapabilityPointBlockEntity;
+import EsetKalenko.Halcyon.config.DataNEssenceConfig;
+import EsetKalenko.Halcyon.registry.BlockEntityRegistry;
+import mekanism.api.Action;
+import mekanism.api.chemical.ChemicalStack;
+import mekanism.api.chemical.IChemicalHandler;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.block.state.BlockState;
+import org.jgrapht.GraphPath;
+import org.jgrapht.graph.DefaultEdge;
+import org.joml.Math;
+
+import java.awt.*;
+import java.util.List;
+
+import static EsetKalenko.Halcyon.integration.DataNEssenceIntegration.BLOCK_CHEMICAL;
+
+public class ChemicalNodeBlockEntity extends BaseCapabilityPointBlockEntity {
+
+    public ChemicalNodeBlockEntity(BlockPos pPos, BlockState pBlockState) {
+        super(BlockEntityRegistry.CHEMICAL_NODE.get(), pPos, pBlockState);
+    }
+
+    @Override
+    public Color[] linkColor() {
+        var base = new Color(0x65EA0C); // a mad science-y radioactive green
+        float darken = 1.5f;
+        return new Color[] {base,
+                new Color((int) (base.getRed() / darken), (int) (base.getGreen() / darken), (int) (base.getBlue() / darken), base.getAlpha())
+        };
+    }
+
+    @Override
+    public void transfer(BaseCapabilityPointBlockEntity from, List<GraphPath<BlockPos, DefaultEdge>> other) {
+        int transferAmount = (int) Math.floor((float)getFinalSpeed(DataNEssenceConfig.fluidPointTransfer)/(float)other.size());
+
+        for (GraphPath<BlockPos, DefaultEdge> i : other) {
+            if (level.getBlockEntity(i.getEndVertex()) instanceof BaseCapabilityPointBlockEntity to) {
+                List<ChemicalStack> allowedChemicals = null;
+
+                for (BlockPos j : i.getVertexList()) {
+                    if (level.getBlockEntity(j) instanceof BaseCapabilityPointBlockEntity to2) {
+                        List<ChemicalStack> value = to2.getValue(DataNEssence.locate("allowed_chemicals"), null);
+                        if (allowedChemicals == null) {
+                            allowedChemicals = value;
+                        } else if (value != null) {
+                            allowedChemicals = allowedChemicals.stream().filter((stack1) -> value.stream().anyMatch((stack2) -> ChemicalStack.isSameChemical(stack1, stack2))).toList();
+                        }
+                    }
+                }
+
+                IChemicalHandler resolved = level.getCapability(BLOCK_CHEMICAL, to.getBlockPos().relative(to.getDirection().getOpposite()), to.getDirection());
+                IChemicalHandler resolved2 = level.getCapability(BLOCK_CHEMICAL, from.getBlockPos().relative(from.getDirection().getOpposite()), from.getDirection());
+
+                if (resolved == null || resolved2 == null) {
+                    continue;
+                }
+
+                if (other instanceof ICustomChemicalNodeBehaviour behaviour) {
+                    if (!behaviour.canInsertChemical(resolved, resolved2)) {
+                        continue;
+                    }
+                }
+
+                for (int o = 0; o < resolved2.getChemicalTanks(); o++) {
+                    ChemicalStack copy = resolved2.getChemicalInTank(o).copy();
+                    if (allowedChemicals != null && allowedChemicals.stream().noneMatch((stack) -> ChemicalStack.isSameChemical(stack, copy))) {
+                        continue;
+                    }
+                    if (!copy.isEmpty()) {
+                        copy.setAmount((long) Math.clamp(0, transferAmount, copy.getAmount()));
+                        ChemicalStack filled = resolved.insertChemical(copy, Action.EXECUTE);
+                        resolved2.extractChemical(new ChemicalStack(copy.getChemical(), filled.getAmount()), Action.EXECUTE);
+                    }
+                }
+            }
+        }
+    }
+}

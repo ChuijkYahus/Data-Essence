@@ -1,0 +1,88 @@
+package EsetKalenko.Halcyon.block.decoration;
+
+import EsetKalenko.Halcyon.api.block.RedirectorInteractable;
+import EsetKalenko.Halcyon.client.particle.MoteParticleOptions;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.util.Mth;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Mirror;
+import net.minecraft.world.level.block.Rotation;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
+
+import java.awt.*;
+
+public class LightFixture extends Block implements RedirectorInteractable {
+    public static final DirectionProperty FACING = BlockStateProperties.FACING;
+    public static final BooleanProperty VARIANT = BooleanProperty.create("variant"); // true if alt model
+    private static final VoxelShape SHAPE_UP = Block.box(4, 0, 2, 12, 3, 14);
+    private static final VoxelShape SHAPE_DOWN = Block.box(4, 13, 2, 12, 16, 14);
+    private static final VoxelShape SHAPE_EAST = Block.box(0, 2, 4, 3, 14, 12);
+    private static final VoxelShape SHAPE_WEST = Block.box(13, 2, 4, 16, 14, 12);
+    private static final VoxelShape SHAPE_NORTH = Block.box(4, 2, 13, 12, 14, 16);
+    private static final VoxelShape SHAPE_SOUTH = Block.box(4, 2, 0, 12, 14, 3);
+
+
+    private static final VoxelShape SHAPE_FALLOFF = Block.box(0,0,0,16,16,16);
+
+    public LightFixture(Properties properties) {
+        super(properties);
+        this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.UP).setValue(VARIANT, false));
+    }
+
+    @Override
+    public BlockState getStateForPlacement(BlockPlaceContext context) {
+        return this.defaultBlockState().setValue(FACING, context.getClickedFace());
+    }
+
+    public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
+
+        return switch (pState.getValue(FACING)) {
+            case UP -> SHAPE_UP;
+            case DOWN -> SHAPE_DOWN;
+            case EAST -> SHAPE_EAST;
+            case WEST -> SHAPE_WEST;
+            case NORTH -> SHAPE_NORTH;
+            case SOUTH -> SHAPE_SOUTH;
+            default -> SHAPE_FALLOFF;
+        };
+    }
+
+    @Override
+    public void animateTick(BlockState pState, Level pLevel, BlockPos pPos, RandomSource pRandom) {
+        Vec3 offset = new Vec3(Mth.nextFloat(pRandom, -0.4f, 0.4f), Mth.nextFloat(pRandom, -0.4f, 0.4f), Mth.nextFloat(pRandom, -0.4f, 0.4f));
+        pLevel.addParticle(new MoteParticleOptions().setColor(new Color(0xFFD360)).setAdditive(true), pPos.getCenter().x+offset.x, pPos.getCenter().y+offset.y, pPos.getCenter().z+offset.z, 0.0D, 0.0D, 0.0D);
+    }
+
+    @Override
+    public boolean onRedirectorUse(UseOnContext context) {
+        BlockState state = context.getLevel().getBlockState(context.getClickedPos());
+        context.getLevel().setBlockAndUpdate(context.getClickedPos(), state.setValue(VARIANT, !state.getValue(VARIANT)));
+        return true;
+    }
+
+    public BlockState rotate(BlockState pState, Rotation pRotation) {
+        return pState.setValue(FACING, pRotation.rotate(pState.getValue(FACING)));
+    }
+
+    public BlockState mirror(BlockState pState, Mirror pMirror) {
+        return pState.rotate(pMirror.getRotation(pState.getValue(FACING)));
+    }
+
+    @Override
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
+        pBuilder.add(FACING).add(VARIANT);
+    }
+}
