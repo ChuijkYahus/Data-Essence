@@ -72,6 +72,7 @@ public class FluidMixerBlockEntity extends BlockEntity implements MenuProvider, 
     public EssenceStorage getStorage() {
         return storage;
     }
+
     private final ItemStackHandler itemHandler = new ItemStackHandler(1) {
         @Override
         protected void onContentsChanged(int slot) {
@@ -84,6 +85,7 @@ public class FluidMixerBlockEntity extends BlockEntity implements MenuProvider, 
             return super.isItemValid(slot, stack);
         }
     };
+
     private final ItemStackHandler dataDriveHandler = new ItemStackHandler(1) {
         @Override
         protected void onContentsChanged(int slot) {
@@ -105,6 +107,7 @@ public class FluidMixerBlockEntity extends BlockEntity implements MenuProvider, 
     }
 
     private final MultiFluidTank fluidHandler = new MultiFluidTankNoDuplicateFluids(List.of(new FluidTank(1000) { @Override protected void onContentsChanged() { checkRecipes(); } }, new FluidTank(1000) { @Override protected void onContentsChanged() { checkRecipes(); } }));
+
     private final FluidTank outputFluidHandler = new FluidTank(1000);
     public IFluidHandler getFluidHandler() {
         return fluidHandler;
@@ -120,14 +123,17 @@ public class FluidMixerBlockEntity extends BlockEntity implements MenuProvider, 
     public IItemHandler getItemHandler() {
         return itemHandler;
     }
+
     public IItemHandler getDataDriveHandler() {
         return dataDriveHandler;
     }
+
     public IFluidHandler getOutputHandler() {
         return outputFluidHandler;
     }
 
     private final CombinedInvWrapper combinedInvWrapper = new CombinedInvWrapper(itemHandler, dataDriveHandler);
+
     public CombinedInvWrapper getCombinedInvWrapper() {
         return combinedInvWrapper;
     }
@@ -140,6 +146,7 @@ public class FluidMixerBlockEntity extends BlockEntity implements MenuProvider, 
     public ClientboundBlockEntityDataPacket getUpdatePacket(){
         return ClientboundBlockEntityDataPacket.create(this);
     }
+
     @Override
     public void onDataPacket(Connection connection, ClientboundBlockEntityDataPacket pkt, HolderLookup.Provider pRegistries){
         CompoundTag tag = pkt.getTag();
