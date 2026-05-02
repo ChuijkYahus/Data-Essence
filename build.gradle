@@ -40,7 +40,7 @@ tasks.register('deleteSlimJar') {
     }
     dependsOn tasks.named('jarJar')
 }
-build.configure { finalizedBy tasks.named('deleteSlimJar') }
+//build.configure { finalizedBy tasks.named('deleteSlimJar') }
 
 minecraft {
     accessTransformers {
