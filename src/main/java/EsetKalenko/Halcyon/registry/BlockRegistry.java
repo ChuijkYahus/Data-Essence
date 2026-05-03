@@ -12,6 +12,7 @@ import EsetKalenko.Halcyon.block.storage.*;
 import EsetKalenko.Halcyon.block.transmission.*;
 import EsetKalenko.Halcyon.block.transportation.*;
 import EsetKalenko.Halcyon.block.world.*;
+import EsetKalenko.Halcyon.block.world.sanctuary.*;
 import EsetKalenko.Halcyon.block.world.shieldingstone.*;
 import EsetKalenko.Halcyon.block.generation.EssenceBurner;
 import EsetKalenko.Halcyon.block.generation.EssenceLeech;

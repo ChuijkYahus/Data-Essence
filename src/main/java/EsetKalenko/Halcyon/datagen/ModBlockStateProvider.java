@@ -5,7 +5,7 @@ import EsetKalenko.Halcyon.block.DirectionalPillarBlock;
 import EsetKalenko.Halcyon.block.generation.EssenceBurner;
 import EsetKalenko.Halcyon.block.production.FluidCollector;
 import EsetKalenko.Halcyon.block.auxiliary.LaserEmitter;
-import EsetKalenko.Halcyon.block.world.PearlescentSpiral;
+import EsetKalenko.Halcyon.block.world.sanctuary.PearlescentSpiral;
 import EsetKalenko.Halcyon.registry.BlockRegistry;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;

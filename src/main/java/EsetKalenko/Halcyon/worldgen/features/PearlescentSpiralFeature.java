@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.worldgen.features;
 
-import EsetKalenko.Halcyon.block.world.PearlescentSpiral;
+import EsetKalenko.Halcyon.block.world.sanctuary.PearlescentSpiral;
 import EsetKalenko.Halcyon.registry.BlockRegistry;
 import EsetKalenko.Halcyon.registry.HalcyonTags;
 import com.mojang.serialization.Codec;

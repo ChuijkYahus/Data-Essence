@@ -1,4 +1,4 @@
-package EsetKalenko.Halcyon.block.world;
+package EsetKalenko.Halcyon.block.world.sanctuary;
 
 import EsetKalenko.Halcyon.registry.HalcyonTags;
 import net.minecraft.core.BlockPos;
