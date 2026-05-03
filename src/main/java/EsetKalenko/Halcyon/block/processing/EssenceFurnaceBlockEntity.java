@@ -157,7 +157,7 @@ public class EssenceFurnaceBlockEntity extends BlockEntity implements MenuProvid
                 workTime = 0;
             }
             this.recipe = recipe.get().value();
-            recipeTime = recipe.get().value().getCookingTime() * 0.75; // 25% faster than a vanilla Furnace
+            recipeTime = recipe.get().value().getCookingTime() * 0.5; // 50% faster than a vanilla Furnace
         } else {
             this.recipe = null;
         }

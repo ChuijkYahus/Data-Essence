@@ -528,7 +528,7 @@
   "data_tablet.pages.essence_furnace.flavor": " ◇ Copper Convection Cooker",
   "data_tablet.pages.essence_furnace.name": "Tidal Furnace",
   "data_tablet.pages.essence_furnace.page1.text": "Smelting is a common task, but the inefficiency and slow speeds of an ordinary furnace are unacceptable for many of our applications. We quickly discovered how to make the Industrial Tide power a heating element that does the work instead, solving both of these problems.",
-  "data_tablet.pages.essence_furnace.page2.text": " ◇ Accepts item inputs from sides: Up, Down\n ◇ Works 25% faster than an ordinary Furnace.",
+  "data_tablet.pages.essence_furnace.page2.text": " ◇ Accepts item inputs from sides: Up, Down\n ◇ Works 50% faster than an ordinary Furnace.",
   "data_tablet.pages.fluid_acquisition.flavor": " ◇ 100% Absorbency",
   "data_tablet.pages.fluid_acquisition.name": "Fluid Acquisition",
   "data_tablet.pages.fluid_acquisition.page1.text": "To actually acquire fluids to be transferred into machines, Tidal Energy can be used to actuate a pump that will collect one bucket of whatever liquid it is facing. Naturally, it is quite easy to reverse this process to make a sibling machine that spills fluids back into the world.",
