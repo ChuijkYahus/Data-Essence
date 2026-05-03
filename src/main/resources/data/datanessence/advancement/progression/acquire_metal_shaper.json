@@ -1,0 +1,21 @@
+{
+  "display": {
+    "icon": {
+      "id": "datanessence:metal_shaper"
+    },
+    "title": {
+      "translate": "advancements.datanessence.acquire_metal_shaper.title"
+    },
+    "description": {
+      "translate": "advancements.datanessence.acquire_metal_shaper.description"
+    },
+    "hidden": false
+  },
+  "parent": "datanessence:progression/craft_logical_matrix",
+  "criteria": {
+    "has_chamber": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": { "items": [ { "items": ["datanessence:metal_shaper" ] } ] }
+    }
+  }
+}

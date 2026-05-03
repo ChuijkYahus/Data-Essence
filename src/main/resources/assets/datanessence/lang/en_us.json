@@ -801,6 +801,8 @@
   "advancements.datanessence.place_fluid_collector.description": "Place down a Fluid Collector to begin gathering liquid.",
   "advancements.datanessence.use_data_drive.title": "Providing Patterns",
   "advancements.datanessence.use_data_drive.description": "Make use of a Data Drive for assigning recipes to your machines.",
+  "advancements.datanessence.visit_sanctuary.title": "You Will No More Than Witness Here",
+  "advancements.datanessence.visit_sanctuary.description": "Travel across into another Realm.",
 
   "tooltip.datanessence.progression_requirement": " ◇ Further experimentation is needed.",
   "tooltip.datanessence.toggle_lock": "Toggle Slot Locking",
