@@ -1,7 +1,11 @@
 ### Additions
-- All current t3 and t4 content - none of it is obtainable in survival right now, and it is all hidden from creative (Esét)
+- All current t3 and t4 content - none of it is obtainable in survival right now (Esét)
 - More Pastel crushing compat (Esét)
 - Tooltip display and associated item tag for WIP/unfinished content (Esét)
+- Structure Music for Abandoned Factories (Esét, Fuzzy)
+
+### Changes
+- Tidal Furnaces' speed bonus is now 50%, as opposed to 25% (Esét)
 
 ### Fixes
 - Fixed Pure Zinc (Pastel) not being processable in the Mineral Purification Chamber (Esét)

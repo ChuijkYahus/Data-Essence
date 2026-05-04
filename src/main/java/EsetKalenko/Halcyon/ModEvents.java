@@ -20,13 +20,10 @@ import EsetKalenko.Halcyon.item.equipment.EssenceMeter;
 import EsetKalenko.Halcyon.item.equipment.EssenceRedirector;
 import EsetKalenko.Halcyon.item.equipment.GrapplingHook;
 import EsetKalenko.Halcyon.networking.ModMessages;
-import EsetKalenko.Halcyon.networking.packet.s2c.DragonPartsSync;
-import EsetKalenko.Halcyon.networking.packet.s2c.EntrySync;
+import EsetKalenko.Halcyon.networking.packet.s2c.*;
 import EsetKalenko.Halcyon.client.particle.MoteParticleOptions;
 import EsetKalenko.Halcyon.client.particle.RhombusParticleOptions;
 import EsetKalenko.Halcyon.client.particle.SmallCircleParticleOptions;
-import EsetKalenko.Halcyon.networking.packet.s2c.GrapplingHookSync;
-import EsetKalenko.Halcyon.networking.packet.s2c.PingableSync;
 import EsetKalenko.Halcyon.registry.*;
 import EsetKalenko.Halcyon.data.databank.DataBankEntryManager;
 import EsetKalenko.Halcyon.data.databank.DataBankTypeManager;
@@ -36,6 +33,7 @@ import EsetKalenko.Halcyon.data.datatablet.Entry;
 import EsetKalenko.Halcyon.data.datatablet.EntryManager;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
@@ -50,6 +48,8 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.levelgen.structure.Structure;
+import net.minecraft.world.level.levelgen.structure.StructureSet;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -300,8 +300,30 @@ public class ModEvents {
                     ModMessages.sendToPlayersTrackingEntityAndSelf(new GrapplingHookSync(event.getEntity().getId(), null), (ServerPlayer) event.getEntity());
                 }
             }
+
+            // Structure Music
+            // todo there is most assuredly a better way to do this
+            ServerPlayer player = (ServerPlayer) event.getEntity();
+            var structuresAt = player.serverLevel().structureManager().getAllStructuresAt(player.getOnPos()).keySet();
+
+            var registry = player.level().registryAccess().registry(Registries.STRUCTURE);
+            if (registry.isEmpty())
+                return;
+
+            if ( structuresAt.contains( registry.get().get( DataNEssence.locate("abandoned_factory") ) ) ) {
+                ModMessages.sendToPlayer(
+                        new StructureMusicSync( DataNEssence.locate("ost.abandoned_factory"), true ),
+                        player
+                );
+            } else {
+                ModMessages.sendToPlayer(
+                        new StructureMusicSync( DataNEssence.locate("ost.abandoned_factory"), false ),
+                        player
+                );
+            }
         }
     }
+
     @SubscribeEvent
     public static void addReloadListenerEvent(AddReloadListenerEvent event) {
         event.addListener(EntryManager.getOrCreateInstance());

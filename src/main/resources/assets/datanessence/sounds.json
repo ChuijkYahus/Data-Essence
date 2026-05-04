@@ -1,4 +1,10 @@
 {
+    "ost.abandoned_factory": {
+        "sounds": [
+            "datanessence:ost/abandoned_factory"
+        ],
+        "stream": true
+    },
     "ost.factory_loops.fabricator": {
         "sounds": [
             "datanessence:ost/factory_loops/fabricator"

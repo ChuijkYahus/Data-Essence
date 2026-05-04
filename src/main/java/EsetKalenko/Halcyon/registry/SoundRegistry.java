@@ -2,6 +2,7 @@ package EsetKalenko.Halcyon.registry;
 
 import EsetKalenko.Halcyon.DataNEssence;
 import EsetKalenko.Halcyon.client.FactorySong;
+import EsetKalenko.Halcyon.client.StructureSongs;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.sounds.SoundEvent;
@@ -87,6 +88,9 @@ public class SoundRegistry {
     //Music
     public static final Holder<SoundEvent> UNDER_THE_SKY = createBasicSound("music.under_the_sky");
 
+    // Structures
+    public static final Holder<SoundEvent> ABANDONED_FACTORY = createStructureSong("ost.abandoned_factory");
+
     // Factory Loops
     public static final Holder<SoundEvent> FABRICATOR_LOOP = createBasicFactoryLoopSound("ost.factory_loops.fabricator");
     public static final Holder<SoundEvent> LUNARIUM_LOOP = createBasicFactoryLoopSound("ost.factory_loops.lunarium");
@@ -102,6 +106,15 @@ public class SoundRegistry {
     public static Holder<SoundEvent> createBasicSound(String name) {
         return SOUND_EVENTS.register(name,
                 () -> SoundEvent.createVariableRangeEvent(DataNEssence.locate(name)));
+    }
+
+    public static Holder<SoundEvent> createStructureSong(String name) {
+        var identifier = DataNEssence.locate(name);
+        var sound = SOUND_EVENTS.register(name, () -> SoundEvent.createVariableRangeEvent(identifier));
+        if (FMLEnvironment.dist.isClient()) {
+            StructureSongs.addStructureSong(identifier);
+        }
+        return sound;
     }
 
     public static Holder<SoundEvent> createBasicFactoryLoopSound(String name) {

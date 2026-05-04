@@ -169,6 +169,8 @@
   "block.datanessence.copper_vent": "Copper Vent",
   "block.datanessence.creative_essence_battery": "Infinite Tidal Energy Battery",
   "block.datanessence.crystalline_cradle": "Crystalline Cradle",
+  "block.datanessence.cyclical_conversion_array": "Cyclical Conversion Array",
+  "block.datanessence.cyclical_conversion_array_router": "Cyclical Conversion Array",
   "block.datanessence.data_bank": "Ancient Data Bank",
   "block.datanessence.data_bank.cannot_use": "You need a Data Tablet to make use of this.",
   "block.datanessence.deco_essence_buffer": "Tidal Energy Buffer (Decorative)",

@@ -1,0 +1,7 @@
+{
+    "parent": "minecraft:item/generated",
+    "textures": {
+        "layer0": "datanessence:item/pyramid_base",
+        "layer1": "datanessence:item/pyramid_overlay"
+    }
+}

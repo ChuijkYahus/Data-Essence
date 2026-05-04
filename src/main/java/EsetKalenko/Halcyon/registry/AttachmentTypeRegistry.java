@@ -50,7 +50,7 @@ public class AttachmentTypeRegistry {
     public static final Supplier<AttachmentType<Boolean>> HAS_WINGS =
             register("has_wings", () -> AttachmentType.builder(() -> false).serialize(Codec.BOOL).copyOnDeath().build());
     public static final Supplier<AttachmentType<ArrayList<ResourceLocation>>> UNLOCKED =
-            register("unlocked", () -> AttachmentType.builder(() -> new ArrayList<ResourceLocation>()).serialize(
+            register("music", () -> AttachmentType.builder(() -> new ArrayList<ResourceLocation>()).serialize(
                     ResourceLocation.CODEC.listOf().xmap(ArrayList::new, (a) -> a.stream().toList())).copyOnDeath().build());
     public static final Supplier<AttachmentType<HashMap<ResourceLocation, Integer>>> INCOMPLETE_STAGES =
             register("incomplete_stages", () -> AttachmentType.builder(() -> new HashMap<ResourceLocation, Integer>()).serialize(
