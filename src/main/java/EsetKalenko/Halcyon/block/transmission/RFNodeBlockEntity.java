@@ -27,20 +27,36 @@ public class RFNodeBlockEntity extends BaseCapabilityPointBlockEntity {
     }
 
     @Override
-    public void transfer(BaseCapabilityPointBlockEntity sender, List<GraphPath<BlockPos, DefaultEdge>> desintations) {
+    public boolean transfer(BaseCapabilityPointBlockEntity sender, List<GraphPath<BlockPos, DefaultEdge>> desintations) {
+        if (desintations.isEmpty()) {
+            return false;
+        }
+
         int transferAmount = Integer.MAX_VALUE; // I do not believe in limits
+
+        IEnergyStorage senderEnergy = level.getCapability(Capabilities.EnergyStorage.BLOCK, sender.getBlockPos().relative(sender.getDirection().getOpposite()), sender.getDirection());
+        if (senderEnergy == null) {
+            return false;
+        }
+
+        var didWork = false;
 
         for (GraphPath<BlockPos, DefaultEdge> i : desintations) {
             if (level.getBlockEntity(i.getEndVertex()) instanceof BaseCapabilityPointBlockEntity receiver) {
                 IEnergyStorage receiverEnergy = level.getCapability(Capabilities.EnergyStorage.BLOCK, receiver.getBlockPos().relative(receiver.getDirection().getOpposite()), receiver.getDirection());
-                IEnergyStorage senderEnergy = level.getCapability(Capabilities.EnergyStorage.BLOCK, sender.getBlockPos().relative(sender.getDirection().getOpposite()), sender.getDirection());
 
-                if (senderEnergy == null || receiverEnergy == null)
+                if (receiverEnergy == null) {
                     continue;
+                }
 
                 int transferred = receiverEnergy.receiveEnergy( Math.clamp(senderEnergy.getEnergyStored(), 0, transferAmount) , false);
-                senderEnergy.extractEnergy(transferred, false);
+                if (transferred > 0) {
+                    senderEnergy.extractEnergy(transferred, false);
+                    didWork = true;
+                }
             }
         }
+
+        return didWork;
     }
 }

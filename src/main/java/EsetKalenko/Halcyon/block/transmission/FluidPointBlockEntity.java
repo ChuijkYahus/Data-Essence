@@ -15,6 +15,7 @@ import org.jgrapht.graph.DefaultEdge;
 import org.joml.Math;
 
 import java.awt.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class FluidPointBlockEntity extends BaseCapabilityPointBlockEntity {
@@ -31,8 +32,20 @@ public class FluidPointBlockEntity extends BaseCapabilityPointBlockEntity {
     }
 
     @Override
-    public void transfer(BaseCapabilityPointBlockEntity from, List<GraphPath<BlockPos, DefaultEdge>> other) {
+    public boolean transfer(BaseCapabilityPointBlockEntity from, List<GraphPath<BlockPos, DefaultEdge>> other) {
+        if (other.isEmpty()) {
+            return false;
+        }
+
         int transferAmount = (int)Math.floor((float)getFinalSpeed(DataNEssenceConfig.fluidPointTransfer)/(float)other.size());
+
+        IFluidHandler resolved2 = level.getCapability(Capabilities.FluidHandler.BLOCK, from.getBlockPos().relative(from.getDirection().getOpposite()), from.getDirection());
+        if (resolved2 == null) {
+            return false;
+        }
+
+        var didWork = false;
+
         for (GraphPath<BlockPos, DefaultEdge> i : other) {
             if (level.getBlockEntity(i.getEndVertex()) instanceof BaseCapabilityPointBlockEntity ent) {
                 List<FluidStack> allowedFluidstacks = null;
@@ -42,37 +55,62 @@ public class FluidPointBlockEntity extends BaseCapabilityPointBlockEntity {
                         if (allowedFluidstacks == null) {
                             allowedFluidstacks = value;
                         } else if (value != null) {
-                            allowedFluidstacks = allowedFluidstacks.stream().filter((stack1) -> value.stream().anyMatch((stack2) -> FluidStack.isSameFluid(stack1, stack2))).toList();
+                            var iter = allowedFluidstacks.listIterator();
+                            while (iter.hasNext()) {
+                                var next = iter.next();
+                                for (var stack : value) {
+                                    if (!FluidStack.isSameFluid(next, stack)) {
+                                        iter.remove();
+                                        break;
+                                    }
+                                }
+                            }
                         }
                     }
                 }
+
                 IFluidHandler resolved = level.getCapability(Capabilities.FluidHandler.BLOCK, ent.getBlockPos().relative(ent.getDirection().getOpposite()), ent.getDirection());
-                IFluidHandler resolved2 = level.getCapability(Capabilities.FluidHandler.BLOCK, from.getBlockPos().relative(from.getDirection().getOpposite()), from.getDirection());
-                if (resolved == null || resolved2 == null) {
+                if (resolved == null) {
                     continue;
                 }
+
                 if (level.getBlockEntity(from.getBlockPos().relative(from.getDirection().getOpposite())) instanceof ICustomFluidPointBehaviour behaviour) {
                     if (!behaviour.canExtractFluid(resolved, resolved2)) {
                         continue;
                     }
                 }
+
                 if (level.getBlockEntity(ent.getBlockPos().relative(ent.getDirection().getOpposite())) instanceof ICustomFluidPointBehaviour behaviour) {
                     if (!behaviour.canInsertFluid(resolved, resolved2)) {
                         continue;
                     }
                 }
+
                 for (int o = 0; o < resolved2.getTanks(); o++) {
                     FluidStack copy = resolved2.getFluidInTank(o).copy();
-                    if (allowedFluidstacks != null && allowedFluidstacks.stream().noneMatch((stack) -> FluidStack.isSameFluid(stack, copy))) {
-                        continue;
+                    if (allowedFluidstacks != null) {
+                        boolean shouldSkip = true;
+                        for (FluidStack stack : allowedFluidstacks) {
+                            if (FluidStack.isSameFluid(stack, copy)) {
+                                shouldSkip = false;
+                                break;
+                            }
+                        }
+
+                        if (shouldSkip) {
+                            continue;
+                        }
                     }
                     if (!copy.isEmpty()) {
                         copy.setAmount(Math.clamp(0, transferAmount, copy.getAmount()));
                         int filled = resolved.fill(copy, IFluidHandler.FluidAction.EXECUTE);
                         resolved2.drain(new FluidStack(copy.getFluid(), filled), IFluidHandler.FluidAction.EXECUTE);
+                        didWork = true;
                     }
                 }
             }
         }
+
+        return didWork;
     }
 }
