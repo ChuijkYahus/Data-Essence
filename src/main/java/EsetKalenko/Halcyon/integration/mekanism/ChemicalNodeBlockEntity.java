@@ -9,6 +9,7 @@ import mekanism.api.chemical.ChemicalStack;
 import mekanism.api.chemical.IChemicalHandler;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.state.BlockState;
+import net.neoforged.neoforge.fluids.FluidStack;
 import org.jgrapht.GraphPath;
 import org.jgrapht.graph.DefaultEdge;
 import org.joml.Math;
@@ -34,8 +35,19 @@ public class ChemicalNodeBlockEntity extends BaseCapabilityPointBlockEntity {
     }
 
     @Override
-    public void transfer(BaseCapabilityPointBlockEntity from, List<GraphPath<BlockPos, DefaultEdge>> other) {
+    public boolean transfer(BaseCapabilityPointBlockEntity from, List<GraphPath<BlockPos, DefaultEdge>> other) {
+        if (other.isEmpty()) {
+            return false;
+        }
+
         int transferAmount = (int) Math.floor((float)getFinalSpeed(DataNEssenceConfig.fluidPointTransfer)/(float)other.size());
+
+        IChemicalHandler resolved2 = level.getCapability(BLOCK_CHEMICAL, from.getBlockPos().relative(from.getDirection().getOpposite()), from.getDirection());
+        if (resolved2 == null) {
+            return false;
+        }
+
+        var didWork = false;
 
         for (GraphPath<BlockPos, DefaultEdge> i : other) {
             if (level.getBlockEntity(i.getEndVertex()) instanceof BaseCapabilityPointBlockEntity to) {
@@ -47,15 +59,23 @@ public class ChemicalNodeBlockEntity extends BaseCapabilityPointBlockEntity {
                         if (allowedChemicals == null) {
                             allowedChemicals = value;
                         } else if (value != null) {
-                            allowedChemicals = allowedChemicals.stream().filter((stack1) -> value.stream().anyMatch((stack2) -> ChemicalStack.isSameChemical(stack1, stack2))).toList();
+                            var iter = allowedChemicals.listIterator();
+                            while (iter.hasNext()) {
+                                var next = iter.next();
+                                for (var stack : value) {
+                                    if (!ChemicalStack.isSameChemical(next, stack)) {
+                                        iter.remove();
+                                        break;
+                                    }
+                                }
+                            }
                         }
                     }
                 }
 
                 IChemicalHandler resolved = level.getCapability(BLOCK_CHEMICAL, to.getBlockPos().relative(to.getDirection().getOpposite()), to.getDirection());
-                IChemicalHandler resolved2 = level.getCapability(BLOCK_CHEMICAL, from.getBlockPos().relative(from.getDirection().getOpposite()), from.getDirection());
 
-                if (resolved == null || resolved2 == null) {
+                if (resolved == null) {
                     continue;
                 }
 
@@ -67,16 +87,29 @@ public class ChemicalNodeBlockEntity extends BaseCapabilityPointBlockEntity {
 
                 for (int o = 0; o < resolved2.getChemicalTanks(); o++) {
                     ChemicalStack copy = resolved2.getChemicalInTank(o).copy();
-                    if (allowedChemicals != null && allowedChemicals.stream().noneMatch((stack) -> ChemicalStack.isSameChemical(stack, copy))) {
-                        continue;
+                    if (allowedChemicals != null) {
+                        boolean shouldSkip = true;
+                        for (var stack : allowedChemicals) {
+                            if (ChemicalStack.isSameChemical(stack, copy)) {
+                                shouldSkip = false;
+                                break;
+                            }
+                        }
+
+                        if (shouldSkip) {
+                            continue;
+                        }
                     }
                     if (!copy.isEmpty()) {
                         copy.setAmount((long) Math.clamp(0, transferAmount, copy.getAmount()));
                         ChemicalStack filled = resolved.insertChemical(copy, Action.EXECUTE);
                         resolved2.extractChemical(new ChemicalStack(copy.getChemical(), filled.getAmount()), Action.EXECUTE);
+                        didWork = true;
                     }
                 }
             }
         }
+
+        return didWork;
     }
 }

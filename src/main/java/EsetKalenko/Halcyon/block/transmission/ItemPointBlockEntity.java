@@ -10,6 +10,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.capabilities.Capabilities;
+import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.items.IItemHandler;
 import org.jgrapht.GraphPath;
 import org.jgrapht.graph.DefaultEdge;
@@ -19,7 +20,6 @@ import java.awt.*;
 import java.util.List;
 
 public class ItemPointBlockEntity extends BaseCapabilityPointBlockEntity {
-
     public ItemPointBlockEntity(BlockPos pos, BlockState state) {
         super(BlockEntityRegistry.ITEM_POINT.get(), pos, state);
     }
@@ -33,14 +33,25 @@ public class ItemPointBlockEntity extends BaseCapabilityPointBlockEntity {
     }
 
     @Override
-    public void transfer(BaseCapabilityPointBlockEntity sourceNode, List<GraphPath<BlockPos, DefaultEdge>> other) {
+    public boolean transfer(BaseCapabilityPointBlockEntity sourceNode, List<GraphPath<BlockPos, DefaultEdge>> other) {
+        if (other.isEmpty()) {
+            return false;
+        }
+
         int transferAmount = (int)Math.floor((float)getFinalSpeed(DataNEssenceConfig.itemPointTransfer)/(float)other.size());
+
+        var sourceTile = sourceNode.getBlockPos().relative(sourceNode.getDirection().getOpposite());
+        IItemHandler sourceHandler = level.getCapability(Capabilities.ItemHandler.BLOCK, sourceTile, sourceNode.getDirection());
+        if (sourceHandler == null) {
+            return false;
+        }
+
+        var didWork = false;
+
         for (GraphPath<BlockPos, DefaultEdge> i : other) {
             if (level.getBlockEntity(i.getEndVertex()) instanceof BaseCapabilityPointBlockEntity destinationNode) {
                 List<ItemStack> allowedItemstacks = null;
-                var sourceTile = sourceNode.getBlockPos().relative(sourceNode.getDirection().getOpposite());
                 var destTile = destinationNode.getBlockPos().relative(destinationNode.getDirection().getOpposite());
-                IItemHandler sourceHandler = level.getCapability(Capabilities.ItemHandler.BLOCK, sourceTile, sourceNode.getDirection());
                 IItemHandler destHandler = level.getCapability(Capabilities.ItemHandler.BLOCK, destTile, destinationNode.getDirection());
 
                 for (BlockPos j : i.getVertexList()) {
@@ -49,12 +60,21 @@ public class ItemPointBlockEntity extends BaseCapabilityPointBlockEntity {
                         if (allowedItemstacks == null) {
                             allowedItemstacks = value;
                         } else if (value != null) {
-                            allowedItemstacks = allowedItemstacks.stream().filter((stack1) -> value.stream().anyMatch((stack2) -> ItemStack.isSameItem(stack1, stack2))).toList();
+                            var iter = allowedItemstacks.listIterator();
+                            while (iter.hasNext()) {
+                                var next = iter.next();
+                                for (var stack : value) {
+                                    if (!ItemStack.isSameItem(next, stack)) {
+                                        iter.remove();
+                                        break;
+                                    }
+                                }
+                            }
                         }
                     }
                 }
 
-                if (destHandler == null || sourceHandler == null) {
+                if (destHandler == null) {
                     continue;
                 }
 
@@ -70,25 +90,21 @@ public class ItemPointBlockEntity extends BaseCapabilityPointBlockEntity {
                     }
                 }
 
-                if (isDestinationFull(destHandler))
-                    continue;
-
-                moveItems(sourceHandler, destHandler, transferAmount, allowedItemstacks);
+                if (moveItems(sourceHandler, destHandler, transferAmount, allowedItemstacks)) {
+                    didWork = true;
+                }
             }
         }
+
+        return didWork;
     }
 
-    // the way this is coded feels inelegant. but we really shouldn't be doing any work if the current destination container is full
-    public boolean isDestinationFull(IItemHandler destHandler) {
-        int fullSlots = 0;
-        for (int slot = 0; slot < destHandler.getSlots(); slot++) {
-            if ( destHandler.getStackInSlot(slot).getCount() >= destHandler.getSlotLimit(slot) )
-                fullSlots++;
-        }
-        return fullSlots >= destHandler.getSlots();
+    @Override
+    public int maxBackoff() {
+        return 16;
     }
 
-    public void moveItems(IItemHandler sourceHandler, IItemHandler destHandler, int transferAmount, List<ItemStack> allowedItemstacks) {
+    public boolean moveItems(IItemHandler sourceHandler, IItemHandler destHandler, int transferAmount, List<ItemStack> allowedItemstacks) {
         boolean movedAnything = false;
 
         for (int o = 0; o < sourceHandler.getSlots(); o++) {
@@ -111,16 +127,17 @@ public class ItemPointBlockEntity extends BaseCapabilityPointBlockEntity {
 
                 }
 
-                if (shouldSkip)
+                if (shouldSkip) {
                     continue;
+                }
             }
 
             if (!candidate.isEmpty()) {
                 ItemStack copy2 = candidate.copy();
-                int p = 0;
-                while (p < destHandler.getSlots()) {
+                int slot = 0;
+                while (slot < destHandler.getSlots()) {
                     ItemStack copyCopy = candidate.copy();
-                    int remaining = destHandler.insertItem(p, copyCopy, false).getCount();
+                    int remaining = destHandler.insertItem(slot, copyCopy, false).getCount();
                     candidate.setCount(remaining);
                     if (copy2.getCount() - candidate.getCount() > 0) {
                         movedAnything = true;
@@ -128,7 +145,7 @@ public class ItemPointBlockEntity extends BaseCapabilityPointBlockEntity {
                     if (remaining <= 0) {
                         break;
                     }
-                    p++;
+                    slot++;
                 }
                 if (movedAnything) {
                     sourceHandler.extractItem(o, copy2.getCount() - candidate.getCount(), false);
@@ -136,5 +153,7 @@ public class ItemPointBlockEntity extends BaseCapabilityPointBlockEntity {
                 }
             }
         }
+
+        return movedAnything;
     }
 }

@@ -34,6 +34,9 @@ import java.util.List;
 import java.util.Set;
 
 public abstract class BaseCapabilityPointBlockEntity extends BlockEntity {
+    private int backoff;
+    private int delay;
+
     public DatabankAnimationState animState = new DatabankAnimationState("idle")
             .addAnim(new DatabankAnimationReference("idle", (state, anim) -> {}, (state, anim) -> {}));
 
@@ -109,12 +112,45 @@ public abstract class BaseCapabilityPointBlockEntity extends BlockEntity {
             }
             BlockPosNetworks networks = pLevel.getData(AttachmentTypeRegistry.CAPABILITY_NODE_NETWORKS);
             Set<DefaultEdge> edges = networks.graph.edgesOf(pPos);
-            if (edges.stream().noneMatch((edge) -> networks.graph.getEdgeTarget(edge).equals(pPos)) && !edges.isEmpty()) {
-                ShortestPathAlgorithm.SingleSourcePaths<BlockPos, DefaultEdge> paths = networks.path.getPaths(pPos);
-                List<GraphPath<BlockPos, DefaultEdge>> ends = networks.graph.vertexSet().stream().filter((vertex) -> pLevel.isLoaded(vertex) && networks.graph.edgesOf(vertex).stream().noneMatch((edge) -> networks.graph.getEdgeSource(edge).equals(vertex)) && paths.getPath(vertex) != null).map(paths::getPath).toList();
-                pBlockEntity.preTransferHooks(pBlockEntity, ends);
-                pBlockEntity.transfer(pBlockEntity, ends);
-                pBlockEntity.postTransferHooks(pBlockEntity, ends);
+
+            var shouldTransfer = true;
+            for (var edge : edges) {
+                if (!edges.isEmpty() && networks.graph.getEdgeTarget(edge).equals(pPos)) {
+                    shouldTransfer = false;
+                    break;
+                }
+            }
+
+            if (shouldTransfer) {
+                if (pBlockEntity.delay > 0) {
+                    pBlockEntity.delay--;
+                } else {
+                    ShortestPathAlgorithm.SingleSourcePaths<BlockPos, DefaultEdge> paths = networks.path.getPaths(pPos);
+                    List<GraphPath<BlockPos, DefaultEdge>> ends = new ArrayList<>();
+                    vertex:
+                    for (var vertex : networks.graph.vertexSet()) {
+                        var path = paths.getPath(vertex);
+                        if (path == null || !pLevel.isLoaded(vertex)) {
+                            continue;
+                        }
+
+                        for (var edge : networks.graph.edgesOf(vertex)) {
+                            if (networks.graph.getEdgeSource(edge).equals(vertex)) {
+                                continue vertex;
+                            }
+                        }
+
+                        ends.add(path);
+                    }
+                    pBlockEntity.preTransferHooks(pBlockEntity, ends);
+                    if (pBlockEntity.transfer(pBlockEntity, ends)) {
+                        pBlockEntity.backoff = Math.max(0, pBlockEntity.backoff >> 1);
+                    } else {
+                        pBlockEntity.backoff = Math.min(pBlockEntity.maxBackoff(), pBlockEntity.backoff == 0 ? 1 : pBlockEntity.backoff << 1);
+                    }
+                    pBlockEntity.delay = pBlockEntity.backoff;
+                    pBlockEntity.postTransferHooks(pBlockEntity, ends);
+                }
             }
 
             // check if this node is a relay
@@ -182,7 +218,21 @@ public abstract class BaseCapabilityPointBlockEntity extends BlockEntity {
             upgrade.postTransfer(uniqueUpgrade.getStackInSlot(0), from, other);
         }
     }
-    public abstract void transfer(BaseCapabilityPointBlockEntity from, List<GraphPath<BlockPos, DefaultEdge>> other);
+
+    /**
+     * @param from The origin point
+     * @param other The other points in the graph
+     * @return Whether any work was done.
+     */
+    public abstract boolean transfer(BaseCapabilityPointBlockEntity from, List<GraphPath<BlockPos, DefaultEdge>> other);
+
+    /**
+     * @return The maximum number of ticks to exponentially backoff to.
+     */
+    public int maxBackoff() {
+        return 0;
+    }
+
     public Direction getDirection() {
         if (getBlockState().getValue(BaseCapabilityPoint.FACE).equals(AttachFace.CEILING)) {
             return Direction.DOWN;
