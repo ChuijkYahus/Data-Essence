@@ -4,6 +4,7 @@
     "datanessence:essence": 25
   },
   "entry": "datanessence:machinery/infuser",
+  "completion_stage": 0,
   "pattern": [
     "OCO",
     "R R",

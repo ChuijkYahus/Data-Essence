@@ -8,5 +8,7 @@
 - Tidal Furnaces' speed bonus is now 50%, as opposed to 25% (Esét)
 
 ### Fixes
+- Fixed Infusers being uncraftable without first having obtained one (Esét)
 - Fixed Pure Zinc (Pastel) not being processable in the Mineral Purification Chamber (Esét)
 - Fixed (Energized) Ancient Rock Columns not actually rotating (Esét)
+- Improved performance for Nodes (Vonr)
