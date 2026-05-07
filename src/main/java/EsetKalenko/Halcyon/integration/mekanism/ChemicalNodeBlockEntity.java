@@ -42,8 +42,8 @@ public class ChemicalNodeBlockEntity extends BaseCapabilityPointBlockEntity {
 
         int transferAmount = (int) Math.floor((float)getFinalSpeed(DataNEssenceConfig.fluidPointTransfer)/(float)other.size());
 
-        IChemicalHandler resolved2 = level.getCapability(BLOCK_CHEMICAL, from.getBlockPos().relative(from.getDirection().getOpposite()), from.getDirection());
-        if (resolved2 == null) {
+        IChemicalHandler sender = level.getCapability(BLOCK_CHEMICAL, from.getBlockPos().relative(from.getDirection().getOpposite()), from.getDirection());
+        if (sender == null) {
             return false;
         }
 
@@ -73,24 +73,24 @@ public class ChemicalNodeBlockEntity extends BaseCapabilityPointBlockEntity {
                     }
                 }
 
-                IChemicalHandler resolved = level.getCapability(BLOCK_CHEMICAL, to.getBlockPos().relative(to.getDirection().getOpposite()), to.getDirection());
+                IChemicalHandler receiver = level.getCapability(BLOCK_CHEMICAL, to.getBlockPos().relative(to.getDirection().getOpposite()), to.getDirection());
 
-                if (resolved == null) {
+                if (receiver == null) {
                     continue;
                 }
 
                 if (other instanceof ICustomChemicalNodeBehaviour behaviour) {
-                    if (!behaviour.canInsertChemical(resolved, resolved2)) {
+                    if (!behaviour.canInsertChemical(receiver, sender)) {
                         continue;
                     }
                 }
 
-                for (int o = 0; o < resolved2.getChemicalTanks(); o++) {
-                    ChemicalStack copy = resolved2.getChemicalInTank(o).copy();
+                for (int o = 0; o < sender.getChemicalTanks(); o++) {
+                    ChemicalStack chemical = sender.getChemicalInTank(o).copy();
                     if (allowedChemicals != null) {
                         boolean shouldSkip = true;
                         for (var stack : allowedChemicals) {
-                            if (ChemicalStack.isSameChemical(stack, copy)) {
+                            if (ChemicalStack.isSameChemical(stack, chemical)) {
                                 shouldSkip = false;
                                 break;
                             }
@@ -100,11 +100,15 @@ public class ChemicalNodeBlockEntity extends BaseCapabilityPointBlockEntity {
                             continue;
                         }
                     }
-                    if (!copy.isEmpty()) {
-                        copy.setAmount((long) Math.clamp(0, transferAmount, copy.getAmount()));
-                        ChemicalStack filled = resolved.insertChemical(copy, Action.EXECUTE);
-                        resolved2.extractChemical(new ChemicalStack(copy.getChemical(), filled.getAmount()), Action.EXECUTE);
-                        didWork = true;
+                    if (!chemical.isEmpty()) {
+                        chemical.setAmount((long) Math.clamp(0, transferAmount, chemical.getAmount()));
+                        ChemicalStack candidate = receiver.insertChemical(chemical, Action.SIMULATE);
+
+                        if (candidate.getAmount() == 0) {
+                            ChemicalStack extracted = sender.extractChemical(chemical, Action.EXECUTE);
+                            receiver.insertChemical(extracted, Action.EXECUTE);
+                            didWork = true;
+                        }
                     }
                 }
             }

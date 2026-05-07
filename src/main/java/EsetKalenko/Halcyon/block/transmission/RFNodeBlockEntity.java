@@ -49,8 +49,9 @@ public class RFNodeBlockEntity extends BaseCapabilityPointBlockEntity {
                     continue;
                 }
 
-                int transferred = receiverEnergy.receiveEnergy( Math.clamp(senderEnergy.getEnergyStored(), 0, transferAmount) , false);
-                if (transferred > 0) {
+                int candidate = receiverEnergy.receiveEnergy( Math.clamp(senderEnergy.getEnergyStored(), 0, transferAmount) , true);
+                if (candidate > 0) {
+                    int transferred = receiverEnergy.receiveEnergy( Math.clamp(senderEnergy.getEnergyStored(), 0, transferAmount) , false);
                     senderEnergy.extractEnergy(transferred, false);
                     didWork = true;
                 }

@@ -12,3 +12,4 @@
 - Fixed Pure Zinc (Pastel) not being processable in the Mineral Purification Chamber (Esét)
 - Fixed (Energized) Ancient Rock Columns not actually rotating (Esét)
 - Improved performance for Nodes (Vonr)
+- Fixed Mekanism integration Chemical nodes duping and voiding chemicals (Esét)
