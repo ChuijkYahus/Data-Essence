@@ -283,8 +283,8 @@ public class DataBankScreen extends Screen {
             var name = Minecraft.getInstance().player.getName().getString(); // replace with "Arekko" if player has successfully logged in as them before
 
             graphics.blit(TEXTURE, center, y-45, 101, 166, 155, 40);
-            graphics.drawString(Minecraft.getInstance().font, Component.literal(name), center + 26, y - 37, 0xFFc90d8b);
-            graphics.drawString(Minecraft.getInstance().font, Component.translatable("data_tablet.tier", ClientPlayerData.getTier()), center + 26, y - 22, 0xFFc90d8b);
+            graphics.drawString(Minecraft.getInstance().font, Component.literal(name), center + 26, y - 37, 0x5e92d1);
+            graphics.drawString(Minecraft.getInstance().font, Component.translatable("data_tablet.tier", ClientPlayerData.getTier()), center + 26, y - 22, 0x5e92d1);
         }
 
         graphics.enableScissor(x+3, y+3, x+imageWidth-3, y+imageHeight-3);
