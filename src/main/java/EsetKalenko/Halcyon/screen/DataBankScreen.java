@@ -277,12 +277,21 @@ public class DataBankScreen extends Screen {
             graphics.drawCenteredString(Minecraft.getInstance().font, minigameName, x+(imageWidth/2), y-8, 0xffffff);
         }
 
+        // draw the player's "credentials"
+        if (screenType == 0) {
+            var center = (width / 2) - 77;
+            var name = Minecraft.getInstance().player.getName().getString(); // replace with "Arekko" if player has successfully logged in as them before
+
+            graphics.blit(TEXTURE, center, y-45, 101, 166, 155, 40);
+            graphics.drawString(Minecraft.getInstance().font, Component.literal(name), center + 26, y - 37, 0xFFc90d8b);
+            graphics.drawString(Minecraft.getInstance().font, Component.translatable("data_tablet.tier", ClientPlayerData.getTier()), center + 26, y - 22, 0xFFc90d8b);
+        }
+
         graphics.enableScissor(x+3, y+3, x+imageWidth-3, y+imageHeight-3);
         if (screenType == 0) {
             drawEntries(graphics, delta, mouseX, mouseY);
             graphics.pose().pushPose();
             graphics.pose().translate(0, 0, 399);
-            graphics.drawCenteredString(Minecraft.getInstance().font, Component.translatable("data_tablet.tier", ClientPlayerData.getTier()), x+(imageWidth/2), y+8, 0xFFc90d8b);
             graphics.blit(TEXTURE, x+3, y+3, 20, 166, 4, 4);
             graphics.blit(TEXTURE, x+3, y+imageHeight-7, 20, 170, 4, 4);
             graphics.blit(TEXTURE, x+imageWidth-7, y+3, 24, 166, 4, 4);
