@@ -284,7 +284,7 @@ public class DataBankScreen extends Screen {
 
             graphics.blit(TEXTURE, center, y-45, 101, 166, 155, 40);
             graphics.drawString(Minecraft.getInstance().font, Component.literal(name), center + 26, y - 37, 0x5e92d1);
-            graphics.drawString(Minecraft.getInstance().font, Component.translatable("data_tablet.tier", ClientPlayerData.getTier()), center + 26, y - 22, 0x5e92d1);
+            graphics.drawString(Minecraft.getInstance().font, Component.translatable("data_tablet.tier." + ClientPlayerData.getTier()), center + 26, y - 22, 0x5e92d1);
         }
 
         graphics.enableScissor(x+3, y+3, x+imageWidth-3, y+imageHeight-3);
