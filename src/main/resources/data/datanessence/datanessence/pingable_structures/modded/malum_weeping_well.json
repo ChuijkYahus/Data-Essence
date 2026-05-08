@@ -2,6 +2,7 @@
   "structure": "malum:weeping_well",
   "advancement": "datanessence:hidden/malum_really_needs_advancements",
   "requiredAdvancement": "datanessence:hidden/malum_needs_advancements",
+  "requiresUpgrade": true,
   "color1": [
     58, 15, 87
   ],
