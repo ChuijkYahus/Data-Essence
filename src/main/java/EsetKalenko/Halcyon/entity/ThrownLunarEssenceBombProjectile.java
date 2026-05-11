@@ -28,7 +28,7 @@ public class ThrownLunarEssenceBombProjectile extends ThrownTrailItemProjectile 
     }
     @Override
     protected Item getDefaultItem() {
-        return ItemRegistry.LUNAR_ESSENCE_BOMB.get();
+        return ItemRegistry.CRYSTALLIZATION_CHARGE.get();
     }
     @Override
     protected void onHit(HitResult pResult) {

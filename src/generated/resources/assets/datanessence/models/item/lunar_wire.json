@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "datanessence:item/lunar_essence_shard"
+    "layer0": "datanessence:item/wires/lunar_wire"
   }
 }

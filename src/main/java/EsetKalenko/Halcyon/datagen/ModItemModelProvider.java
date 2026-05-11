@@ -45,7 +45,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ItemRegistry.COGNIZANT_CUBE);
         simpleItem(ItemRegistry.UNDER_THE_SKY_MUSIC_DISC);
         simpleItem(ItemRegistry.ESSENCE_SHARD);
-        simpleItem(ItemRegistry.LUNAR_ESSENCE_SHARD);
+        simpleItem(ItemRegistry.SHARD_OF_TRANSFORMATION);
         simpleItem(ItemRegistry.PRIMITIVE_ANTI_GRAVITY_PACK);
         simpleItem(ItemRegistry.TRAVERSITE_TRUDGERS);
         simpleItem(ItemRegistry.TRAVERSITE_ROAD_CHUNK);
@@ -62,7 +62,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ItemRegistry.TAG_FILTER_LABEL);
 
         simpleItemWithSubdirectory(ItemRegistry.ESSENCE_WIRE, "wires");
-        simpleItemWithSubdirectory(ItemRegistry.LUNAR_ESSENCE_WIRE, "wires");
+        simpleItemWithSubdirectory(ItemRegistry.LUNAR_WIRE, "wires");
         simpleItemWithSubdirectory(ItemRegistry.NATURAL_ESSENCE_WIRE, "wires");
         simpleItemWithSubdirectory(ItemRegistry.EXOTIC_ESSENCE_WIRE, "wires");
         simpleItemWithSubdirectory(ItemRegistry.ITEM_WIRE, "wires");
@@ -86,7 +86,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ItemRegistry.FALLING_MOON);
 
         evenSimplerBlockItem(BlockRegistry.ESSENCE_CRYSTAL);
-        evenSimplerBlockItem(BlockRegistry.LUNAR_ESSENCE_CRYSTAL);
+        evenSimplerBlockItem(BlockRegistry.CRYSTAL_OF_TRANSFORMATION);
 
         evenSimplerBlockItem(BlockRegistry.DECO_ESSENCE_BUFFER);
         evenSimplerBlockItem(BlockRegistry.DECO_ITEM_BUFFER);
@@ -131,13 +131,14 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItemWithSubdirectory(ItemRegistry.EXTRICATION_ROD, "components");
 
         simpleItemWithSubdirectory(ItemRegistry.COPPER_NUGGET, "intermediates");
+        simpleItemWithSubdirectory(ItemRegistry.ECLIPTRUM_NUGGET, "intermediates");
         simpleItemWithSubdirectory(ItemRegistry.DIAMOND_SHARD, "intermediates");
         simpleItemWithSubdirectory(ItemRegistry.EMERALD_SHARD, "intermediates");
         simpleItemWithSubdirectory(ItemRegistry.COAL_LUMP, "intermediates");
         simpleItemWithSubdirectory(ItemRegistry.QUARTZ_FLAKE, "intermediates");
 
         simpleItemWithSubdirectory(ItemRegistry.ESSENCE_BOMB, "bombs");
-        simpleItemWithSubdirectory(ItemRegistry.LUNAR_ESSENCE_BOMB, "bombs");
+        simpleItemWithSubdirectory(ItemRegistry.CRYSTALLIZATION_CHARGE, "bombs");
         simpleItemWithSubdirectory(ItemRegistry.NATURAL_ESSENCE_BOMB, "bombs");
         simpleItemWithSubdirectory(ItemRegistry.EXOTIC_ESSENCE_BOMB, "bombs");
 

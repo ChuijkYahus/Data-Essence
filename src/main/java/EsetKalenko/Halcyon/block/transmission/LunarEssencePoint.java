@@ -19,7 +19,7 @@ public class LunarEssencePoint extends BaseEssencePoint {
 
     @Override
     public Item getRequiredWire() {
-        return ItemRegistry.LUNAR_ESSENCE_WIRE.get();
+        return ItemRegistry.LUNAR_WIRE.get();
     }
 
     @Nullable

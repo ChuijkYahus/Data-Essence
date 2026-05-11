@@ -1,0 +1,21 @@
+{
+  "display": {
+    "icon": {
+      "id": "datanessence:tidal_meteorite"
+    },
+    "title": {
+      "translate": "advancements.datanessence.acquire_shard_of_transformation.title"
+    },
+    "description": {
+      "translate": "advancements.datanessence.acquire_shard_of_transformation.description"
+    },
+    "hidden": false
+  },
+  "parent": "datanessence:progression/acquire_synthesis_chamber",
+  "criteria": {
+    "has_shard": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": { "items": [ { "items": ["datanessence:shard_of_transformation" ] } ] }
+    }
+  }
+}

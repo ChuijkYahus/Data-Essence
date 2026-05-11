@@ -72,10 +72,10 @@ public class BlockRegistry {
 
     // World
     public static final Supplier<Block> ESSENCE_CRYSTAL = register("essence_crystal",
-            () -> new EssenceCrystal(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_CLUSTER).noOcclusion().strength(2.0f)),
+            () -> new TidalCrystalIndustrial(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_CLUSTER).noOcclusion().strength(2.0f)),
             object -> () -> new BlockItem(object.get(), new Item.Properties()));
-    public static final Supplier<Block> LUNAR_ESSENCE_CRYSTAL = register("lunar_essence_crystal",
-            () -> new LunarEssenceCrystal(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_CLUSTER).noOcclusion().strength(2.0f)),
+    public static final Supplier<Block> CRYSTAL_OF_TRANSFORMATION = register("crystal_of_transformation",
+            () -> new TidalCrystalLunar(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_CLUSTER).noOcclusion().strength(2.0f)),
             object -> () -> new BlockItem(object.get(), new Item.Properties()));
     public static final Supplier<Block> LENSING_CRYSTAL_ORE = register("lensing_crystal_ore",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.DIAMOND_ORE)),
@@ -96,8 +96,8 @@ public class BlockRegistry {
     public static final Supplier<Block> CRYSTALLINE_LEAVES = register("crystalline_leaves",
             () -> new CrystallineLeaves(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS).emissiveRendering(BlockRegistry::always).lightLevel(state -> 5).sound(SoundType.AMETHYST)),
             object -> () -> new BlockItem(object.get(), new Item.Properties()));
-    public static final Supplier<Block> LUNAR_CRYSTAL_SEED = register("lunar_crystal_seed",
-            () -> new LunarCrystalSeed(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).emissiveRendering(BlockRegistry::always).lightLevel(state -> 3).noOcclusion()),
+    public static final Supplier<Block> TIDAL_METEORITE = register("tidal_meteorite",
+            () -> new TidalMeteorite(BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE).emissiveRendering(BlockRegistry::always).lightLevel(state -> 3).noOcclusion()),
             object -> () -> new BlockItem(object.get(), new Item.Properties()));
     public static final Supplier<Block> FROZEN_MOONLIGHT = register("frozen_moonlight",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.PACKED_ICE)),

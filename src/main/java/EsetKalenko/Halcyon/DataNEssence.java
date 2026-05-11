@@ -271,7 +271,7 @@ public class DataNEssence
             event.accept(ItemRegistry.ORE_SCANNER.get());
             // Combat Tools
             event.accept(ItemRegistry.ESSENCE_BOMB.get());
-            event.accept(ItemRegistry.LUNAR_ESSENCE_BOMB.get());
+            event.accept(ItemRegistry.CRYSTALLIZATION_CHARGE.get());
             event.accept(ItemRegistry.NATURAL_ESSENCE_BOMB.get());
             event.accept(ItemRegistry.EXOTIC_ESSENCE_BOMB.get());
             event.accept(ItemRegistry.ESSENCE_SWORD.get());
@@ -288,7 +288,7 @@ public class DataNEssence
 
             // Wires
             event.accept(ItemRegistry.ESSENCE_WIRE.get());
-            event.accept(ItemRegistry.LUNAR_ESSENCE_WIRE.get());
+            event.accept(ItemRegistry.LUNAR_WIRE.get());
             event.accept(ItemRegistry.NATURAL_ESSENCE_WIRE.get());
             event.accept(ItemRegistry.EXOTIC_ESSENCE_WIRE.get());
             event.accept(ItemRegistry.ITEM_WIRE.get());
@@ -311,7 +311,7 @@ public class DataNEssence
 
             // Materials
             event.accept(ItemRegistry.ESSENCE_SHARD.get());
-            event.accept(ItemRegistry.LUNAR_ESSENCE_SHARD.get());
+            event.accept(ItemRegistry.SHARD_OF_TRANSFORMATION.get());
             event.accept(ItemRegistry.LENSING_CRYSTAL.get());
             event.accept(ItemRegistry.FROZEN_MOONLIGHT_CHUNK.get());
             event.accept(ItemRegistry.TRANSFORMATIVE_GEL.get());
@@ -338,6 +338,7 @@ public class DataNEssence
             event.accept(ItemRegistry.ECLIPTRUM_COG_ASSEMBLY_4X.get());
             event.accept(ItemRegistry.LENS.get());
             event.accept(ItemRegistry.COPPER_NUGGET.get());
+            event.accept(ItemRegistry.ECLIPTRUM_NUGGET.get());
             event.accept(ItemRegistry.DIAMOND_SHARD.get());
             event.accept(ItemRegistry.EMERALD_SHARD.get());
             event.accept(ItemRegistry.COAL_LUMP.get());
@@ -357,12 +358,12 @@ public class DataNEssence
         if (event.getTabKey() == CreativeModeTabRegistry.getKey(CreativeModeTabRegistry.BLOCKS.get())) {
             // World - Phenua
             event.accept(BlockRegistry.ESSENCE_CRYSTAL.get());
-            event.accept(BlockRegistry.LUNAR_ESSENCE_CRYSTAL.get());
+            event.accept(BlockRegistry.CRYSTAL_OF_TRANSFORMATION.get());
             event.accept(BlockRegistry.LENSING_CRYSTAL_ORE.get());
             event.accept(BlockRegistry.FROZEN_MOONLIGHT.get());
             event.accept(BlockRegistry.TETHERGRASS.get());
             event.accept(BlockRegistry.VIVID_LOTUS.get());
-            event.accept(BlockRegistry.LUNAR_CRYSTAL_SEED.get());
+            event.accept(BlockRegistry.TIDAL_METEORITE.get());
             // World - Sanctuary
 //            event.accept(BlockRegistry.VERMILION_GRASS_BLOCK.get());
 //            event.accept(BlockRegistry.SANCTUARY_DIRT.get());

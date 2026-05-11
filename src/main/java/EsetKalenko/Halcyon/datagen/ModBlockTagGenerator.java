@@ -71,7 +71,7 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 .add(BlockRegistry.LENSING_CRYSTAL_ORE.get())
                 .add(BlockRegistry.LIMITED_ITEM_BUFFER.get())
                 .add(BlockRegistry.LUNAR_ESSENCE_BATTERY.get())
-                .add(BlockRegistry.LUNAR_ESSENCE_CRYSTAL.get())
+                .add(BlockRegistry.CRYSTAL_OF_TRANSFORMATION.get())
                 .add(BlockRegistry.LUNAR_ESSENCE_POINT.get())
                 .add(BlockRegistry.MINERAL_PURIFICATION_CHAMBER.get())
                 .add(BlockRegistry.NATURAL_ESSENCE_BATTERY.get())
@@ -120,7 +120,7 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 .add(BlockRegistry.TRAVERSITE_ROAD_STAIRS_OPAL.get())
                 .add(BlockRegistry.DRYING_TABLE.get())
                 .add(BlockRegistry.ESSENCE_DERIVATION_SPIKE.get())
-                .add(BlockRegistry.LUNAR_CRYSTAL_SEED.get())
+                .add(BlockRegistry.TIDAL_METEORITE.get())
                 .add(BlockRegistry.ECLIPTRUM_BLOCK.get())
                 .add(BlockRegistry.FROZEN_MOONLIGHT.get())
                 .add(BlockRegistry.CRYSTALLINE_CRADLE.get())
@@ -174,7 +174,7 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 .add(BlockRegistry.ANCIENT_GLYPH_STONE_ESSENCE.get());
         this.tag(HalcyonTags.Blocks.CRYSTALLINE_CRADLE_BREAKABLE)
                 .add(BlockRegistry.ESSENCE_CRYSTAL.get())
-                .add(BlockRegistry.LUNAR_ESSENCE_CRYSTAL.get());
+                .add(BlockRegistry.CRYSTAL_OF_TRANSFORMATION.get());
         this.tag(Tags.Blocks.ORES)
                 .add(BlockRegistry.LENSING_CRYSTAL_ORE.get());
         this.tag(Tags.Blocks.ORES_IN_GROUND_STONE)

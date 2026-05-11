@@ -1,6 +1,12 @@
-### Changes
-- Changed the tier text translations to be per-tier (Esét)
-- Made the tier display in data banks more thematic (Esét)
+### Additions
+- Astronomy Towers
+- Shards of Transformation, and the means to obtain them
+- Ecliptrum alloy and associated components
+- Lunar Nodes and Wires
+- The Lunarium
+- Frozen Moonlight
+- Crystallization Charges
+- The Repulsion Rod
 
-### Fixes
-- Fixed Malum [REDACTED]s being located on the main mode of the Signal Tracker (Esét)
+### Changes
+- Moved Mineral-Finding Rod to t3

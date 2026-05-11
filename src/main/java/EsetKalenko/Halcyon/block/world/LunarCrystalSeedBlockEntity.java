@@ -6,7 +6,6 @@ import EsetKalenko.Halcyon.networking.packet.s2c.ParticleBurst;
 import EsetKalenko.Halcyon.registry.BlockEntityRegistry;
 import EsetKalenko.Halcyon.registry.BlockRegistry;
 import EsetKalenko.Halcyon.registry.EssenceTypeRegistry;
-import EsetKalenko.Halcyon.registry.*;
 import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -73,12 +72,12 @@ public class LunarCrystalSeedBlockEntity extends BlockEntity {
                 for (BlockPos i : locations) {
                     BlockPos pos = pPos.offset(i);
                     boolean valid = false;
-                    BlockState state = BlockRegistry.LUNAR_ESSENCE_CRYSTAL.get().defaultBlockState();
+                    BlockState state = BlockRegistry.CRYSTAL_OF_TRANSFORMATION.get().defaultBlockState();
                     Collection<Direction> directionsToTry = Direction.allShuffled(pLevel.getRandom());
                     for (Direction j : directionsToTry) {
                         BlockPos relative = pos.relative(j.getOpposite());
                         if (pLevel.getBlockState(relative).isFaceSturdy(pLevel, relative, j)) {
-                            state = state.setValue(LunarEssenceCrystal.FACING, j);
+                            state = state.setValue(TidalCrystalLunar.FACING, j);
                             valid = true;
                             break;
                         }

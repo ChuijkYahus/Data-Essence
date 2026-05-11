@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.misc;
 
-import EsetKalenko.Halcyon.block.world.EssenceCrystal;
+import EsetKalenko.Halcyon.block.world.TidalCrystalIndustrial;
 import EsetKalenko.Halcyon.registry.BlockRegistry;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
@@ -266,7 +266,7 @@ public class LunarEssenceBombExplosion extends Explosion {
                 if (level.getBlockState(blockPos).canBeReplaced()) {
                     if (level.getBlockState(blockPos.below()).isCollisionShapeFullBlock(level, blockPos.below())) {
                         found = true;
-                        level.setBlockAndUpdate(blockPos, BlockRegistry.ESSENCE_CRYSTAL.get().defaultBlockState().setValue(EssenceCrystal.FACING, Direction.UP));
+                        level.setBlockAndUpdate(blockPos, BlockRegistry.ESSENCE_CRYSTAL.get().defaultBlockState().setValue(TidalCrystalIndustrial.FACING, Direction.UP));
                     } else {
                         break;
                     }

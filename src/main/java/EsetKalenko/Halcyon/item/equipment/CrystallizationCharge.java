@@ -21,7 +21,7 @@ import net.minecraft.world.level.Level;
 
 import java.util.List;
 
-public class LunarEssenceBombItem extends Item implements ProjectileItem {
+public class CrystallizationCharge extends Item implements ProjectileItem {
     @Override
     public Projectile asProjectile(Level pLevel, Position pPos, ItemStack pStack, Direction pDirection) {
         return new ThrownLunarEssenceBombProjectile(pLevel, pPos.x(), pPos.y(), pPos.z());
@@ -34,7 +34,7 @@ public class LunarEssenceBombItem extends Item implements ProjectileItem {
                 .power(ProjectileItem.DispenseConfig.DEFAULT.power() * 1.25F)
                 .build();
     }
-    public LunarEssenceBombItem(Properties pProperties) {
+    public CrystallizationCharge(Properties pProperties) {
         super(pProperties);
     }
 

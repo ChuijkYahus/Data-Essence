@@ -4,7 +4,6 @@ import EsetKalenko.Halcyon.client.particle.CircleParticleOptions;
 import EsetKalenko.Halcyon.registry.AttachmentTypeRegistry;
 import EsetKalenko.Halcyon.registry.BlockRegistry;
 import EsetKalenko.Halcyon.registry.EssenceTypeRegistry;
-import EsetKalenko.Halcyon.registry.*;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
@@ -104,7 +103,7 @@ public class LunarStrike extends Entity {
             }
             blockPos = blockPos.offset(0, 1, 0);
             if (level().getBlockState(blockPos).canBeReplaced() && level().getBlockState(blockPos.below()).isFaceSturdy(level(), blockPos.below(), Direction.UP)) {
-                level().setBlockAndUpdate(blockPos, BlockRegistry.LUNAR_CRYSTAL_SEED.get().defaultBlockState());
+                level().setBlockAndUpdate(blockPos, BlockRegistry.TIDAL_METEORITE.get().defaultBlockState());
                 break;
             }
         }
