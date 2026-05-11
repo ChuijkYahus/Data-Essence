@@ -1,4 +1,5 @@
 ### Changes
+- Changed the tier text translations to be per-tier (Esét)
 - Made the tier display in data banks more thematic (Esét)
 
 ### Fixes

@@ -12,11 +12,18 @@
 
 [CurseForge](https://curseforge.com/minecraft/mc-mods/data-essence) | [Design Doc](https://docs.google.com/document/d/1jXmHCer-_6um1-AJRqcDkGYyKjpoGbhyEGBNibIRoIk/edit?tab=t.0) | [Discord](https://discord.gg/yjpMkxHhNJ) | [Modrinth](https://modrinth.com/project/data-essence)
 
+
+## SUPPORT THE DEVS
+| ![Esét Kalenko](https://avatars.githubusercontent.com/u/32804557?s=40&v=4) Esét Kalenko | ![K King](https://avatars.githubusercontent.com/u/102820358?s=40&v=4) K King          |
+|-----------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------|
+| Lead Art/Narrative Designer                                                             | Sound Designer                                                                        |
+| [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/esetkalenko)    | [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/kkingcontent) |
+
 ## CREDITS
 
 ### Primary developers
 
-*   **Esét Kalenko**: Lead Art/Narrative Designer - [Esét's KoFi](https://ko-fi.com/esetkalenko)
+*   **Esét Kalenko**: Lead Art/Narrative Designer
 *   **Fuzzy**: Lead Composer
 *   **Multyfora**: Lead Programmer, resident render wizard
 
