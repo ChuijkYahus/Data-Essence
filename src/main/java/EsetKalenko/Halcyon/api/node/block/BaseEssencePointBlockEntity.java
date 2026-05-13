@@ -30,6 +30,7 @@ import org.joml.Vector3f;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public abstract class BaseEssencePointBlockEntity extends BlockEntity {
     public DatabankAnimationState animState = new DatabankAnimationState("idle")
@@ -109,7 +110,7 @@ public abstract class BaseEssencePointBlockEntity extends BlockEntity {
             BlockPosNetworks networks = pLevel.getData(AttachmentTypeRegistry.ESSENCE_NODE_NETWORKS);
             if (networks.graph.inEdges(pPos).isEmpty() && !networks.graph.outEdges(pPos).isEmpty()) {
                 var paths = networks.getPaths(pPos);
-                List<Path<BlockPos, BlockPosEdge>> ends = networks.graph.vertices().stream().filter((vertex) -> pLevel.isLoaded(vertex) && networks.graph.outEdges(vertex).isEmpty() && paths.isReachable(vertex)).map(paths::getPath).toList();
+                List<Path<BlockPos, BlockPosEdge>> ends = networks.graph.vertices().stream().filter((vertex) -> pLevel.isLoaded(vertex) && networks.graph.outEdges(vertex).isEmpty()).map(paths::getPath).filter(Objects::nonNull).toList();
                 pBlockEntity.preTransferHooks(pBlockEntity, ends);
                 pBlockEntity.transfer(pBlockEntity, ends);
                 pBlockEntity.postTransferHooks(pBlockEntity, ends);

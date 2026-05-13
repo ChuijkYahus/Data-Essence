@@ -21,6 +21,7 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 
 import java.util.List;
+import java.util.Objects;
 
 public class EnderPearlCaptureBlockEntity extends PearlNetworkBlockEntity {
     public DatabankAnimationState animState = new DatabankAnimationState("idle")
@@ -43,8 +44,9 @@ public class EnderPearlCaptureBlockEntity extends PearlNetworkBlockEntity {
                 BlockPosNetworks networks = pLevel.getData(AttachmentTypeRegistry.ENDER_PEARL_NETWORKS);
                 var paths = networks.getPaths(pPos);
                 List<Path<BlockPos, BlockPosEdge>> ends = networks.graph.vertices().stream()
-                        .filter((vertex) -> networks.graph.outEdges(vertex).isEmpty() && paths.isReachable(vertex))
+                        .filter((vertex) -> networks.graph.outEdges(vertex).isEmpty())
                         .map(paths::getPath)
+                        .filter(Objects::nonNull)
                         .filter((i) -> pLevel.getBlockEntity(i.target()) instanceof EnderPearlDestinationBlockEntity).toList();
                 if (!ends.isEmpty()) {
                     for (ThrownEnderpearl i : pearls) {
