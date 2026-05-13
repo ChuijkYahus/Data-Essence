@@ -11,9 +11,20 @@ import java.util.Set;
 
 public class BlockPosGraph {
     private final Graph<BlockPos, BlockPosEdge> inner;
+    private long version;
 
     public BlockPosGraph() {
         this.inner = Graph.newDirected();
+    }
+
+    /**
+     * Returns the number of changes made to this graph since creation.
+     * Can be used for caching.
+     *
+     * @return Number of changes made to this graph since creation
+     */
+    public long getVersion() {
+        return version;
     }
 
     /**
@@ -65,6 +76,7 @@ public class BlockPosGraph {
      */
     public void addEdge(BlockPos source, BlockPos target) {
         this.inner.addEdge(source, target, new BlockPosEdge(source, target));
+        this.version++;
     }
 
     /**
@@ -82,6 +94,7 @@ public class BlockPosGraph {
      */
     public void addEdge(BlockPosEdge edge) {
         this.inner.addEdge(edge.source(), edge.target(), edge);
+        this.version++;
     }
 
     /**
@@ -93,6 +106,7 @@ public class BlockPosGraph {
      */
     public void addVertex(BlockPos vertex) {
         this.inner.addVertex(vertex);
+        this.version++;
     }
 
     /**
@@ -105,6 +119,7 @@ public class BlockPosGraph {
      */
     public void addVertices(Collection<BlockPos> vertices) {
         this.inner.addVertices(vertices);
+        this.version++;
     }
 
     /**
@@ -145,6 +160,7 @@ public class BlockPosGraph {
      */
     public void removeEdge(BlockPosEdge edge) {
         this.inner.removeEdge(edge);
+        this.version++;
     }
 
     /**

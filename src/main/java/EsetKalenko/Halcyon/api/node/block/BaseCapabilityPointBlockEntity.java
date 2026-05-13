@@ -103,6 +103,9 @@ public abstract class BaseCapabilityPointBlockEntity extends BlockEntity {
     }
     public abstract Color[] linkColor();
 
+    private static final List<Path<BlockPos, BlockPosEdge>> ends = new ArrayList<>();
+    private static long cachedVersion = -1;
+
     public static void tick(Level pLevel, BlockPos pPos, BlockState pState, BaseCapabilityPointBlockEntity pBlockEntity) {
         if (!pLevel.isClientSide()) {
             if (pBlockEntity.link == null) {
@@ -115,26 +118,31 @@ public abstract class BaseCapabilityPointBlockEntity extends BlockEntity {
                 if (pBlockEntity.delay > 0) {
                     pBlockEntity.delay--;
                 } else {
-                    var paths = networks.graph.getPaths(pPos);
-                    List<Path<BlockPos, BlockPosEdge>> ends = new ArrayList<>();
-                    for (var vertex : networks.graph.vertices()) {
-                        if (pPos.equals(vertex)) {
-                            continue;
+                    if (cachedVersion == -1 || cachedVersion != networks.graph.getVersion()) {
+                        ends.clear();
+                        var paths = networks.graph.getPaths(pPos);
+                        for (var vertex : networks.graph.vertices()) {
+                            if (pPos.equals(vertex)) {
+                                continue;
+                            }
+
+                            if (!networks.graph.outEdges(vertex).isEmpty()) {
+                                continue;
+                            }
+
+                            if (!pLevel.isLoaded(vertex)) {
+                                continue;
+                            }
+
+                            var path = paths.getPath(vertex);
+                            if (path != null) {
+                                ends.add(path);
+                            }
                         }
 
-                        if (!networks.graph.outEdges(vertex).isEmpty()) {
-                            continue;
-                        }
-
-                        if (!pLevel.isLoaded(vertex)) {
-                            continue;
-                        }
-
-                        var path = paths.getPath(vertex);
-                        if (path != null) {
-                            ends.add(path);
-                        }
+                        cachedVersion = networks.graph.getVersion();
                     }
+
                     pBlockEntity.preTransferHooks(pBlockEntity, ends);
                     if (pBlockEntity.transfer(pBlockEntity, ends)) {
                         pBlockEntity.backoff = Math.max(0, pBlockEntity.backoff >> 1);
