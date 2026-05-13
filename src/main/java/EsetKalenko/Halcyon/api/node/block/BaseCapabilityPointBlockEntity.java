@@ -109,10 +109,8 @@ public abstract class BaseCapabilityPointBlockEntity extends BlockEntity {
                 pBlockEntity.updateLinks();
             }
             BlockPosNetworks networks = pLevel.getData(AttachmentTypeRegistry.CAPABILITY_NODE_NETWORKS);
-            var inEdges = networks.graph.inEdges(pPos);
-            var outEdges = networks.graph.outEdges(pPos);
 
-            var shouldTransfer = outEdges.isEmpty() || inEdges.isEmpty();
+            var shouldTransfer = networks.graph.inEdges(pPos).isEmpty() || networks.graph.outEdges(pPos).isEmpty();
 
             if (shouldTransfer) {
                 if (pBlockEntity.delay > 0) {
