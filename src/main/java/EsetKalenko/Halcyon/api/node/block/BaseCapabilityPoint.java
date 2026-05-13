@@ -98,7 +98,7 @@ public abstract class BaseCapabilityPoint extends Block implements EntityBlock {
             if (pLevel.getBlockEntity(pPos) instanceof BaseCapabilityPointBlockEntity node) {
                 BlockPosNetworks networks = pLevel.getData(AttachmentTypeRegistry.CAPABILITY_NODE_NETWORKS);
                 Stream.concat(networks.graph.inEdges(pPos).stream(), networks.graph.outEdges(pPos).stream()).forEach(i -> {
-                    BlockPos pos = networks.graph.edgeSource(i);
+                    BlockPos pos = i.source;
                     ItemEntity item = new ItemEntity(pLevel, pos.getCenter().x, pos.getCenter().y, pos.getCenter().z, new ItemStack(getRequiredWire()));
                     pLevel.addFreshEntity(item);
                     networks.graph.removeEdge(i);
@@ -220,14 +220,11 @@ public abstract class BaseCapabilityPoint extends Block implements EntityBlock {
                     var edges = networks.graph.outEdges(pPos);
                     if (!edges.isEmpty()) {
                         for (var i : edges) {
-                            if (networks.graph.edgeSource(i).equals(pPos)) {
-                                ItemEntity item = new ItemEntity(pLevel, pPos.getCenter().x, pPos.getCenter().y, pPos.getCenter().z, new ItemStack(getRequiredWire()));
-                                pLevel.addFreshEntity(item);
-                                networks.graph.removeEdge(i);
-                                BlockPos to = networks.graph.edgeTarget(i);
-                                if (pLevel.getBlockEntity(to) instanceof BaseCapabilityPointBlockEntity toEnt) {
-                                    toEnt.updateBlock();
-                                }
+                            ItemEntity item = new ItemEntity(pLevel, pPos.getCenter().x, pPos.getCenter().y, pPos.getCenter().z, new ItemStack(getRequiredWire()));
+                            pLevel.addFreshEntity(item);
+                            networks.graph.removeEdge(i);
+                            if (pLevel.getBlockEntity(i.target) instanceof BaseCapabilityPointBlockEntity toEnt) {
+                                toEnt.updateBlock();
                             }
                         }
                         ent.updateBlock();

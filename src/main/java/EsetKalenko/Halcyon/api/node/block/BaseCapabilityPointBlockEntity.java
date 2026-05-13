@@ -181,8 +181,7 @@ public abstract class BaseCapabilityPointBlockEntity extends BlockEntity {
         BlockPosNetworks networks = level.getData(AttachmentTypeRegistry.CAPABILITY_NODE_NETWORKS);
         if (networks.graph.vertices().contains(getBlockPos())) {
             for (var i : networks.graph.outEdges(getBlockPos())) {
-                BlockPos target = networks.graph.edgeTarget(i);
-                link.add(target);
+                link.add(i.target);
             }
         }
     }

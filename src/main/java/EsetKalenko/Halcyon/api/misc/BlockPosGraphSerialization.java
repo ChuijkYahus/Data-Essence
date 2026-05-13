@@ -33,7 +33,7 @@ public class BlockPosGraphSerialization {
         }
         public static SerializationGraph fromGraph(Graph<BlockPos, BlockPosEdge> graph) {
             List<BlockPos> vertices = new ArrayList<>(graph.vertices());
-            List<BlockPosEdge> edges = graph.edges().stream().map((edge) -> new BlockPosEdge(graph.edgeSource(edge), graph.edgeTarget(edge))).toList();
+            List<BlockPosEdge> edges = graph.edges().stream().toList();
             return new SerializationGraph(vertices, edges);
         }
     }

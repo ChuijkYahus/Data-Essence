@@ -79,7 +79,7 @@ public class PearlNetworkBlock extends Block {
                 BlockPosNetworks networks = pLevel.getData(AttachmentTypeRegistry.ENDER_PEARL_NETWORKS);
                 var edges = networks.graph.inEdges(pPos);
                 for (var i : edges) {
-                    BlockPos pos = networks.graph.edgeSource(i);
+                    BlockPos pos = i.source;
                     networks.graph.removeEdge(i);
                     if (!pos.equals(pPos)) {
                         if (pLevel.getBlockEntity(pos) instanceof PearlNetworkBlockEntity ent) {

@@ -98,7 +98,7 @@ public abstract class BaseEssencePoint extends Block implements EntityBlock {
                 BlockPosNetworks networks = pLevel.getData(AttachmentTypeRegistry.ESSENCE_NODE_NETWORKS);
                 var edges = networks.graph.inEdges(pPos);
                 for (var i : edges) {
-                    BlockPos pos = networks.graph.edgeSource(i);
+                    BlockPos pos = i.source;
                     ItemEntity item = new ItemEntity(pLevel, pos.getCenter().x, pos.getCenter().y, pos.getCenter().z, new ItemStack(getRequiredWire()));
                     pLevel.addFreshEntity(item);
                     networks.graph.removeEdge(i);
@@ -220,12 +220,11 @@ public abstract class BaseEssencePoint extends Block implements EntityBlock {
                     var edges = networks.graph.outEdges(pPos);
                     if (!edges.isEmpty()) {
                         for (var i : edges) {
-                            if (networks.graph.edgeSource(i).equals(pPos)) {
+                            if (i.source.equals(pPos)) {
                                 ItemEntity item = new ItemEntity(pLevel, pPos.getCenter().x, pPos.getCenter().y, pPos.getCenter().z, new ItemStack(getRequiredWire()));
                                 pLevel.addFreshEntity(item);
                                 networks.graph.removeEdge(i);
-                                BlockPos to = networks.graph.edgeTarget(i);
-                                if (pLevel.getBlockEntity(to) instanceof BaseEssencePointBlockEntity toEnt) {
+                                if (pLevel.getBlockEntity(i.target) instanceof BaseEssencePointBlockEntity toEnt) {
                                     toEnt.updateBlock();
                                 }
                             }
