@@ -109,7 +109,6 @@ public abstract class BaseCapabilityPointBlockEntity extends BlockEntity {
                 pBlockEntity.updateLinks();
             }
             BlockPosNetworks networks = pLevel.getData(AttachmentTypeRegistry.CAPABILITY_NODE_NETWORKS);
-
             var shouldTransfer = networks.graph.inEdges(pPos).isEmpty() || networks.graph.outEdges(pPos).isEmpty();
 
             if (shouldTransfer) {
@@ -119,11 +118,15 @@ public abstract class BaseCapabilityPointBlockEntity extends BlockEntity {
                     var paths = networks.graph.getPaths(pPos);
                     List<Path<BlockPos, BlockPosEdge>> ends = new ArrayList<>();
                     for (var vertex : networks.graph.vertices()) {
-                        if (pPos.equals(vertex) || !pLevel.isLoaded(vertex)) {
+                        if (pPos.equals(vertex)) {
                             continue;
                         }
 
                         if (!networks.graph.outEdges(vertex).isEmpty()) {
+                            continue;
+                        }
+
+                        if (!pLevel.isLoaded(vertex)) {
                             continue;
                         }
 
