@@ -112,13 +112,14 @@ public abstract class BaseCapabilityPointBlockEntity extends BlockEntity {
                 pBlockEntity.updateLinks();
             }
             BlockPosNetworks networks = pLevel.getData(AttachmentTypeRegistry.CAPABILITY_NODE_NETWORKS);
-            var shouldTransfer = networks.graph.inEdges(pPos).isEmpty() || networks.graph.outEdges(pPos).isEmpty();
+            var shouldTransfer = networks.graph.outEdges(pPos).isEmpty() || networks.graph.inEdges(pPos).isEmpty();
+            var cacheInvalid = pBlockEntity.ends == null || pBlockEntity.cachedVersion != networks.graph.getVersion();
 
             if (shouldTransfer) {
                 if (pBlockEntity.delay > 0) {
                     pBlockEntity.delay--;
                 } else {
-                    if (pBlockEntity.ends == null || pBlockEntity.cachedVersion != networks.graph.getVersion()) {
+                    if (cacheInvalid) {
                         if (pBlockEntity.ends == null) {
                             pBlockEntity.ends = new ArrayList<>();
                         }
@@ -157,10 +158,10 @@ public abstract class BaseCapabilityPointBlockEntity extends BlockEntity {
                 }
             }
 
-            // check if this node is a relay
-            var incoming = networks.graph.inEdges(pPos);
-            var outgoing = networks.graph.outEdges(pPos);
-            pBlockEntity.isRelay = (!incoming.isEmpty() && !outgoing.isEmpty());
+            if (cacheInvalid) {
+                // check if this node is a relay
+                pBlockEntity.isRelay = (!networks.graph.inEdges(pPos).isEmpty() && !networks.graph.outEdges(pPos).isEmpty());
+            }
 
         } else {
             if (pBlockEntity.link == null) {
