@@ -2,16 +2,15 @@ package EsetKalenko.Halcyon.integration.mekanism;
 
 import EsetKalenko.Halcyon.DataNEssence;
 import EsetKalenko.Halcyon.api.node.block.BaseCapabilityPointBlockEntity;
+import EsetKalenko.Halcyon.api.util.BlockPosEdge;
 import EsetKalenko.Halcyon.config.DataNEssenceConfig;
 import EsetKalenko.Halcyon.registry.BlockEntityRegistry;
+import com.jgalgo.alg.common.Path;
 import mekanism.api.Action;
 import mekanism.api.chemical.ChemicalStack;
 import mekanism.api.chemical.IChemicalHandler;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.state.BlockState;
-import net.neoforged.neoforge.fluids.FluidStack;
-import org.jgrapht.GraphPath;
-import org.jgrapht.graph.DefaultEdge;
 import org.joml.Math;
 
 import java.awt.*;
@@ -35,7 +34,7 @@ public class ChemicalNodeBlockEntity extends BaseCapabilityPointBlockEntity {
     }
 
     @Override
-    public boolean transfer(BaseCapabilityPointBlockEntity from, List<GraphPath<BlockPos, DefaultEdge>> other) {
+    public boolean transfer(BaseCapabilityPointBlockEntity from, List<Path<BlockPos, BlockPosEdge>> other) {
         if (other.isEmpty()) {
             return false;
         }
@@ -49,11 +48,11 @@ public class ChemicalNodeBlockEntity extends BaseCapabilityPointBlockEntity {
 
         var didWork = false;
 
-        for (GraphPath<BlockPos, DefaultEdge> i : other) {
-            if (level.getBlockEntity(i.getEndVertex()) instanceof BaseCapabilityPointBlockEntity to) {
+        for (Path<BlockPos, BlockPosEdge> i : other) {
+            if (level.getBlockEntity(i.target()) instanceof BaseCapabilityPointBlockEntity to) {
                 List<ChemicalStack> allowedChemicals = null;
 
-                for (BlockPos j : i.getVertexList()) {
+                for (BlockPos j : i.vertices()) {
                     if (level.getBlockEntity(j) instanceof BaseCapabilityPointBlockEntity to2) {
                         List<ChemicalStack> value = to2.getValue(DataNEssence.locate("allowed_chemicals"), null);
                         if (allowedChemicals == null) {

@@ -3,19 +3,18 @@ package EsetKalenko.Halcyon.block.transmission;
 import EsetKalenko.Halcyon.DataNEssence;
 import EsetKalenko.Halcyon.api.node.block.BaseCapabilityPointBlockEntity;
 import EsetKalenko.Halcyon.api.node.ICustomFluidPointBehaviour;
+import EsetKalenko.Halcyon.api.util.BlockPosEdge;
 import EsetKalenko.Halcyon.config.DataNEssenceConfig;
 import EsetKalenko.Halcyon.registry.BlockEntityRegistry;
+import com.jgalgo.alg.common.Path;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.capability.IFluidHandler;
-import org.jgrapht.GraphPath;
-import org.jgrapht.graph.DefaultEdge;
 import org.joml.Math;
 
 import java.awt.*;
-import java.util.ArrayList;
 import java.util.List;
 
 public class FluidPointBlockEntity extends BaseCapabilityPointBlockEntity {
@@ -32,7 +31,7 @@ public class FluidPointBlockEntity extends BaseCapabilityPointBlockEntity {
     }
 
     @Override
-    public boolean transfer(BaseCapabilityPointBlockEntity from, List<GraphPath<BlockPos, DefaultEdge>> other) {
+    public boolean transfer(BaseCapabilityPointBlockEntity from, List<Path<BlockPos, BlockPosEdge>> other) {
         if (other.isEmpty()) {
             return false;
         }
@@ -46,10 +45,10 @@ public class FluidPointBlockEntity extends BaseCapabilityPointBlockEntity {
 
         var didWork = false;
 
-        for (GraphPath<BlockPos, DefaultEdge> i : other) {
-            if (level.getBlockEntity(i.getEndVertex()) instanceof BaseCapabilityPointBlockEntity ent) {
+        for (Path<BlockPos, BlockPosEdge> i : other) {
+            if (level.getBlockEntity(i.target()) instanceof BaseCapabilityPointBlockEntity ent) {
                 List<FluidStack> allowedFluidstacks = null;
-                for (BlockPos j : i.getVertexList()) {
+                for (BlockPos j : i.vertices()) {
                     if (level.getBlockEntity(j) instanceof BaseCapabilityPointBlockEntity ent2) {
                         List<FluidStack> value = ent2.getValue(DataNEssence.locate("allowed_fluidstacks"), null);
                         if (allowedFluidstacks == null) {

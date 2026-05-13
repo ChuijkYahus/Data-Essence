@@ -5,14 +5,13 @@ import EsetKalenko.Halcyon.api.misc.BlockPosNetworks;
 import EsetKalenko.Halcyon.block.auxiliary.TwiningLanternBlockEntity;
 import EsetKalenko.Halcyon.block.technical.StructureProtectorBlockEntity;
 import EsetKalenko.Halcyon.item.equipment.GrapplingHook;
+import com.jgalgo.graph.Graph;
 import com.mojang.serialization.Codec;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.neoforged.neoforge.attachment.AttachmentType;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
-import org.jgrapht.graph.DefaultDirectedGraph;
-import org.jgrapht.graph.DefaultEdge;
 
 import java.util.*;
 import java.util.function.Supplier;
@@ -26,11 +25,11 @@ public class AttachmentTypeRegistry {
             register("twining_lanterns", () -> AttachmentType.builder(() -> new ArrayList<TwiningLanternBlockEntity>()).build());
 
     public static final Supplier<AttachmentType<BlockPosNetworks>> ESSENCE_NODE_NETWORKS =
-            register("essence_node_networks", () -> AttachmentType.builder(() -> new BlockPosNetworks(new DefaultDirectedGraph<>(DefaultEdge.class))).serialize(BlockPosNetworks.CODEC).build());
+            register("essence_node_networks", () -> AttachmentType.builder(() -> new BlockPosNetworks(Graph.newDirected())).serialize(BlockPosNetworks.CODEC).build());
     public static final Supplier<AttachmentType<BlockPosNetworks>> CAPABILITY_NODE_NETWORKS =
-            register("capability_node_networks", () -> AttachmentType.builder(() -> new BlockPosNetworks(new DefaultDirectedGraph<>(DefaultEdge.class))).serialize(BlockPosNetworks.CODEC).build());
+            register("capability_node_networks", () -> AttachmentType.builder(() -> new BlockPosNetworks(Graph.newDirected())).serialize(BlockPosNetworks.CODEC).build());
     public static final Supplier<AttachmentType<BlockPosNetworks>> ENDER_PEARL_NETWORKS =
-            register("ender_pearl_networks", () -> AttachmentType.builder(() -> new BlockPosNetworks(new DefaultDirectedGraph<>(DefaultEdge.class))).serialize(BlockPosNetworks.CODEC).build());
+            register("ender_pearl_networks", () -> AttachmentType.builder(() -> new BlockPosNetworks(Graph.newDirected())).serialize(BlockPosNetworks.CODEC).build());
 
 
     public static final Supplier<AttachmentType<Integer>> TIER =

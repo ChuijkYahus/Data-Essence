@@ -3,17 +3,16 @@ package EsetKalenko.Halcyon.block.transmission;
 import EsetKalenko.Halcyon.DataNEssence;
 import EsetKalenko.Halcyon.api.node.block.BaseCapabilityPointBlockEntity;
 import EsetKalenko.Halcyon.api.node.ICustomItemPointBehaviour;
+import EsetKalenko.Halcyon.api.util.BlockPosEdge;
 import EsetKalenko.Halcyon.config.DataNEssenceConfig;
 import EsetKalenko.Halcyon.item.BaseFilterLabel;
 import EsetKalenko.Halcyon.registry.BlockEntityRegistry;
+import com.jgalgo.alg.common.Path;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.capabilities.Capabilities;
-import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.items.IItemHandler;
-import org.jgrapht.GraphPath;
-import org.jgrapht.graph.DefaultEdge;
 import org.joml.Math;
 
 import java.awt.*;
@@ -33,7 +32,7 @@ public class ItemPointBlockEntity extends BaseCapabilityPointBlockEntity {
     }
 
     @Override
-    public boolean transfer(BaseCapabilityPointBlockEntity sourceNode, List<GraphPath<BlockPos, DefaultEdge>> other) {
+    public boolean transfer(BaseCapabilityPointBlockEntity sourceNode, List<Path<BlockPos, BlockPosEdge>> other) {
         if (other.isEmpty()) {
             return false;
         }
@@ -48,13 +47,13 @@ public class ItemPointBlockEntity extends BaseCapabilityPointBlockEntity {
 
         var didWork = false;
 
-        for (GraphPath<BlockPos, DefaultEdge> i : other) {
-            if (level.getBlockEntity(i.getEndVertex()) instanceof BaseCapabilityPointBlockEntity destinationNode) {
+        for (Path<BlockPos, BlockPosEdge> i : other) {
+            if (level.getBlockEntity(i.target()) instanceof BaseCapabilityPointBlockEntity destinationNode) {
                 List<ItemStack> allowedItemstacks = null;
                 var destTile = destinationNode.getBlockPos().relative(destinationNode.getDirection().getOpposite());
                 IItemHandler destHandler = level.getCapability(Capabilities.ItemHandler.BLOCK, destTile, destinationNode.getDirection());
 
-                for (BlockPos j : i.getVertexList()) {
+                for (BlockPos j : i.vertices()) {
                     if (level.getBlockEntity(j) instanceof BaseCapabilityPointBlockEntity ent2) {
                         List<ItemStack> value = ent2.getValue(DataNEssence.locate("allowed_itemstacks"), null);
                         if (allowedItemstacks == null) {

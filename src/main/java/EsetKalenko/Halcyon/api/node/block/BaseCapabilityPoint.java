@@ -35,7 +35,6 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import org.jgrapht.graph.DefaultEdge;
 
 import java.util.Optional;
 import java.util.Set;
@@ -96,9 +95,9 @@ public abstract class BaseCapabilityPoint extends Block implements EntityBlock {
         if (pState.getBlock() != pNewState.getBlock()) {
             if (pLevel.getBlockEntity(pPos) instanceof BaseCapabilityPointBlockEntity node) {
                 BlockPosNetworks networks = pLevel.getData(AttachmentTypeRegistry.CAPABILITY_NODE_NETWORKS);
-                Set<DefaultEdge> edges = networks.graph.edgesOf(pPos);
-                for (DefaultEdge i : edges) {
-                    BlockPos pos = networks.graph.getEdgeSource(i);
+                var edges = networks.graph.inEdges(pPos);
+                for (var i : edges) {
+                    BlockPos pos = networks.graph.edgeSource(i);
                     ItemEntity item = new ItemEntity(pLevel, pos.getCenter().x, pos.getCenter().y, pos.getCenter().z, new ItemStack(getRequiredWire()));
                     pLevel.addFreshEntity(item);
                     networks.graph.removeEdge(i);
@@ -151,10 +150,10 @@ public abstract class BaseCapabilityPoint extends Block implements EntityBlock {
             if (entity instanceof BaseCapabilityPointBlockEntity ent) {
                 if (pPlayer.getItemInHand(pHand).is(getRequiredWire())) {
                     BlockPosNetworks networks = pLevel.getData(AttachmentTypeRegistry.CAPABILITY_NODE_NETWORKS);
-                    Set<DefaultEdge> edges = networks.graph.edgesOf(pPos);
+                    var edges = networks.graph.outEdges(pPos);
                     Optional<BlockEntity> linkFrom = pPlayer.getData(AttachmentTypeRegistry.LINK_FROM);
                     if (!linkFrom.isPresent()) {
-                        if (edges.stream().filter((edge) -> networks.graph.getEdgeSource(edge).equals(pPos)).toList().size() < DataNEssenceConfig.maxNodeWires) {
+                        if (edges.size() < DataNEssenceConfig.maxNodeWires) {
                             pPlayer.setData(AttachmentTypeRegistry.LINK_FROM, Optional.of(ent));
                             PlayerDataUtil.updateData((ServerPlayer) pPlayer);
                             pLevel.playSound(null, pPos, SoundRegistry.NODE_LINK_FROM.value(), SoundSource.BLOCKS, 1f, 1f);
@@ -217,14 +216,14 @@ public abstract class BaseCapabilityPoint extends Block implements EntityBlock {
             if (entity instanceof BaseCapabilityPointBlockEntity ent) {
                 if (pPlayer.isShiftKeyDown()) {
                     BlockPosNetworks networks = pLevel.getData(AttachmentTypeRegistry.CAPABILITY_NODE_NETWORKS);
-                    Set<DefaultEdge> edges = networks.graph.edgesOf(pPos);
-                    if (edges.stream().anyMatch((edge) -> networks.graph.getEdgeSource(edge).equals(pPos))) {
-                        for (DefaultEdge i : edges) {
-                            if (networks.graph.getEdgeSource(i).equals(pPos)) {
+                    var edges = networks.graph.outEdges(pPos);
+                    if (!edges.isEmpty()) {
+                        for (var i : edges) {
+                            if (networks.graph.edgeSource(i).equals(pPos)) {
                                 ItemEntity item = new ItemEntity(pLevel, pPos.getCenter().x, pPos.getCenter().y, pPos.getCenter().z, new ItemStack(getRequiredWire()));
                                 pLevel.addFreshEntity(item);
                                 networks.graph.removeEdge(i);
-                                BlockPos to = networks.graph.getEdgeTarget(i);
+                                BlockPos to = networks.graph.edgeTarget(i);
                                 if (pLevel.getBlockEntity(to) instanceof BaseCapabilityPointBlockEntity toEnt) {
                                     toEnt.updateBlock();
                                 }

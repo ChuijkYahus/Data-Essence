@@ -1,13 +1,13 @@
 package EsetKalenko.Halcyon.block.transmission;
 
 import EsetKalenko.Halcyon.api.node.block.BaseCapabilityPointBlockEntity;
+import EsetKalenko.Halcyon.api.util.BlockPosEdge;
 import EsetKalenko.Halcyon.registry.BlockEntityRegistry;
+import com.jgalgo.alg.common.Path;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.energy.IEnergyStorage;
-import org.jgrapht.GraphPath;
-import org.jgrapht.graph.DefaultEdge;
 
 import java.awt.*;
 import java.util.List;
@@ -27,7 +27,7 @@ public class RFNodeBlockEntity extends BaseCapabilityPointBlockEntity {
     }
 
     @Override
-    public boolean transfer(BaseCapabilityPointBlockEntity sender, List<GraphPath<BlockPos, DefaultEdge>> desintations) {
+    public boolean transfer(BaseCapabilityPointBlockEntity sender, List<Path<BlockPos, BlockPosEdge>> desintations) {
         if (desintations.isEmpty()) {
             return false;
         }
@@ -41,8 +41,8 @@ public class RFNodeBlockEntity extends BaseCapabilityPointBlockEntity {
 
         var didWork = false;
 
-        for (GraphPath<BlockPos, DefaultEdge> i : desintations) {
-            if (level.getBlockEntity(i.getEndVertex()) instanceof BaseCapabilityPointBlockEntity receiver) {
+        for (Path<BlockPos, BlockPosEdge> i : desintations) {
+            if (level.getBlockEntity(i.target()) instanceof BaseCapabilityPointBlockEntity receiver) {
                 IEnergyStorage receiverEnergy = level.getCapability(Capabilities.EnergyStorage.BLOCK, receiver.getBlockPos().relative(receiver.getDirection().getOpposite()), receiver.getDirection());
 
                 if (receiverEnergy == null) {
