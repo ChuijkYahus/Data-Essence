@@ -125,7 +125,7 @@ public abstract class BaseCapabilityPointBlockEntity extends BlockEntity {
                             continue;
                         }
 
-                        if (networks.graph.outEdges(vertex).isEmpty()) {
+                        if (!networks.graph.outEdges(vertex).isEmpty()) {
                             continue;
                         }
 
