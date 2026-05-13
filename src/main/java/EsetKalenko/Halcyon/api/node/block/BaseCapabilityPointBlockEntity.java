@@ -142,8 +142,10 @@ public abstract class BaseCapabilityPointBlockEntity extends BlockEntity {
                                 pBlockEntity.ends.add(path);
                             }
                         }
+
+                        pBlockEntity.cachedVersion = networks.graph.getVersion();
                     }
-                    
+
                     pBlockEntity.preTransferHooks(pBlockEntity, pBlockEntity.ends);
                     if (pBlockEntity.transfer(pBlockEntity, pBlockEntity.ends)) {
                         pBlockEntity.backoff = Math.max(0, pBlockEntity.backoff >> 1);
