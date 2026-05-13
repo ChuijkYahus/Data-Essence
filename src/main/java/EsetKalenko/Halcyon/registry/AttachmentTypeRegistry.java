@@ -6,7 +6,6 @@ import EsetKalenko.Halcyon.api.util.BlockPosGraph;
 import EsetKalenko.Halcyon.block.auxiliary.TwiningLanternBlockEntity;
 import EsetKalenko.Halcyon.block.technical.StructureProtectorBlockEntity;
 import EsetKalenko.Halcyon.item.equipment.GrapplingHook;
-import com.jgalgo.graph.Graph;
 import com.mojang.serialization.Codec;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.entity.BlockEntity;

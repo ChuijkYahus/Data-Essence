@@ -1,6 +1,5 @@
 package EsetKalenko.Halcyon.client;
 
-import EsetKalenko.Halcyon.registry.*;
 import com.cmdpro.databank.misc.RenderingUtil;
 import com.cmdpro.databank.rendering.ColorUtil;
 import com.cmdpro.databank.rendering.RenderHandler;

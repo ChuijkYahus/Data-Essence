@@ -22,7 +22,6 @@ import net.minecraft.world.phys.BlockHitResult;
 
 import java.awt.*;
 import java.util.Optional;
-import java.util.Set;
 
 public class PearlNetworkBlock extends Block {
     public PearlNetworkBlock(Properties properties) {

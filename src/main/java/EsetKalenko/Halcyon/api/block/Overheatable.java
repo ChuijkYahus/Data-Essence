@@ -1,6 +1,5 @@
 package EsetKalenko.Halcyon.api.block;
 
-import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.entity.BlockEntity;
 
 public interface Overheatable {

@@ -1,10 +1,5 @@
 package EsetKalenko.Halcyon.client;
 
-import EsetKalenko.Halcyon.client.particle.*;
-import EsetKalenko.Halcyon.client.renderers.block.*;
-import EsetKalenko.Halcyon.client.renderers.entity.*;
-import EsetKalenko.Halcyon.registry.*;
-import EsetKalenko.Halcyon.screen.*;
 import com.cmdpro.databank.rendering.ColorUtil;
 import com.cmdpro.databank.shaders.PostShaderInstance;
 import com.cmdpro.databank.shaders.PostShaderManager;

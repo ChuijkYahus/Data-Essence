@@ -2,7 +2,6 @@ package EsetKalenko.Halcyon.api.node.block;
 
 import EsetKalenko.Halcyon.api.misc.BlockPosNetworks;
 import EsetKalenko.Halcyon.api.node.item.INodeUpgrade;
-import EsetKalenko.Halcyon.api.util.BlockPosEdge;
 import EsetKalenko.Halcyon.api.util.PlayerDataUtil;
 import EsetKalenko.Halcyon.config.DataNEssenceConfig;
 import EsetKalenko.Halcyon.registry.AttachmentTypeRegistry;
@@ -38,7 +37,6 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 import java.util.Optional;
-import java.util.Set;
 import java.util.stream.Stream;
 
 public abstract class BaseCapabilityPoint extends Block implements EntityBlock {
