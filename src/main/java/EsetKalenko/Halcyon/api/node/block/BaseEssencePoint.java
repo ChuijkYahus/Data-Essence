@@ -2,6 +2,7 @@ package EsetKalenko.Halcyon.api.node.block;
 
 import EsetKalenko.Halcyon.api.misc.BlockPosNetworks;
 import EsetKalenko.Halcyon.api.node.item.INodeUpgrade;
+import EsetKalenko.Halcyon.api.util.BlockPosEdge;
 import EsetKalenko.Halcyon.api.util.PlayerDataUtil;
 import EsetKalenko.Halcyon.config.DataNEssenceConfig;
 import EsetKalenko.Halcyon.registry.AttachmentTypeRegistry;
@@ -151,10 +152,9 @@ public abstract class BaseEssencePoint extends Block implements EntityBlock {
             if (entity instanceof BaseEssencePointBlockEntity ent) {
                 if (pPlayer.getItemInHand(pHand).is(getRequiredWire())) {
                     BlockPosNetworks networks = pLevel.getData(AttachmentTypeRegistry.ESSENCE_NODE_NETWORKS);
-                    var edges = networks.graph.inEdges(pPos);
                     Optional<BlockEntity> linkFrom = pPlayer.getData(AttachmentTypeRegistry.LINK_FROM);
                     if (linkFrom.isEmpty()) {
-                        if (edges.size() < DataNEssenceConfig.maxNodeWires) {
+                        if (networks.graph.inEdges(pPos).size() + networks.graph.outEdges(pPos).size() < DataNEssenceConfig.maxNodeWires) {
                             pPlayer.setData(AttachmentTypeRegistry.LINK_FROM, Optional.of(ent));
                             PlayerDataUtil.updateData((ServerPlayer) pPlayer);
                             pLevel.playSound(null, pPos, SoundRegistry.NODE_LINK_FROM.value(), SoundSource.BLOCKS, 1f, 1f);
@@ -163,7 +163,7 @@ public abstract class BaseEssencePoint extends Block implements EntityBlock {
                         if (linkFrom.get().getBlockState().getBlock() instanceof BaseEssencePoint other) {
                             if (other.getRequiredWire() == getRequiredWire() && ent != linkFrom.get() && (ent.link.isEmpty() || !ent.link.contains(linkFrom.get().getBlockPos()))) {
                                 if ((linkFrom.get() instanceof BaseEssencePointBlockEntity linkFrom2) && linkFrom.get().getBlockPos().closerThan(ent.getBlockPos(), DataNEssenceConfig.wireDistanceLimit)) {
-                                    networks.graph.addEdge(linkFrom2.getBlockPos(), pPos);
+                                    networks.graph.addEdge(linkFrom2.getBlockPos(), pPos, new BlockPosEdge(linkFrom2.getBlockPos(), pPos));
                                     linkFrom2.updateBlock();
                                     ent.updateBlock();
                                     pPlayer.setData(AttachmentTypeRegistry.LINK_FROM, Optional.empty());

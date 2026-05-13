@@ -2,6 +2,7 @@ package EsetKalenko.Halcyon.api.node.block;
 
 import EsetKalenko.Halcyon.api.misc.BlockPosNetworks;
 import EsetKalenko.Halcyon.api.node.item.INodeUpgrade;
+import EsetKalenko.Halcyon.api.util.BlockPosEdge;
 import EsetKalenko.Halcyon.api.util.PlayerDataUtil;
 import EsetKalenko.Halcyon.config.DataNEssenceConfig;
 import EsetKalenko.Halcyon.registry.AttachmentTypeRegistry;
@@ -38,6 +39,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 import java.util.Optional;
 import java.util.Set;
+import java.util.stream.Stream;
 
 public abstract class BaseCapabilityPoint extends Block implements EntityBlock {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
@@ -95,8 +97,7 @@ public abstract class BaseCapabilityPoint extends Block implements EntityBlock {
         if (pState.getBlock() != pNewState.getBlock()) {
             if (pLevel.getBlockEntity(pPos) instanceof BaseCapabilityPointBlockEntity node) {
                 BlockPosNetworks networks = pLevel.getData(AttachmentTypeRegistry.CAPABILITY_NODE_NETWORKS);
-                var edges = networks.graph.inEdges(pPos);
-                for (var i : edges) {
+                Stream.concat(networks.graph.inEdges(pPos).stream(), networks.graph.outEdges(pPos).stream()).forEach(i -> {
                     BlockPos pos = networks.graph.edgeSource(i);
                     ItemEntity item = new ItemEntity(pLevel, pos.getCenter().x, pos.getCenter().y, pos.getCenter().z, new ItemStack(getRequiredWire()));
                     pLevel.addFreshEntity(item);
@@ -106,7 +107,7 @@ public abstract class BaseCapabilityPoint extends Block implements EntityBlock {
                             ent.updateBlock();
                         }
                     }
-                }
+                });
                 if ( node.uniqueUpgrade.getStackInSlot(0) != ItemStack.EMPTY ) {
                     ItemEntity upgradeSigil = new ItemEntity(pLevel, pPos.getCenter().x, pPos.getCenter().y, pPos.getCenter().z, node.uniqueUpgrade.getStackInSlot(0).copy() );
                     pLevel.addFreshEntity(upgradeSigil);
@@ -152,7 +153,7 @@ public abstract class BaseCapabilityPoint extends Block implements EntityBlock {
                     BlockPosNetworks networks = pLevel.getData(AttachmentTypeRegistry.CAPABILITY_NODE_NETWORKS);
                     var edges = networks.graph.outEdges(pPos);
                     Optional<BlockEntity> linkFrom = pPlayer.getData(AttachmentTypeRegistry.LINK_FROM);
-                    if (!linkFrom.isPresent()) {
+                    if (linkFrom.isEmpty()) {
                         if (edges.size() < DataNEssenceConfig.maxNodeWires) {
                             pPlayer.setData(AttachmentTypeRegistry.LINK_FROM, Optional.of(ent));
                             PlayerDataUtil.updateData((ServerPlayer) pPlayer);
@@ -162,7 +163,7 @@ public abstract class BaseCapabilityPoint extends Block implements EntityBlock {
                         if (linkFrom.get().getBlockState().getBlock() instanceof BaseCapabilityPoint other) {
                             if (other.getRequiredWire() == getRequiredWire() && ent != linkFrom.get() && (ent.link.isEmpty() || !ent.link.contains(linkFrom.get().getBlockPos()))) {
                                 if ((linkFrom.get() instanceof BaseCapabilityPointBlockEntity linkFrom2) && linkFrom.get().getBlockPos().closerThan(ent.getBlockPos(), DataNEssenceConfig.wireDistanceLimit)) {
-                                    networks.graph.addEdge(linkFrom2.getBlockPos(), pPos);
+                                    networks.graph.addEdge(linkFrom2.getBlockPos(), pPos, new BlockPosEdge(linkFrom2.getBlockPos(), pPos));
                                     linkFrom2.updateBlock();
                                     ent.updateBlock();
                                     pPlayer.setData(AttachmentTypeRegistry.LINK_FROM, Optional.empty());

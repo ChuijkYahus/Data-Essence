@@ -30,7 +30,6 @@ import org.joml.Vector3f;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 public abstract class BaseCapabilityPointBlockEntity extends BlockEntity {
     private int backoff;
@@ -130,7 +129,10 @@ public abstract class BaseCapabilityPointBlockEntity extends BlockEntity {
                             continue;
                         }
 
-                        ends.add(paths.getPath(vertex));
+                        var path = paths.getPath(vertex);
+                        if (path != null) {
+                            ends.add(paths.getPath(vertex));
+                        }
                     }
                     pBlockEntity.preTransferHooks(pBlockEntity, ends);
                     if (pBlockEntity.transfer(pBlockEntity, ends)) {
