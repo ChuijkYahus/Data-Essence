@@ -131,7 +131,7 @@ public abstract class BaseCapabilityPointBlockEntity extends BlockEntity {
 
                         var path = paths.getPath(vertex);
                         if (path != null) {
-                            ends.add(paths.getPath(vertex));
+                            ends.add(path);
                         }
                     }
                     pBlockEntity.preTransferHooks(pBlockEntity, ends);
