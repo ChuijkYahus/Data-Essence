@@ -47,15 +47,18 @@ public class ItemPointBlockEntity extends BaseCapabilityPointBlockEntity {
 
         var didWork = false;
 
+        var allowed = DataNEssence.locate("allowed_itemstacks");
+
         for (Path<BlockPos, BlockPosEdge> i : other) {
             if (level.getBlockEntity(i.target()) instanceof BaseCapabilityPointBlockEntity destinationNode) {
                 List<ItemStack> allowedItemstacks = null;
-                var destTile = destinationNode.getBlockPos().relative(destinationNode.getDirection().getOpposite());
-                IItemHandler destHandler = level.getCapability(Capabilities.ItemHandler.BLOCK, destTile, destinationNode.getDirection());
+                var destinationDirection = destinationNode.getDirection();
+                var destTile = destinationNode.getBlockPos().relative(destinationDirection.getOpposite());
+                IItemHandler destHandler = level.getCapability(Capabilities.ItemHandler.BLOCK, destTile, destinationDirection);
 
                 for (BlockPos j : i.vertices()) {
                     if (level.getBlockEntity(j) instanceof BaseCapabilityPointBlockEntity ent2) {
-                        List<ItemStack> value = ent2.getValue(DataNEssence.locate("allowed_itemstacks"), null);
+                        List<ItemStack> value = ent2.getValue(allowed, null);
                         if (allowedItemstacks == null) {
                             allowedItemstacks = value;
                         } else if (value != null) {
