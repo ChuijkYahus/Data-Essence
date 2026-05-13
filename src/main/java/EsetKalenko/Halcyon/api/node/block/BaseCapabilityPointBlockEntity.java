@@ -103,8 +103,8 @@ public abstract class BaseCapabilityPointBlockEntity extends BlockEntity {
     }
     public abstract Color[] linkColor();
 
-    private static final List<Path<BlockPos, BlockPosEdge>> ends = new ArrayList<>();
-    private static long cachedVersion = -1;
+    private List<Path<BlockPos, BlockPosEdge>> ends;
+    private long cachedVersion = -1;
 
     public static void tick(Level pLevel, BlockPos pPos, BlockState pState, BaseCapabilityPointBlockEntity pBlockEntity) {
         if (!pLevel.isClientSide()) {
@@ -118,8 +118,11 @@ public abstract class BaseCapabilityPointBlockEntity extends BlockEntity {
                 if (pBlockEntity.delay > 0) {
                     pBlockEntity.delay--;
                 } else {
-                    if (cachedVersion == -1 || cachedVersion != networks.graph.getVersion()) {
-                        ends.clear();
+                    if (pBlockEntity.ends == null || pBlockEntity.cachedVersion != networks.graph.getVersion()) {
+                        if (pBlockEntity.ends == null) {
+                            pBlockEntity.ends = new ArrayList<>();
+                        }
+                        pBlockEntity.ends.clear();
                         var paths = networks.graph.getPaths(pPos);
                         for (var vertex : networks.graph.vertices()) {
                             if (pPos.equals(vertex)) {
@@ -136,21 +139,19 @@ public abstract class BaseCapabilityPointBlockEntity extends BlockEntity {
 
                             var path = paths.getPath(vertex);
                             if (path != null) {
-                                ends.add(path);
+                                pBlockEntity.ends.add(path);
                             }
                         }
-
-                        cachedVersion = networks.graph.getVersion();
                     }
-
-                    pBlockEntity.preTransferHooks(pBlockEntity, ends);
-                    if (pBlockEntity.transfer(pBlockEntity, ends)) {
+                    
+                    pBlockEntity.preTransferHooks(pBlockEntity, pBlockEntity.ends);
+                    if (pBlockEntity.transfer(pBlockEntity, pBlockEntity.ends)) {
                         pBlockEntity.backoff = Math.max(0, pBlockEntity.backoff >> 1);
                     } else {
                         pBlockEntity.backoff = Math.min(pBlockEntity.maxBackoff(), pBlockEntity.backoff == 0 ? 1 : pBlockEntity.backoff << 1);
                     }
                     pBlockEntity.delay = pBlockEntity.backoff;
-                    pBlockEntity.postTransferHooks(pBlockEntity, ends);
+                    pBlockEntity.postTransferHooks(pBlockEntity, pBlockEntity.ends);
                 }
             }
 
@@ -187,6 +188,7 @@ public abstract class BaseCapabilityPointBlockEntity extends BlockEntity {
             link = new ArrayList<>();
         }
         link.clear();
+        ends = null;
         BlockPosNetworks networks = level.getData(AttachmentTypeRegistry.CAPABILITY_NODE_NETWORKS);
         if (networks.graph.vertices().contains(getBlockPos())) {
             for (var i : networks.graph.outEdges(getBlockPos())) {
