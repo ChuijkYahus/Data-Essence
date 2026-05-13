@@ -1,19 +1,23 @@
 package EsetKalenko.Halcyon.block.transmission;
 
 import EsetKalenko.Halcyon.DataNEssence;
-import EsetKalenko.Halcyon.api.node.block.BaseCapabilityPointBlockEntity;
 import EsetKalenko.Halcyon.api.node.ICustomItemPointBehaviour;
+import EsetKalenko.Halcyon.api.node.block.BaseCapabilityPointBlockEntity;
 import EsetKalenko.Halcyon.api.util.BlockPosEdge;
 import EsetKalenko.Halcyon.config.DataNEssenceConfig;
 import EsetKalenko.Halcyon.item.BaseFilterLabel;
 import EsetKalenko.Halcyon.registry.BlockEntityRegistry;
 import com.jgalgo.alg.common.Path;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
+import net.neoforged.neoforge.capabilities.BlockCapabilityCache;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.items.IItemHandler;
+import org.jetbrains.annotations.Nullable;
 import org.joml.Math;
 
 import java.awt.*;
@@ -44,8 +48,7 @@ public class ItemPointBlockEntity extends BaseCapabilityPointBlockEntity {
 
         var sourceDirection = sourceNode.getDirection();
         var sourceTile = sourceNode.getBlockPos().relative(sourceDirection.getOpposite());
-        IItemHandler sourceHandler = level.getCapability(Capabilities.ItemHandler.BLOCK, sourceTile, sourceDirection);
-        if (sourceHandler == null) {
+        if (!(sourceNode.getAttachedCapability(IItemHandler.class) instanceof IItemHandler sourceHandler)) {
             return false;
         }
 
@@ -53,11 +56,13 @@ public class ItemPointBlockEntity extends BaseCapabilityPointBlockEntity {
 
         for (Path<BlockPos, BlockPosEdge> i : other) {
             if (level.getBlockEntity(i.target()) instanceof BaseCapabilityPointBlockEntity destinationNode) {
-                List<ItemStack> allowedItemstacks = null;
                 var destinationDirection = destinationNode.getDirection();
                 var destTile = destinationNode.getBlockPos().relative(destinationDirection.getOpposite());
-                IItemHandler destHandler = level.getCapability(Capabilities.ItemHandler.BLOCK, destTile, destinationDirection);
+                if (!(destinationNode.getAttachedCapability(IItemHandler.class) instanceof IItemHandler destHandler)) {
+                    return false;
+                }
 
+                List<ItemStack> allowedItemstacks = null;
                 for (BlockPos j : i.vertices()) {
                     if (level.getBlockEntity(j) instanceof BaseCapabilityPointBlockEntity ent2) {
                         List<ItemStack> value = ent2.getValue(ALLOWED_ITEMSTACKS, null);
@@ -76,10 +81,6 @@ public class ItemPointBlockEntity extends BaseCapabilityPointBlockEntity {
                             }
                         }
                     }
-                }
-
-                if (destHandler == null) {
-                    continue;
                 }
 
                 if (level.getBlockEntity(sourceTile) instanceof ICustomItemPointBehaviour behaviour) {
@@ -159,5 +160,26 @@ public class ItemPointBlockEntity extends BaseCapabilityPointBlockEntity {
         }
 
         return movedAnything;
+    }
+
+    private BlockCapabilityCache<IItemHandler, Direction> capCache = null;
+
+    @Override
+    public @Nullable Object getAttachedCapability(Class<?> capabilityClass) {
+        if (capabilityClass != IItemHandler.class) {
+            return null;
+        }
+
+        if (capCache == null) {
+            capCache = BlockCapabilityCache.create(Capabilities.ItemHandler.BLOCK, (ServerLevel) this.getLevel(), this.getBlockPos().relative(this.getDirection().getOpposite()), this.getDirection());
+        }
+
+        return capCache.getCapability();
+    }
+
+    @Override
+    public void invalidateDirectionalCaches() {
+        super.invalidateDirectionalCaches();
+        this.capCache = null;
     }
 }

@@ -5,9 +5,13 @@ import EsetKalenko.Halcyon.api.util.BlockPosEdge;
 import EsetKalenko.Halcyon.registry.BlockEntityRegistry;
 import com.jgalgo.alg.common.Path;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.block.state.BlockState;
+import net.neoforged.neoforge.capabilities.BlockCapabilityCache;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.energy.IEnergyStorage;
+import org.jetbrains.annotations.Nullable;
 
 import java.awt.*;
 import java.util.List;
@@ -34,9 +38,7 @@ public class RFNodeBlockEntity extends BaseCapabilityPointBlockEntity {
 
         int transferAmount = Integer.MAX_VALUE; // I do not believe in limits
 
-        var senderDirection = sender.getDirection();
-        IEnergyStorage senderEnergy = level.getCapability(Capabilities.EnergyStorage.BLOCK, sender.getBlockPos().relative(senderDirection.getOpposite()), senderDirection);
-        if (senderEnergy == null) {
+        if (!(this.getAttachedCapability(IEnergyStorage.class) instanceof IEnergyStorage senderEnergy)) {
             return false;
         }
 
@@ -44,11 +46,8 @@ public class RFNodeBlockEntity extends BaseCapabilityPointBlockEntity {
 
         for (Path<BlockPos, BlockPosEdge> i : desintations) {
             if (level.getBlockEntity(i.target()) instanceof BaseCapabilityPointBlockEntity receiver) {
-                var receiverDirection = receiver.getDirection();
-                IEnergyStorage receiverEnergy = level.getCapability(Capabilities.EnergyStorage.BLOCK, receiver.getBlockPos().relative(receiverDirection.getOpposite()), receiverDirection);
-
-                if (receiverEnergy == null) {
-                    continue;
+                if (!(receiver.getAttachedCapability(IEnergyStorage.class) instanceof IEnergyStorage receiverEnergy)) {
+                    return false;
                 }
 
                 int candidate = receiverEnergy.receiveEnergy( Math.clamp(senderEnergy.getEnergyStored(), 0, transferAmount) , true);
@@ -61,5 +60,26 @@ public class RFNodeBlockEntity extends BaseCapabilityPointBlockEntity {
         }
 
         return didWork;
+    }
+
+    private BlockCapabilityCache<IEnergyStorage, Direction> capCache = null;
+
+    @Override
+    public @Nullable Object getAttachedCapability(Class<?> capabilityClass) {
+        if (IEnergyStorage.class != capabilityClass) {
+            return null;
+        }
+
+        if (capCache == null) {
+            capCache = BlockCapabilityCache.create(Capabilities.EnergyStorage.BLOCK, (ServerLevel) this.getLevel(), this.getBlockPos().relative(this.getDirection().getOpposite()), this.getDirection());
+        }
+
+        return capCache.getCapability();
+    }
+
+    @Override
+    public void invalidateDirectionalCaches() {
+        super.invalidateDirectionalCaches();
+        this.capCache = null;
     }
 }

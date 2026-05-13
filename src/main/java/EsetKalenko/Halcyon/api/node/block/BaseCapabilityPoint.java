@@ -233,6 +233,14 @@ public abstract class BaseCapabilityPoint extends Block implements EntityBlock {
         return InteractionResult.sidedSuccess(pLevel.isClientSide());
     }
 
+    @Override
+    protected void onPlace(BlockState state, Level level, BlockPos pos, BlockState oldState, boolean movedByPiston) {
+        super.onPlace(state, level, pos, oldState, movedByPiston);
+        if (level.getBlockEntity(pos) instanceof BaseCapabilityPointBlockEntity be) {
+            be.invalidateDirectionalCaches();
+        }
+    }
+
     public BlockState updateShape(BlockState pState, Direction pFacing, BlockState pFacingState, LevelAccessor pLevel, BlockPos pCurrentPos, BlockPos pFacingPos) {
         return getConnectedDirection(pState).getOpposite() == pFacing && !pState.canSurvive(pLevel, pCurrentPos) ? Blocks.AIR.defaultBlockState() : super.updateShape(pState, pFacing, pFacingState, pLevel, pCurrentPos, pFacingPos);
     }

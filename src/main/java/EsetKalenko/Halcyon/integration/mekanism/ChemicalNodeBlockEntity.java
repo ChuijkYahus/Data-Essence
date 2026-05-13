@@ -10,8 +10,12 @@ import mekanism.api.Action;
 import mekanism.api.chemical.ChemicalStack;
 import mekanism.api.chemical.IChemicalHandler;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.block.state.BlockState;
+import net.neoforged.neoforge.capabilities.BlockCapabilityCache;
+import org.jetbrains.annotations.Nullable;
 import org.joml.Math;
 
 import java.awt.*;
@@ -43,9 +47,7 @@ public class ChemicalNodeBlockEntity extends BaseCapabilityPointBlockEntity {
 
         int transferAmount = (int) Math.floor((float)getFinalSpeed(DataNEssenceConfig.fluidPointTransfer)/(float)other.size());
 
-        var fromDirection = from.getDirection();
-        IChemicalHandler sender = level.getCapability(BLOCK_CHEMICAL, from.getBlockPos().relative(fromDirection.getOpposite()), fromDirection);
-        if (sender == null) {
+        if (!(from.getAttachedCapability(IChemicalHandler.class) instanceof IChemicalHandler sender)) {
             return false;
         }
 
@@ -53,6 +55,10 @@ public class ChemicalNodeBlockEntity extends BaseCapabilityPointBlockEntity {
 
         for (Path<BlockPos, BlockPosEdge> i : other) {
             if (level.getBlockEntity(i.target()) instanceof BaseCapabilityPointBlockEntity to) {
+                if (!(to.getAttachedCapability(IChemicalHandler.class) instanceof IChemicalHandler receiver)) {
+                    return false;
+                }
+
                 List<ChemicalStack> allowedChemicals = null;
 
                 for (BlockPos j : i.vertices()) {
@@ -73,13 +79,6 @@ public class ChemicalNodeBlockEntity extends BaseCapabilityPointBlockEntity {
                             }
                         }
                     }
-                }
-
-                var toDirection = to.getDirection();
-                IChemicalHandler receiver = level.getCapability(BLOCK_CHEMICAL, to.getBlockPos().relative(toDirection.getOpposite()), toDirection);
-
-                if (receiver == null) {
-                    continue;
                 }
 
                 if (other instanceof ICustomChemicalNodeBehaviour behaviour) {
@@ -118,5 +117,26 @@ public class ChemicalNodeBlockEntity extends BaseCapabilityPointBlockEntity {
         }
 
         return didWork;
+    }
+
+    private BlockCapabilityCache<IChemicalHandler, @Nullable Direction> capCache = null;
+
+    @Override
+    public @Nullable Object getAttachedCapability(Class<?> capabilityClass) {
+        if (IChemicalHandler.class != capabilityClass) {
+            return null;
+        }
+
+        if (capCache == null) {
+            capCache = BlockCapabilityCache.create(BLOCK_CHEMICAL, (ServerLevel) this.getLevel(), this.getBlockPos().relative(this.getDirection().getOpposite()), this.getDirection());
+        }
+
+        return capCache.getCapability();
+    }
+
+    @Override
+    public void invalidateDirectionalCaches() {
+        super.invalidateDirectionalCaches();
+        this.capCache = null;
     }
 }

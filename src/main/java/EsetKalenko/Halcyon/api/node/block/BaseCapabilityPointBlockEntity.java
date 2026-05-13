@@ -1,13 +1,13 @@
 package EsetKalenko.Halcyon.api.node.block;
 
-import EsetKalenko.Halcyon.api.util.BlockPosEdge;
-import com.cmdpro.databank.model.animation.DatabankAnimationReference;
-import com.cmdpro.databank.model.animation.DatabankAnimationState;
 import EsetKalenko.Halcyon.DataNEssence;
 import EsetKalenko.Halcyon.api.misc.BlockPosNetworks;
 import EsetKalenko.Halcyon.api.node.item.INodeUpgrade;
+import EsetKalenko.Halcyon.api.util.BlockPosEdge;
 import EsetKalenko.Halcyon.client.particle.CircleParticleOptions;
 import EsetKalenko.Halcyon.registry.AttachmentTypeRegistry;
+import com.cmdpro.databank.model.animation.DatabankAnimationReference;
+import com.cmdpro.databank.model.animation.DatabankAnimationState;
 import com.jgalgo.alg.common.Path;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -25,6 +25,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.AttachFace;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.items.ItemStackHandler;
+import org.jetbrains.annotations.Nullable;
 import org.joml.Vector3f;
 
 import java.awt.*;
@@ -236,15 +237,22 @@ public abstract class BaseCapabilityPointBlockEntity extends BlockEntity {
         return 0;
     }
 
+    private Direction cachedDirection = null;
+
     public Direction getDirection() {
-        if (getBlockState().getValue(BaseCapabilityPoint.FACE).equals(AttachFace.CEILING)) {
-            return Direction.DOWN;
+        if (cachedDirection == null) {
+            if (getBlockState().getValue(BaseCapabilityPoint.FACE).equals(AttachFace.CEILING)) {
+                cachedDirection = Direction.DOWN;
+            } else if (getBlockState().getValue(BaseCapabilityPoint.FACE).equals(AttachFace.WALL)) {
+                cachedDirection = getBlockState().getValue(BaseCapabilityPoint.FACING);
+            } else {
+                cachedDirection = Direction.UP;
+            }
         }
-        if (getBlockState().getValue(BaseCapabilityPoint.FACE).equals(AttachFace.WALL)) {
-            return getBlockState().getValue(BaseCapabilityPoint.FACING);
-        }
-        return Direction.UP;
+
+        return cachedDirection;
     }
+
     @Override
     public ClientboundBlockEntityDataPacket getUpdatePacket(){
         return ClientboundBlockEntityDataPacket.create(this);
@@ -328,5 +336,11 @@ public abstract class BaseCapabilityPointBlockEntity extends BlockEntity {
         }
         tag.put("link", list);
         tag.putBoolean("Relay", isRelay);
+    }
+
+    public abstract @Nullable Object getAttachedCapability(Class<?> capabilityClass);
+
+    public void invalidateDirectionalCaches() {
+        this.cachedDirection = null;
     }
 }

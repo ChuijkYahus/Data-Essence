@@ -1,18 +1,23 @@
 package EsetKalenko.Halcyon.block.transmission;
 
 import EsetKalenko.Halcyon.DataNEssence;
-import EsetKalenko.Halcyon.api.node.block.BaseCapabilityPointBlockEntity;
 import EsetKalenko.Halcyon.api.node.ICustomFluidPointBehaviour;
+import EsetKalenko.Halcyon.api.node.block.BaseCapabilityPointBlockEntity;
 import EsetKalenko.Halcyon.api.util.BlockPosEdge;
 import EsetKalenko.Halcyon.config.DataNEssenceConfig;
 import EsetKalenko.Halcyon.registry.BlockEntityRegistry;
 import com.jgalgo.alg.common.Path;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.block.state.BlockState;
+import net.neoforged.neoforge.capabilities.BlockCapabilityCache;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.capability.IFluidHandler;
+import net.neoforged.neoforge.items.IItemHandler;
+import org.jetbrains.annotations.Nullable;
 import org.joml.Math;
 
 import java.awt.*;
@@ -41,9 +46,9 @@ public class FluidPointBlockEntity extends BaseCapabilityPointBlockEntity {
 
         int transferAmount = (int)Math.floor((float)getFinalSpeed(DataNEssenceConfig.fluidPointTransfer)/(float)other.size());
 
-        var fromDirection = from.getDirection();
-        IFluidHandler resolved2 = level.getCapability(Capabilities.FluidHandler.BLOCK, from.getBlockPos().relative(fromDirection.getOpposite()), fromDirection);
-        if (resolved2 == null) {
+        var sourceDirection = from.getDirection();
+        var sourceTile = from.getBlockPos().relative(sourceDirection.getOpposite());
+        if (!(from.getAttachedCapability(IFluidHandler.class) instanceof IFluidHandler resolved2)) {
             return false;
         }
 
@@ -51,6 +56,12 @@ public class FluidPointBlockEntity extends BaseCapabilityPointBlockEntity {
 
         for (Path<BlockPos, BlockPosEdge> i : other) {
             if (level.getBlockEntity(i.target()) instanceof BaseCapabilityPointBlockEntity ent) {
+                var destinationDirection = ent.getDirection();
+                var destTile = ent.getBlockPos().relative(destinationDirection.getOpposite());
+                if (!(ent.getAttachedCapability(IFluidHandler.class) instanceof IFluidHandler resolved)) {
+                    return false;
+                }
+
                 List<FluidStack> allowedFluidstacks = null;
                 for (BlockPos j : i.vertices()) {
                     if (level.getBlockEntity(j) instanceof BaseCapabilityPointBlockEntity ent2) {
@@ -72,19 +83,13 @@ public class FluidPointBlockEntity extends BaseCapabilityPointBlockEntity {
                     }
                 }
 
-                var toDirection = ent.getDirection();
-                IFluidHandler resolved = level.getCapability(Capabilities.FluidHandler.BLOCK, ent.getBlockPos().relative(toDirection.getOpposite()), toDirection);
-                if (resolved == null) {
-                    continue;
-                }
-
-                if (level.getBlockEntity(from.getBlockPos().relative(fromDirection.getOpposite())) instanceof ICustomFluidPointBehaviour behaviour) {
+                if (level.getBlockEntity(sourceTile) instanceof ICustomFluidPointBehaviour behaviour) {
                     if (!behaviour.canExtractFluid(resolved, resolved2)) {
                         continue;
                     }
                 }
 
-                if (level.getBlockEntity(ent.getBlockPos().relative(toDirection.getOpposite())) instanceof ICustomFluidPointBehaviour behaviour) {
+                if (level.getBlockEntity(destTile) instanceof ICustomFluidPointBehaviour behaviour) {
                     if (!behaviour.canInsertFluid(resolved, resolved2)) {
                         continue;
                     }
@@ -116,5 +121,26 @@ public class FluidPointBlockEntity extends BaseCapabilityPointBlockEntity {
         }
 
         return didWork;
+    }
+
+    private BlockCapabilityCache<IItemHandler, @Nullable Direction> capCache = null;
+
+    @Override
+    public @Nullable Object getAttachedCapability(Class<?> capabilityClass) {
+        if (IFluidHandler.class != capabilityClass) {
+            return null;
+        }
+
+        if (capCache == null) {
+            capCache = BlockCapabilityCache.create(Capabilities.ItemHandler.BLOCK, (ServerLevel) this.getLevel(), this.getBlockPos().relative(this.getDirection().getOpposite()), this.getDirection());
+        }
+
+        return capCache.getCapability();
+    }
+
+    @Override
+    public void invalidateDirectionalCaches() {
+        super.invalidateDirectionalCaches();
+        this.capCache = null;
     }
 }
