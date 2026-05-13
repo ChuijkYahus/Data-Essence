@@ -8,6 +8,7 @@ import EsetKalenko.Halcyon.config.DataNEssenceConfig;
 import EsetKalenko.Halcyon.registry.BlockEntityRegistry;
 import com.jgalgo.alg.common.Path;
 import net.minecraft.core.BlockPos;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.fluids.FluidStack;
@@ -18,6 +19,8 @@ import java.awt.*;
 import java.util.List;
 
 public class FluidPointBlockEntity extends BaseCapabilityPointBlockEntity {
+    public static final ResourceLocation ALLOWED_FLUIDSTACKS = DataNEssence.locate("allowed_fluidstacks");
+
     public FluidPointBlockEntity(BlockPos pos, BlockState state) {
         super(BlockEntityRegistry.FLUID_POINT.get(), pos, state);
     }
@@ -38,7 +41,8 @@ public class FluidPointBlockEntity extends BaseCapabilityPointBlockEntity {
 
         int transferAmount = (int)Math.floor((float)getFinalSpeed(DataNEssenceConfig.fluidPointTransfer)/(float)other.size());
 
-        IFluidHandler resolved2 = level.getCapability(Capabilities.FluidHandler.BLOCK, from.getBlockPos().relative(from.getDirection().getOpposite()), from.getDirection());
+        var fromDirection = from.getDirection();
+        IFluidHandler resolved2 = level.getCapability(Capabilities.FluidHandler.BLOCK, from.getBlockPos().relative(fromDirection.getOpposite()), fromDirection);
         if (resolved2 == null) {
             return false;
         }
@@ -50,7 +54,7 @@ public class FluidPointBlockEntity extends BaseCapabilityPointBlockEntity {
                 List<FluidStack> allowedFluidstacks = null;
                 for (BlockPos j : i.vertices()) {
                     if (level.getBlockEntity(j) instanceof BaseCapabilityPointBlockEntity ent2) {
-                        List<FluidStack> value = ent2.getValue(DataNEssence.locate("allowed_fluidstacks"), null);
+                        List<FluidStack> value = ent2.getValue(ALLOWED_FLUIDSTACKS, null);
                         if (allowedFluidstacks == null) {
                             allowedFluidstacks = value;
                         } else if (value != null) {
@@ -68,18 +72,19 @@ public class FluidPointBlockEntity extends BaseCapabilityPointBlockEntity {
                     }
                 }
 
-                IFluidHandler resolved = level.getCapability(Capabilities.FluidHandler.BLOCK, ent.getBlockPos().relative(ent.getDirection().getOpposite()), ent.getDirection());
+                var toDirection = ent.getDirection();
+                IFluidHandler resolved = level.getCapability(Capabilities.FluidHandler.BLOCK, ent.getBlockPos().relative(toDirection.getOpposite()), toDirection);
                 if (resolved == null) {
                     continue;
                 }
 
-                if (level.getBlockEntity(from.getBlockPos().relative(from.getDirection().getOpposite())) instanceof ICustomFluidPointBehaviour behaviour) {
+                if (level.getBlockEntity(from.getBlockPos().relative(fromDirection.getOpposite())) instanceof ICustomFluidPointBehaviour behaviour) {
                     if (!behaviour.canExtractFluid(resolved, resolved2)) {
                         continue;
                     }
                 }
 
-                if (level.getBlockEntity(ent.getBlockPos().relative(ent.getDirection().getOpposite())) instanceof ICustomFluidPointBehaviour behaviour) {
+                if (level.getBlockEntity(ent.getBlockPos().relative(toDirection.getOpposite())) instanceof ICustomFluidPointBehaviour behaviour) {
                     if (!behaviour.canInsertFluid(resolved, resolved2)) {
                         continue;
                     }

@@ -34,7 +34,8 @@ public class RFNodeBlockEntity extends BaseCapabilityPointBlockEntity {
 
         int transferAmount = Integer.MAX_VALUE; // I do not believe in limits
 
-        IEnergyStorage senderEnergy = level.getCapability(Capabilities.EnergyStorage.BLOCK, sender.getBlockPos().relative(sender.getDirection().getOpposite()), sender.getDirection());
+        var senderDirection = sender.getDirection();
+        IEnergyStorage senderEnergy = level.getCapability(Capabilities.EnergyStorage.BLOCK, sender.getBlockPos().relative(senderDirection.getOpposite()), senderDirection);
         if (senderEnergy == null) {
             return false;
         }
@@ -43,7 +44,8 @@ public class RFNodeBlockEntity extends BaseCapabilityPointBlockEntity {
 
         for (Path<BlockPos, BlockPosEdge> i : desintations) {
             if (level.getBlockEntity(i.target()) instanceof BaseCapabilityPointBlockEntity receiver) {
-                IEnergyStorage receiverEnergy = level.getCapability(Capabilities.EnergyStorage.BLOCK, receiver.getBlockPos().relative(receiver.getDirection().getOpposite()), receiver.getDirection());
+                var receiverDirection = receiver.getDirection();
+                IEnergyStorage receiverEnergy = level.getCapability(Capabilities.EnergyStorage.BLOCK, receiver.getBlockPos().relative(receiverDirection.getOpposite()), receiverDirection);
 
                 if (receiverEnergy == null) {
                     continue;

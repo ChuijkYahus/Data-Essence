@@ -9,6 +9,7 @@ import EsetKalenko.Halcyon.item.BaseFilterLabel;
 import EsetKalenko.Halcyon.registry.BlockEntityRegistry;
 import com.jgalgo.alg.common.Path;
 import net.minecraft.core.BlockPos;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.capabilities.Capabilities;
@@ -19,6 +20,8 @@ import java.awt.*;
 import java.util.List;
 
 public class ItemPointBlockEntity extends BaseCapabilityPointBlockEntity {
+    public static final ResourceLocation ALLOWED_ITEMSTACKS = DataNEssence.locate("allowed_itemstacks");
+
     public ItemPointBlockEntity(BlockPos pos, BlockState state) {
         super(BlockEntityRegistry.ITEM_POINT.get(), pos, state);
     }
@@ -39,15 +42,14 @@ public class ItemPointBlockEntity extends BaseCapabilityPointBlockEntity {
 
         int transferAmount = (int)Math.floor((float)getFinalSpeed(DataNEssenceConfig.itemPointTransfer)/(float)other.size());
 
-        var sourceTile = sourceNode.getBlockPos().relative(sourceNode.getDirection().getOpposite());
-        IItemHandler sourceHandler = level.getCapability(Capabilities.ItemHandler.BLOCK, sourceTile, sourceNode.getDirection());
+        var sourceDirection = sourceNode.getDirection();
+        var sourceTile = sourceNode.getBlockPos().relative(sourceDirection.getOpposite());
+        IItemHandler sourceHandler = level.getCapability(Capabilities.ItemHandler.BLOCK, sourceTile, sourceDirection);
         if (sourceHandler == null) {
             return false;
         }
 
         var didWork = false;
-
-        var allowed = DataNEssence.locate("allowed_itemstacks");
 
         for (Path<BlockPos, BlockPosEdge> i : other) {
             if (level.getBlockEntity(i.target()) instanceof BaseCapabilityPointBlockEntity destinationNode) {
@@ -58,7 +60,7 @@ public class ItemPointBlockEntity extends BaseCapabilityPointBlockEntity {
 
                 for (BlockPos j : i.vertices()) {
                     if (level.getBlockEntity(j) instanceof BaseCapabilityPointBlockEntity ent2) {
-                        List<ItemStack> value = ent2.getValue(allowed, null);
+                        List<ItemStack> value = ent2.getValue(ALLOWED_ITEMSTACKS, null);
                         if (allowedItemstacks == null) {
                             allowedItemstacks = value;
                         } else if (value != null) {

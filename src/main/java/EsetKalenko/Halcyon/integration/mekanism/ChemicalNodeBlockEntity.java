@@ -10,6 +10,7 @@ import mekanism.api.Action;
 import mekanism.api.chemical.ChemicalStack;
 import mekanism.api.chemical.IChemicalHandler;
 import net.minecraft.core.BlockPos;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.state.BlockState;
 import org.joml.Math;
 
@@ -19,6 +20,7 @@ import java.util.List;
 import static EsetKalenko.Halcyon.integration.DataNEssenceIntegration.BLOCK_CHEMICAL;
 
 public class ChemicalNodeBlockEntity extends BaseCapabilityPointBlockEntity {
+    public static final ResourceLocation ALLOWED_CHEMICALS = DataNEssence.locate("allowed_chemicals");
 
     public ChemicalNodeBlockEntity(BlockPos pPos, BlockState pBlockState) {
         super(BlockEntityRegistry.CHEMICAL_NODE.get(), pPos, pBlockState);
@@ -41,7 +43,8 @@ public class ChemicalNodeBlockEntity extends BaseCapabilityPointBlockEntity {
 
         int transferAmount = (int) Math.floor((float)getFinalSpeed(DataNEssenceConfig.fluidPointTransfer)/(float)other.size());
 
-        IChemicalHandler sender = level.getCapability(BLOCK_CHEMICAL, from.getBlockPos().relative(from.getDirection().getOpposite()), from.getDirection());
+        var fromDirection = from.getDirection();
+        IChemicalHandler sender = level.getCapability(BLOCK_CHEMICAL, from.getBlockPos().relative(fromDirection.getOpposite()), fromDirection);
         if (sender == null) {
             return false;
         }
@@ -54,7 +57,7 @@ public class ChemicalNodeBlockEntity extends BaseCapabilityPointBlockEntity {
 
                 for (BlockPos j : i.vertices()) {
                     if (level.getBlockEntity(j) instanceof BaseCapabilityPointBlockEntity to2) {
-                        List<ChemicalStack> value = to2.getValue(DataNEssence.locate("allowed_chemicals"), null);
+                        List<ChemicalStack> value = to2.getValue(ALLOWED_CHEMICALS, null);
                         if (allowedChemicals == null) {
                             allowedChemicals = value;
                         } else if (value != null) {
@@ -72,7 +75,8 @@ public class ChemicalNodeBlockEntity extends BaseCapabilityPointBlockEntity {
                     }
                 }
 
-                IChemicalHandler receiver = level.getCapability(BLOCK_CHEMICAL, to.getBlockPos().relative(to.getDirection().getOpposite()), to.getDirection());
+                var toDirection = to.getDirection();
+                IChemicalHandler receiver = level.getCapability(BLOCK_CHEMICAL, to.getBlockPos().relative(toDirection.getOpposite()), toDirection);
 
                 if (receiver == null) {
                     continue;
