@@ -121,7 +121,7 @@ public abstract class BaseCapabilityPointBlockEntity extends BlockEntity {
                     var paths = networks.getPaths(pPos);
                     List<Path<BlockPos, BlockPosEdge>> ends = new ArrayList<>();
                     for (var vertex : networks.graph.vertices()) {
-                        if (!paths.isReachable(vertex) || !pLevel.isLoaded(vertex)) {
+                        if (pPos.equals(vertex) || !paths.isReachable(vertex) || !pLevel.isLoaded(vertex)) {
                             continue;
                         }
 
