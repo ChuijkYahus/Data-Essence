@@ -27,7 +27,7 @@ public class PearlNetworkBlockEntity extends BlockEntity {
         BlockPosNetworks networks = level.getData(AttachmentTypeRegistry.ENDER_PEARL_NETWORKS);
         if (networks.graph.vertices().contains(getBlockPos())) {
             for (var i : networks.graph.outEdges(getBlockPos())) {
-                link.add(i.target);
+                link.add(i.target());
             }
         }
     }

@@ -2,7 +2,6 @@ package EsetKalenko.Halcyon.api.node.block;
 
 import EsetKalenko.Halcyon.api.misc.BlockPosNetworks;
 import EsetKalenko.Halcyon.api.node.item.INodeUpgrade;
-import EsetKalenko.Halcyon.api.util.BlockPosEdge;
 import EsetKalenko.Halcyon.api.util.PlayerDataUtil;
 import EsetKalenko.Halcyon.config.DataNEssenceConfig;
 import EsetKalenko.Halcyon.registry.AttachmentTypeRegistry;
@@ -38,7 +37,6 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 import java.util.Optional;
-import java.util.Set;
 
 public abstract class BaseEssencePoint extends Block implements EntityBlock {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
@@ -98,7 +96,7 @@ public abstract class BaseEssencePoint extends Block implements EntityBlock {
                 BlockPosNetworks networks = pLevel.getData(AttachmentTypeRegistry.ESSENCE_NODE_NETWORKS);
                 var edges = networks.graph.inEdges(pPos);
                 for (var i : edges) {
-                    BlockPos pos = i.source;
+                    BlockPos pos = i.source();
                     ItemEntity item = new ItemEntity(pLevel, pos.getCenter().x, pos.getCenter().y, pos.getCenter().z, new ItemStack(getRequiredWire()));
                     pLevel.addFreshEntity(item);
                     networks.graph.removeEdge(i);
@@ -163,7 +161,7 @@ public abstract class BaseEssencePoint extends Block implements EntityBlock {
                         if (linkFrom.get().getBlockState().getBlock() instanceof BaseEssencePoint other) {
                             if (other.getRequiredWire() == getRequiredWire() && ent != linkFrom.get() && (ent.link.isEmpty() || !ent.link.contains(linkFrom.get().getBlockPos()))) {
                                 if ((linkFrom.get() instanceof BaseEssencePointBlockEntity linkFrom2) && linkFrom.get().getBlockPos().closerThan(ent.getBlockPos(), DataNEssenceConfig.wireDistanceLimit)) {
-                                    networks.graph.addEdge(linkFrom2.getBlockPos(), pPos, new BlockPosEdge(linkFrom2.getBlockPos(), pPos));
+                                    networks.graph.addEdge(linkFrom2.getBlockPos(), pPos);
                                     linkFrom2.updateBlock();
                                     ent.updateBlock();
                                     pPlayer.setData(AttachmentTypeRegistry.LINK_FROM, Optional.empty());
@@ -220,11 +218,11 @@ public abstract class BaseEssencePoint extends Block implements EntityBlock {
                     var edges = networks.graph.outEdges(pPos);
                     if (!edges.isEmpty()) {
                         for (var i : edges) {
-                            if (i.source.equals(pPos)) {
+                            if (i.source().equals(pPos)) {
                                 ItemEntity item = new ItemEntity(pLevel, pPos.getCenter().x, pPos.getCenter().y, pPos.getCenter().z, new ItemStack(getRequiredWire()));
                                 pLevel.addFreshEntity(item);
                                 networks.graph.removeEdge(i);
-                                if (pLevel.getBlockEntity(i.target) instanceof BaseEssencePointBlockEntity toEnt) {
+                                if (pLevel.getBlockEntity(i.target()) instanceof BaseEssencePointBlockEntity toEnt) {
                                     toEnt.updateBlock();
                                 }
                             }

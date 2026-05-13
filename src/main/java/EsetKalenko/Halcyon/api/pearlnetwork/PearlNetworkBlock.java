@@ -1,7 +1,6 @@
 package EsetKalenko.Halcyon.api.pearlnetwork;
 
 import EsetKalenko.Halcyon.api.misc.BlockPosNetworks;
-import EsetKalenko.Halcyon.api.util.BlockPosEdge;
 import EsetKalenko.Halcyon.api.util.PlayerDataUtil;
 import EsetKalenko.Halcyon.config.DataNEssenceConfig;
 import EsetKalenko.Halcyon.registry.AttachmentTypeRegistry;
@@ -55,7 +54,7 @@ public class PearlNetworkBlock extends Block {
                         if (canConnectTo(linkFrom.get())) {
                             if (linkFrom.get() instanceof PearlNetworkBlockEntity other) {
                                 if ((ent != linkFrom.get() && (ent.link.isEmpty() || !ent.link.contains(linkFrom.get().getBlockPos()))) && linkFrom.get().getBlockPos().closerThan(ent.getBlockPos(), DataNEssenceConfig.wireDistanceLimit)) {
-                                    networks.graph.addEdge(other.getBlockPos(), pPos, new BlockPosEdge(other.getBlockPos(), pPos));
+                                    networks.graph.addEdge(other.getBlockPos(), pPos);
                                     other.updateBlock();
                                     pPlayer.setData(AttachmentTypeRegistry.LINK_FROM, Optional.empty());
                                     PlayerDataUtil.updateData((ServerPlayer) pPlayer);
@@ -79,7 +78,7 @@ public class PearlNetworkBlock extends Block {
                 BlockPosNetworks networks = pLevel.getData(AttachmentTypeRegistry.ENDER_PEARL_NETWORKS);
                 var edges = networks.graph.inEdges(pPos);
                 for (var i : edges) {
-                    BlockPos pos = i.source;
+                    BlockPos pos = i.source();
                     networks.graph.removeEdge(i);
                     if (!pos.equals(pPos)) {
                         if (pLevel.getBlockEntity(pos) instanceof PearlNetworkBlockEntity ent) {

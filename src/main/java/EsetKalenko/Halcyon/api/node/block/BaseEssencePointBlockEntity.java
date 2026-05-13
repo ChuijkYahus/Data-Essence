@@ -109,7 +109,7 @@ public abstract class BaseEssencePointBlockEntity extends BlockEntity {
             }
             BlockPosNetworks networks = pLevel.getData(AttachmentTypeRegistry.ESSENCE_NODE_NETWORKS);
             if (networks.graph.inEdges(pPos).isEmpty() && !networks.graph.outEdges(pPos).isEmpty()) {
-                var paths = networks.getPaths(pPos);
+                var paths = networks.graph.getPaths(pPos);
                 List<Path<BlockPos, BlockPosEdge>> ends = networks.graph.vertices().stream().filter((vertex) -> pLevel.isLoaded(vertex) && networks.graph.outEdges(vertex).isEmpty()).map(paths::getPath).filter(Objects::nonNull).toList();
                 pBlockEntity.preTransferHooks(pBlockEntity, ends);
                 pBlockEntity.transfer(pBlockEntity, ends);
@@ -146,7 +146,7 @@ public abstract class BaseEssencePointBlockEntity extends BlockEntity {
         BlockPosNetworks networks = level.getData(AttachmentTypeRegistry.ESSENCE_NODE_NETWORKS);
         if (networks.graph.vertices().contains(getBlockPos())) {
             for (var i : networks.graph.outEdges(getBlockPos())) {
-                link.add(i.target);
+                link.add(i.target());
             }
         }
     }

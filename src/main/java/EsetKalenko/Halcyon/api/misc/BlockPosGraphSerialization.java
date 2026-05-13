@@ -1,7 +1,7 @@
 package EsetKalenko.Halcyon.api.misc;
 
 import EsetKalenko.Halcyon.api.util.BlockPosEdge;
-import com.jgalgo.graph.Graph;
+import EsetKalenko.Halcyon.api.util.BlockPosGraph;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.BlockPos;
@@ -24,15 +24,15 @@ public class BlockPosGraphSerialization {
             this.edges = edges;
         }
 
-        public static Graph<BlockPos, BlockPosEdge> toGraph(SerializationGraph graphSerialization) {
-            Graph<BlockPos, BlockPosEdge> graph = Graph.newDirected();
+        public static BlockPosGraph toGraph(SerializationGraph graphSerialization) {
+            BlockPosGraph graph = new BlockPosGraph();
             graph.addVertices(graphSerialization.vertices);
             for (BlockPosEdge i : graphSerialization.edges) {
-                graph.addEdge(i.source, i.target, i);
+                graph.addEdge(i);
             }
             return graph;
         }
-        public static SerializationGraph fromGraph(Graph<BlockPos, BlockPosEdge> graph) {
+        public static SerializationGraph fromGraph(BlockPosGraph graph) {
             List<BlockPos> vertices = new ArrayList<>(graph.vertices());
             List<BlockPosEdge> edges = new ArrayList<>(graph.edges());
             return new SerializationGraph(vertices, edges);

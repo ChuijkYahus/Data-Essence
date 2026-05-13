@@ -42,7 +42,7 @@ public class EnderPearlCaptureBlockEntity extends PearlNetworkBlockEntity {
             List<ThrownEnderpearl> pearls = pLevel.getEntitiesOfClass(ThrownEnderpearl.class, AABB.ofSize(pPos.getCenter(), 5, 5, 5));
             if (!pearls.isEmpty()) {
                 BlockPosNetworks networks = pLevel.getData(AttachmentTypeRegistry.ENDER_PEARL_NETWORKS);
-                var paths = networks.getPaths(pPos);
+                var paths = networks.graph.getPaths(pPos);
                 List<Path<BlockPos, BlockPosEdge>> ends = networks.graph.vertices().stream()
                         .filter((vertex) -> networks.graph.outEdges(vertex).isEmpty())
                         .map(paths::getPath)

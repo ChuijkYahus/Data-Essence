@@ -118,7 +118,7 @@ public abstract class BaseCapabilityPointBlockEntity extends BlockEntity {
                 if (pBlockEntity.delay > 0) {
                     pBlockEntity.delay--;
                 } else {
-                    var paths = networks.getPaths(pPos);
+                    var paths = networks.graph.getPaths(pPos);
                     List<Path<BlockPos, BlockPosEdge>> ends = new ArrayList<>();
                     for (var vertex : networks.graph.vertices()) {
                         if (pPos.equals(vertex) || !pLevel.isLoaded(vertex)) {
@@ -181,7 +181,7 @@ public abstract class BaseCapabilityPointBlockEntity extends BlockEntity {
         BlockPosNetworks networks = level.getData(AttachmentTypeRegistry.CAPABILITY_NODE_NETWORKS);
         if (networks.graph.vertices().contains(getBlockPos())) {
             for (var i : networks.graph.outEdges(getBlockPos())) {
-                link.add(i.target);
+                link.add(i.target());
             }
         }
     }

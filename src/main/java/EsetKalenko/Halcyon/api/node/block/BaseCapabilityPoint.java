@@ -98,7 +98,7 @@ public abstract class BaseCapabilityPoint extends Block implements EntityBlock {
             if (pLevel.getBlockEntity(pPos) instanceof BaseCapabilityPointBlockEntity node) {
                 BlockPosNetworks networks = pLevel.getData(AttachmentTypeRegistry.CAPABILITY_NODE_NETWORKS);
                 Stream.concat(networks.graph.inEdges(pPos).stream(), networks.graph.outEdges(pPos).stream()).forEach(i -> {
-                    BlockPos pos = i.source;
+                    BlockPos pos = i.source();
                     ItemEntity item = new ItemEntity(pLevel, pos.getCenter().x, pos.getCenter().y, pos.getCenter().z, new ItemStack(getRequiredWire()));
                     pLevel.addFreshEntity(item);
                     networks.graph.removeEdge(i);
@@ -163,7 +163,7 @@ public abstract class BaseCapabilityPoint extends Block implements EntityBlock {
                         if (linkFrom.get().getBlockState().getBlock() instanceof BaseCapabilityPoint other) {
                             if (other.getRequiredWire() == getRequiredWire() && ent != linkFrom.get() && (ent.link.isEmpty() || !ent.link.contains(linkFrom.get().getBlockPos()))) {
                                 if ((linkFrom.get() instanceof BaseCapabilityPointBlockEntity linkFrom2) && linkFrom.get().getBlockPos().closerThan(ent.getBlockPos(), DataNEssenceConfig.wireDistanceLimit)) {
-                                    networks.graph.addEdge(linkFrom2.getBlockPos(), pPos, new BlockPosEdge(linkFrom2.getBlockPos(), pPos));
+                                    networks.graph.addEdge(linkFrom2.getBlockPos(), pPos);
                                     linkFrom2.updateBlock();
                                     ent.updateBlock();
                                     pPlayer.setData(AttachmentTypeRegistry.LINK_FROM, Optional.empty());
@@ -223,7 +223,7 @@ public abstract class BaseCapabilityPoint extends Block implements EntityBlock {
                             ItemEntity item = new ItemEntity(pLevel, pPos.getCenter().x, pPos.getCenter().y, pPos.getCenter().z, new ItemStack(getRequiredWire()));
                             pLevel.addFreshEntity(item);
                             networks.graph.removeEdge(i);
-                            if (pLevel.getBlockEntity(i.target) instanceof BaseCapabilityPointBlockEntity toEnt) {
+                            if (pLevel.getBlockEntity(i.target()) instanceof BaseCapabilityPointBlockEntity toEnt) {
                                 toEnt.updateBlock();
                             }
                         }
