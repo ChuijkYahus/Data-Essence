@@ -173,7 +173,7 @@ public class DataTabletUtil {
     }
     public static List<EssenceType> getUnlockedTypesForTier(int tier) {
         List<EssenceType> essenceTypes = new ArrayList<>();
-        for (EssenceType i : DataNEssenceRegistries.ESSENCE_TYPE_REGISTRY.stream().toList()) {
+        for (EssenceType i : DataNEssenceRegistries.ESSENCE_TYPE_REGISTRY) {
             if (tier >= i.tier) {
                 essenceTypes.add(i);
             }

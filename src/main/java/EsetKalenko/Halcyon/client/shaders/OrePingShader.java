@@ -92,7 +92,7 @@ public class OrePingShader extends PostShaderInstance {
                 event.getPoseStack().translate(-event.getCamera().getPosition().x, -event.getCamera().getPosition().y, -event.getCamera().getPosition().z);
                 getOrePingTarget().clear(Minecraft.ON_OSX);
                 getOrePingTarget().bindWrite(true);
-                for (Map.Entry<BlockPos, Integer> i : AddScannedOre.scanned.entrySet().stream().toList()) {
+                for (Map.Entry<BlockPos, Integer> i : new ArrayList<>(AddScannedOre.scanned.entrySet())) {
                     BlockPos pos = i.getKey();
                     int value = i.getValue();
                     if (value <= 0) {

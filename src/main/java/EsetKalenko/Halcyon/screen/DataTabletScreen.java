@@ -550,7 +550,7 @@ public class DataTabletScreen extends Screen {
         List<DataTab> tabs = new ArrayList<>();
         List<DataTab> sorted = getSortedTabs();
         List<DataTab> visible = new ArrayList<>();
-        for (DataTab i : sorted.stream().toList()) {
+        for (DataTab i : new ArrayList<>(sorted)) {
             if (i.alwaysShown) {
                 visible.add(i);
                 continue;

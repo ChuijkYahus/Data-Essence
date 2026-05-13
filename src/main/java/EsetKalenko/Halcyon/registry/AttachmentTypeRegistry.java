@@ -51,13 +51,13 @@ public class AttachmentTypeRegistry {
             register("has_wings", () -> AttachmentType.builder(() -> false).serialize(Codec.BOOL).copyOnDeath().build());
     public static final Supplier<AttachmentType<ArrayList<ResourceLocation>>> UNLOCKED =
             register("unlocked", () -> AttachmentType.builder(() -> new ArrayList<ResourceLocation>()).serialize(
-                    ResourceLocation.CODEC.listOf().xmap(ArrayList::new, (a) -> a.stream().toList())).copyOnDeath().build());
+                    ResourceLocation.CODEC.listOf().xmap(ArrayList::new, ArrayList::new)).copyOnDeath().build());
     public static final Supplier<AttachmentType<HashMap<ResourceLocation, Integer>>> INCOMPLETE_STAGES =
             register("incomplete_stages", () -> AttachmentType.builder(() -> new HashMap<ResourceLocation, Integer>()).serialize(
                     Codec.unboundedMap(ResourceLocation.CODEC, Codec.INT).xmap(HashMap::new, (a) -> a)).copyOnDeath().build());
     public static final Supplier<AttachmentType<ArrayList<ResourceLocation>>> INCOMPLETE =
             register("incomplete", () -> AttachmentType.builder(() -> new ArrayList<ResourceLocation>()).serialize(
-                    ResourceLocation.CODEC.listOf().xmap(ArrayList::new, (a) -> a.stream().toList())).copyOnDeath().build());
+                    ResourceLocation.CODEC.listOf().xmap(ArrayList::new, ArrayList::new)).copyOnDeath().build());
     public static final Supplier<AttachmentType<Integer>> TICKS_UNTIL_LUNAR_STRIKE =
             register("ticks_until_lunar_strike", () -> AttachmentType.builder(() -> 300).build());
 

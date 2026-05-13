@@ -8,6 +8,7 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.neoforge.client.IItemDecorator;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ItemDecorators {
@@ -15,7 +16,7 @@ public class ItemDecorators {
         if (!stack.isEmpty()) {
             if (stack.has(DataComponentRegistry.ESSENCE_STORAGE)) {
                 ItemEssenceContainer essenceStorage = stack.get(DataComponentRegistry.ESSENCE_STORAGE);
-                List<ResourceLocation> essenceTypes = essenceStorage.storedEssence.keySet().stream().toList();
+                List<ResourceLocation> essenceTypes = new ArrayList<>(essenceStorage.storedEssence.keySet());
                 if (!essenceTypes.isEmpty()) {
                     int typeIndex = (int)((Minecraft.getInstance().level.getGameTime()/20) % essenceTypes.size());
                     ResourceLocation essence = essenceTypes.get(typeIndex);

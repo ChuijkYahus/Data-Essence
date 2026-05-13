@@ -56,7 +56,7 @@ public class DataBankScreen extends Screen {
             int currentTier = -1;
             int y2 = 0;
             int x2 = 4;
-            List<DataBankEntry> entries = new ArrayList<>(DataBankEntries.clientEntries.values().stream().toList());
+            List<DataBankEntry> entries = new ArrayList<>(DataBankEntries.clientEntries.values());
             entries.sort(Comparator.comparingInt((a) -> a.tier));
             for (DataBankEntry i : entries) {
                 boolean isDownloading = downloading.containsKey(i.id);
@@ -223,7 +223,7 @@ public class DataBankScreen extends Screen {
             minigameCompletionWait = -1;
             minigames = null;
         }
-        for (Map.Entry<ResourceLocation, Integer> i : downloading.entrySet().stream().toList()) {
+        for (Map.Entry<ResourceLocation, Integer> i : new ArrayList<>(downloading.entrySet())) {
             if (i.getValue()-1 <= 0) {
                 downloading.remove(i.getKey());
             } else {
@@ -320,7 +320,7 @@ public class DataBankScreen extends Screen {
             int currentTier = -1;
             int y2 = 0;
             int x2 = 4;
-            List<DataBankEntry> entries = new ArrayList<>(DataBankEntries.clientEntries.values().stream().toList());
+            List<DataBankEntry> entries = new ArrayList<>(DataBankEntries.clientEntries.values());
             entries.sort(Comparator.comparingInt((a) -> a.tier));
 
             for (DataBankEntry i : entries) {
@@ -391,7 +391,7 @@ public class DataBankScreen extends Screen {
         int y2 = 0;
         int x2 = 4;
         HashMap<Integer, Integer> tiers = new HashMap<>();
-        List<DataBankEntry> entries = new ArrayList<>(DataBankEntries.clientEntries.values().stream().toList());
+        List<DataBankEntry> entries = new ArrayList<>(DataBankEntries.clientEntries.values());
         entries.sort(Comparator.comparingInt((a) -> a.tier));
 
         for (DataBankEntry i : entries) {
