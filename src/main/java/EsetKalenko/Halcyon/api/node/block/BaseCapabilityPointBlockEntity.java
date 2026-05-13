@@ -121,7 +121,7 @@ public abstract class BaseCapabilityPointBlockEntity extends BlockEntity {
                     var paths = networks.getPaths(pPos);
                     List<Path<BlockPos, BlockPosEdge>> ends = new ArrayList<>();
                     for (var vertex : networks.graph.vertices()) {
-                        if (pPos.equals(vertex) || !paths.isReachable(vertex) || !pLevel.isLoaded(vertex)) {
+                        if (pPos.equals(vertex) || !pLevel.isLoaded(vertex)) {
                             continue;
                         }
 
@@ -129,7 +129,10 @@ public abstract class BaseCapabilityPointBlockEntity extends BlockEntity {
                             continue;
                         }
 
-                        ends.add(paths.getPath(vertex));
+                        var path = paths.getPath(vertex);
+                        if (path != null) {
+                            ends.add(paths.getPath(vertex));
+                        }
                     }
                     pBlockEntity.preTransferHooks(pBlockEntity, ends);
                     if (pBlockEntity.transfer(pBlockEntity, ends)) {
