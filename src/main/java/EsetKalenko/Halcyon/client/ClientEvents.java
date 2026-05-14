@@ -441,7 +441,7 @@ public class ClientEvents {
         var player = mc.player;
         if (mc.level != null)
         {
-            for (Map.Entry<StructurePing, Integer> i : pings.entrySet().stream().toList()) {
+            for (Map.Entry<StructurePing, Integer> i : new ArrayList<>(pings.entrySet())) {
                 if (i.getValue()-1 <= 0) {
                     pings.remove(i.getKey());
                 } else {
@@ -450,7 +450,7 @@ public class ClientEvents {
             }
             if (mc.player != null) {
                 boolean playedASound = false;
-                for (Map.Entry<BlockPos, Integer> i : AddScannedOre.scanned.entrySet().stream().toList()) {
+                for (Map.Entry<BlockPos, Integer> i : new ArrayList<>(AddScannedOre.scanned.entrySet())) {
                     int value = i.getValue() - 1;
                     if (i.getValue() > 0 && value <= 0) {
                         if (!playedASound) {
