@@ -35,10 +35,8 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import org.jgrapht.graph.DefaultEdge;
 
 import java.util.Optional;
-import java.util.Set;
 
 public abstract class BaseEssencePoint extends Block implements EntityBlock {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
@@ -96,9 +94,9 @@ public abstract class BaseEssencePoint extends Block implements EntityBlock {
         if (pState.getBlock() != pNewState.getBlock()) {
             if (pLevel.getBlockEntity(pPos) instanceof BaseEssencePointBlockEntity node) {
                 BlockPosNetworks networks = pLevel.getData(AttachmentTypeRegistry.ESSENCE_NODE_NETWORKS);
-                Set<DefaultEdge> edges = networks.graph.edgesOf(pPos);
-                for (DefaultEdge i : edges) {
-                    BlockPos pos = networks.graph.getEdgeSource(i);
+                var edges = networks.graph.inEdges(pPos);
+                for (var i : edges) {
+                    BlockPos pos = i.source();
                     ItemEntity item = new ItemEntity(pLevel, pos.getCenter().x, pos.getCenter().y, pos.getCenter().z, new ItemStack(getRequiredWire()));
                     pLevel.addFreshEntity(item);
                     networks.graph.removeEdge(i);
@@ -152,10 +150,9 @@ public abstract class BaseEssencePoint extends Block implements EntityBlock {
             if (entity instanceof BaseEssencePointBlockEntity ent) {
                 if (pPlayer.getItemInHand(pHand).is(getRequiredWire())) {
                     BlockPosNetworks networks = pLevel.getData(AttachmentTypeRegistry.ESSENCE_NODE_NETWORKS);
-                    Set<DefaultEdge> edges = networks.graph.edgesOf(pPos);
                     Optional<BlockEntity> linkFrom = pPlayer.getData(AttachmentTypeRegistry.LINK_FROM);
-                    if (!linkFrom.isPresent()) {
-                        if (edges.stream().filter((edge) -> networks.graph.getEdgeSource(edge).equals(pPos)).toList().size() < DataNEssenceConfig.maxNodeWires) {
+                    if (linkFrom.isEmpty()) {
+                        if (networks.graph.inEdges(pPos).size() + networks.graph.outEdges(pPos).size() < DataNEssenceConfig.maxNodeWires) {
                             pPlayer.setData(AttachmentTypeRegistry.LINK_FROM, Optional.of(ent));
                             PlayerDataUtil.updateData((ServerPlayer) pPlayer);
                             pLevel.playSound(null, pPos, SoundRegistry.NODE_LINK_FROM.value(), SoundSource.BLOCKS, 1f, 1f);
@@ -218,15 +215,14 @@ public abstract class BaseEssencePoint extends Block implements EntityBlock {
             if (entity instanceof BaseEssencePointBlockEntity ent) {
                 if (pPlayer.isShiftKeyDown()) {
                     BlockPosNetworks networks = pLevel.getData(AttachmentTypeRegistry.ESSENCE_NODE_NETWORKS);
-                    Set<DefaultEdge> edges = networks.graph.edgesOf(pPos);
-                    if (edges.stream().anyMatch((edge) -> networks.graph.getEdgeSource(edge).equals(pPos))) {
-                        for (DefaultEdge i : edges) {
-                            if (networks.graph.getEdgeSource(i).equals(pPos)) {
+                    var edges = networks.graph.outEdges(pPos);
+                    if (!edges.isEmpty()) {
+                        for (var i : edges) {
+                            if (i.source().equals(pPos)) {
                                 ItemEntity item = new ItemEntity(pLevel, pPos.getCenter().x, pPos.getCenter().y, pPos.getCenter().z, new ItemStack(getRequiredWire()));
                                 pLevel.addFreshEntity(item);
                                 networks.graph.removeEdge(i);
-                                BlockPos to = networks.graph.getEdgeTarget(i);
-                                if (pLevel.getBlockEntity(to) instanceof BaseEssencePointBlockEntity toEnt) {
+                                if (pLevel.getBlockEntity(i.target()) instanceof BaseEssencePointBlockEntity toEnt) {
                                     toEnt.updateBlock();
                                 }
                             }

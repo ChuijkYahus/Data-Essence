@@ -35,10 +35,9 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import org.jgrapht.graph.DefaultEdge;
 
 import java.util.Optional;
-import java.util.Set;
+import java.util.stream.Stream;
 
 public abstract class BaseCapabilityPoint extends Block implements EntityBlock {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
@@ -96,9 +95,8 @@ public abstract class BaseCapabilityPoint extends Block implements EntityBlock {
         if (pState.getBlock() != pNewState.getBlock()) {
             if (pLevel.getBlockEntity(pPos) instanceof BaseCapabilityPointBlockEntity node) {
                 BlockPosNetworks networks = pLevel.getData(AttachmentTypeRegistry.CAPABILITY_NODE_NETWORKS);
-                Set<DefaultEdge> edges = networks.graph.edgesOf(pPos);
-                for (DefaultEdge i : edges) {
-                    BlockPos pos = networks.graph.getEdgeSource(i);
+                Stream.concat(networks.graph.inEdges(pPos).stream(), networks.graph.outEdges(pPos).stream()).forEach(i -> {
+                    BlockPos pos = i.source();
                     ItemEntity item = new ItemEntity(pLevel, pos.getCenter().x, pos.getCenter().y, pos.getCenter().z, new ItemStack(getRequiredWire()));
                     pLevel.addFreshEntity(item);
                     networks.graph.removeEdge(i);
@@ -107,7 +105,7 @@ public abstract class BaseCapabilityPoint extends Block implements EntityBlock {
                             ent.updateBlock();
                         }
                     }
-                }
+                });
                 if ( node.uniqueUpgrade.getStackInSlot(0) != ItemStack.EMPTY ) {
                     ItemEntity upgradeSigil = new ItemEntity(pLevel, pPos.getCenter().x, pPos.getCenter().y, pPos.getCenter().z, node.uniqueUpgrade.getStackInSlot(0).copy() );
                     pLevel.addFreshEntity(upgradeSigil);
@@ -151,10 +149,10 @@ public abstract class BaseCapabilityPoint extends Block implements EntityBlock {
             if (entity instanceof BaseCapabilityPointBlockEntity ent) {
                 if (pPlayer.getItemInHand(pHand).is(getRequiredWire())) {
                     BlockPosNetworks networks = pLevel.getData(AttachmentTypeRegistry.CAPABILITY_NODE_NETWORKS);
-                    Set<DefaultEdge> edges = networks.graph.edgesOf(pPos);
+                    var edges = networks.graph.outEdges(pPos);
                     Optional<BlockEntity> linkFrom = pPlayer.getData(AttachmentTypeRegistry.LINK_FROM);
-                    if (!linkFrom.isPresent()) {
-                        if (edges.stream().filter((edge) -> networks.graph.getEdgeSource(edge).equals(pPos)).toList().size() < DataNEssenceConfig.maxNodeWires) {
+                    if (linkFrom.isEmpty()) {
+                        if (edges.size() < DataNEssenceConfig.maxNodeWires) {
                             pPlayer.setData(AttachmentTypeRegistry.LINK_FROM, Optional.of(ent));
                             PlayerDataUtil.updateData((ServerPlayer) pPlayer);
                             pLevel.playSound(null, pPos, SoundRegistry.NODE_LINK_FROM.value(), SoundSource.BLOCKS, 1f, 1f);
@@ -217,17 +215,14 @@ public abstract class BaseCapabilityPoint extends Block implements EntityBlock {
             if (entity instanceof BaseCapabilityPointBlockEntity ent) {
                 if (pPlayer.isShiftKeyDown()) {
                     BlockPosNetworks networks = pLevel.getData(AttachmentTypeRegistry.CAPABILITY_NODE_NETWORKS);
-                    Set<DefaultEdge> edges = networks.graph.edgesOf(pPos);
-                    if (edges.stream().anyMatch((edge) -> networks.graph.getEdgeSource(edge).equals(pPos))) {
-                        for (DefaultEdge i : edges) {
-                            if (networks.graph.getEdgeSource(i).equals(pPos)) {
-                                ItemEntity item = new ItemEntity(pLevel, pPos.getCenter().x, pPos.getCenter().y, pPos.getCenter().z, new ItemStack(getRequiredWire()));
-                                pLevel.addFreshEntity(item);
-                                networks.graph.removeEdge(i);
-                                BlockPos to = networks.graph.getEdgeTarget(i);
-                                if (pLevel.getBlockEntity(to) instanceof BaseCapabilityPointBlockEntity toEnt) {
-                                    toEnt.updateBlock();
-                                }
+                    var edges = networks.graph.outEdges(pPos);
+                    if (!edges.isEmpty()) {
+                        for (var i : edges) {
+                            ItemEntity item = new ItemEntity(pLevel, pPos.getCenter().x, pPos.getCenter().y, pPos.getCenter().z, new ItemStack(getRequiredWire()));
+                            pLevel.addFreshEntity(item);
+                            networks.graph.removeEdge(i);
+                            if (pLevel.getBlockEntity(i.target()) instanceof BaseCapabilityPointBlockEntity toEnt) {
+                                toEnt.updateBlock();
                             }
                         }
                         ent.updateBlock();
@@ -236,6 +231,14 @@ public abstract class BaseCapabilityPoint extends Block implements EntityBlock {
             }
         }
         return InteractionResult.sidedSuccess(pLevel.isClientSide());
+    }
+
+    @Override
+    protected void onPlace(BlockState state, Level level, BlockPos pos, BlockState oldState, boolean movedByPiston) {
+        super.onPlace(state, level, pos, oldState, movedByPiston);
+        if (level.getBlockEntity(pos) instanceof BaseCapabilityPointBlockEntity be) {
+            be.invalidateDirectionalCaches();
+        }
     }
 
     public BlockState updateShape(BlockState pState, Direction pFacing, BlockState pFacingState, LevelAccessor pLevel, BlockPos pCurrentPos, BlockPos pFacingPos) {

@@ -11,7 +11,6 @@ import EsetKalenko.Halcyon.api.misc.ILockableContainer;
 import EsetKalenko.Halcyon.client.FactorySong;
 import EsetKalenko.Halcyon.item.DataDrive;
 import EsetKalenko.Halcyon.api.LockableItemHandler;
-import EsetKalenko.Halcyon.recipe.SynthesisRecipe;
 import EsetKalenko.Halcyon.registry.*;
 import EsetKalenko.Halcyon.recipe.*;
 import EsetKalenko.Halcyon.screen.SynthesisChamberMenu;

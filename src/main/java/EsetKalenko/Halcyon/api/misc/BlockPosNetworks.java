@@ -1,20 +1,16 @@
 package EsetKalenko.Halcyon.api.misc;
 
+import EsetKalenko.Halcyon.api.util.BlockPosGraph;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import net.minecraft.core.BlockPos;
-import org.jgrapht.alg.shortestpath.DijkstraShortestPath;
-import org.jgrapht.graph.DefaultDirectedGraph;
-import org.jgrapht.graph.DefaultEdge;
 
 public class BlockPosNetworks {
-    public DefaultDirectedGraph<BlockPos, DefaultEdge> graph;
-    public DijkstraShortestPath<BlockPos, DefaultEdge> path;
+    public BlockPosGraph graph;
     public static final Codec<BlockPosNetworks> CODEC = RecordCodecBuilder.create((instance) -> instance.group(
         BlockPosGraphSerialization.SerializationGraph.CODEC.fieldOf("graph").xmap(BlockPosGraphSerialization.SerializationGraph::toGraph, BlockPosGraphSerialization.SerializationGraph::fromGraph).forGetter((networks) -> networks.graph)
     ).apply(instance, BlockPosNetworks::new));
-    public BlockPosNetworks(DefaultDirectedGraph<BlockPos, DefaultEdge> graph) {
+
+    public BlockPosNetworks(BlockPosGraph graph) {
         this.graph = graph;
-        path = new DijkstraShortestPath<>(graph);
     }
 }

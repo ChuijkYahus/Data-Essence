@@ -19,11 +19,9 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
-import org.jgrapht.graph.DefaultEdge;
 
 import java.awt.*;
 import java.util.Optional;
-import java.util.Set;
 
 public class PearlNetworkBlock extends Block {
     public PearlNetworkBlock(Properties properties) {
@@ -77,9 +75,9 @@ public class PearlNetworkBlock extends Block {
         if (pState.getBlock() != pNewState.getBlock()) {
             if (pLevel.getBlockEntity(pPos) instanceof PearlNetworkBlockEntity) {
                 BlockPosNetworks networks = pLevel.getData(AttachmentTypeRegistry.ENDER_PEARL_NETWORKS);
-                Set<DefaultEdge> edges = networks.graph.edgesOf(pPos);
-                for (DefaultEdge i : edges) {
-                    BlockPos pos = networks.graph.getEdgeSource(i);
+                var edges = networks.graph.inEdges(pPos);
+                for (var i : edges) {
+                    BlockPos pos = i.source();
                     networks.graph.removeEdge(i);
                     if (!pos.equals(pPos)) {
                         if (pLevel.getBlockEntity(pos) instanceof PearlNetworkBlockEntity ent) {

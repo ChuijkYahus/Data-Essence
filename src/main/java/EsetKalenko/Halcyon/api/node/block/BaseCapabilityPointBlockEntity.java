@@ -1,12 +1,14 @@
 package EsetKalenko.Halcyon.api.node.block;
 
-import com.cmdpro.databank.model.animation.DatabankAnimationReference;
-import com.cmdpro.databank.model.animation.DatabankAnimationState;
 import EsetKalenko.Halcyon.DataNEssence;
 import EsetKalenko.Halcyon.api.misc.BlockPosNetworks;
 import EsetKalenko.Halcyon.api.node.item.INodeUpgrade;
+import EsetKalenko.Halcyon.api.util.BlockPosEdge;
 import EsetKalenko.Halcyon.client.particle.CircleParticleOptions;
 import EsetKalenko.Halcyon.registry.AttachmentTypeRegistry;
+import com.cmdpro.databank.model.animation.DatabankAnimationReference;
+import com.cmdpro.databank.model.animation.DatabankAnimationState;
+import com.jgalgo.alg.common.Path;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
@@ -23,15 +25,12 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.AttachFace;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.items.ItemStackHandler;
-import org.jgrapht.GraphPath;
-import org.jgrapht.alg.interfaces.ShortestPathAlgorithm;
-import org.jgrapht.graph.DefaultEdge;
+import org.jetbrains.annotations.Nullable;
 import org.joml.Vector3f;
 
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 public abstract class BaseCapabilityPointBlockEntity extends BlockEntity {
     private int backoff;
@@ -97,7 +96,7 @@ public abstract class BaseCapabilityPointBlockEntity extends BlockEntity {
         if (level != null) {
             if (!level.isClientSide) {
                 BlockPosNetworks networks = level.getData(AttachmentTypeRegistry.CAPABILITY_NODE_NETWORKS);
-                if (!networks.graph.containsVertex(getBlockPos())) {
+                if (!networks.graph.vertices().contains(getBlockPos())) {
                     networks.graph.addVertex(getBlockPos());
                 }
             }
@@ -105,58 +104,65 @@ public abstract class BaseCapabilityPointBlockEntity extends BlockEntity {
     }
     public abstract Color[] linkColor();
 
+    private List<Path<BlockPos, BlockPosEdge>> ends;
+    private long cachedVersion = -1;
+
     public static void tick(Level pLevel, BlockPos pPos, BlockState pState, BaseCapabilityPointBlockEntity pBlockEntity) {
         if (!pLevel.isClientSide()) {
             if (pBlockEntity.link == null) {
                 pBlockEntity.updateLinks();
             }
             BlockPosNetworks networks = pLevel.getData(AttachmentTypeRegistry.CAPABILITY_NODE_NETWORKS);
-            Set<DefaultEdge> edges = networks.graph.edgesOf(pPos);
-
-            var shouldTransfer = true;
-            for (var edge : edges) {
-                if (!edges.isEmpty() && networks.graph.getEdgeTarget(edge).equals(pPos)) {
-                    shouldTransfer = false;
-                    break;
-                }
-            }
+            var shouldTransfer = networks.graph.outEdges(pPos).isEmpty() || networks.graph.inEdges(pPos).isEmpty();
+            var cacheInvalid = pBlockEntity.ends == null || pBlockEntity.cachedVersion != networks.graph.getVersion();
 
             if (shouldTransfer) {
                 if (pBlockEntity.delay > 0) {
                     pBlockEntity.delay--;
                 } else {
-                    ShortestPathAlgorithm.SingleSourcePaths<BlockPos, DefaultEdge> paths = networks.path.getPaths(pPos);
-                    List<GraphPath<BlockPos, DefaultEdge>> ends = new ArrayList<>();
-                    vertex:
-                    for (var vertex : networks.graph.vertexSet()) {
-                        var path = paths.getPath(vertex);
-                        if (path == null || !pLevel.isLoaded(vertex)) {
-                            continue;
+                    if (cacheInvalid) {
+                        if (pBlockEntity.ends == null) {
+                            pBlockEntity.ends = new ArrayList<>();
                         }
+                        pBlockEntity.ends.clear();
+                        var paths = networks.graph.getPaths(pPos);
+                        for (var vertex : networks.graph.vertices()) {
+                            if (pPos.equals(vertex)) {
+                                continue;
+                            }
 
-                        for (var edge : networks.graph.edgesOf(vertex)) {
-                            if (networks.graph.getEdgeSource(edge).equals(vertex)) {
-                                continue vertex;
+                            if (!networks.graph.outEdges(vertex).isEmpty()) {
+                                continue;
+                            }
+
+                            if (!pLevel.isLoaded(vertex)) {
+                                continue;
+                            }
+
+                            var path = paths.getPath(vertex);
+                            if (path != null) {
+                                pBlockEntity.ends.add(path);
                             }
                         }
 
-                        ends.add(path);
+                        pBlockEntity.cachedVersion = networks.graph.getVersion();
                     }
-                    pBlockEntity.preTransferHooks(pBlockEntity, ends);
-                    if (pBlockEntity.transfer(pBlockEntity, ends)) {
+
+                    pBlockEntity.preTransferHooks(pBlockEntity, pBlockEntity.ends);
+                    if (pBlockEntity.transfer(pBlockEntity, pBlockEntity.ends)) {
                         pBlockEntity.backoff = Math.max(0, pBlockEntity.backoff >> 1);
                     } else {
                         pBlockEntity.backoff = Math.min(pBlockEntity.maxBackoff(), pBlockEntity.backoff == 0 ? 1 : pBlockEntity.backoff << 1);
                     }
                     pBlockEntity.delay = pBlockEntity.backoff;
-                    pBlockEntity.postTransferHooks(pBlockEntity, ends);
+                    pBlockEntity.postTransferHooks(pBlockEntity, pBlockEntity.ends);
                 }
             }
 
-            // check if this node is a relay
-            var incoming = networks.graph.incomingEdgesOf(pPos);
-            var outgoing = networks.graph.outgoingEdgesOf(pPos);
-            pBlockEntity.isRelay = (!incoming.isEmpty() && !outgoing.isEmpty());
+            if (cacheInvalid) {
+                // check if this node is a relay
+                pBlockEntity.isRelay = (!networks.graph.inEdges(pPos).isEmpty() && !networks.graph.outEdges(pPos).isEmpty());
+            }
 
         } else {
             if (pBlockEntity.link == null) {
@@ -186,17 +192,15 @@ public abstract class BaseCapabilityPointBlockEntity extends BlockEntity {
             link = new ArrayList<>();
         }
         link.clear();
+        ends = null;
         BlockPosNetworks networks = level.getData(AttachmentTypeRegistry.CAPABILITY_NODE_NETWORKS);
-        if (networks.graph.containsVertex(getBlockPos())) {
-            for (DefaultEdge i : networks.graph.edgesOf(getBlockPos())) {
-                if (networks.graph.getEdgeSource(i).equals(getBlockPos())) {
-                    BlockPos target = networks.graph.getEdgeTarget(i);
-                    link.add(target);
-                }
+        if (networks.graph.vertices().contains(getBlockPos())) {
+            for (var i : networks.graph.outEdges(getBlockPos())) {
+                link.add(i.target());
             }
         }
     }
-    public boolean preTransferHooks(BlockEntity from, List<GraphPath<BlockPos, DefaultEdge>> other) {
+    public boolean preTransferHooks(BlockEntity from, List<Path<BlockPos, BlockPosEdge>> other) {
         boolean cancel = false;
         if (universalUpgrade.getStackInSlot(0).getItem() instanceof INodeUpgrade upgrade) {
             if (upgrade.preTransfer(universalUpgrade.getStackInSlot(0), from, other, cancel)) {
@@ -210,7 +214,7 @@ public abstract class BaseCapabilityPointBlockEntity extends BlockEntity {
         }
         return cancel;
     }
-    public void postTransferHooks(BlockEntity from, List<GraphPath<BlockPos, DefaultEdge>> other) {
+    public void postTransferHooks(BlockEntity from, List<Path<BlockPos, BlockPosEdge>> other) {
         if (universalUpgrade.getStackInSlot(0).getItem() instanceof INodeUpgrade upgrade) {
             upgrade.postTransfer(universalUpgrade.getStackInSlot(0), from, other);
         }
@@ -224,7 +228,7 @@ public abstract class BaseCapabilityPointBlockEntity extends BlockEntity {
      * @param other The other points in the graph
      * @return Whether any work was done.
      */
-    public abstract boolean transfer(BaseCapabilityPointBlockEntity from, List<GraphPath<BlockPos, DefaultEdge>> other);
+    public abstract boolean transfer(BaseCapabilityPointBlockEntity from, List<Path<BlockPos, BlockPosEdge>> other);
 
     /**
      * @return The maximum number of ticks to exponentially backoff to.
@@ -233,15 +237,22 @@ public abstract class BaseCapabilityPointBlockEntity extends BlockEntity {
         return 0;
     }
 
+    private Direction cachedDirection = null;
+
     public Direction getDirection() {
-        if (getBlockState().getValue(BaseCapabilityPoint.FACE).equals(AttachFace.CEILING)) {
-            return Direction.DOWN;
+        if (cachedDirection == null) {
+            if (getBlockState().getValue(BaseCapabilityPoint.FACE).equals(AttachFace.CEILING)) {
+                cachedDirection = Direction.DOWN;
+            } else if (getBlockState().getValue(BaseCapabilityPoint.FACE).equals(AttachFace.WALL)) {
+                cachedDirection = getBlockState().getValue(BaseCapabilityPoint.FACING);
+            } else {
+                cachedDirection = Direction.UP;
+            }
         }
-        if (getBlockState().getValue(BaseCapabilityPoint.FACE).equals(AttachFace.WALL)) {
-            return getBlockState().getValue(BaseCapabilityPoint.FACING);
-        }
-        return Direction.UP;
+
+        return cachedDirection;
     }
+
     @Override
     public ClientboundBlockEntityDataPacket getUpdatePacket(){
         return ClientboundBlockEntityDataPacket.create(this);
@@ -284,8 +295,8 @@ public abstract class BaseCapabilityPointBlockEntity extends BlockEntity {
     public void updateBlock() {
         updateLinks();
         BlockPosNetworks networks = level.getData(AttachmentTypeRegistry.CAPABILITY_NODE_NETWORKS);
-        var incoming = networks.graph.incomingEdgesOf(getBlockPos());
-        var outgoing = networks.graph.outgoingEdgesOf(getBlockPos());
+        var incoming = networks.graph.inEdges(getBlockPos());
+        var outgoing = networks.graph.outEdges(getBlockPos());
         isRelay = (!incoming.isEmpty() && !outgoing.isEmpty());
         BlockState blockState = level.getBlockState(this.getBlockPos());
         this.level.sendBlockUpdated(this.getBlockPos(), blockState, blockState, 3);
@@ -325,5 +336,11 @@ public abstract class BaseCapabilityPointBlockEntity extends BlockEntity {
         }
         tag.put("link", list);
         tag.putBoolean("Relay", isRelay);
+    }
+
+    public abstract @Nullable Object getAttachedCapability(Class<?> capabilityClass);
+
+    public void invalidateDirectionalCaches() {
+        this.cachedDirection = null;
     }
 }

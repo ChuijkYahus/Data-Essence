@@ -1,11 +1,6 @@
 package EsetKalenko.Halcyon.api.util;
 
-import com.ibm.icu.lang.UCharacter;
-import net.minecraft.client.resources.language.FormattedBidiReorder;
-import net.minecraft.locale.Language;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.SubStringSource;
-import net.minecraft.util.FormattedCharSequence;
 
 import java.text.DecimalFormat;
 
