@@ -10,3 +10,6 @@
 
 ### Changes
 - Moved Mineral-Finding Rod to t3
+
+### Fixes
+- Improved Node performance by switching from JGraphT to JGAlgo (Vonr)

@@ -8,6 +8,6 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 
 public class LunarEssencePointRenderer extends BaseEssencePointRenderer<LunarEssencePointBlockEntity> {
     public LunarEssencePointRenderer(BlockEntityRendererProvider.Context rendererProvider) {
-        super( new Model<>(DataNEssence.locate("textures/block/lunar_essence_point.png")), new RelayModel(DataNEssence.locate("textures/block/lunar_essence_point.png")) );
+        super( new Model<>(DataNEssence.locate("textures/block/lunar_node.png")), new RelayModel(DataNEssence.locate("textures/block/lunar_node.png")) );
     }
 }

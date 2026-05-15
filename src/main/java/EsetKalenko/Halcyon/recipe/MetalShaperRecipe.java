@@ -14,7 +14,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 
-public class MetalShaperRecipe implements Recipe<RecipeInput>, DataNEssenceRecipe {
+public class MetalShaperRecipe implements Recipe<RecipeInput>, HalcyonRecipe {
     private final ItemStack output;
     private final Ingredient input;
     private final int time;

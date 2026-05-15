@@ -17,7 +17,7 @@ import net.minecraft.world.level.Level;
 
 import java.util.Map;
 
-public class SynthesisRecipe implements Recipe<RecipeInput>, IHasEssenceCost, IHasRequiredKnowledge, DataNEssenceRecipe {
+public class SynthesisRecipe implements Recipe<RecipeInput>, IHasEssenceCost, IHasRequiredKnowledge, HalcyonRecipe {
     private final ItemStack output;
     private final Ingredient input;
     private final Ingredient input2;

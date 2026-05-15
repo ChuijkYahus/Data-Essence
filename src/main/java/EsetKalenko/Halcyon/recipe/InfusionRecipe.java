@@ -17,7 +17,7 @@ import net.minecraft.world.level.Level;
 
 import java.util.Map;
 
-public class InfusionRecipe implements IHasEssenceCost, IHasRequiredKnowledge, Recipe<RecipeInput>, DataNEssenceRecipe {
+public class InfusionRecipe implements IHasEssenceCost, IHasRequiredKnowledge, Recipe<RecipeInput>, HalcyonRecipe {
     private final ItemStack output;
     private final Ingredient input;
     private final ResourceLocation entry;

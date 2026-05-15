@@ -2,7 +2,7 @@ package EsetKalenko.Halcyon.data.datatablet.pages;
 
 import EsetKalenko.Halcyon.DataNEssence;
 import EsetKalenko.Halcyon.moddata.ClientPlayerUnlockedEntries;
-import EsetKalenko.Halcyon.recipe.DataNEssenceRecipe;
+import EsetKalenko.Halcyon.recipe.HalcyonRecipe;
 import EsetKalenko.Halcyon.recipe.IHasRequiredKnowledge;
 import EsetKalenko.Halcyon.screen.DataTabletScreen;
 import EsetKalenko.Halcyon.api.datatablet.PageSerializer;
@@ -78,7 +78,7 @@ public class CraftingPage extends TextPage {
                                     || ( ClientPlayerUnlockedEntries.getIncomplete().containsKey(dataLockedRecipe.getEntry())
                                     && ClientPlayerUnlockedEntries.getIncomplete().get(dataLockedRecipe.getEntry()) >= dataLockedRecipe.getCompletionStage() );
 
-                        if (recipe instanceof DataNEssenceRecipe dneRecipe)
+                        if (recipe instanceof HalcyonRecipe dneRecipe)
                             isUnlocked = ClientPlayerUnlockedEntries.getUnlocked().contains( dneRecipe.getMachineEntry() );
 
                         if ( isUnlocked || !(recipe instanceof IHasRequiredKnowledge) ) {

@@ -2,6 +2,7 @@ package EsetKalenko.Halcyon.integration.emi;
 
 import EsetKalenko.Halcyon.DataNEssence;
 import EsetKalenko.Halcyon.moddata.ClientPlayerUnlockedEntries;
+import EsetKalenko.Halcyon.recipe.HalcyonRecipe;
 import EsetKalenko.Halcyon.recipe.IHasRequiredKnowledge;
 import dev.emi.emi.api.recipe.EmiRecipe;
 import dev.emi.emi.api.recipe.EmiRecipeCategory;
@@ -40,7 +41,21 @@ public abstract class DataNEssenceEMIRecipe implements EmiRecipe {
 
     public boolean hasData(ResourceLocation dataEntry, ResourceLocation recipe) {
         var dataLockedRecipe = (IHasRequiredKnowledge) getBackingRecipe().value();
-        return ClientPlayerUnlockedEntries.getUnlocked().contains(dataEntry) || ( ClientPlayerUnlockedEntries.getIncomplete().containsKey(dataEntry) && ClientPlayerUnlockedEntries.getIncomplete().get(dataEntry) >= dataLockedRecipe.getCompletionStage());
+        var known = false;
+        var hasBaseUnderstanding = false;
+
+        // first, do we even know about the machine the recipe is in? TODO separate method
+        if ( dataLockedRecipe instanceof HalcyonRecipe halcyonRecipe )
+            hasBaseUnderstanding = ClientPlayerUnlockedEntries.getUnlocked().contains(halcyonRecipe.getMachineEntry());
+
+        // second, is this unlocked, or incomplete and we are at the right stage?
+        known = ClientPlayerUnlockedEntries.getUnlocked().contains(dataEntry)
+                || ( ClientPlayerUnlockedEntries.getIncomplete().containsKey(dataEntry)
+                && ClientPlayerUnlockedEntries.getIncomplete().get(dataEntry) >= dataLockedRecipe.getCompletionStage());
+
+        // third, is this recipe marked to show up in EMI before completion at all?
+
+        return hasBaseUnderstanding && known;
     }
 
     public abstract void addUnlockedWidgets(WidgetHolder widgets);
