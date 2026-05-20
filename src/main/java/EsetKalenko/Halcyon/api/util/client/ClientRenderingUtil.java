@@ -6,13 +6,18 @@ import EsetKalenko.Halcyon.client.shaders.DataNEssenceCoreShaders;
 import EsetKalenko.Halcyon.client.shaders.DataNEssenceRenderTypes;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
+import dev.ryanhcode.sable.companion.SableCompanion;
+import dev.ryanhcode.sable.companion.SubLevelAccess;
+import dev.ryanhcode.sable.companion.math.Pose3dc;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.ShaderInstance;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.NonNullList;
 import net.minecraft.util.Mth;
 import net.minecraft.world.inventory.Slot;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.items.SlotItemHandler;
 import org.joml.Matrix4f;
@@ -129,5 +134,21 @@ public class ClientRenderingUtil extends ClientProgressionUtil {
     }
     public static Vector3f parametricSphere(float u, float v, float r) {
         return new Vector3f(Mth.cos(u) * Mth.sin(v) * r, Mth.cos(v) * r, Mth.sin(u) * Mth.sin(v) * r);
+    }
+
+    public static Vec3 getGlobalPos(Level level, Vec3 pos) {
+        if (level == null) return pos;
+        SubLevelAccess sublevel = SableCompanion.INSTANCE.getContaining(level, pos);
+        if (sublevel == null) return pos;
+        Pose3dc pose = sublevel.logicalPose();
+        return pose.transformPosition(pos);
+    }
+    public static BlockPos getGlobalPos(Level level, BlockPos pos) {
+        if (level == null) return pos;
+        SubLevelAccess sublevel = SableCompanion.INSTANCE.getContaining(level, pos);
+        if (sublevel == null) return pos;
+        Pose3dc pose = sublevel.logicalPose();
+        Vec3 globalPos = pose.transformPosition(pos.getCenter());
+        return BlockPos.containing(globalPos);
     }
 }
