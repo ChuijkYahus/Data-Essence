@@ -125,7 +125,8 @@ repositories {
     }
     maven { url = "https://maven.terraformersmc.com/" } // EMI
     maven { url = "https://api.modrinth.com/maven" } // Sodium, Iris, Opalescence, Pastel
-    maven { url = 'https://modmaven.dev/' } // Mekanism
+    maven { url = "https://modmaven.dev/" } // Mekanism
+    maven { url = "https://maven.ryanhcode.dev/releases" } // Sable
     mavenCentral()
 }
 
@@ -151,7 +152,7 @@ dependencies {
     implementation "maven.modrinth:curios:9.5.1+1.21.1"
 
     implementation "maven.modrinth:iris:1.8.1+1.21.1-neoforge"
-    implementation "maven.modrinth:sodium:mc1.21.1-0.6.7-neoforge"
+    implementation "maven.modrinth:sodium:mc1.21.1-0.6.9-neoforge"
     implementation "maven.modrinth:jade:15.9.2+neoforge"
 
     // Compats
@@ -167,6 +168,16 @@ dependencies {
         runtimeOnly "maven.modrinth:exclusions-lib:1.1.0-NEO"
     } else {
         compileOnly "maven.modrinth:pastel-mod:${pastel_version}"
+    }
+    if (sable_enabled == "true") {
+        implementation("dev.ryanhcode.sable:sable-neoforge-${minecraft_version}:${sable_version}") {
+            exclude group: 'com.simibubi.create', module: "create-${minecraft_version}"
+            exclude group: 'net.createmod.ponder', module: 'ponder-neoforge'
+            exclude group: 'dev.engine-room.flywheel', module: "flywheel-neoforge-${minecraft_version}"
+            exclude group: 'com.tterrag.registrate', module: 'Registrate'
+        }
+    } else {
+        jarJar (api "dev.ryanhcode.sable-companion:sable-companion-common-${minecraft_version}:${sable_companion_version}")
     }
 }
 tasks.withType(ProcessResources).configureEach {

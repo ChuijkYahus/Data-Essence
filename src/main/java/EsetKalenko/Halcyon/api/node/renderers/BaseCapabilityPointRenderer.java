@@ -47,14 +47,15 @@ public abstract class BaseCapabilityPointRenderer<T extends BaseCapabilityPointB
     @Override
     public void render(T pBlockEntity, float pPartialTick, PoseStack pPoseStack, MultiBufferSource pBufferSource, int pPackedLight, int pPackedOverlay) {
         if (pBlockEntity.link != null) {
-            BlockPos blockPos = pBlockEntity.getBlockPos();
+            BlockPos blockPos = ClientRenderingUtil.getGlobalPos(pBlockEntity.getLevel(), pBlockEntity.getBlockPos());
             Vec3 pos = blockPos.getCenter();
             pPoseStack.pushPose();
             pPoseStack.translate(-pos.x, -pos.y, -pos.z);
             pPoseStack.translate(0.5, 0.5, 0.5);
             Vec3 origin = blockPos.getCenter();
             for (BlockPos i : pBlockEntity.link) {
-                Vec3 target = i.getCenter();
+                BlockPos targetBlockPos = ClientRenderingUtil.getGlobalPos(pBlockEntity.getLevel(), i);
+                Vec3 target = targetBlockPos.getCenter();
                 VertexConsumer vertexConsumer = RenderHandler.createBufferSource().getBuffer(DataNEssenceRenderTypes.WIRES);
                 Color segColor1 = pBlockEntity.linkColor()[0];
                 Color segColor2 = pBlockEntity.linkColor()[1];
@@ -66,7 +67,7 @@ public abstract class BaseCapabilityPointRenderer<T extends BaseCapabilityPointB
                         return segColor3;
                     }
                     return 7-(seg % 8) == currentSeg || 7-(seg % 8) == getSegWithOffset(currentSeg, -1) ? segColor1 : segColor2;
-                }, blockPos.getX() == i.getX() && blockPos.getZ() == i.getZ() ? 0 : 0.3);
+                }, blockPos.getX() == targetBlockPos.getX() && blockPos.getZ() == targetBlockPos.getZ() ? 0 : 0.3);
             }
             pPoseStack.popPose();
         }
