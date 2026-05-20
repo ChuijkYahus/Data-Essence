@@ -46,27 +46,25 @@ public abstract class BaseEssencePointRenderer<T extends BaseEssencePointBlockEn
     @Override
     public void render(T pBlockEntity, float pPartialTick, PoseStack pPoseStack, MultiBufferSource pBufferSource, int pPackedLight, int pPackedOverlay) {
         if (pBlockEntity.link != null) {
-            BlockPos blockPos = ClientRenderingUtil.getGlobalPos(pBlockEntity.getLevel(), pBlockEntity.getBlockPos());
+            BlockPos blockPos = pBlockEntity.getBlockPos();
             Vec3 pos = blockPos.getCenter();
             pPoseStack.pushPose();
-            pPoseStack.translate(-pos.x, -pos.y, -pos.z);
             pPoseStack.translate(0.5, 0.5, 0.5);
             Vec3 origin = blockPos.getCenter();
             for (BlockPos i : pBlockEntity.link) {
-                BlockPos targetBlockPos = ClientRenderingUtil.getGlobalPos(pBlockEntity.getLevel(), i);
-                Vec3 target = targetBlockPos.getCenter();
+                Vec3 target = i.getCenter();
                 VertexConsumer vertexConsumer = RenderHandler.createBufferSource().getBuffer(DataNEssenceRenderTypes.WIRES);
                 Color segColor1 = pBlockEntity.linkColor()[0];
                 Color segColor2 = pBlockEntity.linkColor()[1];
                 Color segColor3 = ColorUtil.blendColors(segColor1, segColor2, 0.35f);
                 float ticks = (Minecraft.getInstance().level.getGameTime() % 8)+pPartialTick;
                 int currentSeg = (int)(ticks % 8);
-                ClientRenderingUtil.renderLine(vertexConsumer, pPoseStack, origin, target, (seg) -> {
+                ClientRenderingUtil.renderLine(vertexConsumer, pPoseStack, Vec3.ZERO, target.subtract(origin), (seg) -> {
                     if (7-(seg % 8) == getSegWithOffset(currentSeg, -2) || 7-(seg % 8) == getSegWithOffset(currentSeg, 1) % 8) {
                         return segColor3;
                     }
                     return 7-(seg % 8) == currentSeg || 7-(seg % 8) == getSegWithOffset(currentSeg, -1) ? segColor1 : segColor2;
-                }, blockPos.getX() == targetBlockPos.getX() && blockPos.getZ() == targetBlockPos.getZ() ? 0 : 0.3);
+                }, blockPos.getX() == i.getX() && blockPos.getZ() == i.getZ() ? 0 : 0.3);
             }
             pPoseStack.popPose();
         }
