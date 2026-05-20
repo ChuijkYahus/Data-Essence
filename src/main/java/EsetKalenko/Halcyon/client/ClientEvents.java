@@ -113,9 +113,11 @@ public class ClientEvents {
             if (ClientPlayerData.getLinkPos() != null) {
                 BlockEntity blockEntity = mc.level.getBlockEntity(ClientPlayerData.getLinkPos());
                 Vec3 pos = event.getCamera().getPosition();
-                Vec3 pos1 = ClientPlayerData.getLinkPos().getCenter().subtract(pos);
-                Vec3 pos2 = mc.player.getRopeHoldPosition(event.getPartialTick().getGameTimeDeltaPartialTick(true)).subtract(pos);
+                Vec3 pos1 = ClientRenderingUtil.transformPosition(ClientPlayerData.getLinkPos().getCenter());
+                Vec3 pos2 = mc.player.getRopeHoldPosition(event.getPartialTick().getGameTimeDeltaPartialTick(true));
                 Color color = ClientPlayerData.getLinkColor();
+                event.getPoseStack().pushPose();
+                event.getPoseStack().translate(-pos.x, -pos.y, -pos.z);
                 if (blockEntity instanceof PearlNetworkBlockEntity ent) {
                     Vec3 currentPos = pos1;
                     Vec3 target = pos2;
@@ -127,6 +129,7 @@ public class ClientEvents {
                 } else {
                     ClientRenderingUtil.renderLine(bufferSource.getBuffer(DataNEssenceRenderTypes.WIRES), event.getPoseStack(), pos1, pos2, color);
                 }
+                event.getPoseStack().popPose();
             }
             for (Player i : mc.level.players()) {
                 GrapplingHook.GrapplingHookData grapplingHookData = i.getData(AttachmentTypeRegistry.GRAPPLING_HOOK_DATA).orElse(null);
