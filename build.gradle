@@ -177,7 +177,7 @@ dependencies {
             exclude group: 'com.tterrag.registrate', module: 'Registrate'
         }
     } else {
-        compileOnly "dev.ryanhcode.sable:sable-neoforge-${minecraft_version}:${sable_version}"
+        jarJar (api "dev.ryanhcode.sable-companion:sable-companion-common-${minecraft_version}:${sable_companion_version}")
     }
 }
 tasks.withType(ProcessResources).configureEach {
