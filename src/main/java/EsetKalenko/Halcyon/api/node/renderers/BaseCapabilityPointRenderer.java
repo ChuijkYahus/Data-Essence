@@ -15,6 +15,9 @@ import EsetKalenko.Halcyon.client.shaders.DataNEssenceRenderTypes;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
+import dev.ryanhcode.sable.companion.SableCompanion;
+import dev.ryanhcode.sable.companion.SubLevelAccess;
+import dev.ryanhcode.sable.companion.math.Pose3dc;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.LightTexture;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -22,6 +25,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemDisplayContext;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.properties.AttachFace;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
@@ -47,14 +51,15 @@ public abstract class BaseCapabilityPointRenderer<T extends BaseCapabilityPointB
     @Override
     public void render(T pBlockEntity, float pPartialTick, PoseStack pPoseStack, MultiBufferSource pBufferSource, int pPackedLight, int pPackedOverlay) {
         if (pBlockEntity.link != null) {
-            BlockPos blockPos = pBlockEntity.getBlockPos();
+            BlockPos blockPos = getGlobalPos(pBlockEntity.getLevel(), pBlockEntity.getBlockPos());
             Vec3 pos = blockPos.getCenter();
             pPoseStack.pushPose();
             pPoseStack.translate(-pos.x, -pos.y, -pos.z);
             pPoseStack.translate(0.5, 0.5, 0.5);
             Vec3 origin = blockPos.getCenter();
             for (BlockPos i : pBlockEntity.link) {
-                Vec3 target = i.getCenter();
+                BlockPos targetBlockPos = getGlobalPos(pBlockEntity.getLevel(), i);
+                Vec3 target = targetBlockPos.getCenter();
                 VertexConsumer vertexConsumer = RenderHandler.createBufferSource().getBuffer(DataNEssenceRenderTypes.WIRES);
                 Color segColor1 = pBlockEntity.linkColor()[0];
                 Color segColor2 = pBlockEntity.linkColor()[1];
@@ -66,7 +71,7 @@ public abstract class BaseCapabilityPointRenderer<T extends BaseCapabilityPointB
                         return segColor3;
                     }
                     return 7-(seg % 8) == currentSeg || 7-(seg % 8) == getSegWithOffset(currentSeg, -1) ? segColor1 : segColor2;
-                }, blockPos.getX() == i.getX() && blockPos.getZ() == i.getZ() ? 0 : 0.3);
+                }, blockPos.getX() == targetBlockPos.getX() && blockPos.getZ() == targetBlockPos.getZ() ? 0 : 0.3);
             }
             pPoseStack.popPose();
         }
@@ -92,6 +97,23 @@ public abstract class BaseCapabilityPointRenderer<T extends BaseCapabilityPointB
         RenderingUtil.renderItemWithColor(pBlockEntity.universalUpgrade.getStackInSlot(0), ItemDisplayContext.FIXED, false, pPoseStack, pBufferSource, LightTexture.FULL_BRIGHT, pPackedOverlay, color, pBlockEntity.getLevel());
         pPoseStack.popPose();
         super.render(pBlockEntity, pPartialTick, pPoseStack, pBufferSource, pPackedLight, pPackedOverlay);
+    }
+
+    private Vec3 getGlobalPos(Level level, Vec3 pos) {
+        if (level == null) return pos;
+        SubLevelAccess sublevel = SableCompanion.INSTANCE.getContaining(level, pos);
+        if (sublevel == null) return pos;
+        Pose3dc pose = sublevel.logicalPose();
+        return pose.transformPosition(pos);
+    }
+
+    private BlockPos getGlobalPos(Level level, BlockPos pos) {
+        if (level == null) return pos;
+        SubLevelAccess sublevel = SableCompanion.INSTANCE.getContaining(level, pos);
+        if (sublevel == null) return pos;
+        Pose3dc pose = sublevel.logicalPose();
+        Vec3 globalPos = pose.transformPosition(pos.getCenter());
+        return BlockPos.containing(globalPos);
     }
 
     private int getSegWithOffset(int seg, int offset) {
