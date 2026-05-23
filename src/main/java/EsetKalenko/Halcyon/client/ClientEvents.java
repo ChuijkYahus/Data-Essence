@@ -441,13 +441,18 @@ public class ClientEvents {
         var player = mc.player;
         if (mc.level != null)
         {
-            for (Map.Entry<StructurePing, Integer> i : new ArrayList<>(pings.entrySet())) {
-                if (i.getValue()-1 <= 0) {
-                    pings.remove(i.getKey());
+
+            // tick Structure Ping renders
+            for (Map.Entry<StructurePing, Integer> ping : new ArrayList<>(pings.entrySet())) {
+                if (ping.getValue()-1 <= 0) {
+                    pings.remove(ping.getKey());
                 } else {
-                    pings.put(i.getKey(), i.getValue()-1);
+                    if ( mc.isPaused() )
+                        return;
+                    pings.put(ping.getKey(), ping.getValue()-1);
                 }
             }
+
             if (mc.player != null) {
                 boolean playedASound = false;
                 for (Map.Entry<BlockPos, Integer> i : new ArrayList<>(AddScannedOre.scanned.entrySet())) {
