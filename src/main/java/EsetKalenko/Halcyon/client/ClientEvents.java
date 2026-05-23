@@ -113,7 +113,7 @@ public class ClientEvents {
             if (ClientPlayerData.getLinkPos() != null) {
                 BlockEntity blockEntity = mc.level.getBlockEntity(ClientPlayerData.getLinkPos());
                 Vec3 pos = event.getCamera().getPosition();
-                Vec3 pos1 = ClientRenderingUtil.getGlobalPos(mc.level, ClientPlayerData.getLinkPos().getCenter());
+                Vec3 pos1 = ClientRenderingUtil.transformPosition(ClientPlayerData.getLinkPos().getCenter());
                 Vec3 pos2 = mc.player.getRopeHoldPosition(event.getPartialTick().getGameTimeDeltaPartialTick(true));
                 Color color = ClientPlayerData.getLinkColor();
                 event.getPoseStack().pushPose();
