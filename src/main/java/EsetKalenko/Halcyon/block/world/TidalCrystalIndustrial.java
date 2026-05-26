@@ -21,7 +21,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 import javax.annotation.Nullable;
 
-public class EssenceCrystal extends Block {
+public class TidalCrystalIndustrial extends Block {
     public static final DirectionProperty FACING = BlockStateProperties.FACING;
     protected final VoxelShape northAabb;
     protected final VoxelShape southAabb;
@@ -31,7 +31,7 @@ public class EssenceCrystal extends Block {
     protected final VoxelShape downAabb;
 
 
-    public EssenceCrystal(Properties pProperties) {
+    public TidalCrystalIndustrial(Properties pProperties) {
         super(pProperties);
         this.registerDefaultState(this.defaultBlockState().setValue(FACING, Direction.UP));
         int pOffset = 4;

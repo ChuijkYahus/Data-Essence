@@ -13,7 +13,6 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
-import org.jgrapht.graph.DefaultEdge;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,12 +25,9 @@ public class PearlNetworkBlockEntity extends BlockEntity {
     public void updateLinks() {
         link.clear();
         BlockPosNetworks networks = level.getData(AttachmentTypeRegistry.ENDER_PEARL_NETWORKS);
-        if (networks.graph.containsVertex(getBlockPos())) {
-            for (DefaultEdge i : networks.graph.edgesOf(getBlockPos())) {
-                if (networks.graph.getEdgeSource(i).equals(getBlockPos())) {
-                    BlockPos target = networks.graph.getEdgeTarget(i);
-                    link.add(target);
-                }
+        if (networks.graph.vertices().contains(getBlockPos())) {
+            for (var i : networks.graph.outEdges(getBlockPos())) {
+                link.add(i.target());
             }
         }
     }
@@ -101,7 +97,7 @@ public class PearlNetworkBlockEntity extends BlockEntity {
         if (level != null) {
             if (!level.isClientSide) {
                 BlockPosNetworks networks = level.getData(AttachmentTypeRegistry.ENDER_PEARL_NETWORKS);
-                if (!networks.graph.containsVertex(getBlockPos())) {
+                if (!networks.graph.vertices().contains(getBlockPos())) {
                     networks.graph.addVertex(getBlockPos());
                 }
             }

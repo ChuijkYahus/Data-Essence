@@ -15,7 +15,7 @@ import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 import net.neoforged.neoforge.fluids.FluidStack;
 
-public class MeltingRecipe implements Recipe<RecipeInput>, DataNEssenceRecipe {
+public class MeltingRecipe implements Recipe<RecipeInput>, HalcyonRecipe {
     private final FluidStack output;
     private final Ingredient input;
     private final int time;

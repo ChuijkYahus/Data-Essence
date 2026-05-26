@@ -38,7 +38,7 @@ public class ModEventBusEvents {
     public static void commonSetup(FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
             DispenserBlock.registerProjectileBehavior(ItemRegistry.ESSENCE_BOMB.get());
-            DispenserBlock.registerProjectileBehavior(ItemRegistry.LUNAR_ESSENCE_BOMB.get());
+            DispenserBlock.registerProjectileBehavior(ItemRegistry.CRYSTALLIZATION_CHARGE.get());
             DispenserBlock.registerProjectileBehavior(ItemRegistry.NATURAL_ESSENCE_BOMB.get());
             DispenserBlock.registerProjectileBehavior(ItemRegistry.EXOTIC_ESSENCE_BOMB.get());
         });

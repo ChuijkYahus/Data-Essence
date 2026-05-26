@@ -62,7 +62,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.add(BlockRegistry.EMPTY_CRYOCHAMBER_ROUTER.get(),
                 block -> noDrop());
         this.add(BlockRegistry.ESSENCE_CRYSTAL.get(), block -> createEssenceCrystalDrops(block, ItemRegistry.ESSENCE_SHARD.get()));
-        this.add(BlockRegistry.LUNAR_ESSENCE_CRYSTAL.get(), block -> createEssenceCrystalDrops(block, ItemRegistry.LUNAR_ESSENCE_SHARD.get()));
+        this.add(BlockRegistry.CRYSTAL_OF_TRANSFORMATION.get(), block -> createEssenceCrystalDrops(block, ItemRegistry.SHARD_OF_TRANSFORMATION.get()));
         dropOther(BlockRegistry.ANCIENT_ROCK_COLUMN.get(), BlockRegistry.SHIELDLESS_ANCIENT_ROCK_COLUMN.get().asItem());
         dropOther(BlockRegistry.ANCIENT_ROCK_BRICKS.get(), BlockRegistry.SHIELDLESS_ANCIENT_ROCK_BRICKS.get().asItem());
         dropOther(BlockRegistry.ANCIENT_ROCK_TILES.get(), BlockRegistry.SHIELDLESS_ANCIENT_ROCK_TILES.get().asItem());
@@ -148,7 +148,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         dropSelf(BlockRegistry.MAKUTUIN_RUNNER.get());
         dropSelf(BlockRegistry.MAKUTUIN_RUNNER_CROSS.get());
         dropSelf(BlockRegistry.ESSENCE_DERIVATION_SPIKE.get());
-        dropSelf(BlockRegistry.LUNAR_CRYSTAL_SEED.get());
+        dropSelf(BlockRegistry.TIDAL_METEORITE.get());
         dropSelf(BlockRegistry.ECLIPTRUM_BLOCK.get());
         dropSelf(BlockRegistry.CRYSTALLINE_CRADLE.get());
         dropSelf(BlockRegistry.VERMILION_GRASS_BLOCK.get());

@@ -17,7 +17,7 @@ import net.neoforged.neoforge.fluids.FluidStack;
 
 import java.util.Optional;
 
-public class DryingRecipe implements Recipe<RecipeInputWithFluid>, DataNEssenceRecipe {
+public class DryingRecipe implements Recipe<RecipeInputWithFluid>, HalcyonRecipe {
     private final FluidStack input;
     private final ItemStack output;
     private final Optional<Ingredient> additive;

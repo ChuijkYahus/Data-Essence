@@ -7,7 +7,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 
-public interface IFabricationRecipe extends Recipe<CraftingInput>, IHasRequiredKnowledge, IHasEssenceCost, DataNEssenceRecipe {
+public interface IFabricationRecipe extends Recipe<CraftingInput>, IHasRequiredKnowledge, IHasEssenceCost, HalcyonRecipe {
     @Override
     default RecipeType<?> getType() {
         return RecipeRegistry.FABRICATIONCRAFTING.get();

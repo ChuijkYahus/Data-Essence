@@ -14,9 +14,9 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
-public class LunarCrystalSeed extends Block implements EntityBlock {
+public class TidalMeteorite extends Block implements EntityBlock {
     private static final VoxelShape SHAPE =  Block.box(2, 0, 2, 14, 12, 14);
-    public LunarCrystalSeed(Properties properties) {
+    public TidalMeteorite(Properties properties) {
         super(properties);
     }
     @Override

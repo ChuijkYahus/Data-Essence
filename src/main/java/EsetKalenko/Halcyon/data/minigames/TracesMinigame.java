@@ -40,7 +40,7 @@ public class TracesMinigame extends Minigame {
     @Override
     public boolean isFinished() {
         boolean finished = true;
-        List<Vector2i> unfilledTiles = new ArrayList<>(tiles.keySet().stream().toList());
+        List<Vector2i> unfilledTiles = new ArrayList<>(tiles.keySet());
         for (Map.Entry<Vector2i, Tile> i : tiles.entrySet()) {
             if (i.getValue().type == 1 || i.getValue().type == 2) {
                 unfilledTiles.remove(i.getKey());

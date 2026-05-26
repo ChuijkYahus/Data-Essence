@@ -29,7 +29,7 @@ public class LunarStrikeRenderer extends EntityRenderer<LunarStrike> {
         pPoseStack.scale(1.5F, 1.5F, 1.5F);
         pPoseStack.pushPose();
         pPoseStack.translate(0, (0.5*1.5)-(0.5), 0);
-        Minecraft.getInstance().getItemRenderer().renderStatic(new ItemStack(BlockRegistry.LUNAR_CRYSTAL_SEED.get()), ItemDisplayContext.HEAD, pPackedLight, OverlayTexture.NO_OVERLAY, pPoseStack, pBuffer, pEntity.level(), 0);
+        Minecraft.getInstance().getItemRenderer().renderStatic(new ItemStack(BlockRegistry.TIDAL_METEORITE.get()), ItemDisplayContext.HEAD, pPackedLight, OverlayTexture.NO_OVERLAY, pPoseStack, pBuffer, pEntity.level(), 0);
         pPoseStack.popPose();
         pPoseStack.popPose();
     }

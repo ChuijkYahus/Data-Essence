@@ -1,6 +1,5 @@
 package EsetKalenko.Halcyon.client;
 
-import EsetKalenko.Halcyon.registry.*;
 import com.cmdpro.databank.misc.RenderingUtil;
 import com.cmdpro.databank.rendering.ColorUtil;
 import com.cmdpro.databank.rendering.RenderHandler;
@@ -114,7 +113,7 @@ public class ClientEvents {
             if (ClientPlayerData.getLinkPos() != null) {
                 BlockEntity blockEntity = mc.level.getBlockEntity(ClientPlayerData.getLinkPos());
                 Vec3 pos = event.getCamera().getPosition();
-                Vec3 pos1 = ClientPlayerData.getLinkPos().getCenter();
+                Vec3 pos1 = ClientRenderingUtil.transformPosition(ClientPlayerData.getLinkPos().getCenter());
                 Vec3 pos2 = mc.player.getRopeHoldPosition(event.getPartialTick().getGameTimeDeltaPartialTick(true));
                 Color color = ClientPlayerData.getLinkColor();
                 event.getPoseStack().pushPose();
@@ -442,16 +441,21 @@ public class ClientEvents {
         var player = mc.player;
         if (mc.level != null)
         {
-            for (Map.Entry<StructurePing, Integer> i : pings.entrySet().stream().toList()) {
-                if (i.getValue()-1 <= 0) {
-                    pings.remove(i.getKey());
+
+            // tick Structure Ping renders
+            for (Map.Entry<StructurePing, Integer> ping : new ArrayList<>(pings.entrySet())) {
+                if (ping.getValue()-1 <= 0) {
+                    pings.remove(ping.getKey());
                 } else {
-                    pings.put(i.getKey(), i.getValue()-1);
+                    if ( mc.isPaused() )
+                        return;
+                    pings.put(ping.getKey(), ping.getValue()-1);
                 }
             }
+
             if (mc.player != null) {
                 boolean playedASound = false;
-                for (Map.Entry<BlockPos, Integer> i : AddScannedOre.scanned.entrySet().stream().toList()) {
+                for (Map.Entry<BlockPos, Integer> i : new ArrayList<>(AddScannedOre.scanned.entrySet())) {
                     int value = i.getValue() - 1;
                     if (i.getValue() > 0 && value <= 0) {
                         if (!playedASound) {

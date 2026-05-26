@@ -56,11 +56,11 @@ public class ItemRegistry {
 
     // Essence Shards
     public static final Supplier<Item> ESSENCE_SHARD = register("essence_shard", () -> new EssenceShard(new Item.Properties(), Map.of(EssenceTypeRegistry.ESSENCE, 100f)));
-    public static final Supplier<Item> LUNAR_ESSENCE_SHARD = register("lunar_essence_shard", () -> new EssenceShard(new Item.Properties(), Map.of(EssenceTypeRegistry.LUNAR_ESSENCE, 100f)));
+    public static final Supplier<Item> SHARD_OF_TRANSFORMATION = register("shard_of_transformation", () -> new EssenceShard(new Item.Properties(), Map.of(EssenceTypeRegistry.LUNAR_ESSENCE, 100f)));
 
     // Wires
     public static final Supplier<Item> ESSENCE_WIRE = register("essence_wire", () -> new Item(new Item.Properties()));
-    public static final Supplier<Item> LUNAR_ESSENCE_WIRE = register("lunar_essence_wire", () -> new Item(new Item.Properties()));
+    public static final Supplier<Item> LUNAR_WIRE = register("lunar_wire", () -> new Item(new Item.Properties()));
     public static final Supplier<Item> NATURAL_ESSENCE_WIRE = register("natural_essence_wire", () -> new Item(new Item.Properties()));
     public static final Supplier<Item> EXOTIC_ESSENCE_WIRE = register("exotic_essence_wire", () -> new Item(new Item.Properties()));
     public static final Supplier<Item> ITEM_WIRE = register("item_wire", () -> new Item(new Item.Properties()));
@@ -71,7 +71,7 @@ public class ItemRegistry {
 
     // Bombs
     public static final Supplier<Item> ESSENCE_BOMB = register("essence_bomb", () -> new EssenceBombItem(new Item.Properties()));
-    public static final Supplier<Item> LUNAR_ESSENCE_BOMB = register("lunar_essence_bomb", () -> new LunarEssenceBombItem(new Item.Properties()));
+    public static final Supplier<Item> CRYSTALLIZATION_CHARGE = register("crystallization_charge", () -> new CrystallizationCharge(new Item.Properties()));
     public static final Supplier<Item> NATURAL_ESSENCE_BOMB = register("natural_essence_bomb", () -> new NaturalEssenceBombItem(new Item.Properties()));
     public static final Supplier<Item> EXOTIC_ESSENCE_BOMB = register("exotic_essence_bomb", () -> new ExoticEssenceBombItem(new Item.Properties()));
 
@@ -104,6 +104,7 @@ public class ItemRegistry {
 
     // Ore Processing Intermediates and Nuggets
     public static final Supplier<Item> COPPER_NUGGET = register("copper_nugget", () -> new Item(new Item.Properties()));
+    public static final Supplier<Item> ECLIPTRUM_NUGGET = register("ecliptrum_nugget", () -> new Item(new Item.Properties()));
     public static final Supplier<Item> DIAMOND_SHARD = register("diamond_shard", () -> new Item(new Item.Properties()));
     public static final Supplier<Item> EMERALD_SHARD = register("emerald_shard", () -> new Item(new Item.Properties()));
     public static final Supplier<Item> COAL_LUMP = register("coal_lump", () -> new FuelItem(new Item.Properties(), 200));

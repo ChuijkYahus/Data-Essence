@@ -14,6 +14,8 @@ import EsetKalenko.Halcyon.api.node.block.BaseEssencePointBlockEntity;
 import EsetKalenko.Halcyon.client.shaders.DataNEssenceRenderTypes;
 import com.mojang.blaze3d.vertex.*;
 import com.mojang.math.Axis;
+import dev.ryanhcode.sable.companion.ClientSubLevelAccess;
+import dev.ryanhcode.sable.companion.SableCompanion;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.LightTexture;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -24,6 +26,8 @@ import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.level.block.state.properties.AttachFace;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
+import org.joml.Quaterniondc;
+import org.joml.Quaternionf;
 
 import java.awt.*;
 
@@ -47,13 +51,20 @@ public abstract class BaseEssencePointRenderer<T extends BaseEssencePointBlockEn
     public void render(T pBlockEntity, float pPartialTick, PoseStack pPoseStack, MultiBufferSource pBufferSource, int pPackedLight, int pPackedOverlay) {
         if (pBlockEntity.link != null) {
             BlockPos blockPos = pBlockEntity.getBlockPos();
-            Vec3 pos = blockPos.getCenter();
             pPoseStack.pushPose();
-            pPoseStack.translate(-pos.x, -pos.y, -pos.z);
             pPoseStack.translate(0.5, 0.5, 0.5);
-            Vec3 origin = blockPos.getCenter();
+
+            ClientSubLevelAccess sublevel = SableCompanion.INSTANCE.getContainingClient(blockPos);
+            if (sublevel != null) {
+                Quaterniondc sublevelOrientation = sublevel.renderPose().orientation();
+                Quaternionf worldOrientation = sublevelOrientation.get(new Quaternionf()).conjugate();
+                pPoseStack.mulPose(worldOrientation);
+            }
+            Vec3 origin = ClientRenderingUtil.transformPosition(blockPos.getCenter());
+
+            pPoseStack.translate(-origin.x, -origin.y, -origin.z);
             for (BlockPos i : pBlockEntity.link) {
-                Vec3 target = i.getCenter();
+                Vec3 target = ClientRenderingUtil.transformPosition(i.getCenter());
                 VertexConsumer vertexConsumer = RenderHandler.createBufferSource().getBuffer(DataNEssenceRenderTypes.WIRES);
                 Color segColor1 = pBlockEntity.linkColor()[0];
                 Color segColor2 = pBlockEntity.linkColor()[1];
@@ -65,7 +76,7 @@ public abstract class BaseEssencePointRenderer<T extends BaseEssencePointBlockEn
                         return segColor3;
                     }
                     return 7-(seg % 8) == currentSeg || 7-(seg % 8) == getSegWithOffset(currentSeg, -1) ? segColor1 : segColor2;
-                }, blockPos.getX() == i.getX() && blockPos.getZ() == i.getZ() ? 0 : 0.3);
+                }, target.subtract(origin).horizontalDistance() < 0.3 ? 0 : 0.3);
             }
             pPoseStack.popPose();
         }

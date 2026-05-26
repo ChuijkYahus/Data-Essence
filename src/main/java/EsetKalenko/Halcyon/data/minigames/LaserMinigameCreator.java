@@ -11,6 +11,7 @@ import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
 import org.joml.Vector2i;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -72,7 +73,7 @@ public class LaserMinigameCreator extends MinigameCreator {
                         map.put(i.pos, i);
                     }
                     return map;
-                }, (a) -> a.values().stream().toList()).forGetter(minigame -> minigame.tiles)
+                }, (a) -> new ArrayList<>(a.values())).forGetter(minigame -> minigame.tiles)
         ).apply(instance, LaserMinigameCreator::new));
         @Override
         public MapCodec<LaserMinigameCreator> getCodec() {

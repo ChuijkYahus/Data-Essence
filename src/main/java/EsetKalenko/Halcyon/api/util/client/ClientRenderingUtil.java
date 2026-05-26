@@ -6,6 +6,8 @@ import EsetKalenko.Halcyon.client.shaders.DataNEssenceCoreShaders;
 import EsetKalenko.Halcyon.client.shaders.DataNEssenceRenderTypes;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
+import dev.ryanhcode.sable.companion.ClientSubLevelAccess;
+import dev.ryanhcode.sable.companion.SableCompanion;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -112,7 +114,7 @@ public class ClientRenderingUtil extends ClientProgressionUtil {
             double startLerp = getFractionalLerp(i, segmentCount - 1);
             double startYLerp = getYLerp(startLerp, diff.y);
             double sagFactor = sag * (1 - (4 * Math.pow(startLerp - 0.5, 2)));
-            double y = diff.y != 0 ? (startYLerp - sagFactor) * diff.y : -sagFactor;
+            double y = (startYLerp - sagFactor) * diff.y - sagFactor;
             segments.add(new Vec3(startLerp * diff.x, y, startLerp * diff.z).add(sagOrigin));
         }
         if (!segments.isEmpty()) {
@@ -129,5 +131,10 @@ public class ClientRenderingUtil extends ClientProgressionUtil {
     }
     public static Vector3f parametricSphere(float u, float v, float r) {
         return new Vector3f(Mth.cos(u) * Mth.sin(v) * r, Mth.cos(v) * r, Mth.sin(u) * Mth.sin(v) * r);
+    }
+    public static Vec3 transformPosition(Vec3 pos) {
+        ClientSubLevelAccess sublevel = SableCompanion.INSTANCE.getContainingClient(pos);
+        if (sublevel == null) return pos;
+        return sublevel.renderPose().transformPosition(pos);
     }
 }

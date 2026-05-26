@@ -1,8 +1,8 @@
 package EsetKalenko.Halcyon.block.world;
 
-public class LunarEssenceCrystal extends EssenceCrystal {
+public class TidalCrystalLunar extends TidalCrystalIndustrial {
 
-    public LunarEssenceCrystal(Properties properties) {
+    public TidalCrystalLunar(Properties properties) {
         super(properties);
     }
 

@@ -1,5 +1,6 @@
 package EsetKalenko.Halcyon.api.node.block;
 
+import EsetKalenko.Halcyon.api.util.BlockPosEdge;
 import com.cmdpro.databank.model.animation.DatabankAnimationReference;
 import com.cmdpro.databank.model.animation.DatabankAnimationState;
 import EsetKalenko.Halcyon.DataNEssence;
@@ -7,6 +8,7 @@ import EsetKalenko.Halcyon.api.misc.BlockPosNetworks;
 import EsetKalenko.Halcyon.api.node.item.INodeUpgrade;
 import EsetKalenko.Halcyon.client.particle.CircleParticleOptions;
 import EsetKalenko.Halcyon.registry.AttachmentTypeRegistry;
+import com.jgalgo.alg.common.Path;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
@@ -23,15 +25,12 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.AttachFace;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.items.ItemStackHandler;
-import org.jgrapht.GraphPath;
-import org.jgrapht.alg.interfaces.ShortestPathAlgorithm;
-import org.jgrapht.graph.DefaultEdge;
 import org.joml.Vector3f;
 
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
+import java.util.Objects;
 
 public abstract class BaseEssencePointBlockEntity extends BlockEntity {
     public DatabankAnimationState animState = new DatabankAnimationState("idle")
@@ -93,7 +92,7 @@ public abstract class BaseEssencePointBlockEntity extends BlockEntity {
         if (level != null) {
             if (!level.isClientSide) {
                 BlockPosNetworks networks = level.getData(AttachmentTypeRegistry.ESSENCE_NODE_NETWORKS);
-                if (!networks.graph.containsVertex(getBlockPos())) {
+                if (!networks.graph.vertices().contains(getBlockPos())) {
                     networks.graph.addVertex(getBlockPos());
                 }
                 updateBlock();
@@ -109,10 +108,9 @@ public abstract class BaseEssencePointBlockEntity extends BlockEntity {
                 pBlockEntity.updateLinks();
             }
             BlockPosNetworks networks = pLevel.getData(AttachmentTypeRegistry.ESSENCE_NODE_NETWORKS);
-            Set<DefaultEdge> edges = networks.graph.edgesOf(pPos);
-            if (edges.stream().noneMatch((edge) -> networks.graph.getEdgeTarget(edge).equals(pPos)) && !edges.isEmpty()) {
-                ShortestPathAlgorithm.SingleSourcePaths<BlockPos, DefaultEdge> paths = networks.path.getPaths(pPos);
-                List<GraphPath<BlockPos, DefaultEdge>> ends = networks.graph.vertexSet().stream().filter((vertex) -> pLevel.isLoaded(vertex) && networks.graph.edgesOf(vertex).stream().noneMatch((edge) -> networks.graph.getEdgeSource(edge).equals(vertex)) && paths.getPath(vertex) != null).map(paths::getPath).toList();
+            if (networks.graph.inEdges(pPos).isEmpty() && !networks.graph.outEdges(pPos).isEmpty()) {
+                var paths = networks.graph.getPaths(pPos);
+                List<Path<BlockPos, BlockPosEdge>> ends = networks.graph.vertices().stream().filter((vertex) -> pLevel.isLoaded(vertex) && networks.graph.outEdges(vertex).isEmpty()).map(paths::getPath).filter(Objects::nonNull).toList();
                 pBlockEntity.preTransferHooks(pBlockEntity, ends);
                 pBlockEntity.transfer(pBlockEntity, ends);
                 pBlockEntity.postTransferHooks(pBlockEntity, ends);
@@ -146,16 +144,13 @@ public abstract class BaseEssencePointBlockEntity extends BlockEntity {
         }
         link.clear();
         BlockPosNetworks networks = level.getData(AttachmentTypeRegistry.ESSENCE_NODE_NETWORKS);
-        if (networks.graph.containsVertex(getBlockPos())) {
-            for (DefaultEdge i : networks.graph.edgesOf(getBlockPos())) {
-                if (networks.graph.getEdgeSource(i).equals(getBlockPos())) {
-                    BlockPos target = networks.graph.getEdgeTarget(i);
-                    link.add(target);
-                }
+        if (networks.graph.vertices().contains(getBlockPos())) {
+            for (var i : networks.graph.outEdges(getBlockPos())) {
+                link.add(i.target());
             }
         }
     }
-    public boolean preTransferHooks(BlockEntity from, List<GraphPath<BlockPos, DefaultEdge>> other) {
+    public boolean preTransferHooks(BlockEntity from, List<Path<BlockPos, BlockPosEdge>> other) {
         boolean cancel = false;
         if (universalUpgrade.getStackInSlot(0).getItem() instanceof INodeUpgrade upgrade) {
             if (upgrade.preTransfer(universalUpgrade.getStackInSlot(0), from, other, cancel)) {
@@ -169,7 +164,7 @@ public abstract class BaseEssencePointBlockEntity extends BlockEntity {
         }
         return cancel;
     }
-    public void postTransferHooks(BlockEntity from, List<GraphPath<BlockPos, DefaultEdge>> other) {
+    public void postTransferHooks(BlockEntity from, List<Path<BlockPos, BlockPosEdge>> other) {
         if (universalUpgrade.getStackInSlot(0).getItem() instanceof INodeUpgrade upgrade) {
             upgrade.postTransfer(universalUpgrade.getStackInSlot(0), from, other);
         }
@@ -177,7 +172,7 @@ public abstract class BaseEssencePointBlockEntity extends BlockEntity {
             upgrade.postTransfer(uniqueUpgrade.getStackInSlot(0), from, other);
         }
     }
-    public abstract void transfer(BaseEssencePointBlockEntity from, List<GraphPath<BlockPos, DefaultEdge>> other);
+    public abstract void transfer(BaseEssencePointBlockEntity from, List<Path<BlockPos, BlockPosEdge>> other);
     public Direction getDirection() {
         if (getBlockState().getValue(BaseCapabilityPoint.FACE).equals(AttachFace.CEILING)) {
             return Direction.DOWN;
@@ -229,8 +224,8 @@ public abstract class BaseEssencePointBlockEntity extends BlockEntity {
     }
     public void updateBlock() {
         BlockPosNetworks networks = level.getData(AttachmentTypeRegistry.ESSENCE_NODE_NETWORKS);
-        var incoming = networks.graph.incomingEdgesOf(getBlockPos());
-        var outgoing = networks.graph.outgoingEdgesOf(getBlockPos());
+        var incoming = networks.graph.inEdges(getBlockPos());
+        var outgoing = networks.graph.outEdges(getBlockPos());
         isRelay = (!incoming.isEmpty() && !outgoing.isEmpty());
         updateLinks();
         BlockState blockState = level.getBlockState(this.getBlockPos());

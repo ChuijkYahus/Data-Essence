@@ -17,7 +17,7 @@ import net.neoforged.neoforge.fluids.FluidStack;
 
 import java.util.Optional;
 
-public class FluidMixingRecipe implements Recipe<RecipeInputWithFluid>, IHasRequiredKnowledge, DataNEssenceRecipe {
+public class FluidMixingRecipe implements Recipe<RecipeInputWithFluid>, IHasRequiredKnowledge, HalcyonRecipe {
     private final FluidStack output;
     private final FluidStack input;
     private final Optional<FluidStack> input2;

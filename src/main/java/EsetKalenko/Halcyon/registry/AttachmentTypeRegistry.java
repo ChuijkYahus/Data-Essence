@@ -2,6 +2,7 @@ package EsetKalenko.Halcyon.registry;
 
 import EsetKalenko.Halcyon.DataNEssence;
 import EsetKalenko.Halcyon.api.misc.BlockPosNetworks;
+import EsetKalenko.Halcyon.api.util.BlockPosGraph;
 import EsetKalenko.Halcyon.block.auxiliary.TwiningLanternBlockEntity;
 import EsetKalenko.Halcyon.block.technical.StructureProtectorBlockEntity;
 import EsetKalenko.Halcyon.item.equipment.GrapplingHook;
@@ -11,8 +12,6 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.neoforged.neoforge.attachment.AttachmentType;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
-import org.jgrapht.graph.DefaultDirectedGraph;
-import org.jgrapht.graph.DefaultEdge;
 
 import java.util.*;
 import java.util.function.Supplier;
@@ -26,11 +25,11 @@ public class AttachmentTypeRegistry {
             register("twining_lanterns", () -> AttachmentType.builder(() -> new ArrayList<TwiningLanternBlockEntity>()).build());
 
     public static final Supplier<AttachmentType<BlockPosNetworks>> ESSENCE_NODE_NETWORKS =
-            register("essence_node_networks", () -> AttachmentType.builder(() -> new BlockPosNetworks(new DefaultDirectedGraph<>(DefaultEdge.class))).serialize(BlockPosNetworks.CODEC).build());
+            register("essence_node_networks", () -> AttachmentType.builder(() -> new BlockPosNetworks(new BlockPosGraph())).serialize(BlockPosNetworks.CODEC).build());
     public static final Supplier<AttachmentType<BlockPosNetworks>> CAPABILITY_NODE_NETWORKS =
-            register("capability_node_networks", () -> AttachmentType.builder(() -> new BlockPosNetworks(new DefaultDirectedGraph<>(DefaultEdge.class))).serialize(BlockPosNetworks.CODEC).build());
+            register("capability_node_networks", () -> AttachmentType.builder(() -> new BlockPosNetworks(new BlockPosGraph())).serialize(BlockPosNetworks.CODEC).build());
     public static final Supplier<AttachmentType<BlockPosNetworks>> ENDER_PEARL_NETWORKS =
-            register("ender_pearl_networks", () -> AttachmentType.builder(() -> new BlockPosNetworks(new DefaultDirectedGraph<>(DefaultEdge.class))).serialize(BlockPosNetworks.CODEC).build());
+            register("ender_pearl_networks", () -> AttachmentType.builder(() -> new BlockPosNetworks(new BlockPosGraph())).serialize(BlockPosNetworks.CODEC).build());
 
 
     public static final Supplier<AttachmentType<Integer>> TIER =
@@ -51,13 +50,13 @@ public class AttachmentTypeRegistry {
             register("has_wings", () -> AttachmentType.builder(() -> false).serialize(Codec.BOOL).copyOnDeath().build());
     public static final Supplier<AttachmentType<ArrayList<ResourceLocation>>> UNLOCKED =
             register("unlocked", () -> AttachmentType.builder(() -> new ArrayList<ResourceLocation>()).serialize(
-                    ResourceLocation.CODEC.listOf().xmap(ArrayList::new, (a) -> a.stream().toList())).copyOnDeath().build());
+                    ResourceLocation.CODEC.listOf().xmap(ArrayList::new, ArrayList::new)).copyOnDeath().build());
     public static final Supplier<AttachmentType<HashMap<ResourceLocation, Integer>>> INCOMPLETE_STAGES =
             register("incomplete_stages", () -> AttachmentType.builder(() -> new HashMap<ResourceLocation, Integer>()).serialize(
                     Codec.unboundedMap(ResourceLocation.CODEC, Codec.INT).xmap(HashMap::new, (a) -> a)).copyOnDeath().build());
     public static final Supplier<AttachmentType<ArrayList<ResourceLocation>>> INCOMPLETE =
             register("incomplete", () -> AttachmentType.builder(() -> new ArrayList<ResourceLocation>()).serialize(
-                    ResourceLocation.CODEC.listOf().xmap(ArrayList::new, (a) -> a.stream().toList())).copyOnDeath().build());
+                    ResourceLocation.CODEC.listOf().xmap(ArrayList::new, ArrayList::new)).copyOnDeath().build());
     public static final Supplier<AttachmentType<Integer>> TICKS_UNTIL_LUNAR_STRIKE =
             register("ticks_until_lunar_strike", () -> AttachmentType.builder(() -> 300).build());
 

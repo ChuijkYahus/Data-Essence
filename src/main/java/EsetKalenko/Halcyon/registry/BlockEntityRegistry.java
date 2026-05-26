@@ -258,7 +258,7 @@ public class BlockEntityRegistry {
     public static final Supplier<BlockEntityType<LunarCrystalSeedBlockEntity>> LUNAR_CRYSTAL_SEED =
             register("lunar_crystal_seed", () ->
                     BlockEntityType.Builder.of(LunarCrystalSeedBlockEntity::new,
-                            BlockRegistry.LUNAR_CRYSTAL_SEED.get()).build(null));
+                            BlockRegistry.TIDAL_METEORITE.get()).build(null));
     public static final Supplier<BlockEntityType<CrystallineCradleBlockEntity>> CRYSTALLINE_CRADLE =
             register("crystalline_cradle", () ->
                     BlockEntityType.Builder.of(CrystallineCradleBlockEntity::new,

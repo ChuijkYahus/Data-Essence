@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.worldgen.features;
 
-import EsetKalenko.Halcyon.block.world.EssenceCrystal;
+import EsetKalenko.Halcyon.block.world.TidalCrystalIndustrial;
 import EsetKalenko.Halcyon.registry.BlockRegistry;
 import com.mojang.serialization.Codec;
 import net.minecraft.core.BlockPos;
@@ -66,7 +66,7 @@ public class EssenceCrystalFeature extends Feature<NoneFeatureConfiguration> {
                 }
             }
             if (foundValid) {
-                setBlock(pContext.level(), pos.offset(xOffset, yOffset, zOffset), BlockRegistry.ESSENCE_CRYSTAL.get().defaultBlockState().setValue(EssenceCrystal.FACING, dir));
+                setBlock(pContext.level(), pos.offset(xOffset, yOffset, zOffset), BlockRegistry.ESSENCE_CRYSTAL.get().defaultBlockState().setValue(TidalCrystalIndustrial.FACING, dir));
             }
         }
         return true;

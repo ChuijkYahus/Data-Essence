@@ -15,7 +15,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.Level;
 
-public class MineralPurificationRecipe implements Recipe<RecipeInput>, DataNEssenceRecipe {
+public class MineralPurificationRecipe implements Recipe<RecipeInput>, HalcyonRecipe {
     private final ItemStack output;
     private final ItemStack nuggetOutput;
     private final Ingredient input;
