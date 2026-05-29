@@ -11,7 +11,7 @@
     }
   ],
   "name": {
-    "translate": "data_tablet.pages.survey_tunneler.name"
+    "translate": "data_tablet.databank_generic_machine"
   },
   "entry": "datanessence:machinery/survey_tunneler"
 }

@@ -4,7 +4,7 @@
   },
   "tier": 2,
   "name": {
-    "translate": "data_tablet.pages.signal_tracker_resonance_receptor.name"
+    "translate": "data_tablet.databank_generic_tool"
   },
   "entry": "datanessence:basics/signal_tracker_resonance_receptor"
 }

@@ -4,7 +4,7 @@
   },
   "tier": 2,
   "name": {
-    "translate": "data_tablet.pages.ancient_rock.name"
+    "translate": "data_tablet.databank_generic_lore"
   },
   "entry": "datanessence:lore/ancient_rock"
 }
