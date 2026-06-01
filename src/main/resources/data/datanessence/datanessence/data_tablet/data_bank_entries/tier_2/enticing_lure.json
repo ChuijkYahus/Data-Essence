@@ -4,7 +4,7 @@
   },
   "tier": 2,
   "name": {
-    "translate": "data_tablet.pages.enticing_lure.name"
+    "translate": "data_tablet.databank_generic_utility"
   },
   "entry": "datanessence:machinery/enticing_lure"
 }

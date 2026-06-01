@@ -4,7 +4,7 @@
   },
   "tier": 2,
   "name": {
-    "translate": "data_tablet.pages.illumination_rod.name"
+    "translate": "data_tablet.databank_generic_tool"
   },
   "entry": "datanessence:tools/illumination_rod"
 }

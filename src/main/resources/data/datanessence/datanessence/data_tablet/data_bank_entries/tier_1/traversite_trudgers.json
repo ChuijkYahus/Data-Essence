@@ -4,7 +4,7 @@
   },
   "tier": 1,
   "name": {
-    "translate": "data_tablet.pages.traversite_trudgers.name"
+    "translate": "data_tablet.databank_generic_tool"
   },
   "entry": "datanessence:tools/traversite_trudgers"
 }

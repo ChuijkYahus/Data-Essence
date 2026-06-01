@@ -11,7 +11,7 @@
     }
   ],
   "name": {
-    "translate": "data_tablet.pages.essence_breaker.name"
+    "translate": "data_tablet.databank_generic_production"
   },
   "entry": "datanessence:machinery/essence_breaker"
 }

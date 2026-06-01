@@ -36,7 +36,7 @@
     }
   ],
   "name": {
-    "translate": "data_tablet.pages.essence_transfer.name"
+    "translate": "data_tablet.databank_generic_logistics"
   },
   "entry": "datanessence:essence_manipulation/essence_transfer"
 }

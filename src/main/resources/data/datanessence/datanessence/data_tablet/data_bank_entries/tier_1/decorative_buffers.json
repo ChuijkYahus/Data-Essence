@@ -36,7 +36,7 @@
     }
   ],
   "name": {
-    "translate": "data_tablet.pages.decorative_buffers.name"
+    "translate": "data_tablet.databank_generic_decor"
   },
   "entry": "datanessence:tools/decorative_buffers"
 }

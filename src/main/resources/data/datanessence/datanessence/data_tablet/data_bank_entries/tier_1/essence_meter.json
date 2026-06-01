@@ -4,7 +4,7 @@
   },
   "tier": 1,
   "name": {
-    "translate": "data_tablet.pages.essence_meter.name"
+    "translate": "data_tablet.databank_generic_tool"
   },
   "entry": "datanessence:basics/essence_meter"
 }

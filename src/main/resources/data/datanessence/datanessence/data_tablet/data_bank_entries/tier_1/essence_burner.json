@@ -41,7 +41,7 @@
     }
   ],
   "name": {
-    "translate": "data_tablet.pages.essence_burner.name"
+    "translate": "data_tablet.databank_generic_generator"
   },
   "entry": "datanessence:essence_manipulation/essence_burner"
 }

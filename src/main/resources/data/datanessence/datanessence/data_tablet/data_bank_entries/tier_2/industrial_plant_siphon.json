@@ -47,7 +47,7 @@
     }
   ],
   "name": {
-    "translate": "data_tablet.pages.industrial_plant_siphon.name"
+    "translate": "data_tablet.databank_generic_generator"
   },
   "entry": "datanessence:essence_manipulation/industrial_plant_siphon"
 }
