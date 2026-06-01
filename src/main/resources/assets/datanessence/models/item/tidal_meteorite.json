@@ -1,6 +1,6 @@
 {
   "credit": "Made with Blockbench",
-  "parent": "datanessence:block/lunar_crystal_seed",
+  "parent": "datanessence:block/tidal_meteorite",
   "display": {
     "thirdperson_righthand": {
       "rotation": [

@@ -4,7 +4,7 @@
   },
   "tier": 1,
   "name": {
-    "translate": "data_tablet.databank_generic_tool"
+    "translate": "data_tablet.databank_generic_utility"
   },
   "entry": "datanessence:essence_manipulation/essence_reader",
   "minigames": [

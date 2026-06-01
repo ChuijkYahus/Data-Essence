@@ -1,5 +1,5 @@
 ### Additions
-- Astronomy Towers
+- Astronomy Towers (Esét)
 - Shards of Transformation, and the means to obtain them
 - Ecliptrum alloy and associated components
 - Lunar Nodes and Wires
