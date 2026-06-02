@@ -1,6 +1,6 @@
 {
   "icon": {
-    "id": "datanessence:lunar_essence_wire"
+    "id": "datanessence:lunar_wire"
   },
   "tier": 3,
   "minigames": [
@@ -56,5 +56,5 @@
   "name": {
     "translate": "data_tablet.databank_generic_logistics"
   },
-  "entry": "datanessence:essence_manipulation/lunar_essence_transfer"
+  "entry": "datanessence:essence_manipulation/lunar_energy_transfer"
 }

@@ -14,7 +14,8 @@
     "datanessence:tier_2/plants",
     "datanessence:tier_2/signal_tracker_resonance_receptor",
     "datanessence:tier_2/transcendental_tether",
-    "datanessence:tier_2/warp_capsule"
+    "datanessence:tier_2/warp_capsule",
+    "datanessence:tier_3/frozen_moonlight"
   ],
   "remove": [
   ]

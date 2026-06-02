@@ -2,9 +2,9 @@
   "icon": {
     "id": "datanessence:lunarium"
   },
-  "tab": "datanessence:basics",
-  "x": -2,
-  "y": 1,
+  "tab": "datanessence:machinery_transformation",
+  "x": 0,
+  "y": 0,
   "critical": true,
   "pages": [
     {

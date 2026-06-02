@@ -1,15 +1,15 @@
 {
   "icon": {
-    "id": "datanessence:lunar_essence_crystal"
+    "id": "datanessence:crystal_of_transformation"
   },
   "tab": "datanessence:machinery_transformation",
   "x": 0,
-  "y": 0,
+  "y": -4,
   "pages": [
     {
       "type": "datanessence:item",
       "item": {
-        "id": "datanessence:lunar_crystal_seed"
+        "id": "datanessence:tidal_meteorite"
       },
       "text": {
         "translate": "data_tablet.pages.lunar_strikes.page1.text"
@@ -26,7 +26,7 @@
   "completion_stages": [
     {
       "completion_advancements": [
-        "datanessence:progression/acquire_lunar_essence_shard"
+        "datanessence:progression/acquire_shard_of_transformation"
       ],
       "pages": [
         {

@@ -26,7 +26,7 @@
     "translate": "data_tablet.pages.repulsion_rod.flavor"
   },
   "parents": [
-    "datanessence:machinery_transformation/ecliptrum",
+    "datanessence:machinery_transformation/lunarium",
     "datanessence:tools/charger"
   ]
 }

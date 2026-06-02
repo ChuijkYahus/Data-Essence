@@ -9,21 +9,21 @@
     {
       "type": "datanessence:text",
       "text": {
-        "translate": "data_tablet.pages.lunar_essence_battery.page1.text"
+        "translate": "data_tablet.pages.lunar_battery.page1.text"
       }
     },
     {
       "type": "datanessence:crafting",
       "recipes": [
-        "datanessence:fabrication/lunar_essence_battery"
+        "datanessence:fabrication/lunar_battery"
       ]
     }
   ],
   "name": {
-    "translate": "data_tablet.pages.lunar_essence_battery.name"
+    "translate": "data_tablet.pages.lunar_battery.name"
   },
   "parents": [
     "datanessence:essence_manipulation/essence_battery",
-    "datanessence:machinery_transformation/ecliptrum"
+    "datanessence:machinery_transformation/lunarium"
   ]
 }

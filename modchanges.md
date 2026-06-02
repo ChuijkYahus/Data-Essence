@@ -1,12 +1,12 @@
 ### Additions
 - Astronomy Towers (Esét)
-- Shards of Transformation, and the means to obtain them
-- Ecliptrum alloy and associated components
-- Lunar Nodes and Wires
+- Shards of Transformation, and the means to obtain them (Esét)
+- Ecliptrum alloy and associated components (Esét)
+- Lunar Nodes and Wires (Esét)
 - The Lunarium
 - Frozen Moonlight
 - Crystallization Charges
-- The Repulsion Rod
+- The Repulsion Rod (Esét)
 
 ### Changes
 - Data Bank Entries are now more vague on what they unlock (Esét)

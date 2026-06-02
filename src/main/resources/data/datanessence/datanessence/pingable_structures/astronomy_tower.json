@@ -3,18 +3,18 @@
   "advancement": "datanessence:exploration/find_astronomy_tower",
   "requiredAdvancement": "datanessence:progression/acquire_shard_of_transformation",
   "color1": [
-    193,
-    34,
-    0
+    255,
+    253,
+    207
   ],
   "color2": [
-    233,
-    71,
-    99
+    193,
+    141,
+    101
   ],
   "icon": {
     "texture": "datanessence:textures/gui/structure_icons.png",
-    "u": 64,
+    "u": 96,
     "v": 0
   }
 }
