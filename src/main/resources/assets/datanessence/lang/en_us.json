@@ -206,6 +206,7 @@
   "block.datanessence.fabricator": "Fabricator",
   "block.datanessence.fabricator.dont_know_how": "You lack the data required to craft this!",
   "block.datanessence.fabricator.not_enough_essence": "This Fabricator does not have enough Tidal Energy!",
+  "block.datanessence.fabricator.cannot_work_check_tablet": "This Fabricator cannot work; check your Data Tablet for additional requirements.",
   "block.datanessence.flare_light": "Flare Light",
   "block.datanessence.fluid_bottler": "Fluid Bottler",
   "block.datanessence.fluid_buffer": "Fluid Buffer",
