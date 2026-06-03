@@ -1,0 +1,41 @@
+{
+  "icon": {
+    "id": "datanessence:crystal_of_transformation"
+  },
+  "tab": "datanessence:machinery_transformation",
+  "x": 0,
+  "y": -4,
+  "pages": [
+    {
+      "type": "datanessence:item",
+      "item": {
+        "id": "datanessence:tidal_meteorite"
+      },
+      "text": {
+        "translate": "data_tablet.pages.lunar_strikes.page1.text"
+      }
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.lunar_strikes.name"
+  },
+  "flavor": {
+    "translate": "data_tablet.pages.lunar_strikes.flavor"
+  },
+  "critical": true,
+  "completion_stages": [
+    {
+      "completion_advancements": [
+        "datanessence:progression/acquire_shard_of_transformation"
+      ],
+      "pages": [
+        {
+          "type": "datanessence:text",
+          "text": {
+            "translate": "data_tablet.pages.lunar_strikes.page1.incomplete_text"
+          }
+        }
+      ]
+    }
+  ]
+}

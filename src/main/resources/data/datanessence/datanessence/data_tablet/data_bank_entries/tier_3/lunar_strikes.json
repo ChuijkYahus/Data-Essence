@@ -1,0 +1,10 @@
+{
+  "icon": {
+    "id": "datanessence:crystal_of_transformation"
+  },
+  "tier": 3,
+  "name": {
+    "translate": "data_tablet.databank_generic_resource"
+  },
+  "entry": "datanessence:machinery_transformation/lunar_strikes"
+}

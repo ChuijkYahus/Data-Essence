@@ -1,5 +1,8 @@
 package EsetKalenko.Halcyon.block.processing;
 
+import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.client.particle.CircleParticleOptions;
+import EsetKalenko.Halcyon.client.particle.MoteParticleOptions;
 import com.cmdpro.databank.model.animation.DatabankAnimationReference;
 import com.cmdpro.databank.model.animation.DatabankAnimationState;
 import EsetKalenko.Halcyon.api.DataNEssenceRegistries;
@@ -10,9 +13,12 @@ import EsetKalenko.Halcyon.registry.BlockEntityRegistry;
 import EsetKalenko.Halcyon.registry.EssenceTypeRegistry;
 import EsetKalenko.Halcyon.registry.SoundRegistry;
 import EsetKalenko.Halcyon.screen.LunariumMenu;
+import com.cmdpro.databank.multiblock.Multiblock;
+import com.cmdpro.databank.multiblock.MultiblockManager;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
+import net.minecraft.util.Mth;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -21,11 +27,21 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
 
+import java.awt.*;
 import java.util.List;
 
 public class LunariumBlockEntity extends BaseFabricatorBlockEntity implements MenuProvider {
     public DatabankAnimationState animState = new DatabankAnimationState("pose")
             .addAnim(new DatabankAnimationReference("pose", (state, anim) -> {}, (state, anim) -> {}));
+
+    final Multiblock structure = MultiblockManager.multiblocks.get(DataNEssence.locate("machines/lunarium"));
+
+    static final BlockPos[] vfxWispOffsets = new BlockPos[] {
+            new BlockPos(-4, 4, -4),
+            new BlockPos(-4, 4, 4),
+            new BlockPos(4, 4, -4),
+            new BlockPos(4, 4, 4)
+    };
 
     @Override
     public void setLevel(Level level) {
@@ -58,12 +74,58 @@ public class LunariumBlockEntity extends BaseFabricatorBlockEntity implements Me
         super.tick(world, pos, state, baseFabricator);
 
         if (baseFabricator instanceof LunariumBlockEntity lunarium && world.isClientSide()) {
-            if (lunarium.time >= 0 && lunarium.essenceCost != null) {
-                if (lunarium.essenceCost.containsKey(DataNEssenceRegistries.ESSENCE_TYPE_REGISTRY.getKey(EssenceTypeRegistry.ESSENCE.get()))) {
-                    ClientHandler.markIndustrialFactorySong(pos);
+
+            if (lunarium.time >= 0) {
+                // Vfx; little lunar wisps on the ecliptrum blocks
+                for (int i = 0; i < 4; i++) {
+                    var color = world.random.nextInt() % 5 == 0 ? 0x2473B4 : 0xFFE3AA;
+                    var flame = new CircleParticleOptions()
+                            .setColor(new Color(color))
+                            .setAdditive(true)
+                            .setFriction(0f);
+
+                    var mote = new MoteParticleOptions()
+                            .setColor(new Color(color))
+                            .setAdditive(true)
+                            .setFriction(0f)
+                            .setGravity(0.3f);
+
+                    var origin = pos.getCenter().add(
+                            vfxWispOffsets[i].getX(),
+                            vfxWispOffsets[i].getY(),
+                            vfxWispOffsets[i].getZ()
+                    );
+
+                    world.addParticle(
+                            flame,
+                            origin.x,
+                            origin.y,
+                            origin.z,
+                            Mth.nextDouble(world.random, -0.05, 0.05),
+                            Mth.nextDouble(world.random, 0.01, 0.2),
+                            Mth.nextDouble(world.random, -0.05, 0.05)
+                    );
+
+                    if (world.random.nextInt() % 15 == 0)
+                        world.addParticle(
+                                mote,
+                                origin.x,
+                                origin.y,
+                                origin.z,
+                                Mth.nextDouble(world.random, -0.4, 0.4),
+                                Mth.nextDouble(world.random, 0.01, 0.2),
+                                Mth.nextDouble(world.random, -0.4, 0.4)
+                        );
                 }
-                if (lunarium.essenceCost.containsKey(DataNEssenceRegistries.ESSENCE_TYPE_REGISTRY.getKey(EssenceTypeRegistry.LUNAR_ESSENCE.get()))) {
-                    ClientHandler.markLunarFactorySong(pos);
+
+                // Song
+                if (lunarium.essenceCost != null) {
+                    if (lunarium.essenceCost.containsKey(DataNEssenceRegistries.ESSENCE_TYPE_REGISTRY.getKey(EssenceTypeRegistry.ESSENCE.get()))) {
+                        ClientHandler.markIndustrialFactorySong(pos);
+                    }
+                    if (lunarium.essenceCost.containsKey(DataNEssenceRegistries.ESSENCE_TYPE_REGISTRY.getKey(EssenceTypeRegistry.LUNAR_ESSENCE.get()))) {
+                        ClientHandler.markLunarFactorySong(pos);
+                    }
                 }
             }
         }
@@ -80,6 +142,11 @@ public class LunariumBlockEntity extends BaseFabricatorBlockEntity implements Me
     @Override
     public float getMaxEssence() {
         return 2000;
+    }
+
+    @Override
+    public boolean canCraft() {
+        return structure.checkMultiblockAll(level, worldPosition);
     }
 
     private static class ClientHandler {

@@ -206,6 +206,15 @@ public abstract class BaseFabricatorBlockEntity extends BlockEntity implements E
         return inventory;
     }
 
+    /**
+     * Override this to add conditions that your Fabricator needs to meet before it's allowed to perform crafting operations
+     * e.g. multiblock checks
+     * @return whether this Fabricator may craft or not
+     */
+    public boolean canCraft() {
+        return true;
+    }
+
     public static InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand) {
         BlockEntity blockEntity = pLevel.getBlockEntity(pPos);
         if (!pLevel.isClientSide) {
@@ -214,6 +223,13 @@ public abstract class BaseFabricatorBlockEntity extends BlockEntity implements E
                     ent.time = -1;
                 } else {
                     if (ent.recipe != null) {
+
+                        if (!ent.canCraft()) {
+                            pPlayer.sendSystemMessage(
+                                    Component.translatable("block.datanessence.fabricator.cannot_work_check_tablet"));
+                            return InteractionResult.FAIL;
+                        }
+
                         if (ent.enoughEssence) {
                             IFabricationRecipe fabricationRecipe = null;
                             if (ent.recipe instanceof IFabricationRecipe) {

@@ -1,0 +1,22 @@
+{
+  "files": [
+    {
+      "type": "datanessence:text",
+      "text": {
+        "translate": "computer.astronomy_tower.antori_01"
+      }
+    },
+    {
+      "type": "datanessence:text",
+      "text": {
+        "translate": "computer.astronomy_tower.antori_02"
+      }
+    },
+    {
+      "type": "datanessence:text",
+      "text": {
+        "translate": "computer.astronomy_tower.antori_03"
+      }
+    }
+  ]
+}
