@@ -1,0 +1,15 @@
+{
+  "condition": {
+    "type": "datanessence:entry",
+    "entry": "datanessence:machinery_transformation/lunar_strikes"
+  },
+  "type": {
+    "type": "databank:item",
+    "hidden_as": "datanessence:crystal_of_transformation",
+    "original": "datanessence:crystal_of_transformation",
+    "name_override": {
+      "translate": "hidden.datanessence.crystal",
+      "font": "datanessence:ancient"
+    }
+  }
+}
