@@ -19,7 +19,7 @@ public class CircleShadeParticle extends TextureSheetParticle {
         this.xd = xd;
         this.yd = yd;
         this.zd = zd;
-        this.quadSize *= 0.85F;
+        this.quadSize *= 1.25F;
         startQuadSize = this.quadSize;
         this.setSpriteFromAge(spriteSet);
 

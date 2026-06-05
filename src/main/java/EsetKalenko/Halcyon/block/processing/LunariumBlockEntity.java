@@ -89,7 +89,7 @@ public class LunariumBlockEntity extends BaseFabricatorBlockEntity implements Me
                             .setColor(new Color(color))
                             .setAdditive(true)
                             .setFriction(0f)
-                            .setLifetime(40);
+                            .setLifetime(50);
 
                     var mote = new MoteParticleOptions()
                             .setColor(new Color(color))
@@ -119,7 +119,7 @@ public class LunariumBlockEntity extends BaseFabricatorBlockEntity implements Me
                             origin.y,
                             origin.z,
                             Mth.nextDouble(world.random, -0.05, 0.05),
-                            Mth.nextDouble(world.random, 0.01, 0.2),
+                            Mth.nextDouble(world.random, -0.01, -0.2),
                             Mth.nextDouble(world.random, -0.05, 0.05)
                     );
 
