@@ -6,6 +6,7 @@ import com.mojang.blaze3d.vertex.*;
 import net.minecraft.client.Camera;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.*;
+import net.minecraft.client.renderer.LightTexture;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.util.Mth;
 
@@ -70,6 +71,6 @@ public class EssenceSparkleParticle extends TextureSheetParticle {
 
     @Override
     protected int getLightColor(float partialTick) {
-        return 15728880; // fullbright
+        return LightTexture.FULL_BRIGHT;
     }
 }

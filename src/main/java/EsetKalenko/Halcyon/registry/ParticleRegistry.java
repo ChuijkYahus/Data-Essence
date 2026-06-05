@@ -1,10 +1,7 @@
 package EsetKalenko.Halcyon.registry;
 
 import EsetKalenko.Halcyon.DataNEssence;
-import EsetKalenko.Halcyon.client.particle.CircleParticleOptions;
-import EsetKalenko.Halcyon.client.particle.MoteParticleOptions;
-import EsetKalenko.Halcyon.client.particle.RhombusParticleOptions;
-import EsetKalenko.Halcyon.client.particle.SmallCircleParticleOptions;
+import EsetKalenko.Halcyon.client.particle.*;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.particles.ParticleType;
 import net.minecraft.core.particles.SimpleParticleType;
@@ -38,6 +35,19 @@ public class ParticleRegistry {
                 @Override
                 public StreamCodec<? super RegistryFriendlyByteBuf, CircleParticleOptions> streamCodec() {
                     return CircleParticleOptions.STREAM_CODEC;
+                }
+            });
+    public static final Supplier<ParticleType> CIRCLE_SHADE =
+            register("circle_shade", () -> new ParticleType<CircleShadeParticleOptions>(false) {
+
+                @Override
+                public MapCodec<CircleShadeParticleOptions> codec() {
+                    return CircleShadeParticleOptions.CODEC;
+                }
+
+                @Override
+                public StreamCodec<? super RegistryFriendlyByteBuf, CircleShadeParticleOptions> streamCodec() {
+                    return CircleShadeParticleOptions.STREAM_CODEC;
                 }
             });
     public static final Supplier<ParticleType> RHOMBUS =

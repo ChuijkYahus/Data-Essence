@@ -2,6 +2,7 @@ package EsetKalenko.Halcyon.block.processing;
 
 import EsetKalenko.Halcyon.DataNEssence;
 import EsetKalenko.Halcyon.client.particle.CircleParticleOptions;
+import EsetKalenko.Halcyon.client.particle.CircleShadeParticleOptions;
 import EsetKalenko.Halcyon.client.particle.MoteParticleOptions;
 import com.cmdpro.databank.model.animation.DatabankAnimationReference;
 import com.cmdpro.databank.model.animation.DatabankAnimationState;
@@ -84,6 +85,12 @@ public class LunariumBlockEntity extends BaseFabricatorBlockEntity implements Me
                             .setAdditive(true)
                             .setFriction(0f);
 
+                    var cloud = new CircleShadeParticleOptions()
+                            .setColor(new Color(color))
+                            .setAdditive(true)
+                            .setFriction(0f)
+                            .setLifetime(40);
+
                     var mote = new MoteParticleOptions()
                             .setColor(new Color(color))
                             .setAdditive(true)
@@ -98,6 +105,16 @@ public class LunariumBlockEntity extends BaseFabricatorBlockEntity implements Me
 
                     world.addParticle(
                             flame,
+                            origin.x,
+                            origin.y,
+                            origin.z,
+                            Mth.nextDouble(world.random, -0.05, 0.05),
+                            Mth.nextDouble(world.random, 0.01, 0.2),
+                            Mth.nextDouble(world.random, -0.05, 0.05)
+                    );
+
+                    world.addParticle(
+                            cloud,
                             origin.x,
                             origin.y,
                             origin.z,

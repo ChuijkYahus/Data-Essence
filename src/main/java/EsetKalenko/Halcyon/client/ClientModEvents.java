@@ -212,25 +212,41 @@ public class ClientModEvents {
         event.register(MenuRegistry.DRYING_TABLE_MENU.get(), DryingTableScreen::new);
         event.register(MenuRegistry.LUNARIUM_MENU.get(), LunariumScreen::new);
     }
+
     @SubscribeEvent
     public static void registerParticleFactories(RegisterParticleProvidersEvent event) {
-        Minecraft.getInstance().particleEngine.register(ParticleRegistry.ESSENCE_SPARKLE.get(),
+        event.registerSpriteSet(ParticleRegistry.ESSENCE_SPARKLE.get(),
                 EssenceSparkleParticle.Provider::new);
-        Minecraft.getInstance().particleEngine.register(ParticleRegistry.CIRCLE.get(),
+        event.registerSpriteSet(ParticleRegistry.CIRCLE.get(),
                 CircleParticle.Provider::new);
-        Minecraft.getInstance().particleEngine.register(ParticleRegistry.RHOMBUS.get(),
+        event.registerSpriteSet(ParticleRegistry.CIRCLE_SHADE.get(),
+                CircleShadeParticle.Provider::new);
+        event.registerSpriteSet(ParticleRegistry.RHOMBUS.get(),
                 RhombusParticle.Provider::new);
-        Minecraft.getInstance().particleEngine.register(ParticleRegistry.SMALL_CIRCLE.get(),
+        event.registerSpriteSet(ParticleRegistry.SMALL_CIRCLE.get(),
                 SmallCircleParticle.Provider::new);
-        Minecraft.getInstance().particleEngine.register(ParticleRegistry.MOTE.get(),
+        event.registerSpriteSet(ParticleRegistry.MOTE.get(),
                 MoteParticle.Provider::new);
-        Minecraft.getInstance().particleEngine.register(ParticleRegistry.SANCTUARY_SPARKLE.get(),
+        event.registerSpriteSet(ParticleRegistry.SANCTUARY_SPARKLE.get(),
                 SanctuarySparkleParticle.Provider::new);
-    }
-    @SubscribeEvent
-    public static void registerParticles(RegisterParticleProvidersEvent event) {
+//        Minecraft.getInstance().particleEngine.register(ParticleRegistry.ESSENCE_SPARKLE.get(),
+//                EssenceSparkleParticle.Provider::new);
+//        Minecraft.getInstance().particleEngine.register(ParticleRegistry.CIRCLE.get(),
+//                CircleParticle.Provider::new);
+//        Minecraft.getInstance().particleEngine.register(ParticleRegistry.CIRCLE_SHADE.get(),
+//                CircleShadeParticle.Provider::new);
+//        Minecraft.getInstance().particleEngine.register(ParticleRegistry.RHOMBUS.get(),
+//                RhombusParticle.Provider::new);
+//        Minecraft.getInstance().particleEngine.register(ParticleRegistry.SMALL_CIRCLE.get(),
+//                SmallCircleParticle.Provider::new);
+//        Minecraft.getInstance().particleEngine.register(ParticleRegistry.MOTE.get(),
+//                MoteParticle.Provider::new);
+//        Minecraft.getInstance().particleEngine.register(ParticleRegistry.SANCTUARY_SPARKLE.get(),
+//                SanctuarySparkleParticle.Provider::new);
+
         event.registerSpriteSet(ParticleRegistry.ENERGY_PARTICLE.get(), EnergyParticle.Provider::new);
     }
+
     @SubscribeEvent
     public static void registerBlockColorHandlers(RegisterColorHandlersEvent.Block event) {
         event.register((pState, pLevel, pPos, pTintIndex) -> {
