@@ -32,9 +32,11 @@
 *   **Cimdy**: Former programming lead, shader sorceress, lots of background lore
 *   **DavidRarria09**: Additional music
 *   **K King**: Sound designer
+*   **Qther/Vonr**: Performance improvements
+*   **TheRobbie73**: Sable compatibility
 
 ### Translators
 
-*   Chinese: ChujikYahus, dovisutu, ZetaY
+*   **Chinese**: ChuijkYahus, dovisutu, ZetaY
 
 ![Screenshot of several earlygame machines and generators made out of shiny orange copper and deep purple obsidian, placed in a room with a translucent glass floor and otherworldly purple brick walls.](https://raw.githubusercontent.com/Cmdpro/Data-Essence/refs/heads/main/raw/images/earlygame_splash.png)

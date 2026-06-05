@@ -229,20 +229,6 @@ public class ClientModEvents {
                 MoteParticle.Provider::new);
         event.registerSpriteSet(ParticleRegistry.SANCTUARY_SPARKLE.get(),
                 SanctuarySparkleParticle.Provider::new);
-//        Minecraft.getInstance().particleEngine.register(ParticleRegistry.ESSENCE_SPARKLE.get(),
-//                EssenceSparkleParticle.Provider::new);
-//        Minecraft.getInstance().particleEngine.register(ParticleRegistry.CIRCLE.get(),
-//                CircleParticle.Provider::new);
-//        Minecraft.getInstance().particleEngine.register(ParticleRegistry.CIRCLE_SHADE.get(),
-//                CircleShadeParticle.Provider::new);
-//        Minecraft.getInstance().particleEngine.register(ParticleRegistry.RHOMBUS.get(),
-//                RhombusParticle.Provider::new);
-//        Minecraft.getInstance().particleEngine.register(ParticleRegistry.SMALL_CIRCLE.get(),
-//                SmallCircleParticle.Provider::new);
-//        Minecraft.getInstance().particleEngine.register(ParticleRegistry.MOTE.get(),
-//                MoteParticle.Provider::new);
-//        Minecraft.getInstance().particleEngine.register(ParticleRegistry.SANCTUARY_SPARKLE.get(),
-//                SanctuarySparkleParticle.Provider::new);
 
         event.registerSpriteSet(ParticleRegistry.ENERGY_PARTICLE.get(), EnergyParticle.Provider::new);
     }
