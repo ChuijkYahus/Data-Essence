@@ -61,8 +61,8 @@ public class ItemDecorators {
                 PoseStack poseStack = guiGraphics.pose();
                 poseStack.pushPose();
                 poseStack.translate(xOffset, yOffset, 100);
-                var scale = player.isShiftKeyDown() ? 0.8f : 0.5f;
-                poseStack.scale(scale, scale, scale);
+                //var scale = player.isShiftKeyDown() ? 0.8f : 0.5f; // TODO find a way to do this that also works in guis
+                poseStack.scale(0.5f, 0.5f, 0.5f);
                 guiGraphics.renderItem(impression, 16, 0);
                 poseStack.popPose();
                 return true;

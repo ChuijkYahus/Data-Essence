@@ -6,5 +6,5 @@
   "name": {
     "translate": "data_tablet.databank_generic_logistics"
   },
-  "entry": "datanessence:essence_manipulation/lunar_essence_battery"
+  "entry": "datanessence:essence_manipulation/lunar_battery"
 }

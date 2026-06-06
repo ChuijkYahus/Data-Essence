@@ -1,0 +1,10 @@
+{
+  "icon": {
+    "id": "datanessence:player_data_bank"
+  },
+  "tier": 2,
+  "name": {
+    "translate": "data_tablet.databank_generic_utility"
+  },
+  "entry": "datanessence:basics/data_bank"
+}

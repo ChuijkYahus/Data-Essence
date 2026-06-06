@@ -1,4 +1,4 @@
-// 1.21.1	2026-05-11T11:28:01.768487003	Tags for minecraft:item mod id datanessence
+// 1.21.1	2026-06-06T11:22:32.998078565	Tags for minecraft:item mod id datanessence
 6c535869521b0c74d6241ff85c362261d86fdce7 data/c/tags/item/armors.json
 b03db77a8d1040df181e14f47be358e5eac3c699 data/c/tags/item/gems.json
 ac195e282e4703c47ee41d5d79d0c5de41486f0e data/c/tags/item/glass_blocks.json
@@ -28,5 +28,5 @@ bce5073bf52115ba41d2a7876709ffc5ecdf34f7 data/datanessence/tags/item/makes_pink_
 73a0f0ef78ea29bdc25208fc70b485fbc5620512 data/datanessence/tags/item/makes_yellow_dye.json
 42ff038bd87bd6f82af3e5d6052ff1efd5c3ff20 data/datanessence/tags/item/polished_obsidian_blocks.json
 d9c18d01c886d013442a7ab1053b2ce20297ac49 data/datanessence/tags/item/shaped_polished_obsidian_blocks.json
-2b3bc13332dd60986dfa636e7fa1d79eb68dfb7a data/datanessence/tags/item/wip.json
+c84e9d6f8585c40a294ddb579433b6ecd5f854e6 data/datanessence/tags/item/wip.json
 81ba9b55e5886431788b273e43d5d5f8555aa26e data/minecraft/tags/item/freeze_immune_wearables.json

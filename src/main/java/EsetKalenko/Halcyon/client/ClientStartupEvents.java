@@ -45,15 +45,22 @@ import java.awt.*;
 import static EsetKalenko.Halcyon.integration.DataNEssenceIntegration.hasOpalescence;
 
 @EventBusSubscriber(value = Dist.CLIENT, modid = DataNEssence.MOD_ID)
-public class ClientModEvents {
+public class ClientStartupEvents {
+    public static PostShaderInstance progressionShader;
+    public static PostShaderInstance genderEuphoriaShader;
+    public static PostShaderInstance machineOutputShader;
+    public static PostShaderInstance orePingShader;
+
     @SubscribeEvent
     public static void registerGuiLayers(RegisterGuiLayersEvent event) {
         event.registerAboveAll(DataNEssence.locate("pings"), new PingsGuiLayer());
     }
+
     @SubscribeEvent
     public static void registerDimensionSpecialEffects(RegisterDimensionSpecialEffectsEvent event) {
         event.register(DataNEssence.locate("sanctuary"), new SanctuarySpecialEffects());
     }
+
     @SubscribeEvent
     public static void registerRenderers(final EntityRenderersEvent.RegisterRenderers event) {
         event.registerBlockEntityRenderer(BlockEntityRegistry.FABRICATOR.get(), FabricatorRenderer::new);
@@ -90,6 +97,7 @@ public class ClientModEvents {
         event.registerBlockEntityRenderer(BlockEntityRegistry.CRYSTALLINE_CRADLE.get(), CrystallineCradleRenderer::new);
         event.registerBlockEntityRenderer(BlockEntityRegistry.RF_NODE.get(), RFNodeRenderer::new);
     }
+
     @SubscribeEvent
     public static void addLayers(EntityRenderersEvent.AddLayers event) {
         for (PlayerSkin.Model i : event.getSkins()) {
@@ -99,6 +107,7 @@ public class ClientModEvents {
             skin.addLayer(new TailLayer(skin, event.getEntityModels()));
         }
     }
+
     @SubscribeEvent
     public static void doSetup(FMLClientSetupEvent event) {
         EntityRenderers.register(EntityRegistry.ESSENCE_BOMB.get(), ThrownTrailItemRenderer::new);
@@ -137,10 +146,7 @@ public class ClientModEvents {
         PostShaderManager.addShader(orePingShader);
         orePingShader.setActive(true);
     }
-    public static PostShaderInstance progressionShader;
-    public static PostShaderInstance genderEuphoriaShader;
-    public static PostShaderInstance machineOutputShader;
-    public static PostShaderInstance orePingShader;
+
     public static final ItemPropertyFunction usingGrapplingHookProperty = (stack, level, entity, seed) -> {
         if (entity != null) {
             if (entity.getData(AttachmentTypeRegistry.GRAPPLING_HOOK_DATA).isPresent()) {
@@ -149,12 +155,14 @@ public class ClientModEvents {
         }
         return 0;
     };
+
     public static final ItemPropertyFunction chargedGrapplingHookProperty = (stack, level, entity, seed) -> {
         if (stack.has(DataComponentRegistry.ESSENCE_STORAGE) && ItemEssenceContainer.getEssence(stack, GrapplingHook.FUEL_ESSENCE_TYPE) >= GrapplingHook.ESSENCE_COST) {
             return 1;
         }
         return 0;
     };
+
     @SubscribeEvent
     public static void registerClientExtensions(RegisterClientExtensionsEvent event) {
         event.registerItem(AnimatedBlockItemUtil.createBasicExtensions(DataNEssence.locate("textures/block/auto-fabricator.png"), DataNEssence.locate("auto-fabricator")), BlockRegistry.AUTO_FABRICATOR.get().asItem());
@@ -167,7 +175,7 @@ public class ClientModEvents {
         event.registerItem(AnimatedBlockItemUtil.createBasicExtensions(DataNEssence.locate("textures/block/fluid_point.png"), DataNEssence.locate("essence_point")), BlockRegistry.FLUID_POINT.get().asItem());
         event.registerItem(AnimatedBlockItemUtil.createBasicExtensions(DataNEssence.locate("textures/block/infuser.png"), DataNEssence.locate("infuser")), BlockRegistry.INFUSER.get().asItem());
         event.registerItem(AnimatedBlockItemUtil.createBasicExtensions(DataNEssence.locate("textures/block/item_point.png"), DataNEssence.locate("essence_point")), BlockRegistry.ITEM_POINT.get().asItem());
-        event.registerItem(AnimatedBlockItemUtil.createBasicExtensions(DataNEssence.locate("textures/block/lunar_essence_point.png"), DataNEssence.locate("essence_point")), BlockRegistry.LUNAR_ESSENCE_POINT.get().asItem());
+        event.registerItem(AnimatedBlockItemUtil.createBasicExtensions(DataNEssence.locate("textures/block/lunar_node.png"), DataNEssence.locate("essence_point")), BlockRegistry.LUNAR_ESSENCE_POINT.get().asItem());
         event.registerItem(AnimatedBlockItemUtil.createBasicExtensions(DataNEssence.locate("textures/block/natural_essence_point.png"), DataNEssence.locate("essence_point")), BlockRegistry.NATURAL_ESSENCE_POINT.get().asItem());
         event.registerItem(AnimatedBlockItemUtil.createBasicExtensions(DataNEssence.locate("textures/block/fluid_mixer.png"), DataNEssence.locate("fluid_mixer")), BlockRegistry.FLUID_MIXER.get().asItem());
         event.registerItem(AnimatedBlockItemUtil.createBasicExtensions(DataNEssence.locate("textures/block/metal_shaper.png"), DataNEssence.locate("metal_shaper")), BlockRegistry.METAL_SHAPER.get().asItem());
@@ -249,6 +257,7 @@ public class ClientModEvents {
                 return ColorUtil.blendColors(new Color(0x0CB3FF), new Color(0xFF49C1), (float) (Math.sin(blendAmount/(360f/5f))+1f)/2f).getRGB();
             }
         }, BlockRegistry.SPIRE_GLASS.get());
+
         event.register((pState, pLevel, pPos, pTintIndex) -> {
             if (pPos != null) {
                 double x = pPos.getX();
@@ -263,6 +272,7 @@ public class ClientModEvents {
                 return Color.getHSBColor((float) (Math.sin(blendAmount/(360f/5f))+1f)/2f, 0.8f, 1f).getRGB();
             }
         }, BlockRegistry.CRYSTALLINE_LEAVES.get());
+
         event.register( (pState, pLevel, pPos, pTintIndex) -> {
             if (pPos != null && pLevel != null) {
                 if (pTintIndex == 1) {
@@ -273,6 +283,7 @@ public class ClientModEvents {
             }
             return 0xFFFFFFFF;
         }, BlockRegistry.ESSENCE_READER.get());
+
         if (hasOpalescence) {
             event.register((pState, pLevel, pPos, pTintIndex) -> {
                 if (pPos != null) {
@@ -284,18 +295,24 @@ public class ClientModEvents {
             }, BlockRegistry.TRAVERSITE_ROAD_OPAL.get(), BlockRegistry.TRAVERSITE_ROAD_SLAB_OPAL.get(), BlockRegistry.TRAVERSITE_ROAD_STAIRS_OPAL.get());
         }
     }
+
     @SubscribeEvent
     public static void registerItemColorHandlers(RegisterColorHandlersEvent.Item event) {
         event.register((pStack, pTintIndex) -> {
             float blendAmount = Minecraft.getInstance().levelRenderer.getTicks()+Minecraft.getInstance().getTimer().getGameTimeDeltaTicks();
             return ColorUtil.blendColors(new Color(0x0CB3FF), new Color(0xFF49C1), (float) (Math.sin(blendAmount/(360f/5f))+1f)/2f).getRGB();
         }, BlockRegistry.SPIRE_GLASS.get());
+
         event.register((pStack, pTintIndex) -> {
             float blendAmount = Minecraft.getInstance().levelRenderer.getTicks()+Minecraft.getInstance().getTimer().getGameTimeDeltaTicks();
             return Color.getHSBColor((float) (Math.sin(blendAmount/(360f/5f))+1f)/2f, 1f, 1f).getRGB();
         }, BlockRegistry.CRYSTALLINE_LEAVES.get());
+        
         if (hasOpalescence) {
-            event.register((stack, tintIndex) -> tintIndex == 0 ? DataNEssenceIntegration.OpalescenseIntegration.getOpalItemColor(stack, tintIndex) : 0xFFFFFFFF, BlockRegistry.TRAVERSITE_ROAD_OPAL.get(), BlockRegistry.TRAVERSITE_ROAD_SLAB_OPAL.get(), BlockRegistry.TRAVERSITE_ROAD_STAIRS_OPAL.get());
+            event.register((stack, tintIndex) -> tintIndex == 0
+                    ? DataNEssenceIntegration.OpalescenseIntegration.getOpalItemColor(stack, tintIndex)
+                    : 0xFFFFFFFF,
+                    BlockRegistry.TRAVERSITE_ROAD_OPAL.get(), BlockRegistry.TRAVERSITE_ROAD_SLAB_OPAL.get(), BlockRegistry.TRAVERSITE_ROAD_STAIRS_OPAL.get());
         }
     }
 }

@@ -143,7 +143,6 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                 .add(ItemRegistry.ANTI_GRAVITY_PACK.get())
                 .add(ItemRegistry.NATURAL_ESSENCE_WIRE.get())
                 .add(ItemRegistry.EXOTIC_ESSENCE_WIRE.get())
-                .add(ItemRegistry.RF_WIRE.get())
                 .add(ItemRegistry.SPEED_UPGRADE_2.get())
                 .add(ItemRegistry.TRANSFORMATIVE_GEL.get())
                 .add(ItemRegistry.EXTRICATION_ROD.get())
@@ -152,8 +151,6 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                 .add(BlockRegistry.CRYSTALLINE_CRADLE.get().asItem())
                 .add(BlockRegistry.NATURAL_ESSENCE_POINT.get().asItem())
                 .add(BlockRegistry.EXOTIC_ESSENCE_POINT.get().asItem())
-                .add(BlockRegistry.RF_NODE.get().asItem())
-                .add(BlockRegistry.LUNAR_ESSENCE_BATTERY.get().asItem())
                 .add(BlockRegistry.NATURAL_ESSENCE_BATTERY.get().asItem())
                 .add(BlockRegistry.EXOTIC_ESSENCE_BATTERY.get().asItem());
     }

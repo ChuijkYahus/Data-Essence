@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:ingots/steel"
+      }
+    }
+  ],
+  "type": "datanessence:synthesis",
+  "essenceCost": {
+    "datanessence:essence": 150,
+    "datanessence:lunar_essence": 50
+  },
+  "input": { "item": "datanessence:wire_spool" },
+  "input2": { "tag": "c:ingots/steel" },
+  "time": 100,
+  "result": { "id": "datanessence:rf_wire", "count": 4 },
+  "entry": "datanessence:mod_integration/redstoneflux_nodes"
+}

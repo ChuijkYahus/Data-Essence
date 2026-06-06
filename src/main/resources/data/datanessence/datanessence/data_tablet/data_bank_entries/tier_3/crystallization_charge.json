@@ -1,0 +1,10 @@
+{
+  "icon": {
+    "id": "datanessence:crystallization_charge"
+  },
+  "tier": 3,
+  "name": {
+    "translate": "data_tablet.databank_generic_tool"
+  },
+  "entry": "datanessence:tools/crystallization_charge"
+}

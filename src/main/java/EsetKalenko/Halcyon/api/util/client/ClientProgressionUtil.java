@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.api.util.client;
 
-import EsetKalenko.Halcyon.client.ClientModEvents;
+import EsetKalenko.Halcyon.client.ClientStartupEvents;
 import EsetKalenko.Halcyon.config.DataNEssenceClientConfig;
 import EsetKalenko.Halcyon.data.datatablet.Entry;
 import EsetKalenko.Halcyon.toasts.CriticalDataToast;
@@ -15,8 +15,8 @@ public class ClientProgressionUtil {
 
     public static void progressionShader() {
         if (DataNEssenceClientConfig.progressionShader) {
-            ClientModEvents.progressionShader.time = 0;
-            ClientModEvents.progressionShader.setActive(true);
+            ClientStartupEvents.progressionShader.time = 0;
+            ClientStartupEvents.progressionShader.setActive(true);
         }
     }
 

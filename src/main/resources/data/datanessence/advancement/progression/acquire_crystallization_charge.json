@@ -1,0 +1,21 @@
+{
+  "display": {
+    "icon": {
+      "id": "datanessence:crystallization_charge"
+    },
+    "title": {
+      "translate": "advancements.datanessence.acquire_crystallization_charge.title"
+    },
+    "description": {
+      "translate": "advancements.datanessence.acquire_crystallization_charge.description"
+    },
+    "hidden": false
+  },
+  "parent": "datanessence:progression/acquire_lunarium",
+  "criteria": {
+    "has_leech": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": { "items": [ { "items": ["datanessence:crystallization_charge" ] } ] }
+    }
+  }
+}

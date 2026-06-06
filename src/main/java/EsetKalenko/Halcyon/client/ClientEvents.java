@@ -364,7 +364,7 @@ public class ClientEvents {
                 RenderSystem.applyModelViewMatrix();
             }
             if (mc.player != null) {
-                ClientModEvents.genderEuphoriaShader.setActive(DataNEssenceClientConfig.genderEuphoriaShader && mc.player.hasEffect(MobEffectRegistry.GENDER_EUPHORIA));
+                ClientStartupEvents.genderEuphoriaShader.setActive(DataNEssenceClientConfig.genderEuphoriaShader && mc.player.hasEffect(MobEffectRegistry.GENDER_EUPHORIA));
             }
         }
     }

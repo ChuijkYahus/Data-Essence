@@ -1,0 +1,28 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:ingots/steel"
+      }
+    }
+  ],
+  "type": "datanessence:shaped_fabrication_recipe",
+  "essenceCost": {
+    "datanessence:essence": 150,
+    "datanessence:lunar_essence": 50
+  },
+  "time": 60,
+  "entry": "datanessence:mod_integration/redstoneflux_nodes",
+  "pattern": [
+    "RIR",
+    " O "
+  ],
+  "key": {
+    "I": { "tag": "c:ingots/steel" },
+    "R": { "item": "datanessence:transformative_rod" },
+    "O": { "item": "datanessence:polished_obsidian" }
+  },
+  "result": { "id": "datanessence:rf_node", "count": 3 }
+}

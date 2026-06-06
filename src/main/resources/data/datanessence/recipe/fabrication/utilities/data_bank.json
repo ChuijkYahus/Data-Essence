@@ -1,0 +1,20 @@
+{
+  "type": "datanessence:shaped_fabrication_recipe",
+  "essenceCost": {
+    "datanessence:essence": 1000
+  },
+  "time": 160,
+  "entry": "datanessence:basics/data_bank",
+  "pattern": [
+    "PPP",
+    "ACA",
+    "PLP"
+  ],
+  "key": {
+    "P": { "item": "datanessence:polished_obsidian" },
+    "L": { "item": "datanessence:logical_matrix" },
+    "C": { "item": "datanessence:prepared_panel" },
+    "A": { "item": "datanessence:energized_ancient_rock_column_shieldless" }
+  },
+  "result": { "id": "datanessence:player_data_bank" }
+}

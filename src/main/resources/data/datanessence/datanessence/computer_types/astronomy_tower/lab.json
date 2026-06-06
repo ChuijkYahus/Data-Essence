@@ -9,7 +9,13 @@
     {
       "type": "datanessence:text",
       "text": {
-        "translate": "computer.astronomy_tower.lab_02"
+        "translate": "computer.astronomy_tower.lab_02.charges_01"
+      }
+    },
+    {
+      "type": "datanessence:text",
+      "text": {
+        "translate": "computer.astronomy_tower.lab_02.charges_02"
       }
     },
     {

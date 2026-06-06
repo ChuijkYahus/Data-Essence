@@ -1,0 +1,31 @@
+{
+  "icon": {
+    "id": "datanessence:rf_wire"
+  },
+  "tab": "datanessence:mod_integration",
+  "x": 0,
+  "y": 3,
+  "pages": [
+    {
+      "type": "datanessence:text",
+      "text": {
+        "translate": "data_tablet.pages.integration_redstoneflux_nodes.page1.text"
+      }
+    },
+    {
+      "type": "datanessence:crafting",
+      "recipes": [
+        "datanessence:fabrication/points/rf_node_iron",
+        "datanessence:fabrication/wires/rf_wire_iron",
+        "datanessence:fabrication/points/rf_node_steel",
+        "datanessence:synthesis/rf_wire_steel"
+      ]
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.integration_redstoneflux_nodes.name"
+  },
+  "flavor": {
+    "translate": "data_tablet.pages.integration_redstoneflux_nodes.flavor"
+  }
+}

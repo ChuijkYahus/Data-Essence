@@ -4,7 +4,7 @@
     "datanessence:essence": 1000
   },
   "time": 620,
-  "entry": "datanessence:basics/lunarium",
+  "entry": "datanessence:machinery_transformation/lunarium",
   "completion_stage": 0,
   "pattern": [
     "RLR",

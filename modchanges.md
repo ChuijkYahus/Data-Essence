@@ -4,10 +4,11 @@
 - Ecliptrum alloy and associated components (Esét)
 - Lunar Nodes and Wires (Esét)
 - The Lunarium
-- Frozen Moonlight
-- Crystallization Charges
-- Progression Sharing via player-built Data Banks
+- Frozen Moonlight (Esét)
+- Crystallization Charges (Esét)
+- Progression Sharing via player-built Data Banks (Esét)
 - The Repulsion Rod (Esét)
+- RF Nodes and Wires (Esét)
 
 ### Changes
 - Changed click sounds for Shifting Hues to all be ui_click (Esét)

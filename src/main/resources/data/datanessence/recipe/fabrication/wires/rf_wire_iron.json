@@ -1,0 +1,20 @@
+{
+  "type": "datanessence:shaped_fabrication_recipe",
+  "essenceCost": {
+    "datanessence:essence": 150,
+    "datanessence:lunar_essence": 100
+  },
+  "time": 80,
+  "entry": "datanessence:mod_integration/redstoneflux_nodes",
+  "pattern": [
+    " C ",
+    "ISI",
+    " C "
+  ],
+  "key": {
+    "C": { "item": "minecraft:charcoal" },
+    "I": { "item": "minecraft:iron_ingot" },
+    "S": { "item": "datanessence:wire_spool" }
+  },
+  "result": { "id": "datanessence:rf_wire", "count": 2 }
+}

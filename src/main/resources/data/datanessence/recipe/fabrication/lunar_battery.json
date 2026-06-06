@@ -3,7 +3,7 @@
   "essenceCost": {
     "datanessence:lunar_essence": 200
   },
-  "entry": "datanessence:essence_manipulation/lunar_essence_battery",
+  "entry": "datanessence:essence_manipulation/lunar_battery",
   "pattern": [
     "TOT",
     "SBS",
