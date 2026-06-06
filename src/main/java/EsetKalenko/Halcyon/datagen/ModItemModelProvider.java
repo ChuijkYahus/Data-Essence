@@ -53,6 +53,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ItemRegistry.THERMOMETER);
         simpleItem(ItemRegistry.MOLD_ROD);
         simpleItem(ItemRegistry.MOLD_PANEL);
+        simpleItem(ItemRegistry.ECLIPTRUM_MOLD_ROD);
+        simpleItem(ItemRegistry.ECLIPTRUM_MOLD_PANEL);
         simpleItem(ItemRegistry.HAMMER_AND_CHISEL);
         simpleItem(ItemRegistry.LOCATOR);
         simpleItem(ItemRegistry.LOCATOR_UPGRADE);

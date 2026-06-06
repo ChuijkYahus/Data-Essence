@@ -1,4 +1,4 @@
-// 1.21.1	2026-05-11T12:55:45.983809548	Item Models: datanessence
+// 1.21.1	2026-06-06T06:14:47.962471672	Item Models: datanessence
 801fa8d0e9ae7e6c0f2ec1e83133257158c467a8 assets/datanessence/models/item/acceleration_lens.json
 42e19f03380a5b483a179ea05813050a7348f5f5 assets/datanessence/models/item/ancient_lantern.json
 dabf087382678b82cf3270c905fa9dd54ed369bc assets/datanessence/models/item/ancient_rock_bricks.json
@@ -74,6 +74,7 @@ d2ee51f8a1c9d8336e8e8d1102e25c8e7c4e4b25 assets/datanessence/models/item/natural
 bc5ec73f7a4bc15476a358397296a33a226350e3 assets/datanessence/models/item/natural_essence_point.json
 72daa0cb5cd463cd7dd4d1760219c24e210917e4 assets/datanessence/models/item/natural_essence_wire.json
 3f113d59fbbd0619d84739ba168015f92f3633cf assets/datanessence/models/item/panel_mold.json
+f67d7d7775bdbf01d484b7e7be5c4814b9d850a4 assets/datanessence/models/item/panel_mold_ecliptrum.json
 de272af4e4feac0b7f325c246f01dbdc0d6ea318 assets/datanessence/models/item/polished_obsidian_column.json
 459eef21097a7380dfaabddb2f94c81edbc412cd assets/datanessence/models/item/polished_obsidian_tract.json
 54bfdfccf479e077ffb9710c8d4333bab9934d7c assets/datanessence/models/item/precision_lens.json
@@ -86,6 +87,7 @@ f28dd5a181d5512c358f1e5d1ae36566d0e9b94e assets/datanessence/models/item/quartz_
 bc5ec73f7a4bc15476a358397296a33a226350e3 assets/datanessence/models/item/rf_node.json
 abf4a01ae9c4fa680ad5667ddccba6355d76e46f assets/datanessence/models/item/rf_wire.json
 698c8b9885493fb32342dde3df3c643f7a9ea384 assets/datanessence/models/item/rod_mold.json
+7c1db82719fe6ce508df685d0da8f2325752795c assets/datanessence/models/item/rod_mold_ecliptrum.json
 f61981cb6701db3591b75679b5d99b869a1f7f8b assets/datanessence/models/item/shard_of_transformation.json
 d2b4d0ca682ceeed67b2f05546457443fb9253d6 assets/datanessence/models/item/signal_tracker_resonance_receptor.json
 1b09ec0be74ff44bbe133a0ef3f32cf87cde6661 assets/datanessence/models/item/speed_upgrade.json

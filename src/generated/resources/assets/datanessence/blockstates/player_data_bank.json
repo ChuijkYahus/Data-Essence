@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "datanessence:block/player_data_bank",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "datanessence:block/player_data_bank"
+    },
+    "facing=south": {
+      "model": "datanessence:block/player_data_bank",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "datanessence:block/player_data_bank",
+      "y": 270
+    }
+  }
+}

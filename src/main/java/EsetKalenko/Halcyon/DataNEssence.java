@@ -265,6 +265,8 @@ public class DataNEssence
             event.accept(ItemRegistry.ESSENCE_METER.get());
             event.accept(ItemRegistry.MOLD_PANEL.get());
             event.accept(ItemRegistry.MOLD_ROD.get());
+            event.accept(ItemRegistry.ECLIPTRUM_MOLD_PANEL.get());
+            event.accept(ItemRegistry.ECLIPTRUM_MOLD_ROD.get());
             event.accept(ItemRegistry.TAG_FILTER_LABEL.get());
             event.accept(ItemRegistry.THERMOMETER.get());
             event.accept(ItemRegistry.HAMMER_AND_CHISEL.get());
@@ -453,6 +455,9 @@ public class DataNEssence
                 event.accept(BlockRegistry.TRAVERSITE_ROAD_STAIRS_OPAL.get());
                 event.accept(BlockRegistry.TRAVERSITE_ROAD_SLAB_OPAL.get());
             }
+
+            // Utilities
+            event.accept(BlockRegistry.DATA_BANK.get());
 
             // Decoration
             event.accept(BlockRegistry.POLISHED_OBSIDIAN.get());

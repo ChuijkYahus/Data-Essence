@@ -3,6 +3,7 @@ package EsetKalenko.Halcyon.api.item;
 import EsetKalenko.Halcyon.api.DataNEssenceRegistries;
 import EsetKalenko.Halcyon.api.essence.EssenceType;
 import EsetKalenko.Halcyon.registry.DataComponentRegistry;
+import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
@@ -12,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ItemDecorators {
+
     public static final IItemDecorator essenceBarDecoration = (guiGraphics, font, stack, xOffset, yOffset) -> {
         if (!stack.isEmpty()) {
             if (stack.has(DataComponentRegistry.ESSENCE_STORAGE)) {
@@ -38,6 +40,35 @@ public class ItemDecorators {
                 }
             }
         }
+        return false;
+    };
+
+    // Renders the output item of a Shaping Impression
+    public static final IItemDecorator shapingImpression = (guiGraphics, font, stack, xOffset, yOffset) -> {
+        var player = Minecraft.getInstance().player;
+        var level = Minecraft.getInstance().level;
+        if ( player == null || level == null )
+            return false;
+
+        if ( stack.getComponents().has( DataComponentRegistry.SHAPING_IMPRESSION.get() ) ) {
+            var recipeLocation = stack.get( DataComponentRegistry.SHAPING_IMPRESSION );
+            if (recipeLocation == null)
+                return false;
+
+            var recipe = level.getRecipeManager().byKey(recipeLocation);
+            if (recipe.isPresent()) {
+                var impression = recipe.get().value().getResultItem( level.registryAccess() );
+                PoseStack poseStack = guiGraphics.pose();
+                poseStack.pushPose();
+                poseStack.translate(xOffset, yOffset, 100);
+                var scale = player.isShiftKeyDown() ? 0.8f : 0.5f;
+                poseStack.scale(scale, scale, scale);
+                guiGraphics.renderItem(impression, 16, 0);
+                poseStack.popPose();
+                return true;
+            }
+        }
+
         return false;
     };
 }

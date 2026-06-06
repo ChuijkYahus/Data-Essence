@@ -26,7 +26,7 @@ public class DataComponentRegistry {
             .networkSynchronized(ByteBufCodecs.INT)
             .cacheEncoding()
     );
-    public static final DeferredHolder<DataComponentType<?>, DataComponentType<ResourceLocation>> MOLD = DATA_COMPONENTS.registerComponentType("mold", builder -> builder
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<ResourceLocation>> SHAPING_IMPRESSION = DATA_COMPONENTS.registerComponentType("mold", builder -> builder
             .persistent(ResourceLocation.CODEC)
             .networkSynchronized(ResourceLocation.STREAM_CODEC)
             .cacheEncoding()

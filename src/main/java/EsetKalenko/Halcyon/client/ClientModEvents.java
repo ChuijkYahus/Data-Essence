@@ -180,6 +180,7 @@ public class ClientModEvents {
         event.registerItem(AnimatedBlockItemUtil.createBasicExtensions(DataNEssence.locate("textures/block/essence_derivation_spike.png"), DataNEssence.locate("essence_derivation_spike")), BlockRegistry.ESSENCE_DERIVATION_SPIKE.get().asItem());
         event.registerItem(AnimatedBlockItemUtil.createBasicExtensions(DataNEssence.locate("textures/block/rf_node.png"), DataNEssence.locate("essence_point")), BlockRegistry.RF_NODE.get().asItem());
     }
+
     @SubscribeEvent
     public static void registerItemDecorations(RegisterItemDecorationsEvent event) {
         event.register(ItemRegistry.ESSENCE_SWORD.get(), ItemDecorators.essenceBarDecoration);
@@ -189,7 +190,12 @@ public class ClientModEvents {
         event.register(ItemRegistry.GRAPPLING_HOOK.get(), ItemDecorators.essenceBarDecoration);
         event.register(ItemRegistry.TRANS_GRAPPLING_HOOK.get(), ItemDecorators.essenceBarDecoration);
         event.register(ItemRegistry.ORE_SCANNER.get(), ItemDecorators.essenceBarDecoration);
+        event.register(ItemRegistry.MOLD_ROD.get(), ItemDecorators.shapingImpression);
+        event.register(ItemRegistry.MOLD_PANEL.get(), ItemDecorators.shapingImpression);
+        event.register(ItemRegistry.ECLIPTRUM_MOLD_ROD.get(), ItemDecorators.shapingImpression);
+        event.register(ItemRegistry.ECLIPTRUM_MOLD_PANEL.get(), ItemDecorators.shapingImpression);
     }
+
     @SubscribeEvent
     public static void registerMenuScreens(RegisterMenuScreensEvent event) {
         event.register(MenuRegistry.FABRICATOR_MENU.get(), FabricatorScreen::new);

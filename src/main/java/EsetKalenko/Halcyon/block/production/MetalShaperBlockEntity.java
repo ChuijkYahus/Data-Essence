@@ -82,7 +82,7 @@ public class MetalShaperBlockEntity extends BlockEntity implements MenuProvider,
         }
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
-            return stack.has(DataComponentRegistry.MOLD);
+            return stack.has(DataComponentRegistry.SHAPING_IMPRESSION);
         }
     };
 
@@ -204,7 +204,7 @@ public class MetalShaperBlockEntity extends BlockEntity implements MenuProvider,
         RecipeHolder<MetalShaperRecipe> recipe = null;
         ResourceLocation moldRecipe = null;
         if (!moldHandler.getStackInSlot(0).isEmpty()) {
-            moldRecipe = moldHandler.getStackInSlot(0).get(DataComponentRegistry.MOLD);
+            moldRecipe = moldHandler.getStackInSlot(0).get(DataComponentRegistry.SHAPING_IMPRESSION);
         }
         for (RecipeHolder<MetalShaperRecipe> i : recipes) {
             if (i.id().equals(moldRecipe)) {

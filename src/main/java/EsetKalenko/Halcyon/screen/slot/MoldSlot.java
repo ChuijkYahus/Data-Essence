@@ -12,6 +12,6 @@ public class MoldSlot extends SlotItemHandler {
 
     @Override
     public boolean mayPlace(ItemStack stack) {
-        return stack.has(DataComponentRegistry.MOLD);
+        return stack.has(DataComponentRegistry.SHAPING_IMPRESSION);
     }
 }

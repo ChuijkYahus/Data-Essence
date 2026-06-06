@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "datanessence:block/deco/polished_obsidian",
+    "east": "datanessence:block/player_data_bank_side",
+    "north": "datanessence:block/player_data_bank_front",
+    "particle": "datanessence:block/player_data_bank_front",
+    "south": "datanessence:block/player_data_bank_side",
+    "up": "datanessence:block/deco/polished_obsidian",
+    "west": "datanessence:block/player_data_bank_side"
+  }
+}
