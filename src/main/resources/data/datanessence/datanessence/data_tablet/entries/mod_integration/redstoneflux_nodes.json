@@ -27,5 +27,8 @@
   },
   "flavor": {
     "translate": "data_tablet.pages.integration_redstoneflux_nodes.flavor"
-  }
+  },
+  "parents": [
+    "datanessence:machinery_transformation/lunarium"
+  ]
 }
