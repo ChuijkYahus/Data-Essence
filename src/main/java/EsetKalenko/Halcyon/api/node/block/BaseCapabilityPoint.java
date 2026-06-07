@@ -149,26 +149,27 @@ public abstract class BaseCapabilityPoint extends Block implements EntityBlock {
             if (entity instanceof BaseCapabilityPointBlockEntity ent) {
                 if (pPlayer.getItemInHand(pHand).is(getRequiredWire())) {
                     BlockPosNetworks networks = pLevel.getData(AttachmentTypeRegistry.CAPABILITY_NODE_NETWORKS);
-                    var edges = networks.graph.outEdges(pPos);
                     Optional<BlockEntity> linkFrom = pPlayer.getData(AttachmentTypeRegistry.LINK_FROM);
-                    if (linkFrom.isEmpty()) {
-                        if (edges.size() < DataNEssenceConfig.maxNodeWires) {
+                    if (networks.graph.inEdges(pPos).size() + networks.graph.outEdges(pPos).size() < DataNEssenceConfig.maxNodeWires) {
+                        if (linkFrom.isEmpty()) {
                             pPlayer.setData(AttachmentTypeRegistry.LINK_FROM, Optional.of(ent));
                             PlayerDataUtil.updateData((ServerPlayer) pPlayer);
                             pLevel.playSound(null, pPos, SoundRegistry.NODE_LINK_FROM.value(), SoundSource.BLOCKS, 1f, 1f);
-                        }
-                    } else {
-                        if (linkFrom.get().getBlockState().getBlock() instanceof BaseCapabilityPoint other) {
-                            if (other.getRequiredWire() == getRequiredWire() && ent != linkFrom.get() && (ent.link.isEmpty() || !ent.link.contains(linkFrom.get().getBlockPos()))) {
-                                if ((linkFrom.get() instanceof BaseCapabilityPointBlockEntity linkFrom2) && linkFrom.get().getBlockPos().closerThan(ent.getBlockPos(), DataNEssenceConfig.wireDistanceLimit)) {
-                                    networks.graph.addEdge(linkFrom2.getBlockPos(), pPos);
-                                    linkFrom2.updateBlock();
-                                    ent.updateBlock();
-                                    pPlayer.setData(AttachmentTypeRegistry.LINK_FROM, Optional.empty());
-                                    PlayerDataUtil.updateData((ServerPlayer) pPlayer);
-                                    if (!pPlayer.isCreative())
-                                        pPlayer.getInventory().clearOrCountMatchingItems((item) -> item.is(getRequiredWire()), 1, pPlayer.inventoryMenu.getCraftSlots());
-                                    pLevel.playSound(null, pPos, SoundRegistry.NODE_LINK_TO.value(), SoundSource.BLOCKS, 1f, 1f);
+                        } else {
+                            var from = linkFrom.get();
+                            var fromPos = from.getBlockPos();
+                            if (ent != from && from.getBlockState().getBlock() instanceof BaseCapabilityPoint other && other.getRequiredWire() == getRequiredWire() && (ent.link.isEmpty() || !ent.link.contains(fromPos))) {
+                                if (networks.graph.inEdges(fromPos).size() + networks.graph.outEdges(fromPos).size() < DataNEssenceConfig.maxNodeWires) {
+                                    if ((from instanceof BaseCapabilityPointBlockEntity linkFrom2) && from.getBlockPos().closerThan(ent.getBlockPos(), DataNEssenceConfig.wireDistanceLimit)) {
+                                        networks.graph.addEdge(linkFrom2.getBlockPos(), pPos);
+                                        linkFrom2.updateBlock();
+                                        ent.updateBlock();
+                                        pPlayer.setData(AttachmentTypeRegistry.LINK_FROM, Optional.empty());
+                                        PlayerDataUtil.updateData((ServerPlayer) pPlayer);
+                                        if (!pPlayer.isCreative())
+                                            pPlayer.getInventory().clearOrCountMatchingItems((item) -> item.is(getRequiredWire()), 1, pPlayer.inventoryMenu.getCraftSlots());
+                                        pLevel.playSound(null, pPos, SoundRegistry.NODE_LINK_TO.value(), SoundSource.BLOCKS, 1f, 1f);
+                                    }
                                 }
                             }
                         }
