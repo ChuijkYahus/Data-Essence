@@ -38,6 +38,7 @@ public class PlantSiphonEssenceProvider extends DataMapProvider {
                 .add(getHolder(Items.SEA_PICKLE), new PlantSiphonEssenceMap(10, 2), false)
                 .add(getHolder(Items.SWEET_BERRIES), new PlantSiphonEssenceMap(20, 2), false)
                 .add(getHolder(Items.GLOW_BERRIES), new PlantSiphonEssenceMap(20, 2), false)
+                .add(getHolder(Items.MELON_SLICE), new PlantSiphonEssenceMap(20, 2), false)
                 .add(getHolder(Items.VINE), new PlantSiphonEssenceMap(5, 1), false)
                 .add(PastelItems.FISSURE_PLUM, new PlantSiphonEssenceMap(20, 2), false, new ModLoadedCondition("pastel"))
                 .add(PastelItems.SAWBLADE_HOLLY_BERRY, new PlantSiphonEssenceMap(20, 2), false, new ModLoadedCondition("pastel"))

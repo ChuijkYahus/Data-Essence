@@ -16,7 +16,6 @@ import net.neoforged.neoforge.capabilities.BlockCapabilityCache;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.capability.IFluidHandler;
-import net.neoforged.neoforge.items.IItemHandler;
 import org.jetbrains.annotations.Nullable;
 import org.joml.Math;
 
@@ -123,7 +122,7 @@ public class FluidPointBlockEntity extends BaseCapabilityPointBlockEntity {
         return didWork;
     }
 
-    private BlockCapabilityCache<IItemHandler, @Nullable Direction> capCache = null;
+    private BlockCapabilityCache<IFluidHandler, @Nullable Direction> capCache = null;
 
     @Override
     public @Nullable Object getAttachedCapability(Class<?> capabilityClass) {
@@ -132,7 +131,7 @@ public class FluidPointBlockEntity extends BaseCapabilityPointBlockEntity {
         }
 
         if (capCache == null) {
-            capCache = BlockCapabilityCache.create(Capabilities.ItemHandler.BLOCK, (ServerLevel) this.getLevel(), this.getBlockPos().relative(this.getDirection().getOpposite()), this.getDirection());
+            capCache = BlockCapabilityCache.create(Capabilities.FluidHandler.BLOCK, (ServerLevel) this.getLevel(), this.getBlockPos().relative(this.getDirection().getOpposite()), this.getDirection());
         }
 
         return capCache.getCapability();
