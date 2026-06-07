@@ -22,3 +22,4 @@
 - Nodes now work with Sable sublevels (TheRobbie73)
 - Structure Pings no longer disappear while the game is paused (Esét)
 - Fixed Tidal Energy Meter's right-click action being totally nonfunctional on servers (Esét)
+- Fixed Wire connection limit not being adhered to in all connection directions (Vonr)
