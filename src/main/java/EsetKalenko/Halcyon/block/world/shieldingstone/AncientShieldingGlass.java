@@ -30,7 +30,7 @@ public class AncientShieldingGlass extends TransparentBlock implements Shielding
     protected float getDestroyProgress(BlockState state, Player player, BlockGetter level, BlockPos pos) {
         if (player instanceof FakePlayer)
             return 0.0f;
-        int i = player.hasCorrectToolForDrops(state, player.level(), pos) ? 250 : 1500;
+        int i = player.hasCorrectToolForDrops(state, player.level(), pos) ? 50 : 1500;
         return player.getDigSpeed(state, pos) / 2.0F / i;
     }
 }

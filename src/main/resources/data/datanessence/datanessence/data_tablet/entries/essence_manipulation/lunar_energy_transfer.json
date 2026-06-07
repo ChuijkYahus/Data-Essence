@@ -15,7 +15,7 @@
     {
       "type": "datanessence:crafting",
       "recipes": [
-        "datanessence:fabrication/points/lunar_node",
+        "datanessence:fabrication/points/lunar_essence_node",
         "datanessence:synthesis/lunar_wire"
       ]
     }
@@ -43,7 +43,7 @@
         {
           "type": "datanessence:crafting",
           "recipes": [
-            "datanessence:fabrication/points/lunar_node_bad",
+            "datanessence:fabrication/points/lunar_essence_node_bad",
             "datanessence:synthesis/lunar_wire"
           ]
         }

@@ -4,14 +4,14 @@
     "datanessence:essence": 500
   },
   "time": 153,
-  "entry": "datanessence:essence_manipulation/lunar_essence_transfer",
+  "entry": "datanessence:essence_manipulation/lunar_energy_transfer",
   "completion_stage": 0,
   "pattern": [
     "RAR",
     " O "
   ],
   "key": {
-    "A": { "item": "datanessence:lunar_essence_shard" },
+    "A": { "item": "datanessence:shard_of_transformation" },
     "R": { "item": "datanessence:conductance_rod" },
     "O": { "item": "datanessence:polished_obsidian" }
   },
