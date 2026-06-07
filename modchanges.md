@@ -21,3 +21,4 @@
 - Improved Node performance by switching from JGraphT to JGAlgo (Vonr)
 - Nodes now work with Sable sublevels (TheRobbie73)
 - Structure Pings no longer disappear while the game is paused (Esét)
+- Fixed Tidal Energy Meter's right-click action being totally nonfunctional on servers (Esét)
