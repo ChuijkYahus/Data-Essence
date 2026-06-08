@@ -23,3 +23,4 @@
 - Structure Pings no longer disappear while the game is paused (Esét)
 - Fixed Tidal Energy Meter's right-click action being totally nonfunctional on servers (Esét)
 - Fixed Wire connection limit not being adhered to in all connection directions (Vonr)
+- Fixed Twining Lanterns causing a disconnect if you unload then reload them (Esét)
