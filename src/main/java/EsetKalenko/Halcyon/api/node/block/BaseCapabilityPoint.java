@@ -240,14 +240,19 @@ public abstract class BaseCapabilityPoint extends Block implements EntityBlock {
                     BlockPosNetworks networks = pLevel.getData(AttachmentTypeRegistry.CAPABILITY_NODE_NETWORKS);
                     var edges = networks.graph.outEdges(pPos);
                     if (!edges.isEmpty()) {
+                        var toUpdate = new ArrayList<BaseCapabilityPointBlockEntity>(edges.size());
                         for (var i : edges) {
                             ItemEntity item = new ItemEntity(pLevel, pPos.getCenter().x, pPos.getCenter().y, pPos.getCenter().z, new ItemStack(getRequiredWire()));
                             pLevel.addFreshEntity(item);
                             if (pLevel.getBlockEntity(i.target()) instanceof BaseCapabilityPointBlockEntity toEnt) {
-                                toEnt.updateBlock();
+                                toUpdate.add(toEnt);
                             }
                         }
                         networks.graph.removeOutEdgesOf(pPos);
+
+                        for (var toEnt : toUpdate) {
+                            toEnt.updateBlock();
+                        }
                         ent.updateBlock();
                     }
                 }
