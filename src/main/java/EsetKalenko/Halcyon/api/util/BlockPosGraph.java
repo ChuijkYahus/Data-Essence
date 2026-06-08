@@ -3,11 +3,15 @@ package EsetKalenko.Halcyon.api.util;
 import com.jgalgo.alg.shortestpath.NegativeCycleException;
 import com.jgalgo.alg.shortestpath.ShortestPathSingleSource;
 import com.jgalgo.alg.shortestpath.ShortestPathSingleSourceDijkstra;
-import com.jgalgo.graph.*;
+import com.jgalgo.graph.EdgeSet;
+import com.jgalgo.graph.Graph;
+import com.jgalgo.graph.NoSuchEdgeException;
+import com.jgalgo.graph.NoSuchVertexException;
 import net.minecraft.core.BlockPos;
 
 import java.util.Collection;
 import java.util.Set;
+import java.util.function.Consumer;
 
 public class BlockPosGraph {
     private final Graph<BlockPos, BlockPosEdge> inner;
@@ -153,6 +157,17 @@ public class BlockPosGraph {
     }
 
     /**
+     * Remove a vertex and all its edges from the graph.
+     *
+     * @param  vertex                the vertex identifier to remove
+     * @throws NoSuchVertexException if {@code vertex} is not a valid vertex identifier
+     */
+    public void removeVertex(BlockPos vertex) throws NoSuchVertexException {
+        this.inner.removeVertex(vertex);
+        this.version++;
+    }
+
+    /**
      * Remove an edge from the graph.
      *
      * @param  edge                the edge to remove
@@ -160,6 +175,51 @@ public class BlockPosGraph {
      */
     public void removeEdge(BlockPosEdge edge) {
         this.inner.removeEdge(edge);
+        this.version++;
+    }
+
+    /**
+     * Remove all the edges of a vertex.
+     *
+     * @param  vertex                a vertex in the graph
+     * @throws NoSuchVertexException if {@code vertex} is not a valid vertex identifier
+     */
+    public void removeEdgesOf(BlockPos vertex) {
+        this.inner.removeEdgesOf(vertex);
+        this.version++;
+    }
+
+    /**
+     * Remove all edges whose source is {@code source}.
+     *
+     * @param  source                a vertex in the graph
+     * @throws NoSuchVertexException if {@code source} is not a valid vertex identifier
+     */
+    public void removeOutEdgesOf(BlockPos source) {
+        this.inner.removeOutEdgesOf(source);
+        this.version++;
+    }
+
+    /**
+     * Remove all edges whose target is {@code target}.
+     *
+     * @param  target                a vertex in the graph
+     * @throws NoSuchVertexException if {@code target} is not a valid vertex identifier
+     */
+    public void removeInEdgesOf(BlockPos target) {
+        this.inner.removeInEdgesOf(target);
+        this.version++;
+    }
+
+    /**
+     * Applies {@code consumer} to the inner graph then increments the version.
+     * <br>
+     * Users should avoid letting the reference escape the {@code consumer}.
+     *
+     * @param consumer the function that the inner graph is passed to.
+     */
+    public void unsafeWithInner(Consumer<Graph<BlockPos, BlockPosEdge>> consumer) {
+        consumer.accept(this.inner);
         this.version++;
     }
 
