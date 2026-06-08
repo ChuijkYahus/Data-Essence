@@ -1,0 +1,34 @@
+{
+  "icon": {
+    "id": "datanessence:harvester"
+  },
+  "tab": "datanessence:machinery",
+  "x": -3,
+  "y": 5,
+  "pages": [
+    {
+      "type": "datanessence:item",
+      "item": {
+        "id": "datanessence:harvester"
+      },
+      "text": {
+        "translate": "data_tablet.pages.harvester.page1.text"
+      }
+    },
+    {
+      "type": "datanessence:crafting",
+      "text": {
+        "translate": "data_tablet.pages.harvester.page2.text"
+      },
+      "recipes": [
+        "datanessence:fabrication/utilities/harvester"
+      ]
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.harvester.name"
+  },
+  "flavor": {
+    "translate": "data_tablet.pages.harvester.flavor"
+  }
+}

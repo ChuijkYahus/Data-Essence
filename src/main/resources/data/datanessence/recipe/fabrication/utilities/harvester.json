@@ -1,0 +1,20 @@
+{
+  "type": "datanessence:shaped_fabrication_recipe",
+  "essenceCost": {
+    "datanessence:essence": 200
+  },
+  "time": 120,
+  "entry": "datanessence:machinery/harvester",
+  "pattern": [
+    " H ",
+    "ERE",
+    " P "
+  ],
+  "key": {
+    "E": { "item": "datanessence:essence_pathways" },
+    "H": { "item": "minecraft:stone_hoe" },
+    "P": { "item": "datanessence:capacitance_panel" },
+    "R": { "item": "datanessence:conductance_rod" }
+  },
+  "result": { "id": "datanessence:harvester", "count": 1 }
+}

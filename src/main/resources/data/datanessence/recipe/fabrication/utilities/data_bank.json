@@ -3,7 +3,7 @@
   "essenceCost": {
     "datanessence:essence": 1000
   },
-  "time": 160,
+  "time": 200,
   "entry": "datanessence:basics/data_bank",
   "pattern": [
     "PPP",

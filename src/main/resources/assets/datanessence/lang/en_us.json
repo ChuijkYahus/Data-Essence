@@ -278,6 +278,7 @@
   "block.datanessence.player_data_bank": "Data Bank",
   "block.datanessence.player_data_bank.receive": "Downloaded %1$s entries from this Data Bank.",
   "block.datanessence.player_data_bank.bind": "Uploaded %1$s entries to this Data Bank.",
+  "block.datanessence.harvester": "Simple Harvester",
 
   "entity.datanessence.essence_bomb": "Explosive Charge",
   "entity.datanessence.lunar_essence_bomb": "Crystallization Charge",
@@ -580,6 +581,10 @@
   "data_tablet.pages.fluidworks.name": "Fluid Transfer",
   "data_tablet.pages.fluidworks.page1.text": "Fluid manipulation, particularly moving it between machines, is an important facet of our work. Building upon the existing design that suits Tidal Energy so well, we designed Fluid Nodes and corresponding Wire. These work just as one may expect, allowing for point-to-point transportation of any liquids we wish.",
   "data_tablet.pages.fluidworks.page2.text": " ◇ The linking order of nodes controls the direction of flow - sender to receiver.\n ◇ Intermediate nodes cannot send nor receive.",
+  "data_tablet.pages.harvester.flavor": " ◇ Simple needs beget simple solutions",
+  "data_tablet.pages.harvester.name": "Harvesting Crops",
+  "data_tablet.pages.harvester.page1.text": "Certain processes demand a steady supply of crops, but not all crops are harvestable with simple redstone mechanisms. Before one is given clearance to make use of the more proper Tide to alleviate that problem in its entirety, one may wish to at least have something that performs this task, no matter how slow or short-ranged. If that is so, this simple device set on or below a small patch of soil may suffice. It harvests and replants most standard crops, also operating on that strange red weed the Phenuans seem to covet. Perhaps useful in making amends with them?",
+  "data_tablet.pages.harvester.page2.text": " ◇ Will harvest in a 3x3x3 centered one block below itself - occupies the middle tile of the bottom-most layer of this volume\n ◇ Can be disabled with redstone",
   "data_tablet.pages.industrial_infuser_processing.flavor": " ◇ Dumping energy into objects for fun and profit",
   "data_tablet.pages.industrial_infuser_processing.name": "Industrial Infuser Processing",
   "data_tablet.pages.industrial_infuser_processing.page1.text": "We have begun exploring the practical applications of the Infuser. Our research begins with the Industrial Tide, as it is the simplest and most foundational. Thus far we have observed several useful reactions with the following substances when exposed to it. The results range from mild convenience, to production of necessary resources from commodity items.",
