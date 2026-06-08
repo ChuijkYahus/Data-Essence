@@ -119,6 +119,10 @@ public abstract class BaseEssencePoint extends Block implements EntityBlock {
 
                 networks.graph.removeVertex(pPos);
 
+                for (var ent : toUpdate) {
+                    ent.updateBlock();
+                }
+
                 if ( node.uniqueUpgrade.getStackInSlot(0) != ItemStack.EMPTY ) {
                     ItemEntity upgradeSigil = new ItemEntity(pLevel, pPos.getCenter().x, pPos.getCenter().y, pPos.getCenter().z, node.uniqueUpgrade.getStackInSlot(0).copy() );
                     pLevel.addFreshEntity(upgradeSigil);
@@ -232,16 +236,19 @@ public abstract class BaseEssencePoint extends Block implements EntityBlock {
                     BlockPosNetworks networks = pLevel.getData(AttachmentTypeRegistry.ESSENCE_NODE_NETWORKS);
                     var edges = networks.graph.outEdges(pPos);
                     if (!edges.isEmpty()) {
+                        var toUpdate = new ArrayList<BaseEssencePointBlockEntity>(edges.size());
                         for (var i : edges) {
-                            if (i.source().equals(pPos)) {
-                                ItemEntity item = new ItemEntity(pLevel, pPos.getCenter().x, pPos.getCenter().y, pPos.getCenter().z, new ItemStack(getRequiredWire()));
-                                pLevel.addFreshEntity(item);
-                                if (pLevel.getBlockEntity(i.target()) instanceof BaseEssencePointBlockEntity toEnt) {
-                                    toEnt.updateBlock();
-                                }
+                            ItemEntity item = new ItemEntity(pLevel, pPos.getCenter().x, pPos.getCenter().y, pPos.getCenter().z, new ItemStack(getRequiredWire()));
+                            pLevel.addFreshEntity(item);
+                            if (pLevel.getBlockEntity(i.target()) instanceof BaseEssencePointBlockEntity toEnt) {
+                                toUpdate.add(toEnt);
                             }
                         }
                         networks.graph.removeOutEdgesOf(pPos);
+
+                        for (var toEnt : toUpdate) {
+                            toEnt.updateBlock();
+                        }
                         ent.updateBlock();
                     }
                 }
