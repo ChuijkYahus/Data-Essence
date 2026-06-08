@@ -242,6 +242,9 @@ public class BlockRegistry {
     public static final Supplier<Block> TWINING_LANTERN = register("twining_lantern",
             () -> new TwiningLantern(getToollessMachineProperties().lightLevel((blockState) -> { return 15;})),
             object -> () -> new BlockItem(object.get(), new Item.Properties()));
+    public static final Supplier<Block> SIMPLE_HARVESTER = register("harvester",
+            () -> new SimpleHarvester(getMachineProperties()),
+            object -> () -> new BlockItem(object.get(), new Item.Properties()));
 
     // Buffers
     public static final Supplier<Block> ESSENCE_BUFFER = register("essence_buffer",

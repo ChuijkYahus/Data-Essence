@@ -9,6 +9,7 @@
 - Progression Sharing via player-built Data Banks (Esét)
 - The Repulsion Rod (Esét)
 - RF Nodes and Wires (Esét)
+- Unnamed Crop Harvester
 
 ### Changes
 - Changed click sounds for Shifting Hues to all be ui_click (Esét)

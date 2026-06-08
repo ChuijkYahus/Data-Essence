@@ -267,6 +267,10 @@ public class BlockEntityRegistry {
             register("lunarium", () ->
                     BlockEntityType.Builder.of(LunariumBlockEntity::new,
                             BlockRegistry.LUNARIUM.get()).build(null));
+    public static final Supplier<BlockEntityType<SimpleHarvesterBlockEntity>> HARVESTER =
+            register("harvester", () ->
+                    BlockEntityType.Builder.of(SimpleHarvesterBlockEntity::new,
+                            BlockRegistry.SIMPLE_HARVESTER.get()).build(null));
 
 
     private static <T extends BlockEntityType<?>> Supplier<T> register(final String name, final Supplier<T> blockentity) {
