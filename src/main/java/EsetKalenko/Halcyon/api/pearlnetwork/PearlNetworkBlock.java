@@ -78,13 +78,13 @@ public class PearlNetworkBlock extends Block {
                 var edges = networks.graph.inEdges(pPos);
                 for (var i : edges) {
                     BlockPos pos = i.source();
-                    networks.graph.removeEdge(i);
                     if (!pos.equals(pPos)) {
                         if (pLevel.getBlockEntity(pos) instanceof PearlNetworkBlockEntity ent) {
                             ent.updateBlock();
                         }
                     }
                 }
+                networks.graph.removeVertex(pPos);
             }
         }
         super.onRemove(pState, pLevel, pPos, pNewState, pMovedByPiston);

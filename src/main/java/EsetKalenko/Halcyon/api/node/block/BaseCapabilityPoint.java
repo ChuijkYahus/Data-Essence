@@ -23,7 +23,12 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
-import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.EntityBlock;
+import net.minecraft.world.level.block.HorizontalDirectionalBlock;
+import net.minecraft.world.level.block.Mirror;
+import net.minecraft.world.level.block.Rotation;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -36,8 +41,8 @@ import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
+import java.util.ArrayList;
 import java.util.Optional;
-import java.util.stream.Stream;
 
 public abstract class BaseCapabilityPoint extends Block implements EntityBlock {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
@@ -95,17 +100,34 @@ public abstract class BaseCapabilityPoint extends Block implements EntityBlock {
         if (pState.getBlock() != pNewState.getBlock()) {
             if (pLevel.getBlockEntity(pPos) instanceof BaseCapabilityPointBlockEntity node) {
                 BlockPosNetworks networks = pLevel.getData(AttachmentTypeRegistry.CAPABILITY_NODE_NETWORKS);
-                Stream.concat(networks.graph.inEdges(pPos).stream(), networks.graph.outEdges(pPos).stream()).forEach(i -> {
-                    BlockPos pos = i.source();
-                    ItemEntity item = new ItemEntity(pLevel, pos.getCenter().x, pos.getCenter().y, pos.getCenter().z, new ItemStack(getRequiredWire()));
-                    pLevel.addFreshEntity(item);
-                    networks.graph.removeEdge(i);
+
+                var toUpdate = new ArrayList<BaseCapabilityPointBlockEntity>(networks.graph.inEdges(pPos).size());
+                for (var edge : networks.graph.inEdges(pPos)) {
+                    var pos = edge.source();
                     if (!pos.equals(pPos)) {
                         if (pLevel.getBlockEntity(pos) instanceof BaseCapabilityPointBlockEntity ent) {
-                            ent.updateBlock();
+                            toUpdate.add(ent);
                         }
                     }
-                });
+                }
+
+                var toRemove = networks.graph.inEdges(pPos).size() + networks.graph.outEdges(pPos).size();
+                var wire = this.getRequiredWire();
+                var maxStack = wire.getDefaultMaxStackSize();
+                var center = pPos.getCenter();
+                while (toRemove > 0) {
+                    var amount = Math.min(maxStack, toRemove);
+                    toRemove -= amount;
+                    ItemEntity item = new ItemEntity(pLevel, center.x, center.y, center.z, new ItemStack(wire, amount));
+                    pLevel.addFreshEntity(item);
+                }
+
+                networks.graph.removeVertex(pPos);
+
+                for (var ent : toUpdate) {
+                    ent.updateBlock();
+                }
+
                 if ( node.uniqueUpgrade.getStackInSlot(0) != ItemStack.EMPTY ) {
                     ItemEntity upgradeSigil = new ItemEntity(pLevel, pPos.getCenter().x, pPos.getCenter().y, pPos.getCenter().z, node.uniqueUpgrade.getStackInSlot(0).copy() );
                     pLevel.addFreshEntity(upgradeSigil);
@@ -221,11 +243,11 @@ public abstract class BaseCapabilityPoint extends Block implements EntityBlock {
                         for (var i : edges) {
                             ItemEntity item = new ItemEntity(pLevel, pPos.getCenter().x, pPos.getCenter().y, pPos.getCenter().z, new ItemStack(getRequiredWire()));
                             pLevel.addFreshEntity(item);
-                            networks.graph.removeEdge(i);
                             if (pLevel.getBlockEntity(i.target()) instanceof BaseCapabilityPointBlockEntity toEnt) {
                                 toEnt.updateBlock();
                             }
                         }
+                        networks.graph.removeOutEdgesOf(pPos);
                         ent.updateBlock();
                     }
                 }
