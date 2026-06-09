@@ -533,6 +533,12 @@
   "data_tablet.pages.integration_pastel_shard_reconstruction.name": "Pastel: Shard Reconstruction",
   "data_tablet.pages.integration_pastel_shard_reconstruction.page1.text": "Preliminary experimentation shows that these gemstones are useful both in intact shard form and crushed-up powder form. It may therefore be desirable to have a means to \"reconstruct\" an intact shard from its constituent powder, thereby having a perfectly efficient means of transforming a gemstone from one state to the other. The Synthesis Chamber works wonders for this purpose.",
   "data_tablet.pages.integration_pastel_shard_reconstruction.page2.text": " ◇ Works on all known gemstone types",
+  "data_tablet.pages.integration_malum.name": "Integration: Malum",
+  "data_tablet.pages.integration_malum.page1.text": "We theorize that this \"spirit arcana\", as strange a form of magic as it is, can be aided with knowledge of the Tides. There may be a fair amount to explore with this art, but for the time being we have settled for something simple, something that shall remain useful throughout our studies of it. Increasing the efficiency of gathering its base materials, as the Industrial Tide is wont to allow for.\n\nThe other Tides might allow for far more interesting possibilites when set to work upon the materials and products of spirit arcana.",
+  "data_tablet.pages.integration_malum.page2.text": "As we can create normal Charcoal in an Infuser more efficiently, so too can we create its Arcane counterpart. A rather simple effort, but perhaps useful before one procures a Tidal Furnace.",
+  "data_tablet.pages.integration_malum_lunar.name": "Malum: Transformative Innovations",
+  "data_tablet.pages.integration_malum_lunar.page1.incomplete_text": "We may have stumbled upon a new innovation with the Lunar Tide and spirit arcana. But we simply do not - can not - know enough to fully derive its nature. Perhaps we need knowledge from an outside source? But whom, or what? The Phenuans surely would not dare to instruct us now.",
+  "data_tablet.pages.integration_malum_lunar.page1.text": "All five of our suqadron have now dove into that Well, that pit, that expanse. The information we have gained - after an indescribable experience - has been sufficient for our needs: the Lunar Tide allows us to transform some base components into Cthonic Gold, where previously this secret was barred from us.",
 
   "_comment.data_tablet_pages.machinery": "Machinery and Processing (tiers 1 and 2) category texts.",
   "data_tablet.pages.advanced_filtering.name": "Advanced Filtering",

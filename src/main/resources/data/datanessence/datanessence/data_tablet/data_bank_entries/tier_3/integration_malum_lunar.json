@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "malum"
+    }
+  ],
+  "icon": {
+    "id": "malum:cthonic_gold"
+  },
+  "tier": 3,
+  "name": {
+    "translate": "data_tablet.pages.integration_malum_lunar.name"
+  },
+  "entry": "datanessence:mod_integration/malum_lunar"
+}

@@ -1,0 +1,6 @@
+{
+  "type": "datanessence:entropic_processing",
+  "input": { "tag": "minecraft:wart_blocks" },
+  "time": 100,
+  "result": { "id": "minecraft:nether_wart", "count": 9 }
+}

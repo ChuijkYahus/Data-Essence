@@ -13,6 +13,7 @@
 - Storage blocks for Shards of Industry and Shards of Transformation
 - Malum compat for the Mineral Purification Chamber (Esét)
 - Some more Pastel compat recipes (Esét)
+- Some Malum compat recipes (Esét)
 
 ### Changes
 - Changed click sounds for Shifting Hues to all be ui_click (Esét)
@@ -29,3 +30,4 @@
 - Fixed Tidal Energy Meter's right-click action being totally nonfunctional on servers (Esét)
 - Fixed Wire connection limit not being adhered to in all connection directions (Vonr)
 - Fixed Twining Lanterns causing a disconnect if you unload then reload them (Esét)
+- Fixed completion stages not working properly with hidden advancements (Esét)

@@ -110,19 +110,20 @@ public class ClientStartupEvents {
 
     @SubscribeEvent
     public static void doSetup(FMLClientSetupEvent event) {
-        EntityRenderers.register(EntityRegistry.ESSENCE_BOMB.get(), ThrownTrailItemRenderer::new);
-        EntityRenderers.register(EntityRegistry.LUNAR_ESSENCE_BOMB.get(), ThrownTrailItemRenderer::new);
-        EntityRenderers.register(EntityRegistry.NATURAL_ESSENCE_BOMB.get(), ThrownTrailItemRenderer::new);
-        EntityRenderers.register(EntityRegistry.EXOTIC_ESSENCE_BOMB.get(), ThrownTrailItemRenderer::new);
-        EntityRenderers.register(EntityRegistry.BLACK_HOLE.get(), EmptyEntityRenderer::new);
-        EntityRenderers.register(EntityRegistry.ANCIENT_SENTINEL.get(), AncientSentinelRenderer::new);
-        EntityRenderers.register(EntityRegistry.ANCIENT_SENTINEL_PROJECTILE.get(), EmptyEntityRenderer::new);
-        EntityRenderers.register(EntityRegistry.ESSENCE_SLASH_PROJECTILE.get(), EssenceSlashRenderer::new);
-        EntityRenderers.register(EntityRegistry.ANCIENT_SENTINEL_LASER.get(), AncientSentinelLaserRenderer::new);
-        EntityRenderers.register(EntityRegistry.LUNAR_STRIKE.get(), LunarStrikeRenderer::new);
-        EntityRenderers.register(EntityRegistry.RIFLE_LASER.get(), RifleLaserRenderer::new);
 
         event.enqueueWork(() -> {
+            EntityRenderers.register(EntityRegistry.ESSENCE_BOMB.get(), ThrownTrailItemRenderer::new);
+            EntityRenderers.register(EntityRegistry.LUNAR_ESSENCE_BOMB.get(), ThrownTrailItemRenderer::new);
+            EntityRenderers.register(EntityRegistry.NATURAL_ESSENCE_BOMB.get(), ThrownTrailItemRenderer::new);
+            EntityRenderers.register(EntityRegistry.EXOTIC_ESSENCE_BOMB.get(), ThrownTrailItemRenderer::new);
+            EntityRenderers.register(EntityRegistry.BLACK_HOLE.get(), EmptyEntityRenderer::new);
+            EntityRenderers.register(EntityRegistry.ANCIENT_SENTINEL.get(), AncientSentinelRenderer::new);
+            EntityRenderers.register(EntityRegistry.ANCIENT_SENTINEL_PROJECTILE.get(), EmptyEntityRenderer::new);
+            EntityRenderers.register(EntityRegistry.ESSENCE_SLASH_PROJECTILE.get(), EssenceSlashRenderer::new);
+            EntityRenderers.register(EntityRegistry.ANCIENT_SENTINEL_LASER.get(), AncientSentinelLaserRenderer::new);
+            EntityRenderers.register(EntityRegistry.LUNAR_STRIKE.get(), LunarStrikeRenderer::new);
+            EntityRenderers.register(EntityRegistry.RIFLE_LASER.get(), RifleLaserRenderer::new);
+
             ItemProperties.register(ItemRegistry.MUSIC_DISC_PLAYER.get(), DataNEssence.locate("playing"), (stack, level, entity, seed) -> {
                 if (stack.has(DataComponentRegistry.PLAYING_MUSIC)) {
                     return 1;
@@ -133,18 +134,18 @@ public class ClientStartupEvents {
             ItemProperties.register(ItemRegistry.GRAPPLING_HOOK.get(), DataNEssence.locate("using"), usingGrapplingHookProperty);
             ItemProperties.register(ItemRegistry.TRANS_GRAPPLING_HOOK.get(), DataNEssence.locate("charged"), chargedGrapplingHookProperty);
             ItemProperties.register(ItemRegistry.TRANS_GRAPPLING_HOOK.get(), DataNEssence.locate("using"), usingGrapplingHookProperty);
-        });
 
-        progressionShader = new ProgressionShader();
-        PostShaderManager.addShader(progressionShader);
-        genderEuphoriaShader = new GenderEuphoriaShader();
-        PostShaderManager.addShader(genderEuphoriaShader);
-        machineOutputShader = new MachineOutputShader();
-        PostShaderManager.addShader(machineOutputShader);
-        machineOutputShader.setActive(true);
-        orePingShader = new OrePingShader();
-        PostShaderManager.addShader(orePingShader);
-        orePingShader.setActive(true);
+            progressionShader = new ProgressionShader();
+            PostShaderManager.addShader(progressionShader);
+            genderEuphoriaShader = new GenderEuphoriaShader();
+            PostShaderManager.addShader(genderEuphoriaShader);
+            machineOutputShader = new MachineOutputShader();
+            PostShaderManager.addShader(machineOutputShader);
+            machineOutputShader.setActive(true);
+            orePingShader = new OrePingShader();
+            PostShaderManager.addShader(orePingShader);
+            orePingShader.setActive(true);
+        });
     }
 
     public static final ItemPropertyFunction usingGrapplingHookProperty = (stack, level, entity, seed) -> {

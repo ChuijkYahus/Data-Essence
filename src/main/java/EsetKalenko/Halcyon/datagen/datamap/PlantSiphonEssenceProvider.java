@@ -60,7 +60,7 @@ public class PlantSiphonEssenceProvider extends DataMapProvider {
                 .add(getHolder(Items.ENCHANTED_GOLDEN_APPLE), new PlantSiphonEssenceMap(100, 16), false)
                 .add(PastelItems.VEGETAL, new PlantSiphonEssenceMap(100, 8), false, new ModLoadedCondition("pastel"))
                 .add(PastelItems.GERMINATED_JADE_VINE_BULB, new PlantSiphonEssenceMap(100, 12), false, new ModLoadedCondition("pastel"))
-                .add(PastelItems.JADE_VINE_PETALS, new PlantSiphonEssenceMap(100, 8), false, new ModLoadedCondition("pastel"))
+                .add(PastelItems.JADE_PETALS, new PlantSiphonEssenceMap(100, 8), false, new ModLoadedCondition("pastel"))
                 .add(getHolder(PastelBlocks.JADEITE_LOTUS_BULB.asItem()), new PlantSiphonEssenceMap(100, 8), false, new ModLoadedCondition("pastel"))
                 .add(getHolder(PastelBlocks.JADEITE_LOTUS_FLOWER.asItem()), new PlantSiphonEssenceMap(100, 8), false, new ModLoadedCondition("pastel"))
                 .add(getHolder(PastelBlocks.NEPHRITE_BLOSSOM_BULB.asItem()), new PlantSiphonEssenceMap(100, 8), false, new ModLoadedCondition("pastel"))
