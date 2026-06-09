@@ -3,6 +3,7 @@ package EsetKalenko.Halcyon.registry;
 import EsetKalenko.Halcyon.DataNEssence;
 import EsetKalenko.Halcyon.api.block.SpreadingPlant;
 
+import EsetKalenko.Halcyon.api.item.ShardSublimatableBlockItem;
 import EsetKalenko.Halcyon.block.DirectionalPillarBlock;
 import EsetKalenko.Halcyon.block.auxiliary.*;
 import EsetKalenko.Halcyon.block.decoration.*;
@@ -41,6 +42,7 @@ import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
+import java.util.Map;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
@@ -512,6 +514,18 @@ public class BlockRegistry {
     public static final Supplier<Block> MAKUTUIN_RUNNER_CROSS = register("makutuin_runner_cross",
             () -> new MakutuinRunnerCross(BlockBehaviour.Properties.ofFullCopy(Blocks.RED_CARPET)),
             object -> () -> new BlockItem(object.get(), new Item.Properties()));
+
+    // Resource Storage Blocks
+    public static final Supplier<Block> BLOCK_OF_INDUSTRY = register("block_of_industry",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK).mapColor(MapColor.COLOR_MAGENTA)),
+            object -> () -> new ShardSublimatableBlockItem(object.get(),
+                    new Item.Properties(),
+                    Map.of(EssenceTypeRegistry.ESSENCE, 900f)));
+    public static final Supplier<Block> BLOCK_OF_TRANSFORMATION = register("block_of_transformation",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK).mapColor(MapColor.COLOR_YELLOW)),
+            object -> () -> new ShardSublimatableBlockItem(object.get(),
+                    new Item.Properties(),
+                    Map.of(EssenceTypeRegistry.LUNAR_ESSENCE, 900f)));
 
 
     private static <T extends Block> Supplier<T> registerBlock(final String name,

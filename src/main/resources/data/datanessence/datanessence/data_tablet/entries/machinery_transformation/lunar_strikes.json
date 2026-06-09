@@ -1,6 +1,6 @@
 {
   "icon": {
-    "id": "datanessence:crystal_of_transformation"
+    "id": "datanessence:shard_of_transformation"
   },
   "tab": "datanessence:machinery_transformation",
   "x": 0,
@@ -14,6 +14,13 @@
       "text": {
         "translate": "data_tablet.pages.lunar_strikes.page1.text"
       }
+    },
+    {
+      "type": "datanessence:crafting",
+      "recipes": [
+        "datanessence:crafting/shard_of_transformation_compacting",
+        "datanessence:crafting/shard_of_transformation_decompacting"
+      ]
     }
   ],
   "name": {
