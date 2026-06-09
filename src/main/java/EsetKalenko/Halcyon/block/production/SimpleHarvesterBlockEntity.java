@@ -19,10 +19,12 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.NetherWartBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -76,7 +78,10 @@ public class SimpleHarvesterBlockEntity extends BlockEntity implements EssenceBl
                     continue;
 
                 dropYields(world, queryState, queryPos, harvester);
+                if ( queryState.hasProperty(BlockStateProperties.DOUBLE_BLOCK_HALF) )
+                    world.setBlockAndUpdate(queryPos.above(), Blocks.AIR.defaultBlockState());
                 world.setBlockAndUpdate(queryPos, crop.getStateForAge(0));
+
                 harvestedSomething = true;
             }
 
