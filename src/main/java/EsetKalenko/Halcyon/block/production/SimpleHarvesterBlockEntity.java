@@ -78,9 +78,9 @@ public class SimpleHarvesterBlockEntity extends BlockEntity implements EssenceBl
                     continue;
 
                 dropYields(world, queryState, queryPos, harvester);
+                world.setBlockAndUpdate(queryPos, crop.getStateForAge(0));
                 if ( queryState.hasProperty(BlockStateProperties.DOUBLE_BLOCK_HALF) )
                     world.setBlockAndUpdate(queryPos.above(), Blocks.AIR.defaultBlockState());
-                world.setBlockAndUpdate(queryPos, crop.getStateForAge(0));
 
                 harvestedSomething = true;
             }
