@@ -6,7 +6,7 @@
     }
   ],
   "type": "datanessence:entropic_processing",
-  "input": { "item": "pastel:quitoxic_reed" },
+  "input": { "item": "pastel:quitoxic_reeds" },
   "time": 100,
   "result": { "id": "pastel:quitoxic_powder", "count": 2 }
 }
