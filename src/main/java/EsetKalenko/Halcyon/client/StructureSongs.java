@@ -1,6 +1,8 @@
 package EsetKalenko.Halcyon.client;
 
 import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.config.DataNEssenceClientConfig;
+import com.cmdpro.databank.misc.SoundUtil;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.client.resources.sounds.SoundInstance;
@@ -49,19 +51,32 @@ public class StructureSongs {
         SoundManager soundManager = client.getSoundManager();
         MusicManager musicManager = client.getMusicManager();
 
-        float currentVolume = client.options.getSoundSourceVolume(SoundSource.MUSIC);
+        float currentVolume = client.options.getSoundSourceVolume(SoundSource.MASTER);
 
         if (currentVolume > 0f) {
             for (var sound : StructureSongs.STRUCTURE_SONGS.values()) {
+                boolean playing = false;
 
                 if (soundManager.isActive(sound.sound)) {
                         musicManager.stopPlaying();
+                        playing = true;
 
                     if (!sound.isSetToPlay) {
                         soundManager.stop(sound.sound);
                     }
                 } else if (sound.isSetToPlay) {
                     soundManager.play(sound.sound);
+                    playing = true;
+                }
+
+                if (playing) {
+                    float volume = (sound.sound.getVolume() * DataNEssenceClientConfig.structureSongVolume * 0.01f);
+
+                    if (SoundUtil.getChannelHandle(sound.sound) == null) {
+                        soundManager.play(sound.sound);
+                    } else {
+                        SoundUtil.modifySound(sound.sound, (channel) -> channel.setVolume(volume));
+                    }
                 }
             }
         }

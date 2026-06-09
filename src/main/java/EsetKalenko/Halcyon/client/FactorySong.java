@@ -169,6 +169,9 @@ public class FactorySong {
             float volume = original;
 
             if (loop != null) {
+                // first, adjust based on the player's set Song volume
+                volume *= ( DataNEssenceClientConfig.factorySongVolume * 0.01f );
+
                 Vec3 eye = Minecraft.getInstance().gameRenderer.getMainCamera().getPosition();
                 if (eye == null) return 0f;
 
@@ -182,9 +185,6 @@ public class FactorySong {
                 double dist = center.distanceTo(eye);
                 double clampedDist = Math.max(0, Math.min(maxDist, dist));
                 volume *= (float)((maxDist - clampedDist) / maxDist);
-
-                // additionally, adjust based on the player's set Song volume
-                volume *= ( DataNEssenceClientConfig.factorySongVolume * 0.01f );
             }
 
             return volume;
