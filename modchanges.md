@@ -20,6 +20,7 @@
 - Moved Mineral-Finding Rod to t3
 - Rethemed the Metal Shaper's work process and mold items to be more akin to 3d printing
 - Updated zh_cn translation (ChuijkYahus)
+- Shard Burners now spawn gaseous clouds when they sublimate shards (Esét)
 
 ### Fixes
 - Improved Node performance by switching from JGraphT to JGAlgo (Vonr)
