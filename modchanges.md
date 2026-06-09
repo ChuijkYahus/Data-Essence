@@ -10,6 +10,7 @@
 - The Repulsion Rod (Esét)
 - RF Nodes and Wires (Esét)
 - Unnamed Crop Harvester
+- Storage blocks for Shards of Industry and Shards of Transformation
 
 ### Changes
 - Changed click sounds for Shifting Hues to all be ui_click (Esét)

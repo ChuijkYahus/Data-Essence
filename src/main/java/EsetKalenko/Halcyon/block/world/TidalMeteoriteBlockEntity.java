@@ -27,92 +27,109 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-public class LunarCrystalSeedBlockEntity extends BlockEntity {
-    public LunarCrystalSeedBlockEntity(BlockPos pos, BlockState state) {
+public class TidalMeteoriteBlockEntity extends BlockEntity {
+    public int wispTimer;
+    public List<LunarCrystalSeedWisp> wisps = new ArrayList<>();
+    public int crystalSpawnTime;
+    public int crystalSpawnsLeft;
+
+    public TidalMeteoriteBlockEntity(BlockPos pos, BlockState state) {
         super(BlockEntityRegistry.LUNAR_CRYSTAL_SEED.get(), pos, state);
     }
-    public int crystalSpawnTime;
+
     @Override
     protected void saveAdditional(@NotNull CompoundTag tag, HolderLookup.Provider pRegistries) {
         tag.putInt("crystalSpawnTime", crystalSpawnTime);
+        tag.putInt("CrystalSpawnsLeft", crystalSpawnsLeft);
         super.saveAdditional(tag, pRegistries);
     }
+
     @Override
     public void loadAdditional(CompoundTag nbt, HolderLookup.Provider pRegistries) {
         crystalSpawnTime = nbt.getInt("crystalSpawnTime");
+        crystalSpawnsLeft = nbt.getInt("CrystalSpawnsLeft");
         super.loadAdditional(nbt, pRegistries);
     }
+
     public void resetCrystalSpawnTime() {
         crystalSpawnTime = level.getRandom().nextIntBetweenInclusive(6*20, 8*20);
     }
-    public static void tick(Level pLevel, BlockPos pPos, BlockState pState, LunarCrystalSeedBlockEntity pBlockEntity) {
-        if (!pLevel.isClientSide) {
-            if (pBlockEntity.crystalSpawnTime <= 0) {
-                pBlockEntity.resetCrystalSpawnTime();
+
+    public static void tick(Level world, BlockPos pos, BlockState pState, TidalMeteoriteBlockEntity meteorite) {
+        if (!world.isClientSide) {
+            if (meteorite.crystalSpawnTime <= 0) {
+                meteorite.resetCrystalSpawnTime();
             }
-            pBlockEntity.crystalSpawnTime--;
-            if (pLevel.isDay() && pLevel.getBrightness(LightLayer.SKY, pPos) > 3) {
-                ModMessages.sendToPlayersNear(new ParticleBurst(pPos.getCenter(), new Color(EssenceTypeRegistry.LUNAR_ESSENCE.get().color), 100, 0.75f), (ServerLevel)pLevel, pPos.getCenter(), 64);
-                pLevel.removeBlock(pPos, false);
+
+            if (meteorite.crystalSpawnsLeft <= 0) {
+                meteorite.crystalSpawnsLeft = world.getRandom().nextIntBetweenInclusive(1, 3) + 1;
             }
-            if (pBlockEntity.crystalSpawnTime <= 0) {
-                pBlockEntity.resetCrystalSpawnTime();
+
+            meteorite.crystalSpawnTime--;
+
+            if ( meteorite.crystalSpawnsLeft <= 1 || (world.isDay() && world.getBrightness(LightLayer.SKY, pos) > 3)) {
+                ModMessages.sendToPlayersNear(new ParticleBurst(pos.getCenter(), new Color(EssenceTypeRegistry.LUNAR_ESSENCE.get().color), 100, 0.75f), (ServerLevel)world, pos.getCenter(), 64);
+                world.removeBlock(pos, false);
+            }
+
+            if (meteorite.crystalSpawnTime <= 0) {
+                meteorite.resetCrystalSpawnTime();
                 List<BlockPos> locations = new ArrayList<>();
                 for (int x = -3; x <= 3; x++) {
                     for (int y = -3; y <= 3; y++) {
                         for (int z = -3; z <= 3; z++) {
                             BlockPos blockPos = new BlockPos(x, y, z);
-                            if (pLevel.getBlockState(blockPos.offset(pPos)).canBeReplaced()) {
+                            if (world.getBlockState(blockPos.offset(pos)).canBeReplaced()) {
                                 locations.add(blockPos);
                             }
                         }
                     }
                 }
-                Util.shuffle(locations, pLevel.getRandom());
+                Util.shuffle(locations, world.getRandom());
                 for (BlockPos i : locations) {
-                    BlockPos pos = pPos.offset(i);
+                    BlockPos candidatePos = pos.offset(i);
                     boolean valid = false;
                     BlockState state = BlockRegistry.CRYSTAL_OF_TRANSFORMATION.get().defaultBlockState();
-                    Collection<Direction> directionsToTry = Direction.allShuffled(pLevel.getRandom());
+                    Collection<Direction> directionsToTry = Direction.allShuffled(world.getRandom());
                     for (Direction j : directionsToTry) {
-                        BlockPos relative = pos.relative(j.getOpposite());
-                        if (pLevel.getBlockState(relative).isFaceSturdy(pLevel, relative, j)) {
+                        BlockPos relative = candidatePos.relative(j.getOpposite());
+                        if (world.getBlockState(relative).isFaceSturdy(world, relative, j)) {
                             state = state.setValue(TidalCrystalLunar.FACING, j);
                             valid = true;
                             break;
                         }
                     }
                     if (valid) {
-                        ModMessages.sendToPlayersNear(new ParticleBurst(pos.getCenter(), new Color(EssenceTypeRegistry.LUNAR_ESSENCE.get().color), 25, 0.1f), (ServerLevel)pLevel, pPos.getCenter(), 64);
-                        pLevel.playSound(null, pos, SoundEvents.AMETHYST_BLOCK_CHIME, SoundSource.BLOCKS);
-                        pLevel.setBlockAndUpdate(pos, state);
+                        ModMessages.sendToPlayersNear(new ParticleBurst(candidatePos.getCenter(), new Color(EssenceTypeRegistry.LUNAR_ESSENCE.get().color), 25, 0.1f), (ServerLevel)world, pos.getCenter(), 64);
+                        world.playSound(null, candidatePos, SoundEvents.AMETHYST_BLOCK_CHIME, SoundSource.BLOCKS);
+                        world.setBlockAndUpdate(candidatePos, state);
+                        meteorite.crystalSpawnsLeft--;
                         break;
                     }
                 }
             }
         } else {
-            pBlockEntity.wispTimer--;
-            if (pBlockEntity.wispTimer <= 0) {
-                pBlockEntity.wispTimer = pLevel.getRandom().nextIntBetweenInclusive(5, 25);
-                int wisps = pLevel.getRandom().nextIntBetweenInclusive(1, 2);
+            meteorite.wispTimer--;
+            if (meteorite.wispTimer <= 0) {
+                meteorite.wispTimer = world.getRandom().nextIntBetweenInclusive(5, 25);
+                int wisps = world.getRandom().nextIntBetweenInclusive(1, 2);
                 for (int i = 0; i < wisps; i++) {
-                    pBlockEntity.wisps.add(LunarCrystalSeedWisp.create(pLevel.getRandom()));
+                    meteorite.wisps.add(LunarCrystalSeedWisp.create(world.getRandom()));
                 }
             }
             List<LunarCrystalSeedWisp> wispsToRemove = new ArrayList<>();
-            for (LunarCrystalSeedWisp i : pBlockEntity.wisps) {
-                i.tick(pLevel, pPos.getCenter());
+            for (LunarCrystalSeedWisp i : meteorite.wisps) {
+                i.tick(world, pos.getCenter());
                 if (i.shouldDelete()) {
                     wispsToRemove.add(i);
                 }
             }
             for (LunarCrystalSeedWisp i : wispsToRemove) {
-                pBlockEntity.wisps.remove(i);
+                meteorite.wisps.remove(i);
             }
         }
     }
-    public int wispTimer;
-    public List<LunarCrystalSeedWisp> wisps = new ArrayList<>();
+
     public static class LunarCrystalSeedWisp {
         public static final float speedMult = 10;
         private RandomSource random;
@@ -122,6 +139,7 @@ public class LunarCrystalSeedBlockEntity extends BlockEntity {
         public Vec3 motion;
         public int timeUntilRedirect;
         private boolean deletionQueued;
+
         public void tick(Level level, Vec3 center) {
             timeUntilRedirect--;
             if (timeUntilRedirect <= 0) {
@@ -137,16 +155,20 @@ public class LunarCrystalSeedBlockEntity extends BlockEntity {
                 queueDeletion();
             }
         }
+
         public void addParticles(Level level, Vec3 center) {
             Vec3 vec = center.add(offset);
             level.addParticle(new CircleParticleOptions().setColor(new Color(EssenceTypeRegistry.LUNAR_ESSENCE.get().color)).setAdditive(true), vec.x, vec.y, vec.z, 0, 0, 0);
         }
+
         public void queueDeletion() {
             deletionQueued = true;
         }
+
         public boolean shouldDelete() {
             return deletionQueued;
         }
+
         public static LunarCrystalSeedWisp create(RandomSource random) {
             LunarCrystalSeedWisp wisp = new LunarCrystalSeedWisp();
             wisp.initialLifetime = 150;

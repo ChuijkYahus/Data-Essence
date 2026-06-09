@@ -20,7 +20,7 @@ import EsetKalenko.Halcyon.block.technical.cryochamber.CryochamberBlockEntity;
 import EsetKalenko.Halcyon.block.transportation.EnderPearlCaptureBlockEntity;
 import EsetKalenko.Halcyon.block.transportation.EnderPearlDestinationBlockEntity;
 import EsetKalenko.Halcyon.block.transportation.EnderPearlRelayBlockEntity;
-import EsetKalenko.Halcyon.block.world.LunarCrystalSeedBlockEntity;
+import EsetKalenko.Halcyon.block.world.TidalMeteoriteBlockEntity;
 import EsetKalenko.Halcyon.integration.mekanism.ChemicalNodeBlockEntity;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -255,9 +255,9 @@ public class BlockEntityRegistry {
             register("essence_derivation_spike", () ->
                     BlockEntityType.Builder.of(EssenceDerivationSpikeBlockEntity::new,
                             BlockRegistry.ESSENCE_DERIVATION_SPIKE.get()).build(null));
-    public static final Supplier<BlockEntityType<LunarCrystalSeedBlockEntity>> LUNAR_CRYSTAL_SEED =
+    public static final Supplier<BlockEntityType<TidalMeteoriteBlockEntity>> LUNAR_CRYSTAL_SEED =
             register("lunar_crystal_seed", () ->
-                    BlockEntityType.Builder.of(LunarCrystalSeedBlockEntity::new,
+                    BlockEntityType.Builder.of(TidalMeteoriteBlockEntity::new,
                             BlockRegistry.TIDAL_METEORITE.get()).build(null));
     public static final Supplier<BlockEntityType<CrystallineCradleBlockEntity>> CRYSTALLINE_CRADLE =
             register("crystalline_cradle", () ->
