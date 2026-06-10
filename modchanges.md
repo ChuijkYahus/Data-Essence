@@ -9,7 +9,7 @@
 - Progression Sharing via player-built Data Banks (Esét)
 - The Repulsion Rod (Esét)
 - RF Nodes and Wires (Esét)
-- Unnamed Crop Harvester
+- Sustenance Siphon (Esét)
 - Storage blocks for Shards of Industry and Shards of Transformation
 - Malum compat for the Mineral Purification Chamber (Esét)
 - Some more Pastel compat recipes (Esét)

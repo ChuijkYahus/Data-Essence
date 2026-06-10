@@ -278,7 +278,7 @@
   "block.datanessence.player_data_bank": "Data Bank",
   "block.datanessence.player_data_bank.receive": "Downloaded %1$s entries from this Data Bank.",
   "block.datanessence.player_data_bank.bind": "Uploaded %1$s entries to this Data Bank.",
-  "block.datanessence.harvester": "Simple Harvester",
+  "block.datanessence.harvester": "Sustenance Siphon",
   "block.datanessence.block_of_industry": "Block of Industry",
   "block.datanessence.block_of_transformation": "Block of Transformation",
 
