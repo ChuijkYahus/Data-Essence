@@ -87,7 +87,7 @@ public class BlockRegistry {
             object -> () -> new BlockItem(object.get(), new Item.Properties()));
     public static final Supplier<Block> TETHERGRASS = register("tethergrass",
             () -> new SpreadingPlant(BlockBehaviour.Properties.ofFullCopy(Blocks.SHORT_GRASS).lightLevel((blockState) -> { return 5;}),
-                    7, 10),
+                    4),
             object -> () -> new BlockItem(object.get(), new Item.Properties()));
     public static final Supplier<Block> VIVID_LOTUS = register("vivid_lotus",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.LILY_PAD)),

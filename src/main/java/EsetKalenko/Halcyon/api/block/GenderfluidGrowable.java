@@ -12,7 +12,6 @@ public interface GenderfluidGrowable {
      * @param world world to operate in
      * @param pos coords of the block
      * @param random random source
-     * @param chance how often the growth may occur (works inverse of what one may intuit - smaller number is more frequent!)
      */
-    void grow(BlockState state, ServerLevel world, BlockPos pos, RandomSource random, int chance);
+    void grow(BlockState state, ServerLevel world, BlockPos pos, RandomSource random);
 }
