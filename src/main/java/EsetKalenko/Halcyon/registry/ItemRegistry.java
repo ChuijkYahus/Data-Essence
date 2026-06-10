@@ -128,7 +128,8 @@ public class ItemRegistry {
     // Music Discs
     public static final Supplier<Item> UNDER_THE_SKY_MUSIC_DISC = register("under_the_sky_music_disc", () -> new Item(new Item.Properties().stacksTo(1).rarity(Rarity.RARE).jukeboxPlayable(JukeboxSongRegistry.UNDER_THE_SKY)));
 
-    // "Sprite" items, whose only use should be for rendering a given icon somewhere that only items are allowed to
+    // Technical items, used for rendering
+    public static final Supplier<Item> HARVESTER_EYE = register("harvester_eye", () -> new Item(new Item.Properties()));
     public static final Supplier<Item> SPRITE_BOOK_FLORA = register("sprite_book_flora", () -> new Item(new Item.Properties()));
 
     public static final Supplier<Item> ESSENCE_BATTERY = register("essence_battery",

@@ -96,6 +96,7 @@ public class ClientStartupEvents {
         event.registerBlockEntityRenderer(BlockEntityRegistry.LUNAR_ESSENCE_BATTERY.get(), LunarEssenceBatteryRenderer::new);
         event.registerBlockEntityRenderer(BlockEntityRegistry.CRYSTALLINE_CRADLE.get(), CrystallineCradleRenderer::new);
         event.registerBlockEntityRenderer(BlockEntityRegistry.RF_NODE.get(), RFNodeRenderer::new);
+        event.registerBlockEntityRenderer(BlockEntityRegistry.HARVESTER.get(), SimpleHarvesterRenderer::new);
     }
 
     @SubscribeEvent

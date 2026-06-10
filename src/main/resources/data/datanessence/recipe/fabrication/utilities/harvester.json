@@ -8,13 +8,14 @@
   "pattern": [
     " H ",
     "ERE",
-    " P "
+    "LPL"
   ],
   "key": {
     "E": { "item": "datanessence:essence_pathways" },
-    "H": { "item": "minecraft:stone_hoe" },
+    "H": { "item": "datanessence:lens" },
     "P": { "item": "datanessence:capacitance_panel" },
-    "R": { "item": "datanessence:conductance_rod" }
+    "R": { "item": "datanessence:conductance_rod" },
+    "L": { "tag": "minecraft:leaves" }
   },
   "result": { "id": "datanessence:harvester", "count": 1 }
 }
