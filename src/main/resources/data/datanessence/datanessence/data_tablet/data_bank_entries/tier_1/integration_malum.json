@@ -10,7 +10,7 @@
   },
   "tier": 1,
   "name": {
-    "translate": "data_tablet.integration_malum"
+    "translate": "data_tablet.integration_malum.name"
   },
   "entry": "datanessence:mod_integration/malum"
 }
