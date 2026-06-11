@@ -26,11 +26,11 @@ import net.minecraft.world.level.block.state.BlockState;
 import java.util.List;
 
 public class IlluminationRod extends Item {
-    public int useCost = 25; // how much one light block costs to place. 200 uses with a capacity of 5000
+    public int useCost = 10; // how much one light block costs to place.
 
     public static ResourceLocation FUEL_ESSENCE_TYPE = DataNEssence.locate("essence");
     public IlluminationRod(Properties properties) {
-        super(properties.component(DataComponentRegistry.ESSENCE_STORAGE, new ItemEssenceContainer(List.of(FUEL_ESSENCE_TYPE), 2500)));
+        super(properties.component(DataComponentRegistry.ESSENCE_STORAGE, new ItemEssenceContainer(List.of(FUEL_ESSENCE_TYPE), 5000)));
     }
 
     // Returns true if a light block could be placed.
