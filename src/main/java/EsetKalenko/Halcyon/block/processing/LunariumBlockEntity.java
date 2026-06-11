@@ -133,6 +133,8 @@ public class LunariumBlockEntity extends BaseFabricatorBlockEntity implements Me
                                 Mth.nextDouble(world.random, 0.01, 0.2),
                                 Mth.nextDouble(world.random, -0.4, 0.4)
                         );
+
+                    // TODO Vfx; crafting finalization rays from ecliptrum capstones to machine
                 }
 
                 // Song

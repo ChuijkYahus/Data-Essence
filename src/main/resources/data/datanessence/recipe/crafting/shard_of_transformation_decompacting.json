@@ -1,0 +1,6 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [{ "item": "datanessence:block_of_transformation" }],
+  "result": { "id": "datanessence:shard_of_transformation", "count": 9 }
+}

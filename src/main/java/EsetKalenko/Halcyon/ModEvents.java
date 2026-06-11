@@ -358,12 +358,15 @@ public class ModEvents {
             }
         }
     }
+
     @SubscribeEvent
-    public static void onPlayerAdvancement(AdvancementEvent.AdvancementEarnEvent event) {
+    public static void onPlayerAdvancement(AdvancementEvent.AdvancementProgressEvent event) {
         List<Entry> entries = new ArrayList<>();
         for (Map.Entry<ResourceLocation, Integer> i : event.getEntity().getData(AttachmentTypeRegistry.INCOMPLETE_STAGES).entrySet()) {
             Entry entry = Entries.entries.get(i.getKey());
-            if (entry.completionStages.get(entry.getIncompleteStageServer(event.getEntity())).completionAdvancements.contains(event.getAdvancement().id())) {
+            if (entry.completionStages.get(entry.getIncompleteStageServer(event.getEntity()))
+                    .completionAdvancements.contains(event.getAdvancement().id())
+                    && event.getAdvancementProgress().isDone() ) {
                 entries.add(entry);
             }
         }

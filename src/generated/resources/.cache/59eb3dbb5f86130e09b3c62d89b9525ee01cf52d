@@ -1,4 +1,4 @@
-// 1.21.1	2026-05-11T12:55:45.984930109	Loot Tables
+// 1.21.1	2026-06-11T06:14:45.990491593	Loot Tables
 8a85700f294ec15ec1248a1449114b14eab3e2da data/datanessence/loot_table/blocks/aether_rune.json
 9609efe61385ebb3de54f11712e3baea7e1409d0 data/datanessence/loot_table/blocks/ancient_glyph_stone_blank.json
 10297d9c29f46c19c997dfe74ad062c709006c22 data/datanessence/loot_table/blocks/ancient_glyph_stone_blank_shieldless.json
@@ -21,6 +21,8 @@ b95fb6ab733ef4aa5e880f9da7045993e964f47f data/datanessence/loot_table/blocks/anc
 3831944dfafd2bf28a5d34fa89acc5400cb969a9 data/datanessence/loot_table/blocks/arekko.json
 5a2bd21f6dbba416f498bba59a65b45c3245fca7 data/datanessence/loot_table/blocks/astral_goop.json
 6c75f698c678f430658ac40cbf4955f45e52655c data/datanessence/loot_table/blocks/auto-fabricator.json
+fbb6174e260bd1633bfe7504c303ed965b83b173 data/datanessence/loot_table/blocks/block_of_industry.json
+177dd1d1c6dc4eb9804cd12001e4011c778fa819 data/datanessence/loot_table/blocks/block_of_transformation.json
 6e785f9f9cab31d1ca93dcbcb630a78ccfe9ab4b data/datanessence/loot_table/blocks/blue_pearlescent_sand.json
 ea5364fdf6f40dd1dc50b2354226d4977911b8b1 data/datanessence/loot_table/blocks/charger.json
 2f8cce94dad3d191cc14cdd1797ab11600ee1783 data/datanessence/loot_table/blocks/chemical_node.json
@@ -78,6 +80,7 @@ a63c22d76b677d9f5d4b6212d1011f4d3f31c962 data/datanessence/loot_table/blocks/flu
 351474a0ce3cb81331aa54fdfd5c70575c10d690 data/datanessence/loot_table/blocks/fluidic_glass.json
 1577d152226c444acac2d71b852435b0b23c3b72 data/datanessence/loot_table/blocks/frozen_moonlight.json
 885f1f5dfa0dd37b664a0df798997e5828e1e3d1 data/datanessence/loot_table/blocks/green_pearlescent_sand.json
+54a6435c859014358aa58b3a82a00817939183f5 data/datanessence/loot_table/blocks/harvester.json
 21f5ad05e5229616ea951d95ad1307af1b7f1539 data/datanessence/loot_table/blocks/industrial_plant_siphon.json
 b8d2fa9097bae3a836da7acd662de09e9d889ee9 data/datanessence/loot_table/blocks/infuser.json
 26c69dcff1defc45669115decebc18f32b791f08 data/datanessence/loot_table/blocks/item_buffer.json

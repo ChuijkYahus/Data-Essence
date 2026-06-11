@@ -415,6 +415,7 @@ public class DataNEssence
             event.accept(BlockRegistry.MELTER.get());
             event.accept(BlockRegistry.DRYING_TABLE.get());
             event.accept(BlockRegistry.SURVEY_TUNNELER.get());
+            event.accept(BlockRegistry.SIMPLE_HARVESTER.get());
             event.accept(BlockRegistry.CRYSTALLINE_CRADLE.get());
 
             // Logistics
@@ -471,9 +472,11 @@ public class DataNEssence
             event.accept(BlockRegistry.TWINING_LANTERN.get());
             event.accept(BlockRegistry.LIGHT_FIXTURE.get());
             event.accept(BlockRegistry.DEWLAMP.get());
+            event.accept(BlockRegistry.BLOCK_OF_INDUSTRY.get());
+            event.accept(BlockRegistry.BLOCK_OF_TRANSFORMATION.get());
             event.accept(BlockRegistry.PATTERNED_COPPER.get());
-            event.accept(BlockRegistry.ECLIPTRUM_BLOCK.get());
             event.accept(BlockRegistry.COPPER_VENT.get());
+            event.accept(BlockRegistry.ECLIPTRUM_BLOCK.get());
             event.accept(BlockRegistry.DECO_ESSENCE_BUFFER.get());
             event.accept(BlockRegistry.DECO_ITEM_BUFFER.get());
             event.accept(BlockRegistry.DECO_FLUID_BUFFER.get());

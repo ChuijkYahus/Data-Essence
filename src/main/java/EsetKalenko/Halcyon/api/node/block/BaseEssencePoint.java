@@ -36,6 +36,7 @@ import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
+import java.util.ArrayList;
 import java.util.Optional;
 
 public abstract class BaseEssencePoint extends Block implements EntityBlock {
@@ -94,25 +95,41 @@ public abstract class BaseEssencePoint extends Block implements EntityBlock {
         if (pState.getBlock() != pNewState.getBlock()) {
             if (pLevel.getBlockEntity(pPos) instanceof BaseEssencePointBlockEntity node) {
                 BlockPosNetworks networks = pLevel.getData(AttachmentTypeRegistry.ESSENCE_NODE_NETWORKS);
-                var edges = networks.graph.inEdges(pPos);
-                for (var i : edges) {
-                    BlockPos pos = i.source();
-                    ItemEntity item = new ItemEntity(pLevel, pos.getCenter().x, pos.getCenter().y, pos.getCenter().z, new ItemStack(getRequiredWire()));
-                    pLevel.addFreshEntity(item);
-                    networks.graph.removeEdge(i);
+
+                var toUpdate = new ArrayList<BaseEssencePointBlockEntity>(networks.graph.inEdges(pPos).size());
+                for (var edge : networks.graph.inEdges(pPos)) {
+                    var pos = edge.source();
                     if (!pos.equals(pPos)) {
                         if (pLevel.getBlockEntity(pos) instanceof BaseEssencePointBlockEntity ent) {
-                            ent.updateBlock();
+                            toUpdate.add(ent);
                         }
                     }
-                    if ( node.uniqueUpgrade.getStackInSlot(0) != ItemStack.EMPTY ) {
-                        ItemEntity upgradeSigil = new ItemEntity(pLevel, pPos.getCenter().x, pPos.getCenter().y, pPos.getCenter().z, node.uniqueUpgrade.getStackInSlot(0).copy() );
-                        pLevel.addFreshEntity(upgradeSigil);
-                    }
-                    if ( node.universalUpgrade.getStackInSlot(0) != ItemStack.EMPTY ) {
-                        ItemEntity upgradeSigil = new ItemEntity(pLevel, pPos.getCenter().x, pPos.getCenter().y, pPos.getCenter().z, node.universalUpgrade.getStackInSlot(0).copy() );
-                        pLevel.addFreshEntity(upgradeSigil);
-                    }
+                }
+
+                var toRemove = networks.graph.inEdges(pPos).size() + networks.graph.outEdges(pPos).size();
+                var wire = this.getRequiredWire();
+                var maxStack = wire.getDefaultMaxStackSize();
+                var center = pPos.getCenter();
+                while (toRemove > 0) {
+                    var amount = Math.min(maxStack, toRemove);
+                    toRemove -= amount;
+                    ItemEntity item = new ItemEntity(pLevel, center.x, center.y, center.z, new ItemStack(wire, amount));
+                    pLevel.addFreshEntity(item);
+                }
+
+                networks.graph.removeVertex(pPos);
+
+                for (var ent : toUpdate) {
+                    ent.updateBlock();
+                }
+
+                if ( node.uniqueUpgrade.getStackInSlot(0) != ItemStack.EMPTY ) {
+                    ItemEntity upgradeSigil = new ItemEntity(pLevel, pPos.getCenter().x, pPos.getCenter().y, pPos.getCenter().z, node.uniqueUpgrade.getStackInSlot(0).copy() );
+                    pLevel.addFreshEntity(upgradeSigil);
+                }
+                if ( node.universalUpgrade.getStackInSlot(0) != ItemStack.EMPTY ) {
+                    ItemEntity upgradeSigil = new ItemEntity(pLevel, pPos.getCenter().x, pPos.getCenter().y, pPos.getCenter().z, node.universalUpgrade.getStackInSlot(0).copy() );
+                    pLevel.addFreshEntity(upgradeSigil);
                 }
             }
         }
@@ -219,15 +236,18 @@ public abstract class BaseEssencePoint extends Block implements EntityBlock {
                     BlockPosNetworks networks = pLevel.getData(AttachmentTypeRegistry.ESSENCE_NODE_NETWORKS);
                     var edges = networks.graph.outEdges(pPos);
                     if (!edges.isEmpty()) {
+                        var toUpdate = new ArrayList<BaseEssencePointBlockEntity>(edges.size());
                         for (var i : edges) {
-                            if (i.source().equals(pPos)) {
-                                ItemEntity item = new ItemEntity(pLevel, pPos.getCenter().x, pPos.getCenter().y, pPos.getCenter().z, new ItemStack(getRequiredWire()));
-                                pLevel.addFreshEntity(item);
-                                networks.graph.removeEdge(i);
-                                if (pLevel.getBlockEntity(i.target()) instanceof BaseEssencePointBlockEntity toEnt) {
-                                    toEnt.updateBlock();
-                                }
+                            ItemEntity item = new ItemEntity(pLevel, pPos.getCenter().x, pPos.getCenter().y, pPos.getCenter().z, new ItemStack(getRequiredWire()));
+                            pLevel.addFreshEntity(item);
+                            if (pLevel.getBlockEntity(i.target()) instanceof BaseEssencePointBlockEntity toEnt) {
+                                toUpdate.add(toEnt);
                             }
+                        }
+                        networks.graph.removeOutEdgesOf(pPos);
+
+                        for (var toEnt : toUpdate) {
+                            toEnt.updateBlock();
                         }
                         ent.updateBlock();
                     }

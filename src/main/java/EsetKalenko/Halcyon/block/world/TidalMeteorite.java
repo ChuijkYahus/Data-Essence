@@ -32,15 +32,15 @@ public class TidalMeteorite extends Block implements EntityBlock {
     @Nullable
     @Override
     public BlockEntity newBlockEntity(BlockPos pPos, BlockState pState) {
-        return new LunarCrystalSeedBlockEntity(pPos, pState);
+        return new TidalMeteoriteBlockEntity(pPos, pState);
     }
 
     @Nullable
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level pLevel, BlockState pState, BlockEntityType<T> pBlockEntityType) {
         return (lvl, pos, st, blockEntity) -> {
-            if (blockEntity instanceof LunarCrystalSeedBlockEntity ent) {
-                LunarCrystalSeedBlockEntity.tick(lvl, pos, st, ent);
+            if (blockEntity instanceof TidalMeteoriteBlockEntity ent) {
+                TidalMeteoriteBlockEntity.tick(lvl, pos, st, ent);
             }
         };
     }

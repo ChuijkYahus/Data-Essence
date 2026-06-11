@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "ccc",
+    "ccc",
+    "ccc"
+  ],
+  "key": {
+    "c": { "item": "datanessence:shard_of_transformation" }
+  },
+  "result": { "id": "datanessence:block_of_transformation" }
+}

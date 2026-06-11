@@ -56,6 +56,10 @@
       "amount_per_tick": 2.0,
       "ticks": 10
     },
+    "minecraft:melon_slice": {
+      "amount_per_tick": 2.0,
+      "ticks": 20
+    },
     "minecraft:nether_wart": {
       "amount_per_tick": 4.0,
       "ticks": 25
@@ -128,7 +132,7 @@
       "amount_per_tick": 12.0,
       "ticks": 100
     },
-    "pastel:jade_vine_petals": {
+    "pastel:jade_petals": {
       "neoforge:conditions": [
         {
           "type": "neoforge:mod_loaded",

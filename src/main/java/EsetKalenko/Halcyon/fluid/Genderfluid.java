@@ -165,7 +165,7 @@ public class Genderfluid extends ModFluidType {
                 BlockState queryState = world.getBlockState(queryPos);
 
                 if (queryState.getBlock() instanceof GenderfluidGrowable plant) {
-                    plant.grow(queryState, world, queryPos, world.getRandom(), 3);
+                    plant.grow(queryState, world, queryPos, world.getRandom());
                 }
             }
         }

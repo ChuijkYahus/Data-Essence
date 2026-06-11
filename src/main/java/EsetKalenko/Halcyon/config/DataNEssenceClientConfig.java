@@ -30,6 +30,7 @@ public class DataNEssenceClientConfig {
 
         builder.comment("Particular sound settings that we cannot easily add to the ingame menu.").push("sounds");
         factorySongVolumeValue = buildInteger(builder, "factorySongVolume", 100, 0, 200, "Volume at which the Factory Song will play, in percent. Setting this to 0 disables the Song.");
+        structureSongVolumeValue = buildInteger(builder, "structureSongVolume", 100, 10, 200, "Volume at which the special background music in structures will play, in percent. Cannot go lower than 10% as some of these are signifiers of importance.");
         builder.pop();
     }
 
@@ -50,11 +51,13 @@ public class DataNEssenceClientConfig {
     public static boolean progressionShader = true;
     public static boolean colorAssist = false;
     public static int factorySongVolume = 100;
+    public static int structureSongVolume = 100;
     public final ModConfigSpec.BooleanValue genderEuphoriaShaderValue;
     public final ModConfigSpec.BooleanValue pingShaderValue;
     public final ModConfigSpec.BooleanValue progressionShaderValue;
     public final ModConfigSpec.BooleanValue colorAssistValue;
     public final ModConfigSpec.IntValue factorySongVolumeValue;
+    public final ModConfigSpec.IntValue structureSongVolumeValue;
 
     public static void bake(ModConfig config) {
         try {
@@ -63,6 +66,7 @@ public class DataNEssenceClientConfig {
             progressionShader = CLIENT.progressionShaderValue.get();
             colorAssist = CLIENT.colorAssistValue.get();
             factorySongVolume = CLIENT.factorySongVolumeValue.get();
+            structureSongVolume = CLIENT.structureSongVolumeValue.get();
         } catch (Exception e) {
             DataNEssence.LOGGER.warn("[HALCYON] Failed to load client config!");
             e.printStackTrace();

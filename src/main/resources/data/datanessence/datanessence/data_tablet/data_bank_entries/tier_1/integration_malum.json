@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "malum"
+    }
+  ],
+  "icon": {
+    "id": "datanessence:tag_filter"
+  },
+  "tier": 1,
+  "name": {
+    "translate": "data_tablet.integration_malum"
+  },
+  "entry": "datanessence:mod_integration/malum"
+}

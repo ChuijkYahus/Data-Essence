@@ -15,43 +15,31 @@ import net.minecraft.world.level.pathfinder.PathComputationType;
 
 public class SpreadingPlant extends Block implements GenderfluidGrowable {
     public int spreadChance; // how often this plant grows by spreading, like mushrooms
-    public int plantLimit; // how many plants can be in a 9x3x9 volume around the original plant before it will stop spreading
 
-    public SpreadingPlant(Properties properties, int spreadChance, int plantLimit) {
+    public SpreadingPlant(Properties properties, int spreadChance) {
         super(properties);
         this.spreadChance = spreadChance;
-        this.plantLimit = plantLimit;
     }
 
     @Override
     protected void randomTick(BlockState state, ServerLevel world, BlockPos pos, RandomSource random) {
-        grow(state, world, pos, random, spreadChance);
+        if (random.nextInt() % spreadChance == 0)
+            grow(state, world, pos, random);
     }
 
     @Override
-    public void grow(BlockState state, ServerLevel world, BlockPos pos, RandomSource random, int chance) {
-        if (random.nextInt(chance) == 0) {
+    public void grow(BlockState state, ServerLevel world, BlockPos pos, RandomSource random) {
+        BlockPos candidate = pos.offset(random.nextInt(3) - 1, random.nextInt(2) - random.nextInt(2), random.nextInt(3) - 1);
 
-            for (BlockPos blockpos : BlockPos.betweenClosed(pos.offset(-4, -1, -4), pos.offset(4, 1, 4))) {
-                if (world.getBlockState(blockpos).is(this)) {
-                    if (--plantLimit <= 0) {
-                        return;
-                    }
-                }
+        for (int k = 0; k < 4; k++) {
+            if (world.isEmptyBlock(candidate) && state.canSurvive(world, candidate)) {
+                pos = candidate;
             }
+            candidate = pos.offset(random.nextInt(3) - 1, random.nextInt(2) - random.nextInt(2), random.nextInt(3) - 1);
+        }
 
-            BlockPos blockpos1 = pos.offset(random.nextInt(3) - 1, random.nextInt(2) - random.nextInt(2), random.nextInt(3) - 1);
-            for (int k = 0; k < 4; k++) {
-                if (world.isEmptyBlock(blockpos1) && state.canSurvive(world, blockpos1)) {
-                    pos = blockpos1;
-                }
-
-                blockpos1 = pos.offset(random.nextInt(3) - 1, random.nextInt(2) - random.nextInt(2), random.nextInt(3) - 1);
-            }
-
-            if (world.isEmptyBlock(blockpos1) && state.canSurvive(world, blockpos1)) {
-                world.setBlock(blockpos1, state, 2);
-            }
+        if (world.isEmptyBlock(candidate) && state.canSurvive(world, candidate)) {
+            world.setBlock(candidate, state, 2);
         }
     }
 

@@ -19,6 +19,8 @@
     {
       "type": "datanessence:crafting",
       "recipes": [
+        "datanessence:crafting/shard_of_industry_compacting",
+        "datanessence:crafting/shard_of_industry_decompacting",
         "datanessence:infusion/essence_shard"
       ],
       "text": {

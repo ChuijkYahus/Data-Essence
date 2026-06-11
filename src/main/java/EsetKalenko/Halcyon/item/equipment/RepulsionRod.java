@@ -46,7 +46,7 @@ public class RepulsionRod extends Item {
             ItemEssenceContainer.removeEssence(stack, LUNAR, useCost);
             player.getCooldowns().addCooldown(this, 10);
 
-            double range = 6.0;
+            double range = 10.0;
 
             Vec3 endPos = eyePos.add(ang.scale(range));
             AABB searchBox = new AABB(eyePos, endPos).inflate(2.0);

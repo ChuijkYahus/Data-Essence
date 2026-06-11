@@ -24,7 +24,12 @@
         "translate": "data_tablet.pages.integration_pastel_intro.page2.text"
       },
       "recipes": [
-        "datanessence:mod_integration/pastel/entropic_processing/amethyst_shard"
+        "datanessence:mod_integration/pastel/entropic_processing/gemstone/amethyst_block",
+        "datanessence:mod_integration/pastel/entropic_processing/gemstone/amethyst_shard",
+        "datanessence:mod_integration/pastel/entropic_processing/gemstone/small_amethyst_bud",
+        "datanessence:mod_integration/pastel/entropic_processing/gemstone/medium_amethyst_bud",
+        "datanessence:mod_integration/pastel/entropic_processing/gemstone/large_amethyst_bud",
+        "datanessence:mod_integration/pastel/entropic_processing/gemstone/amethyst_cluster"
       ]
     }
   ],

@@ -124,10 +124,11 @@ repositories {
         dir 'libs'
     }
     maven { url = "https://maven.terraformersmc.com/" } // EMI
-    maven { url = "https://api.modrinth.com/maven" } // Sodium, Iris, Opalescence, Pastel
+    maven { url = "https://api.modrinth.com/maven" } // Sodium, Iris, Opalescence, Pastel, Malum
     maven { url = "https://modmaven.dev/" } // Mekanism
     maven { url = "https://maven.ryanhcode.dev/releases" } // Sable
     mavenCentral()
+    mavenLocal()
 }
 
 dependencies {
@@ -162,12 +163,15 @@ dependencies {
     }
     implementation "maven.modrinth:opalescence:1.0.2b"
     if (pastel_enabled == "true") {
-        implementation "maven.modrinth:pastel-mod:${pastel_version}"
+        implementation ("earth.terrarium:Pastel:${pastel_version}") {
+            exclude (group: "me.shedaniel.cloth", module: "cloth-config-neoforge")
+            exclude (group: "com.klikli_dev", module: "modonomicon-1.21.1-neoforge")
+        }
         runtimeOnly "maven.modrinth:modonomicon:1.21.1-1.114.4"
         runtimeOnly "maven.modrinth:cloth-config:15.0.140+neoforge"
         runtimeOnly "maven.modrinth:exclusions-lib:1.1.0-NEO"
     } else {
-        compileOnly "maven.modrinth:pastel-mod:${pastel_version}"
+        compileOnly "earth.terrarium:Pastel:${pastel_version}"
     }
     if (sable_enabled == "true") {
         implementation("dev.ryanhcode.sable:sable-neoforge-${minecraft_version}:${sable_version}") {
@@ -178,6 +182,13 @@ dependencies {
         }
     } else {
         jarJar (api "dev.ryanhcode.sable-companion:sable-companion-common-${minecraft_version}:${sable_companion_version}")
+    }
+    if ( malum_enabled == "true" ) {
+        implementation "maven.modrinth:lodestonelib:${lodestone_version}"
+        implementation "maven.modrinth:malum:${malum_version}"
+    } else {
+        compileOnly "maven.modrinth:lodestonelib:${lodestone_version}"
+        compileOnly "maven.modrinth:malum:${malum_version}"
     }
 }
 tasks.withType(ProcessResources).configureEach {

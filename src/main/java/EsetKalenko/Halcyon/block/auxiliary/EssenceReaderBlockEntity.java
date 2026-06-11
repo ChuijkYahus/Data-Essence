@@ -5,7 +5,7 @@ import EsetKalenko.Halcyon.api.DataNEssenceRegistries;
 import EsetKalenko.Halcyon.api.essence.EssenceBlockEntity;
 import EsetKalenko.Halcyon.api.essence.EssenceStorage;
 import EsetKalenko.Halcyon.api.essence.EssenceType;
-import EsetKalenko.Halcyon.api.item.EssenceShard;
+import EsetKalenko.Halcyon.api.item.ShardSublimatableItem;
 import EsetKalenko.Halcyon.registry.BlockEntityRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -32,7 +32,7 @@ import java.util.stream.Collectors;
 
 public class EssenceReaderBlockEntity extends BlockEntity {
     public Set<EssenceType> selectedEssences;
-    public EssenceShard selectedShard; // for purposes of the renderer, because I have no idea how to do this otherwise ~Eset
+    public ShardSublimatableItem selectedShard; // for purposes of the renderer, because I have no idea how to do this otherwise ~Eset
     private int signal;
 
     public EssenceReaderBlockEntity(BlockPos pPos, BlockState pBlockState) {
@@ -46,8 +46,8 @@ public class EssenceReaderBlockEntity extends BlockEntity {
             updateBlock();
             return true;
         } else {
-            if (stack.getItem() instanceof EssenceShard shard) {
-                selectedEssences = shard.essence.keySet().stream().map(Supplier::get).collect(Collectors.toSet());
+            if (stack.getItem() instanceof ShardSublimatableItem shard) {
+                selectedEssences = shard.getContainedEnergy().keySet().stream().map(Supplier::get).collect(Collectors.toSet());
                 selectedShard = shard;
                 updateBlock();
                 return true;
@@ -57,7 +57,7 @@ public class EssenceReaderBlockEntity extends BlockEntity {
     }
 
     public boolean isItemValid(ItemStack stack) {
-        if (stack.getItem() instanceof EssenceShard shard) {
+        if (stack.getItem() instanceof ShardSublimatableItem shard) {
             return true;
         }
         return false;

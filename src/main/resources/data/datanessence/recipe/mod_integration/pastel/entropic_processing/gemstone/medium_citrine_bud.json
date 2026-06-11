@@ -1,0 +1,12 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "pastel"
+    }
+  ],
+  "type": "datanessence:entropic_processing",
+  "input": { "item": "pastel:medium_citrine_bud" },
+  "time": 100,
+  "result": { "id": "pastel:citrine_powder", "count": 6 }
+}

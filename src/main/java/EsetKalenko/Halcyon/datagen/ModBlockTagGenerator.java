@@ -124,7 +124,8 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 .add(BlockRegistry.ECLIPTRUM_BLOCK.get())
                 .add(BlockRegistry.FROZEN_MOONLIGHT.get())
                 .add(BlockRegistry.CRYSTALLINE_CRADLE.get())
-                .add(BlockRegistry.ASTRAL_GOOP.get());
+                .add(BlockRegistry.ASTRAL_GOOP.get())
+                .add(BlockRegistry.SIMPLE_HARVESTER.get());
         this.tag(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add(BlockRegistry.OBSIDIAN_FRAMED_GLASS.get())
                 .add(BlockRegistry.POLISHED_OBSIDIAN.get())
@@ -171,7 +172,10 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 .add(BlockRegistry.SHIELDLESS_ANCIENT_GLYPH_STONE_BLANK.get())
                 .add(BlockRegistry.SHIELDLESS_ANCIENT_GLYPH_STONE_ESSENCE.get())
                 .add(BlockRegistry.SHIELDLESS_ANCIENT_GLYPH_STONE_MAKUTUIN.get())
-                .add(BlockRegistry.ANCIENT_GLYPH_STONE_ESSENCE.get());
+                .add(BlockRegistry.ANCIENT_GLYPH_STONE_ESSENCE.get())
+                .add(BlockRegistry.OBSIDIAN_FRAMED_GLASS.get())
+                .add(BlockRegistry.BLOCK_OF_INDUSTRY.get())
+                .add(BlockRegistry.BLOCK_OF_TRANSFORMATION.get());
         this.tag(HalcyonTags.Blocks.CRYSTALLINE_CRADLE_BREAKABLE)
                 .add(BlockRegistry.ESSENCE_CRYSTAL.get())
                 .add(BlockRegistry.CRYSTAL_OF_TRANSFORMATION.get());

@@ -231,7 +231,7 @@ public class TwiningLanternBlockEntity extends BlockEntity implements EssenceBlo
 
     @Override
     public void loadAdditional(CompoundTag tag, HolderLookup.Provider registries) {
-        storage.fromNbt(tag);
+        storage.fromNbt(tag.getCompound("EssenceStorage"));
         corner1 = new BlockPos(
                 tag.getInt("C1X"),
                 tag.getInt("C1Y"),

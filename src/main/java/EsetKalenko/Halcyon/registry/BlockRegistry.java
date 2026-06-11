@@ -3,6 +3,7 @@ package EsetKalenko.Halcyon.registry;
 import EsetKalenko.Halcyon.DataNEssence;
 import EsetKalenko.Halcyon.api.block.SpreadingPlant;
 
+import EsetKalenko.Halcyon.api.item.ShardSublimatableBlockItem;
 import EsetKalenko.Halcyon.block.DirectionalPillarBlock;
 import EsetKalenko.Halcyon.block.auxiliary.*;
 import EsetKalenko.Halcyon.block.decoration.*;
@@ -41,6 +42,7 @@ import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
+import java.util.Map;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
@@ -85,7 +87,7 @@ public class BlockRegistry {
             object -> () -> new BlockItem(object.get(), new Item.Properties()));
     public static final Supplier<Block> TETHERGRASS = register("tethergrass",
             () -> new SpreadingPlant(BlockBehaviour.Properties.ofFullCopy(Blocks.SHORT_GRASS).lightLevel((blockState) -> { return 5;}),
-                    7, 10),
+                    4),
             object -> () -> new BlockItem(object.get(), new Item.Properties()));
     public static final Supplier<Block> VIVID_LOTUS = register("vivid_lotus",
             () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.LILY_PAD)),
@@ -241,6 +243,9 @@ public class BlockRegistry {
             object -> () -> new BlockItem(object.get(), new Item.Properties()));
     public static final Supplier<Block> TWINING_LANTERN = register("twining_lantern",
             () -> new TwiningLantern(getToollessMachineProperties().lightLevel((blockState) -> { return 15;})),
+            object -> () -> new BlockItem(object.get(), new Item.Properties()));
+    public static final Supplier<Block> SIMPLE_HARVESTER = register("harvester",
+            () -> new SimpleHarvester(getMachineProperties()),
             object -> () -> new BlockItem(object.get(), new Item.Properties()));
 
     // Buffers
@@ -509,6 +514,24 @@ public class BlockRegistry {
     public static final Supplier<Block> MAKUTUIN_RUNNER_CROSS = register("makutuin_runner_cross",
             () -> new MakutuinRunnerCross(BlockBehaviour.Properties.ofFullCopy(Blocks.RED_CARPET)),
             object -> () -> new BlockItem(object.get(), new Item.Properties()));
+
+    // Resource Storage Blocks
+    public static final Supplier<Block> BLOCK_OF_INDUSTRY = register("block_of_industry",
+            () -> new TransparentBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK)
+                    .mapColor(MapColor.COLOR_MAGENTA)
+                    .lightLevel((state) -> 7)
+                    .noOcclusion()),
+            object -> () -> new ShardSublimatableBlockItem(object.get(),
+                    new Item.Properties(),
+                    Map.of(EssenceTypeRegistry.ESSENCE, 900f)));
+    public static final Supplier<Block> BLOCK_OF_TRANSFORMATION = register("block_of_transformation",
+            () -> new TransparentBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK)
+                    .mapColor(MapColor.COLOR_YELLOW)
+                    .lightLevel((state) -> 7)
+                    .noOcclusion()),
+            object -> () -> new ShardSublimatableBlockItem(object.get(),
+                    new Item.Properties(),
+                    Map.of(EssenceTypeRegistry.LUNAR_ESSENCE, 900f)));
 
 
     private static <T extends Block> Supplier<T> registerBlock(final String name,

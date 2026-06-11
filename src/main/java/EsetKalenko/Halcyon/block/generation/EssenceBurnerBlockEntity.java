@@ -5,8 +5,9 @@ import EsetKalenko.Halcyon.api.essence.EssenceBlockEntity;
 import EsetKalenko.Halcyon.api.essence.EssenceStorage;
 import EsetKalenko.Halcyon.api.essence.EssenceType;
 import EsetKalenko.Halcyon.api.essence.container.MultiEssenceContainer;
+import EsetKalenko.Halcyon.api.item.ShardSublimatable;
 import EsetKalenko.Halcyon.api.util.BufferUtil;
-import EsetKalenko.Halcyon.api.item.EssenceShard;
+import EsetKalenko.Halcyon.client.particle.CircleShadeParticleOptions;
 import EsetKalenko.Halcyon.registry.BlockEntityRegistry;
 import EsetKalenko.Halcyon.registry.EssenceTypeRegistry;
 import EsetKalenko.Halcyon.screen.EssenceBurnerMenu;
@@ -17,6 +18,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.Connection;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
+import net.minecraft.util.Mth;
 import net.minecraft.world.*;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Inventory;
@@ -33,6 +35,7 @@ import net.neoforged.neoforge.items.wrapper.CombinedInvWrapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.awt.*;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Supplier;
@@ -53,7 +56,7 @@ public class EssenceBurnerBlockEntity extends BlockEntity implements MenuProvide
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
             if (slot == 0) {
-                return stack.getItem() instanceof EssenceShard;
+                return stack.getItem() instanceof ShardSublimatable;
             }
             if (slot == 1) {
                 return stack.getBurnTime(RecipeType.SMELTING) > 0;
@@ -83,23 +86,28 @@ public class EssenceBurnerBlockEntity extends BlockEntity implements MenuProvide
     public CombinedInvWrapper getCombinedInvWrapper() {
         return combinedInvWrapper;
     }
+
     @Override
     public ClientboundBlockEntityDataPacket getUpdatePacket(){
         return ClientboundBlockEntityDataPacket.create(this);
     }
+
     @Override
     public void onDataPacket(Connection connection, ClientboundBlockEntityDataPacket pkt, HolderLookup.Provider pRegistries){
         CompoundTag tag = pkt.getTag();
         storage.fromNbt(tag.getCompound("EssenceStorage"));
         maxBurnTime = tag.getFloat("maxBurnTime");
         burnTime = tag.getFloat("burnTime");
+        essenceBurnCooldown = tag.getFloat("essenceBurnCooldown");
     }
+
     @Override
     public CompoundTag getUpdateTag(HolderLookup.Provider pRegistries) {
         CompoundTag tag = new CompoundTag();
         tag.put("EssenceStorage", storage.toNbt());
         tag.putFloat("maxBurnTime", maxBurnTime);
         tag.putFloat("burnTime", burnTime);
+        tag.putFloat("essenceBurnCooldown", essenceBurnCooldown);
         return tag;
     }
 
@@ -133,9 +141,9 @@ public class EssenceBurnerBlockEntity extends BlockEntity implements MenuProvide
         if (!world.isClientSide()) {
             BufferUtil.getItemsFromBuffersBelow(burner, burner.itemHandler);
             burner.lit = false;
-            if (burner.itemHandler.getStackInSlot(0).getItem() instanceof EssenceShard shard) {
+            if (burner.itemHandler.getStackInSlot(0).getItem() instanceof ShardSublimatable sublimatableItem) {
                 boolean hasSpaceToGenerate = true;
-                for (Map.Entry<Supplier<EssenceType>, Float> i : shard.essence.entrySet()) {
+                for (Map.Entry<Supplier<EssenceType>, Float> i : sublimatableItem.getContainedEnergy().entrySet()) {
                     if (burner.storage.getEssence(i.getKey().get())+i.getValue() > burner.storage.getMaxEssence()) {
                         hasSpaceToGenerate = false;
                         break;
@@ -166,7 +174,7 @@ public class EssenceBurnerBlockEntity extends BlockEntity implements MenuProvide
                     if (burner.essenceBurnCooldown <= 0) {
                         if (hasSpaceToGenerate) {
                             burner.itemHandler.extractItem(0, 1, false);
-                            for (Map.Entry<Supplier<EssenceType>, Float> i : shard.essence.entrySet()) {
+                            for (Map.Entry<Supplier<EssenceType>, Float> i : sublimatableItem.getContainedEnergy().entrySet()) {
                                 burner.storage.addEssence(i.getKey().get(), i.getValue());
                             }
                             burner.essenceBurnCooldown = 50;
@@ -179,13 +187,55 @@ public class EssenceBurnerBlockEntity extends BlockEntity implements MenuProvide
                 burner.level.setBlock(pos, state, 3);
             }
             burner.updateBlock();
+        } else {
+
+            if (burner.essenceBurnCooldown <= 1
+                    && pState.getValue(EssenceBurner.LIT)
+                    && burner.itemHandler.getStackInSlot(0).getItem() instanceof ShardSublimatable sublimatableItem ) {
+
+                for (Map.Entry<Supplier<EssenceType>, Float> tide : sublimatableItem.getContainedEnergy().entrySet()) {
+
+                    if (burner.storage.getEssence(tide.getKey().get())+tide.getValue() > burner.storage.getMaxEssence()) {
+                        continue;
+                    }
+
+                    // sublimation particles
+                    var cloud = new CircleShadeParticleOptions()
+                            .setColor(new Color(tide.getKey().get().color))
+                            .setAdditive(true)
+                            .setFriction(0f)
+                            .setGravity(0f)
+                            .setLifetime(50);
+
+                    for (int count = 0; count < 50; count++) {
+                        var origin = pos.getCenter().add(
+                                Mth.nextDouble(world.random, -0.5d, 0.5d),
+                                Mth.nextDouble(world.random, 0.5d, 1.0d),
+                                Mth.nextDouble(world.random, -0.5d, 0.5d)
+                        );
+
+                        world.addParticle(
+                                cloud,
+                                origin.x,
+                                origin.y,
+                                origin.z,
+                                Mth.nextDouble(world.random, -0.05, 0.05),
+                                Mth.nextDouble(world.random, 0.01, 0.3),
+                                Mth.nextDouble(world.random, -0.05, 0.05)
+                        );
+                    }
+                }
+            }
+
         }
     }
+
     protected void updateBlock() {
         BlockState blockState = level.getBlockState(this.getBlockPos());
         this.level.sendBlockUpdated(this.getBlockPos(), blockState, blockState, 3);
         this.setChanged();
     }
+
     @Override
     public Component getDisplayName() {
         return Component.empty();
