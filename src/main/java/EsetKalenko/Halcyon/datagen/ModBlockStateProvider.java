@@ -93,6 +93,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(BlockRegistry.LENSING_CRYSTAL_ORE);
         blockWithItem(BlockRegistry.FROZEN_MOONLIGHT);
         blockWithItem(BlockRegistry.CREATIVE_ESSENCE_BATTERY);
+        transparentBlockWithItem(BlockRegistry.BLOCK_OF_INDUSTRY);
+        transparentBlockWithItem(BlockRegistry.BLOCK_OF_TRANSFORMATION);
 
         grassBlock(BlockRegistry.VERMILION_GRASS_BLOCK);
         blockWithItem(BlockRegistry.SANCTUARY_DIRT);

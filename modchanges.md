@@ -10,7 +10,7 @@
 - The Repulsion Rod (Esét)
 - RF Nodes and Wires (Esét)
 - Sustenance Siphon (Esét)
-- Storage blocks for Shards of Industry and Shards of Transformation
+- Storage blocks for Shards of Industry and Shards of Transformation (Esét)
 - Malum compat for the Mineral Purification Chamber (Esét)
 - Some more Pastel compat recipes (Esét)
 - Some Malum compat recipes (Esét)

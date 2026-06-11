@@ -517,12 +517,18 @@ public class BlockRegistry {
 
     // Resource Storage Blocks
     public static final Supplier<Block> BLOCK_OF_INDUSTRY = register("block_of_industry",
-            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK).mapColor(MapColor.COLOR_MAGENTA)),
+            () -> new TransparentBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK)
+                    .mapColor(MapColor.COLOR_MAGENTA)
+                    .lightLevel((state) -> 7)
+                    .noOcclusion()),
             object -> () -> new ShardSublimatableBlockItem(object.get(),
                     new Item.Properties(),
                     Map.of(EssenceTypeRegistry.ESSENCE, 900f)));
     public static final Supplier<Block> BLOCK_OF_TRANSFORMATION = register("block_of_transformation",
-            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK).mapColor(MapColor.COLOR_YELLOW)),
+            () -> new TransparentBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK)
+                    .mapColor(MapColor.COLOR_YELLOW)
+                    .lightLevel((state) -> 7)
+                    .noOcclusion()),
             object -> () -> new ShardSublimatableBlockItem(object.get(),
                     new Item.Properties(),
                     Map.of(EssenceTypeRegistry.LUNAR_ESSENCE, 900f)));
