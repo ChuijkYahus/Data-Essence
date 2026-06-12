@@ -125,7 +125,8 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 .add(BlockRegistry.FROZEN_MOONLIGHT.get())
                 .add(BlockRegistry.CRYSTALLINE_CRADLE.get())
                 .add(BlockRegistry.ASTRAL_GOOP.get())
-                .add(BlockRegistry.SIMPLE_HARVESTER.get());
+                .add(BlockRegistry.SIMPLE_HARVESTER.get())
+                .add(BlockRegistry.LUNARIUM.get());
         this.tag(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add(BlockRegistry.OBSIDIAN_FRAMED_GLASS.get())
                 .add(BlockRegistry.POLISHED_OBSIDIAN.get())
