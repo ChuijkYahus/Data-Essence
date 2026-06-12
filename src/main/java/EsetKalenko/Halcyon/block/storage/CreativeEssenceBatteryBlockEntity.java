@@ -15,7 +15,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 
 public class CreativeEssenceBatteryBlockEntity extends BlockEntity implements EssenceBlockEntity {
-    public InfiniteEssenceContainer storage = new InfiniteEssenceContainer(DataNEssenceConfig.essenceBatteryMax);
+    public InfiniteEssenceContainer storage = new InfiniteEssenceContainer(10000);
 
     @Override
     public EssenceStorage getStorage() {

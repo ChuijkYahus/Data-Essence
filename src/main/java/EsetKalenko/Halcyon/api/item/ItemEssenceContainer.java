@@ -23,10 +23,12 @@ import java.util.stream.Collectors;
 public class ItemEssenceContainer {
     protected final Map<ResourceLocation, Float> storedEssence = new Object2FloatArrayMap<>(); // current Essence stored here
     protected final float totalEssence; // maximum capacity for all types
+
     public static final MapCodec<ItemEssenceContainer> CODEC = RecordCodecBuilder.mapCodec((instance) -> instance.group(
             Codec.unboundedMap(ResourceLocation.CODEC, Codec.FLOAT).fieldOf("essence").forGetter((obj) -> obj.storedEssence),
             Codec.FLOAT.fieldOf("maxEssence").forGetter((obj) -> obj.totalEssence)
     ).apply(instance, ItemEssenceContainer::new));
+
     public static final StreamCodec<RegistryFriendlyByteBuf, ItemEssenceContainer> STREAM_CODEC = StreamCodec.of((pBuffer, pValue) -> {
         pBuffer.writeFloat(pValue.totalEssence);
         pBuffer.writeMap(pValue.storedEssence, FriendlyByteBuf::writeResourceLocation, FriendlyByteBuf::writeFloat);
@@ -36,13 +38,10 @@ public class ItemEssenceContainer {
         return new ItemEssenceContainer(essence, maxEssence);
     });
 
-
-    // To define a container that can store every type
     public ItemEssenceContainer(float totalEssence) {
         this(DataNEssenceRegistries.ESSENCE_TYPE_REGISTRY.keySet(), 0f);
     }
 
-    // To define a container that can store only the specified types - to just use one, see SingleEssenceContainer
     public ItemEssenceContainer(Iterable<ResourceLocation> supportedTypes, float totalEssence) {
         this.totalEssence = totalEssence;
         for (ResourceLocation type : supportedTypes) {
@@ -54,6 +53,7 @@ public class ItemEssenceContainer {
         this.totalEssence = totalEssence;
         this.storedEssence.putAll(types);
     }
+
     public static float getEssence(ItemStack stack, ResourceLocation type) {
         return stack.has(DataComponentRegistry.ESSENCE_STORAGE) ? stack.get(DataComponentRegistry.ESSENCE_STORAGE).storedEssence.getOrDefault(type, 0f) : 0;
     }

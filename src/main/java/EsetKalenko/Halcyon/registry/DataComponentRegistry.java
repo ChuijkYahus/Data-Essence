@@ -46,12 +46,14 @@ public class DataComponentRegistry {
             .networkSynchronized(ItemContainerContents.STREAM_CODEC)
             .cacheEncoding()
     );
-    public static final DeferredHolder<DataComponentType<?>, DataComponentType<Float>> STORED_ESSENCE =
+
+    public static final DeferredHolder<DataComponentType<?>, DataComponentType<Float>> STORED_TIDE_AMOUNT =
             DATA_COMPONENTS.registerComponentType("stored_essence", builder -> builder
                     .persistent(Codec.FLOAT)
                     .networkSynchronized(ByteBufCodecs.FLOAT)
                     .cacheEncoding()
             );
+
 
     public static final DeferredHolder<DataComponentType<?>, DataComponentType<SimpleFluidContent>> STORED_FLUID =
             DATA_COMPONENTS.registerComponentType("stored_fluid", builder -> builder

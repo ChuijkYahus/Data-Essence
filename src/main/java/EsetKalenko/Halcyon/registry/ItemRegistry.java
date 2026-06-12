@@ -132,9 +132,6 @@ public class ItemRegistry {
     public static final Supplier<Item> HARVESTER_EYE = register("harvester_eye", () -> new Item(new Item.Properties()));
     public static final Supplier<Item> SPRITE_BOOK_FLORA = register("sprite_book_flora", () -> new Item(new Item.Properties()));
 
-    public static final Supplier<Item> ESSENCE_BATTERY = register("essence_battery",
-            () -> new EssenceBatteryItem(BlockRegistry.ESSENCE_BATTERY.get(), new Item.Properties()));
-
     private static <T extends Item> Supplier<T> register(final String name, final Supplier<T> item) {
         return ITEMS.register(name, item);
     }

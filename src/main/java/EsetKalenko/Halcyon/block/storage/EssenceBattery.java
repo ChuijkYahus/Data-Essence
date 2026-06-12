@@ -1,5 +1,7 @@
 package EsetKalenko.Halcyon.block.storage;
 
+import EsetKalenko.Halcyon.api.DataNEssenceRegistries;
+import EsetKalenko.Halcyon.api.item.ItemEssenceContainer;
 import EsetKalenko.Halcyon.registry.DataComponentRegistry;
 import EsetKalenko.Halcyon.registry.EssenceTypeRegistry;
 import net.minecraft.core.BlockPos;
@@ -69,7 +71,9 @@ public class EssenceBattery extends Block implements EntityBlock {
             for (ItemStack drop : drops) {
 
                 float amount = battery.storage.getEssence(EssenceTypeRegistry.ESSENCE.get());
-                drop.set(DataComponentRegistry.STORED_ESSENCE, amount);
+                ItemEssenceContainer.addEssence(drop,
+                        DataNEssenceRegistries.ESSENCE_TYPE_REGISTRY.getKey(EssenceTypeRegistry.ESSENCE.get()),
+                        amount);
             }
         }
 
@@ -81,7 +85,8 @@ public class EssenceBattery extends Block implements EntityBlock {
         super.setPlacedBy(level, pos, state, placer, stack);
 
         if (level.getBlockEntity(pos) instanceof EssenceBatteryBlockEntity battery) {
-            Float storedEssence = stack.get(DataComponentRegistry.STORED_ESSENCE);
+            Float storedEssence = ItemEssenceContainer.getEssence(stack,
+                    DataNEssenceRegistries.ESSENCE_TYPE_REGISTRY.getKey(EssenceTypeRegistry.ESSENCE.get()));
 
             if (storedEssence != null && storedEssence > 0) {
                 battery.storage.addEssence(EssenceTypeRegistry.ESSENCE.get(), storedEssence);

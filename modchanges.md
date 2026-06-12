@@ -15,6 +15,9 @@
 - Some more Pastel compat recipes (Esét)
 - Some Malum compat recipes (Esét)
 
+### Removals
+- Config value for Tidal Energy Battery capacities (Esét)
+
 ### Changes
 - Changed click sounds for Shifting Hues to all be ui_click (Esét)
 - Data Bank Entries are now more vague on what they unlock (Esét)

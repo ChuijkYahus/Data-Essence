@@ -28,6 +28,7 @@ import EsetKalenko.Halcyon.block.technical.cryochamber.CryochamberRouter;
 import EsetKalenko.Halcyon.block.technical.empty_cryochamber.EmptyCryochamber;
 import EsetKalenko.Halcyon.block.technical.empty_cryochamber.EmptyCryochamberRouter;
 import EsetKalenko.Halcyon.integration.mekanism.ChemicalNode;
+import EsetKalenko.Halcyon.item.EssenceBatteryItem;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.entity.EntityType;
@@ -306,11 +307,18 @@ public class BlockRegistry {
             object -> () -> new BlockItem(object.get(), new Item.Properties()));
 
     // Storage
-    public static final Supplier<Block> ESSENCE_BATTERY = registerBlock("essence_battery",
-            () -> new EssenceBattery(getMachineProperties()));
+    public static final Supplier<Block> ESSENCE_BATTERY = register("essence_battery",
+            () -> new EssenceBattery(getMachineProperties()),
+            object -> () -> new EssenceBatteryItem(
+                    object.get(),
+                    new Item.Properties(),
+                    DataNEssence.locate("essence")));
     public static final Supplier<Block> LUNAR_ESSENCE_BATTERY = register("lunar_essence_battery",
             () -> new LunarEssenceBattery(getMachineProperties()),
-            object -> () -> new BlockItem(object.get(), new Item.Properties()));
+            object -> () -> new EssenceBatteryItem(
+                    object.get(),
+                    new Item.Properties(),
+                    DataNEssence.locate("lunar_essence")));
     public static final Supplier<Block> NATURAL_ESSENCE_BATTERY = register("natural_essence_battery",
             () -> new NaturalEssenceBattery(getMachineProperties()),
             object -> () -> new BlockItem(object.get(), new Item.Properties()));

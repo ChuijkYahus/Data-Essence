@@ -49,6 +49,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.Style;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
@@ -84,6 +85,7 @@ import static com.mojang.blaze3d.platform.GlConst.GL_DRAW_FRAMEBUFFER;
 @EventBusSubscriber(value = Dist.CLIENT, modid = DataNEssence.MOD_ID)
 public class ClientEvents {
     public static RenderTarget tempRenderTarget;
+
     private static String format(float number) {
         DecimalFormat format = new DecimalFormat("#.0");
         String num = format.format(number);
@@ -92,13 +94,20 @@ public class ClientEvents {
         }
         return num;
     }
+
     @SubscribeEvent
     public static void itemTooltip(ItemTooltipEvent event) {
         float maxEssence = ItemEssenceContainer.getMaxEssence(event.getItemStack());
         for (ResourceLocation i : ItemEssenceContainer.getSupportedEssenceTypes(event.getItemStack())) {
-            event.getToolTip().add(1, Component.translatable(DataNEssenceRegistries.ESSENCE_TYPE_REGISTRY.get(i).tooltipKeyWithMax, format(ItemEssenceContainer.getEssence(event.getItemStack(), i)), format(maxEssence)));
+            var tide = DataNEssenceRegistries.ESSENCE_TYPE_REGISTRY.get(i);
+            event.getToolTip().add(1, Component.translatable(
+                    tide.tooltipKeyWithMax,
+                    format(ItemEssenceContainer.getEssence(event.getItemStack(), i)),
+                    format(maxEssence)
+            ).withStyle(Style.EMPTY).withColor(tide.color));
         }
     }
+
     public static float time;
     @SubscribeEvent
     public static void onRenderLevelStage(RenderLevelStageEvent event) {

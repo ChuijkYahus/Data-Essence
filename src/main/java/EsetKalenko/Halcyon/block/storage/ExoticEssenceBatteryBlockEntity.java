@@ -17,7 +17,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 
 public class ExoticEssenceBatteryBlockEntity extends BlockEntity implements EssenceBlockEntity {
-    public SingleEssenceContainer storage = new SingleEssenceContainer(EssenceTypeRegistry.EXOTIC_ESSENCE.get(), DataNEssenceConfig.essenceBatteryMax);
+    public SingleEssenceContainer storage = new SingleEssenceContainer(EssenceTypeRegistry.EXOTIC_ESSENCE.get(), 10000);
     @Override
     public EssenceStorage getStorage() {
         return storage;

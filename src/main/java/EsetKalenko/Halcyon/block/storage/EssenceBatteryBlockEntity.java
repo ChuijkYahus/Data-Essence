@@ -16,7 +16,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.NotNull;
 
 public class EssenceBatteryBlockEntity extends BlockEntity implements EssenceBlockEntity {
-    public SingleEssenceContainer storage = new SingleEssenceContainer(EssenceTypeRegistry.ESSENCE.get(), DataNEssenceConfig.essenceBatteryMax);
+    public SingleEssenceContainer storage = new SingleEssenceContainer(EssenceTypeRegistry.ESSENCE.get(), 10000);
     @Override
     public EssenceStorage getStorage() {
         return storage;
