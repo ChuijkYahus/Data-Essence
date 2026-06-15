@@ -19,6 +19,7 @@
 - Config value for Tidal Energy Battery capacities (Esét)
 
 ### Changes
+- Modid rename - "halcyon" -> "halcyon" (Esét)
 - Changed click sounds for Shifting Hues to all be ui_click (Esét)
 - Data Bank Entries are now more vague on what they unlock (Esét)
 - Moved Mineral-Finding Rod to t3

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "datanessence:item/components/copper_shell"
+    "layer0": "halcyon:item/components/copper_shell"
   }
 }

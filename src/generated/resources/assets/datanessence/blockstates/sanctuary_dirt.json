@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "datanessence:block/sanctuary_dirt"
+      "model": "halcyon:block/sanctuary_dirt"
     }
   }
 }

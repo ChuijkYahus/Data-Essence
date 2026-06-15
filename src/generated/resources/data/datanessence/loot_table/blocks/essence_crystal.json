@@ -26,7 +26,7 @@
                   }
                 }
               ],
-              "name": "datanessence:essence_crystal"
+              "name": "halcyon:essence_crystal"
             },
             {
               "type": "minecraft:item",
@@ -49,7 +49,7 @@
                   "function": "minecraft:explosion_decay"
                 }
               ],
-              "name": "datanessence:essence_shard"
+              "name": "halcyon:essence_shard"
             }
           ]
         }
@@ -57,5 +57,5 @@
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/essence_crystal"
+  "random_sequence": "halcyon:blocks/essence_crystal"
 }

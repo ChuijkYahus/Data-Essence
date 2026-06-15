@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "datanessence:industrial_plant_siphon"
+          "name": "halcyon:industrial_plant_siphon"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/industrial_plant_siphon"
+  "random_sequence": "halcyon:blocks/industrial_plant_siphon"
 }

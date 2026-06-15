@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "datanessence:item/rod_mold_ecliptrum"
+    "layer0": "halcyon:item/rod_mold_ecliptrum"
   }
 }

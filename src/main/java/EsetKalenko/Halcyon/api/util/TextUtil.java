@@ -25,6 +25,6 @@ public class TextUtil {
             DecimalFormat format = new DecimalFormat("0.0##");
             num = format.format(endAmount);
         }
-        return Component.translatable("datanessence.fluid_display." + type, num);
+        return Component.translatable("halcyon.fluid_display." + type, num);
     }
 }

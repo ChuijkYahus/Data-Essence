@@ -37,7 +37,7 @@
                   ]
                 }
               ],
-              "name": "datanessence:tethergrass"
+              "name": "halcyon:tethergrass"
             },
             {
               "type": "minecraft:item",
@@ -60,7 +60,7 @@
                   "function": "minecraft:explosion_decay"
                 }
               ],
-              "name": "datanessence:bonding_powder"
+              "name": "halcyon:bonding_powder"
             }
           ]
         }
@@ -68,5 +68,5 @@
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/tethergrass"
+  "random_sequence": "halcyon:blocks/tethergrass"
 }

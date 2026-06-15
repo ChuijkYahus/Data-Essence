@@ -1,18 +1,18 @@
 {
   "variants": {
     "facing=east": {
-      "model": "datanessence:block/synthesis_chamber",
+      "model": "halcyon:block/synthesis_chamber",
       "y": 90
     },
     "facing=north": {
-      "model": "datanessence:block/synthesis_chamber"
+      "model": "halcyon:block/synthesis_chamber"
     },
     "facing=south": {
-      "model": "datanessence:block/synthesis_chamber",
+      "model": "halcyon:block/synthesis_chamber",
       "y": 180
     },
     "facing=west": {
-      "model": "datanessence:block/synthesis_chamber",
+      "model": "halcyon:block/synthesis_chamber",
       "y": 270
     }
   }

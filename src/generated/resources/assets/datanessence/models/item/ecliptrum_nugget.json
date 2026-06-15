@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "datanessence:item/intermediates/ecliptrum_nugget"
+    "layer0": "halcyon:item/intermediates/ecliptrum_nugget"
   }
 }

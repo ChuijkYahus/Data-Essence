@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "datanessence:ancient_glyph_stone_essence_shieldless"
+          "name": "halcyon:ancient_glyph_stone_essence_shieldless"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/ancient_glyph_stone_essence_shieldless"
+  "random_sequence": "halcyon:blocks/ancient_glyph_stone_essence_shieldless"
 }

@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "datanessence:block/lensing_crystal_ore"
+      "model": "halcyon:block/lensing_crystal_ore"
     }
   }
 }

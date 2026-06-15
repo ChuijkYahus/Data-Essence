@@ -73,14 +73,14 @@ public class Computer extends Block implements EntityBlock {
         boolean hasGottenDataTablet = false;
 
         if ( player instanceof ServerPlayer serverPlayer ) {
-            AdvancementHolder advancement = serverWorld.getServer().getAdvancements().get(DataNEssence.locate("datanessence"));
+            AdvancementHolder advancement = serverWorld.getServer().getAdvancements().get(DataNEssence.locate("halcyon"));
             if (advancement != null)
                 hasGottenDataTablet = serverPlayer.getAdvancements().getOrStartProgress(advancement).isDone();
         }
 
         if (!player.getInventory().contains(signalTracker) && !hasGottenDataTablet) {
             player.addItem(signalTracker);
-            player.displayClientMessage(Component.translatable("block.datanessence.computer.obtain_signal_tracker"), true);
+            player.displayClientMessage(Component.translatable("block.halcyon.computer.obtain_signal_tracker"), true);
             world.playSound(null, pos, SoundEvents.ITEM_PICKUP, SoundSource.PLAYERS);
         }
     }

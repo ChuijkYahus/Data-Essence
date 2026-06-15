@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "datanessence:item/transcendental_tether_use"
+    "layer0": "halcyon:item/transcendental_tether_use"
   }
 }

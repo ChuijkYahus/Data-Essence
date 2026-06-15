@@ -121,7 +121,7 @@ public class FluidTank extends TransparentBlock implements EntityBlock {
                 if (fluid.getAmount() > 0) {
                     pPlayer.displayClientMessage(
                             Component.translatable(
-                                    "block.datanessence.fluid_tank.amount",
+                                    "block.halcyon.fluid_tank.amount",
                                     TextUtil.getFluidText(fluid.getAmount()),
                                     TextUtil.getFluidText(ent.getFluidHandler().getTankCapacity(0)),
                                     fluid.getHoverName()
@@ -130,7 +130,7 @@ public class FluidTank extends TransparentBlock implements EntityBlock {
                     );
                 } else {
                     pPlayer.displayClientMessage(
-                            Component.translatable("block.datanessence.fluid_tank.nothing"),
+                            Component.translatable("block.halcyon.fluid_tank.nothing"),
                             true
                     );
                 }
@@ -169,13 +169,13 @@ public class FluidTank extends TransparentBlock implements EntityBlock {
             int capacity = 16000;
 
             tooltip.add(Component.translatable(
-                    "tooltip.datanessence.fluid_tank.contains",
+                    "tooltip.halcyon.fluid_tank.contains",
                     TextUtil.getFluidText(amount),
                     TextUtil.getFluidText(capacity),
                     fluidName
             ));
         } else {
-            tooltip.add(Component.translatable("tooltip.datanessence.fluid_tank.empty"));
+            tooltip.add(Component.translatable("tooltip.halcyon.fluid_tank.empty"));
         }
     }
 }

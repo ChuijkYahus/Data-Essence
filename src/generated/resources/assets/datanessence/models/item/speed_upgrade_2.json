@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "datanessence:item/sigils/speed_upgrade_2"
+    "layer0": "halcyon:item/sigils/speed_upgrade_2"
   }
 }

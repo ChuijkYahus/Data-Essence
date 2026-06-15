@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "datanessence:polished_obsidian"
+          "name": "halcyon:polished_obsidian"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/polished_obsidian"
+  "random_sequence": "halcyon:blocks/polished_obsidian"
 }

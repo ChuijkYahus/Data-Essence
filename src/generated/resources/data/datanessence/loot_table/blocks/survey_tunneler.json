@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "datanessence:survey_tunneler"
+          "name": "halcyon:survey_tunneler"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/survey_tunneler"
+  "random_sequence": "halcyon:blocks/survey_tunneler"
 }

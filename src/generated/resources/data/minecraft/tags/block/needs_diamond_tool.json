@@ -1,12 +1,12 @@
 {
   "values": [
-    "datanessence:obsidian_framed_glass",
-    "datanessence:polished_obsidian",
-    "datanessence:polished_obsidian_column",
-    "datanessence:polished_obsidian_bricks",
-    "datanessence:engraved_polished_obsidian",
-    "datanessence:polished_obsidian_tract",
-    "datanessence:polished_obsidian_tiles",
-    "datanessence:lensing_crystal_ore"
+    "halcyon:obsidian_framed_glass",
+    "halcyon:polished_obsidian",
+    "halcyon:polished_obsidian_column",
+    "halcyon:polished_obsidian_bricks",
+    "halcyon:engraved_polished_obsidian",
+    "halcyon:polished_obsidian_tract",
+    "halcyon:polished_obsidian_tiles",
+    "halcyon:lensing_crystal_ore"
   ]
 }

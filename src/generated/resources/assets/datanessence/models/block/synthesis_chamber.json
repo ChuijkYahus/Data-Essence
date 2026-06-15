@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:block/cube",
   "textures": {
-    "down": "datanessence:block/deco/polished_obsidian",
-    "east": "datanessence:block/synthesis_chamber_side",
-    "north": "datanessence:block/synthesis_chamber_front",
-    "particle": "datanessence:block/synthesis_chamber_front",
-    "south": "datanessence:block/synthesis_chamber_side",
-    "up": "datanessence:block/synthesis_chamber_top",
-    "west": "datanessence:block/synthesis_chamber_side"
+    "down": "halcyon:block/deco/polished_obsidian",
+    "east": "halcyon:block/synthesis_chamber_side",
+    "north": "halcyon:block/synthesis_chamber_front",
+    "particle": "halcyon:block/synthesis_chamber_front",
+    "south": "halcyon:block/synthesis_chamber_side",
+    "up": "halcyon:block/synthesis_chamber_top",
+    "west": "halcyon:block/synthesis_chamber_side"
   }
 }

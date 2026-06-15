@@ -2,6 +2,6 @@
   "parent": "minecraft:block/cross",
   "render_type": "minecraft:cutout",
   "textures": {
-    "cross": "datanessence:block/cyan_pearlescent_grass"
+    "cross": "halcyon:block/cyan_pearlescent_grass"
   }
 }

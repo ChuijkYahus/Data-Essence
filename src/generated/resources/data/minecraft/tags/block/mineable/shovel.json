@@ -1,11 +1,11 @@
 {
   "values": [
-    "datanessence:vermilion_grass",
-    "datanessence:sanctuary_dirt",
-    "datanessence:sanctuary_sand",
-    "datanessence:deep_sanctuary_sand",
-    "datanessence:red_pearlescent_sand",
-    "datanessence:green_pearlescent_sand",
-    "datanessence:blue_pearlescent_sand"
+    "halcyon:vermilion_grass",
+    "halcyon:sanctuary_dirt",
+    "halcyon:sanctuary_sand",
+    "halcyon:deep_sanctuary_sand",
+    "halcyon:red_pearlescent_sand",
+    "halcyon:green_pearlescent_sand",
+    "halcyon:blue_pearlescent_sand"
   ]
 }

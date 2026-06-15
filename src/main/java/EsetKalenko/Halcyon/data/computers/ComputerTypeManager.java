@@ -15,7 +15,7 @@ public class ComputerTypeManager extends SimpleJsonResourceReloadListener {
 
     public static ComputerTypeManager instance;
     protected ComputerTypeManager() {
-        super(GSON, "datanessence/computer_types");
+        super(GSON, "halcyon/computer_types");
     }
     public static ComputerTypeManager getOrCreateInstance() {
         if (instance == null) {

@@ -1,7 +1,7 @@
 {
   "type": "emi:info",
   "stacks": [
-    "item:datanessence:hammer_and_chisel"
+    "item:halcyon:hammer_and_chisel"
   ],
-  "text": "emi.info.datanessence.hammer_and_chisel"
+  "text": "emi.info.halcyon.hammer_and_chisel"
 }

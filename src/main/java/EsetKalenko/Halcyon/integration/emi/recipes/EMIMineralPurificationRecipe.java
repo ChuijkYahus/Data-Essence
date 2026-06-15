@@ -74,7 +74,7 @@ public class EMIMineralPurificationRecipe implements EmiRecipe {
                 : primary.getAmount() + ( 4.5 * secondary.getAmount());
 
         // Yield
-        widgets.addText(Component.translatable("emi.datanessence.average_yield"), 118, 2, 0xFFFF96B5, false).horizontalAlign(TextWidget.Alignment.END);
+        widgets.addText(Component.translatable("emi.halcyon.average_yield"), 118, 2, 0xFFFF96B5, false).horizontalAlign(TextWidget.Alignment.END);
         widgets.addText(Component.literal( String.valueOf( yield )), 118, 12, 0xFFFF96B5, false).horizontalAlign(TextWidget.Alignment.END);
 
         // Input
@@ -82,8 +82,8 @@ public class EMIMineralPurificationRecipe implements EmiRecipe {
         // Output
         widgets.addSlot(primary, 73, 14).recipeContext(this).drawBack(false);
         widgets.addSlot(secondary, 73, 38).recipeContext(this).drawBack(false);
-        widgets.addTexture(emiIcons, 94, 43, 8, 8, 128, 16).tooltipText(List.of(Component.translatable("emi.datanessence.nugget_mult")));
-        widgets.addText(Component.translatable("emi.datanessence.time_seconds", (double) time / 20), 38, 50, 0xffffff, false).horizontalAlign(TextWidget.Alignment.CENTER);
+        widgets.addTexture(emiIcons, 94, 43, 8, 8, 128, 16).tooltipText(List.of(Component.translatable("emi.halcyon.nugget_mult")));
+        widgets.addText(Component.translatable("emi.halcyon.time_seconds", (double) time / 20), 38, 50, 0xffffff, false).horizontalAlign(TextWidget.Alignment.CENTER);
 
     }
 }

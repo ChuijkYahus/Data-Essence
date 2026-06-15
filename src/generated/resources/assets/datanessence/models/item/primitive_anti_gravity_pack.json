@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "datanessence:item/primitive_anti_gravity_pack"
+    "layer0": "halcyon:item/primitive_anti_gravity_pack"
   }
 }

@@ -1,7 +1,0 @@
-{
-    "type": "datanessence:mineral_purification",
-    "input": { "tag": "c:ores/gold" },
-    "time": 300,
-    "result": { "id": "minecraft:gold_ingot" },
-    "nuggetResult": { "id": "minecraft:gold_nugget", "count": 2 }
-}

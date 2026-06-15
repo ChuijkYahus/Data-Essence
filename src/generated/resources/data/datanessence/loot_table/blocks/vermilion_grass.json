@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "datanessence:vermilion_grass"
+          "name": "halcyon:vermilion_grass"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/vermilion_grass"
+  "random_sequence": "halcyon:blocks/vermilion_grass"
 }

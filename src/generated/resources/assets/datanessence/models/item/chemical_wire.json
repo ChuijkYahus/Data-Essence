@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "datanessence:item/wires/chemical_wire"
+    "layer0": "halcyon:item/wires/chemical_wire"
   }
 }

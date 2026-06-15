@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cross",
-  "textures": {
-    "cross": "datanessence:block/tethergrass"
-  },
-  "render_type": "minecraft:cutout"
-}

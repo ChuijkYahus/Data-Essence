@@ -31,7 +31,7 @@ public class LocatorUpgrade extends Item {
             if ( ItemStack.isSameItem(offhandItem, new ItemStack(ItemRegistry.LOCATOR.get())) ) {
                 offhandItem.set(DataComponentRegistry.SIGNAL_TRACKER_UPGRADED, true);
                 player.getItemInHand(hand).shrink(1);
-                player.sendSystemMessage( Component.translatable("item.datanessence.signal_tracker_resonance_receptor.install")
+                player.sendSystemMessage( Component.translatable("item.halcyon.signal_tracker_resonance_receptor.install")
                         .withStyle(Style.EMPTY
                                 .withItalic(true)
                                 .withColor(0x7904c7)));
@@ -45,7 +45,7 @@ public class LocatorUpgrade extends Item {
     public void appendHoverText(ItemStack stack, Item.TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
         super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
 
-        tooltipComponents.add(Component.translatable("item.datanessence.signal_tracker_resonance_receptor.tooltip")
+        tooltipComponents.add(Component.translatable("item.halcyon.signal_tracker_resonance_receptor.tooltip")
                 .withStyle(Style.EMPTY.withColor(EssenceTypeRegistry.ESSENCE.get().getColor())));
     }
 }

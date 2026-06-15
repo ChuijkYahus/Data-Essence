@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "datanessence:crystalline_log"
+          "name": "halcyon:crystalline_log"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/crystalline_log"
+  "random_sequence": "halcyon:blocks/crystalline_log"
 }

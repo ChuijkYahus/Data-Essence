@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "datanessence:block/lunar_essence_battery"
+      "model": "halcyon:block/lunar_essence_battery"
     }
   }
 }

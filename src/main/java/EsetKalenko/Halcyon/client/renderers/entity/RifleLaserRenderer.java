@@ -23,7 +23,7 @@ import java.util.Random;
 public class RifleLaserRenderer extends EntityRenderer<RifleLaser> {
     //texture: 128x64, 16x8 glyphs of 8x8
     private static final ResourceLocation ANCIENT_FONT_TEXTURE =
-            ResourceLocation.parse("datanessence:textures/font/ancient.png");
+            ResourceLocation.parse("halcyon:textures/font/ancient.png");
 
     // Text-style render type (position + color + uv + light)
     private static final RenderType ANCIENT_FONT_TYPE =

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "datanessence:item/bombs/essence_bomb"
+    "layer0": "halcyon:item/bombs/essence_bomb"
   }
 }

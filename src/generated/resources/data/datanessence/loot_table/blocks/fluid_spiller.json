@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "datanessence:fluid_spiller"
+          "name": "halcyon:fluid_spiller"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/fluid_spiller"
+  "random_sequence": "halcyon:blocks/fluid_spiller"
 }

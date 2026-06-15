@@ -41,7 +41,7 @@ public class DataNEssenceCommands {
                 .requires(source -> source.hasPermission(4))
                 .then(Commands.literal("entry")
                         .then(Commands.argument("target", EntityArgument.player())
-                        // /datanessence entry <id || all> <true/false> [true/false]
+                        // /halcyon entry <id || all> <true/false> [true/false]
                         // <resource location of entry OR all> <whether to grant or revoke it> [incomplete status; must default to false]
                         .then(Commands.literal("reset_all")
                                 .executes((command) -> {
@@ -121,11 +121,11 @@ public class DataNEssenceCommands {
             stack.set(DataComponentRegistry.ESSENCE_STORAGE, filledContainer);
 
             command.getSource().sendSuccess(() -> {
-                return Component.translatable("commands.datanessence.charge_item.success", player.getName(), stack.getDisplayName());
+                return Component.translatable("commands.halcyon.charge_item.success", player.getName(), stack.getDisplayName());
             }, true);
             return Command.SINGLE_SUCCESS;
         } else {
-            command.getSource().sendFailure(Component.translatable("commands.datanessence.charge_item.fail_no_container", stack.getDisplayName()));
+            command.getSource().sendFailure(Component.translatable("commands.halcyon.charge_item.fail_no_container", stack.getDisplayName()));
             return 0;
         }
     }
@@ -144,7 +144,7 @@ public class DataNEssenceCommands {
                 if(i != o && i.x == o.x && i.y == o.y && i.tab.equals(o.tab)) {
                     foundIssues = true;
                     if (command.getSource().isPlayer()) {
-                        command.getSource().getEntity().sendSystemMessage(Component.translatable("commands.datanessence.check_entry_overlaps.found", i.id.toString(), o.id.toString()));
+                        command.getSource().getEntity().sendSystemMessage(Component.translatable("commands.halcyon.check_entry_overlaps.found", i.id.toString(), o.id.toString()));
                     } else {
                         DataNEssence.LOGGER.warn("Entry \"" + i.id.toString() + "\" is overlapping with entry \"" + o.id.toString() + "\"");
                     }
@@ -152,7 +152,7 @@ public class DataNEssenceCommands {
             }
         }
         if (!foundIssues) {
-            command.getSource().getEntity().sendSystemMessage(Component.translatable("commands.datanessence.check_entry_overlaps.no_found"));
+            command.getSource().getEntity().sendSystemMessage(Component.translatable("commands.halcyon.check_entry_overlaps.no_found"));
         }
         return Command.SINGLE_SUCCESS;
     }
@@ -180,7 +180,7 @@ public class DataNEssenceCommands {
             }
             ModMessages.sendToPlayersTrackingEntityAndSelf(new DragonPartsSync(player.getId(), player.getData(AttachmentTypeRegistry.HAS_HORNS), player.getData(AttachmentTypeRegistry.HAS_TAIL), player.getData(AttachmentTypeRegistry.HAS_WINGS)), (ServerPlayer)player);
             command.getSource().sendSuccess(() -> {
-                return part.equals("all") ? Component.translatable("commands.datanessence.give_all_dragon_parts", player.getName()) : Component.translatable("commands.datanessence.give_dragon_part", part, player.getName());
+                return part.equals("all") ? Component.translatable("commands.halcyon.give_all_dragon_parts", player.getName()) : Component.translatable("commands.halcyon.give_dragon_part", part, player.getName());
             }, true);
         }
         return Command.SINGLE_SUCCESS;
@@ -192,7 +192,7 @@ public class DataNEssenceCommands {
             int tier = command.getArgument("tier", int.class);
             DataTabletUtil.setTier(player, tier);
             command.getSource().sendSuccess(() -> {
-                return Component.translatable("commands.datanessence.set_tier", tier, player.getName());
+                return Component.translatable("commands.halcyon.set_tier", tier, player.getName());
             }, true);
         }
         return Command.SINGLE_SUCCESS;
@@ -218,7 +218,7 @@ public class DataNEssenceCommands {
             player.setData(AttachmentTypeRegistry.TIER, 0);
             PlayerDataUtil.sendTier((ServerPlayer)player, false);
             command.getSource().sendSuccess(() -> {
-                return Component.translatable("commands.datanessence.reset_learned", player.getName());
+                return Component.translatable("commands.halcyon.reset_learned", player.getName());
             }, true);
         }
         return Command.SINGLE_SUCCESS;
@@ -239,7 +239,7 @@ public class DataNEssenceCommands {
                 Entry entry2 = Entries.entries.get(entry);
                 int completionStage = (hasAllArgs) ? command.getArgument("completion_stage", Integer.class) : entry2.completionStages.size();
                 if (entry2.completionStages.size() < completionStage) {
-                    command.getSource().sendFailure(Component.translatable("commands.datanessence.entry.entry_not_enough_stages", entry.toString(), completionStage));
+                    command.getSource().sendFailure(Component.translatable("commands.halcyon.entry.entry_not_enough_stages", entry.toString(), completionStage));
                     return 0;
                 }
                 List<ResourceLocation> unlockedEntries = player.getData(AttachmentTypeRegistry.UNLOCKED);
@@ -247,25 +247,25 @@ public class DataNEssenceCommands {
                     if (!unlockedEntries.contains(entry)) {
                         DataTabletUtil.unlockEntryAndParents(player, entry, completionStage);
                         command.getSource().sendSuccess(() -> {
-                            return Component.translatable("commands.datanessence.entry.unlock_entry", entry.toString(), player.getName());
+                            return Component.translatable("commands.halcyon.entry.unlock_entry", entry.toString(), player.getName());
                         }, true);
                     } else {
-                        command.getSource().sendFailure(Component.translatable("commands.datanessence.entry.entry_already_unlocked", entry.toString(), player.getName()));
+                        command.getSource().sendFailure(Component.translatable("commands.halcyon.entry.entry_already_unlocked", entry.toString(), player.getName()));
                         return 0;
                     }
                 } else {
                     if (unlockedEntries.contains(entry)) {
                         DataTabletUtil.removeEntry(player, entry);
                         command.getSource().sendSuccess(() -> {
-                            return Component.translatable("commands.datanessence.entry.remove_entry", entry.toString(), player.getName());
+                            return Component.translatable("commands.halcyon.entry.remove_entry", entry.toString(), player.getName());
                         }, true);
                     } else {
-                        command.getSource().sendFailure(Component.translatable("commands.datanessence.entry.entry_not_learned_in_the_first_place", entry.toString(), player.getName()));
+                        command.getSource().sendFailure(Component.translatable("commands.halcyon.entry.entry_not_learned_in_the_first_place", entry.toString(), player.getName()));
                         return 0;
                     }
                 }
             } else {
-                command.getSource().sendFailure(Component.translatable("commands.datanessence.entry.entry_doesnt_exist", entry.toString()));
+                command.getSource().sendFailure(Component.translatable("commands.halcyon.entry.entry_doesnt_exist", entry.toString()));
                 return 0;
             }
         }
@@ -283,7 +283,7 @@ public class DataNEssenceCommands {
             PlayerDataUtil.updateUnlockedEntries((ServerPlayer) player);
             DataTabletUtil.checkForTierUpgrades(player);
             command.getSource().sendSuccess(() -> {
-                return Component.translatable("commands.datanessence.unlock_all", player.getName());
+                return Component.translatable("commands.halcyon.unlock_all", player.getName());
             }, true);
         }
         return Command.SINGLE_SUCCESS;

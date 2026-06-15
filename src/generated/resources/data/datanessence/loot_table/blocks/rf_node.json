@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "datanessence:rf_node"
+          "name": "halcyon:rf_node"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/rf_node"
+  "random_sequence": "halcyon:blocks/rf_node"
 }

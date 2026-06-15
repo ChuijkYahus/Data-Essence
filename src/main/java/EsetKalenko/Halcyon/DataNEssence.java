@@ -29,17 +29,17 @@ import org.slf4j.Logger;
 import static EsetKalenko.Halcyon.integration.DataNEssenceIntegration.*;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
-@Mod("datanessence")
+@Mod("halcyon")
 @EventBusSubscriber(modid = DataNEssence.MOD_ID)
 public class DataNEssence
 {
-    public static final String MOD_ID = "datanessence";
+    public static final String MOD_ID = "halcyon";
     // Directly reference a slf4j logger
     public static final Logger LOGGER = LogUtils.getLogger();
     public static RandomSource random;
 
     /**
-     * Provides a ResourceLocation under DnE's namespace.
+     * Provides a ResourceLocation under Halcyon's namespace.
      */
     public static ResourceLocation locate(String path) {
         return ResourceLocation.fromNamespaceAndPath(MOD_ID, path);
@@ -48,8 +48,8 @@ public class DataNEssence
     public DataNEssence(IEventBus bus)
     {
         ModLoadingContext modLoadingContext = ModLoadingContext.get();
-        modLoadingContext.getActiveContainer().registerConfig(ModConfig.Type.COMMON, DataNEssenceConfig.COMMON_SPEC, "datanessence.toml");
-        modLoadingContext.getActiveContainer().registerConfig(ModConfig.Type.CLIENT, DataNEssenceClientConfig.CLIENT_SPEC, "datanessence-client.toml");
+        modLoadingContext.getActiveContainer().registerConfig(ModConfig.Type.COMMON, DataNEssenceConfig.COMMON_SPEC, "halcyon.toml");
+        modLoadingContext.getActiveContainer().registerConfig(ModConfig.Type.CLIENT, DataNEssenceClientConfig.CLIENT_SPEC, "halcyon-client.toml");
         ItemRegistry.ITEMS.register(bus);
         MenuRegistry.MENUS.register(bus);
         RecipeRegistry.RECIPES.register(bus);

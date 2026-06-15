@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "datanessence:item/bonding_powder"
+    "layer0": "halcyon:item/bonding_powder"
   }
 }

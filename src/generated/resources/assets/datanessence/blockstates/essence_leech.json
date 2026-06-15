@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "datanessence:block/essence_leech"
+      "model": "halcyon:block/essence_leech"
     }
   }
 }

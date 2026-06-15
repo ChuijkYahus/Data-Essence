@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "datanessence:fluid_tank"
+          "name": "halcyon:fluid_tank"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/fluid_tank"
+  "random_sequence": "halcyon:blocks/fluid_tank"
 }

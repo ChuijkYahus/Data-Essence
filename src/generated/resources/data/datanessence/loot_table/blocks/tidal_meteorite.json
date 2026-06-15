@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "datanessence:tidal_meteorite"
+          "name": "halcyon:tidal_meteorite"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/tidal_meteorite"
+  "random_sequence": "halcyon:blocks/tidal_meteorite"
 }

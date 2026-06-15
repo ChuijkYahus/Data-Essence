@@ -107,8 +107,8 @@ public class CraftingPage extends TextPage {
         graphics.blit( DataNEssence.locate("textures/gui/emi_recipe_locked.png") , xOffset + x, yOffset + y, 0, 0, backgroundWidth, backgroundHeight);
 
         // forgive the bad code, adapted from TextPage while terrified ~Eset
-        var line1 = Component.translatable("emi.datanessence.recipe_locked_line_1");
-        var line2 = Component.translatable("emi.datanessence.recipe_locked_line_2");
+        var line1 = Component.translatable("emi.halcyon.recipe_locked_line_1");
+        var line2 = Component.translatable("emi.halcyon.recipe_locked_line_2");
         int textX;
         FormattedCharSequence sequence1;
         FormattedCharSequence sequence2;
@@ -165,7 +165,7 @@ public class CraftingPage extends TextPage {
 
     public void renderCraftTime(GuiGraphics graphics, int ticks, int x, int y) {
         double seconds = (double) ticks / 20;
-        Component text = Component.translatable("emi.datanessence.time_seconds", seconds);
+        Component text = Component.translatable("emi.halcyon.time_seconds", seconds);
         var font = Minecraft.getInstance().font;
 
         graphics.drawString(font, text, (x+8) - font.width(text) / 2, y, 0xffffff, false);

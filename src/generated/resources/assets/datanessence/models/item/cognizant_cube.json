@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "datanessence:item/cognizant_cube"
+    "layer0": "halcyon:item/cognizant_cube"
   }
 }

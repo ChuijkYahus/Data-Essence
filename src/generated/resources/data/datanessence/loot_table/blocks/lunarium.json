@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "datanessence:lunarium"
+          "name": "halcyon:lunarium"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/lunarium"
+  "random_sequence": "halcyon:blocks/lunarium"
 }

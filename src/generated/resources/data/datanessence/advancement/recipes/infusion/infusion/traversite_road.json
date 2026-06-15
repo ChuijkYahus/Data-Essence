@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "datanessence:infusion/traversite_road"
+        "recipe": "halcyon:infusion/traversite_road"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "datanessence:infusion/traversite_road"
+      "halcyon:infusion/traversite_road"
     ]
   }
 }

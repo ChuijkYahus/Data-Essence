@@ -2,6 +2,6 @@
   "parent": "minecraft:block/cube_all",
   "render_type": "minecraft:translucent",
   "textures": {
-    "all": "datanessence:block/block_of_transformation"
+    "all": "halcyon:block/block_of_transformation"
   }
 }

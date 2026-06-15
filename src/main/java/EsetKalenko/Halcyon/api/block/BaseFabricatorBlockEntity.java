@@ -226,7 +226,7 @@ public abstract class BaseFabricatorBlockEntity extends BlockEntity implements E
 
                         if (!ent.canCraft()) {
                             pPlayer.sendSystemMessage(
-                                    Component.translatable("block.datanessence.fabricator.cannot_work_check_tablet"));
+                                    Component.translatable("block.halcyon.fabricator.cannot_work_check_tablet"));
                             return InteractionResult.FAIL;
                         }
 
@@ -239,10 +239,10 @@ public abstract class BaseFabricatorBlockEntity extends BlockEntity implements E
                                 ent.time = 0;
                                 pLevel.playSound(null, pPos, SoundRegistry.FABRICATOR_START.value(), SoundSource.BLOCKS, 2, 1);
                             } else {
-                                pPlayer.sendSystemMessage(Component.translatable("block.datanessence.fabricator.dont_know_how"));
+                                pPlayer.sendSystemMessage(Component.translatable("block.halcyon.fabricator.dont_know_how"));
                             }
                         } else {
-                            pPlayer.sendSystemMessage(Component.translatable("block.datanessence.fabricator.not_enough_essence"));
+                            pPlayer.sendSystemMessage(Component.translatable("block.halcyon.fabricator.not_enough_essence"));
                         }
                     }
                 }

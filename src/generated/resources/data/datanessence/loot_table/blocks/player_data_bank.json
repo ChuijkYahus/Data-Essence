@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "datanessence:player_data_bank"
+          "name": "halcyon:player_data_bank"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/player_data_bank"
+  "random_sequence": "halcyon:blocks/player_data_bank"
 }

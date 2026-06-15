@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "datanessence:ender_pearl_capture"
+          "name": "halcyon:ender_pearl_capture"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/ender_pearl_capture"
+  "random_sequence": "halcyon:blocks/ender_pearl_capture"
 }

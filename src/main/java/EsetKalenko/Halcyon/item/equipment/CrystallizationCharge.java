@@ -59,6 +59,6 @@ public class CrystallizationCharge extends Item implements ProjectileItem {
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
         super.appendHoverText(stack, context, components, flag);
-        components.add(Component.translatable("item.datanessence.crystallization_charge.info").withStyle(Style.EMPTY.withColor(EssenceTypeRegistry.LUNAR_ESSENCE.get().getColor())));
+        components.add(Component.translatable("item.halcyon.crystallization_charge.info").withStyle(Style.EMPTY.withColor(EssenceTypeRegistry.LUNAR_ESSENCE.get().getColor())));
     }
 }

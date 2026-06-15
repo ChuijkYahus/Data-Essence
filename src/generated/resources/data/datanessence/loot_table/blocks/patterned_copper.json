@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "datanessence:patterned_copper"
+          "name": "halcyon:patterned_copper"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/patterned_copper"
+  "random_sequence": "halcyon:blocks/patterned_copper"
 }

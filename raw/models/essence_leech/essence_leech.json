@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [128, 128],
 	"textures": {
-		"0": "datanessence:block/essence_leech",
-		"particle": "datanessence:block/essence_leech"
+		"0": "halcyon:block/essence_leech",
+		"particle": "halcyon:block/essence_leech"
 	},
 	"elements": [
 		{

@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "datanessence:block/essence_buffer"
+      "model": "halcyon:block/essence_buffer"
     }
   }
 }

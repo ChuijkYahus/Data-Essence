@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "datanessence:infusion/netherite_scrap"
+        "recipe": "halcyon:infusion/netherite_scrap"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "datanessence:infusion/netherite_scrap"
+      "halcyon:infusion/netherite_scrap"
     ]
   }
 }

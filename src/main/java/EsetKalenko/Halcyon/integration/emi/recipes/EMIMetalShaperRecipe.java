@@ -69,6 +69,6 @@ public class EMIMetalShaperRecipe implements EmiRecipe {
         widgetHolder.addSlot(input.get(0), 29, 21).drawBack(false);
         // Output
         widgetHolder.addSlot(output.get(0), 73, 21).recipeContext(this).drawBack(false);
-        widgetHolder.addText(Component.translatable("emi.datanessence.time_seconds", (double) time / 20), 82, 44, 0xffffff, false).horizontalAlign(TextWidget.Alignment.CENTER);
+        widgetHolder.addText(Component.translatable("emi.halcyon.time_seconds", (double) time / 20), 82, 44, 0xffffff, false).horizontalAlign(TextWidget.Alignment.CENTER);
     }
 }

@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "datanessence:crystalline_leaves"
+          "name": "halcyon:crystalline_leaves"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/crystalline_leaves"
+  "random_sequence": "halcyon:blocks/crystalline_leaves"
 }

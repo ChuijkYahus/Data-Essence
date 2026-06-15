@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "datanessence:block/lensing_crystal_ore"
+    "all": "halcyon:block/lensing_crystal_ore"
   }
 }

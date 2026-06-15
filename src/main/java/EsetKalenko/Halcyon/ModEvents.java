@@ -108,7 +108,7 @@ public class ModEvents {
                 event.getEntity().getData(AttachmentTypeRegistry.BINDING_STRUCTURE_CONTROLLER).ifPresent((binding) -> {
                     if (binding.getLevel() != null) {
                         if (binding.bindProcess == 1) {
-                            event.getEntity().sendSystemMessage(Component.translatable("block.datanessence.structure_protector.select_pos_2"));
+                            event.getEntity().sendSystemMessage(Component.translatable("block.halcyon.structure_protector.select_pos_2"));
                             binding.offsetCorner1 = event.getPos().offset(binding.getBlockPos().multiply(-1));
                             binding.getLevel().setBlock(binding.getBlockPos(), binding.getBlockState().setValue(StructureProtector.FACING, Direction.NORTH), 3);
                             binding.bindProcess = 2;
@@ -118,7 +118,7 @@ public class ModEvents {
                                 binding.offsetCorner2 = event.getPos().offset(binding.getBlockPos().multiply(-1));
                                 binding.getLevel().setBlock(binding.getBlockPos(), binding.getBlockState().setValue(StructureProtector.FACING, Direction.NORTH), 3);
                                 binding.bindProcess = 0;
-                                event.getEntity().sendSystemMessage(Component.translatable("block.datanessence.structure_protector.finished"));
+                                event.getEntity().sendSystemMessage(Component.translatable("block.halcyon.structure_protector.finished"));
                                 event.getEntity().removeData(AttachmentTypeRegistry.BINDING_STRUCTURE_CONTROLLER);
                                 binding.updateBlock();
                             }

@@ -1,9 +1,9 @@
 {
   "type": "emi:info",
   "stacks": [
-    "item:datanessence:data_tablet",
-    "item:datanessence:cognizant_cube",
-    "item:datanessence:music_disc_player"
+    "item:halcyon:data_tablet",
+    "item:halcyon:cognizant_cube",
+    "item:halcyon:music_disc_player"
   ],
-  "text": "emi.info.datanessence.ancient_items_are_loot_only"
+  "text": "emi.info.halcyon.ancient_items_are_loot_only"
 }

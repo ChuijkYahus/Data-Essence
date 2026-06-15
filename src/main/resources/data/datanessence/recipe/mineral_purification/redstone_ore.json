@@ -1,7 +1,0 @@
-{
-    "type": "datanessence:mineral_purification",
-    "input": { "tag": "c:ores/redstone" },
-    "time": 300,
-    "result": { "id": "minecraft:redstone" },
-    "nuggetResult": { "id": "minecraft:redstone", "count": 2 }
-}

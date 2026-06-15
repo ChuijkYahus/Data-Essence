@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "datanessence:dewlamp"
+          "name": "halcyon:dewlamp"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/dewlamp"
+  "random_sequence": "halcyon:blocks/dewlamp"
 }

@@ -40,8 +40,8 @@ public class FallingMoon extends Item {
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
         super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
-        tooltipComponents.add(Component.translatable("item.datanessence.falling_moon.tooltip_1" ).withStyle(Style.EMPTY.withColor( 0xffe8cc6d ).withItalic(true)));
-        tooltipComponents.add(Component.translatable("item.datanessence.falling_moon.tooltip_2",
+        tooltipComponents.add(Component.translatable("item.halcyon.falling_moon.tooltip_1" ).withStyle(Style.EMPTY.withColor( 0xffe8cc6d ).withItalic(true)));
+        tooltipComponents.add(Component.translatable("item.halcyon.falling_moon.tooltip_2",
                 Component.literal(String.valueOf(COST_LOW)).withColor(0xffe8cc6d),
                 Component.literal(String.valueOf(COST_MED)).withColor(0xffe8cc6d),
                 Component.literal(String.valueOf(COST_HIGH)).withColor(0xffe8cc6d)

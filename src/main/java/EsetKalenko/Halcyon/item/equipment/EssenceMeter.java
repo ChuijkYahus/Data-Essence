@@ -37,11 +37,11 @@ public class EssenceMeter extends Item {
         if (tile instanceof EssenceBlockEntity machine) {
             if (!world.isClientSide) {
                 var storage = machine.getStorage();
-                var component = Component.translatable("item.datanessence.essence_meter.contains");
+                var component = Component.translatable("item.halcyon.essence_meter.contains");
 
                 for (EssenceType type : storage.getSupportedEssenceTypes().stream().sorted(Comparator.comparing((i) -> i.tier)).toList()) {
                     component.append("\n  " + storage.getEssence(type) + " / " + storage.getMaxEssence() + " ");
-                    component.append( PlayerDataUtil.getUnlockedEssences( (ServerPlayer) player).getOrDefault(DataNEssenceRegistries.ESSENCE_TYPE_REGISTRY.getKey(type), false) ? type.getName() : Component.translatable("datanessence.essence_types.unknown"));
+                    component.append( PlayerDataUtil.getUnlockedEssences( (ServerPlayer) player).getOrDefault(DataNEssenceRegistries.ESSENCE_TYPE_REGISTRY.getKey(type), false) ? type.getName() : Component.translatable("halcyon.essence_types.unknown"));
                 }
 
                 player.sendSystemMessage(component.withStyle(Style.EMPTY

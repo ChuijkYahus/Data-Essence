@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "datanessence:item_point"
+          "name": "halcyon:item_point"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/item_point"
+  "random_sequence": "halcyon:blocks/item_point"
 }

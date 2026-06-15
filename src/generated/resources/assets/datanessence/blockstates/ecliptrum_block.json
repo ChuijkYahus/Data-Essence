@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "datanessence:block/ecliptrum_block"
+      "model": "halcyon:block/ecliptrum_block"
     }
   }
 }

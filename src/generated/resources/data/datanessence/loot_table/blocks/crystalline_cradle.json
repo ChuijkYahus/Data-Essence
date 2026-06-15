@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "datanessence:crystalline_cradle"
+          "name": "halcyon:crystalline_cradle"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/crystalline_cradle"
+  "random_sequence": "halcyon:blocks/crystalline_cradle"
 }

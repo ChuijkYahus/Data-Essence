@@ -24,7 +24,7 @@
       "amount_per_tick": 2.0,
       "ticks": 10
     },
-    "datanessence:tethergrass": {
+    "halcyon:tethergrass": {
       "amount_per_tick": 8.0,
       "ticks": 100
     },

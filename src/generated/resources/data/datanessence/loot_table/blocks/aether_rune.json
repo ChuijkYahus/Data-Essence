@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "datanessence:aether_rune"
+          "name": "halcyon:aether_rune"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/aether_rune"
+  "random_sequence": "halcyon:blocks/aether_rune"
 }

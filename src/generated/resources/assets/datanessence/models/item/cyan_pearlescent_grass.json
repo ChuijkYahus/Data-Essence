@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "datanessence:block/cyan_pearlescent_grass"
+    "layer0": "halcyon:block/cyan_pearlescent_grass"
   }
 }

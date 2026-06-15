@@ -383,7 +383,7 @@ public class DataTabletScreen extends Screen {
                                     Component name = entry.getName(getEntryCompletionStage(entry));
                                     Component flavor = entry.getFlavor(getEntryCompletionStage(entry));
                                     if (entry.isIncomplete(getEntryCompletionStage(entry))) {
-                                        Component progressionRequirement = Component.translatable("tooltip.datanessence.progression_requirement").copy().withStyle(ChatFormatting.ITALIC).withColor(0xFFff61ca);
+                                        Component progressionRequirement = Component.translatable("tooltip.halcyon.progression_requirement").copy().withStyle(ChatFormatting.ITALIC).withColor(0xFFff61ca);
                                         tooltip = flavor.equals(Component.empty())
                                                 ? List.of(name.getVisualOrderText(), progressionRequirement.getVisualOrderText())
                                                 : List.of(name.getVisualOrderText(), flavor.copy().withStyle(ChatFormatting.ITALIC).withColor(EssenceTypeRegistry.ESSENCE.get().getColor()).getVisualOrderText(), progressionRequirement.getVisualOrderText());
@@ -413,7 +413,7 @@ public class DataTabletScreen extends Screen {
         } else if (screenType == 2) {
             graphics.drawCenteredString(Minecraft.getInstance().font, clickedEntry.getName(getEntryCompletionStage(clickedEntry)), x+imageWidth/2, y-(Minecraft.getInstance().font.lineHeight+4), 0xFFc90d8b);
             if (mouseX >= x+imageWidth && mouseX <= x+imageWidth+17 && mouseY >= y+10 && mouseY <= y+10+21) {
-                Component tooltip = !Screen.hasShiftDown() ? Component.translatable("tooltip.datanessence.save_and_exit") : Component.translatable("tooltip.datanessence.save_and_exit_sneak");
+                Component tooltip = !Screen.hasShiftDown() ? Component.translatable("tooltip.halcyon.save_and_exit") : Component.translatable("tooltip.halcyon.save_and_exit_sneak");
                 graphics.renderTooltip(Minecraft.getInstance().font, tooltip, mouseX, mouseY);
                 graphics.blit(TEXTURE_MISC, x + imageWidth, y + 10, 38, 21, 17, 21);
             } else {

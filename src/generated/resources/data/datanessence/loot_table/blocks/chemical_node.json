@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "datanessence:chemical_node"
+          "name": "halcyon:chemical_node"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/chemical_node"
+  "random_sequence": "halcyon:blocks/chemical_node"
 }

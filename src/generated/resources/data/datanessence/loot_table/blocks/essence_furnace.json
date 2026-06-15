@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "datanessence:essence_furnace"
+          "name": "halcyon:essence_furnace"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/essence_furnace"
+  "random_sequence": "halcyon:blocks/essence_furnace"
 }

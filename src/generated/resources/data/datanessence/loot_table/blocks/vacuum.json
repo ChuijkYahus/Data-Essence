@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "datanessence:vacuum"
+          "name": "halcyon:vacuum"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/vacuum"
+  "random_sequence": "halcyon:blocks/vacuum"
 }

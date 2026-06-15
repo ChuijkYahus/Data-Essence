@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "datanessence:twining_lantern"
+          "name": "halcyon:twining_lantern"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/twining_lantern"
+  "random_sequence": "halcyon:blocks/twining_lantern"
 }

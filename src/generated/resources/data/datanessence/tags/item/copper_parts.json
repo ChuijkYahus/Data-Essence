@@ -1,7 +1,7 @@
 {
   "values": [
-    "datanessence:capacitance_panel",
-    "datanessence:conductance_rod",
+    "halcyon:capacitance_panel",
+    "halcyon:conductance_rod",
     "minecraft:copper_ingot"
   ]
 }

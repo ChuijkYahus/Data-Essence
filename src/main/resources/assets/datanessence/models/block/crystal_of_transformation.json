@@ -1,7 +1,0 @@
-{
-	"parent": "datanessence:block/essence_crystal",
-	"textures": {
-		"0": "datanessence:block/crystal_of_transformation_1",
-		"particle": "datanessence:block/crystal_of_transformation_1"
-	}
-}

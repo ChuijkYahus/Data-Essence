@@ -71,7 +71,7 @@ public class EMIFluidMixingRecipe extends DataNEssenceEMIRecipe {
         }
         // Output
         widgetHolder.addSlot(outputs.get(0), 77, 21).recipeContext(this).drawBack(false);
-        widgetHolder.addText(Component.translatable("emi.datanessence.time_seconds", (double) time / 20), 86, 44, 0xffffff, false).horizontalAlign(TextWidget.Alignment.CENTER);
+        widgetHolder.addText(Component.translatable("emi.halcyon.time_seconds", (double) time / 20), 86, 44, 0xffffff, false).horizontalAlign(TextWidget.Alignment.CENTER);
 
         // Essence bars
         widgetHolder.add(new EssenceBarWidget(5, 19, EssenceTypeRegistry.ESSENCE.get(), essenceCost, 1000f, EssenceBarBackgroundTypes.INDUSTRIAL));

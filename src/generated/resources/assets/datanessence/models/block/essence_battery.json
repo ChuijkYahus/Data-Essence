@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/cube_column",
   "textures": {
-    "end": "datanessence:block/essence_battery_end",
-    "side": "datanessence:block/essence_battery_side"
+    "end": "halcyon:block/essence_battery_end",
+    "side": "halcyon:block/essence_battery_side"
   }
 }

@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "datanessence:block/magenta_pearlescent_grass"
+      "model": "halcyon:block/magenta_pearlescent_grass"
     }
   }
 }

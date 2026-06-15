@@ -1,8 +1,8 @@
 {
-  "type": "datanessence:infusion",
-  "entry": "datanessence:tools/traversite_road",
+  "type": "halcyon:infusion",
+  "entry": "halcyon:tools/traversite_road",
   "essenceCost": {
-    "datanessence:essence": 50.0
+    "halcyon:essence": 50.0
   },
   "input": [
     {
@@ -14,6 +14,6 @@
   ],
   "result": {
     "count": 1,
-    "id": "datanessence:traversite_road"
+    "id": "halcyon:traversite_road"
   }
 }

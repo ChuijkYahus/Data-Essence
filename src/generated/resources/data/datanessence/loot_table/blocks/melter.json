@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "datanessence:melter"
+          "name": "halcyon:melter"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/melter"
+  "random_sequence": "halcyon:blocks/melter"
 }

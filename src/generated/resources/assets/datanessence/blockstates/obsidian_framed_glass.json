@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "datanessence:block/obsidian_framed_glass"
+      "model": "halcyon:block/obsidian_framed_glass"
     }
   }
 }

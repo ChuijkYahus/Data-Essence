@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "datanessence:ender_pearl_destination"
+          "name": "halcyon:ender_pearl_destination"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/ender_pearl_destination"
+  "random_sequence": "halcyon:blocks/ender_pearl_destination"
 }

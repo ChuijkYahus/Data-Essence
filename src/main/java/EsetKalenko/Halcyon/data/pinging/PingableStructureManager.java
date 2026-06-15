@@ -15,7 +15,7 @@ public class PingableStructureManager extends SimpleJsonResourceReloadListener {
     public static PingableStructureManager instance;
 
     protected PingableStructureManager() {
-        super(GSON, "datanessence/pingable_structures");
+        super(GSON, "halcyon/pingable_structures");
     }
 
     public static PingableStructureManager getOrCreateInstance() {

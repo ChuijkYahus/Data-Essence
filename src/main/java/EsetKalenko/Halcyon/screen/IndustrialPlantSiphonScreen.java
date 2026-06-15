@@ -57,7 +57,7 @@ public class IndustrialPlantSiphonScreen extends AbstractContainerScreen<Industr
         var rate = (int) siphon.generationRate * 20;
         var time = (( siphon.getTickTime(siphon) * siphon.getItemHandler().getStackInSlot(0).getCount()) / 20) + (siphon.essenceGenerationTicks / 20);
 
-        pGuiGraphics.drawString(Minecraft.getInstance().font, Component.translatable("emi.datanessence.rate", rate), x+108, y+34, 0xFFFF96B5, false);
-        pGuiGraphics.drawString(Minecraft.getInstance().font, Component.translatable("emi.datanessence.time_seconds", time), x+108, y+43, 0xFFFF96B5, false);
+        pGuiGraphics.drawString(Minecraft.getInstance().font, Component.translatable("emi.halcyon.rate", rate), x+108, y+34, 0xFFFF96B5, false);
+        pGuiGraphics.drawString(Minecraft.getInstance().font, Component.translatable("emi.halcyon.time_seconds", time), x+108, y+43, 0xFFFF96B5, false);
     }
 }

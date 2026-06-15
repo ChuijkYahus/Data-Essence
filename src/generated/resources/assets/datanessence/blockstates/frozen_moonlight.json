@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "datanessence:block/frozen_moonlight"
+      "model": "halcyon:block/frozen_moonlight"
     }
   }
 }

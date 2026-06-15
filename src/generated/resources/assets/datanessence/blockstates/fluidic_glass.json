@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "datanessence:block/fluidic_glass"
+      "model": "halcyon:block/fluidic_glass"
     }
   }
 }

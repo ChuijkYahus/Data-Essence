@@ -18,7 +18,7 @@ public abstract class EntityMixin {
      * The Traversite Trudgers prevent movement slowdowns. This actually carries that out, for blocks that affect one's move speed.
      */
     @Inject(method = "getBlockSpeedFactor", at = @At(value = "RETURN"), remap = false, cancellable = true)
-    private void datanessence$applyTraversiteTrudgersBonus(CallbackInfoReturnable<Float> cir) {
+    private void halcyon$applyTraversiteTrudgersBonus(CallbackInfoReturnable<Float> cir) {
         if ( ((Object) this instanceof LivingEntity living) && TraversiteTrudgers.areTrudgersEquipped(living) ) {
             cir.setReturnValue(Math.max(cir.getReturnValue(), 1F));
         }
@@ -28,7 +28,7 @@ public abstract class EntityMixin {
      * The Traversite Trudgers prevent movement slowdowns. This actually carries that out, for blocks you can get stuck inside.
      */
     @ModifyVariable(method = "makeStuckInBlock", at = @At(value = "LOAD"), argsOnly = true)
-    private Vec3 datanessence$applyTraversiteTrudgersBlockBonus(Vec3 mult) {
+    private Vec3 halcyon$applyTraversiteTrudgersBlockBonus(Vec3 mult) {
         if ( ((Object) this instanceof LivingEntity living) && TraversiteTrudgers.areTrudgersEquipped(living) )
             return Vec3.ZERO;
         return mult;

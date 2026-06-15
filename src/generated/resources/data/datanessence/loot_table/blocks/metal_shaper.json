@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "datanessence:metal_shaper"
+          "name": "halcyon:metal_shaper"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/metal_shaper"
+  "random_sequence": "halcyon:blocks/metal_shaper"
 }

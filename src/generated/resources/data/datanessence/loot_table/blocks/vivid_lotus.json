@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "datanessence:vivid_lotus"
+          "name": "halcyon:vivid_lotus"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/vivid_lotus"
+  "random_sequence": "halcyon:blocks/vivid_lotus"
 }

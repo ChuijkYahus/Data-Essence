@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "datanessence:synthesis_chamber"
+          "name": "halcyon:synthesis_chamber"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/synthesis_chamber"
+  "random_sequence": "halcyon:blocks/synthesis_chamber"
 }

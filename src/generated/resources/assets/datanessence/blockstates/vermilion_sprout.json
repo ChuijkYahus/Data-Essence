@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "datanessence:block/vermilion_sprout"
+      "model": "halcyon:block/vermilion_sprout"
     }
   }
 }

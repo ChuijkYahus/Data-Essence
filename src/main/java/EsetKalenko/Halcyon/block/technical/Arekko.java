@@ -52,16 +52,16 @@ public class Arekko extends Block implements EntityBlock {
             if (!player.getInventory().contains(dataTablet)) {
                 player.addItem(dataTablet);
                 world.playSound(null, pos, SoundEvents.ITEM_PICKUP, SoundSource.PLAYERS);
-                player.displayClientMessage(Component.translatable("block.datanessence.arekko.obtain_data_tablet"), true);
+                player.displayClientMessage(Component.translatable("block.halcyon.arekko.obtain_data_tablet"), true);
                 return InteractionResult.sidedSuccess(world.isClientSide());
             }
             if (!player.getInventory().contains(signalTracker)) {
                 player.addItem(signalTracker);
                 world.playSound(null, pos, SoundEvents.ITEM_PICKUP, SoundSource.PLAYERS);
-                player.displayClientMessage(Component.translatable("block.datanessence.arekko.obtain_signal_tracker"), true);
+                player.displayClientMessage(Component.translatable("block.halcyon.arekko.obtain_signal_tracker"), true);
                 return InteractionResult.sidedSuccess(world.isClientSide());
             }
-            player.displayClientMessage(Component.translatable("block.datanessence.arekko.nothing_left"), true);
+            player.displayClientMessage(Component.translatable("block.halcyon.arekko.nothing_left"), true);
         }
 
         return InteractionResult.sidedSuccess(world.isClientSide());

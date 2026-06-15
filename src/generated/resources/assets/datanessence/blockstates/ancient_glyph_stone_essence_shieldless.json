@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "datanessence:block/ancient_glyph_stone_essence_shieldless"
+      "model": "halcyon:block/ancient_glyph_stone_essence_shieldless"
     }
   }
 }

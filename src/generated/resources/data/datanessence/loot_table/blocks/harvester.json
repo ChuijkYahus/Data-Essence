@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "datanessence:harvester"
+          "name": "halcyon:harvester"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/harvester"
+  "random_sequence": "halcyon:blocks/harvester"
 }

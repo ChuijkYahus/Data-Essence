@@ -15,7 +15,7 @@ public class DataTabManager extends SimpleJsonResourceReloadListener {
 
     public static DataTabManager instance;
     protected DataTabManager() {
-        super(GSON, "datanessence/data_tablet/tabs");
+        super(GSON, "halcyon/data_tablet/tabs");
     }
     public static DataTabManager getOrCreateInstance() {
         if (instance == null) {
@@ -68,17 +68,17 @@ public class DataTabManager extends SimpleJsonResourceReloadListener {
         for (DataTab i : toSort) {
             if (i.placement.placeBefore().equals(DataTab.DataTabPlacement.ALL)) {
                 if (i.placement.placeAfter().equals(DataTab.DataTabPlacement.ALL)) {
-                    DataNEssence.LOGGER.error("[HALCYON ERROR] Unable to sort {}, both \"place_after\" and \"place_before\" are set to \"datanessence:all\"", i.id);
+                    DataNEssence.LOGGER.error("[HALCYON ERROR] Unable to sort {}, both \"place_after\" and \"place_before\" are set to \"halcyon:all\"", i.id);
                     continue;
                 }
                 if (!i.placement.placeAfter().equals(DataTab.DataTabPlacement.IGNORED)) {
-                    DataNEssence.LOGGER.error("[HALCYON ERROR] Unable to sort {}, \"place_before\" is set to \"datanessence:all\" but place_after is not ignored", i.id);
+                    DataNEssence.LOGGER.error("[HALCYON ERROR] Unable to sort {}, \"place_before\" is set to \"halcyon:all\" but place_after is not ignored", i.id);
                     continue;
                 }
                 sorted.addFirst(i);
             } else if (i.placement.placeAfter().equals(DataTab.DataTabPlacement.ALL)) {
                 if (!i.placement.placeBefore().equals(DataTab.DataTabPlacement.IGNORED)) {
-                    DataNEssence.LOGGER.error("[HALCYON ERROR] Unable to sort {}, \"place_after\" is set to \"datanessence:all\" but place_before is not ignored", i.id);
+                    DataNEssence.LOGGER.error("[HALCYON ERROR] Unable to sort {}, \"place_after\" is set to \"halcyon:all\" but place_before is not ignored", i.id);
                     continue;
                 }
                 sorted.addLast(i);

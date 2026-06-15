@@ -63,19 +63,19 @@ public class CognizantCube extends Item {
     }
     public List<Component> results = new ArrayList<>() {
         {
-            this.add(Component.translatable("item.datanessence.magitech_8_ball.result1").withStyle(Style.EMPTY.withColor(textColor)));
-            this.add(Component.translatable("item.datanessence.magitech_8_ball.result2").withStyle(Style.EMPTY.withColor(textColor)));
-            this.add(Component.translatable("item.datanessence.magitech_8_ball.result3").withStyle(Style.EMPTY.withColor(textColor)));
-            this.add(Component.translatable("item.datanessence.magitech_8_ball.result4").withStyle(Style.EMPTY.withColor(textColor)));
-            this.add(Component.translatable("item.datanessence.magitech_8_ball.result5").withStyle(Style.EMPTY.withColor(textColor)));
-            this.add(Component.translatable("item.datanessence.magitech_8_ball.result6").withStyle(Style.EMPTY.withColor(textColor)));
-            this.add(Component.translatable("item.datanessence.magitech_8_ball.result7").withStyle(Style.EMPTY.withColor(textColor)));
-            this.add(Component.translatable("item.datanessence.magitech_8_ball.result8").withStyle(Style.EMPTY.withColor(textColor)));
-            this.add(Component.translatable("item.datanessence.magitech_8_ball.result9").withStyle(Style.EMPTY.withColor(textColor)));
-            this.add(Component.translatable("item.datanessence.magitech_8_ball.result10").withStyle(Style.EMPTY.withColor(textColor)));
+            this.add(Component.translatable("item.halcyon.magitech_8_ball.result1").withStyle(Style.EMPTY.withColor(textColor)));
+            this.add(Component.translatable("item.halcyon.magitech_8_ball.result2").withStyle(Style.EMPTY.withColor(textColor)));
+            this.add(Component.translatable("item.halcyon.magitech_8_ball.result3").withStyle(Style.EMPTY.withColor(textColor)));
+            this.add(Component.translatable("item.halcyon.magitech_8_ball.result4").withStyle(Style.EMPTY.withColor(textColor)));
+            this.add(Component.translatable("item.halcyon.magitech_8_ball.result5").withStyle(Style.EMPTY.withColor(textColor)));
+            this.add(Component.translatable("item.halcyon.magitech_8_ball.result6").withStyle(Style.EMPTY.withColor(textColor)));
+            this.add(Component.translatable("item.halcyon.magitech_8_ball.result7").withStyle(Style.EMPTY.withColor(textColor)));
+            this.add(Component.translatable("item.halcyon.magitech_8_ball.result8").withStyle(Style.EMPTY.withColor(textColor)));
+            this.add(Component.translatable("item.halcyon.magitech_8_ball.result9").withStyle(Style.EMPTY.withColor(textColor)));
+            this.add(Component.translatable("item.halcyon.magitech_8_ball.result10").withStyle(Style.EMPTY.withColor(textColor)));
         }
     };
-    public Component additionalPylons = Component.translatable("item.datanessence.magitech_8_ball.result11").withStyle(Style.EMPTY.withFont(CommonVariables.ANCIENT_FONT).withColor(textColor));
+    public Component additionalPylons = Component.translatable("item.halcyon.magitech_8_ball.result11").withStyle(Style.EMPTY.withFont(CommonVariables.ANCIENT_FONT).withColor(textColor));
     public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pHand) {
         ItemStack itemstack = pPlayer.getItemInHand(pHand);
         pPlayer.startUsingItem(pHand);

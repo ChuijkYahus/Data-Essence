@@ -1,4 +1,4 @@
 {
   "type": "minecraft:block",
-  "random_sequence": "datanessence:blocks/creative_essence_battery"
+  "random_sequence": "halcyon:blocks/creative_essence_battery"
 }

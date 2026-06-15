@@ -29,15 +29,15 @@ public class DataDrive extends Item {
         if (pStack.has(DataComponentRegistry.DATA_ID)) {
             Entry entry = Entries.entries.get(pStack.get(DataComponentRegistry.DATA_ID));
             int stage = pStack.getOrDefault(DataComponentRegistry.DATA_INCOMPLETE, entry.completionStages.size());
-            pTooltipComponents.add(Component.translatable("item.datanessence.data_drive.loaded", entry.getName(stage)).withStyle(ChatFormatting.GRAY));
+            pTooltipComponents.add(Component.translatable("item.halcyon.data_drive.loaded", entry.getName(stage)).withStyle(ChatFormatting.GRAY));
             if (pStack.has(DataComponentRegistry.DATA_INCOMPLETE)) {
                 if (stage < entry.completionStages.size()) {
-                    pTooltipComponents.add(Component.translatable("item.datanessence.data_drive.incomplete", stage, entry.completionStages.size()).withStyle(ChatFormatting.GRAY));
+                    pTooltipComponents.add(Component.translatable("item.halcyon.data_drive.incomplete", stage, entry.completionStages.size()).withStyle(ChatFormatting.GRAY));
                 }
             }
         }
         else {
-            pTooltipComponents.add(Component.translatable("item.datanessence.data_drive.empty").withStyle(ChatFormatting.GRAY));
+            pTooltipComponents.add(Component.translatable("item.halcyon.data_drive.empty").withStyle(ChatFormatting.GRAY));
         }
     }
     public static Entry getEntry(ItemStack stack) {

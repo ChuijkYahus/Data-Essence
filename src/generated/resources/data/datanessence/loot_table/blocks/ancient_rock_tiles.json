@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "datanessence:ancient_rock_tiles_shieldless"
+          "name": "halcyon:ancient_rock_tiles_shieldless"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/ancient_rock_tiles"
+  "random_sequence": "halcyon:blocks/ancient_rock_tiles"
 }

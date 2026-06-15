@@ -69,6 +69,6 @@ public class OreScanner extends Item {
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
         super.appendHoverText(stack, context, components, flag);
-        components.add(Component.translatable("item.datanessence.mineral_finding_rod.tooltip", Component.literal(String.valueOf(ESSENCE_COST)).withColor(0xFFFF96B5) ).withStyle(Style.EMPTY.withColor(EssenceTypeRegistry.ESSENCE.get().getColor())));
+        components.add(Component.translatable("item.halcyon.mineral_finding_rod.tooltip", Component.literal(String.valueOf(ESSENCE_COST)).withColor(0xFFFF96B5) ).withStyle(Style.EMPTY.withColor(EssenceTypeRegistry.ESSENCE.get().getColor())));
     }
 }

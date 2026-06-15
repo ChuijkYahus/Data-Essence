@@ -1,6 +1,0 @@
-{
-  "type": "minecraft:crafting_shapeless",
-  "category": "misc",
-  "ingredients": [{ "item": "datanessence:block_of_industry" }],
-  "result": { "id": "datanessence:essence_shard", "count": 9 }
-}

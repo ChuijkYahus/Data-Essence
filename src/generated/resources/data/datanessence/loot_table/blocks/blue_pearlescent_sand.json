@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "datanessence:blue_pearlescent_sand"
+          "name": "halcyon:blue_pearlescent_sand"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/blue_pearlescent_sand"
+  "random_sequence": "halcyon:blocks/blue_pearlescent_sand"
 }

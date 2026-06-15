@@ -59,6 +59,6 @@ public class NaturalEssenceBombItem extends Item implements ProjectileItem {
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
         super.appendHoverText(stack, context, components, flag);
-        components.add(Component.translatable("item.datanessence.natural_essence_bomb.info").withStyle(Style.EMPTY.withColor(EssenceTypeRegistry.NATURAL_ESSENCE.get().getColor())));
+        components.add(Component.translatable("item.halcyon.natural_essence_bomb.info").withStyle(Style.EMPTY.withColor(EssenceTypeRegistry.NATURAL_ESSENCE.get().getColor())));
     }
 }

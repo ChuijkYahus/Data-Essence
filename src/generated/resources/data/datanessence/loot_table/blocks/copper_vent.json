@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "datanessence:copper_vent"
+          "name": "halcyon:copper_vent"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/copper_vent"
+  "random_sequence": "halcyon:blocks/copper_vent"
 }

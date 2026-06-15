@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "datanessence:block/ancient_window"
+      "model": "halcyon:block/ancient_window"
     }
   }
 }

@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "datanessence:block/red_pearlescent_sand"
+      "model": "halcyon:block/red_pearlescent_sand"
     }
   }
 }

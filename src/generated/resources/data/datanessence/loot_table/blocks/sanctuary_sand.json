@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "datanessence:sanctuary_sand"
+          "name": "halcyon:sanctuary_sand"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/sanctuary_sand"
+  "random_sequence": "halcyon:blocks/sanctuary_sand"
 }

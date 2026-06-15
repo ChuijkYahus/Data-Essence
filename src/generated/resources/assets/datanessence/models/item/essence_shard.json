@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "datanessence:item/essence_shard"
+    "layer0": "halcyon:item/essence_shard"
   }
 }

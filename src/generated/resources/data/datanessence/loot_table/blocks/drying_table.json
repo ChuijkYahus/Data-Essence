@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "datanessence:drying_table"
+          "name": "halcyon:drying_table"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/drying_table"
+  "random_sequence": "halcyon:blocks/drying_table"
 }

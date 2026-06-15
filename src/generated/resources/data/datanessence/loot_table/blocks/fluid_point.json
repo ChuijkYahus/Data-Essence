@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "datanessence:fluid_point"
+          "name": "halcyon:fluid_point"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/fluid_point"
+  "random_sequence": "halcyon:blocks/fluid_point"
 }

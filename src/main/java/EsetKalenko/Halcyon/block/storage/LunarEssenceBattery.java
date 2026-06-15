@@ -49,7 +49,7 @@ public class LunarEssenceBattery extends Block implements EntityBlock {
     protected InteractionResult useWithoutItem(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, BlockHitResult pHitResult) {
         if (pLevel.getBlockEntity(pPos) instanceof LunarEssenceBatteryBlockEntity ent) {
             if (!pLevel.isClientSide) {
-                pPlayer.displayClientMessage(Component.translatable("block.datanessence.lunar_essence_battery.amount", ent.storage.getEssence(EssenceTypeRegistry.LUNAR_ESSENCE.get()), ent.storage.getMaxEssence()), true);
+                pPlayer.displayClientMessage(Component.translatable("block.halcyon.lunar_essence_battery.amount", ent.storage.getEssence(EssenceTypeRegistry.LUNAR_ESSENCE.get()), ent.storage.getMaxEssence()), true);
             }
             return InteractionResult.sidedSuccess(pLevel.isClientSide);
         }

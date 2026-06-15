@@ -17,7 +17,7 @@
                   }
                 }
               ],
-              "name": "datanessence:yellow_pearlescent_grass"
+              "name": "halcyon:yellow_pearlescent_grass"
             },
             {
               "type": "minecraft:item",
@@ -48,5 +48,5 @@
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/yellow_pearlescent_grass"
+  "random_sequence": "halcyon:blocks/yellow_pearlescent_grass"
 }

@@ -81,7 +81,7 @@ public class CircleParticle extends TextureSheetParticle {
 
         @Override
         public String toString() {
-            return "datanessence:additive";
+            return "halcyon:additive";
         }
     };
     public static class Provider implements ParticleProvider<CircleParticleOptions> {

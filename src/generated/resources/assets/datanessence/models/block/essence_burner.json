@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:block/cube",
   "textures": {
-    "down": "datanessence:block/deco/polished_obsidian",
-    "east": "datanessence:block/essence_burner_side",
-    "north": "datanessence:block/essence_burner_front",
-    "particle": "datanessence:block/essence_burner_front",
-    "south": "datanessence:block/essence_burner_back",
-    "up": "datanessence:block/essence_burner_top",
-    "west": "datanessence:block/essence_burner_side"
+    "down": "halcyon:block/deco/polished_obsidian",
+    "east": "halcyon:block/essence_burner_side",
+    "north": "halcyon:block/essence_burner_front",
+    "particle": "halcyon:block/essence_burner_front",
+    "south": "halcyon:block/essence_burner_back",
+    "up": "halcyon:block/essence_burner_top",
+    "west": "halcyon:block/essence_burner_side"
   }
 }

@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "datanessence:ancient_window_shieldless"
+          "name": "halcyon:ancient_window_shieldless"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/ancient_window"
+  "random_sequence": "halcyon:blocks/ancient_window"
 }

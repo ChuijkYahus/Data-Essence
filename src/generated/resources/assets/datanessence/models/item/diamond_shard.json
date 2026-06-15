@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "datanessence:item/intermediates/diamond_shard"
+    "layer0": "halcyon:item/intermediates/diamond_shard"
   }
 }

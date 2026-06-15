@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "datanessence:block/vermilion_grass"
+      "model": "halcyon:block/vermilion_grass"
     }
   }
 }

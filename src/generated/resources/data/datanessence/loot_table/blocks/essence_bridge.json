@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "datanessence:essence_bridge"
+          "name": "halcyon:essence_bridge"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/essence_bridge"
+  "random_sequence": "halcyon:blocks/essence_bridge"
 }

@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "datanessence:essence_derivation_spike"
+          "name": "halcyon:essence_derivation_spike"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/essence_derivation_spike"
+  "random_sequence": "halcyon:blocks/essence_derivation_spike"
 }

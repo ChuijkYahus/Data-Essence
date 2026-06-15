@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "datanessence:block/essence_battery"
+      "model": "halcyon:block/essence_battery"
     }
   }
 }

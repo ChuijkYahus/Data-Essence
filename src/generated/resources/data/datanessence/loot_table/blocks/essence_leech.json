@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "datanessence:essence_leech"
+          "name": "halcyon:essence_leech"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/essence_leech"
+  "random_sequence": "halcyon:blocks/essence_leech"
 }

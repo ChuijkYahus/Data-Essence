@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "datanessence:item/falling_moon"
+    "layer0": "halcyon:item/falling_moon"
   }
 }

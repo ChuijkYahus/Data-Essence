@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "datanessence:natural_essence_point"
+          "name": "halcyon:natural_essence_point"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/natural_essence_point"
+  "random_sequence": "halcyon:blocks/natural_essence_point"
 }

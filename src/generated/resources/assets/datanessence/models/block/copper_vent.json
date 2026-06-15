@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "datanessence:block/deco/copper_vent"
+    "all": "halcyon:block/deco/copper_vent"
   }
 }

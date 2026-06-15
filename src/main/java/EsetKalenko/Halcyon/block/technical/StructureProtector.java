@@ -40,7 +40,7 @@ public class StructureProtector extends Block implements EntityBlock {
                     ent.bindProcess = 1;
                     ent.offsetCorner1 = null;
                     ent.offsetCorner2 = null;
-                    pPlayer.sendSystemMessage(Component.translatable("block.datanessence.structure_protector.select_pos_1"));
+                    pPlayer.sendSystemMessage(Component.translatable("block.halcyon.structure_protector.select_pos_1"));
                     pPlayer.setData(AttachmentTypeRegistry.BINDING_STRUCTURE_CONTROLLER, Optional.of(ent));
                     ent.updateBlock();
                     return InteractionResult.sidedSuccess(pLevel.isClientSide());

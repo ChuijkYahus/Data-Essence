@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "datanessence:item/repulsion_rod"
+    "layer0": "halcyon:item/repulsion_rod"
   }
 }

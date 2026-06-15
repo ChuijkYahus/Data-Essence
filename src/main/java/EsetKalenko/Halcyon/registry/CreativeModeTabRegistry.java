@@ -14,12 +14,12 @@ public class CreativeModeTabRegistry {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(BuiltInRegistries.CREATIVE_MODE_TAB,
             DataNEssence.MOD_ID);
 
-    public static Supplier<CreativeModeTab> ITEMS = register("datanessence_items", () ->
+    public static Supplier<CreativeModeTab> ITEMS = register("halcyon_items", () ->
             CreativeModeTab.builder().icon(() -> new ItemStack(ItemRegistry.DATA_TABLET.get()))
-                    .title(Component.translatable("creativemodetab.datanessence_items")).build());
-    public static Supplier<CreativeModeTab> BLOCKS = register("datanessence_blocks", () ->
+                    .title(Component.translatable("creativemodetab.halcyon_items")).build());
+    public static Supplier<CreativeModeTab> BLOCKS = register("halcyon_blocks", () ->
             CreativeModeTab.builder().icon(() -> new ItemStack(BlockRegistry.FABRICATOR.get()))
-                    .title(Component.translatable("creativemodetab.datanessence_blocks")).build());
+                    .title(Component.translatable("creativemodetab.halcyon_blocks")).build());
     public static ResourceKey getKey(CreativeModeTab tab) {
         return BuiltInRegistries.CREATIVE_MODE_TAB.getResourceKey(tab).get();
     }

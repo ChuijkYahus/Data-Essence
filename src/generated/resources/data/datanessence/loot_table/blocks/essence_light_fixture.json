@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "datanessence:essence_light_fixture"
+          "name": "halcyon:essence_light_fixture"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/essence_light_fixture"
+  "random_sequence": "halcyon:blocks/essence_light_fixture"
 }

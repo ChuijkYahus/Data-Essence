@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "datanessence:block/aether_rune"
+      "model": "halcyon:block/aether_rune"
     }
   }
 }

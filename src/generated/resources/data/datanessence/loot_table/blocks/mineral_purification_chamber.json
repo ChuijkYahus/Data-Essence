@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "datanessence:mineral_purification_chamber"
+          "name": "halcyon:mineral_purification_chamber"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/mineral_purification_chamber"
+  "random_sequence": "halcyon:blocks/mineral_purification_chamber"
 }

@@ -1,9 +1,9 @@
 {
   "replace": false,
   "values": [
-    "datanessence:essence_siphoned",
-    "datanessence:laser",
-    "datanessence:black_hole",
-    "datanessence:crushed"
+    "halcyon:essence_siphoned",
+    "halcyon:laser",
+    "halcyon:black_hole",
+    "halcyon:crushed"
   ]
 }

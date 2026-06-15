@@ -1,28 +1,28 @@
 {
   "variants": {
     "facing=down": {
-      "model": "datanessence:block/polished_obsidian_column",
+      "model": "halcyon:block/polished_obsidian_column",
       "x": 180
     },
     "facing=east": {
-      "model": "datanessence:block/polished_obsidian_column",
+      "model": "halcyon:block/polished_obsidian_column",
       "x": 90,
       "y": 90
     },
     "facing=north": {
-      "model": "datanessence:block/polished_obsidian_column",
+      "model": "halcyon:block/polished_obsidian_column",
       "x": 90
     },
     "facing=south": {
-      "model": "datanessence:block/polished_obsidian_column",
+      "model": "halcyon:block/polished_obsidian_column",
       "x": 90,
       "y": 180
     },
     "facing=up": {
-      "model": "datanessence:block/polished_obsidian_column"
+      "model": "halcyon:block/polished_obsidian_column"
     },
     "facing=west": {
-      "model": "datanessence:block/polished_obsidian_column",
+      "model": "halcyon:block/polished_obsidian_column",
       "x": 90,
       "y": 270
     }

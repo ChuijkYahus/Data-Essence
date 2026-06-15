@@ -52,7 +52,7 @@ public class DataTablet extends Item {
                 if (!level.isClientSide) {
                     if (level.getBlockEntity(pos) instanceof DataBankBlockEntity ent) {
                         List<ResourceLocation> entries = player.getData(AttachmentTypeRegistry.UNLOCKED.get()).stream().filter((i) -> !ent.data.contains(i)).toList();
-                        player.sendSystemMessage(Component.translatable("block.datanessence.player_data_bank.bind", entries.size()));
+                        player.sendSystemMessage(Component.translatable("block.halcyon.player_data_bank.bind", entries.size()));
                         ent.data.addAll(entries);
                     }
                 }

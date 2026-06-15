@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "datanessence:enticing_lure"
+          "name": "halcyon:enticing_lure"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/enticing_lure"
+  "random_sequence": "halcyon:blocks/enticing_lure"
 }

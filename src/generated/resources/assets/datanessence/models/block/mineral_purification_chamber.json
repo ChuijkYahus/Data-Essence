@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:block/cube",
   "textures": {
-    "down": "datanessence:block/mineral_purification_chamber_bottom",
-    "east": "datanessence:block/mineral_purification_chamber_side",
-    "north": "datanessence:block/mineral_purification_chamber_front",
-    "particle": "datanessence:block/mineral_purification_chamber_front",
-    "south": "datanessence:block/mineral_purification_chamber_side",
-    "up": "datanessence:block/mineral_purification_chamber_top",
-    "west": "datanessence:block/mineral_purification_chamber_side"
+    "down": "halcyon:block/mineral_purification_chamber_bottom",
+    "east": "halcyon:block/mineral_purification_chamber_side",
+    "north": "halcyon:block/mineral_purification_chamber_front",
+    "particle": "halcyon:block/mineral_purification_chamber_front",
+    "south": "halcyon:block/mineral_purification_chamber_side",
+    "up": "halcyon:block/mineral_purification_chamber_top",
+    "west": "halcyon:block/mineral_purification_chamber_side"
   }
 }

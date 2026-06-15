@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "datanessence:block/patterned_copper"
+      "model": "halcyon:block/patterned_copper"
     }
   }
 }

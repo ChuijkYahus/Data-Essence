@@ -46,7 +46,7 @@ public class DataBank extends BaseDataBankBlock implements EntityBlock {
                 if (level.getBlockEntity(pos) instanceof DataBankBlockEntity ent) {
                     List<ResourceLocation> unlocked = player.getData(AttachmentTypeRegistry.UNLOCKED);
                     List<ResourceLocation> entries = Arrays.stream(getEntries(state, level, pos, player, hitResult)).filter((i) -> !unlocked.contains(i)).toList();
-                    player.sendSystemMessage(Component.translatable("block.datanessence.player_data_bank.receive", entries.size()));
+                    player.sendSystemMessage(Component.translatable("block.halcyon.player_data_bank.receive", entries.size()));
                     for (ResourceLocation i : entries) {
                         Entry entry = Entries.entries.get(i);
                         DataTabletUtil.unlockEntryAndParents(player, i, entry.completionStages.size());

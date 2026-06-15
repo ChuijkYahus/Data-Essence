@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "datanessence:essence_breaker"
+          "name": "halcyon:essence_breaker"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/essence_breaker"
+  "random_sequence": "halcyon:blocks/essence_breaker"
 }

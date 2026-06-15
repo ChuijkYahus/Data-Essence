@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "datanessence:block/traversite_road"
+      "model": "halcyon:block/traversite_road"
     }
   }
 }

@@ -78,6 +78,6 @@ public class IlluminationRod extends Item {
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> components, TooltipFlag flag) {
         super.appendHoverText(stack, context, components, flag);
-        components.add(Component.translatable("item.datanessence.illumination_rod.tooltip", Component.literal(String.valueOf(useCost)).withColor(0xFFFF96B5) ).withStyle(Style.EMPTY.withColor(EssenceTypeRegistry.ESSENCE.get().getColor())));
+        components.add(Component.translatable("item.halcyon.illumination_rod.tooltip", Component.literal(String.valueOf(useCost)).withColor(0xFFFF96B5) ).withStyle(Style.EMPTY.withColor(EssenceTypeRegistry.ESSENCE.get().getColor())));
     }
 }

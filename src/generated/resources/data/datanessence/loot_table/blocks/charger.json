@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "datanessence:charger"
+          "name": "halcyon:charger"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/charger"
+  "random_sequence": "halcyon:blocks/charger"
 }

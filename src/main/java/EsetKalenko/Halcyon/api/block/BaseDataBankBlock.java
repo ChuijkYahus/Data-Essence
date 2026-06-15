@@ -25,7 +25,7 @@ public abstract class BaseDataBankBlock extends Block {
                     DataBankUtil.sendDataBankEntries(pPlayer, getEntries(pState, pLevel, pPos, pPlayer, pHitResult));
                 }
                 else {
-                    pPlayer.displayClientMessage(Component.translatable("block.datanessence.data_bank.cannot_use"), true);
+                    pPlayer.displayClientMessage(Component.translatable("block.halcyon.data_bank.cannot_use"), true);
                 }
             }
         }

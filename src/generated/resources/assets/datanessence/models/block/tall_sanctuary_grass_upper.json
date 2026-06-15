@@ -2,6 +2,6 @@
   "parent": "minecraft:block/cross",
   "render_type": "minecraft:cutout",
   "textures": {
-    "cross": "datanessence:block/tall_sanctuary_grass_upper"
+    "cross": "halcyon:block/tall_sanctuary_grass_upper"
   }
 }

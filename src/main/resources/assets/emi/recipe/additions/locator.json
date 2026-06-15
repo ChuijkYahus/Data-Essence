@@ -1,7 +1,7 @@
 {
   "type": "emi:info",
   "stacks": [
-    "item:datanessence:locator"
+    "item:halcyon:locator"
   ],
-  "text": "emi.info.datanessence.signal_tracker"
+  "text": "emi.info.halcyon.signal_tracker"
 }

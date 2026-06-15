@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "datanessence:energized_ancient_rock_column_shieldless"
+          "name": "halcyon:energized_ancient_rock_column_shieldless"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/energized_ancient_rock_column"
+  "random_sequence": "halcyon:blocks/energized_ancient_rock_column"
 }

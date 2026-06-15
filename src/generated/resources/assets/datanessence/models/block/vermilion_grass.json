@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:block/cube",
   "textures": {
-    "down": "datanessence:block/sanctuary_dirt",
-    "east": "datanessence:block/vermilion_grass_side",
-    "north": "datanessence:block/vermilion_grass_side",
-    "particle": "datanessence:block/vermilion_grass_top",
-    "south": "datanessence:block/vermilion_grass_side",
-    "up": "datanessence:block/vermilion_grass_top",
-    "west": "datanessence:block/vermilion_grass_side"
+    "down": "halcyon:block/sanctuary_dirt",
+    "east": "halcyon:block/vermilion_grass_side",
+    "north": "halcyon:block/vermilion_grass_side",
+    "particle": "halcyon:block/vermilion_grass_top",
+    "south": "halcyon:block/vermilion_grass_side",
+    "up": "halcyon:block/vermilion_grass_top",
+    "west": "halcyon:block/vermilion_grass_side"
   }
 }

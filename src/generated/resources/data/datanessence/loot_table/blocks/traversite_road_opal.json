@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "datanessence:traversite_road_opal"
+          "name": "halcyon:traversite_road_opal"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/traversite_road_opal"
+  "random_sequence": "halcyon:blocks/traversite_road_opal"
 }

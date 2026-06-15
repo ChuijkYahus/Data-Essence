@@ -46,7 +46,7 @@ public class CooledWater extends ModFluidType {
     public static class CooledWaterType extends FluidType {
         public CooledWaterType() {
             super(Properties.create()
-                    .descriptionId("block.datanessence.cooled_water")
+                    .descriptionId("block.halcyon.cooled_water")
                     .sound(SoundActions.BUCKET_EMPTY, SoundEvents.BUCKET_EMPTY)
                     .sound(SoundActions.BUCKET_FILL, SoundEvents.BUCKET_FILL)
                     .sound(SoundActions.FLUID_VAPORIZE, SoundEvents.FIRE_EXTINGUISH));

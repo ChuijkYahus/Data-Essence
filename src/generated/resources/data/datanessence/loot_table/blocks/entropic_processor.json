@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "datanessence:entropic_processor"
+          "name": "halcyon:entropic_processor"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/entropic_processor"
+  "random_sequence": "halcyon:blocks/entropic_processor"
 }

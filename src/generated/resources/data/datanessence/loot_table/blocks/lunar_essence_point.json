@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "datanessence:lunar_essence_point"
+          "name": "halcyon:lunar_essence_point"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/lunar_essence_point"
+  "random_sequence": "halcyon:blocks/lunar_essence_point"
 }

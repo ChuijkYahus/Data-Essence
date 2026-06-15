@@ -70,7 +70,7 @@ public class Genderfluid extends ModFluidType {
     public static class GenderfluidType extends FluidType {
         public GenderfluidType() {
             super(Properties.create()
-                    .descriptionId("block.datanessence.genderfluid")
+                    .descriptionId("block.halcyon.genderfluid")
                     .sound(SoundActions.BUCKET_EMPTY, SoundEvents.BUCKET_EMPTY)
                     .sound(SoundActions.BUCKET_FILL, SoundEvents.BUCKET_FILL)
                     .sound(SoundActions.FLUID_VAPORIZE, SoundEvents.FIRE_EXTINGUISH));

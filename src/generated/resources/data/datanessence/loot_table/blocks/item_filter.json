@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "datanessence:item_filter"
+          "name": "halcyon:item_filter"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/item_filter"
+  "random_sequence": "halcyon:blocks/item_filter"
 }

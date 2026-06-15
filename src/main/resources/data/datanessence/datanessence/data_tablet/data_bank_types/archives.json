@@ -1,9 +1,0 @@
-{
-  "add": [
-    "datanessence:fabricator",
-    "datanessence:test1"
-  ],
-  "remove":[
-    "datanessence:fabricator"
-  ]
-}

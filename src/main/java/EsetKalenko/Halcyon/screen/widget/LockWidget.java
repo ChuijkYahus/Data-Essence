@@ -39,7 +39,7 @@ public class LockWidget extends AbstractWidget {
             } else {
                 pGuiGraphics.blit(TEXTURE, getX(), getY(), 18, 0, 18, 18);
             }
-            this.setTooltip(Tooltip.create(Component.translatable("tooltip.datanessence.toggle_lock")));
+            this.setTooltip(Tooltip.create(Component.translatable("tooltip.halcyon.toggle_lock")));
         }
     }
 

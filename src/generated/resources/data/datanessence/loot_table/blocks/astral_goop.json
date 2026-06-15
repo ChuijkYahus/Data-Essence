@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "datanessence:astral_goop"
+          "name": "halcyon:astral_goop"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/astral_goop"
+  "random_sequence": "halcyon:blocks/astral_goop"
 }

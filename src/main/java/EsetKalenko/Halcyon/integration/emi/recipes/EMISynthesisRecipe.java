@@ -59,7 +59,7 @@ public class EMISynthesisRecipe extends DataNEssenceEMIRecipe {
         widgetHolder.addSlot(inputs.get(1), 37, 32).drawBack(false);
         // Output
         widgetHolder.addSlot(outputs.get(0), 81, 21).recipeContext(this).drawBack(false);
-        widgetHolder.addText(Component.translatable("emi.datanessence.time_seconds", (double) time / 20), 90, 44, 0xffffff, false).horizontalAlign(TextWidget.Alignment.CENTER);
+        widgetHolder.addText(Component.translatable("emi.halcyon.time_seconds", (double) time / 20), 90, 44, 0xffffff, false).horizontalAlign(TextWidget.Alignment.CENTER);
 
         // Essence bars
         widgetHolder.add(new EssenceBarWidget(5, 6, EssenceTypeRegistry.ESSENCE.get(), essenceCost.getOrDefault(EssenceTypeRegistry.ESSENCE.get(), 0f), 1000f, EssenceBarBackgroundTypes.INDUSTRIAL));

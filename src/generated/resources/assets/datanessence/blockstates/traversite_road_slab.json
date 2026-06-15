@@ -1,13 +1,13 @@
 {
   "variants": {
     "type=bottom": {
-      "model": "datanessence:block/traversite_road_slab"
+      "model": "halcyon:block/traversite_road_slab"
     },
     "type=double": {
-      "model": "datanessence:block/traversite_road"
+      "model": "halcyon:block/traversite_road"
     },
     "type=top": {
-      "model": "datanessence:block/traversite_road_slab_top"
+      "model": "halcyon:block/traversite_road_slab_top"
     }
   }
 }

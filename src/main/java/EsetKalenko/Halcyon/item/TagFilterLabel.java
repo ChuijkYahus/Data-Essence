@@ -46,7 +46,7 @@ public class TagFilterLabel extends BaseFilterLabel {
         if ( player.getItemInHand(InteractionHand.MAIN_HAND).isEmpty() || player.getItemInHand(InteractionHand.OFF_HAND).isEmpty() ) {
             if (world.isClientSide)
                 player.displayClientMessage(
-                        Component.translatable("item.datanessence.tag_filter.instructions"), false);
+                        Component.translatable("item.halcyon.tag_filter.instructions"), false);
             return InteractionResultHolder.fail(filterItem);
         }
 
@@ -67,7 +67,7 @@ public class TagFilterLabel extends BaseFilterLabel {
         if (tags.isEmpty()) {
             if (world.isClientSide)
                 player.displayClientMessage(
-                        Component.translatable("item.datanessence.tag_filter.no_tags"), true);
+                        Component.translatable("item.halcyon.tag_filter.no_tags"), true);
             return InteractionResultHolder.fail(filterItem);
         }
 
@@ -76,7 +76,7 @@ public class TagFilterLabel extends BaseFilterLabel {
             filterItem.set(DataComponentRegistry.FILTER_STRING, tags.getFirst());
             if (world.isClientSide)
                 player.displayClientMessage(
-                        Component.translatable("item.datanessence.tag_filter.selected", tags.getFirst()), true);
+                        Component.translatable("item.halcyon.tag_filter.selected", tags.getFirst()), true);
         } else {
             for ( int i = 0; i < tags.size(); i++ ) {
                 if (tags.get(i).equals(currentSelection) ) {
@@ -84,7 +84,7 @@ public class TagFilterLabel extends BaseFilterLabel {
                     filterItem.set(DataComponentRegistry.FILTER_STRING, tag);
                     if (world.isClientSide)
                         player.displayClientMessage(
-                                Component.translatable("item.datanessence.tag_filter.selected", tag), true);
+                                Component.translatable("item.halcyon.tag_filter.selected", tag), true);
                     break;
                 }
             }
@@ -104,12 +104,12 @@ public class TagFilterLabel extends BaseFilterLabel {
 
         if ( tag == null || tag.isEmpty() ) {
             tooltip.add(
-                    Component.translatable("item.datanessence.tag_filter.tooltip_empty")
+                    Component.translatable("item.halcyon.tag_filter.tooltip_empty")
                             .withStyle(Style.EMPTY).withColor(0xFFFF96B5)
             );
         } else {
             tooltip.add(
-                    Component.translatable("item.datanessence.tag_filter.tooltip_set",
+                    Component.translatable("item.halcyon.tag_filter.tooltip_set",
                             Component.literal(tag)
                                     .withStyle(Style.EMPTY).withColor(EssenceTypeRegistry.ESSENCE.get().getColor()))
                             .withStyle(Style.EMPTY).withColor(0xFFFF96B5)

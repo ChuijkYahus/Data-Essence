@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "datanessence:block/spire_glass"
+      "model": "halcyon:block/spire_glass"
     }
   }
 }

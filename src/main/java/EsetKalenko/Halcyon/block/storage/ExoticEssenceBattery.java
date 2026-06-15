@@ -41,7 +41,7 @@ public class ExoticEssenceBattery extends Block implements EntityBlock {
     protected InteractionResult useWithoutItem(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, BlockHitResult pHitResult) {
         if (pLevel.getBlockEntity(pPos) instanceof ExoticEssenceBatteryBlockEntity ent) {
             if (!pLevel.isClientSide) {
-                pPlayer.displayClientMessage(Component.translatable("block.datanessence.exotic_essence_battery.amount", ent.storage.getEssence(EssenceTypeRegistry.EXOTIC_ESSENCE.get()), ent.storage.getMaxEssence()), true);
+                pPlayer.displayClientMessage(Component.translatable("block.halcyon.exotic_essence_battery.amount", ent.storage.getEssence(EssenceTypeRegistry.EXOTIC_ESSENCE.get()), ent.storage.getMaxEssence()), true);
             }
             return InteractionResult.sidedSuccess(pLevel.isClientSide);
         }

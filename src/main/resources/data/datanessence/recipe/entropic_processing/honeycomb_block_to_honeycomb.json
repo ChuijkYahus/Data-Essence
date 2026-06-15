@@ -1,6 +1,0 @@
-{
-  "type": "datanessence:entropic_processing",
-  "input": { "item": "minecraft:honeycomb_block" },
-  "time": 100,
-  "result": { "id": "minecraft:honeycomb", "count": 4 }
-}

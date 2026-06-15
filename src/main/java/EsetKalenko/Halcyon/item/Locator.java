@@ -116,11 +116,11 @@ public class Locator extends Item {
             return;
 
         var key = stack.get(DataComponentRegistry.SIGNAL_TRACKER_MODE) ?
-                "item.datanessence.locator.mode_arcane_resonance" :
-                "item.datanessence.locator.mode_data";
+                "item.halcyon.locator.mode_arcane_resonance" :
+                "item.halcyon.locator.mode_data";
 
         tooltipComponents.add(Component.translatable(key,
-                        Component.translatable("item.datanessence.locator.instructions")
+                        Component.translatable("item.halcyon.locator.instructions")
                                 .withStyle(Style.EMPTY.withColor(0x7904c7)))
                 .withStyle(Style.EMPTY.withColor(EssenceTypeRegistry.ESSENCE.get().getColor())));
     }

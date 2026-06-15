@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "datanessence:block/block_of_transformation"
+      "model": "halcyon:block/block_of_transformation"
     }
   }
 }

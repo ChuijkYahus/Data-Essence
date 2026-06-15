@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "datanessence:laser_emitter"
+          "name": "halcyon:laser_emitter"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/laser_emitter"
+  "random_sequence": "halcyon:blocks/laser_emitter"
 }

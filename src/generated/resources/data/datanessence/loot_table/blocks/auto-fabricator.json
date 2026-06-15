@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "datanessence:auto-fabricator"
+          "name": "halcyon:auto-fabricator"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/auto-fabricator"
+  "random_sequence": "halcyon:blocks/auto-fabricator"
 }

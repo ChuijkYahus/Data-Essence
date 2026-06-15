@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "datanessence:item/music_disc_player_on"
+    "layer0": "halcyon:item/music_disc_player_on"
   }
 }

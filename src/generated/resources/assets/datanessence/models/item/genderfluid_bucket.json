@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "datanessence:item/genderfluid_bucket"
+    "layer0": "halcyon:item/genderfluid_bucket"
   }
 }

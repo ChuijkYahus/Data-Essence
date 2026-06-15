@@ -2,6 +2,6 @@
   "parent": "minecraft:block/cube_all",
   "render_type": "minecraft:translucent",
   "textures": {
-    "all": "datanessence:block/deco/fluidic_glass"
+    "all": "halcyon:block/deco/fluidic_glass"
   }
 }

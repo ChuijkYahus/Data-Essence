@@ -1,5 +1,0 @@
-{
-  "type": "datanessence:genderfluid_transition",
-  "input": { "item": "datanessence:transcendental_tether" },
-  "result": { "id": "datanessence:trans_tether" }
-}

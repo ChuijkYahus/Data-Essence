@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "datanessence:infusion/glowstone_dust"
+        "recipe": "halcyon:infusion/glowstone_dust"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "datanessence:infusion/glowstone_dust"
+      "halcyon:infusion/glowstone_dust"
     ]
   }
 }

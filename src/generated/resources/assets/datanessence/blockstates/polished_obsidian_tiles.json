@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "datanessence:block/polished_obsidian_tiles"
+      "model": "halcyon:block/polished_obsidian_tiles"
     }
   }
 }

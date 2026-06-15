@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "datanessence:makutuin_runner_cross"
+          "name": "halcyon:makutuin_runner_cross"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/makutuin_runner_cross"
+  "random_sequence": "halcyon:blocks/makutuin_runner_cross"
 }

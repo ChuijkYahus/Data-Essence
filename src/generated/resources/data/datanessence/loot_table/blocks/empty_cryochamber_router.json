@@ -1,4 +1,4 @@
 {
   "type": "minecraft:block",
-  "random_sequence": "datanessence:blocks/empty_cryochamber_router"
+  "random_sequence": "halcyon:blocks/empty_cryochamber_router"
 }

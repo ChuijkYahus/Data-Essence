@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:block/cube",
   "textures": {
-    "down": "datanessence:block/deco/polished_obsidian_tract_vertical",
-    "east": "datanessence:block/deco/polished_obsidian_tract_side",
-    "north": "datanessence:block/deco/polished_obsidian_tract_side",
-    "particle": "datanessence:block/deco/polished_obsidian_tract_side",
-    "south": "datanessence:block/deco/polished_obsidian_tract_side",
-    "up": "datanessence:block/deco/polished_obsidian_tract_vertical",
-    "west": "datanessence:block/deco/polished_obsidian_tract_side"
+    "down": "halcyon:block/deco/polished_obsidian_tract_vertical",
+    "east": "halcyon:block/deco/polished_obsidian_tract_side",
+    "north": "halcyon:block/deco/polished_obsidian_tract_side",
+    "particle": "halcyon:block/deco/polished_obsidian_tract_side",
+    "south": "halcyon:block/deco/polished_obsidian_tract_side",
+    "up": "halcyon:block/deco/polished_obsidian_tract_vertical",
+    "west": "halcyon:block/deco/polished_obsidian_tract_side"
   }
 }

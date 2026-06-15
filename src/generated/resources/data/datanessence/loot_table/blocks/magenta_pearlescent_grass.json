@@ -17,7 +17,7 @@
                   }
                 }
               ],
-              "name": "datanessence:magenta_pearlescent_grass"
+              "name": "halcyon:magenta_pearlescent_grass"
             },
             {
               "type": "minecraft:item",
@@ -48,5 +48,5 @@
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/magenta_pearlescent_grass"
+  "random_sequence": "halcyon:blocks/magenta_pearlescent_grass"
 }

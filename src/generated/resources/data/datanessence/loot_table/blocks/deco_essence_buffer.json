@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "datanessence:deco_essence_buffer"
+          "name": "halcyon:deco_essence_buffer"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/deco_essence_buffer"
+  "random_sequence": "halcyon:blocks/deco_essence_buffer"
 }

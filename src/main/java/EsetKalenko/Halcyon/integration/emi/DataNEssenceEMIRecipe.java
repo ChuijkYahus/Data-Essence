@@ -18,8 +18,8 @@ import java.util.List;
 
 // Heavily derived from https://github.com/DaFuqs/Spectrum/blob/1.20.1-aria-for-painters/src/main/java/de/dafuqs/spectrum/compat/emi/SpectrumEmiRecipe.java
 public abstract class DataNEssenceEMIRecipe implements EmiRecipe {
-    public static final Component lockedText1 = Component.translatable("emi.datanessence.recipe_locked_line_1");
-    public static final Component lockedText2 = Component.translatable("emi.datanessence.recipe_locked_line_2");
+    public static final Component lockedText1 = Component.translatable("emi.halcyon.recipe_locked_line_1");
+    public static final Component lockedText2 = Component.translatable("emi.halcyon.recipe_locked_line_2");
 
     public final EmiRecipeCategory category;
     public final ResourceLocation recipe, recipeUnlockEntry;

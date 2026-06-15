@@ -1,15 +1,15 @@
 {
   "variants": {
     "axis=x": {
-      "model": "datanessence:block/deco_item_buffer_horizontal",
+      "model": "halcyon:block/deco_item_buffer_horizontal",
       "x": 90,
       "y": 90
     },
     "axis=y": {
-      "model": "datanessence:block/deco_item_buffer"
+      "model": "halcyon:block/deco_item_buffer"
     },
     "axis=z": {
-      "model": "datanessence:block/deco_item_buffer_horizontal",
+      "model": "halcyon:block/deco_item_buffer_horizontal",
       "x": 90
     }
   }

@@ -42,18 +42,18 @@ public class SpecialTooltips {
                 Color numberColor = new Color((int)(color.getRed()), (int)(color.getGreen()), (int)(color.getBlue()), color.getAlpha());
                 Color textColor = new Color(0xFFFF96B5); // 0xFFF25EA1
                 DecimalFormat format = new DecimalFormat("#.##");
-                event.getToolTip().add(Component.translatable("tooltip.datanessence.plant_siphon_display.text").withStyle(ChatFormatting.ITALIC).withColor(0xFFF25EA1));
-                event.getToolTip().add(Component.translatable("tooltip.datanessence.plant_siphon_display.values", Component.literal(format.format(map.amountPerTick())).withColor(numberColor.getRGB()), Component.literal(String.valueOf(map.ticks())).withColor(numberColor.getRGB()), essence.name.copy().withColor(essenceColor.getRGB())).withColor(textColor.getRGB()));
+                event.getToolTip().add(Component.translatable("tooltip.halcyon.plant_siphon_display.text").withStyle(ChatFormatting.ITALIC).withColor(0xFFF25EA1));
+                event.getToolTip().add(Component.translatable("tooltip.halcyon.plant_siphon_display.values", Component.literal(format.format(map.amountPerTick())).withColor(numberColor.getRGB()), Component.literal(String.valueOf(map.ticks())).withColor(numberColor.getRGB()), essence.name.copy().withColor(essenceColor.getRGB())).withColor(textColor.getRGB()));
             }
         });
 
         TOOLTIPS.put( WIP_CONDITION, (event) -> {
             event.getToolTip().add(
-                    Component.translatable("tooltip.datanessence.wip_1")
+                    Component.translatable("tooltip.halcyon.wip_1")
                             .withColor(0xE83A27) // maybe make this flash between red and white every 2 seconds
             );
             event.getToolTip().add(
-                    Component.translatable("tooltip.datanessence.wip_2")
+                    Component.translatable("tooltip.halcyon.wip_2")
                             .withStyle(ChatFormatting.ITALIC)
                             .withColor(0xFFEA99)
             );

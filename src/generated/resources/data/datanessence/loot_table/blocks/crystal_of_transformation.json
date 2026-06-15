@@ -26,7 +26,7 @@
                   }
                 }
               ],
-              "name": "datanessence:crystal_of_transformation"
+              "name": "halcyon:crystal_of_transformation"
             },
             {
               "type": "minecraft:item",
@@ -49,7 +49,7 @@
                   "function": "minecraft:explosion_decay"
                 }
               ],
-              "name": "datanessence:shard_of_transformation"
+              "name": "halcyon:shard_of_transformation"
             }
           ]
         }
@@ -57,5 +57,5 @@
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/crystal_of_transformation"
+  "random_sequence": "halcyon:blocks/crystal_of_transformation"
 }

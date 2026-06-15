@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "datanessence:block/ancient_rock_bricks"
+      "model": "halcyon:block/ancient_rock_bricks"
     }
   }
 }

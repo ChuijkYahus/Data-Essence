@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "datanessence:ecliptrum_block"
+          "name": "halcyon:ecliptrum_block"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/ecliptrum_block"
+  "random_sequence": "halcyon:blocks/ecliptrum_block"
 }

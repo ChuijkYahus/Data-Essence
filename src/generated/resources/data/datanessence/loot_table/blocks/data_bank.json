@@ -1,4 +1,4 @@
 {
   "type": "minecraft:block",
-  "random_sequence": "datanessence:blocks/data_bank"
+  "random_sequence": "halcyon:blocks/data_bank"
 }

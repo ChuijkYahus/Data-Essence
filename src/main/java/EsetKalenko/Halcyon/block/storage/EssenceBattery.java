@@ -53,7 +53,7 @@ public class EssenceBattery extends Block implements EntityBlock {
     protected InteractionResult useWithoutItem(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, BlockHitResult pHitResult) {
         if (pLevel.getBlockEntity(pPos) instanceof EssenceBatteryBlockEntity ent) {
             if (!pLevel.isClientSide) {
-                pPlayer.displayClientMessage(Component.translatable("block.datanessence.essence_battery.amount",
+                pPlayer.displayClientMessage(Component.translatable("block.halcyon.essence_battery.amount",
                         ent.storage.getEssence(EssenceTypeRegistry.ESSENCE.get()),
                         ent.storage.getMaxEssence()), true);
             }

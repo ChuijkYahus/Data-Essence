@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "datanessence:block_of_transformation"
+          "name": "halcyon:block_of_transformation"
         }
       ],
       "rolls": 1.0
     }
   ],
-  "random_sequence": "datanessence:blocks/block_of_transformation"
+  "random_sequence": "halcyon:blocks/block_of_transformation"
 }

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "datanessence:block/deco/polished_obsidian_tiles"
+    "all": "halcyon:block/deco/polished_obsidian_tiles"
   }
 }

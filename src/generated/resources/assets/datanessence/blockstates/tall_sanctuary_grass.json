@@ -1,10 +1,10 @@
 {
   "variants": {
     "half=lower": {
-      "model": "datanessence:block/tall_sanctuary_grass_lower"
+      "model": "halcyon:block/tall_sanctuary_grass_lower"
     },
     "half=upper": {
-      "model": "datanessence:block/tall_sanctuary_grass_upper"
+      "model": "halcyon:block/tall_sanctuary_grass_upper"
     }
   }
 }
