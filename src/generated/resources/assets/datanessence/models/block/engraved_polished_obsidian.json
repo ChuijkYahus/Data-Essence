@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "halcyon:block/deco/engraved_polished_obsidian"
-  }
-}

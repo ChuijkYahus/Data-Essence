@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cube_column",
-  "textures": {
-    "end": "halcyon:block/deco/crystalline_log_top",
-    "side": "halcyon:block/deco/crystalline_log"
-  }
-}

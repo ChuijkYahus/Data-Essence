@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cube_column",
-  "textures": {
-    "end": "halcyon:block/buffer/fluid_buffer_top_bottom",
-    "side": "halcyon:block/buffer/fluid_buffer_side"
-  }
-}
