@@ -1,0 +1,43 @@
+{
+  "icon": {
+    "id": "halcyon:drying_table"
+  },
+  "tab": "halcyon:machinery",
+  "x": 5,
+  "y": -4,
+  "pages": [
+    {
+      "type": "halcyon:item",
+      "item": {
+        "id": "halcyon:drying_table"
+      },
+      "text": {
+        "translate": "data_tablet.pages.drying_table.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:fabrication/machines/drying_table",
+        "halcyon:drying/lava_to_magma"
+      ]
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:drying/lava_to_stone",
+        "halcyon:drying/water_to_clay",
+        "halcyon:drying/water_to_mud"
+      ]
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.drying_table.name"
+  },
+  "flavor": {
+    "translate": "data_tablet.pages.drying_table.flavor"
+  },
+  "parents": [
+    "halcyon:machinery/fluidworks"
+  ]
+}

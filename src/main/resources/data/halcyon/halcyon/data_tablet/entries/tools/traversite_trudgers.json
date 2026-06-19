@@ -1,0 +1,31 @@
+{
+  "icon": {
+    "id": "halcyon:traversite_trudgers"
+  },
+  "tab": "halcyon:tools",
+  "x": 5,
+  "y": 2,
+  "pages": [
+    {
+      "type": "halcyon:text",
+      "text": {
+        "translate": "data_tablet.pages.traversite_trudgers.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:fabrication/equipment/traversite_trudgers"
+      ]
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.traversite_trudgers.name"
+  },
+  "flavor": {
+    "translate": "data_tablet.pages.traversite_trudgers.flavor"
+  },
+  "parents": [
+    "halcyon:tools/traversite_road"
+  ]
+}

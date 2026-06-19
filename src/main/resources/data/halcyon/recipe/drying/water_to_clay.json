@@ -1,0 +1,14 @@
+{
+  "type": "halcyon:drying",
+  "time": 400,
+  "input": {
+    "id": "minecraft:water",
+    "amount": 100
+  },
+  "additive": {
+    "tag": "minecraft:sand"
+  },
+  "result": {
+    "id": "minecraft:clay"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "icon": {
+    "id": "halcyon:rf_wire"
+  },
+  "tier": 3,
+  "name": {
+    "translate": "data_tablet.databank_generic_logistics"
+  },
+  "entry": "halcyon:mod_integration/redstoneflux_nodes"
+}

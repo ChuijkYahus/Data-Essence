@@ -1,0 +1,16 @@
+{
+  "type": "halcyon:shapeless_fabrication_recipe",
+  "essenceCost": {
+    "halcyon:essence": 150
+  },
+  "entry": "halcyon:basics/components",
+  "ingredients": [
+    { "item": "halcyon:wire_spool" },
+    { "item": "halcyon:bonding_powder" },
+    { "item": "halcyon:bonding_powder" },
+    { "item": "halcyon:lensing_crystal" },
+    { "item": "halcyon:lensing_crystal" }
+  ],
+  "time": 80,
+  "result": { "id": "halcyon:memory_cell" }
+}

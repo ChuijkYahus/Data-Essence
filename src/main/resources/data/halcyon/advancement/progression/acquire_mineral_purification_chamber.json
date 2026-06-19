@@ -1,0 +1,21 @@
+{
+  "display": {
+    "icon": {
+      "id": "halcyon:mineral_purification_chamber"
+    },
+    "title": {
+      "translate": "advancements.halcyon.acquire_mineral_purification_chamber.title"
+    },
+    "description": {
+      "translate": "advancements.halcyon.acquire_mineral_purification_chamber.description"
+    },
+    "hidden": false
+  },
+  "parent": "halcyon:progression/use_data_drive",
+  "criteria": {
+    "has_chamber": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": { "items": [ { "items": ["halcyon:mineral_purification_chamber" ] } ] }
+    }
+  }
+}

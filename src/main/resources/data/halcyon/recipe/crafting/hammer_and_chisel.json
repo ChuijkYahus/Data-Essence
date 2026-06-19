@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "DR",
+    "R "
+  ],
+  "key": {
+    "D": { "item": "minecraft:diamond" },
+    "R": { "tag": "c:rods/wooden" }
+  },
+  "result": { "id": "halcyon:hammer_and_chisel", "count": 1 }
+}

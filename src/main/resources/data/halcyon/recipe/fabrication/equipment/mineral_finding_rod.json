@@ -1,0 +1,21 @@
+{
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": {
+    "halcyon:essence": 500
+  },
+  "entry": "halcyon:tools/mineral_finding_rod",
+  "pattern": [
+    " DL",
+    " RE",
+    "M  "
+  ],
+  "time": 300,
+  "key": {
+    "R": { "item": "halcyon:conductance_rod" },
+    "M": { "item": "halcyon:memory_cell" },
+    "L": { "item": "halcyon:lensing_crystal" },
+    "D": { "item": "minecraft:diamond" },
+    "E": { "item": "minecraft:emerald" }
+  },
+  "result": { "id": "halcyon:mineral_finding_rod" }
+}

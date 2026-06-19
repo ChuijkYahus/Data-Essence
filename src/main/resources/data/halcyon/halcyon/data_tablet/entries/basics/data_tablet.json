@@ -1,0 +1,35 @@
+{
+  "icon": {
+    "id": "halcyon:data_tablet"
+  },
+  "tab": "halcyon:basics",
+  "x": 0,
+  "y": -2,
+  "pages": [
+    {
+      "type": "halcyon:text",
+      "text": {
+        "translate": "data_tablet.pages.data_tablet.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:text",
+      "text": {
+        "translate": "data_tablet.pages.data_tablet.page2.text"
+      }
+    },
+    {
+      "type": "halcyon:text",
+      "text": {
+        "translate": "data_tablet.pages.data_tablet.page3.text"
+      }
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.data_tablet.name"
+  },
+  "flavor": {
+    "translate": "data_tablet.pages.data_tablet.flavor"
+  },
+  "is_default": true
+}

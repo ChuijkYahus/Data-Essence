@@ -1,0 +1,21 @@
+{
+  "display": {
+    "icon": {
+      "id": "halcyon:data_drive"
+    },
+    "title": {
+      "translate": "advancements.halcyon.use_data_drive.title"
+    },
+    "description": {
+      "translate": "advancements.halcyon.use_data_drive.description"
+    },
+    "hidden": false
+  },
+  "parent": "halcyon:progression/craft_logical_matrix",
+  "criteria": {
+    "has_data_drive": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": { "items": [ { "items": ["halcyon:data_drive" ] } ] }
+    }
+  }
+}

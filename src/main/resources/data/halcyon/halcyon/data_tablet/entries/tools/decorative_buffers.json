@@ -1,0 +1,34 @@
+{
+  "icon": {
+    "id": "halcyon:deco_fluid_buffer"
+  },
+  "tab": "halcyon:tools",
+  "x": 0,
+  "y": -4,
+  "pages": [
+    {
+      "type": "halcyon:text",
+      "text": {
+        "translate": "data_tablet.pages.decorative_buffers.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:fabrication/decoration/deco_essence_buffer",
+        "halcyon:fabrication/decoration/deco_fluid_buffer",
+        "halcyon:fabrication/decoration/deco_item_buffer"
+      ]
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.decorative_buffers.name"
+  },
+  "flavor": {
+    "translate": "data_tablet.pages.decorative_buffers.flavor"
+  },
+  "parents": [
+    "halcyon:tools/decorative_blocks",
+    "halcyon:machinery/buffers"
+  ]
+}

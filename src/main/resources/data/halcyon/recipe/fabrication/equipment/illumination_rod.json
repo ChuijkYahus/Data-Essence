@@ -1,0 +1,21 @@
+{
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": {
+    "halcyon:essence": 300
+  },
+  "entry": "halcyon:tools/illumination_rod",
+  "pattern": [
+    " GT",
+    "LOG",
+    "ML "
+  ],
+  "time": 200,
+  "key": {
+    "G": { "item": "minecraft:glowstone_dust" },
+    "T": { "item": "halcyon:twining_lantern" },
+    "O": { "item": "halcyon:polished_obsidian" },
+    "L": { "item": "halcyon:lensing_crystal" },
+    "M": { "item": "halcyon:memory_cell" }
+  },
+  "result": { "id": "halcyon:illumination_rod" }
+}

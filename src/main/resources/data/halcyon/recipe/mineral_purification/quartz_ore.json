@@ -1,0 +1,7 @@
+{
+    "type": "halcyon:mineral_purification",
+    "input": { "tag": "c:ores/quartz" },
+    "time": 300,
+    "result": { "id": "minecraft:quartz" },
+    "nuggetResult": { "id": "halcyon:quartz_flake", "count": 2 }
+}

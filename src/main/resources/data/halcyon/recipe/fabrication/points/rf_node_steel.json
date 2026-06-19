@@ -1,0 +1,28 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:ingots/steel"
+      }
+    }
+  ],
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": {
+    "halcyon:essence": 150,
+    "halcyon:lunar_essence": 50
+  },
+  "time": 60,
+  "entry": "halcyon:mod_integration/redstoneflux_nodes",
+  "pattern": [
+    "RIR",
+    " O "
+  ],
+  "key": {
+    "I": { "tag": "c:ingots/steel" },
+    "R": { "item": "halcyon:transformative_rod" },
+    "O": { "item": "halcyon:polished_obsidian" }
+  },
+  "result": { "id": "halcyon:rf_node", "count": 3 }
+}

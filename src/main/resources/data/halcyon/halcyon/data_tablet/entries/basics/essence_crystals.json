@@ -1,0 +1,34 @@
+{
+  "icon": {
+    "id": "halcyon:essence_crystal"
+  },
+  "tab": "halcyon:basics",
+  "critical": true,
+  "x": 0,
+  "y": 2,
+  "pages": [
+    {
+      "type": "halcyon:item",
+      "item": {
+        "id": "halcyon:essence_shard"
+      },
+      "text": {
+        "translate": "data_tablet.pages.essence_crystals.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:crafting/shard_of_industry_compacting",
+        "halcyon:crafting/shard_of_industry_decompacting",
+        "halcyon:infusion/essence_shard"
+      ],
+      "text": {
+        "translate": "data_tablet.pages.essence_crystals.page2.text"
+      }
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.essence_crystals.name"
+  }
+}

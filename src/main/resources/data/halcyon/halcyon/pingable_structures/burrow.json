@@ -1,0 +1,20 @@
+{
+  "structure": "halcyon:burrows/small_01",
+  "advancement": "halcyon:exploration/find_burrow",
+  "requiredAdvancement": "halcyon:halcyon",
+  "color1": [
+    57,
+    41,
+    220
+  ],
+  "color2": [
+    124,
+    144,
+    237
+  ],
+  "icon": {
+    "texture": "halcyon:textures/gui/structure_icons.png",
+    "u": 80,
+    "v": 0
+  }
+}

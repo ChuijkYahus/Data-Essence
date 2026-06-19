@@ -1,0 +1,19 @@
+{
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": {
+    "halcyon:lunar_essence": 200
+  },
+  "entry": "halcyon:essence_manipulation/lunar_battery",
+  "pattern": [
+    "TOT",
+    "SBS",
+    "TOT"
+  ],
+  "key": {
+    "O": { "item": "halcyon:polished_obsidian" },
+    "T": { "item": "halcyon:transformative_rod" },
+    "S": { "item": "halcyon:shard_of_transformation" },
+    "B": { "item": "halcyon:essence_buffer" }
+  },
+  "result": { "id": "halcyon:lunar_essence_battery" }
+}

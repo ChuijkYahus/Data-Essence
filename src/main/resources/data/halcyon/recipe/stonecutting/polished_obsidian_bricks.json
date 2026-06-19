@@ -1,0 +1,5 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": { "item": "halcyon:polished_obsidian" },
+  "result": { "id": "halcyon:polished_obsidian_bricks", "count": 1 }
+}

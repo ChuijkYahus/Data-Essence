@@ -1,0 +1,5 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": { "item": "halcyon:traversite_road" },
+  "result": { "id": "halcyon:traversite_road_slab", "count": 2 }
+}

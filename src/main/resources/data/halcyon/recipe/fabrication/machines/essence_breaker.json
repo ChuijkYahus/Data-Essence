@@ -1,0 +1,17 @@
+{
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": { "halcyon:essence": 5 },
+  "entry": "halcyon:machinery/essence_breaker",
+  "pattern": [
+    "CC ",
+    "RCD",
+    "CC "
+  ],
+  "time": 60,
+  "key": {
+    "C": { "item": "halcyon:capacitance_panel" },
+    "R": { "item": "minecraft:redstone" },
+    "D": { "item": "halcyon:iron_drill" }
+  },
+  "result": { "id": "halcyon:essence_breaker" }
+}

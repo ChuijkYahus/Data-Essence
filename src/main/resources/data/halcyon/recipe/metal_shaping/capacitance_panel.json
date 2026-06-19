@@ -1,0 +1,6 @@
+{
+  "type": "halcyon:metal_shaping",
+  "input": { "item": "minecraft:copper_ingot" },
+  "time": 100,
+  "result": { "id": "halcyon:capacitance_panel", "count": 1 }
+}

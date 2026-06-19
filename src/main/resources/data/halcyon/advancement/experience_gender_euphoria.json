@@ -1,0 +1,21 @@
+{
+  "display": {
+    "icon": {
+      "id": "halcyon:traversite_road_chunk"
+    },
+    "title": {
+      "translate": "advancements.halcyon.experience_gender_euphoria.title"
+    },
+    "description": {
+      "translate": "advancements.halcyon.experience_gender_euphoria.description"
+    },
+    "hidden": true
+  },
+  "parent": "halcyon:halcyon",
+  "criteria": {
+    "has_gender_euphoria_effect": {
+      "trigger": "minecraft:effects_changed",
+      "conditions": { "effects": { "halcyon:gender_euphoria": {} } }
+    }
+  }
+}

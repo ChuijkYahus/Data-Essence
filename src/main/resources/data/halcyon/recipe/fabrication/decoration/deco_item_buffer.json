@@ -1,0 +1,14 @@
+{
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": { "halcyon:essence": 5 },
+  "entry": "halcyon:tools/decorative_buffers",
+  "pattern": [
+    "B",
+    "B",
+    "B"
+  ],
+  "key": {
+    "B": { "item": "halcyon:item_buffer" }
+  },
+  "result": { "id": "halcyon:deco_item_buffer", "count":9 }
+}

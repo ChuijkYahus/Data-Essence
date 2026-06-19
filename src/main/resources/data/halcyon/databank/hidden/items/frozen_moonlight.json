@@ -1,0 +1,12 @@
+{
+  "condition": {
+    "type": "halcyon:entry",
+    "entry": "halcyon:basics/frozen_moonlight",
+    "completion_stage": 0
+  },
+  "type": {
+    "type": "databank:item",
+    "hidden_as": "minecraft:packed_ice",
+    "original": "halcyon:frozen_moonlight"
+  }
+}

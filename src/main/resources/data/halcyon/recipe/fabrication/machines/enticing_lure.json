@@ -1,0 +1,16 @@
+{
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": { "halcyon:essence": 10 },
+  "entry": "halcyon:machinery/enticing_lure",
+  "pattern": [
+    "RER",
+    "ROR"
+  ],
+  "time": 40,
+  "key": {
+    "R": { "item": "halcyon:conductance_rod" },
+    "E": { "item": "minecraft:emerald" },
+    "O": { "item": "halcyon:polished_obsidian" }
+  },
+  "result": { "id": "halcyon:enticing_lure" }
+}

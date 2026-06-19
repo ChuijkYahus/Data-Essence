@@ -1,0 +1,35 @@
+{
+  "icon": {
+    "id": "halcyon:mineral_purification_chamber"
+  },
+  "tab": "halcyon:machinery",
+  "x": 5,
+  "y": 0,
+  "pages": [
+    {
+      "type": "halcyon:item",
+      "item": { "id": "halcyon:mineral_purification_chamber" },
+      "text": {
+        "translate": "data_tablet.pages.mineral_purification_chamber.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "text": {
+        "translate": "data_tablet.pages.mineral_purification_chamber.page2.text"
+      },
+      "recipes": [
+        "halcyon:fabrication/machines/mineral_purification_chamber"
+      ]
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.mineral_purification_chamber.name"
+  },
+  "flavor": {
+    "translate": "data_tablet.pages.mineral_purification_chamber.flavor"
+  },
+  "parents": [
+    "halcyon:machinery/fluidworks"
+  ]
+}

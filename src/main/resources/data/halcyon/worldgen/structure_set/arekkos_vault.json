@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "halcyon:arekkos_vault",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 225595371,
+    "spacing": 16,
+    "separation": 8
+  }
+}

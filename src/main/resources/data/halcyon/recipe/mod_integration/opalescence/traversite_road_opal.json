@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "opalescence"
+    }
+  ],
+  "type": "halcyon:infusion",
+  "essenceCost": {
+    "halcyon:essence": 50
+  },
+  "entry": "halcyon:mod_integration/opalescence",
+  "input": {
+    "item": "opalescence:opal",
+    "count": 1
+  },
+  "result": {
+    "id": "halcyon:traversite_road_opal",
+    "count": 1
+  }
+}

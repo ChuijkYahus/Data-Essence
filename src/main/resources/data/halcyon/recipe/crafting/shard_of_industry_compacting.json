@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "ccc",
+    "ccc",
+    "ccc"
+  ],
+  "key": {
+    "c": { "item": "halcyon:essence_shard" }
+  },
+  "result": { "id": "halcyon:block_of_industry" }
+}

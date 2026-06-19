@@ -1,0 +1,6 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [{ "item": "halcyon:ecliptrum_ingot" }],
+  "result": { "id": "halcyon:ecliptrum_nugget", "count": 9 }
+}

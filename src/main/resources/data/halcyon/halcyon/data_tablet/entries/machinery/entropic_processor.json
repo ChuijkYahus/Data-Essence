@@ -1,0 +1,91 @@
+{
+  "icon": {
+    "id": "halcyon:entropic_processor"
+  },
+  "tab": "halcyon:machinery",
+  "x": 2,
+  "y": 4,
+  "pages": [
+    {
+      "type": "halcyon:item",
+      "item": { "id": "halcyon:entropic_processor" },
+      "text": {
+        "translate": "data_tablet.pages.entropic_processor.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "text": {
+        "translate": "data_tablet.pages.entropic_processor.page2.text"
+      },
+      "recipes": [
+        "halcyon:fabrication/machines/entropic_processor"
+      ]
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:entropic_processing/stone_to_cobble",
+        "halcyon:entropic_processing/cobble_to_gravel",
+        "halcyon:entropic_processing/gravel_to_sand"
+      ],
+      "text": {
+        "translate": "data_tablet.pages.entropic_processor.page3.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:entropic_processing/dye/green_dye",
+        "halcyon:entropic_processing/dye/red_dye"
+      ],
+      "text": {
+        "translate": "data_tablet.pages.entropic_processor.page4.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:entropic_processing/bone_meal",
+        "halcyon:entropic_processing/sugar",
+        "halcyon:entropic_processing/blaze_powder"
+      ],
+      "text": {
+        "translate": "data_tablet.pages.entropic_processor.page5.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:entropic_processing/wool_to_string",
+        "halcyon:entropic_processing/clay_to_clay_balls",
+        "halcyon:entropic_processing/honeycomb_block_to_honeycomb",
+        "halcyon:entropic_processing/dripstone_to_pointed_dripstone",
+        "halcyon:entropic_processing/glowstone_block_to_dust",
+        "halcyon:entropic_processing/quartz_blocks_to_nether_quartz"
+      ],
+      "text": {
+        "translate": "data_tablet.pages.entropic_processor.page6.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:entropic_processing/bricks_to_clay",
+        "halcyon:entropic_processing/bricks_stairs_to_clay",
+        "halcyon:entropic_processing/bricks_slab_to_clay",
+        "halcyon:entropic_processing/sandstone_to_sand",
+        "halcyon:entropic_processing/red_sandstone_to_sand"
+      ]
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.entropic_processor.name"
+  },
+  "flavor": {
+    "translate": "data_tablet.pages.entropic_processor.flavor"
+  },
+  "parents": [
+    "halcyon:basics/fabricator"
+  ]
+}

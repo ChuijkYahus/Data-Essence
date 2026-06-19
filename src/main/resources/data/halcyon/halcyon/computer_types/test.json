@@ -1,0 +1,11 @@
+{
+  "files": [
+    {
+      "type": "halcyon:text",
+      "text": {
+        "translate": "computer.types.test.files.0",
+        "font": "halcyon:ancient"
+      }
+    }
+  ]
+}

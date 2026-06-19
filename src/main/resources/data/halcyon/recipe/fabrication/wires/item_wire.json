@@ -1,0 +1,18 @@
+{
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": {
+    "halcyon:essence": 0
+  },
+  "entry": "halcyon:machinery/itemworks",
+  "pattern": [
+    " C ",
+    "rRr",
+    " C "
+  ],
+  "key": {
+    "r": { "item": "minecraft:redstone" },
+    "R": { "item": "halcyon:conductance_rod" },
+    "C": { "item": "minecraft:copper_ingot" }
+  },
+  "result": { "id": "halcyon:item_wire", "count": 2 }
+}

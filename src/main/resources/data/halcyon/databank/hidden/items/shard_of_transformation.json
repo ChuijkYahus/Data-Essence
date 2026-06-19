@@ -1,0 +1,15 @@
+{
+  "condition": {
+    "type": "halcyon:entry",
+    "entry": "halcyon:machinery_transformation/lunar_strikes"
+  },
+  "type": {
+    "type": "databank:item",
+    "hidden_as": "halcyon:shard_of_transformation",
+    "original": "halcyon:shard_of_transformation",
+    "name_override": {
+      "translate": "hidden.halcyon.shard",
+      "font": "halcyon:ancient"
+    }
+  }
+}

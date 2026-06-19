@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "halcyon:block/makutuin_runner",
+      "y": 90
+    },
+    "axis=z": {
+      "model": "halcyon:block/makutuin_runner",
+      "y": 0
+    }
+  }
+}

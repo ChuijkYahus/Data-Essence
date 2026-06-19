@@ -1,0 +1,32 @@
+{
+  "icon": {
+    "id": "halcyon:transcendental_tether"
+  },
+  "tab": "halcyon:tools",
+  "x": -2,
+  "y": 2,
+  "pages": [
+    {
+      "type": "halcyon:item",
+      "item": {
+        "id": "halcyon:transcendental_tether"
+      },
+      "text": {
+        "translate": "data_tablet.pages.transcendental_tether.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:fabrication/equipment/transcendental_tether"
+      ]
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.transcendental_tether.name"
+  },
+  "parents": [
+    "halcyon:tools/charger",
+    "halcyon:basics/plants"
+  ]
+}

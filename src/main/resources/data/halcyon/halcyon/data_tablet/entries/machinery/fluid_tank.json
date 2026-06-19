@@ -1,0 +1,32 @@
+{
+  "icon": {
+    "id": "halcyon:fluid_tank"
+  },
+  "tab": "halcyon:machinery",
+  "x": 3,
+  "y": -4,
+  "pages": [
+    {
+      "type": "halcyon:item",
+      "item": {
+        "id": "halcyon:fluid_tank"
+      },
+      "text": {
+        "translate": "data_tablet.pages.fluid_tank.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:fabrication/fluid_tank"
+      ]
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.fluid_tank.name"
+  },
+  "flavor": { "translate": "data_tablet.pages.fluid_tank.flavor" },
+  "parents": [
+    "halcyon:machinery/fluidworks"
+  ]
+}

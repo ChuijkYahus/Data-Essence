@@ -1,0 +1,34 @@
+{
+  "icon": {
+    "id": "halcyon:rf_wire"
+  },
+  "tab": "halcyon:mod_integration",
+  "x": 0,
+  "y": 3,
+  "pages": [
+    {
+      "type": "halcyon:text",
+      "text": {
+        "translate": "data_tablet.pages.integration_redstoneflux_nodes.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:fabrication/points/rf_node_iron",
+        "halcyon:fabrication/wires/rf_wire_iron",
+        "halcyon:fabrication/points/rf_node_steel",
+        "halcyon:synthesis/rf_wire_steel"
+      ]
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.integration_redstoneflux_nodes.name"
+  },
+  "flavor": {
+    "translate": "data_tablet.pages.integration_redstoneflux_nodes.flavor"
+  },
+  "parents": [
+    "halcyon:machinery_transformation/lunarium"
+  ]
+}

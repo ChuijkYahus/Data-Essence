@@ -1,0 +1,11 @@
+{
+  "type": "halcyon:synthesis",
+  "essenceCost": {
+    "halcyon:essence": 100
+  },
+  "input": { "item": "halcyon:essence_pathways" },
+  "input2": { "item": "halcyon:essence_shard" },
+  "time": 100,
+  "result": { "id": "halcyon:assembly_actuator", "count": 1 },
+  "entry": "halcyon:basics/components"
+}

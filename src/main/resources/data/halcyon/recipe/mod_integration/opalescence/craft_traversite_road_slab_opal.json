@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "opalescence"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "TTT"
+  ],
+  "key": {
+    "T": { "item": "halcyon:traversite_road_opal" }
+  },
+  "result": { "id": "halcyon:traversite_road_slab_opal", "count": 6 }
+}

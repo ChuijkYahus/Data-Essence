@@ -1,0 +1,19 @@
+{
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": {
+    "halcyon:essence": 500
+  },
+  "time": 153,
+  "entry": "halcyon:essence_manipulation/lunar_energy_transfer",
+  "completion_stage": 0,
+  "pattern": [
+    "RAR",
+    " O "
+  ],
+  "key": {
+    "A": { "item": "halcyon:shard_of_transformation" },
+    "R": { "item": "halcyon:conductance_rod" },
+    "O": { "item": "halcyon:polished_obsidian" }
+  },
+  "result": { "id": "halcyon:lunar_essence_point", "count": 1 }
+}

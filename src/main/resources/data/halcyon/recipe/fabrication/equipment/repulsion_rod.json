@@ -1,0 +1,20 @@
+{
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": {
+    "halcyon:lunar_essence": 200
+  },
+  "time": 220,
+  "entry": "halcyon:tools/repulsion_rod",
+  "pattern": [
+    " LS",
+    " RL",
+    "M  "
+  ],
+  "key": {
+    "L": { "item": "halcyon:lensing_crystal" },
+    "R": { "item": "halcyon:transformative_rod" },
+    "M": { "item": "halcyon:memory_cell" },
+    "S": { "item": "halcyon:shard_of_transformation" }
+  },
+  "result": { "id": "halcyon:repulsion_rod" }
+}

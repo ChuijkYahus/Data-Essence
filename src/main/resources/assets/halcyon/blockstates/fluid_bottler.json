@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "halcyon:block/fluid_bottler",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "halcyon:block/fluid_bottler"
+    },
+    "facing=south": {
+      "model": "halcyon:block/fluid_bottler",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "halcyon:block/fluid_bottler",
+      "y": 270
+    }
+  }
+}

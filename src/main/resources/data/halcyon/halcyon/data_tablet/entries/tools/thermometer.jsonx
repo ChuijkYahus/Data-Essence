@@ -1,0 +1,34 @@
+// will be restored once I finalize the temperature system and finish this item. ~Eset
+
+{
+  "icon": {
+    "id": "halcyon:thermometer"
+  },
+  "tab": "halcyon:tools",
+  "x": -2,
+  "y": -2,
+  "pages": [
+    {
+      "type": "halcyon:item",
+      "item": { "id": "halcyon:thermometer" },
+      "text": {
+        "translate": "data_tablet.pages.thermometer.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:fabrication/equipment/thermometer"
+      ],
+      "text": {
+        "translate": "data_tablet.pages.thermometer.page2.text"
+      }
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.thermometer.name"
+  },
+  "flavor": {
+    "translate": "data_tablet.pages.thermometer.flavor"
+  }
+}

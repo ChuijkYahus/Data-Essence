@@ -1,0 +1,10 @@
+{
+  "icon": {
+    "id": "minecraft:lapis_lazuli"
+  },
+  "tier": 3,
+  "name": {
+    "translate": "data_tablet.databank_generic_lore"
+  },
+  "entry": "halcyon:lore/phenuan_material_studies_2"
+}

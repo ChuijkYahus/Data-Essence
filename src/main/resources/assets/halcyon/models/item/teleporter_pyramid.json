@@ -1,0 +1,7 @@
+{
+    "parent": "minecraft:item/generated",
+    "textures": {
+        "layer0": "halcyon:item/pyramid_base",
+        "layer1": "halcyon:item/pyramid_overlay"
+    }
+}

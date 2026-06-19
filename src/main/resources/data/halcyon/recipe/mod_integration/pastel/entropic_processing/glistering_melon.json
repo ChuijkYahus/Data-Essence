@@ -1,0 +1,12 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "pastel"
+    }
+  ],
+  "type": "halcyon:entropic_processing",
+  "input": { "item": "pastel:glistering_melon" },
+  "time": 100,
+  "result": { "id": "minecraft:gold_nugget", "count": 12 }
+}

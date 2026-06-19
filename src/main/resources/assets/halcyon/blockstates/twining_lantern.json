@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "halcyon:block/twining_lantern"
+    },
+    "hanging=true": {
+      "model": "halcyon:block/twining_lantern_hanging"
+    }
+  }
+}

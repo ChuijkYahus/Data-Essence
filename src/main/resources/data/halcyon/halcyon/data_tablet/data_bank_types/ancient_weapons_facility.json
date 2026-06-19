@@ -1,0 +1,12 @@
+{
+  "add": [
+    "halcyon:tier_1/charger",
+    "halcyon:tier_1/essence_bombs",
+    "halcyon:tier_1/essence_sword",
+    "halcyon:tier_2/ancient_rock",
+    "halcyon:tier_2/signal_tracker_resonance_receptor",
+    "halcyon:tier_2/twining_lantern"
+  ],
+  "remove": [
+  ]
+}

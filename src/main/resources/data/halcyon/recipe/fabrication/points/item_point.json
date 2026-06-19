@@ -1,0 +1,17 @@
+{
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": {
+    "halcyon:essence": 0
+  },
+  "entry": "halcyon:machinery/itemworks",
+  "pattern": [
+    "RrR",
+    " O "
+  ],
+  "key": {
+    "r": { "item": "minecraft:redstone" },
+    "R": { "item": "halcyon:conductance_rod" },
+    "O": { "item": "halcyon:polished_obsidian" }
+  },
+  "result": { "id": "halcyon:item_point", "count": 2 }
+}

@@ -1,0 +1,73 @@
+{
+  "icon": {
+    "id": "halcyon:polished_obsidian"
+  },
+  "tab": "halcyon:tools",
+  "x": 0,
+  "y": -2,
+  "pages": [
+    {
+      "type": "halcyon:text",
+      "text": {
+        "translate": "data_tablet.pages.decorative_blocks.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:fabrication/decoration/polished_obsidian",
+        "halcyon:smelting/polished_obsidian"
+      ],
+      "text": {
+        "translate": "data_tablet.pages.decorative_blocks.page2.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:fabrication/decoration/patterned_copper"
+      ],
+      "text": {
+        "translate": "data_tablet.pages.decorative_blocks.page3.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:fabrication/decoration/essence_light_fixture"
+      ],
+      "text": {
+        "translate": "data_tablet.pages.decorative_blocks.page4.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:fabrication/decoration/dewlamp"
+      ],
+      "text": {
+        "translate": "data_tablet.pages.decorative_blocks.page5.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:crafting/obsidian_framed_glass",
+        "halcyon:crafting/fluidic_glass"
+      ],
+      "text": {
+        "translate": "data_tablet.pages.decorative_blocks.page6.text"
+      }
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.decorative_blocks.name"
+  },
+  "flavor": {
+    "translate": "data_tablet.pages.decorative_blocks.flavor"
+  },
+  "parents": [
+    "halcyon:basics/fabricator"
+  ],
+  "is_default": true
+}

@@ -1,0 +1,6 @@
+{
+  "type": "halcyon:entropic_processing",
+  "input": { "item": "halcyon:traversite_road" },
+  "time": 400,
+  "result": { "id": "halcyon:traversite_road_chunk", "count": 2 }
+}

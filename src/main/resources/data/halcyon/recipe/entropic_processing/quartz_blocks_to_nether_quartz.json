@@ -1,0 +1,6 @@
+{
+  "type": "halcyon:entropic_processing",
+  "input": { "item": "minecraft:quartz_block" },
+  "time": 100,
+  "result": { "id": "minecraft:quartz", "count": 4 }
+}

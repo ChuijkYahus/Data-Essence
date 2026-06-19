@@ -1,0 +1,35 @@
+{
+  "icon": {
+    "id": "halcyon:fabricator"
+  },
+  "tab": "halcyon:basics",
+  "x": -1,
+  "y": 0,
+  "pages": [
+    {
+      "type": "halcyon:item",
+      "item": {
+        "id": "halcyon:fabricator"
+      },
+      "text": {
+        "translate": "data_tablet.pages.fabricator.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "text": {
+        "translate": "data_tablet.pages.fabricator.page2.text"
+      },
+      "recipes": [
+        "halcyon:crafting/fabricator"
+      ]
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.fabricator.name"
+  },
+  "flavor": {
+    "translate": "data_tablet.pages.fabricator.flavor"
+  },
+  "is_default": true
+}

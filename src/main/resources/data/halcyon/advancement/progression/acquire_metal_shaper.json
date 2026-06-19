@@ -1,0 +1,21 @@
+{
+  "display": {
+    "icon": {
+      "id": "halcyon:metal_shaper"
+    },
+    "title": {
+      "translate": "advancements.halcyon.acquire_metal_shaper.title"
+    },
+    "description": {
+      "translate": "advancements.halcyon.acquire_metal_shaper.description"
+    },
+    "hidden": false
+  },
+  "parent": "halcyon:progression/craft_logical_matrix",
+  "criteria": {
+    "has_chamber": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": { "items": [ { "items": ["halcyon:metal_shaper" ] } ] }
+    }
+  }
+}

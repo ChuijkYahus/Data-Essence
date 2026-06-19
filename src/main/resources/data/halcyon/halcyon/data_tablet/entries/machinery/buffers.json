@@ -1,0 +1,36 @@
+{
+  "icon": {
+    "id": "halcyon:essence_buffer"
+  },
+  "tab": "halcyon:machinery",
+  "x": 0,
+  "y": -2,
+  "pages": [
+    {
+      "type": "halcyon:text",
+      "text": {
+        "translate": "data_tablet.pages.buffers.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:multiblock",
+      "multiblock": "halcyon:examples/buffer_usage"
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:fabrication/machines/buffer_essence",
+        "halcyon:fabrication/machines/buffer_item",
+        "halcyon:fabrication/machines/buffer_fluid"
+      ]
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.buffers.name"
+  },
+  "parents": [
+    "halcyon:machinery/itemworks",
+    "halcyon:machinery/fluidworks"
+  ],
+  "critical": true
+}

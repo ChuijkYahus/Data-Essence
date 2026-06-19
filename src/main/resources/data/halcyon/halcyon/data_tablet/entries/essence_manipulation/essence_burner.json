@@ -1,0 +1,50 @@
+{
+  "icon": {
+    "id": "halcyon:essence_burner"
+  },
+  "tab": "halcyon:essence_manipulation",
+  "critical": true,
+  "x": 0,
+  "y": 0,
+  "pages": [
+    {
+      "type": "halcyon:text",
+      "text": {
+        "translate": "data_tablet.pages.essence_burner.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "text": {
+        "translate": "data_tablet.pages.essence_burner.page2.text"
+      },
+      "recipes": [
+        "halcyon:fabrication/essence_burner"
+      ]
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.essence_burner.name"
+  },
+  "completion_stages": [
+    {
+      "completion_advancements": [
+        "halcyon:progression/place_essence_burner"
+      ],
+      "pages": [
+        {
+          "type": "halcyon:text",
+          "text": {
+            "translate": "data_tablet.pages.essence_burner.page1.incomplete_text"
+          }
+        },
+        {
+          "type": "halcyon:crafting",
+          "recipes": [
+            "halcyon:fabrication/essence_burner"
+          ]
+        }
+      ]
+    }
+  ]
+}

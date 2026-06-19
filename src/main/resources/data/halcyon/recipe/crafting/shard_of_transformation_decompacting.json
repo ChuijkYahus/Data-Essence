@@ -1,0 +1,6 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [{ "item": "halcyon:block_of_transformation" }],
+  "result": { "id": "halcyon:shard_of_transformation", "count": 9 }
+}

@@ -1,0 +1,33 @@
+{
+  "icon": {
+    "id": "halcyon:signal_tracker_resonance_receptor"
+  },
+  "tab": "halcyon:basics",
+  "x": 4,
+  "y": -3,
+  "pages": [
+    {
+      "type": "halcyon:text",
+      "text": {
+        "translate": "data_tablet.pages.signal_tracker_resonance_receptor.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:fabrication/equipment/signal_tracker_resonance_receptor"
+      ]
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.signal_tracker_resonance_receptor.name"
+  },
+  "flavor": {
+    "translate": "data_tablet.pages.signal_tracker_resonance_receptor.flavor"
+  },
+  "parents": [
+    "halcyon:basics/locator",
+    "halcyon:basics/lensing_crystal",
+    "halcyon:basics/plants"
+  ]
+}

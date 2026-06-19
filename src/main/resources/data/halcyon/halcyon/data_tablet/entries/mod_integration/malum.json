@@ -1,0 +1,35 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "malum"
+    }
+  ],
+  "icon": {
+    "id": "malum:encyclopedia_arcana"
+  },
+  "tab": "halcyon:mod_integration",
+  "x": -2,
+  "y": -3,
+  "pages": [
+    {
+      "type": "halcyon:text",
+      "text": {
+        "translate": "data_tablet.pages.integration_malum.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "text": {
+        "translate": "data_tablet.pages.integration_malum.page2.text"
+      },
+      "recipes": [
+        "halcyon:mod_integration/malum/infusion/arcane_charcoal_runewood",
+        "halcyon:mod_integration/malum/infusion/arcane_charcoal_soulwood"
+      ]
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.integration_malum.name"
+  }
+}

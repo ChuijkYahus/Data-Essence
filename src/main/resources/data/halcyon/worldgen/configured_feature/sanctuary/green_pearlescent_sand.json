@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:disk",
+  "config": {
+    "half_height": 2,
+    "radius": {
+      "type": "minecraft:uniform",
+      "max_inclusive": 6,
+      "min_inclusive": 3
+    },
+    "state_provider": {
+      "fallback": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "halcyon:green_pearlescent_sand"
+        }
+      },
+      "rules": []
+    },
+    "target": {
+      "type": "minecraft:matching_blocks",
+      "blocks": [
+        "halcyon:deep_sanctuary_sand"
+      ]
+    }
+  }
+}

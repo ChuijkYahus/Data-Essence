@@ -1,0 +1,17 @@
+{
+  "add": [
+    "halcyon:tier_3/crystallization_charge",
+    "halcyon:tier_3/ecliptrum",
+    "halcyon:tier_3/frozen_moonlight",
+    "halcyon:tier_3/integration_redstoneflux_nodes",
+    "halcyon:tier_3/lunar_components",
+    "halcyon:tier_3/lunar_energy_transfer",
+    "halcyon:tier_3/lunar_battery",
+    "halcyon:tier_3/lunar_strikes",
+    "halcyon:tier_3/lunarium",
+    "halcyon:tier_3/phenuan_material_studies_2",
+    "halcyon:tier_3/repulsion_rod"
+  ],
+  "remove":[
+  ]
+}

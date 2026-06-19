@@ -1,0 +1,14 @@
+{
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": { "halcyon:essence": 5 },
+  "entry": "halcyon:tools/decorative_blocks",
+  "pattern": [
+    " C ",
+    "CCC",
+    " C "
+  ],
+  "key": {
+    "C": { "item": "minecraft:copper_block" }
+  },
+  "result": { "id": "halcyon:patterned_copper", "count":10 }
+}

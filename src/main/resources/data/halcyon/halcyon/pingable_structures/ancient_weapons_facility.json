@@ -1,0 +1,20 @@
+{
+  "structure": "halcyon:ancient_weapons_facility",
+  "advancement": "halcyon:exploration/find_ancient_weapons_facility",
+  "requiredAdvancement": "halcyon:halcyon",
+  "color1": [
+    193,
+    34,
+    0
+  ],
+  "color2": [
+    233,
+    71,
+    99
+  ],
+  "icon": {
+    "texture": "halcyon:textures/gui/structure_icons.png",
+    "u": 64,
+    "v": 0
+  }
+}

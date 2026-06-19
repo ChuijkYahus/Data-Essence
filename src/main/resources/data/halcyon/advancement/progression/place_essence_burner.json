@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "halcyon:essence_burner"
+    },
+    "title": {
+      "translate": "advancements.halcyon.place_essence_burner.title"
+    },
+    "description": {
+      "translate": "advancements.halcyon.place_essence_burner.description"
+    },
+    "hidden": false
+  },
+  "parent": "halcyon:progression/acquire_fabricator",
+  "criteria": {
+    "placed_burner": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:location_check",
+            "predicate": { "block": { "blocks": [ "halcyon:essence_burner" ] } }
+          }
+        ]
+      }
+    }
+  }
+}

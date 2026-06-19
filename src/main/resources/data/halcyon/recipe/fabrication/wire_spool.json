@@ -1,0 +1,16 @@
+{
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": {},
+  "entry": "halcyon:basics/components",
+  "pattern": [
+    " C ",
+    " R ",
+    " C "
+  ],
+  "time": 40,
+  "key": {
+    "C": { "item": "minecraft:copper_ingot" },
+    "R": { "item": "halcyon:conductance_rod" }
+  },
+  "result": { "id": "halcyon:wire_spool" }
+}

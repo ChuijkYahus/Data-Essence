@@ -1,0 +1,32 @@
+{
+  "icon": {
+    "id": "halcyon:charger"
+  },
+  "tab": "halcyon:tools",
+  "critical": true,
+  "x": 0,
+  "y": 0,
+  "pages": [
+    {
+      "type": "halcyon:item",
+      "item": {
+        "id": "halcyon:charger"
+      },
+      "text": {
+        "translate": "data_tablet.pages.charger.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:fabrication/machines/charger"
+      ]
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.charger.name"
+  },
+  "parents": [
+    "halcyon:essence_manipulation/essence_transfer"
+  ]
+}

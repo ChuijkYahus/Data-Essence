@@ -1,0 +1,10 @@
+{
+  "icon": {
+    "id": "halcyon:sprite_book_flora"
+  },
+  "tier": 1,
+  "name": {
+    "translate": "data_tablet.databank_generic_lore"
+  },
+  "entry": "halcyon:lore/book_phenuan_flora"
+}

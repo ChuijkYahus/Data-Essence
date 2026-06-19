@@ -1,0 +1,13 @@
+{
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": {},
+  "entry": "halcyon:machinery/limited_item_buffer",
+  "pattern": [
+    "RBR"
+  ],
+  "key": {
+    "R": { "item": "halcyon:conductance_rod" },
+    "B": { "item": "halcyon:item_buffer" }
+  },
+  "result": { "id": "halcyon:limited_item_buffer", "count": 1 }
+}

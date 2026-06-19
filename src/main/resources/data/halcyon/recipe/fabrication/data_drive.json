@@ -1,0 +1,17 @@
+{
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": {
+    "halcyon:essence": 5
+  },
+  "time": 60,
+  "entry": "halcyon:machinery/automation",
+  "pattern": [
+    "RLC"
+  ],
+  "key": {
+    "R": { "item": "halcyon:conductance_rod" },
+    "L": { "item": "halcyon:logical_matrix" },
+    "C": { "item": "halcyon:capacitance_panel" }
+  },
+  "result": { "id": "halcyon:data_drive" }
+}

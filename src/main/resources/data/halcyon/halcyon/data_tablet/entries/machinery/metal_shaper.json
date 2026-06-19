@@ -1,0 +1,40 @@
+{
+  "icon": {
+    "id": "halcyon:metal_shaper"
+  },
+  "tab": "halcyon:machinery",
+  "x": -5,
+  "y": 2,
+  "pages": [
+    {
+      "type": "halcyon:item",
+      "item": { "id": "halcyon:metal_shaper" },
+      "text": {
+        "translate": "data_tablet.pages.metal_shaper.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "text": {
+        "translate": "data_tablet.pages.metal_shaper.page2.text"
+      },
+      "recipes": [
+        "halcyon:fabrication/machines/metal_shaper"
+      ]
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:crafting/panel_mold",
+        "halcyon:crafting/rod_mold"
+      ]
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.metal_shaper.name"
+  },
+  "parents": [
+    "halcyon:machinery/itemworks",
+    "halcyon:machinery/automation"
+  ]
+}

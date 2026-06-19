@@ -1,0 +1,33 @@
+{
+  "icon": {
+    "id": "halcyon:ecliptrum_cog_assembly_2x"
+  },
+  "tab": "halcyon:basics",
+  "x": -5,
+  "y": 0,
+  "pages": [
+    {
+      "type": "halcyon:text",
+      "text": {
+        "translate": "data_tablet.pages.lunar_components.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:crafting/reflective_panel",
+        "halcyon:crafting/transformative_rod",
+        "halcyon:crafting/ecliptrum_cog",
+        "halcyon:crafting/ecliptrum_cog_assembly_2x",
+        "halcyon:crafting/ecliptrum_cog_assembly_4x"
+      ]
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.lunar_components.name"
+  },
+  "parents": [
+    "halcyon:basics/components",
+    "halcyon:machinery_transformation/ecliptrum"
+  ]
+}

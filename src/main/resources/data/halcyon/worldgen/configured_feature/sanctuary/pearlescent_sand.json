@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:simple_random_selector",
+  "config": {
+    "features": [
+      "halcyon:sanctuary/red_pearlescent_sand",
+      "halcyon:sanctuary/green_pearlescent_sand",
+      "halcyon:sanctuary/blue_pearlescent_sand"
+    ]
+  }
+}

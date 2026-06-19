@@ -1,0 +1,12 @@
+{
+  "type": "halcyon:memorial",
+  "generator": {
+    "type": "minecraft:flat",
+    "settings": {
+      "biome": "halcyon:memorial",
+      "lakes": false,
+      "features": false,
+      "layers": []
+    }
+  }
+}

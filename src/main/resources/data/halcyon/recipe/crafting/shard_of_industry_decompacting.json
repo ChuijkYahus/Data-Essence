@@ -1,0 +1,6 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [{ "item": "halcyon:block_of_industry" }],
+  "result": { "id": "halcyon:essence_shard", "count": 9 }
+}

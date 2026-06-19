@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "id": "halcyon:locator"
+  },
+  "tab": "halcyon:basics",
+  "x": 2,
+  "y": -3,
+  "pages": [
+    {
+      "type": "halcyon:text",
+      "text": {
+        "translate": "data_tablet.pages.locator.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:fabrication/equipment/locator"
+      ]
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.locator.name"
+  },
+  "flavor": {
+    "translate": "data_tablet.pages.locator.flavor"
+  },
+  "is_default": true
+}

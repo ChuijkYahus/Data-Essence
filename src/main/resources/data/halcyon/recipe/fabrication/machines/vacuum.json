@@ -1,0 +1,17 @@
+{
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": { "halcyon:essence": 5 },
+  "entry": "halcyon:machinery/vacuum",
+  "pattern": [
+    "RCR",
+    "CEC",
+    "RCR"
+  ],
+  "time": 40,
+  "key": {
+    "C": { "item": "halcyon:conductance_rod" },
+    "E": { "item": "minecraft:ender_pearl" },
+    "R": { "item": "minecraft:redstone" }
+  },
+  "result": { "id": "halcyon:vacuum" }
+}

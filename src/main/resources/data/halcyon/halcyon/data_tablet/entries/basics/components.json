@@ -1,0 +1,81 @@
+{
+  "icon": {
+    "id": "halcyon:logical_matrix"
+  },
+  "tab": "halcyon:basics",
+  "x": -3,
+  "y": 0,
+  "critical": true,
+  "pages": [
+    {
+      "type": "halcyon:text",
+      "text": {
+        "translate": "data_tablet.pages.components.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:crafting/capacitance_panel",
+        "halcyon:crafting/conductance_rod",
+        "halcyon:crafting/propeller",
+        "halcyon:crafting/exciter",
+        "halcyon:crafting/heating_coil",
+        "halcyon:crafting/copper_shell",
+        "halcyon:crafting/iron_drill"
+      ]
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:fabrication/logical_matrix",
+        "halcyon:fabrication/wire_spool",
+        "halcyon:fabrication/memory_cell"
+      ]
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:infusion/lens_from_glass",
+        "halcyon:infusion/essence_pathways"
+      ]
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:synthesis/assembly_actuator",
+        "halcyon:synthesis/logical_matrix",
+        "halcyon:synthesis/prepared_panel"
+      ]
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.components.name"
+  },
+  "parents": [
+    "halcyon:basics/fabricator"
+  ],
+  "completion_stages": [
+    {
+      "completion_advancements": [
+        "halcyon:progression/craft_logical_matrix"
+      ],
+      "pages": [
+        {
+          "type": "halcyon:text",
+          "text": {
+            "translate": "data_tablet.pages.components.page1.incomplete_text"
+          }
+        },
+        {
+          "type": "halcyon:crafting",
+          "recipes": [
+            "halcyon:crafting/capacitance_panel",
+            "halcyon:crafting/conductance_rod",
+            "halcyon:fabrication/logical_matrix"
+          ]
+        }
+      ]
+    }
+  ]
+}

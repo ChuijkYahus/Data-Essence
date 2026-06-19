@@ -1,0 +1,21 @@
+{
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": {
+    "halcyon:essence": 50
+  },
+  "entry": "halcyon:machinery/survey_tunneler",
+  "pattern": [
+    "CIC",
+    "CcC",
+    "PDP"
+  ],
+  "time": 100,
+  "key": {
+    "C": { "item": "halcyon:conductance_rod" },
+    "I": { "item": "minecraft:iron_ingot" },
+    "c": { "item": "minecraft:chain" },
+    "P": { "item": "halcyon:capacitance_panel" },
+    "D": { "item": "halcyon:iron_drill" }
+  },
+  "result": { "id": "halcyon:survey_tunneler" }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": {
+    "halcyon:essence": 20
+  },
+  "entry": "halcyon:basics/essence_meter",
+  "pattern": [
+    " C ",
+    "CLC",
+    "CEC"
+  ],
+  "time": 40,
+  "key": {
+    "C": { "item": "halcyon:capacitance_panel" },
+    "E": { "item": "halcyon:essence_shard" },
+    "L": { "item": "halcyon:logical_matrix" }
+  },
+  "result": { "id": "halcyon:essence_meter" }
+}

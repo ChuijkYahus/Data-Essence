@@ -1,0 +1,11 @@
+{
+  "type": "halcyon:synthesis",
+  "essenceCost": {
+    "halcyon:essence": 10
+  },
+  "input": { "item": "halcyon:copper_shell" },
+  "input2": { "tag": "halcyon:explosive_material" },
+  "time": 100,
+  "result": { "id": "halcyon:essence_bomb", "count": 4 },
+  "entry": "halcyon:tools/essence_bombs"
+}

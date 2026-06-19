@@ -1,0 +1,19 @@
+{
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": {
+    "halcyon:essence": 10
+  },
+  "entry": "halcyon:machinery/fluidworks",
+  "pattern": [
+    "P P",
+    "PFP",
+    "PBP"
+  ],
+  "time": 60,
+  "key": {
+    "P": { "item": "halcyon:capacitance_panel" },
+    "F": { "item": "halcyon:propeller" },
+    "B": { "item": "minecraft:bucket" }
+  },
+  "result": { "id": "halcyon:fluid_spiller" }
+}

@@ -1,0 +1,27 @@
+{
+  "icon": {
+    "id": "halcyon:essence_bomb"
+  },
+  "tab": "halcyon:tools",
+  "x": -3,
+  "y": 0,
+  "pages": [
+    {
+      "type": "halcyon:item",
+      "item": { "id": "halcyon:essence_bomb" },
+      "text": {
+        "translate": "data_tablet.pages.essence_bombs.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:fabrication/equipment/essence_bomb",
+        "halcyon:synthesis/essence_bomb"
+      ]
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.essence_bombs.name"
+  }
+}

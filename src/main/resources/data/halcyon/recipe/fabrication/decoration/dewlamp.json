@@ -1,0 +1,15 @@
+{
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": { "halcyon:essence": 10 },
+  "entry": "halcyon:tools/decorative_blocks",
+  "pattern": [
+    " B ",
+    " D ",
+    " B "
+  ],
+  "key": {
+    "B": { "item": "minecraft:basalt" },
+    "D": { "tag": "c:dyes" }
+  },
+  "result": { "id": "halcyon:dewlamp", "count": 4 }
+}

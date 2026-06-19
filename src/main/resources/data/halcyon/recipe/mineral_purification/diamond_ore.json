@@ -1,0 +1,7 @@
+{
+    "type": "halcyon:mineral_purification",
+    "input": { "tag": "c:ores/diamond" },
+    "time": 300,
+    "result": { "id": "minecraft:diamond" },
+    "nuggetResult": { "id": "halcyon:diamond_shard", "count": 2 }
+}

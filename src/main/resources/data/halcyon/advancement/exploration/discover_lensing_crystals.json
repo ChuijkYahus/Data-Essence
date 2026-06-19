@@ -1,0 +1,21 @@
+{
+  "display": {
+    "icon": {
+      "id": "halcyon:lensing_crystal_ore"
+    },
+    "title": {
+      "translate": "advancements.halcyon.discover_lensing_crystals.title"
+    },
+    "description": {
+      "translate": "advancements.halcyon.discover_lensing_crystals.description"
+    },
+    "hidden": true
+  },
+  "parent": "halcyon:exploration/discover_hidden_block",
+  "criteria": {
+    "has_lensing_crystal": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": { "items": [ { "items": ["halcyon:lensing_crystal" ] } ] }
+    }
+  }
+}

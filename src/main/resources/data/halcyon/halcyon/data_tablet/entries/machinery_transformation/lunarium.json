@@ -1,0 +1,62 @@
+{
+  "icon": {
+    "id": "halcyon:lunarium"
+  },
+  "tab": "halcyon:machinery_transformation",
+  "x": 0,
+  "y": 0,
+  "critical": true,
+  "pages": [
+    {
+      "type": "halcyon:item",
+      "item": {
+        "id": "halcyon:lunarium"
+      },
+      "text": {
+        "translate": "data_tablet.pages.lunarium.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:fabrication/lunarium"
+      ]
+    },
+    {
+      "type": "halcyon:multiblock",
+      "multiblock": "halcyon:machines/lunarium"
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.lunarium.name"
+  },
+  "flavor": {
+    "translate": "data_tablet.pages.lunarium.flavor"
+  },
+  "parents": [
+    "halcyon:basics/fabricator",
+    "halcyon:machinery_transformation/ecliptrum",
+    "halcyon:basics/lunar_strikes"
+  ],
+  "completion_stages": [
+    {
+      "completion_advancements": [
+        "halcyon:progression/acquire_lunarium"
+      ],
+      "pages": [
+        {
+          "type": "halcyon:text",
+          "text": {
+            "translate": "data_tablet.pages.lunarium.page1.incomplete_text"
+          }
+        },
+        {
+          "type": "halcyon:crafting",
+          "recipes": [
+            "halcyon:fabrication/lunarium"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "files": [
+    {
+      "type": "halcyon:text",
+      "text": {
+        "translate": "computer.generic.signal_from_mountains"
+      }
+    },
+    {
+      "type": "halcyon:text",
+      "text": {
+        "translate": "computer.ancient_weapons_facility_01.experiment_log_01",
+        "font": "halcyon:ancient"
+      },
+      "rtl": true
+    }
+  ]
+}

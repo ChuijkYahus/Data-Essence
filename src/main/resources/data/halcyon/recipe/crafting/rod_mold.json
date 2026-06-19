@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " I ",
+    "IRI",
+    " I "
+  ],
+  "key": {
+    "I": { "item": "minecraft:iron_ingot" },
+    "R": { "item": "halcyon:conductance_rod" }
+  },
+  "result": { "id": "halcyon:rod_mold" }
+}

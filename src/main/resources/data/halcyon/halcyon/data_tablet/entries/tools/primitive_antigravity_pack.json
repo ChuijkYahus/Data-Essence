@@ -1,0 +1,31 @@
+{
+  "icon": {
+    "id": "halcyon:primitive_anti_gravity_pack"
+  },
+  "tab": "halcyon:tools",
+  "x": -2,
+  "y": 1,
+  "pages": [
+    {
+      "type": "halcyon:item",
+      "item": {
+        "id": "halcyon:primitive_anti_gravity_pack"
+      },
+      "text": {
+        "translate": "data_tablet.pages.primitive_antigravity_pack.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:fabrication/equipment/primitive_antigravity_pack"
+      ]
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.primitive_antigravity_pack.name"
+  },
+  "parents": [
+    "halcyon:tools/charger"
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "icon": {
+    "id": "halcyon:lensing_crystal"
+  },
+  "tab": "halcyon:basics",
+  "critical": true,
+  "x": 2,
+  "y": 2,
+  "pages": [
+    {
+      "type": "halcyon:item",
+      "item": { "id": "halcyon:lensing_crystal" },
+      "text": {
+        "translate": "data_tablet.pages.lensing_crystals.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:infusion/lens_from_lensing_crystal"
+      ]
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.lensing_crystals.name"
+  },
+  "parents": [
+    "halcyon:machinery/infuser"
+  ],
+  "completion_stages": [
+    {
+      "completion_advancements": [
+        "halcyon:exploration/discover_lensing_crystals"
+      ],
+      "pages": [
+        {
+          "type": "halcyon:text",
+          "text": {
+            "translate": "data_tablet.pages.lensing_crystals.page1.incomplete_text"
+          }
+        }
+      ]
+    }
+  ]
+}

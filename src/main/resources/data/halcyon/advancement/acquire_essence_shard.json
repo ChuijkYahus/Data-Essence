@@ -1,0 +1,21 @@
+{
+  "display": {
+    "icon": {
+      "id": "halcyon:essence_crystal"
+    },
+    "title": {
+      "translate": "advancements.halcyon.acquire_essence_shard.title"
+    },
+    "description": {
+      "translate": "advancements.halcyon.acquire_essence_shard.description"
+    },
+    "hidden": false
+  },
+  "parent": "halcyon:halcyon",
+  "criteria": {
+    "has_burner": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": { "items": [ { "items": ["halcyon:essence_shard" ] } ] }
+    }
+  }
+}

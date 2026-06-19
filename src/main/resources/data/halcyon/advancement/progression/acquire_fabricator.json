@@ -1,0 +1,25 @@
+{
+  "display": {
+    "icon": {
+      "id": "halcyon:fabricator"
+    },
+    "title": {
+      "translate": "advancements.halcyon.acquire_fabricator.title"
+    },
+    "description": {
+      "translate": "advancements.halcyon.acquire_fabricator.description"
+    },
+    "hidden": false
+  },
+  "parent": "halcyon:halcyon",
+  "criteria": {
+    "has_fabricator": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": { "items": [ { "items": ["halcyon:fabricator" ] } ] }
+    },
+    "has_redirector": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": { "items": [ { "items": ["halcyon:essence_redirector" ] } ] }
+    }
+  }
+}

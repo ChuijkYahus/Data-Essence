@@ -1,0 +1,12 @@
+{
+  "icon": {
+    "id": "halcyon:lunar_wire"
+  },
+  "name": {
+    "translate": "data_tablet.tabs.machinery_transformation.name"
+  },
+  "placement": {
+    "place_after": "halcyon:machinery",
+    "place_before": "halcyon:tools"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "icon": {
+    "id": "halcyon:sprite_book_flora"
+  },
+  "tab": "halcyon:lore",
+  "x": -3,
+  "y": 0,
+  "pages": [
+    {
+      "type": "halcyon:text",
+      "text": {
+        "translate": "data_tablet.pages.book_flora_survey.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:text",
+      "text": {
+        "translate": "data_tablet.pages.book_flora_survey.page2.text"
+      }
+    },
+    {
+      "type": "halcyon:text",
+      "text": {
+        "translate": "data_tablet.pages.book_flora_survey.page3.text"
+      }
+    },
+    {
+      "type": "halcyon:text",
+      "text": {
+        "translate": "data_tablet.pages.book_flora_survey.page4.text"
+      }
+    },
+    {
+      "type": "halcyon:text",
+      "text": {
+        "translate": "data_tablet.pages.book_flora_survey.page5.text"
+      }
+    },
+    {
+      "type": "halcyon:text",
+      "text": {
+        "translate": "data_tablet.pages.book_flora_survey.page6.text"
+      }
+    },
+    {
+      "type": "halcyon:text",
+      "text": {
+        "translate": "data_tablet.pages.book_flora_survey.wip"
+      }
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.book_flora_survey.name"
+  },
+  "flavor": {
+    "translate": "data_tablet.pages.book_flora_survey.flavor"
+  }
+}

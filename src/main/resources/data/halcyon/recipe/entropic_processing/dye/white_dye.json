@@ -1,0 +1,6 @@
+{
+  "type": "halcyon:entropic_processing",
+  "input": { "tag": "halcyon:makes_white_dye" },
+  "time": 50,
+  "result": { "id": "minecraft:white_dye", "count": 3 }
+}

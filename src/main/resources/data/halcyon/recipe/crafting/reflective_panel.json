@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "CCC",
+    "   ",
+    "   "
+  ],
+  "key": {
+    "C": { "item": "halcyon:ecliptrum_ingot" }
+  },
+  "result": { "id": "halcyon:reflective_panel", "count": 2 }
+}

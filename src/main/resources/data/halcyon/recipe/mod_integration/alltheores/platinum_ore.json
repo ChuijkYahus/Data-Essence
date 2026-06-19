@@ -1,0 +1,13 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "alltheores"
+        }
+    ],
+    "type": "halcyon:mineral_purification",
+    "input": { "tag": "c:ores/platinum" },
+    "time": 300,
+    "result": { "id": "alltheores:platinum_ingot" },
+    "nuggetResult": { "id": "alltheores:platinum_nugget", "count": 2 }
+}

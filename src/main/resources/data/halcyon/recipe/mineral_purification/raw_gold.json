@@ -1,0 +1,7 @@
+{
+    "type": "halcyon:mineral_purification",
+    "input": { "tag": "c:raw_materials/gold" },
+    "time": 150,
+    "result": { "id": "minecraft:gold_ingot" },
+    "nuggetResult": { "id": "minecraft:gold_nugget", "count": 1 }
+}

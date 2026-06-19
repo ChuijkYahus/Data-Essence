@@ -1,0 +1,19 @@
+{
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": { "halcyon:essence": 25 },
+  "entry": "halcyon:essence_manipulation/essence_leech",
+  "time": 200,
+  "pattern": [
+    "PIP",
+    "RSR",
+    "OSO"
+  ],
+  "key": {
+    "P": { "item": "halcyon:capacitance_panel" },
+    "I": { "item": "halcyon:iron_drill" },
+    "R": { "item": "halcyon:conductance_rod" },
+    "S": { "item": "halcyon:essence_shard" },
+    "O": { "item": "halcyon:polished_obsidian" }
+  },
+  "result": { "id": "halcyon:essence_leech" }
+}

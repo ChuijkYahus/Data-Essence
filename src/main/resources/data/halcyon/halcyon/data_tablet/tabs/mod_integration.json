@@ -1,0 +1,11 @@
+{
+  "icon": {
+    "id": "halcyon:essence_redirector"
+  },
+  "name": {
+    "translate": "data_tablet.tabs.mod_integration.name"
+  },
+  "placement": {
+    "place_after": "halcyon:tools"
+  }
+}

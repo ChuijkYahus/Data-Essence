@@ -1,0 +1,25 @@
+{
+  "add": [
+    "halcyon:tier_1/book_phenuan_flora",
+    "halcyon:tier_1/essence_crystals",
+    "halcyon:tier_1/traversite_trudgers",
+    "halcyon:tier_1/survey_tunneler",
+    "halcyon:tier_2/ancient_rock",
+    "halcyon:tier_2/ender_redirection_network",
+    "halcyon:tier_2/enticing_lure",
+    "halcyon:tier_2/harvester",
+    "halcyon:tier_2/industrial_plant_siphon",
+    "halcyon:tier_2/illumination_rod",
+    "halcyon:tier_2/lensing_crystals",
+    "halcyon:tier_2/mineral_finding_rod",
+    "halcyon:tier_2/plants",
+    "halcyon:tier_2/signal_tracker_resonance_receptor",
+    "halcyon:tier_2/transcendental_tether",
+    "halcyon:tier_2/warp_capsule",
+    "halcyon:tier_3/frozen_moonlight",
+    { "value": "halcyon:tier_1/integration_malum", "required": false },
+    { "value": "halcyon:tier_3/integration_malum_lunar", "required": false }
+  ],
+  "remove": [
+  ]
+}

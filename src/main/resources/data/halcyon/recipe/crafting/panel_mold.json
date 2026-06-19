@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " I ",
+    "IPI",
+    " I "
+  ],
+  "key": {
+    "I": { "item": "minecraft:iron_ingot" },
+    "P": { "item": "halcyon:capacitance_panel" }
+  },
+  "result": { "id": "halcyon:panel_mold" }
+}

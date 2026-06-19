@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "id": "halcyon:aether_rune"
+    },
+    "title": {
+      "translate": "advancements.halcyon.failed_pylon.title"
+    },
+    "description": {
+      "translate": "advancements.halcyon.failed_pylon.description"
+    },
+    "hidden": true
+  },
+  "parent": "halcyon:halcyon",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": {
+          "location": {
+            "structures": "halcyon:failed_pylon"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": {
+    "halcyon:essence": 10
+  },
+  "entry": "halcyon:tools/warp_capsule",
+  "pattern": [
+    " PB",
+    "PEP",
+    "BP "
+  ],
+  "time": 100,
+  "key": {
+    "P": { "item": "halcyon:polished_obsidian" },
+    "B": { "item": "halcyon:bonding_powder" },
+    "E": { "item": "minecraft:ender_pearl" }
+  },
+  "result": { "id": "halcyon:warp_capsule", "count": 4 }
+}

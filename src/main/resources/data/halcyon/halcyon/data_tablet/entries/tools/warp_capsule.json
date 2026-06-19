@@ -1,0 +1,35 @@
+{
+  "icon": {
+    "id": "halcyon:warp_capsule"
+  },
+  "tab": "halcyon:tools",
+  "x": 2,
+  "y": -2,
+  "pages": [
+    {
+      "type": "halcyon:item",
+      "item": { "id": "halcyon:warp_capsule" },
+      "text": {
+        "translate": "data_tablet.pages.warp_capsule.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:fabrication/equipment/warp_capsule"
+      ],
+      "text": {
+        "translate": "data_tablet.pages.warp_capsule.page2.text"
+      }
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.warp_capsule.name"
+  },
+  "flavor": {
+    "translate": "data_tablet.pages.warp_capsule.flavor"
+  },
+  "parents": [
+    "halcyon:basics/plants"
+  ]
+}

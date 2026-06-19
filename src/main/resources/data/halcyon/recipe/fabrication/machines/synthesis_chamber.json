@@ -1,0 +1,20 @@
+{
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": {
+    "halcyon:essence": 50
+  },
+  "entry": "halcyon:machinery/synthesis_chamber",
+  "pattern": [
+    "CCC",
+    "RPR",
+    "OOO"
+  ],
+  "time": 200,
+  "key": {
+    "C": { "item": "halcyon:capacitance_panel" },
+    "P": { "item": "halcyon:essence_pathways" },
+    "R": { "item": "halcyon:conductance_rod" },
+    "O": { "item": "halcyon:polished_obsidian" }
+  },
+  "result": { "id": "halcyon:synthesis_chamber" }
+}

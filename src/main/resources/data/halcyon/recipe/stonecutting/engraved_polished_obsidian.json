@@ -1,0 +1,5 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": { "item": "halcyon:polished_obsidian" },
+  "result": { "id": "halcyon:engraved_polished_obsidian", "count": 1 }
+}

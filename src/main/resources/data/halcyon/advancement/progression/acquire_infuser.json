@@ -1,0 +1,21 @@
+{
+  "display": {
+    "icon": {
+      "id": "halcyon:infuser"
+    },
+    "title": {
+      "translate": "advancements.halcyon.acquire_infuser.title"
+    },
+    "description": {
+      "translate": "advancements.halcyon.acquire_infuser.description"
+    },
+    "hidden": false
+  },
+  "parent": "halcyon:progression/use_data_drive",
+  "criteria": {
+    "has_infuser": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": { "items": [ { "items": ["halcyon:infuser" ] } ] }
+    }
+  }
+}

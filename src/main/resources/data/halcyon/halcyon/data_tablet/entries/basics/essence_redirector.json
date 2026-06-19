@@ -1,0 +1,32 @@
+{
+  "icon": {
+    "id": "halcyon:essence_redirector"
+  },
+  "tab": "halcyon:basics",
+  "x": 1,
+  "y": 0,
+  "pages": [
+    {
+      "type": "halcyon:item",
+      "item": {
+        "id": "halcyon:essence_redirector"
+      },
+      "text": {
+        "translate": "data_tablet.pages.essence_redirector.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:crafting/essence_redirector"
+      ]
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.essence_redirector.name"
+  },
+  "flavor": {
+    "translate": "data_tablet.pages.essence_redirector.flavor"
+  },
+  "is_default": true
+}

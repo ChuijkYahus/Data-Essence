@@ -1,0 +1,18 @@
+{
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": { "halcyon:essence": 50 },
+  "entry": "halcyon:machinery/metal_shaper",
+  "pattern": [
+    "RIR",
+    "P P",
+    "PHP"
+  ],
+  "time": 100,
+  "key": {
+    "P": { "item": "halcyon:capacitance_panel" },
+    "I": { "item": "minecraft:iron_block" },
+    "R": { "item": "halcyon:conductance_rod" },
+    "H": { "item": "halcyon:heating_coil" }
+  },
+  "result": { "id": "halcyon:metal_shaper" }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "halcyon:synthesis",
+  "essenceCost": {
+    "halcyon:essence": 200
+  },
+  "input": { "item": "halcyon:capacitance_panel" },
+  "input2": { "item": "halcyon:capacitance_panel" },
+  "time": 50,
+  "result": { "id": "halcyon:prepared_panel", "count": 1 },
+  "entry": "halcyon:basics/components"
+}

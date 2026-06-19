@@ -1,0 +1,36 @@
+{
+  "icon": {
+    "id": "halcyon:ender_pearl_capture"
+  },
+  "tab": "halcyon:tools",
+  "x": -5,
+  "y": 0,
+  "pages": [
+    {
+      "type": "halcyon:item",
+      "item": {
+        "id": "halcyon:ender_pearl_relay"
+      },
+      "text": {
+        "translate": "data_tablet.pages.ender_redirection_network.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:fabrication/utilities/ender_pearl_capture",
+        "halcyon:fabrication/utilities/ender_pearl_relay",
+        "halcyon:fabrication/utilities/ender_pearl_destination"
+      ]
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.ender_redirection_network.name"
+  },
+  "flavor": {
+    "translate": "data_tablet.pages.ender_redirection_network.flavor"
+  },
+  "parents": [
+    "halcyon:basics/lensing_crystals"
+  ]
+}

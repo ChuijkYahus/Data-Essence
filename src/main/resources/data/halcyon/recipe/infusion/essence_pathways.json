@@ -1,0 +1,15 @@
+{
+  "type": "halcyon:infusion",
+  "essenceCost": {
+    "halcyon:essence": 200
+  },
+  "entry": "halcyon:basics/components",
+  "input": {
+    "item": "minecraft:copper_block",
+    "count": 1
+  },
+  "result": {
+    "id": "halcyon:essence_pathways",
+    "count": 4
+  }
+}

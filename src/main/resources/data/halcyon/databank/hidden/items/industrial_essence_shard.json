@@ -1,0 +1,15 @@
+{
+  "condition": {
+    "type": "databank:advancement",
+    "advancement": "halcyon:halcyon"
+  },
+  "type": {
+    "type": "databank:item",
+    "hidden_as": "halcyon:essence_shard",
+    "original": "halcyon:essence_shard",
+    "name_override": {
+      "translate": "hidden.halcyon.shard",
+      "font": "halcyon:ancient"
+    }
+  }
+}

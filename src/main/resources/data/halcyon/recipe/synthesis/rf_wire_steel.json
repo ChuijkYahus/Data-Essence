@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:tag_empty",
+        "tag": "c:ingots/steel"
+      }
+    }
+  ],
+  "type": "halcyon:synthesis",
+  "essenceCost": {
+    "halcyon:essence": 150,
+    "halcyon:lunar_essence": 50
+  },
+  "input": { "item": "halcyon:wire_spool" },
+  "input2": { "tag": "c:ingots/steel" },
+  "time": 100,
+  "result": { "id": "halcyon:rf_wire", "count": 4 },
+  "entry": "halcyon:mod_integration/redstoneflux_nodes"
+}

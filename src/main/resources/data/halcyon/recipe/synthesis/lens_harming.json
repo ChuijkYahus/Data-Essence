@@ -1,0 +1,11 @@
+{
+  "type": "halcyon:synthesis",
+  "essenceCost": {
+    "halcyon:essence": 100
+  },
+  "input": { "item": "halcyon:lens" },
+  "input2": { "item": "minecraft:spider_eye" },
+  "time": 100,
+  "result": { "id": "halcyon:harming_lens", "count": 1 },
+  "entry": "halcyon:machinery/laser_emitter"
+}

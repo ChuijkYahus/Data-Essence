@@ -1,0 +1,20 @@
+{
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": {
+    "halcyon:essence": 250
+  },
+  "entry": "halcyon:tools/transcendental_tether",
+  "pattern": [
+    " OB",
+    "CEO",
+    "BC "
+  ],
+  "time": 200,
+  "key": {
+    "B": { "item": "halcyon:bonding_powder" },
+    "C": { "item": "halcyon:patterned_copper" },
+    "E": { "item": "halcyon:essence_shard" },
+    "O": { "item": "halcyon:polished_obsidian" }
+  },
+  "result": { "id": "halcyon:transcendental_tether" }
+}

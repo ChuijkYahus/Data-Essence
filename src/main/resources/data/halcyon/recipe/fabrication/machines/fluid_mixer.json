@@ -1,0 +1,18 @@
+{
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": { "halcyon:essence": 25 },
+  "entry": "halcyon:machinery/fluid_mixer",
+  "pattern": [
+    "I I",
+    "GPG",
+    "OOO"
+  ],
+  "time": 100,
+  "key": {
+    "I": { "item": "minecraft:iron_ingot" },
+    "G": { "tag":  "c:glass_blocks" },
+    "P": { "item": "halcyon:propeller" },
+    "O": { "item": "halcyon:polished_obsidian" }
+  },
+  "result": { "id": "halcyon:fluid_mixer" }
+}

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "halcyon:block/essence_reader",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "halcyon:block/essence_reader"
+    },
+    "facing=south": {
+      "model": "halcyon:block/essence_reader",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "halcyon:block/essence_reader",
+      "y": 270
+    }
+  }
+}

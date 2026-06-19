@@ -1,0 +1,17 @@
+{
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": {
+    "halcyon:essence": 400
+  },
+  "entry": "halcyon:basics/signal_tracker_resonance_receptor",
+  "pattern": [
+    "MMM",
+    " P "
+  ],
+  "time": 200,
+  "key": {
+    "M": { "item": "halcyon:memory_cell" },
+    "P": { "item": "halcyon:prepared_panel" }
+  },
+  "result": { "id": "halcyon:signal_tracker_resonance_receptor", "count": 1 }
+}

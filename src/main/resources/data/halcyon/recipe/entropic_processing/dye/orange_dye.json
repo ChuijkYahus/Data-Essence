@@ -1,0 +1,6 @@
+{
+  "type": "halcyon:entropic_processing",
+  "input": { "tag": "halcyon:makes_orange_dye" },
+  "time": 50,
+  "result": { "id": "minecraft:orange_dye", "count": 3 }
+}

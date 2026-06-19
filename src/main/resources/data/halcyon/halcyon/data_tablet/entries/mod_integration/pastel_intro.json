@@ -1,0 +1,39 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "pastel"
+    }
+  ],
+  "icon": {
+    "id": "pastel:amethyst_powder"
+  },
+  "tab": "halcyon:mod_integration",
+  "x": 0,
+  "y": -2,
+  "pages": [
+    {
+      "type": "halcyon:text",
+      "text": {
+        "translate": "data_tablet.pages.integration_pastel_intro.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "text": {
+        "translate": "data_tablet.pages.integration_pastel_intro.page2.text"
+      },
+      "recipes": [
+        "halcyon:mod_integration/pastel/entropic_processing/gemstone/amethyst_block",
+        "halcyon:mod_integration/pastel/entropic_processing/gemstone/amethyst_shard",
+        "halcyon:mod_integration/pastel/entropic_processing/gemstone/small_amethyst_bud",
+        "halcyon:mod_integration/pastel/entropic_processing/gemstone/medium_amethyst_bud",
+        "halcyon:mod_integration/pastel/entropic_processing/gemstone/large_amethyst_bud",
+        "halcyon:mod_integration/pastel/entropic_processing/gemstone/amethyst_cluster"
+      ]
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.integration_pastel_intro.name"
+  }
+}

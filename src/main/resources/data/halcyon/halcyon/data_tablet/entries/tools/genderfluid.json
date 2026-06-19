@@ -1,0 +1,39 @@
+{
+  "icon": {
+    "id": "halcyon:traversite_road_chunk"
+  },
+  "tab": "halcyon:tools",
+  "x": 5,
+  "y": 0,
+  "pages": [
+    {
+      "type": "halcyon:item",
+      "item": { "id": "halcyon:traversite_road_chunk" },
+      "text": {
+        "translate": "data_tablet.pages.genderfluid.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:item",
+      "item": { "id": "halcyon:genderfluid_bucket" },
+      "text": {
+        "translate": "data_tablet.pages.genderfluid.page2.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:entropic_processing/traversite_road_chunk",
+        "halcyon:fluid_mixing/genderfluid"
+      ]
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.genderfluid.name"
+  },
+  "parents": [
+    "halcyon:tools/traversite_road",
+    "halcyon:machinery/entropic_processor",
+    "halcyon:machinery/fluid_mixer"
+  ]
+}

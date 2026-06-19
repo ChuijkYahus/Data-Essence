@@ -1,0 +1,32 @@
+{
+  "icon": {
+    "id": "halcyon:repulsion_rod"
+  },
+  "tab": "halcyon:tools",
+  "x": 1,
+  "y": 3,
+  "pages": [
+    {
+      "type": "halcyon:text",
+      "text": {
+        "translate": "data_tablet.pages.repulsion_rod.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:fabrication/equipment/repulsion_rod"
+      ]
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.repulsion_rod.name"
+  },
+  "flavor": {
+    "translate": "data_tablet.pages.repulsion_rod.flavor"
+  },
+  "parents": [
+    "halcyon:machinery_transformation/lunarium",
+    "halcyon:tools/charger"
+  ]
+}

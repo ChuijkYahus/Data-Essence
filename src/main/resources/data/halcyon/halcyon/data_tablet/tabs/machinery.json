@@ -1,0 +1,11 @@
+{
+  "icon": {
+    "id": "halcyon:essence_wire"
+  },
+  "name": {
+    "translate": "data_tablet.tabs.machinery.name"
+  },
+  "placement": {
+    "place_after": "halcyon:essence_manipulation"
+  }
+}

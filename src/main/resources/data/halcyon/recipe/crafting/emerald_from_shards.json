@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "eee",
+    "eee",
+    "eee"
+  ],
+  "key": {
+    "e": { "item": "halcyon:emerald_shard" }
+  },
+  "result": { "id": "minecraft:emerald" }
+}

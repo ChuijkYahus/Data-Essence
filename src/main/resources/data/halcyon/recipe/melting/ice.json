@@ -1,0 +1,6 @@
+{
+  "type": "halcyon:melting",
+  "input": { "item": "minecraft:ice" },
+  "result": { "id": "minecraft:water", "amount": 1000 },
+  "time": 100
+}

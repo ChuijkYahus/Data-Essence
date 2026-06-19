@@ -1,0 +1,32 @@
+{
+  "icon": {
+    "id": "halcyon:traversite_road"
+  },
+  "tab": "halcyon:tools",
+  "x": 3,
+  "y": 0,
+  "pages": [
+    {
+      "type": "halcyon:item",
+      "item": { "id": "halcyon:traversite_road"},
+      "text": {
+        "translate": "data_tablet.pages.traversite_road.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "text": {
+        "translate": "data_tablet.pages.traversite_road.page2.text"
+      },
+      "recipes": [
+        "halcyon:infusion/traversite_road"
+      ]
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.traversite_road.name"
+  },
+  "parents": [
+    "halcyon:machinery/infuser"
+  ]
+}

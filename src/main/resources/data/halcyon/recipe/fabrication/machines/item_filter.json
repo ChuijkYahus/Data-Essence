@@ -1,0 +1,18 @@
+{
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": { "halcyon:essence": 5 },
+  "entry": "halcyon:machinery/item_filter",
+  "pattern": [
+    "COC",
+    "DLD",
+    "COC"
+  ],
+  "time": 60,
+  "key": {
+    "C": { "item": "halcyon:capacitance_panel" },
+    "D": { "tag": "c:dyes" },
+    "O": { "item": "halcyon:polished_obsidian" },
+    "L": { "item": "halcyon:logical_matrix" }
+  },
+  "result": { "id": "halcyon:item_filter" }
+}

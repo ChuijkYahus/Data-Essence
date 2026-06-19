@@ -1,0 +1,19 @@
+{
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": {
+    "halcyon:essence": 60
+  },
+  "time": 120,
+  "entry": "halcyon:tools/ender_redirection_network",
+  "pattern": [
+    "RPR",
+    "PLP",
+    "RPR"
+  ],
+  "key": {
+    "L": { "item": "halcyon:lensing_crystal" },
+    "R": { "item": "halcyon:conductance_rod" },
+    "P": { "item": "halcyon:capacitance_panel" }
+  },
+  "result": { "id": "halcyon:ender_pearl_relay", "count": 4 }
+}

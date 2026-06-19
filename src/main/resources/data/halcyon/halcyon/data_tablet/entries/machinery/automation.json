@@ -1,0 +1,28 @@
+{
+  "icon": {
+    "id": "halcyon:data_drive"
+  },
+  "tab": "halcyon:machinery",
+  "critical": true,
+  "x": 0,
+  "y": 0,
+  "pages": [
+    {
+      "type": "halcyon:item",
+      "item": { "id": "halcyon:data_drive" },
+      "text": { "translate": "data_tablet.pages.automation.page1.text" }
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:fabrication/data_drive"
+      ]
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.automation.name"
+  },
+  "parents": [
+    "halcyon:basics/components"
+  ]
+}

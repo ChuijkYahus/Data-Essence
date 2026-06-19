@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "C C",
+    " R ",
+    " C "
+  ],
+  "key": {
+    "C": { "item": "halcyon:capacitance_panel" },
+    "R": { "item": "halcyon:conductance_rod" }
+  },
+  "result": { "id": "halcyon:propeller", "count": 1 }
+}

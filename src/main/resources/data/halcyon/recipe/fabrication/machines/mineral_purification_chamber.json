@@ -1,0 +1,18 @@
+{
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": { "halcyon:essence": 50 },
+  "entry": "halcyon:machinery/mineral_purification_chamber",
+  "pattern": [
+    "RPR",
+    "F F",
+    "ROR"
+  ],
+  "time": 100,
+  "key": {
+    "O": { "item": "halcyon:polished_obsidian" },
+    "R": { "item": "halcyon:conductance_rod" },
+    "P": { "item": "halcyon:propeller" },
+    "F": { "item": "halcyon:fluidic_glass" }
+  },
+  "result": { "id": "halcyon:mineral_purification_chamber" }
+}

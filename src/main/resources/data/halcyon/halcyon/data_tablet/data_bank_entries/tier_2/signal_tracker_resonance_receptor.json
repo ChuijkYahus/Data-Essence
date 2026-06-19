@@ -1,0 +1,10 @@
+{
+  "icon": {
+    "id": "halcyon:signal_tracker_resonance_receptor"
+  },
+  "tier": 2,
+  "name": {
+    "translate": "data_tablet.databank_generic_tool"
+  },
+  "entry": "halcyon:basics/signal_tracker_resonance_receptor"
+}

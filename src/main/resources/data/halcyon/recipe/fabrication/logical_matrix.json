@@ -1,0 +1,18 @@
+{
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": {
+    "halcyon:essence": 5
+  },
+  "entry": "halcyon:basics/components",
+  "completion_stage": 0,
+  "pattern": [
+    "PP",
+    "RP"
+  ],
+  "time": 40,
+  "key": {
+    "P": { "item": "halcyon:capacitance_panel" },
+    "R": { "item": "halcyon:conductance_rod" }
+  },
+  "result": { "id": "halcyon:logical_matrix" }
+}

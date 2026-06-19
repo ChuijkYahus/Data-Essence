@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "eee",
+    "eee",
+    "eee"
+  ],
+  "key": {
+    "e": { "item": "halcyon:ecliptrum_ingot" }
+  },
+  "result": { "id": "halcyon:ecliptrum_block" }
+}

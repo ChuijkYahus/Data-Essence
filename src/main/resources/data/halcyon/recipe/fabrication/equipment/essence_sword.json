@@ -1,0 +1,18 @@
+{
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": {
+    "halcyon:essence": 50
+  },
+  "entry": "halcyon:tools/essence_sword",
+  "pattern": [
+    "  E",
+    " E ",
+    "R  "
+  ],
+  "time": 100,
+  "key": {
+    "E": { "item": "halcyon:essence_shard" },
+    "R": { "item": "halcyon:conductance_rod" }
+  },
+  "result": { "id": "halcyon:essence_sword" }
+}

@@ -1,0 +1,32 @@
+{
+  "icon": {
+    "id": "halcyon:essence_leech"
+  },
+  "tab": "halcyon:essence_manipulation",
+  "x": -1,
+  "y": 2,
+  "pages": [
+    {
+      "type": "halcyon:text",
+      "text": {
+        "translate": "data_tablet.pages.essence_leech.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "text": {
+        "translate": "data_tablet.pages.essence_leech.page2.text"
+      },
+      "recipes": [
+        "halcyon:fabrication/essence_leech"
+      ]
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.essence_leech.name"
+  },
+  "parents": [
+    "halcyon:essence_manipulation/essence_burner"
+  ],
+  "critical": true
+}

@@ -1,0 +1,26 @@
+{
+  "files": [
+    {
+      "type": "halcyon:text",
+      "text": {
+        "translate": "computer.generic.signal_from_mountains"
+      }
+    },
+    {
+      "type": "halcyon:text",
+      "text": {
+        "translate": "computer.abandoned_factory_01.report_01",
+        "font": "halcyon:ancient"
+      },
+      "rtl": true
+    },
+    {
+      "type": "halcyon:text",
+      "text": {
+        "translate": "computer.abandoned_factory_01.report_02",
+        "font": "halcyon:ancient"
+      },
+      "rtl": true
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "icon": {
+    "id": "halcyon:crystallization_charge"
+  },
+  "tab": "halcyon:tools",
+  "x": -5,
+  "y": 2,
+  "pages": [
+    {
+      "type": "halcyon:item",
+      "item": { "id": "halcyon:crystallization_charge" },
+      "text": {
+        "translate": "data_tablet.pages.crystallization_charge.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:fabrication/equipment/crystallization_charge"
+      ]
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.crystallization_charge.name"
+  },
+  "parents": [
+    "halcyon:machinery_transformation/lunarium",
+    "halcyon:tools/essence_bombs"
+  ]
+}

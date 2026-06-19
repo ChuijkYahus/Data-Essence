@@ -1,0 +1,31 @@
+{
+  "icon": {
+    "id": "halcyon:fluid_bottler"
+  },
+  "tab": "halcyon:machinery",
+  "x": 5,
+  "y": -2,
+  "pages": [
+    {
+      "type": "halcyon:item",
+      "item": {
+        "id": "halcyon:fluid_bottler"
+      },
+      "text": {
+        "translate": "data_tablet.pages.fluid_bottler.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:fabrication/machines/fluid_bottler"
+      ]
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.fluid_bottler.name"
+  },
+  "parents": [
+    "halcyon:machinery/fluidworks"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "alltheores"
+        }
+    ],
+    "type": "halcyon:mineral_purification",
+    "input": { "tag": "c:raw_materials/iridium" },
+    "time": 150,
+    "result": { "id": "alltheores:iridium_ingot" },
+    "nuggetResult": { "id": "alltheores:iridium_nugget", "count": 1 }
+}

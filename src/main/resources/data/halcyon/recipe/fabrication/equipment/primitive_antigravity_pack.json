@@ -1,0 +1,19 @@
+{
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": {
+    "halcyon:essence": 50
+  },
+  "entry": "halcyon:tools/primitive_antigravity_pack",
+  "pattern": [
+    "CRC",
+    "CRC",
+    " P "
+  ],
+  "time": 100,
+  "key": {
+    "C": { "item": "halcyon:capacitance_panel" },
+    "R": { "item": "halcyon:conductance_rod" },
+    "P": { "item": "halcyon:propeller" }
+  },
+  "result": { "id": "halcyon:primitive_anti_gravity_pack" }
+}

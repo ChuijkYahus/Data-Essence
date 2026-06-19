@@ -1,0 +1,17 @@
+{
+  "type": "halcyon:fluid_mixing",
+  "essenceCost": 50,
+  "fluid_input": {
+    "id": "minecraft:water",
+    "amount": 1000
+  },
+  "item_input": {
+    "item": "halcyon:traversite_road_chunk"
+  },
+  "result": {
+    "id": "halcyon:genderfluid",
+    "amount": 1000
+  },
+  "time": 100,
+  "entry": "halcyon:tools/genderfluid"
+}

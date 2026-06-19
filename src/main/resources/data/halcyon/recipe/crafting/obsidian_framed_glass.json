@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "OGO",
+    "GGG",
+    "OGO"
+  ],
+  "key": {
+    "O": { "item": "halcyon:polished_obsidian" },
+    "G": { "item": "minecraft:glass" }
+  },
+  "result": { "id": "halcyon:obsidian_framed_glass", "count": 8 }
+}

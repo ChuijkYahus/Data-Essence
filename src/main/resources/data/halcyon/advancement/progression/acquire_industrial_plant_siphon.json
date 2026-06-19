@@ -1,0 +1,21 @@
+{
+  "display": {
+    "icon": {
+      "id": "halcyon:industrial_plant_siphon"
+    },
+    "title": {
+      "translate": "advancements.halcyon.acquire_industrial_plant_siphon.title"
+    },
+    "description": {
+      "translate": "advancements.halcyon.acquire_industrial_plant_siphon.description"
+    },
+    "hidden": false
+  },
+  "parent": "halcyon:progression/craft_logical_matrix",
+  "criteria": {
+    "has_siphon": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": { "items": [ { "items": ["halcyon:industrial_plant_siphon" ] } ] }
+    }
+  }
+}

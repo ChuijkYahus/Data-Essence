@@ -1,0 +1,20 @@
+{
+  "structure": "halcyon:abandoned_factory",
+  "advancement": "halcyon:exploration/find_abandoned_factory",
+  "requiredAdvancement": "halcyon:halcyon",
+  "color1": [
+    169,
+    0,
+    215
+  ],
+  "color2": [
+    255,
+    111,
+    224
+  ],
+  "icon": {
+    "texture": "halcyon:textures/gui/structure_icons.png",
+    "u": 48,
+    "v": 0
+  }
+}

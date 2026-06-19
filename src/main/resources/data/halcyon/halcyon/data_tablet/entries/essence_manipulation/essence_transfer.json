@@ -1,0 +1,54 @@
+{
+  "icon": {
+    "id": "halcyon:essence_wire"
+  },
+  "tab": "halcyon:essence_manipulation",
+  "critical": true,
+  "x": 2,
+  "y": 0,
+  "pages": [
+    {
+      "type": "halcyon:text",
+      "text": {
+        "translate": "data_tablet.pages.essence_transfer.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "text": {
+        "translate": "data_tablet.pages.essence_transfer.page2.text"
+      },
+      "recipes": [
+        "halcyon:fabrication/points/essence_point",
+        "halcyon:fabrication/wires/essence_wire"
+      ]
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.essence_transfer.name"
+  },
+  "parents": [
+  ],
+  "completion_stages": [
+    {
+      "completion_advancements": [
+        "halcyon:progression/acquire_essence_node_and_wire"
+      ],
+      "pages": [
+        {
+          "type": "halcyon:text",
+          "text": {
+            "translate": "data_tablet.pages.essence_transfer.page1.incomplete_text"
+          }
+        },
+        {
+          "type": "halcyon:crafting",
+          "recipes": [
+            "halcyon:fabrication/points/essence_point",
+            "halcyon:fabrication/wires/essence_wire"
+          ]
+        }
+      ]
+    }
+  ]
+}

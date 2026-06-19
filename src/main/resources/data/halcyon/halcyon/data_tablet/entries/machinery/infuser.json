@@ -1,0 +1,55 @@
+{
+  "icon": {
+    "id": "halcyon:infuser"
+  },
+  "tab": "halcyon:machinery",
+  "x": 0,
+  "y": 2,
+  "critical": true,
+  "pages": [
+    {
+      "type": "halcyon:item",
+      "item": { "id": "halcyon:infuser" },
+      "text": {
+        "translate": "data_tablet.pages.infuser.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:fabrication/machines/infuser",
+        "halcyon:infusion/rotten_flesh_to_leather"
+      ],
+      "text": {
+        "translate": "data_tablet.pages.infuser.page2.text"
+      }
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.infuser.name"
+  },
+  "parents": [
+    "halcyon:machinery/automation"
+  ],
+  "completion_stages": [
+    {
+      "completion_advancements": [
+        "halcyon:progression/acquire_infuser"
+      ],
+      "pages": [
+        {
+          "type": "halcyon:text",
+          "text": {
+            "translate": "data_tablet.pages.infuser.page1.incomplete_text"
+          }
+        },
+        {
+          "type": "halcyon:crafting",
+          "recipes": [
+            "halcyon:fabrication/machines/infuser"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "type": "halcyon:entropic_processing",
+  "input": { "tag": "c:cobblestones" },
+  "time": 100,
+  "result": { "id": "minecraft:gravel", "count": 1 }
+}

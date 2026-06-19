@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "  C",
+    " C ",
+    "C  "
+  ],
+  "key": {
+    "C": { "item": "halcyon:ecliptrum_ingot" }
+  },
+  "result": { "id": "halcyon:transformative_rod", "count": 2 }
+}

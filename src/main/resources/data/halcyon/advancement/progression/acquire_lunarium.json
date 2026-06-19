@@ -1,0 +1,21 @@
+{
+  "display": {
+    "icon": {
+      "id": "halcyon:lunarium"
+    },
+    "title": {
+      "translate": "advancements.halcyon.acquire_lunarium.title"
+    },
+    "description": {
+      "translate": "advancements.halcyon.acquire_lunarium.description"
+    },
+    "hidden": false
+  },
+  "parent": "halcyon:progression/acquire_ecliptrum",
+  "criteria": {
+    "has_lunarium": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": { "items": [ { "items": ["halcyon:lunarium" ] } ] }
+    }
+  }
+}

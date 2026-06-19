@@ -1,0 +1,19 @@
+{
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": {
+    "halcyon:essence": 40
+  },
+  "time": 60,
+  "entry": "halcyon:tools/ender_redirection_network",
+  "pattern": [
+    "OCO",
+    "CLC",
+    "OCO"
+  ],
+  "key": {
+    "L": { "item": "halcyon:lensing_crystal" },
+    "C": { "item": "halcyon:conductance_rod" },
+    "O": { "item": "halcyon:polished_obsidian" }
+  },
+  "result": { "id": "halcyon:ender_pearl_capture" }
+}

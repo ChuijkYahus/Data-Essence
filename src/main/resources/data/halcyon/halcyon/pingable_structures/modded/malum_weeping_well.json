@@ -1,0 +1,17 @@
+{
+  "structure": "malum:weeping_well",
+  "advancement": "halcyon:hidden/malum_really_needs_advancements",
+  "requiredAdvancement": "halcyon:hidden/malum_needs_advancements",
+  "requiresUpgrade": true,
+  "color1": [
+    58, 15, 87
+  ],
+  "color2": [
+    36, 3, 29
+  ],
+  "icon": {
+    "texture": "halcyon:textures/gui/structure_icons_modded.png",
+    "u": 0,
+    "v": 16
+  }
+}

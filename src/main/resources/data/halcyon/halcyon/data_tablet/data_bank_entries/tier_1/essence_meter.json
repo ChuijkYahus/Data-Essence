@@ -1,0 +1,10 @@
+{
+  "icon": {
+    "id": "halcyon:essence_meter"
+  },
+  "tier": 1,
+  "name": {
+    "translate": "data_tablet.databank_generic_tool"
+  },
+  "entry": "halcyon:basics/essence_meter"
+}

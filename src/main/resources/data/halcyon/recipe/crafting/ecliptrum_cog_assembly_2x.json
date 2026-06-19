@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "RC ",
+    " CR"
+  ],
+  "key": {
+    "C": { "item": "halcyon:ecliptrum_cog" },
+    "R": { "item": "halcyon:transformative_rod" }
+  },
+  "result": { "id": "halcyon:ecliptrum_cog_assembly_2x" }
+}

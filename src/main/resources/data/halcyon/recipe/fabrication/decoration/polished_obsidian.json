@@ -1,0 +1,14 @@
+{
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": { "halcyon:essence": 0 },
+  "entry": "halcyon:tools/decorative_blocks",
+  "pattern": [
+    " O ",
+    "O O",
+    " O "
+  ],
+  "key": {
+    "O": { "item": "minecraft:obsidian" }
+  },
+  "result": { "id": "halcyon:polished_obsidian", "count": 8 }
+}

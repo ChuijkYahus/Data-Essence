@@ -1,0 +1,27 @@
+{
+  "icon": {
+    "id": "halcyon:tag_filter"
+  },
+  "tab": "halcyon:machinery",
+  "x": -3,
+  "y": -6,
+  "pages": [
+    {
+      "type": "halcyon:item",
+      "item": { "id": "halcyon:tag_filter" },
+      "text": { "translate": "data_tablet.pages.advanced_filtering.page1.text" }
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:fabrication/tag_filter"
+      ]
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.advanced_filtering.name"
+  },
+  "parents": [
+    "halcyon:machinery/item_filter"
+  ]
+}

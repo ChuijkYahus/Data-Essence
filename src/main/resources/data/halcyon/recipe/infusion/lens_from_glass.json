@@ -1,0 +1,15 @@
+{
+  "type": "halcyon:infusion",
+  "essenceCost": {
+    "halcyon:essence": 200
+  },
+  "entry": "halcyon:basics/components",
+  "input": {
+    "item": "minecraft:glass",
+    "count": 1
+  },
+  "result": {
+    "id": "halcyon:lens",
+    "count": 1
+  }
+}

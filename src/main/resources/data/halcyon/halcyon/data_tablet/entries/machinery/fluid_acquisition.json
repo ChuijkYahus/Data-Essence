@@ -1,0 +1,36 @@
+{
+  "icon": {
+    "id": "halcyon:fluid_collector"
+  },
+  "tab": "halcyon:machinery",
+  "x": 1,
+  "y": -4,
+  "pages": [
+    {
+      "type": "halcyon:item",
+      "item": {
+        "id": "halcyon:fluid_collector"
+      },
+      "text": {
+        "translate": "data_tablet.pages.fluid_acquisition.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "text": {
+        "translate": "data_tablet.pages.fluid_acquisition.page2.text"
+      },
+      "recipes": [
+        "halcyon:fabrication/machines/fluid_collector",
+        "halcyon:fabrication/machines/fluid_spiller"
+      ]
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.fluid_acquisition.name"
+  },
+  "flavor": { "translate": "data_tablet.pages.fluid_acquisition.flavor" },
+  "parents": [
+    "halcyon:machinery/fluidworks"
+  ]
+}

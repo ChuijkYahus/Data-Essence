@@ -1,0 +1,32 @@
+{
+  "icon": {
+    "id": "halcyon:auto-fabricator"
+  },
+  "tab": "halcyon:machinery",
+  "x": -4,
+  "y": 4,
+  "pages": [
+    {
+      "type": "halcyon:item",
+      "item": { "id": "halcyon:auto-fabricator" },
+      "text": {
+        "translate": "data_tablet.pages.auto-fabricator.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:fabrication/machines/auto-fabricator"
+      ],
+      "text": {
+        "translate": "data_tablet.pages.auto-fabricator.page2.text"
+      }
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.auto-fabricator.name"
+  },
+  "parents": [
+  ],
+  "critical": true
+}

@@ -1,0 +1,21 @@
+{
+  "display": {
+    "icon": {
+      "id": "halcyon:crystallization_charge"
+    },
+    "title": {
+      "translate": "advancements.halcyon.acquire_crystallization_charge.title"
+    },
+    "description": {
+      "translate": "advancements.halcyon.acquire_crystallization_charge.description"
+    },
+    "hidden": false
+  },
+  "parent": "halcyon:progression/acquire_lunarium",
+  "criteria": {
+    "has_leech": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": { "items": [ { "items": ["halcyon:crystallization_charge" ] } ] }
+    }
+  }
+}

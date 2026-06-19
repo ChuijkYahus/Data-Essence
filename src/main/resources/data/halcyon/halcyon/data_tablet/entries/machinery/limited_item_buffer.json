@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "id": "halcyon:limited_item_buffer"
+  },
+  "tab": "halcyon:machinery",
+  "x": -1,
+  "y": -4,
+  "pages": [
+    {
+      "type": "halcyon:text",
+      "text": {
+        "translate": "data_tablet.pages.limited_item_buffer.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:fabrication/machines/buffer_item_limited"
+      ]
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.limited_item_buffer.name"
+  },
+  "parents": [
+    "halcyon:machinery/itemworks",
+    "halcyon:machinery/buffers"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "icon": {
+    "id": "halcyon:essence_sword"
+  },
+  "tab": "halcyon:tools",
+  "x": 2,
+  "y": 1,
+  "pages": [
+    {
+      "type": "halcyon:item",
+      "item": {
+        "id": "halcyon:essence_sword"
+      },
+      "text": {
+        "translate": "data_tablet.pages.essence_sword.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:fabrication/equipment/essence_sword"
+      ]
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.essence_sword.name"
+  },
+  "parents": [
+    "halcyon:tools/charger"
+  ]
+}

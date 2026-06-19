@@ -1,0 +1,40 @@
+{
+  "icon": {
+    "id": "halcyon:synthesis_chamber"
+  },
+  "tab": "halcyon:machinery",
+  "x": -2,
+  "y": 2,
+  "pages": [
+    {
+      "type": "halcyon:text",
+      "text": {
+        "translate": "data_tablet.pages.synthesis_chamber.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "text": {
+        "translate": "data_tablet.pages.synthesis_chamber.page2.text"
+      },
+      "recipes": [
+        "halcyon:fabrication/machines/synthesis_chamber"
+      ]
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:synthesis/essence_wire_synthesis",
+        "halcyon:synthesis/item_wire_synthesis",
+        "halcyon:synthesis/fluid_wire_synthesis"
+      ]
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.synthesis_chamber.name"
+  },
+  "parents": [
+    "halcyon:machinery/automation"
+  ],
+  "critical": true
+}

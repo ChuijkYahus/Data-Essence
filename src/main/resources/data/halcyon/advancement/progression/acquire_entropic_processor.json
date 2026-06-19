@@ -1,0 +1,21 @@
+{
+  "display": {
+    "icon": {
+      "id": "halcyon:entropic_processor"
+    },
+    "title": {
+      "translate": "advancements.halcyon.acquire_entropic_processor.title"
+    },
+    "description": {
+      "translate": "advancements.halcyon.acquire_entropic_processor.description"
+    },
+    "hidden": false
+  },
+  "parent": "halcyon:progression/craft_logical_matrix",
+  "criteria": {
+    "has_processor": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": { "items": [ { "items": ["halcyon:entropic_processor" ] } ] }
+    }
+  }
+}

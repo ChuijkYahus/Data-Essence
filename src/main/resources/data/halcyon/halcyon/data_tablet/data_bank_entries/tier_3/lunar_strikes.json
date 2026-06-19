@@ -1,0 +1,10 @@
+{
+  "icon": {
+    "id": "halcyon:crystal_of_transformation"
+  },
+  "tier": 3,
+  "name": {
+    "translate": "data_tablet.databank_generic_resource"
+  },
+  "entry": "halcyon:machinery_transformation/lunar_strikes"
+}

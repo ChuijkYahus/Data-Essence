@@ -1,0 +1,21 @@
+{
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": {
+    "halcyon:essence": 200
+  },
+  "time": 120,
+  "entry": "halcyon:machinery/harvester",
+  "pattern": [
+    " H ",
+    "ERE",
+    "LPL"
+  ],
+  "key": {
+    "E": { "item": "halcyon:essence_pathways" },
+    "H": { "item": "halcyon:lens" },
+    "P": { "item": "halcyon:capacitance_panel" },
+    "R": { "item": "halcyon:conductance_rod" },
+    "L": { "tag": "minecraft:leaves" }
+  },
+  "result": { "id": "halcyon:harvester", "count": 1 }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "halcyon:block/essence_point",
+  "textures": {
+    "particle": "halcyon:block/deco/polished_obsidian"
+  }
+}

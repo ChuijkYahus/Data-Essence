@@ -1,0 +1,23 @@
+{
+  "icon": {
+    "id": "halcyon:lensing_crystal_ore"
+  },
+  "tab": "halcyon:basics",
+  "x": 0,
+  "y": -4,
+  "pages": [
+    {
+      "type": "halcyon:text",
+      "text": {
+        "translate": "data_tablet.pages.hidden_blocks.page1.text"
+      }
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.hidden_blocks.name"
+  },
+  "flavor": {
+    "translate": "data_tablet.pages.hidden_blocks.flavor"
+  },
+  "is_default": true
+}

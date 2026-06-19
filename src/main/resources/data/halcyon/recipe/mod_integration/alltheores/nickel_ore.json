@@ -1,0 +1,13 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "alltheores"
+        }
+    ],
+    "type": "halcyon:mineral_purification",
+    "input": { "tag": "c:ores/nickel" },
+    "time": 300,
+    "result": { "id": "alltheores:nickel_ingot" },
+    "nuggetResult": { "id": "alltheores:nickel_nugget", "count": 2 }
+}

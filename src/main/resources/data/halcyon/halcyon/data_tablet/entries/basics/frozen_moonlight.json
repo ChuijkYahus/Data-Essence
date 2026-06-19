@@ -1,0 +1,42 @@
+{
+  "icon": {
+    "id": "halcyon:frozen_moonlight"
+  },
+  "tab": "halcyon:basics",
+  "critical": true,
+  "x": 3,
+  "y": 2,
+  "pages": [
+    {
+      "type": "halcyon:item",
+      "item": { "id": "halcyon:frozen_moonlight_chunk" },
+      "text": {
+        "translate": "data_tablet.pages.frozen_moonlight.page1.text"
+      }
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.frozen_moonlight.name"
+  },
+  "flavor": {
+    "translate": "data_tablet.pages.frozen_moonlight.flavor"
+  },
+  "parents": [
+    "halcyon:machinery_transformation/lunarium"
+  ],
+  "completion_stages": [
+    {
+      "completion_advancements": [
+        "halcyon:exploration/discover_frozen_moonlight"
+      ],
+      "pages": [
+        {
+          "type": "halcyon:text",
+          "text": {
+            "translate": "data_tablet.pages.frozen_moonlight.page1.incomplete_text"
+          }
+        }
+      ]
+    }
+  ]
+}

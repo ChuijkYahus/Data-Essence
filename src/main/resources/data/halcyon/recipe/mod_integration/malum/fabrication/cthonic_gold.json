@@ -1,0 +1,27 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "malum"
+    }
+  ],
+  "type": "halcyon:shapeless_fabrication_recipe",
+  "time": 400,
+  "essenceCost": {
+    "halcyon:essence": 50,
+    "halcyon:lunar_essence": 650
+  },
+  "entry": "halcyon:mod_integration/malum_lunar",
+  "ingredients": [
+    { "item": "malum:earthen_spirit" },
+    { "item": "minecraft:gold_ingot" },
+    { "item": "malum:earthen_spirit" },
+    { "item": "malum:cthonic_gold_fragment" },
+    { "item": "minecraft:deepslate" },
+    { "item": "malum:cthonic_gold_fragment" },
+    { "item": "malum:infernal_spirit" },
+    { "item": "minecraft:gold_ingot" },
+    { "item": "malum:infernal_spirit" }
+  ],
+  "result": { "id": "malum:cthonic_gold_ore" }
+}

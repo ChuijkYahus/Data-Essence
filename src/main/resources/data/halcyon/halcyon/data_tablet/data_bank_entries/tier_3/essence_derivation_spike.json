@@ -1,0 +1,10 @@
+{
+  "icon": {
+    "id": "halcyon:essence_derivation_spike"
+  },
+  "tier": 3,
+  "name": {
+    "translate": "data_tablet.databank_generic_generator"
+  },
+  "entry": "halcyon:essence_manipulation/essence_derivation_spike"
+}

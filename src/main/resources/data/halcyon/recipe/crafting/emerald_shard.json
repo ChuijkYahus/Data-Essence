@@ -1,0 +1,6 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [{ "item": "minecraft:emerald" }],
+  "result": { "id": "halcyon:emerald_shard", "count": 9 }
+}

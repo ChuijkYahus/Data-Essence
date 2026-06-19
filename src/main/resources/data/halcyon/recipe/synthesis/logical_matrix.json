@@ -1,0 +1,11 @@
+{
+  "type": "halcyon:synthesis",
+  "essenceCost": {
+    "halcyon:essence": 20
+  },
+  "input": { "item": "halcyon:conductance_rod" },
+  "input2": { "item": "halcyon:capacitance_panel" },
+  "time": 100,
+  "result": { "id": "halcyon:logical_matrix", "count": 1 },
+  "entry": "halcyon:basics/components"
+}

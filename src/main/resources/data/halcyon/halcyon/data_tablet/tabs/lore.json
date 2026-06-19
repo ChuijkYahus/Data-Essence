@@ -1,0 +1,11 @@
+{
+  "icon": {
+    "id": "halcyon:data_bank"
+  },
+  "name": {
+    "translate": "data_tablet.tabs.lore.name"
+  },
+  "placement": {
+    "place_after": "halcyon:all"
+  }
+}

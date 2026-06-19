@@ -1,0 +1,19 @@
+{
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": {
+    "halcyon:essence": 40
+  },
+  "time": 60,
+  "entry": "halcyon:tools/ender_redirection_network",
+  "pattern": [
+    "LOL",
+    "OEO",
+    "LOL"
+  ],
+  "key": {
+    "L": { "item": "halcyon:lensing_crystal" },
+    "E": { "item": "minecraft:ender_pearl" },
+    "O": { "item": "halcyon:polished_obsidian" }
+  },
+  "result": { "id": "halcyon:ender_pearl_destination" }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": {
+    "halcyon:essence": 0
+  },
+  "entry": "halcyon:machinery/fluidworks",
+  "pattern": [
+    "RLR",
+    " O "
+  ],
+  "key": {
+    "L": { "item": "minecraft:lapis_lazuli" },
+    "R": { "item": "halcyon:conductance_rod" },
+    "O": { "item": "halcyon:polished_obsidian" }
+  },
+  "result": { "id": "halcyon:fluid_point", "count": 2 }
+}

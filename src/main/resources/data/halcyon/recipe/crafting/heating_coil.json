@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " C ",
+    "WOW",
+    " C "
+  ],
+  "key": {
+    "C": { "item": "halcyon:conductance_rod" },
+    "W": { "item": "halcyon:essence_wire" },
+    "O": { "item": "halcyon:polished_obsidian" }
+  },
+  "result": { "id": "halcyon:heating_coil", "count": 2 }
+}

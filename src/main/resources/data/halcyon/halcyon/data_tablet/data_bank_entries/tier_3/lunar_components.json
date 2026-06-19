@@ -1,0 +1,10 @@
+{
+  "icon": {
+    "id": "halcyon:ecliptrum_cog_assembly_2x"
+  },
+  "tier": 3,
+  "name": {
+    "translate": "data_tablet.databank_generic_resource"
+  },
+  "entry": "halcyon:basics/lunar_components"
+}

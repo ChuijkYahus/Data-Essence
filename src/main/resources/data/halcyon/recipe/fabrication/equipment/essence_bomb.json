@@ -1,0 +1,18 @@
+{
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": {
+    "halcyon:essence": 10
+  },
+  "time": 60,
+  "entry": "halcyon:tools/essence_bombs",
+  "pattern": [
+    " C ",
+    "CGC",
+    " C "
+  ],
+  "key": {
+    "C": { "item": "halcyon:capacitance_panel" },
+    "G": { "tag": "halcyon:explosive_material" }
+  },
+  "result": { "id": "halcyon:essence_bomb", "count": 4 }
+}

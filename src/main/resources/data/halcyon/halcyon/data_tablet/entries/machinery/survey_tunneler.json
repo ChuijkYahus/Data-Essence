@@ -1,0 +1,31 @@
+{
+  "icon": {
+    "id": "halcyon:survey_tunneler"
+  },
+  "tab": "halcyon:machinery",
+  "x": 3,
+  "y": 5,
+  "pages": [
+    {
+      "type": "halcyon:text",
+      "text": {
+        "translate": "data_tablet.pages.survey_tunneler.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:fabrication/machines/survey_tunneler"
+      ]
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.survey_tunneler.name"
+  },
+  "flavor": {
+    "translate": "data_tablet.pages.survey_tunneler.flavor"
+  },
+  "parents": [
+    "halcyon:basics/components"
+  ]
+}

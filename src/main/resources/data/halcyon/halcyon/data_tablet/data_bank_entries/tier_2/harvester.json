@@ -1,0 +1,10 @@
+{
+  "icon": {
+    "id": "halcyon:harvester"
+  },
+  "tier": 2,
+  "name": {
+    "translate": "data_tablet.databank_generic_production"
+  },
+  "entry": "halcyon:machinery/harvester"
+}

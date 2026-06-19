@@ -1,0 +1,69 @@
+{
+  "icon": {
+    "id": "halcyon:laser_emitter"
+  },
+  "tier": 1,
+  "name": {
+    "translate": "data_tablet.databank_generic_production"
+  },
+  "entry": "halcyon:machinery/laser_emitter",
+  "minigames": [
+    {
+      "type": "halcyon:laser",
+      "tiles": [
+        {
+          "x": 12,
+          "y": 12,
+          "color": "magenta",
+          "type": "goal",
+          "rotation": "up"
+        },
+        {
+          "x": 12,
+          "y": 1,
+          "color": "magenta",
+          "type": "goal",
+          "rotation": "down"
+        },
+        {
+          "x": 12,
+          "y": 7,
+          "type": "splitter",
+          "rotation": "up"
+        },
+        {
+          "x": 1,
+          "y": 1,
+          "color": "red",
+          "type": "emitter",
+          "rotation": "right"
+        },
+        {
+          "x": 1,
+          "y": 12,
+          "color": "blue",
+          "type": "emitter",
+          "rotation": "right"
+        },
+        {
+          "x": 7,
+          "y": 1,
+          "type": "mirror",
+          "rotation": "left"
+        },
+        {
+          "x": 7,
+          "y": 12,
+          "type": "mirror",
+          "rotation": "left"
+        },
+        {
+          "x": 7,
+          "y": 7,
+          "type": "prism",
+          "rotation": "up"
+        }
+      ]
+    }
+  ]
+}

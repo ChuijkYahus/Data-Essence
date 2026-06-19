@@ -1,0 +1,7 @@
+{
+    "type": "halcyon:mineral_purification",
+    "input": { "tag": "c:ores/emerald" },
+    "time": 300,
+    "result": { "id": "minecraft:emerald" },
+    "nuggetResult": { "id": "halcyon:emerald_shard", "count": 2 }
+}

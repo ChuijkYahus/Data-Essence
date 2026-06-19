@@ -1,0 +1,31 @@
+{
+  "icon": {
+    "id": "halcyon:essence_meter"
+  },
+  "tab": "halcyon:basics",
+  "x": 3,
+  "y": 0,
+  "pages": [
+    {
+      "type": "halcyon:item",
+      "item": {
+        "id": "halcyon:essence_meter"
+      },
+      "text": {
+        "translate": "data_tablet.pages.essence_meter.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:fabrication/equipment/essence_meter"
+      ]
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.essence_meter.name"
+  },
+  "flavor": {
+    "translate": "data_tablet.pages.essence_meter.flavor"
+  }
+}

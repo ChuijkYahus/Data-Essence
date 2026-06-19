@@ -1,0 +1,36 @@
+{
+  "icon": {
+    "id": "minecraft:lapis_lazuli"
+  },
+  "tab": "halcyon:lore",
+  "x": -1,
+  "y": -2,
+  "pages": [
+    {
+      "type": "halcyon:item",
+      "item": {
+        "id": "minecraft:gold_ingot"
+      },
+      "text": {
+        "translate": "data_tablet.pages.phenuan_material_studies_2.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:item",
+      "item": {
+        "id": "minecraft:lapis_lazuli"
+      },
+      "text": {
+        "translate": "data_tablet.pages.phenuan_material_studies_2.page2.text"
+      }
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.phenuan_material_studies_2.name"
+  },
+  "parents": [
+    "halcyon:machinery_transformation/ecliptrum",
+    "halcyon:machinery/fluidworks",
+    "halcyon:lore/phenuan_material_studies"
+  ]
+}

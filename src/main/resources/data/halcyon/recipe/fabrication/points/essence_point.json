@@ -1,0 +1,18 @@
+{
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": {
+    "halcyon:essence": 0
+  },
+  "entry": "halcyon:essence_manipulation/essence_transfer",
+  "completion_stage": 0,
+  "pattern": [
+    "RAR",
+    " O "
+  ],
+  "key": {
+    "A": { "item": "halcyon:essence_shard" },
+    "R": { "item": "halcyon:conductance_rod" },
+    "O": { "item": "halcyon:polished_obsidian" }
+  },
+  "result": { "id": "halcyon:essence_point", "count": 2 }
+}

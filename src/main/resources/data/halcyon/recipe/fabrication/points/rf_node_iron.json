@@ -1,0 +1,21 @@
+{
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": {
+    "halcyon:essence": 150,
+    "halcyon:lunar_essence": 100
+  },
+  "time": 80,
+  "entry": "halcyon:mod_integration/redstoneflux_nodes",
+  "pattern": [
+    " C ",
+    "RIR",
+    " O "
+  ],
+  "key": {
+    "C": { "item": "minecraft:charcoal" },
+    "I": { "item": "minecraft:iron_ingot" },
+    "R": { "item": "halcyon:transformative_rod" },
+    "O": { "item": "halcyon:polished_obsidian" }
+  },
+  "result": { "id": "halcyon:rf_node", "count": 2 }
+}

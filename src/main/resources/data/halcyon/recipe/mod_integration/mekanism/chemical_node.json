@@ -1,0 +1,23 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "mekanism"
+    }
+  ],
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": {
+    "halcyon:essence": 0
+  },
+  "entry": "halcyon:mod_integration/mekanism",
+  "pattern": [
+    "RFR",
+    " O "
+  ],
+  "key": {
+    "F": { "item": "mekanism:fluorite_gem" },
+    "R": { "item": "halcyon:conductance_rod" },
+    "O": { "item": "halcyon:polished_obsidian" }
+  },
+  "result": { "id": "halcyon:chemical_node", "count": 2 }
+}

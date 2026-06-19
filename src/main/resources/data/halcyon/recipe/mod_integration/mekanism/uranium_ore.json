@@ -1,0 +1,13 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "mekanism"
+        }
+    ],
+    "type": "halcyon:mineral_purification",
+    "input": { "tag": "c:ores/uranium" },
+    "time": 300,
+    "result": { "id": "mekanism:ingot_uranium" },
+    "nuggetResult": { "id": "mekanism:nugget_uranium", "count": 2 }
+}

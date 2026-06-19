@@ -1,0 +1,15 @@
+{
+  "condition": {
+    "type": "databank:advancement",
+    "advancement": "halcyon:halcyon"
+  },
+  "type": {
+    "type": "databank:block",
+    "hidden_as": "halcyon:essence_crystal",
+    "original": "halcyon:essence_crystal",
+    "name_override": {
+      "translate": "hidden.halcyon.crystal",
+      "font": "halcyon:ancient"
+    }
+  }
+}

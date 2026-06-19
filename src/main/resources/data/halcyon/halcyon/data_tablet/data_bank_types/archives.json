@@ -1,0 +1,9 @@
+{
+  "add": [
+    "halcyon:fabricator",
+    "halcyon:test1"
+  ],
+  "remove":[
+    "halcyon:fabricator"
+  ]
+}

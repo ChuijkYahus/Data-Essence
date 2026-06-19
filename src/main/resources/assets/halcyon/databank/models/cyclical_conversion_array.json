@@ -1,0 +1,315 @@
+{
+  "animations": {
+    "idle": {
+      "length": 2,
+      "looping": true,
+      "animation": [
+        {
+          "bone": "lower_ring",
+          "target": "rotation",
+          "keyframes": [
+            {
+              "timestamp": 0,
+              "target": [
+                0,
+                0,
+                0
+              ],
+              "interpolation": "linear"
+            },
+            {
+              "timestamp": 2,
+              "target": [
+                0,
+                90,
+                0
+              ],
+              "interpolation": "linear"
+            }
+          ]
+        },
+        {
+          "bone": "upper_ring",
+          "target": "rotation",
+          "keyframes": [
+            {
+              "timestamp": 0,
+              "target": [
+                0,
+                0,
+                0
+              ],
+              "interpolation": "linear"
+            },
+            {
+              "timestamp": 2,
+              "target": [
+                0,
+                -90,
+                0
+              ],
+              "interpolation": "linear"
+            }
+          ]
+        }
+      ]
+    },
+    "hand": {
+      "length": 0,
+      "looping": false,
+      "animation": [
+        {
+          "bone": "lower_ring",
+          "target": "position",
+          "keyframes": [
+            {
+              "timestamp": 0,
+              "target": [
+                0,
+                0,
+                0
+              ],
+              "interpolation": "linear"
+            }
+          ]
+        },
+        {
+          "bone": "upper_ring",
+          "target": "position",
+          "keyframes": [
+            {
+              "timestamp": 0,
+              "target": [
+                0,
+                -2,
+                0
+              ],
+              "interpolation": "linear"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "parts": [
+    {
+      "type": "databank:group",
+      "name": "root",
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "offset": [
+        0,
+        0,
+        0
+      ],
+      "children": [
+        {
+          "type": "databank:group",
+          "name": "base",
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "offset": [
+            0,
+            0,
+            0
+          ],
+          "children": [
+            {
+              "type": "databank:cube",
+              "name": "cube",
+              "rotation": [
+                0,
+                0,
+                0
+              ],
+              "offset": [
+                0,
+                0,
+                0
+              ],
+              "texOffset": [
+                0,
+                41
+              ],
+              "mirror": false,
+              "origin": [
+                -16,
+                0.01,
+                -16
+              ],
+              "dimensions": [
+                32,
+                8,
+                32
+              ],
+              "inflate": 0
+            },
+            {
+              "type": "databank:cube",
+              "name": "cube1",
+              "rotation": [
+                0,
+                -0.7853981633974483,
+                0
+              ],
+              "offset": [
+                0,
+                0,
+                0
+              ],
+              "texOffset": [
+                0,
+                0
+              ],
+              "mirror": false,
+              "origin": [
+                -16,
+                0,
+                -16
+              ],
+              "dimensions": [
+                32,
+                9,
+                32
+              ],
+              "inflate": 0
+            },
+            {
+              "type": "databank:cube",
+              "name": "circle_base",
+              "rotation": [
+                0,
+                0,
+                0
+              ],
+              "offset": [
+                0.5,
+                7,
+                0.5
+              ],
+              "texOffset": [
+                99,
+                0
+              ],
+              "mirror": false,
+              "origin": [
+                -15,
+                2,
+                -15
+              ],
+              "dimensions": [
+                29,
+                0,
+                29
+              ],
+              "inflate": 0
+            },
+            {
+              "type": "databank:group",
+              "name": "lower_ring",
+              "rotation": [
+                0,
+                0,
+                0
+              ],
+              "offset": [
+                0,
+                10.25,
+                0
+              ],
+              "children": [
+                {
+                  "type": "databank:cube",
+                  "name": "circle",
+                  "rotation": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "offset": [
+                    0.5,
+                    -3,
+                    0.5
+                  ],
+                  "texOffset": [
+                    99,
+                    29
+                  ],
+                  "mirror": false,
+                  "origin": [
+                    -15,
+                    2,
+                    -15
+                  ],
+                  "dimensions": [
+                    29,
+                    0,
+                    29
+                  ],
+                  "inflate": 0
+                }
+              ]
+            },
+            {
+              "type": "databank:group",
+              "name": "upper_ring",
+              "rotation": [
+                0,
+                0,
+                0
+              ],
+              "offset": [
+                0,
+                9.5,
+                0
+              ],
+              "children": [
+                {
+                  "type": "databank:cube",
+                  "name": "circle_aux",
+                  "rotation": [
+                    0,
+                    0.7853981633974483,
+                    0
+                  ],
+                  "offset": [
+                    0.7071067811865476,
+                    -2,
+                    0
+                  ],
+                  "texOffset": [
+                    99,
+                    58
+                  ],
+                  "mirror": false,
+                  "origin": [
+                    -14.957106781186548,
+                    2,
+                    -15
+                  ],
+                  "dimensions": [
+                    29,
+                    0,
+                    29
+                  ],
+                  "inflate": 0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "textureSize": [
+    256,
+    256
+  ],
+  "version": 1
+}

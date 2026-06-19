@@ -1,0 +1,16 @@
+{
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": { "halcyon:essence": 10 },
+  "entry": "halcyon:machinery/essence_furnace",
+  "pattern": [
+    "PPP",
+    "P P",
+    "PHP"
+  ],
+  "time": 100,
+  "key": {
+    "P": { "item": "halcyon:capacitance_panel" },
+    "H": { "item": "halcyon:heating_coil" }
+  },
+  "result": { "id": "halcyon:essence_furnace", "count": 1 }
+}

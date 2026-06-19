@@ -1,0 +1,10 @@
+{
+  "icon": {
+    "id": "halcyon:frozen_moonlight_chunk"
+  },
+  "tier": 3,
+  "name": {
+    "translate": "data_tablet.databank_generic_resource"
+  },
+  "entry": "halcyon:basics/frozen_moonlight"
+}

@@ -1,0 +1,37 @@
+{
+  "icon": {
+    "id": "halcyon:filter_upgrade"
+  },
+  "tab": "halcyon:machinery",
+  "x": 0,
+  "y": -1,
+  "pages": [
+    {
+      "type": "halcyon:text",
+      "text": {
+        "translate": "data_tablet.pages.node_upgrades.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:text",
+      "text": {
+        "translate": "data_tablet.pages.node_upgrades.page2.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:fabrication/sigils/speed",
+        "halcyon:fabrication/sigils/filter"
+      ]
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.node_upgrades.name"
+  },
+  "parents": [
+    "halcyon:machinery/itemworks",
+    "halcyon:machinery/fluidworks",
+    "halcyon:basics/plants"
+  ]
+}

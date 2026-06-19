@@ -1,0 +1,94 @@
+{
+  "variants": {
+    "facing=down": [
+      {
+        "model": "halcyon:block/crystal_of_transformation",
+        "x": 180
+      },
+      {
+        "model": "halcyon:block/crystal_of_transformation_2",
+        "x": 180
+      },
+      {
+        "model": "halcyon:block/crystal_of_transformation_3",
+        "x": 180
+      }
+    ],
+    "facing=east": [
+      {
+        "model": "halcyon:block/crystal_of_transformation",
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "halcyon:block/crystal_of_transformation_2",
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "halcyon:block/crystal_of_transformation_3",
+        "x": 90,
+        "y": 90
+      }
+    ],
+    "facing=north": [
+      {
+        "model": "halcyon:block/crystal_of_transformation",
+        "x": 90
+      },
+      {
+        "model": "halcyon:block/crystal_of_transformation_2",
+        "x": 90
+      },
+      {
+        "model": "halcyon:block/crystal_of_transformation_3",
+        "x": 90
+      }
+    ],
+    "facing=south": [
+      {
+        "model": "halcyon:block/crystal_of_transformation",
+        "x": 90,
+        "y": 180
+      },
+      {
+        "model": "halcyon:block/crystal_of_transformation_2",
+        "x": 90,
+        "y": 180
+      },
+      {
+        "model": "halcyon:block/crystal_of_transformation_3",
+        "x": 90,
+        "y": 180
+      }
+    ],
+    "facing=up": [
+      {
+        "model": "halcyon:block/crystal_of_transformation"
+      },
+      {
+        "model": "halcyon:block/crystal_of_transformation_2"
+      },
+      {
+        "model": "halcyon:block/crystal_of_transformation_3"
+      }
+    ],
+    "facing=west": [
+      {
+        "model": "halcyon:block/crystal_of_transformation",
+        "x": 90,
+        "y": 270
+      },
+      {
+        "model": "halcyon:block/crystal_of_transformation_2",
+        "x": 90,
+        "y": 270
+      },
+      {
+        "model": "halcyon:block/crystal_of_transformation_3",
+        "x": 90,
+        "y": 270
+      }
+    ]
+  }
+}

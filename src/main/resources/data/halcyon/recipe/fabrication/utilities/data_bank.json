@@ -1,0 +1,20 @@
+{
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": {
+    "halcyon:essence": 1000
+  },
+  "time": 200,
+  "entry": "halcyon:basics/data_bank",
+  "pattern": [
+    "PPP",
+    "ACA",
+    "PLP"
+  ],
+  "key": {
+    "P": { "item": "halcyon:polished_obsidian" },
+    "L": { "item": "halcyon:logical_matrix" },
+    "C": { "item": "halcyon:prepared_panel" },
+    "A": { "item": "halcyon:energized_ancient_rock_column_shieldless" }
+  },
+  "result": { "id": "halcyon:player_data_bank" }
+}

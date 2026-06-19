@@ -1,0 +1,8 @@
+{
+  "criteria": {
+    "has_seen_it_all": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": { "items": [ { "items": [ "malum:umbral_spirit" ] } ] }
+    }
+  }
+}

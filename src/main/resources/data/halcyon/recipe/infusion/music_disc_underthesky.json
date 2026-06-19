@@ -1,0 +1,15 @@
+{
+  "type": "halcyon:infusion",
+  "essenceCost": {
+    "halcyon:essence": 1000
+  },
+  "entry": "halcyon:machinery/infuser",
+  "input": {
+    "tag": "c:music_discs",
+    "count": 1
+  },
+  "result": {
+    "id": "halcyon:under_the_sky_music_disc",
+    "count": 1
+  }
+}

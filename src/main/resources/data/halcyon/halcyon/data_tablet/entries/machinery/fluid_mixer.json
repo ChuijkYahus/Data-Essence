@@ -1,0 +1,36 @@
+{
+  "icon": {
+    "id": "halcyon:fluid_mixer"
+  },
+  "tab": "halcyon:machinery",
+  "x": 5,
+  "y": 2,
+  "pages": [
+    {
+      "type": "halcyon:item",
+      "item": {
+        "id": "halcyon:fluid_mixer"
+      },
+      "text": {
+        "translate": "data_tablet.pages.fluid_mixer.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "text": {
+        "translate": "data_tablet.pages.fluid_mixer.page2.text"
+      },
+      "recipes": [
+        "halcyon:fabrication/machines/fluid_mixer",
+        "halcyon:fluid_mixing/lava_duplication_from_stone"
+      ]
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.fluid_mixer.name"
+  },
+  "parents": [
+    "halcyon:machinery/fluidworks",
+    "halcyon:machinery/automation"
+  ]
+}

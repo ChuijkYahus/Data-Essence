@@ -1,0 +1,40 @@
+{
+  "display": {
+    "icon": {
+      "id": "halcyon:logical_matrix"
+    },
+    "frame": "goal",
+    "title": {
+      "translate": "advancements.halcyon.craft_logical_matrix.title"
+    },
+    "description": {
+      "translate": "advancements.halcyon.craft_logical_matrix.description"
+    },
+    "hidden": false
+  },
+  "parent": "halcyon:progression/acquire_fabricator",
+  "criteria": {
+    "craft": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": { "items": [ { "items": ["halcyon:logical_matrix" ] } ] }
+    },
+    "has_burner": {
+      "trigger": "databank:has_advancement",
+      "conditions": {
+        "advancement": "halcyon:progression/place_essence_burner"
+      }
+    },
+    "has_fabricator": {
+      "trigger": "databank:has_advancement",
+      "conditions": {
+        "advancement": "halcyon:progression/acquire_fabricator"
+      }
+    },
+    "has_node_and_wire": {
+      "trigger": "databank:has_advancement",
+      "conditions": {
+        "advancement": "halcyon:progression/acquire_essence_node_and_wire"
+      }
+    }
+  }
+}

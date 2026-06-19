@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "halcyon:data_tablet"
+    },
+    "title": {
+      "translate": "advancements.halcyon.halcyon.title"
+    },
+    "description": {
+      "translate": "advancements.halcyon.halcyon.description"
+    },
+    "background": "halcyon:textures/block/deco/polished_obsidian_bricks.png"
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "halcyon:data_tablet"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

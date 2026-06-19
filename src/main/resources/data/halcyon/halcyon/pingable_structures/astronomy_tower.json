@@ -1,0 +1,20 @@
+{
+  "structure": "halcyon:astronomy_tower",
+  "advancement": "halcyon:exploration/find_astronomy_tower",
+  "requiredAdvancement": "halcyon:progression/acquire_shard_of_transformation",
+  "color1": [
+    255,
+    253,
+    207
+  ],
+  "color2": [
+    193,
+    141,
+    101
+  ],
+  "icon": {
+    "texture": "halcyon:textures/gui/structure_icons.png",
+    "u": 96,
+    "v": 0
+  }
+}

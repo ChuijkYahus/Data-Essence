@@ -1,0 +1,32 @@
+{
+  "icon": {
+    "id": "halcyon:industrial_plant_siphon"
+  },
+  "tab": "halcyon:essence_manipulation",
+  "x": 1,
+  "y": 2,
+  "pages": [
+    {
+      "type": "halcyon:text",
+      "text": {
+        "translate": "data_tablet.pages.industrial_plant_siphon.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "text": {
+        "translate": "data_tablet.pages.industrial_plant_siphon.page2.text"
+      },
+      "recipes": [
+        "halcyon:fabrication/industrial_plant_siphon"
+      ]
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.industrial_plant_siphon.name"
+  },
+  "parents": [
+    "halcyon:essence_manipulation/essence_burner"
+  ],
+  "critical": true
+}

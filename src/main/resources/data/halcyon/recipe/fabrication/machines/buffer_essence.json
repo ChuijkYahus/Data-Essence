@@ -1,0 +1,18 @@
+{
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": { "halcyon:essence": 10 },
+  "entry": "halcyon:machinery/buffers",
+  "pattern": [
+    "SRS",
+    "POP",
+    "SRS"
+  ],
+  "time": 60,
+  "key": {
+    "P": { "item": "halcyon:capacitance_panel" },
+    "R": { "item": "halcyon:conductance_rod" },
+    "S": { "item": "halcyon:essence_shard" },
+    "O": { "item": "halcyon:polished_obsidian" }
+  },
+  "result": { "id": "halcyon:essence_buffer", "count": 2 }
+}

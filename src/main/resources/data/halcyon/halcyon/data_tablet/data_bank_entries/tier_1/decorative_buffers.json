@@ -1,0 +1,42 @@
+{
+  "icon": {
+    "id": "halcyon:deco_fluid_buffer"
+  },
+  "tier": 1,
+  "minigames": [
+    {
+      "type": "halcyon:color_mixing",
+      "colorManipulations": [
+        {
+          "maxIntensity": 1,
+          "intensity": 1,
+          "color": [
+            255,
+            0,
+            255
+          ]
+        },
+        {
+          "maxIntensity": 1,
+          "intensity": 1,
+          "color": [
+            0,
+            255,
+            255
+          ]
+        }
+      ],
+      "startColor": [
+        255,
+        255,
+        255
+      ],
+      "maxManipulations": 10,
+      "colorLevels": 1
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.databank_generic_decor"
+  },
+  "entry": "halcyon:tools/decorative_buffers"
+}

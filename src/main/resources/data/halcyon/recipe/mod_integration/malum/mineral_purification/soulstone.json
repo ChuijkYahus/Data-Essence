@@ -1,0 +1,13 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "malum"
+        }
+    ],
+    "type": "halcyon:mineral_purification",
+    "input": { "item": "malum:raw_soulstone" },
+    "time": 300,
+    "result": { "id": "malum:refined_soulstone" },
+    "nuggetResult": { "id": "malum:refined_soulstone", "count": 1 }
+}

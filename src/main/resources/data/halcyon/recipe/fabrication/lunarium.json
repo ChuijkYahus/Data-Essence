@@ -1,0 +1,23 @@
+{
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": {
+    "halcyon:essence": 1000
+  },
+  "time": 620,
+  "entry": "halcyon:machinery_transformation/lunarium",
+  "completion_stage": 0,
+  "pattern": [
+    "RLR",
+    "GSG",
+    "OsO"
+  ],
+  "key": {
+    "R": { "item": "halcyon:transformative_rod" },
+    "L": { "item": "halcyon:lensing_crystal" },
+    "O": { "item": "halcyon:polished_obsidian" },
+    "G": { "item": "halcyon:ecliptrum_cog_assembly_2x" },
+    "S": { "item": "halcyon:essence_shard" },
+    "s": { "item": "halcyon:shard_of_transformation" }
+  },
+  "result": { "id": "halcyon:lunarium" }
+}

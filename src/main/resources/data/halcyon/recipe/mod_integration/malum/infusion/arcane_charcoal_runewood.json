@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "malum"
+    }
+  ],
+  "type": "halcyon:infusion",
+  "essenceCost": {
+    "halcyon:essence": 80
+  },
+  "entry": "halcyon:mod_integration/malum",
+  "input": {
+    "tag": "malum:runewood_logs",
+    "count": 1
+  },
+  "result": {
+    "id": "malum:arcane_charcoal",
+    "count": 2
+  }
+}

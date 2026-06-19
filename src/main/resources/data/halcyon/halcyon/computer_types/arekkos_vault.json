@@ -1,0 +1,10 @@
+{
+  "files": [
+    {
+      "type": "halcyon:text",
+      "text": {
+        "translate": "computer.arekkos_vault.log"
+      }
+    }
+  ]
+}

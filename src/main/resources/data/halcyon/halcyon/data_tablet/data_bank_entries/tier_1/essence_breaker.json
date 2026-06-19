@@ -1,0 +1,17 @@
+{
+  "icon": {
+    "id": "halcyon:essence_breaker"
+  },
+  "tier": 1,
+  "minigames": [
+    {
+      "type": "halcyon:minesweeper",
+      "bombs": 10,
+      "size": 5
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.databank_generic_production"
+  },
+  "entry": "halcyon:machinery/essence_breaker"
+}

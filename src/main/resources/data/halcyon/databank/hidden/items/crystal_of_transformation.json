@@ -1,0 +1,15 @@
+{
+  "condition": {
+    "type": "halcyon:entry",
+    "entry": "halcyon:machinery_transformation/lunar_strikes"
+  },
+  "type": {
+    "type": "databank:item",
+    "hidden_as": "halcyon:crystal_of_transformation",
+    "original": "halcyon:crystal_of_transformation",
+    "name_override": {
+      "translate": "hidden.halcyon.crystal",
+      "font": "halcyon:ancient"
+    }
+  }
+}

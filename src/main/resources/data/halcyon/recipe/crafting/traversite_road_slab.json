@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "TTT"
+  ],
+  "key": {
+    "T": { "item": "halcyon:traversite_road" }
+  },
+  "result": { "id": "halcyon:traversite_road_slab", "count": 6 }
+}

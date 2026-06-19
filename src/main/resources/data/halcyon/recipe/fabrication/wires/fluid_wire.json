@@ -1,0 +1,18 @@
+{
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": {
+    "halcyon:essence": 0
+  },
+  "entry": "halcyon:machinery/fluidworks",
+  "pattern": [
+    " C ",
+    "LRL",
+    " C "
+  ],
+  "key": {
+    "L": { "item": "minecraft:lapis_lazuli" },
+    "R": { "item": "halcyon:conductance_rod" },
+    "C": { "item": "minecraft:copper_ingot" }
+  },
+  "result": { "id": "halcyon:fluid_wire", "count": 2 }
+}

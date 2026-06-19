@@ -1,0 +1,20 @@
+{
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": {
+    "halcyon:essence": 10
+  },
+  "entry": "halcyon:machinery/laser_emitter",
+  "pattern": [
+    "ILI",
+    "IEI",
+    "IRI"
+  ],
+  "time": 60,
+  "key": {
+    "I": { "item": "minecraft:iron_ingot" },
+    "L": { "item": "halcyon:lens" },
+    "E": { "item": "halcyon:essence_shard" },
+    "R": { "item": "minecraft:redstone" }
+  },
+  "result": { "id": "halcyon:laser_emitter" }
+}

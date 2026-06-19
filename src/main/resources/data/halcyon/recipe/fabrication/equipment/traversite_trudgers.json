@@ -1,0 +1,19 @@
+{
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": {
+    "halcyon:essence": 50
+  },
+  "entry": "halcyon:tools/traversite_trudgers",
+  "pattern": [
+    "W W",
+    " L ",
+    "T T"
+  ],
+  "time": 200,
+  "key": {
+    "T": { "item": "halcyon:traversite_road" },
+    "W": { "item": "minecraft:light_blue_wool" },
+    "L": { "item": "minecraft:leather_boots" }
+  },
+  "result": { "id": "halcyon:traversite_trudgers" }
+}

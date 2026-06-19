@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " C ",
+    "C C",
+    " C "
+  ],
+  "key": {
+    "C": { "item": "halcyon:capacitance_panel" }
+  },
+  "result": { "id": "halcyon:copper_shell" }
+}

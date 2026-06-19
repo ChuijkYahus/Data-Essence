@@ -1,0 +1,10 @@
+{
+  "icon": {
+    "id": "halcyon:metal_shaper"
+  },
+  "tier": 1,
+  "name": {
+    "translate": "data_tablet.databank_generic_processing"
+  },
+  "entry": "halcyon:machinery/metal_shaper"
+}

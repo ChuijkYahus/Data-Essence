@@ -1,0 +1,20 @@
+{
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": {
+    "halcyon:essence": 200
+  },
+  "time": 160,
+  "entry": "halcyon:tools/twining_lantern",
+  "pattern": [
+    " P ",
+    "RLR",
+    " E "
+  ],
+  "key": {
+    "L": { "item": "halcyon:lensing_crystal" },
+    "R": { "item": "halcyon:conductance_rod" },
+    "P": { "item": "halcyon:capacitance_panel" },
+    "E": { "item": "halcyon:essence_pathways" }
+  },
+  "result": { "id": "halcyon:twining_lantern", "count": 4 }
+}

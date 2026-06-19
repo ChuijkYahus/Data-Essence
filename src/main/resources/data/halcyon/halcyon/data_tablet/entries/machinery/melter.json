@@ -1,0 +1,41 @@
+{
+  "icon": {
+    "id": "halcyon:melter"
+  },
+  "tab": "halcyon:machinery",
+  "x": 2,
+  "y": 2,
+  "pages": [
+    {
+      "type": "halcyon:text",
+      "text": {
+        "translate": "data_tablet.pages.melter.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:fabrication/machines/melter",
+        "halcyon:melting/ice"
+      ],
+      "text": {
+        "translate": "data_tablet.pages.melter.page2.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:melting/magma",
+        "halcyon:melting/mud",
+        "halcyon:melting/netherrack",
+        "halcyon:melting/stone"
+      ]
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.melter.name"
+  },
+  "parents": [
+    "halcyon:machinery/fluidworks"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": {
+    "halcyon:essence": 5
+  },
+  "time": 60,
+  "entry": "halcyon:machinery/advanced_filtering",
+  "pattern": [
+    " N",
+    "P "
+  ],
+  "key": {
+    "N": { "tag": "c:nuggets/copper" },
+    "P": { "item": "minecraft:paper" }
+  },
+  "result": { "id": "halcyon:tag_filter" }
+}

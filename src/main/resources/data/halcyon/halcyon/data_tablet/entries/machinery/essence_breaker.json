@@ -1,0 +1,35 @@
+{
+  "icon": {
+    "id": "halcyon:essence_breaker"
+  },
+  "tab": "halcyon:machinery",
+  "x": 4,
+  "y": 4,
+  "pages": [
+    {
+      "type": "halcyon:item",
+      "item": { "id": "halcyon:essence_breaker" },
+      "text": {
+        "translate": "data_tablet.pages.essence_breaker.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:fabrication/machines/essence_breaker"
+        ],
+      "text": {
+        "translate": "data_tablet.pages.essence_breaker.page2.text"
+      }
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.essence_breaker.name"
+  },
+  "flavor": {
+    "translate": "data_tablet.pages.essence_breaker.flavor"
+  },
+  "parents": [
+    "halcyon:basics/components"
+  ]
+}

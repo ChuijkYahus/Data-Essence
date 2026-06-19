@@ -1,0 +1,16 @@
+{
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": { "halcyon:essence": 25 },
+  "entry": "halcyon:machinery/node_upgrades",
+  "pattern": [
+    "B B",
+    "GBG",
+    "B B"
+  ],
+  "time": 60,
+  "key": {
+    "B": { "item": "halcyon:bonding_powder" },
+    "G": { "item": "minecraft:glowstone_dust" }
+  },
+  "result": { "id": "halcyon:filter_upgrade" }
+}

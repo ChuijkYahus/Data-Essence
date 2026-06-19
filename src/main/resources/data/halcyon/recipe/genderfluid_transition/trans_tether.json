@@ -1,0 +1,5 @@
+{
+  "type": "halcyon:genderfluid_transition",
+  "input": { "item": "halcyon:transcendental_tether" },
+  "result": { "id": "halcyon:trans_tether" }
+}

@@ -1,0 +1,94 @@
+{
+  "variants": {
+    "facing=down": [
+      {
+        "model": "halcyon:block/essence_crystal",
+        "x": 180
+      },
+      {
+        "model": "halcyon:block/essence_crystal_2",
+        "x": 180
+      },
+      {
+        "model": "halcyon:block/essence_crystal_3",
+        "x": 180
+      }
+    ],
+    "facing=east": [
+      {
+        "model": "halcyon:block/essence_crystal",
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "halcyon:block/essence_crystal_2",
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "halcyon:block/essence_crystal_3",
+        "x": 90,
+        "y": 90
+      }
+    ],
+    "facing=north": [
+      {
+        "model": "halcyon:block/essence_crystal",
+        "x": 90
+      },
+      {
+        "model": "halcyon:block/essence_crystal_2",
+        "x": 90
+      },
+      {
+        "model": "halcyon:block/essence_crystal_3",
+        "x": 90
+      }
+    ],
+    "facing=south": [
+      {
+        "model": "halcyon:block/essence_crystal",
+        "x": 90,
+        "y": 180
+      },
+      {
+        "model": "halcyon:block/essence_crystal_2",
+        "x": 90,
+        "y": 180
+      },
+      {
+        "model": "halcyon:block/essence_crystal_3",
+        "x": 90,
+        "y": 180
+      }
+    ],
+    "facing=up": [
+      {
+        "model": "halcyon:block/essence_crystal"
+      },
+      {
+        "model": "halcyon:block/essence_crystal_2"
+      },
+      {
+        "model": "halcyon:block/essence_crystal_3"
+      }
+    ],
+    "facing=west": [
+      {
+        "model": "halcyon:block/essence_crystal",
+        "x": 90,
+        "y": 270
+      },
+      {
+        "model": "halcyon:block/essence_crystal_2",
+        "x": 90,
+        "y": 270
+      },
+      {
+        "model": "halcyon:block/essence_crystal_3",
+        "x": 90,
+        "y": 270
+      }
+    ]
+  }
+}

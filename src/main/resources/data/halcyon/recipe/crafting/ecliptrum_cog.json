@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " C ",
+    "CCC",
+    " C "
+  ],
+  "key": {
+    "C": { "item": "halcyon:ecliptrum_ingot" }
+  },
+  "result": { "id": "halcyon:ecliptrum_cog", "count": 3 }
+}

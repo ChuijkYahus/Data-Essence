@@ -1,0 +1,550 @@
+{
+    "ost.abandoned_factory": {
+        "sounds": [
+            "halcyon:ost/abandoned_factory"
+        ],
+        "stream": true
+    },
+    "ost.factory_loops.fabricator": {
+        "sounds": [
+            "halcyon:ost/factory_loops/fabricator"
+        ],
+        "stream": true
+    },
+    "ost.factory_loops.lunarium": {
+        "sounds": [
+            "halcyon:ost/factory_loops/lunarium"
+        ],
+        "stream": true
+    },
+    "ost.factory_loops.agricore": {
+        "sounds": [
+            "halcyon:ost/factory_loops/agricore"
+        ],
+        "stream": true
+    },
+    "ost.factory_loops.starforge": {
+        "sounds": [
+            "halcyon:ost/factory_loops/starforge"
+        ],
+        "stream": true
+    },
+    "ost.factory_loops.essence_leech": {
+        "sounds": [
+            "halcyon:ost/factory_loops/essence_leech"
+        ],
+        "stream": true
+    },
+    "ost.factory_loops.plant_siphon": {
+        "sounds": [
+            "halcyon:ost/factory_loops/plant_siphon"
+        ],
+        "stream": true
+    },
+    "ost.factory_loops.essence_derivation_spike": {
+        "sounds": [
+            "halcyon:ost/factory_loops/essence_derivation_spike"
+        ],
+        "stream": true
+    },
+    "ost.factory_loops.metal_shaper": {
+        "sounds": [
+            "halcyon:ost/factory_loops/metal_shaper"
+        ],
+        "stream": true
+    },
+    "ost.factory_loops.auto-fabricator": {
+        "sounds": [
+            "halcyon:ost/factory_loops/auto-fabricator"
+        ],
+        "stream": true
+    },
+    "ost.factory_loops.synthesis_industrial": {
+        "sounds": [
+            "halcyon:ost/factory_loops/synthesis_industrial"
+        ],
+        "stream": true
+    },
+    "critical_data_unlocked": {
+        "sounds": [
+            "halcyon:critical_data_unlocked"
+        ]
+    },
+    "tier_advanced": {
+        "sounds": [
+            "minecraft:ui/toast/challenge_complete"
+        ]
+    },
+    "block.entropic_processor.working": {
+        "sounds": [
+            "halcyon:block/entropic_processor/grind"
+        ],
+        "subtitle": "subtitle.halcyon.block.entropic_processor.working"
+    },
+    "block.structure_protector.deactivate": {
+        "sounds": [
+            "halcyon:block/structure_protector/deactivate"
+        ],
+        "subtitle": "subtitle.halcyon.block.structure_protector.deactivate"
+    },
+    "block.structure_protector.refresh": {
+        "sounds": [
+            "halcyon:block/structure_protector/refresh"
+        ],
+        "subtitle": "subtitle.halcyon.block.structure_protector.refresh"
+    },
+    "item.signal_tracker.ping": {
+        "sounds": [
+            "halcyon:item/signal_tracker/ping"
+        ],
+        "subtitle": "subtitle.halcyon.item.signal_tracker.ping"
+    },
+    "item.ore_scanner.ping": {
+        "sounds": [
+            "halcyon:item/signal_tracker/ping"
+        ],
+        "subtitle": "subtitle.halcyon.item.ore_scanner.ping"
+    },
+    "item.ore_scanner.scan_ore": {
+        "sounds": [
+            "minecraft:block/amethyst/resonate4"
+        ],
+        "subtitle": "subtitle.halcyon.item.ore_scanner.scan_ore"
+    },
+  "item.falling_moon.charge0-1": {
+    "subtitle": "subtitles.item.falling_moon.charge0-1",
+    "sounds": [
+      "halcyon:item/falling_moon/charge0-1"
+    ]
+  },
+  "item.falling_moon.charge1-2": {
+    "subtitle": "subtitles.item.falling_moon.charge1-2",
+    "sounds": [
+      "halcyon:item/falling_moon/charge1-2"
+    ]
+  },
+  "item.falling_moon.charge2-3": {
+    "subtitle": "subtitles.item.falling_moon.charge2-3",
+    "sounds": [
+      "halcyon:item/falling_moon/charge2-3"
+    ]
+  },
+  "item.falling_moon.charge3-overcharge": {
+    "subtitle": "subtitles.item.falling_moon.charge3-overcharge",
+    "sounds": [
+      "halcyon:item/falling_moon/charge3-overcharge"
+    ]
+  },
+  "item.falling_moon.ding": {
+    "subtitle": "subtitles.item.falling_moon.ding",
+    "sounds": [
+      "halcyon:item/falling_moon/ding"
+    ]
+  },
+    "item.falling_moon.fire1": {
+      "subtitle": "subtitles.item.falling_moon.fire1",
+      "sounds": [
+        "halcyon:item/falling_moon/fire1"
+      ]
+    },
+  "item.falling_moon.fire2": {
+    "subtitle": "subtitles.item.falling_moon.fire2",
+    "sounds": [
+      "halcyon:item/falling_moon/fire2"
+    ]
+  },
+  "item.falling_moon.fire3": {
+    "subtitle": "subtitles.item.falling_moon.fire3",
+    "sounds": [
+      "halcyon:item/falling_moon/fire3"
+    ]
+  },
+  "item.falling_moon.overcharge": {
+    "subtitle": "subtitles.item.falling_moon.overcharge",
+    "sounds": [
+      "halcyon:item/falling_moon/overcharge"
+    ]
+  },
+  "item.falling_moon.interrupt": {
+    "subtitle": "subtitles.item.falling_moon.interrupt",
+    "sounds": [
+      "halcyon:item/falling_moon/interrupt"
+    ]
+  },
+    "ui_click": {
+        "sounds": [
+            "halcyon:ui/ui_click"
+        ]
+    },
+
+    "music.under_the_sky": {
+        "sounds": [
+            "halcyon:music/under_the_sky"
+        ],
+        "stream": true
+    },
+    "block.generic_node.link_from": {
+        "sounds": [
+            {
+                "name": "item/dye/dye",
+                "pitch": 1.1
+            },
+            {
+                "name": "item/dye/dye",
+                "pitch": 0.99
+            },
+            {
+                "name": "item/dye/dye",
+                "pitch": 1.045
+            },
+            {
+                "name": "item/dye/dye",
+                "pitch": 1.21
+            }
+        ],
+        "subtitle": "subtitle.halcyon.block.generic_node.link_from"
+    },
+    "block.generic_node.link_to": {
+        "sounds": [
+            {
+                "name": "item/crossbow/loading_end",
+                "pitch": 1.1
+            }
+        ],
+        "subtitle": "subtitle.halcyon.block.generic_node.link_to"
+    },
+    "block.generic_pearl_network.link_from": {
+        "sounds": [
+            {
+                "name": "item/dye/dye",
+                "pitch": 1.1
+            },
+            {
+                "name": "item/dye/dye",
+                "pitch": 0.99
+            },
+            {
+                "name": "item/dye/dye",
+                "pitch": 1.045
+            },
+            {
+                "name": "item/dye/dye",
+                "pitch": 1.21
+            }
+        ],
+        "subtitle": "subtitle.halcyon.block.generic_pearl_network.link_from"
+    },
+    "block.generic_pearl_network.link_to": {
+        "sounds": [
+            {
+                "name": "item/crossbow/loading_end",
+                "pitch": 1.1
+            }
+        ],
+        "subtitle": "subtitle.halcyon.block.generic_pearl_network.link_to"
+    },
+    "block.vacuum.pickup": {
+        "sounds": [
+            "random/pop"
+        ],
+        "subtitle": "subtitle.halcyon.block.vacuum.pickup"
+    },
+    "block.auto_fabricator.craft": {
+        "sounds": [
+            "block/amethyst_cluster/break1",
+            "block/amethyst_cluster/break2",
+            "block/amethyst_cluster/break3",
+            "block/amethyst_cluster/break4"
+        ],
+        "subtitle": "subtitle.halcyon.block.auto_fabricator.craft"
+    },
+    "block.fabricator.start": {
+        "sounds": [
+            "halcyon:block/fabricator/start_craft"
+        ],
+        "subtitle": "subtitle.halcyon.block.fabricator.start"
+    },
+    "block.fabricator.working": {
+        "sounds": [
+            "halcyon:block/fabricator/loop"
+        ]
+    },
+    "block.fabricator.craft": {
+        "sounds": [
+            "halcyon:block/fabricator/finish_craft"
+        ],
+        "subtitle": "subtitle.halcyon.block.fabricator.craft"
+    },
+    "block.infuser.craft": {
+        "sounds": [
+            "block/enchantment_table/enchant1",
+            "block/enchantment_table/enchant2",
+            "block/enchantment_table/enchant3"
+        ],
+        "subtitle": "subtitle.halcyon.block.infuser.craft"
+    },
+    "block.mineral_purification_chamber.craft": {
+        "sounds": [
+            "halcyon:block/mineral_purification_chamber/craft1",
+            "halcyon:block/mineral_purification_chamber/craft2",
+            "halcyon:block/mineral_purification_chamber/craft3"
+        ],
+        "subtitle": "subtitle.halcyon.block.mineral_purification_chamber.craft"
+    },
+    "block.fluid_collector.tick": {
+        "sounds": [
+            {
+                "name": "random/click",
+                "pitch": 1.5
+            }
+        ],
+        "subtitle": "subtitle.halcyon.block.fluid_collector.tick"
+    },
+    "block.fluid_collector.fill": {
+        "sounds": [
+            {
+                "name": "item/bucket/fill1",
+                "pitch": 0.75
+            },
+            {
+                "name": "item/bucket/fill2",
+                "pitch": 0.75
+            },
+            {
+                "name": "item/bucket/fill3",
+                "pitch": 0.75
+            }
+        ],
+        "subtitle": "subtitle.halcyon.block.fluid_collector.fill"
+    },
+    "block.fluid_spiller.empty": {
+        "sounds": [
+            "item/bucket/empty1",
+            {
+                "name": "item/bucket/empty1",
+                "pitch": 0.9
+            },
+            "item/bucket/empty2",
+            "item/bucket/empty3"
+        ],
+        "subtitle": "subtitle.halcyon.block.fluid_spiller.empty"
+    },
+    "block.metal_shaper.crafting": {
+        "sounds": [
+            {
+                "name": "random/fizz",
+                "pitch": 0.75
+            }
+        ],
+        "subtitle": "subtitle.halcyon.block.metal_shaper.crafting"
+    },
+    "minigame.color_mixing.mix": {
+        "sounds": [
+            {
+                "name": "item/ink_sac/ink_sac1",
+                "pitch": 0.85
+            },
+            {
+                "name": "item/ink_sac/ink_sac1",
+                "pitch": 0.88
+            },
+            {
+                "name": "item/ink_sac/ink_sac1",
+                "pitch": 0.9
+            },
+            {
+                "name": "item/ink_sac/ink_sac2",
+                "pitch": 0.85
+            },
+            {
+                "name": "item/ink_sac/ink_sac2",
+                "pitch": 0.88
+            },
+            {
+                "name": "item/ink_sac/ink_sac2",
+                "pitch": 0.9
+            },
+            {
+                "name": "item/ink_sac/ink_sac3",
+                "pitch": 0.85
+            },
+            {
+                "name": "item/ink_sac/ink_sac3",
+                "pitch": 0.88
+            },
+            {
+                "name": "item/ink_sac/ink_sac3",
+                "pitch": 0.9
+            }
+        ]
+    },
+    "minigame.minesweeper.place_flag": {
+        "sounds": [
+            "dig/cloth1",
+            "dig/cloth2",
+            "dig/cloth3",
+            "dig/cloth4"
+        ]
+    },
+    "minigame.minesweeper.remove_flag": {
+        "sounds": [
+            "dig/cloth1",
+            "dig/cloth2",
+            "dig/cloth3",
+            "dig/cloth4"
+        ]
+    },
+    "minigame.minesweeper.break": {
+        "sounds": [
+            "dig/stone1",
+            "dig/stone2",
+            "dig/stone3",
+            "dig/stone4"
+        ]
+    },
+    "minigame.minesweeper.explode": {
+        "sounds": [
+            "random/explode1",
+            "random/explode2",
+            "random/explode3",
+            "random/explode4"
+        ]
+    },
+    "entity.ancient_sentinel.walk": {
+        "sounds": [
+            "mob/irongolem/walk1",
+            "mob/irongolem/walk2",
+            "mob/irongolem/walk3",
+            "mob/irongolem/walk4"
+        ],
+        "subtitle": "subtitles.block.generic.footsteps"
+    },
+    "entity.ancient_sentinel.hurt": {
+        "sounds": [
+            "mob/irongolem/hit1",
+            "mob/irongolem/hit2",
+            "mob/irongolem/hit3",
+            "mob/irongolem/hit4"
+        ],
+        "subtitle": "subtitle.halcyon.entity.ancient_sentinel.hurt"
+    },
+    "entity.ancient_sentinel.death": {
+        "sounds": [
+            "mob/irongolem/death"
+        ],
+        "subtitle": "subtitle.halcyon.entity.ancient_sentinel.death"
+    },
+    "entity.ancient_sentinel.shoot": {
+        "sounds": [
+            "halcyon:entity/ancient_sentinel/shoot"
+        ],
+        "subtitle": "subtitle.halcyon.entity.ancient_sentinel.shoot"
+    },
+    "entity.ancient_sentinel_projectile.hit_block": {
+        "sounds": [
+            "halcyon:entity/ancient_sentinel_projectile/hit_block"
+        ],
+        "subtitle": "subtitle.halcyon.entity.ancient_sentinel_projectile.hit_block"
+    },
+    "item.cognizant_cube.shake": {
+        "sounds": [
+            "dig/stone1",
+            "dig/stone2",
+            "dig/stone3",
+            "dig/stone4"
+        ],
+        "subtitle": "subtitle.halcyon.item.cognizant_cube.shake"
+    },
+    "item.cognizant_cube.message": {
+        "sounds": [
+            "block/enchantment_table/enchant1",
+            "block/enchantment_table/enchant2",
+            "block/enchantment_table/enchant3"
+        ],
+        "subtitle": "subtitle.halcyon.item.cognizant_cube.message"
+    },
+    "item.hammer_and_chisel.mine": {
+        "sounds": [
+            {
+                "name": "random/anvil_break",
+                "pitch": 2
+            }
+        ],
+        "subtitle": "subtitle.halcyon.item.hammer_and_chisel.mine"
+    },
+    "item.warp_capsule.use": {
+        "sounds": [
+            "halcyon:item/warp_capsule/use1",
+            "halcyon:item/warp_capsule/use2",
+            "halcyon:item/warp_capsule/use3"
+        ],
+        "subtitle": "subtitle.halcyon.item.warp_capsule.use"
+    },
+    "item.warp_capsule.fail": {
+        "sounds": [
+            "random/click"
+        ],
+        "subtitle": "subtitle.halcyon.item.warp_capsule.fail"
+    },
+    "block.ender_pearl_capture.absorb": {
+        "sounds": [
+            {
+                "name": "entity/endereye/dead1",
+                "volume": 1.3
+            },
+            {
+                "name": "entity/endereye/dead2",
+                "volume": 1.3
+            }
+        ],
+        "subtitle": "subtitle.halcyon.block.ender_pearl_capture.absorb"
+    },
+    "fluid.genderfluid.transition": {
+        "sounds": [
+            "mob/evocation_illager/cast1",
+            "mob/evocation_illager/cast2"
+        ],
+        "subtitle": "subtitle.halcyon.fluid.genderfluid.transition"
+    },
+    "item.traversite_trudgers.equip": {
+        "sounds": [
+            "item/armor/equip_leather1",
+            "item/armor/equip_leather2",
+            "item/armor/equip_leather3",
+            "item/armor/equip_leather4",
+            "item/armor/equip_leather5",
+            "item/armor/equip_leather6"
+        ],
+        "subtitle": "subtitle.halcyon.item.traversite_trudgers.equip"
+    },
+    "item.essence_bomb.throw": {
+        "sounds": [
+            "random/bow"
+        ],
+        "subtitle": "subtitle.halcyon.item.essence_bomb.throw"
+    },
+    "item.lunar_essence_bomb.throw": {
+        "sounds": [
+            "random/bow"
+        ],
+        "subtitle": "subtitle.halcyon.item.lunar_essence_bomb.throw"
+    },
+    "item.natural_essence_bomb.throw": {
+        "sounds": [
+            "random/bow"
+        ],
+        "subtitle": "subtitle.halcyon.item.natural_essence_bomb.throw"
+    },
+    "item.exotic_essence_bomb.throw": {
+        "sounds": [
+            "random/bow"
+        ],
+        "subtitle": "subtitle.halcyon.item.exotic_essence_bomb.throw"
+    },
+    "item.essence_redirector.use": {
+        "sounds": [
+            "halcyon:item/essence_redirector/redirector_use"
+        ],
+        "subtitle": "subtitle.halcyon.item.essence_redirector.use"
+    }
+}

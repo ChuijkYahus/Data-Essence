@@ -1,0 +1,35 @@
+{
+  "icon": {
+    "id": "halcyon:essence_furnace"
+  },
+  "tab": "halcyon:machinery",
+  "x": -5,
+  "y": 0,
+  "pages": [
+    {
+      "type": "halcyon:item",
+      "item": { "id": "halcyon:essence_furnace" },
+      "text": {
+        "translate": "data_tablet.pages.essence_furnace.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "text": {
+        "translate": "data_tablet.pages.essence_furnace.page2.text"
+      },
+      "recipes": [
+        "halcyon:fabrication/machines/essence_furnace"
+      ]
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.essence_furnace.name"
+  },
+  "flavor": {
+    "translate": "data_tablet.pages.essence_furnace.flavor"
+  },
+  "parents": [
+    "halcyon:machinery/itemworks"
+  ]
+}

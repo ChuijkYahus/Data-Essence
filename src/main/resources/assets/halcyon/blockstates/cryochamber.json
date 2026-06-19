@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "halcyon:block/cryochamber",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "halcyon:block/cryochamber"
+    },
+    "facing=south": {
+      "model": "halcyon:block/cryochamber",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "halcyon:block/cryochamber",
+      "y": 270
+    }
+  }
+}

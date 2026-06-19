@@ -1,0 +1,42 @@
+{
+  "files": [
+    {
+      "type": "halcyon:text",
+      "text": {
+        "translate": "computer.burrow.small_01.exploration_hint"
+      }
+    },
+    {
+      "type": "halcyon:text",
+      "text": {
+        "translate": "computer.burrow.small_01.diary_01"
+      }
+    },
+    {
+      "type": "halcyon:text",
+      "text": {
+        "translate": "computer.generic.poem_02",
+        "font": "halcyon:ancient"
+      },
+      "rtl": true
+    },
+    {
+      "type": "halcyon:text",
+      "text": {
+        "translate": "computer.burrow.small_01.diary_02"
+      }
+    },
+    {
+      "type": "halcyon:text",
+      "text": {
+        "translate": "computer.burrow.small_01.diary_03"
+      }
+    },
+    {
+      "type": "halcyon:text",
+      "text": {
+        "translate": "computer.burrow.small_01.diary_04"
+      }
+    }
+  ]
+}

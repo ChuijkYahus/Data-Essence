@@ -1,0 +1,21 @@
+{
+  "display": {
+    "icon": {
+      "id": "halcyon:synthesis_chamber"
+    },
+    "title": {
+      "translate": "advancements.halcyon.acquire_synthesis_chamber.title"
+    },
+    "description": {
+      "translate": "advancements.halcyon.acquire_synthesis_chamber.description"
+    },
+    "hidden": false
+  },
+  "parent": "halcyon:progression/use_data_drive",
+  "criteria": {
+    "has_synthesis_chamber": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": { "items": [ { "items": ["halcyon:synthesis_chamber" ] } ] }
+    }
+  }
+}

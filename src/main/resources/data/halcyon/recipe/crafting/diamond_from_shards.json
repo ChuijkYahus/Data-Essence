@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "ddd",
+    "ddd",
+    "ddd"
+  ],
+  "key": {
+    "d": { "item": "halcyon:diamond_shard" }
+  },
+  "result": { "id": "minecraft:diamond" }
+}

@@ -1,0 +1,39 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "oritech"
+    }
+  ],
+  "icon": {
+    "id": "oritech:nickel_ingot"
+  },
+  "tab": "halcyon:mod_integration",
+  "x": 2,
+  "y": 2,
+  "pages": [
+    {
+      "type": "halcyon:text",
+      "text": {
+        "translate": "data_tablet.pages.integration_oritech_alloying.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:mod_integration/oritech/synthesis/adamant",
+        "halcyon:mod_integration/oritech/synthesis/biosteel",
+        "halcyon:mod_integration/oritech/synthesis/duratium",
+        "halcyon:mod_integration/oritech/synthesis/electrum",
+        "halcyon:mod_integration/oritech/synthesis/energite",
+        "halcyon:mod_integration/oritech/synthesis/steel"
+      ]
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.integration_oritech_alloying.name"
+  },
+  "parents": [
+    "halcyon:machinery/synthesis_chamber"
+  ]
+}

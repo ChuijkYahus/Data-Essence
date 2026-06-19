@@ -1,0 +1,35 @@
+{
+  "icon": {
+    "id": "halcyon:vacuum"
+  },
+  "tab": "halcyon:machinery",
+  "x": -5,
+  "y": -2,
+  "pages": [
+    {
+      "type": "halcyon:item",
+      "item": {
+        "id": "halcyon:vacuum"
+      },
+      "text": {
+        "translate": "data_tablet.pages.vacuum.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "text": {
+        "translate": "data_tablet.pages.vacuum.page2.text"
+      },
+      "recipes": [
+        "halcyon:fabrication/machines/vacuum"
+      ]
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.vacuum.name"
+  },
+  "parents": [
+    "halcyon:basics/fabricator",
+    "halcyon:machinery/itemworks"
+  ]
+}

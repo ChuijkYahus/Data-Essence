@@ -1,0 +1,19 @@
+{
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": {
+    "halcyon:essence": 10,
+    "halcyon:lunar_essence": 40
+  },
+  "time": 120,
+  "entry": "halcyon:tools/crystallization_charge",
+  "pattern": [
+    " P ",
+    "PFP",
+    " P "
+  ],
+  "key": {
+    "P": { "item": "halcyon:reflective_panel" },
+    "F": { "item": "minecraft:fire_charge" }
+  },
+  "result": { "id": "halcyon:crystallization_charge", "count": 4 }
+}

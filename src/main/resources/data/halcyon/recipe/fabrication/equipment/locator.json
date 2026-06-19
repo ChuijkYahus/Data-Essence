@@ -1,0 +1,19 @@
+{
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": {
+    "halcyon:essence": 10
+  },
+  "entry": "halcyon:basics/locator",
+  "pattern": [
+    "gAg",
+    "CLC"
+  ],
+  "time": 100,
+  "key": {
+    "C": { "item": "halcyon:capacitance_panel" },
+    "L": { "item": "halcyon:logical_matrix" },
+    "A": { "item": "minecraft:amethyst_shard" },
+    "g": { "item": "minecraft:glowstone_dust" }
+  },
+  "result": { "id": "halcyon:locator", "count": 1 }
+}

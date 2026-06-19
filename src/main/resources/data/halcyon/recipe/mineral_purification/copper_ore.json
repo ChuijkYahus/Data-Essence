@@ -1,0 +1,7 @@
+{
+    "type": "halcyon:mineral_purification",
+    "input": { "tag": "c:ores/copper" },
+    "time": 300,
+    "result": { "id": "minecraft:copper_ingot" },
+    "nuggetResult": { "id": "halcyon:copper_nugget", "count": 4 }
+}

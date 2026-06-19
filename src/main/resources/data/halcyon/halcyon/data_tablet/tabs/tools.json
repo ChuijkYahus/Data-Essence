@@ -1,0 +1,11 @@
+{
+  "icon": {
+    "id": "halcyon:traversite_road"
+  },
+  "name": {
+    "translate": "data_tablet.tabs.tools.name"
+  },
+  "placement": {
+    "place_after": "halcyon:machinery"
+  }
+}

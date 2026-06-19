@@ -1,0 +1,17 @@
+{
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": { "halcyon:essence": 25 },
+  "entry": "halcyon:machinery/entropic_processor",
+  "pattern": [
+    "CDC",
+    "OCO",
+    "OOO"
+  ],
+  "time": 100,
+  "key": {
+    "C": { "item": "halcyon:capacitance_panel" },
+    "D": { "item": "minecraft:diamond" },
+    "O": { "item": "halcyon:polished_obsidian" }
+  },
+  "result": { "id": "halcyon:entropic_processor" }
+}

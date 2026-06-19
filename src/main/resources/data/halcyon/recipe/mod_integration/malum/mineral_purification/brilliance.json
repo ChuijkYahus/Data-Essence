@@ -1,0 +1,13 @@
+{
+    "neoforge:conditions": [
+        {
+            "type": "neoforge:mod_loaded",
+            "modid": "malum"
+        }
+    ],
+    "type": "halcyon:mineral_purification",
+    "input": { "item": "malum:raw_brilliance" },
+    "time": 300,
+    "result": { "id": "malum:refined_brilliance" },
+    "nuggetResult": { "id": "malum:refined_brilliance", "count": 1 }
+}

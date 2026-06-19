@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:purple_bed"
+    },
+    "title": {
+      "translate": "advancements.halcyon.find_burrow.title"
+    },
+    "description": {
+      "translate": "advancements.halcyon.find_burrow.description"
+    },
+    "hidden": true
+  },
+  "parent": "halcyon:halcyon",
+  "criteria": {
+    "at_abandoned_factory": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": {
+          "location": {
+            "structures": "halcyon:burrows/small_01"
+          }
+        }
+      }
+    }
+  }
+}

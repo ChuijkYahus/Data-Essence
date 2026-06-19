@@ -1,0 +1,46 @@
+{
+  "icon": {
+    "id": "halcyon:laser_emitter"
+  },
+  "tab": "halcyon:machinery",
+  "x": 0,
+  "y": 4,
+  "pages": [
+    {
+      "type": "halcyon:item",
+      "item": { "id": "halcyon:laser_emitter" },
+      "text": {
+        "translate": "data_tablet.pages.laser_emitter.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:text",
+      "text": {
+        "translate": "data_tablet.pages.laser_emitter.page2.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:fabrication/machines/laser_emitter"
+      ]
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:synthesis/lens_harming",
+        "halcyon:synthesis/lens_healing",
+        "halcyon:synthesis/lens_precision",
+        "halcyon:synthesis/lens_acceleration",
+        "halcyon:synthesis/lens_attracting",
+        "halcyon:synthesis/lens_burning"
+      ]
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.laser_emitter.name"
+  },
+  "parents": [
+    "halcyon:machinery/infuser"
+  ]
+}

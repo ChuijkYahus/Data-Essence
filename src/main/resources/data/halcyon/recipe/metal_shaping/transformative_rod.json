@@ -1,0 +1,6 @@
+{
+  "type": "halcyon:metal_shaping",
+  "input": { "item": "halcyon:ecliptrum_ingot" },
+  "time": 100,
+  "result": { "id": "halcyon:transformative_rod", "count": 1 }
+}

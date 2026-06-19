@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "id": "halcyon:data_bank"
+  },
+  "tab": "halcyon:basics",
+  "x": -2,
+  "y": -3,
+  "pages": [
+    {
+      "type": "halcyon:text",
+      "text": {
+        "translate": "data_tablet.pages.structures.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:text",
+      "text": {
+        "translate": "data_tablet.pages.structures.page2.text"
+      }
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.structures.name"
+  },
+  "flavor": {
+    "translate": "data_tablet.pages.structures.flavor"
+  },
+  "is_default": true
+}

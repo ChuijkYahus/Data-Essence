@@ -1,0 +1,6 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [{ "item": "minecraft:quartz" }],
+  "result": { "id": "halcyon:quartz_flake", "count": 9 }
+}

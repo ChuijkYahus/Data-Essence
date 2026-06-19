@@ -1,0 +1,7 @@
+{
+	"parent": "halcyon:block/essence_crystal_3",
+	"textures": {
+		"0": "halcyon:block/crystal_of_transformation_3",
+		"particle": "halcyon:block/crystal_of_transformation_3"
+	}
+}

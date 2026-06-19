@@ -1,0 +1,24 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "halcyon:block/ancient_shelf_books"
+      },
+      {
+        "model": "halcyon:block/ancient_shelf_books2"
+      },
+      {
+        "model": "halcyon:block/ancient_shelf_bottles"
+      },
+      {
+        "model": "halcyon:block/ancient_shelf_empty"
+      },
+      {
+        "model": "halcyon:block/ancient_shelf_empty2"
+      },
+      {
+        "model": "halcyon:block/ancient_shelf_materials"
+      }
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "icon": {
+    "id": "halcyon:lunar_essence_battery"
+  },
+  "tab": "halcyon:essence_manipulation",
+  "x": -3,
+  "y": -1,
+  "pages": [
+    {
+      "type": "halcyon:text",
+      "text": {
+        "translate": "data_tablet.pages.lunar_battery.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:fabrication/lunar_battery"
+      ]
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.lunar_battery.name"
+  },
+  "parents": [
+    "halcyon:essence_manipulation/essence_battery",
+    "halcyon:machinery_transformation/lunarium"
+  ]
+}

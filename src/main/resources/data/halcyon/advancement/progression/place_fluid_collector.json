@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "halcyon:fluid_collector"
+    },
+    "title": {
+      "translate": "advancements.halcyon.place_fluid_collector.title"
+    },
+    "description": {
+      "translate": "advancements.halcyon.place_fluid_collector.description"
+    },
+    "hidden": false
+  },
+  "parent": "halcyon:progression/craft_logical_matrix",
+  "criteria": {
+    "placed_fluid_collector": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:location_check",
+            "predicate": { "block": { "blocks": [ "halcyon:fluid_collector" ] } }
+          }
+        ]
+      }
+    }
+  }
+}

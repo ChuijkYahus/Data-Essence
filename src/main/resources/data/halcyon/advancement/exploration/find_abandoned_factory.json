@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "id": "halcyon:patterned_copper"
+    },
+    "title": {
+      "translate": "advancements.halcyon.find_abandoned_factory.title"
+    },
+    "description": {
+      "translate": "advancements.halcyon.find_abandoned_factory.description"
+    },
+    "hidden": true
+  },
+  "parent": "halcyon:halcyon",
+  "criteria": {
+    "at_abandoned_factory": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": {
+          "location": {
+            "structures": "halcyon:abandoned_factory"
+          }
+        }
+      }
+    }
+  }
+}

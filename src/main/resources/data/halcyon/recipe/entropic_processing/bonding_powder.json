@@ -1,0 +1,6 @@
+{
+  "type": "halcyon:entropic_processing",
+  "input": { "item": "halcyon:tethergrass" },
+  "time": 100,
+  "result": { "id": "halcyon:bonding_powder", "count": 3 }
+}

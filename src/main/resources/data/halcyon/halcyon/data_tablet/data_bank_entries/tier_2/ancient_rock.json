@@ -1,0 +1,10 @@
+{
+  "icon": {
+    "id": "halcyon:ancient_rock_bricks"
+  },
+  "tier": 2,
+  "name": {
+    "translate": "data_tablet.databank_generic_lore"
+  },
+  "entry": "halcyon:lore/ancient_rock"
+}

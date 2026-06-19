@@ -1,0 +1,25 @@
+{
+  "display": {
+    "icon": {
+      "id": "halcyon:essence_wire"
+    },
+    "title": {
+      "translate": "advancements.halcyon.acquire_essence_node_and_wire.title"
+    },
+    "description": {
+      "translate": "advancements.halcyon.acquire_essence_node_and_wire.description"
+    },
+    "hidden": false
+  },
+  "parent": "halcyon:progression/acquire_fabricator",
+  "criteria": {
+    "has_node": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": { "items": [ { "items": ["halcyon:essence_point" ] } ] }
+    },
+    "has_wire": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": { "items": [ { "items": ["halcyon:essence_wire" ] } ] }
+    }
+  }
+}

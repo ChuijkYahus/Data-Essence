@@ -1,0 +1,31 @@
+{
+  "icon": {
+    "id": "halcyon:essence_reader"
+  },
+  "tab": "halcyon:essence_manipulation",
+  "x": 0,
+  "y": -2,
+  "pages": [
+    {
+      "type": "halcyon:text",
+      "text": {
+        "translate": "data_tablet.pages.essence_reader.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:fabrication/utilities/essence_reader"
+      ]
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.essence_reader.name"
+  },
+  "flavor": {
+    "translate": "data_tablet.pages.essence_reader.flavor"
+  },
+  "parents": [
+    "halcyon:buffers"
+  ]
+}

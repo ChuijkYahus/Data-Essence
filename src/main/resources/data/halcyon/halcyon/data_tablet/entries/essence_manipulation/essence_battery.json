@@ -1,0 +1,28 @@
+{
+  "icon": {
+    "id": "halcyon:essence_battery"
+  },
+  "tab": "halcyon:essence_manipulation",
+  "x": -2,
+  "y": 0,
+  "pages": [
+    {
+      "type": "halcyon:text",
+      "text": {
+        "translate": "data_tablet.pages.essence_battery.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:fabrication/essence_battery"
+      ]
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.essence_battery.name"
+  },
+  "parents": [
+    "halcyon:machinery/buffers"
+  ]
+}

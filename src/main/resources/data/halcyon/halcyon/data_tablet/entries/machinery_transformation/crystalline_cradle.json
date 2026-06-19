@@ -1,0 +1,33 @@
+{
+  "icon": {
+    "id": "halcyon:crystalline_cradle"
+  },
+  "tab": "halcyon:machinery_transformation",
+  "x": 0,
+  "y": -4,
+  "pages": [
+    {
+      "type": "halcyon:item",
+      "item": { "id": "halcyon:crystalline_cradle" },
+      "text": {
+        "translate": "data_tablet.pages.crystalline_cradle.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:fabrication/machines/crystalline_cradle"
+      ]
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.crystalline_cradle.name"
+  },
+  "flavor": {
+    "translate": "data_tablet.pages.crystalline_cradle.flavor"
+  },
+  "parents": [
+    "halcyon:machinery_transformation/ecliptrum",
+    "halcyon:basics/lunar_strikes"
+  ]
+}

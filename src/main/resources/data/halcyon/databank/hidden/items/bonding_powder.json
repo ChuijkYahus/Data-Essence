@@ -1,0 +1,16 @@
+{
+  "condition": {
+    "type": "halcyon:entry",
+    "entry": "halcyon:basics/plants",
+    "completion_stage": 0
+  },
+  "type": {
+    "type": "databank:item",
+    "hidden_as": "halcyon:bonding_powder",
+    "original": "halcyon:bonding_powder",
+    "name_override": {
+      "translate": "hidden.halcyon.powder",
+      "font": "halcyon:ancient"
+    }
+  }
+}

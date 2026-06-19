@@ -1,0 +1,12 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "pastel"
+    }
+  ],
+  "type": "halcyon:entropic_processing",
+  "input": { "item": "pastel:medium_onyx_bud" },
+  "time": 100,
+  "result": { "id": "pastel:onyx_powder", "count": 6 }
+}

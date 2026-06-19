@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "CR ",
+    "CR ",
+    " R "
+  ],
+  "key": {
+    "C": { "item": "halcyon:capacitance_panel" },
+    "R": { "item": "halcyon:conductance_rod" }
+  },
+  "result": { "id": "halcyon:exciter", "count": 1 }
+}

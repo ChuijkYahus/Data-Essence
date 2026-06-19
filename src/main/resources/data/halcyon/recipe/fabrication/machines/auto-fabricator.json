@@ -1,0 +1,21 @@
+{
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": {
+    "halcyon:essence": 50
+  },
+  "entry": "halcyon:machinery/auto-fabricator",
+  "pattern": [
+    "CCC",
+    "EAE",
+    "ROR"
+  ],
+  "time": 100,
+  "key": {
+    "A": { "item": "halcyon:assembly_actuator" },
+    "C": { "item": "halcyon:capacitance_panel" },
+    "E": { "item": "halcyon:exciter" },
+    "R": { "item": "halcyon:conductance_rod" },
+    "O": { "item": "halcyon:polished_obsidian" }
+  },
+  "result": { "id": "halcyon:auto-fabricator" }
+}

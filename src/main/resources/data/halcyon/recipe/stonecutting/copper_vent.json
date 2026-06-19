@@ -1,0 +1,5 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": { "item": "halcyon:patterned_copper" },
+  "result": { "id": "halcyon:copper_vent", "count": 1 }
+}

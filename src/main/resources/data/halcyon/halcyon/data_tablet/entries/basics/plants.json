@@ -1,0 +1,45 @@
+{
+  "icon": {
+    "id": "halcyon:bonding_powder"
+  },
+  "tab": "halcyon:basics",
+  "critical": true,
+  "x": -2,
+  "y": 2,
+  "pages": [
+    {
+      "type": "halcyon:item",
+      "item": { "id": "halcyon:bonding_powder" },
+      "text": {
+        "translate": "data_tablet.pages.plants.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:entropic_processing/bonding_powder"
+      ],
+      "text": {
+        "translate": "data_tablet.pages.plants.page2.text"
+      }
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.plants.name"
+  },
+  "completion_stages": [
+    {
+      "completion_advancements": [
+        "halcyon:exploration/discover_tethergrass"
+      ],
+      "pages": [
+        {
+          "type": "halcyon:text",
+          "text": {
+            "translate": "data_tablet.pages.plants.page1.incomplete_text"
+          }
+        }
+      ]
+    }
+  ]
+}

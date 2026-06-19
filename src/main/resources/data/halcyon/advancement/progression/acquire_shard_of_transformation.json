@@ -1,0 +1,21 @@
+{
+  "display": {
+    "icon": {
+      "id": "halcyon:tidal_meteorite"
+    },
+    "title": {
+      "translate": "advancements.halcyon.acquire_shard_of_transformation.title"
+    },
+    "description": {
+      "translate": "advancements.halcyon.acquire_shard_of_transformation.description"
+    },
+    "hidden": false
+  },
+  "parent": "halcyon:progression/acquire_synthesis_chamber",
+  "criteria": {
+    "has_shard": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": { "items": [ { "items": ["halcyon:shard_of_transformation" ] } ] }
+    }
+  }
+}

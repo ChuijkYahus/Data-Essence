@@ -1,0 +1,21 @@
+{
+  "display": {
+    "icon": {
+      "id": "halcyon:precision_lens"
+    },
+    "title": {
+      "translate": "advancements.halcyon.discover_hidden_block.title"
+    },
+    "description": {
+      "translate": "advancements.halcyon.discover_hidden_block.description"
+    },
+    "hidden": true
+  },
+  "parent": "halcyon:halcyon",
+  "criteria": {
+    "has_hidden_resource": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": { "items": [ { "items": "#halcyon:hidden_resources" } ] }
+    }
+  }
+}

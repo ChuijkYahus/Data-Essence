@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block",
+  "textures": {
+    "particle": "halcyon:block/nothing"
+  }
+}

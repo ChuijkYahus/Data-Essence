@@ -1,0 +1,50 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "malum"
+    }
+  ],
+  "icon": {
+    "id": "malum:cthonic_gold"
+  },
+  "tab": "halcyon:mod_integration",
+  "x": -4,
+  "y": -3,
+  "pages": [
+    {
+      "type": "halcyon:text",
+      "text": {
+        "translate": "data_tablet.pages.integration_malum_lunar.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:mod_integration/malum/fabrication/cthonic_gold"
+      ]
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.integration_malum_lunar.name"
+  },
+  "parents": [
+    "halcyon:machinery_transformation/lunarium",
+    "halcyon:mod_integration/malum"
+  ],
+  "completion_stages": [
+    {
+      "completion_advancements": [
+        "halcyon:hidden/malum_please_add_advancements"
+      ],
+      "pages": [
+        {
+          "type": "halcyon:text",
+          "text": {
+            "translate": "data_tablet.pages.integration_malum_lunar.page1.incomplete_text"
+          }
+        }
+      ]
+    }
+  ]
+}

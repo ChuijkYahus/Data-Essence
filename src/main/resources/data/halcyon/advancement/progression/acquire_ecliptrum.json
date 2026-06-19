@@ -1,0 +1,21 @@
+{
+  "display": {
+    "icon": {
+      "id": "halcyon:ecliptrum_ingot"
+    },
+    "title": {
+      "translate": "advancements.halcyon.acquire_ecliptrum.title"
+    },
+    "description": {
+      "translate": "advancements.halcyon.acquire_ecliptrum.description"
+    },
+    "hidden": true
+  },
+  "parent": "halcyon:progression/acquire_shard_of_transformation",
+  "criteria": {
+    "has_ecliptrum": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": { "items": [ { "items": ["halcyon:ecliptrum_ingot" ] } ] }
+    }
+  }
+}

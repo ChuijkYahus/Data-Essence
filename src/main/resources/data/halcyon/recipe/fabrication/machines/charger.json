@@ -1,0 +1,17 @@
+{
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": { "halcyon:essence": 25 },
+  "entry": "halcyon:tools/charger",
+  "pattern": [
+    "ESE",
+    "POP"
+  ],
+  "time": 100,
+  "key": {
+    "E": { "item": "halcyon:exciter" },
+    "S": { "item": "halcyon:essence_shard" },
+    "P": { "item": "halcyon:capacitance_panel" },
+    "O": { "item": "halcyon:polished_obsidian" }
+  },
+  "result": { "id": "halcyon:charger" }
+}

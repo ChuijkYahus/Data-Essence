@@ -1,0 +1,17 @@
+{
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": { "halcyon:essence": 25 },
+  "entry": "halcyon:essence_manipulation/industrial_plant_siphon",
+  "pattern": [
+    "C  ",
+    "OIC",
+    "OOO"
+  ],
+  "time": 200,
+  "key": {
+    "C": { "item": "halcyon:conductance_rod" },
+    "O": { "item": "halcyon:polished_obsidian" },
+    "I": { "item": "minecraft:iron_bars" }
+  },
+  "result": { "id": "halcyon:industrial_plant_siphon" }
+}

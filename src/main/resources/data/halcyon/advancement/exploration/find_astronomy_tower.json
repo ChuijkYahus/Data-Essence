@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "id": "halcyon:lunar_essence_battery"
+    },
+    "title": {
+      "translate": "advancements.halcyon.find_astronomy_tower.title"
+    },
+    "description": {
+      "translate": "advancements.halcyon.find_astronomy_tower.description"
+    },
+    "hidden": true
+  },
+  "parent": "halcyon:halcyon",
+  "criteria": {
+    "at_abandoned_factory": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": {
+          "location": {
+            "structures": "halcyon:astronomy_tower"
+          }
+        }
+      }
+    }
+  }
+}

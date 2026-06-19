@@ -1,0 +1,35 @@
+{
+  "icon": {
+    "id": "minecraft:redstone"
+  },
+  "tab": "halcyon:machinery",
+  "x": 0,
+  "y": 3,
+  "pages": [
+    {
+      "type": "halcyon:text",
+      "text": {
+        "translate": "data_tablet.pages.industrial_infuser_processing.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:infusion/charcoal",
+        "halcyon:infusion/glowstone_dust",
+        "halcyon:infusion/gravel_extraction",
+        "halcyon:infusion/netherite_scrap",
+        "halcyon:infusion/redstone"
+      ]
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.industrial_infuser_processing.name"
+  },
+  "flavor": {
+    "translate": "data_tablet.pages.industrial_infuser_processing.flavor"
+  },
+  "parents": [
+    "halcyon:machinery/infuser"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "structure": "primalmagick:sun_shrine",
+  "advancement": "primalmagick:story/discover_all_shrines",
+  "requiredAdvancement": "primalmagick:story/root",
+  "requiresUpgrade": true,
+  "color1": [
+    240, 211, 46
+  ],
+  "color2": [
+    240, 141, 12
+  ],
+  "icon": {
+    "texture": "modpack:textures/gui/structure_icons.png",
+    "u": 16,
+    "v": 0
+  }
+}

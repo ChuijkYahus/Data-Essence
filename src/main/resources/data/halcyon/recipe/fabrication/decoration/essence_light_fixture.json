@@ -1,0 +1,14 @@
+{
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": { "halcyon:essence": 0 },
+  "entry": "halcyon:tools/decorative_blocks",
+  "pattern": [
+    " G ",
+    " O "
+  ],
+  "key": {
+    "O": { "item": "halcyon:polished_obsidian" },
+    "G": { "item": "minecraft:glowstone_dust" }
+  },
+  "result": { "id": "halcyon:essence_light_fixture", "count": 4 }
+}

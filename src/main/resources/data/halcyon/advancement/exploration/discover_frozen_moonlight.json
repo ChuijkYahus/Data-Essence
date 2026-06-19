@@ -1,0 +1,21 @@
+{
+  "display": {
+    "icon": {
+      "id": "halcyon:frozen_moonlight"
+    },
+    "title": {
+      "translate": "advancements.halcyon.discover_frozen_moonlight.title"
+    },
+    "description": {
+      "translate": "advancements.halcyon.discover_frozen_moonlight.description"
+    },
+    "hidden": true
+  },
+  "parent": "halcyon:exploration/discover_lensing_crystals",
+  "criteria": {
+    "has_frozen_moonlight": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": { "items": [ { "items": ["halcyon:frozen_moonlight_chunk" ] } ] }
+    }
+  }
+}

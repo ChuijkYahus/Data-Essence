@@ -1,0 +1,54 @@
+{
+  "icon": {
+    "id": "halcyon:ecliptrum_ingot"
+  },
+  "tab": "halcyon:machinery_transformation",
+  "x": 0,
+  "y": -2,
+  "pages": [
+    {
+      "type": "halcyon:item",
+      "item": {
+        "id": "halcyon:ecliptrum_ingot"
+      },
+      "text": {
+        "translate": "data_tablet.pages.ecliptrum.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:synthesis/ecliptrum_ingot",
+        "halcyon:synthesis/ecliptrum_ingot_flipped",
+        "halcyon:crafting/ecliptrum_compacting",
+        "halcyon:crafting/ecliptrum_decompacting"
+      ]
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.ecliptrum.name"
+  },
+  "flavor": {
+    "translate": "data_tablet.pages.ecliptrum.flavor"
+  },
+  "parents": [
+    "halcyon:machinery/synthesis_chamber",
+    "halcyon:machinery_transformation/lunar_strikes"
+  ],
+  "critical": true,
+  "completion_stages": [
+    {
+      "completion_advancements": [
+        "halcyon:progression/acquire_ecliptrum"
+      ],
+      "pages": [
+        {
+          "type": "halcyon:text",
+          "text": {
+            "translate": "data_tablet.pages.ecliptrum.page1.incomplete_text"
+          }
+        }
+      ]
+    }
+  ]
+}

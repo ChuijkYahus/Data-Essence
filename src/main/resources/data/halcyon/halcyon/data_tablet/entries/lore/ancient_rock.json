@@ -1,0 +1,28 @@
+{
+  "icon": {
+    "id": "halcyon:ancient_rock_bricks"
+  },
+  "tab": "halcyon:lore",
+  "x": 2,
+  "y": 1,
+  "pages": [
+    {
+      "type": "halcyon:text",
+      "text": {
+        "translate": "data_tablet.pages.ancient_rock.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:text",
+      "text": {
+        "translate": "data_tablet.pages.ancient_rock.page2.text"
+      }
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.ancient_rock.name"
+  },
+  "flavor": {
+    "translate": "data_tablet.pages.ancient_rock.flavor"
+  }
+}

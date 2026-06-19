@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:snow_block"
+    },
+    "title": {
+      "translate": "advancements.halcyon.find_ancient_weapons_facility.title"
+    },
+    "description": {
+      "translate": "advancements.halcyon.find_ancient_weapons_facility.description"
+    },
+    "hidden": true
+  },
+  "parent": "halcyon:halcyon",
+  "criteria": {
+    "at_abandoned_factory": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": {
+          "location": {
+            "structures": "halcyon:ancient_weapons_facility"
+          }
+        }
+      }
+    }
+  }
+}

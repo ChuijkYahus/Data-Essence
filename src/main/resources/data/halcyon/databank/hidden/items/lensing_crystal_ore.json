@@ -1,0 +1,12 @@
+{
+  "condition": {
+    "type": "halcyon:entry",
+    "entry": "halcyon:basics/lensing_crystals",
+    "completion_stage": 0
+  },
+  "type": {
+    "type": "databank:item",
+    "hidden_as": "minecraft:stone",
+    "original": "halcyon:lensing_crystal_ore"
+  }
+}

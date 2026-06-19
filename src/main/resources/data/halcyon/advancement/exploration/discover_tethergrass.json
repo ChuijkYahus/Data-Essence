@@ -1,0 +1,21 @@
+{
+  "display": {
+    "icon": {
+      "id": "halcyon:tethergrass"
+    },
+    "title": {
+      "translate": "advancements.halcyon.discover_tethergrass.title"
+    },
+    "description": {
+      "translate": "advancements.halcyon.discover_tethergrass.description"
+    },
+    "hidden": true
+  },
+  "parent": "halcyon:exploration/discover_hidden_block",
+  "criteria": {
+    "has_bonding_powder": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": { "items": [ { "items": ["halcyon:bonding_powder" ] } ] }
+    }
+  }
+}

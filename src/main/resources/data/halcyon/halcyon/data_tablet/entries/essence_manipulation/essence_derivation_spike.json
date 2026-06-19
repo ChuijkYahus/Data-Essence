@@ -1,0 +1,40 @@
+{
+  "icon": {
+    "id": "halcyon:essence_derivation_spike"
+  },
+  "tab": "halcyon:essence_manipulation",
+  "x": -1,
+  "y": 4,
+  "pages": [
+    {
+      "type": "halcyon:text",
+      "text": {
+        "translate": "data_tablet.pages.essence_derivation_spike.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "text": {
+        "translate": "data_tablet.pages.essence_derivation_spike.page2.text"
+      },
+      "recipes": [
+        "halcyon:fabrication/essence_derivation_spike",
+        "halcyon:fabrication/extrication_rod"
+      ]
+    },
+    {
+      "type": "halcyon:multiblock",
+      "multiblock": "halcyon:generators/essence_derivation_spike"
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.essence_derivation_spike.name"
+  },
+  "flavor": {
+    "translate": "data_tablet.pages.essence_derivation_spike.flavor"
+  },
+  "parents": [
+    "halcyon:essence_manipulation/essence_leech",
+    "halcyon:machinery_transformation/ecliptrum"
+  ]
+}

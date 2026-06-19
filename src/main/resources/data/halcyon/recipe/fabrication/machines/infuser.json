@@ -1,0 +1,20 @@
+{
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": {
+    "halcyon:essence": 25
+  },
+  "entry": "halcyon:machinery/infuser",
+  "completion_stage": 0,
+  "pattern": [
+    "OCO",
+    "R R",
+    "OCO"
+  ],
+  "time": 40,
+  "key": {
+    "C": { "item": "halcyon:capacitance_panel" },
+    "R": { "item": "halcyon:conductance_rod" },
+    "O": { "item": "halcyon:polished_obsidian" }
+  },
+  "result": { "id": "halcyon:infuser" }
+}

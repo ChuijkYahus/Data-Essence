@@ -1,0 +1,48 @@
+{
+  "icon": {
+    "id": "halcyon:shard_of_transformation"
+  },
+  "tab": "halcyon:machinery_transformation",
+  "x": 0,
+  "y": -4,
+  "pages": [
+    {
+      "type": "halcyon:item",
+      "item": {
+        "id": "halcyon:tidal_meteorite"
+      },
+      "text": {
+        "translate": "data_tablet.pages.lunar_strikes.page1.text"
+      }
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:crafting/shard_of_transformation_compacting",
+        "halcyon:crafting/shard_of_transformation_decompacting"
+      ]
+    }
+  ],
+  "name": {
+    "translate": "data_tablet.pages.lunar_strikes.name"
+  },
+  "flavor": {
+    "translate": "data_tablet.pages.lunar_strikes.flavor"
+  },
+  "critical": true,
+  "completion_stages": [
+    {
+      "completion_advancements": [
+        "halcyon:progression/acquire_shard_of_transformation"
+      ],
+      "pages": [
+        {
+          "type": "halcyon:text",
+          "text": {
+            "translate": "data_tablet.pages.lunar_strikes.page1.incomplete_text"
+          }
+        }
+      ]
+    }
+  ]
+}

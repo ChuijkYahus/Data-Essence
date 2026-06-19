@@ -1,0 +1,10 @@
+{
+  "icon": {
+    "id": "halcyon:player_data_bank"
+  },
+  "tier": 2,
+  "name": {
+    "translate": "data_tablet.databank_generic_utility"
+  },
+  "entry": "halcyon:basics/data_bank"
+}

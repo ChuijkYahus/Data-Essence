@@ -1,0 +1,19 @@
+{
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": {
+    "halcyon:essence": 5
+  },
+  "time": 100,
+  "entry": "halcyon:machinery/fluidworks",
+  "pattern": [
+    "PBP",
+    "GBG",
+    "PBP"
+  ],
+  "key": {
+    "P": { "item": "halcyon:capacitance_panel" },
+    "G": { "item": "halcyon:fluidic_glass" },
+    "B": { "item": "minecraft:bucket" }
+  },
+  "result": { "id": "halcyon:fluid_tank" }
+}

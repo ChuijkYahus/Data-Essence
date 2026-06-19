@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:jungle_leaves"
+    },
+    "title": {
+      "translate": "advancements.halcyon.find_nature_outpost.title"
+    },
+    "description": {
+      "translate": "advancements.halcyon.find_nature_outpost.description"
+    },
+    "hidden": true
+  },
+  "parent": "halcyon:halcyon",
+  "criteria": {
+    "at_nature_outpost": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": {
+          "location": {
+            "structures": "halcyon:outpost_nature"
+          }
+        }
+      }
+    }
+  }
+}

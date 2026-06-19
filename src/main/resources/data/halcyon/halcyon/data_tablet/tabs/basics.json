@@ -1,0 +1,12 @@
+{
+  "icon": {
+    "id": "halcyon:data_tablet"
+  },
+  "name": {
+    "translate": "data_tablet.tabs.basics.name"
+  },
+  "placement": {
+    "place_before": "halcyon:all"
+  },
+  "always_shown": true
+}

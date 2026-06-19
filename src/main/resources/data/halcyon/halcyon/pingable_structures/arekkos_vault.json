@@ -1,0 +1,19 @@
+{
+  "structure": "halcyon:arekkos_vault",
+  "advancement": "halcyon:halcyon",
+  "color1": [
+    175,
+    0,
+    175
+  ],
+  "color2": [
+    255,
+    0,
+    255
+  ],
+  "icon": {
+    "texture": "halcyon:textures/gui/structure_icons.png",
+    "u": 16,
+    "v": 0
+  }
+}

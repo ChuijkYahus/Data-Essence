@@ -1,0 +1,17 @@
+{
+  "type": "halcyon:shaped_fabrication_recipe",
+  "essenceCost": { "halcyon:essence": 25 },
+  "entry": "halcyon:machinery/melter",
+  "pattern": [
+    "O O",
+    "OOO",
+    "CHC"
+  ],
+  "time": 100,
+  "key": {
+    "O": { "item": "halcyon:polished_obsidian" },
+    "C": { "item": "minecraft:copper_ingot" },
+    "H": { "item": "halcyon:heating_coil" }
+  },
+  "result": { "id": "halcyon:melter" }
+}

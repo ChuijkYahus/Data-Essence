@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "CCC",
+    "   ",
+    "   "
+  ],
+  "key": {
+    "C": { "item": "minecraft:copper_ingot" }
+  },
+  "result": { "id": "halcyon:capacitance_panel", "count": 2 }
+}

@@ -1,0 +1,10 @@
+{
+  "icon": {
+    "id": "halcyon:ecliptrum_ingot"
+  },
+  "tier": 3,
+  "name": {
+    "translate": "data_tablet.databank_generic_resource"
+  },
+  "entry": "halcyon:machinery_transformation/ecliptrum"
+}

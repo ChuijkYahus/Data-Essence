@@ -1,0 +1,16 @@
+{
+  "condition": {
+    "type": "halcyon:entry",
+    "entry": "halcyon:basics/lensing_crystals",
+    "completion_stage": 0
+  },
+  "type": {
+    "type": "databank:item",
+    "hidden_as": "halcyon:lensing_crystal",
+    "original": "halcyon:lensing_crystal",
+    "name_override": {
+      "translate": "hidden.halcyon.crystal",
+      "font": "halcyon:ancient"
+    }
+  }
+}

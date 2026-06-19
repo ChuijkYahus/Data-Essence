@@ -1,0 +1,21 @@
+{
+  "display": {
+    "icon": {
+      "id": "halcyon:essence_leech"
+    },
+    "title": {
+      "translate": "advancements.halcyon.acquire_essence_leech.title"
+    },
+    "description": {
+      "translate": "advancements.halcyon.acquire_essence_leech.description"
+    },
+    "hidden": false
+  },
+  "parent": "halcyon:progression/craft_logical_matrix",
+  "criteria": {
+    "has_leech": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": { "items": [ { "items": ["halcyon:essence_leech" ] } ] }
+    }
+  }
+}

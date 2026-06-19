@@ -1,0 +1,11 @@
+{
+  "icon": {
+    "id": "halcyon:essence_burner"
+  },
+  "name": {
+    "translate": "data_tablet.tabs.essence_manipulation.name"
+  },
+  "placement": {
+    "place_after": "halcyon:basics"
+  }
+}
