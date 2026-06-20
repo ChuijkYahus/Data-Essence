@@ -3,51 +3,19 @@
     "idle": {
       "length": 0,
       "looping": true,
-      "animation": [
-        {
-          "bone": "press",
-          "target": "position",
-          "keyframes": [
-            {
-              "timestamp": 0,
-              "target": [
-                0,
-                0,
-                0
-              ],
-              "interpolation": "linear"
-            }
-          ]
-        }
-      ]
+      "animation": []
     },
     "hand": {
       "length": 0,
       "looping": true,
-      "animation": [
-        {
-          "bone": "press",
-          "target": "position",
-          "keyframes": [
-            {
-              "timestamp": 0,
-              "target": [
-                0,
-                0,
-                0
-              ],
-              "interpolation": "linear"
-            }
-          ]
-        }
-      ]
+      "animation": []
     },
-    "lower_press": {
-      "length": 0.5,
-      "looping": false,
+    "work_that_thang": {
+      "length": 2,
+      "looping": true,
       "animation": [
         {
-          "bone": "press",
+          "bone": "arm",
           "target": "position",
           "keyframes": [
             {
@@ -60,64 +28,70 @@
               "interpolation": "linear"
             },
             {
-              "timestamp": 0.25,
+              "timestamp": 0.3333333333333333,
               "target": [
+                -3,
                 0,
-                -2,
                 0
               ],
               "interpolation": "linear"
             },
             {
-              "timestamp": 0.5,
+              "timestamp": 0.4166666666666667,
               "target": [
+                -3,
                 0,
-                -6,
-                0
-              ],
-              "interpolation": "linear"
-            }
-          ]
-        }
-      ]
-    },
-    "raise_press": {
-      "length": 0.5,
-      "looping": false,
-      "animation": [
-        {
-          "bone": "press",
-          "target": "position",
-          "keyframes": [
-            {
-              "timestamp": 0,
-              "target": [
-                0,
-                -6,
-                0
+                1
               ],
               "interpolation": "linear"
             },
             {
-              "timestamp": 0.125,
+              "timestamp": 0.75,
               "target": [
                 0,
-                -4,
-                0
+                0,
+                1
               ],
               "interpolation": "linear"
             },
             {
-              "timestamp": 0.375,
+              "timestamp": 0.8333333333333334,
               "target": [
                 0,
-                0.75,
-                0
+                0,
+                2
               ],
               "interpolation": "linear"
             },
             {
-              "timestamp": 0.5,
+              "timestamp": 1.1666666666666667,
+              "target": [
+                -3,
+                0,
+                2
+              ],
+              "interpolation": "linear"
+            },
+            {
+              "timestamp": 1.25,
+              "target": [
+                -3,
+                0,
+                3
+              ],
+              "interpolation": "linear"
+            },
+            {
+              "timestamp": 1.5833333333333333,
+              "target": [
+                0,
+                0,
+                3
+              ],
+              "interpolation": "linear"
+            },
+            {
+              "timestamp": 2,
               "target": [
                 0,
                 0,
@@ -130,10 +104,6 @@
       ]
     }
   },
-  "textureSize": [
-    128,
-    128
-  ],
   "parts": [
     {
       "type": "databank:group",
@@ -150,8 +120,218 @@
       ],
       "children": [
         {
+          "type": "databank:cube",
+          "name": "control_obelisk",
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "offset": [
+            1,
+            0,
+            0
+          ],
+          "texOffset": [
+            0,
+            0
+          ],
+          "mirror": false,
+          "origin": [
+            1,
+            0,
+            -7
+          ],
+          "dimensions": [
+            7,
+            14,
+            14
+          ],
+          "inflate": 0
+        },
+        {
+          "type": "databank:cube",
+          "name": "printer_baseplate",
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "offset": [
+            0,
+            0,
+            -3
+          ],
+          "texOffset": [
+            0,
+            28
+          ],
+          "mirror": false,
+          "origin": [
+            -8,
+            0,
+            -5
+          ],
+          "dimensions": [
+            10,
+            2,
+            10
+          ],
+          "inflate": 0
+        },
+        {
+          "type": "databank:cube",
+          "name": "printer_back",
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "offset": [
+            0,
+            0,
+            3
+          ],
+          "texOffset": [
+            0,
+            40
+          ],
+          "mirror": false,
+          "origin": [
+            -7,
+            0,
+            -1
+          ],
+          "dimensions": [
+            8,
+            16,
+            4
+          ],
+          "inflate": 0
+        },
+        {
+          "type": "databank:cube",
+          "name": "frame_support",
+          "rotation": [
+            0.7853981633974483,
+            0,
+            0
+          ],
+          "offset": [
+            -3,
+            11.5,
+            2
+          ],
+          "texOffset": [
+            24,
+            40
+          ],
+          "mirror": false,
+          "origin": [
+            -1,
+            -1,
+            -5
+          ],
+          "dimensions": [
+            2,
+            2,
+            6
+          ],
+          "inflate": 0
+        },
+        {
+          "type": "databank:cube",
+          "name": "frame",
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "offset": [
+            0,
+            14,
+            0
+          ],
+          "texOffset": [
+            0,
+            60
+          ],
+          "mirror": false,
+          "origin": [
+            -7,
+            0,
+            -7
+          ],
+          "dimensions": [
+            8,
+            3,
+            8
+          ],
+          "inflate": 0
+        },
+        {
+          "type": "databank:cube",
+          "name": "wire_one",
+          "rotation": [
+            0,
+            -0.9599310885968811,
+            0
+          ],
+          "offset": [
+            6.25,
+            4,
+            7.5
+          ],
+          "texOffset": [
+            30,
+            25
+          ],
+          "mirror": false,
+          "origin": [
+            0,
+            -3,
+            -1
+          ],
+          "dimensions": [
+            0,
+            6,
+            3
+          ],
+          "inflate": 0
+        },
+        {
+          "type": "databank:cube",
+          "name": "wire_two",
+          "rotation": [
+            0,
+            -1.876228945893904,
+            0
+          ],
+          "offset": [
+            3.75,
+            3,
+            8.5
+          ],
+          "texOffset": [
+            36,
+            19
+          ],
+          "mirror": false,
+          "origin": [
+            -0.1200000000000001,
+            -3,
+            -0.8700000000000001
+          ],
+          "dimensions": [
+            0,
+            6,
+            9
+          ],
+          "inflate": 0
+        },
+        {
           "type": "databank:group",
-          "name": "press",
+          "name": "arm",
           "rotation": [
             0,
             0,
@@ -165,248 +345,102 @@
           "children": [
             {
               "type": "databank:cube",
-              "name": "the squasher",
+              "name": "arm1",
               "rotation": [
                 0,
                 0,
                 0
               ],
               "offset": [
-                0,
-                10,
-                0
+                -1,
+                14,
+                -4
               ],
               "texOffset": [
-                0,
-                40
+                42,
+                50
               ],
               "mirror": false,
               "origin": [
-                -4,
-                -1,
-                -4
+                -2,
+                -9,
+                -2
               ],
               "dimensions": [
-                8,
                 3,
-                8
+                11,
+                3
               ],
               "inflate": 0
             },
             {
               "type": "databank:cube",
-              "name": "press rod",
+              "name": "nozzle_one",
               "rotation": [
                 0,
-                0,
+                0.7853981633974483,
                 0
               ],
               "offset": [
-                0,
-                12,
-                0
+                -1.5,
+                4,
+                -4.5
               ],
               "texOffset": [
-                0,
-                51
+                43,
+                63
               ],
               "mirror": false,
               "origin": [
-                -2,
                 0,
-                -2
+                -1.5,
+                -0.5
               ],
               "dimensions": [
+                0,
+                3,
+                1
+              ],
+              "inflate": 0
+            },
+            {
+              "type": "databank:cube",
+              "name": "nozzle_two",
+              "rotation": [
+                0,
+                -0.7853981633974483,
+                0
+              ],
+              "offset": [
+                -1.5,
                 4,
-                10,
-                4
+                -4.5
+              ],
+              "texOffset": [
+                43,
+                63
+              ],
+              "mirror": false,
+              "origin": [
+                0,
+                -1.5,
+                -0.5
+              ],
+              "dimensions": [
+                0,
+                3,
+                1
               ],
               "inflate": 0
             }
           ]
-        },
-        {
-          "type": "databank:cube",
-          "name": "base",
-          "rotation": [
-            0,
-            0,
-            0
-          ],
-          "offset": [
-            0,
-            0,
-            0
-          ],
-          "texOffset": [
-            0,
-            0
-          ],
-          "mirror": false,
-          "origin": [
-            -8,
-            0,
-            -7
-          ],
-          "dimensions": [
-            16,
-            3,
-            14
-          ],
-          "inflate": 0
-        },
-        {
-          "type": "databank:cube",
-          "name": "right panel",
-          "rotation": [
-            0,
-            0,
-            0
-          ],
-          "offset": [
-            7,
-            3,
-            0
-          ],
-          "texOffset": [
-            0,
-            17
-          ],
-          "mirror": false,
-          "origin": [
-            -1,
-            0,
-            -5
-          ],
-          "dimensions": [
-            2,
-            13,
-            10
-          ],
-          "inflate": 0
-        },
-        {
-          "type": "databank:cube",
-          "name": "right decoration",
-          "rotation": [
-            0,
-            0,
-            0
-          ],
-          "offset": [
-            5,
-            14,
-            0
-          ],
-          "texOffset": [
-            32,
-            40
-          ],
-          "mirror": false,
-          "origin": [
-            -2,
-            -2,
-            -5
-          ],
-          "dimensions": [
-            3,
-            4,
-            10
-          ],
-          "inflate": 0
-        },
-        {
-          "type": "databank:cube",
-          "name": "left panel",
-          "rotation": [
-            0,
-            0,
-            0
-          ],
-          "offset": [
-            -7,
-            3,
-            0
-          ],
-          "texOffset": [
-            24,
-            17
-          ],
-          "mirror": false,
-          "origin": [
-            -1,
-            0,
-            -5
-          ],
-          "dimensions": [
-            2,
-            13,
-            10
-          ],
-          "inflate": 0
-        },
-        {
-          "type": "databank:cube",
-          "name": "left decoration",
-          "rotation": [
-            0,
-            0,
-            0
-          ],
-          "offset": [
-            -4,
-            14,
-            0
-          ],
-          "texOffset": [
-            48,
-            17
-          ],
-          "mirror": false,
-          "origin": [
-            -2,
-            -2,
-            -5
-          ],
-          "dimensions": [
-            3,
-            4,
-            10
-          ],
-          "inflate": 0
-        },
-        {
-          "type": "databank:cube",
-          "name": "rod",
-          "rotation": [
-            0,
-            0,
-            0
-          ],
-          "offset": [
-            5,
-            13,
-            0
-          ],
-          "texOffset": [
-            48,
-            31
-          ],
-          "mirror": false,
-          "origin": [
-            -11,
-            0,
-            -1
-          ],
-          "dimensions": [
-            12,
-            2,
-            2
-          ],
-          "inflate": 0
         }
       ]
     }
+  ],
+  "textureSize": [
+    128,
+    128
   ],
   "version": 1
 }

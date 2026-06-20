@@ -46,10 +46,19 @@ import java.util.List;
 public class MetalShaperBlockEntity extends BlockEntity implements MenuProvider, EssenceBlockEntity, Machine {
     public SingleEssenceContainer storage = new SingleEssenceContainer(EssenceTypeRegistry.ESSENCE.get(), 1000);
     public DatabankAnimationState animState = new DatabankAnimationState("idle")
-            .addAnim(new DatabankAnimationReference("idle", (state, anim) -> {}, (state, anim) -> {}))
-            .addAnim(new DatabankAnimationReference("raise_press", (state, anim) -> {}, (state, anim) -> {}))
-            .addAnim(new DatabankAnimationReference("lower_press", (state, anim) -> {}, (state, anim) -> {}));
+            .addAnim(new DatabankAnimationReference("idle",
+                    (state, anim) -> {},
+                    (state, anim) -> {}
+            ))
+            .addAnim(new DatabankAnimationReference("work_that_thang",
+                    (state, anim) -> {},
+                    (state, anim) -> {}
+            ));
     public AnimationDefinition anim;
+    public ItemStack item;
+    public MetalShaperRecipe recipe;
+    public int workTime;
+    public int maxWorkTime;
 
     @Override
     public void setLevel(Level level) {
@@ -61,6 +70,7 @@ public class MetalShaperBlockEntity extends BlockEntity implements MenuProvider,
     public EssenceStorage getStorage() {
         return storage;
     }
+
     private final ItemStackHandler itemHandler = new ItemStackHandler(1) {
         @Override
         protected void onContentsChanged(int slot) {
@@ -102,13 +112,17 @@ public class MetalShaperBlockEntity extends BlockEntity implements MenuProvider,
     public IItemHandler getItemHandler() {
         return itemHandler;
     }
+
     public IItemHandler getMoldHandler() {
         return moldHandler;
     }
+
     public IItemHandler getOutputHandler() {
         return outputItemHandler;
     }
+
     private final CombinedInvWrapper combinedInvWrapper = new CombinedInvWrapper(itemHandler, moldHandler, outputItemHandler);
+
     public CombinedInvWrapper getCombinedInvWrapper() {
         return combinedInvWrapper;
     }
@@ -130,6 +144,7 @@ public class MetalShaperBlockEntity extends BlockEntity implements MenuProvider,
     public ClientboundBlockEntityDataPacket getUpdatePacket(){
         return ClientboundBlockEntityDataPacket.create(this);
     }
+
     @Override
     public void onDataPacket(Connection connection, ClientboundBlockEntityDataPacket pkt, HolderLookup.Provider pRegistries){
         CompoundTag tag = pkt.getTag();
@@ -171,7 +186,6 @@ public class MetalShaperBlockEntity extends BlockEntity implements MenuProvider,
         workTime = nbt.getInt("workTime");
     }
 
-    public ItemStack item;
     public SimpleContainer getInv() {
         SimpleContainer inventory = new SimpleContainer(itemHandler.getSlots()+outputItemHandler.getSlots()+moldHandler.getSlots());
         for (int i = 0; i < moldHandler.getSlots(); i++) {
@@ -185,6 +199,7 @@ public class MetalShaperBlockEntity extends BlockEntity implements MenuProvider,
         }
         return inventory;
     }
+
     public RecipeInput getCraftingInv() {
         RecipeInput inventory = new RecipeInput() {
             @Override
@@ -199,6 +214,7 @@ public class MetalShaperBlockEntity extends BlockEntity implements MenuProvider,
         };
         return inventory;
     }
+
     public void checkRecipes() {
         List<RecipeHolder<MetalShaperRecipe>> recipes = level.getRecipeManager().getRecipesFor(RecipeRegistry.METAL_SHAPING_TYPE.get(), getCraftingInv(), level);
         RecipeHolder<MetalShaperRecipe> recipe = null;
@@ -220,9 +236,7 @@ public class MetalShaperBlockEntity extends BlockEntity implements MenuProvider,
             this.recipe = null;
         }
     }
-    public MetalShaperRecipe recipe;
-    public int workTime;
-    public int maxWorkTime;
+
     public static void tick(Level pLevel, BlockPos pPos, BlockState pState, MetalShaperBlockEntity pBlockEntity) {
         if (!pLevel.isClientSide()) {
             BufferUtil.getEssenceFromBuffersBelow(pBlockEntity, EssenceTypeRegistry.ESSENCE.get());
@@ -271,6 +285,7 @@ public class MetalShaperBlockEntity extends BlockEntity implements MenuProvider,
         this.level.sendBlockUpdated(this.getBlockPos(), blockState, blockState, 3);
         this.setChanged();
     }
+
     @Override
     public Component getDisplayName() {
         return Component.empty();

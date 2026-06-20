@@ -38,7 +38,12 @@ public class MetalShaperRenderer extends DatabankBlockEntityRenderer<MetalShaper
         if (facing.equals(Direction.WEST))
             poseStack.rotateAround(Axis.YP.rotationDegrees(90), (float) rotateAround.x, (float) rotateAround.y, (float) rotateAround.z);
 
+        // TODO like, all of this lmao
+        // shaping impression disk in the drive
 
+        // assembled result on the screen using the hologram shader
+
+        // ingredient on the baseplate
         poseStack.pushPose();
         poseStack.translate(0.5d, 0.2d, 0.5d);
         poseStack.mulPose(Axis.XP.rotationDegrees(-90));
@@ -51,22 +56,25 @@ public class MetalShaperRenderer extends DatabankBlockEntityRenderer<MetalShaper
 
     public static class Model extends DatabankBlockEntityModel<MetalShaperBlockEntity> {
         public DatabankModel model;
+
         public DatabankModel getModel() {
             if (model == null) {
                 model = DatabankModels.models.get(DataNEssence.locate("metal_shaper"));
             }
             return model;
         }
+
         @Override
-        public void setupModelPose(MetalShaperBlockEntity pEntity, float partialTick) {
-            pEntity.animState.updateAnimDefinitions(getModel());
-            if (pEntity.workTime >= 0 && pEntity.workTime <= pEntity.maxWorkTime-15) {
-                pEntity.animState.setAnim("lower_press");
+        public void setupModelPose(MetalShaperBlockEntity shaper, float partialTick) {
+            shaper.animState.updateAnimDefinitions(getModel());
+            if (shaper.workTime >= 0) {
+                shaper.animState.setAnim("work_that_thang");
             } else {
-                pEntity.animState.setAnim("raise_press");
+                shaper.animState.setAnim("idle");
             }
-            animate(pEntity.animState);
+            animate(shaper.animState);
         }
+
         @Override
         public ResourceLocation getTextureLocation() {
             return DataNEssence.locate("textures/block/metal_shaper.png");
