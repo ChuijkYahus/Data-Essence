@@ -1,0 +1,8 @@
+{
+  "parent": "halcyon:block/pearlescent_spiral_base_top",
+  "textures": {
+    "0": "halcyon:block/magenta_pearlescent_spiral_top",
+    "1": "halcyon:block/magenta_pearlescent_spiral_base",
+    "particle": "halcyon:block/magenta_pearlescent_spiral"
+  }
+}

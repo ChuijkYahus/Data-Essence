@@ -1,0 +1,7 @@
+{
+  "parent": "halcyon:block/cube_all_tinted",
+  "render_type": "minecraft:translucent",
+  "textures": {
+    "all": "halcyon:block/spire_glass"
+  }
+}

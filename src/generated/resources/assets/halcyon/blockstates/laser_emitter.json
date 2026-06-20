@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "halcyon:block/laser_emitter",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "halcyon:block/laser_emitter",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "halcyon:block/laser_emitter",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "halcyon:block/laser_emitter",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "halcyon:block/laser_emitter"
+    },
+    "facing=west": {
+      "model": "halcyon:block/laser_emitter",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

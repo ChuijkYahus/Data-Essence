@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "halcyon:block/essence_leech_bottom",
+    "east": "halcyon:block/essence_leech_side",
+    "north": "halcyon:block/essence_leech_side",
+    "particle": "halcyon:block/essence_leech_side",
+    "south": "halcyon:block/essence_leech_side",
+    "up": "halcyon:block/essence_leech_top",
+    "west": "halcyon:block/essence_leech_side"
+  }
+}

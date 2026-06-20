@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "halcyon:block/deco/patterned_copper",
+    "east": "halcyon:block/essence_furnace_side",
+    "north": "halcyon:block/essence_furnace_front_on",
+    "particle": "halcyon:block/essence_furnace_front_on",
+    "south": "halcyon:block/essence_furnace_side",
+    "up": "halcyon:block/essence_furnace_top",
+    "west": "halcyon:block/essence_furnace_side"
+  }
+}

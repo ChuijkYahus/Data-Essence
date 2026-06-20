@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "halcyon:block/mineral_purification_chamber",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "halcyon:block/mineral_purification_chamber"
+    },
+    "facing=south": {
+      "model": "halcyon:block/mineral_purification_chamber",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "halcyon:block/mineral_purification_chamber",
+      "y": 270
+    }
+  }
+}

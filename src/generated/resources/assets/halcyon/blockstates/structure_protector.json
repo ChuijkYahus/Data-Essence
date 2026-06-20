@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "halcyon:block/structure_protector"
+    }
+  }
+}

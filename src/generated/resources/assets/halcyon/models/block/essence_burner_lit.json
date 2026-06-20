@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "halcyon:block/deco/polished_obsidian",
+    "east": "halcyon:block/essence_burner_side",
+    "north": "halcyon:block/essence_burner_front_on",
+    "particle": "halcyon:block/essence_burner_front_on",
+    "south": "halcyon:block/essence_burner_back",
+    "up": "halcyon:block/essence_burner_top_on",
+    "west": "halcyon:block/essence_burner_side"
+  }
+}

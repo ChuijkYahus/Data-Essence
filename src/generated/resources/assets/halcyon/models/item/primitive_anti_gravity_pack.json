@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "halcyon:item/primitive_anti_gravity_pack"
+  }
+}

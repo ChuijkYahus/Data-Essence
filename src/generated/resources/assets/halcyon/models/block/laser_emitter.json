@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "halcyon:block/laser_emitter_back",
+    "east": "halcyon:block/laser_emitter_side",
+    "north": "halcyon:block/laser_emitter_side",
+    "particle": "halcyon:block/laser_emitter_side",
+    "south": "halcyon:block/laser_emitter_side",
+    "up": "halcyon:block/laser_emitter_front",
+    "west": "halcyon:block/laser_emitter_side"
+  }
+}

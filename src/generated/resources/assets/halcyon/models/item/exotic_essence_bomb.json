@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "halcyon:item/bombs/exotic_essence_bomb"
+  }
+}

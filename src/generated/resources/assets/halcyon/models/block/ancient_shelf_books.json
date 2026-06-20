@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "halcyon:block/deco/ancient/ancient_rock_column_vertical",
+    "east": "halcyon:block/deco/ancient/ancient_shelf_books",
+    "north": "halcyon:block/deco/ancient/ancient_shelf_books",
+    "particle": "halcyon:block/deco/ancient/ancient_rock_column_vertical",
+    "south": "halcyon:block/deco/ancient/ancient_shelf_books",
+    "up": "halcyon:block/deco/ancient/ancient_rock_column_vertical",
+    "west": "halcyon:block/deco/ancient/ancient_shelf_books"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "parent": "minecraft:item/generated",
+  "overrides": [
+    {
+      "model": "halcyon:item/transcendental_tether_charged",
+      "predicate": {
+        "halcyon:charged": 1.0,
+        "halcyon:using": 0.0
+      }
+    },
+    {
+      "model": "halcyon:item/transcendental_tether_use",
+      "predicate": {
+        "halcyon:charged": 1.0,
+        "halcyon:using": 1.0
+      }
+    }
+  ],
+  "textures": {
+    "layer0": "halcyon:item/transcendental_tether_empty"
+  }
+}

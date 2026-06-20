@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "halcyon:block/polished_obsidian_column",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "halcyon:block/polished_obsidian_column",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "halcyon:block/polished_obsidian_column",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "halcyon:block/polished_obsidian_column",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "halcyon:block/polished_obsidian_column"
+    },
+    "facing=west": {
+      "model": "halcyon:block/polished_obsidian_column",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

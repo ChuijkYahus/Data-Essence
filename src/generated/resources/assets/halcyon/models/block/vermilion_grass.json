@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "halcyon:block/sanctuary_dirt",
+    "east": "halcyon:block/vermilion_grass_side",
+    "north": "halcyon:block/vermilion_grass_side",
+    "particle": "halcyon:block/vermilion_grass_top",
+    "south": "halcyon:block/vermilion_grass_side",
+    "up": "halcyon:block/vermilion_grass_top",
+    "west": "halcyon:block/vermilion_grass_side"
+  }
+}

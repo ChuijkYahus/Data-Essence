@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "halcyon:block/item_filter_bottom",
+    "east": "halcyon:block/item_filter_east",
+    "north": "halcyon:block/item_filter_north",
+    "particle": "halcyon:block/item_filter_top",
+    "south": "halcyon:block/item_filter_south",
+    "up": "halcyon:block/item_filter_top",
+    "west": "halcyon:block/item_filter_west"
+  }
+}

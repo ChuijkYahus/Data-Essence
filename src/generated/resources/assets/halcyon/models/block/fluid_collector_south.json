@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "halcyon:block/fluid_collector_bottom",
+    "east": "halcyon:block/fluid_collector_side",
+    "north": "halcyon:block/fluid_collector_side",
+    "particle": "halcyon:block/fluid_collector_side",
+    "south": "halcyon:block/fluid_collector_pump",
+    "up": "halcyon:block/fluid_collector_top",
+    "west": "halcyon:block/fluid_collector_side"
+  }
+}

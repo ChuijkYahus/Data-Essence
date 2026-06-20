@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "halcyon:block/fluid_collector_down"
+    },
+    "facing=east": {
+      "model": "halcyon:block/fluid_collector_east"
+    },
+    "facing=north": {
+      "model": "halcyon:block/fluid_collector_north"
+    },
+    "facing=south": {
+      "model": "halcyon:block/fluid_collector_south"
+    },
+    "facing=up": {
+      "model": "halcyon:block/fluid_collector_up"
+    },
+    "facing=west": {
+      "model": "halcyon:block/fluid_collector_west"
+    }
+  }
+}

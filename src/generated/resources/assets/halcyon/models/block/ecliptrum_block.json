@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "halcyon:block/deco/ecliptrum_block"
+  }
+}

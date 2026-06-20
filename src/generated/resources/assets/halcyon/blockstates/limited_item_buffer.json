@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "halcyon:block/limited_item_buffer"
+    }
+  }
+}

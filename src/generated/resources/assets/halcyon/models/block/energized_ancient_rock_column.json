@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "halcyon:block/deco/ancient/energized_ancient_rock_column_vertical",
+    "east": "halcyon:block/deco/ancient/energized_ancient_rock_column_side",
+    "north": "halcyon:block/deco/ancient/energized_ancient_rock_column_side",
+    "particle": "halcyon:block/deco/ancient/energized_ancient_rock_column_side",
+    "south": "halcyon:block/deco/ancient/energized_ancient_rock_column_side",
+    "up": "halcyon:block/deco/ancient/energized_ancient_rock_column_vertical",
+    "west": "halcyon:block/deco/ancient/energized_ancient_rock_column_side"
+  }
+}

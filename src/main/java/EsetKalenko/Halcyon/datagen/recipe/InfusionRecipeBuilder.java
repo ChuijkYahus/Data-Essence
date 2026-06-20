@@ -13,7 +13,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 
 import java.util.Map;
 
-public class InfusionRecipeBuilder extends DnERecipeBuilder {
+public class InfusionRecipeBuilder extends HalcyonRecipeBuilder {
     private final Ingredient input;
     private final ResourceLocation entry;
     private final int completionStage;

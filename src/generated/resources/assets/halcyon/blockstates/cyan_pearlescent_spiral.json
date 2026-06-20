@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "part=bottom": {
+      "model": "halcyon:block/cyan_pearlescent_spiral_base"
+    },
+    "part=bottom_top": {
+      "model": "halcyon:block/cyan_pearlescent_spiral_base_top"
+    },
+    "part=middle": {
+      "model": "halcyon:block/cyan_pearlescent_spiral"
+    },
+    "part=top": {
+      "model": "halcyon:block/cyan_pearlescent_spiral_upper"
+    }
+  }
+}

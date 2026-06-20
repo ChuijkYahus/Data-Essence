@@ -1,0 +1,9 @@
+{
+  "values": [
+    "minecraft:gunpowder",
+    {
+      "id": "#c:dusts/sulfur",
+      "required": false
+    }
+  ]
+}

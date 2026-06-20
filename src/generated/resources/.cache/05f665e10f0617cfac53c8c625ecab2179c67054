@@ -1,0 +1,18 @@
+// 1.21.1	2026-06-19T22:34:43.9691365	Tags for minecraft:block mod id halcyon
+d0f5156e6232c6801413f34ccc4a86516dad726d data/c/tags/block/ores.json
+d0f5156e6232c6801413f34ccc4a86516dad726d data/c/tags/block/ores_in_ground/stone.json
+a01d56314937f6d0f35f2965056b92f2f101f200 data/halcyon/tags/block/buffer_detection_pass.json
+63a51d6b3216a5bde032ff120d6b2e969b9bced1 data/halcyon/tags/block/crystalline_cradle_breakable.json
+fbbd285cc7ef28513cbd538a2668b249c0ceb6f7 data/halcyon/tags/block/hammer_and_chisel_collectable.json
+2af4d393bbd265b73b98f03bfcf17b4ab247380b data/halcyon/tags/block/pearlescent_sand.json
+35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/halcyon/tags/block/puzzle_components.json
+bd4a1aa7675ad4f4e7d974d6496fd58efd73b5bd data/halcyon/tags/block/sanctuary_carver_replaceables.json
+ccd3da02b3d1c2f81f1d99bbb831272d39f7acf2 data/halcyon/tags/block/sanctuary_sand.json
+653ffc0c12b30c58f4d16d2d5b6f9a66603baa1d data/halcyon/tags/block/scannable_ores.json
+ed4c1fce60e46dc4a97a9d3642a9eaaf8db6a7c9 data/halcyon/tags/block/structure_protector_ignored.json
+1fff464d16bbfea3311cd49abaa018339763b03f data/minecraft/tags/block/dirt.json
+fcf1520028a5c7284a857b266458ff91565ee5f7 data/minecraft/tags/block/mineable/pickaxe.json
+0522ac8ea72ef81d55ecea249c90e47debc2f3da data/minecraft/tags/block/mineable/shovel.json
+1099642eae4ea9fd54d0485fcb55507294073768 data/minecraft/tags/block/needs_diamond_tool.json
+3e385184830d375984e3050984742ad4a8e6d883 data/minecraft/tags/block/needs_iron_tool.json
+ccd3da02b3d1c2f81f1d99bbb831272d39f7acf2 data/minecraft/tags/block/sand.json

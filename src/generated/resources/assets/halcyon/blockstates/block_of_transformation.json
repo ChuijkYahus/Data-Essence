@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "halcyon:block/block_of_transformation"
+    }
+  }
+}

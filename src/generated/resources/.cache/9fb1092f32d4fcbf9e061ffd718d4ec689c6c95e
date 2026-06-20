@@ -1,0 +1,11 @@
+// 1.21.1	2026-06-19T22:34:43.971593764	Recipes
+b2b5f73c20bebdab4251b1cbaba0569a320f82c1 data/halcyon/advancement/recipes/infusion/infusion/charcoal.json
+d33a05d0365a034b221bde8438aa35d9bdda595f data/halcyon/advancement/recipes/infusion/infusion/essence_shard.json
+c534fcf6766f18d0b1a8ea270f97cb0000462c99 data/halcyon/advancement/recipes/infusion/infusion/glowstone_dust.json
+1d1d165a8c66a822f60210e00e36f3916a1c21d6 data/halcyon/advancement/recipes/infusion/infusion/netherite_scrap.json
+81cc1a73b820cf6736d38fdbf8492abd87f90f63 data/halcyon/advancement/recipes/infusion/infusion/traversite_road.json
+7eeb563d5b2541b3faa8df81398eb4b4e4191ed3 data/halcyon/recipe/infusion/charcoal.json
+8a15ac1852a145beb6473a35bd1fdc1478558be0 data/halcyon/recipe/infusion/essence_shard.json
+3816339488538c1b5cdd64986588ccb725847495 data/halcyon/recipe/infusion/glowstone_dust.json
+169c43f4c4ced70fa65b0195c7aa9eb9da1a47dd data/halcyon/recipe/infusion/netherite_scrap.json
+e040029b9e42d7bef7510dc85d127bd537cd5d45 data/halcyon/recipe/infusion/traversite_road.json

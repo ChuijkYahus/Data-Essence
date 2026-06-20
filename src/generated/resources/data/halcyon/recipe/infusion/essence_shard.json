@@ -1,0 +1,14 @@
+{
+  "type": "halcyon:infusion",
+  "entry": "halcyon:basics/essence_crystals",
+  "essenceCost": {
+    "halcyon:essence": 100.0
+  },
+  "input": {
+    "item": "minecraft:amethyst_shard"
+  },
+  "result": {
+    "count": 1,
+    "id": "halcyon:essence_shard"
+  }
+}

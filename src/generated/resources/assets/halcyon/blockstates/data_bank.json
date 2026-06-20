@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "halcyon:block/data_bank",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "halcyon:block/data_bank"
+    },
+    "facing=south": {
+      "model": "halcyon:block/data_bank",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "halcyon:block/data_bank",
+      "y": 270
+    }
+  }
+}
