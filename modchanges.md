@@ -25,7 +25,7 @@
 - Changed click sounds for Shifting Hues to all be ui_click (Esét)
 - Data Bank Entries are now more vague on what they unlock (Esét)
 - Moved Mineral-Finding Rod to t3 (Esét)
-- Rethemed the Metal Shaper's work process and mold items to be more akin to 3d printing
+- Rethemed the Metal Shaper's work process and mold items to be more akin to 3d printing (Esét)
 - Updated zh_cn translation (ChuijkYahus)
 - Shard Burners now spawn gaseous clouds when they sublimate shards (Esét)
 - Buffed Tethergrass spread rates (Esét)

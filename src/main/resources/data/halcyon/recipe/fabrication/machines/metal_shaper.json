@@ -3,14 +3,16 @@
   "essenceCost": { "halcyon:essence": 50 },
   "entry": "halcyon:machinery/metal_shaper",
   "pattern": [
-    "RIR",
-    "P P",
-    "PHP"
+    "CIc",
+    "LR ",
+    "CcH"
   ],
-  "time": 100,
+  "time": 140,
   "key": {
-    "P": { "item": "halcyon:capacitance_panel" },
-    "I": { "item": "minecraft:iron_block" },
+    "C": { "item": "halcyon:patterned_copper" },
+    "L": { "item": "halcyon:logical_matrix" },
+    "c": { "item": "halcyon:capacitance_panel" },
+    "I": { "item": "minecraft:iron_ingot" },
     "R": { "item": "halcyon:conductance_rod" },
     "H": { "item": "halcyon:heating_coil" }
   },

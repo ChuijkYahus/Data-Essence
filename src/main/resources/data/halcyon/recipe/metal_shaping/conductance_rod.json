@@ -1,6 +1,6 @@
 {
   "type": "halcyon:metal_shaping",
   "input": { "item": "minecraft:copper_ingot" },
-  "time": 100,
+  "time": 120,
   "result": { "id": "halcyon:conductance_rod", "count": 1 }
 }
