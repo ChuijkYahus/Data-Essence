@@ -2,6 +2,7 @@ package EsetKalenko.Halcyon.integration.emi.recipes;
 
 import EsetKalenko.Halcyon.DataNEssence;
 import EsetKalenko.Halcyon.api.DataNEssenceRegistries;
+import EsetKalenko.Halcyon.api.essence.EssenceBarBackgroundType;
 import EsetKalenko.Halcyon.api.essence.EssenceBarBackgroundTypes;
 import EsetKalenko.Halcyon.api.essence.EssenceType;
 import EsetKalenko.Halcyon.integration.emi.DataNEssenceEMIRecipe;
@@ -103,7 +104,7 @@ public class EMIFabricationRecipe extends DataNEssenceEMIRecipe {
 
     @Override
     public void addUnlockedWidgets(WidgetHolder widgetHolder) {
-        ResourceLocation background = DataNEssence.locate("textures/gui/data_tablet_crafting.png");
+        ResourceLocation background = getBackingTextureForTier();
 
         widgetHolder.addTexture(background, 0, 0, getDisplayWidth(), getDisplayHeight(), 10, 196);
 
@@ -120,7 +121,7 @@ public class EMIFabricationRecipe extends DataNEssenceEMIRecipe {
                 sOff -= 3;
             }
         } else {
-            widgetHolder.addTexture(DataTabletScreen.TEXTURE_CRAFTING, 93, 4, 14, 11, 242, 185);
+            widgetHolder.addTexture(background, 93, 4, 14, 11, 242, 185);
         }
         for (int i = 0; i < 9; i++) {
             int s = i + sOff;
@@ -130,9 +131,29 @@ public class EMIFabricationRecipe extends DataNEssenceEMIRecipe {
                 widgetHolder.addSlot(EmiStack.of(ItemStack.EMPTY), (i % 3 * 17) + 20, (i / 3 * 17) + 4).drawBack(false);
             }
         }
-        widgetHolder.add(new EssenceBarWidget(5, 6, EssenceTypeRegistry.ESSENCE.get(), essenceCost.getOrDefault(EssenceTypeRegistry.ESSENCE.get(), 0f), 1000f, EssenceBarBackgroundTypes.INDUSTRIAL));
-        widgetHolder.add(new EssenceBarWidget(13, 6, EssenceTypeRegistry.LUNAR_ESSENCE.get(), essenceCost.getOrDefault(EssenceTypeRegistry.LUNAR_ESSENCE.get(), 0f), 1000f, EssenceBarBackgroundTypes.INDUSTRIAL));
-        widgetHolder.add(new EssenceBarWidget(5, 32, EssenceTypeRegistry.NATURAL_ESSENCE.get(), essenceCost.getOrDefault(EssenceTypeRegistry.NATURAL_ESSENCE.get(), 0f), 1000f, EssenceBarBackgroundTypes.INDUSTRIAL));
-        widgetHolder.add(new EssenceBarWidget(13, 32, EssenceTypeRegistry.EXOTIC_ESSENCE.get(), essenceCost.getOrDefault(EssenceTypeRegistry.EXOTIC_ESSENCE.get(), 0f), 1000f, EssenceBarBackgroundTypes.INDUSTRIAL));
+        widgetHolder.add(new EssenceBarWidget(5, 6, EssenceTypeRegistry.ESSENCE.get(), essenceCost.getOrDefault(EssenceTypeRegistry.ESSENCE.get(), 0f), getCostMaxForTier(), getBarTypeForTier()));
+        widgetHolder.add(new EssenceBarWidget(13, 6, EssenceTypeRegistry.LUNAR_ESSENCE.get(), essenceCost.getOrDefault(EssenceTypeRegistry.LUNAR_ESSENCE.get(), 0f), getCostMaxForTier(), getBarTypeForTier()));
+        widgetHolder.add(new EssenceBarWidget(5, 32, EssenceTypeRegistry.NATURAL_ESSENCE.get(), essenceCost.getOrDefault(EssenceTypeRegistry.NATURAL_ESSENCE.get(), 0f), getCostMaxForTier(), getBarTypeForTier()));
+        widgetHolder.add(new EssenceBarWidget(13, 32, EssenceTypeRegistry.EXOTIC_ESSENCE.get(), essenceCost.getOrDefault(EssenceTypeRegistry.EXOTIC_ESSENCE.get(), 0f), getCostMaxForTier(), getBarTypeForTier()));
+    }
+
+    public ResourceLocation getBackingTextureForTier() {
+        if ( essenceCost.containsKey(EssenceTypeRegistry.LUNAR_ESSENCE.get() ))
+            return DataNEssence.locate("textures/gui/data_tablet_crafting_lunar.png");
+
+        return DataNEssence.locate("textures/gui/data_tablet_crafting.png");
+    }
+
+    public EssenceBarBackgroundType getBarTypeForTier() {
+        if ( essenceCost.containsKey(EssenceTypeRegistry.LUNAR_ESSENCE.get() ))
+            return EssenceBarBackgroundTypes.LUNAR;
+
+        return EssenceBarBackgroundTypes.INDUSTRIAL;
+    }
+
+    public float getCostMaxForTier() {
+        if ( essenceCost.containsKey(EssenceTypeRegistry.LUNAR_ESSENCE.get() ))
+            return 2000f;
+        return 1000f;
     }
 }

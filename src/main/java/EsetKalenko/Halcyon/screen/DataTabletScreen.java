@@ -37,6 +37,7 @@ public class DataTabletScreen extends Screen {
     public static final ResourceLocation TEXTURE_PAGE = DataNEssence.locate("textures/gui/data_tablet_page.png");
     public static final ResourceLocation TEXTURE_CRAFTING = DataNEssence.locate("textures/gui/data_tablet_crafting.png");
     public static final ResourceLocation TEXTURE_CRAFTING2 = DataNEssence.locate("textures/gui/data_tablet_crafting2.png");
+    public static final ResourceLocation TEXTURE_CRAFTING_LUNAR = DataNEssence.locate("textures/gui/data_tablet_crafting_lunar.png");
     public static final ResourceLocation TEXTURE_MISC = DataNEssence.locate("textures/gui/data_tablet_misc.png");
 
     public static int imageWidth = 256;
