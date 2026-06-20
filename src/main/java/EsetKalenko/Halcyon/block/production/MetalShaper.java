@@ -29,19 +29,49 @@ public class MetalShaper extends Block implements EntityBlock {
         this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
     }
 
-    private static final VoxelShape INSIDE_NS = box(2.0, 3.0, 0.0, 14.0, 16.0, 16.0);
-    protected static final VoxelShape SHAPE_NS = Shapes.join(Shapes.block(), INSIDE_NS, BooleanOp.ONLY_FIRST);
-    private static final VoxelShape INSIDE_EW = box(0.0, 3.0, 2.0, 16.0, 16.0, 14.0);
-    protected static final VoxelShape SHAPE_EW = Shapes.join(Shapes.block(), INSIDE_EW, BooleanOp.ONLY_FIRST);
+    // I LOVE VOXELSHAPES I LOVE VOXELSHAPES
+    private static final VoxelShape OBELISK_N = box(10.0, 0.0, 1.0,
+            17.0, 14.0, 15.0);
+    private static final VoxelShape OBELISK_S = box(-1.0, 0.0, 1.0,
+            6.0, 14.0, 15.0);
+    private static final VoxelShape OBELISK_E = box(1.0, 0.0, 10.0,
+            15.0, 14.0, 17.0);
+    private static final VoxelShape OBELISK_W = box(1.0, 0.0, -1.0,
+            15.0, 14.0, 6.0);
+    private static final VoxelShape BASE_N = Shapes.or(OBELISK_N, box(0, 0, 0,
+            10, 2, 10));
+    private static final VoxelShape BASE_S = Shapes.or(OBELISK_S, box(6, 0, 6,
+            16, 2, 16));
+    private static final VoxelShape BASE_E = Shapes.or(OBELISK_E, box(6, 0, 0,
+            16, 2, 10));
+    private static final VoxelShape BASE_W = Shapes.or(OBELISK_W, box(0, 0, 6,
+            10, 2, 16));
+    private static final VoxelShape BACK_N = Shapes.or(BASE_N, box(1, 0, 10,
+            9, 16, 14));
+    private static final VoxelShape BACK_S = Shapes.or(BASE_S, box(7, 0, 2,
+            15, 16, 6));
+    private static final VoxelShape BACK_E = Shapes.or(BASE_E, box(2, 0, 1,
+            6, 16, 9));
+    private static final VoxelShape BACK_W = Shapes.or(BASE_W, box(10, 0, 7,
+            14, 16, 15));
+    private static final VoxelShape SHAPE_N = Shapes.or(BACK_N, box(1, 14, 1,
+            9, 17, 9));
+    private static final VoxelShape SHAPE_S = Shapes.or(BACK_S, box(7, 14, 7,
+            15, 17, 15));
+    private static final VoxelShape SHAPE_E = Shapes.or(BACK_E, box(7, 14, 1,
+            15, 17, 9));
+    private static final VoxelShape SHAPE_W = Shapes.or(BACK_W, box(1, 14, 7,
+            9, 17, 15));
 
     @Override
     public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
-        if (pState.getValue(FACING) == Direction.NORTH || pState.getValue(FACING) == Direction.SOUTH ) {
-            return SHAPE_NS;
-        }
-        else {
-            return SHAPE_EW;
-        }
+        return switch (pState.getValue(FACING)) {
+            case NORTH -> SHAPE_N;
+            case SOUTH -> SHAPE_S;
+            case EAST -> SHAPE_E;
+            case WEST -> SHAPE_W;
+            default -> Shapes.block();
+        };
     }
 
     @Override
