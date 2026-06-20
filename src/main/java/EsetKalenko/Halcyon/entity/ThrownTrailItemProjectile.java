@@ -1,11 +1,11 @@
 package EsetKalenko.Halcyon.entity;
 
+import EsetKalenko.Halcyon.Halcyon;
 import com.cmdpro.databank.misc.ColorGradient;
 import com.cmdpro.databank.misc.TrailLeftoverHandler;
 import com.cmdpro.databank.misc.TrailRender;
 import com.cmdpro.databank.rendering.RenderHandler;
 import com.cmdpro.databank.rendering.RenderTypeHandler;
-import EsetKalenko.Halcyon.DataNEssence;
 import net.minecraft.client.renderer.LightTexture;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -47,7 +47,7 @@ public abstract class ThrownTrailItemProjectile extends ThrowableItemProjectile 
     }
     public TrailRender getTrail() {
         if (trail == null) {
-            trail = new TrailRender(position(), 20, 20, 0.15f, DataNEssence.locate("textures/vfx/trail.png"),
+            trail = new TrailRender(position(), 20, 20, 0.15f, Halcyon.locate("textures/vfx/trail.png"),
                     RenderTypeHandler::transparent
             ).setShrink(true).startTicking();
         }

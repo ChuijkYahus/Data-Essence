@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.integration.emi.recipes;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.integration.emi.DataNEssenceEMIPlugin;
 import EsetKalenko.Halcyon.recipe.EntropicProcessingRecipe;
 import dev.emi.emi.api.recipe.EmiRecipe;
@@ -61,7 +61,7 @@ public class EMIEntropicProcessingRecipe implements EmiRecipe {
 
     @Override
     public void addWidgets(WidgetHolder widgetHolder) {
-        ResourceLocation background = DataNEssence.locate("textures/gui/data_tablet_crafting.png");
+        ResourceLocation background = Halcyon.locate("textures/gui/data_tablet_crafting.png");
 
         widgetHolder.addTexture(background, 0, 0, getDisplayWidth(), getDisplayHeight(), 133, 136);
 

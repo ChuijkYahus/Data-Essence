@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.client.dimension;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.*;
@@ -264,7 +264,7 @@ public class SanctuarySpecialEffects extends DimensionSpecialEffects {
         poseStack.pushPose();
         poseStack.scale(150, 150, 150);
         RenderSystem.setShader(GameRenderer::getPositionTexShader);
-        RenderSystem.setShaderTexture(0, DataNEssence.locate("textures/vfx/sanctuary_ring.png"));
+        RenderSystem.setShaderTexture(0, Halcyon.locate("textures/vfx/sanctuary_ring.png"));
         BufferBuilder bufferbuilder = tesselator.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_TEX);
         renderQuad(bufferbuilder, poseStack, -1, 0, -1, 1, 0, 1, 0, 0, 1, 1);
         BufferUploader.drawWithShader(bufferbuilder.buildOrThrow());

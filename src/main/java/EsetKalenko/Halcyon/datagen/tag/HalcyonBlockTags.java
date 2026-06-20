@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.datagen.tag;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.registry.BlockRegistry;
 import EsetKalenko.Halcyon.registry.HalcyonTags;
 import net.minecraft.core.HolderLookup;
@@ -16,7 +16,7 @@ import java.util.concurrent.CompletableFuture;
 
 public class HalcyonBlockTags extends BlockTagsProvider {
     public HalcyonBlockTags(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, @Nullable ExistingFileHelper existingFileHelper) {
-        super(output, lookupProvider, DataNEssence.MOD_ID, existingFileHelper);
+        super(output, lookupProvider, Halcyon.MOD_ID, existingFileHelper);
     }
 
     @Override

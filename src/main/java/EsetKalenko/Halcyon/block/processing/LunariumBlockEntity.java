@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.block.processing;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.client.particle.CircleParticleOptions;
 import EsetKalenko.Halcyon.client.particle.CircleShadeParticleOptions;
 import EsetKalenko.Halcyon.client.particle.MoteParticleOptions;
@@ -35,7 +35,7 @@ public class LunariumBlockEntity extends BaseFabricatorBlockEntity implements Me
     public DatabankAnimationState animState = new DatabankAnimationState("pose")
             .addAnim(new DatabankAnimationReference("pose", (state, anim) -> {}, (state, anim) -> {}));
 
-    final Multiblock structure = MultiblockManager.multiblocks.get(DataNEssence.locate("machines/lunarium"));
+    final Multiblock structure = MultiblockManager.multiblocks.get(Halcyon.locate("machines/lunarium"));
 
     static final BlockPos[] vfxWispOffsets = new BlockPos[] {
             new BlockPos(-4, 4, -4),

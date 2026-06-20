@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.networking.packet.s2c;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.api.util.client.ClientRenderingUtil;
 import EsetKalenko.Halcyon.moddata.ClientPlayerUnlockedEntries;
 import EsetKalenko.Halcyon.networking.Message;
@@ -41,7 +41,7 @@ public record UnlockEntry(ResourceLocation unlocked, int completionStage) implem
     public Type<? extends CustomPacketPayload> type() {
         return TYPE;
     }
-    public static final Type<UnlockEntry> TYPE = new Type<>(DataNEssence.locate("unlock_entry"));
+    public static final Type<UnlockEntry> TYPE = new Type<>(Halcyon.locate("unlock_entry"));
 
     public static UnlockEntry read(RegistryFriendlyByteBuf buf) {
         ResourceLocation unlocked = buf.readResourceLocation();

@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.item.equipment;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.api.item.ItemEssenceContainer;
 import EsetKalenko.Halcyon.client.particle.RhombusParticleOptions;
 import EsetKalenko.Halcyon.client.particle.SmallCircleParticleOptions;
@@ -24,7 +24,7 @@ import java.util.List;
 
 public class RepulsionRod extends Item {
     public float useCost = 50f;
-    public static ResourceLocation LUNAR = DataNEssence.locate("lunar_essence");
+    public static ResourceLocation LUNAR = Halcyon.locate("lunar_essence");
 
     public RepulsionRod(Properties properties) {
         super(properties.component(DataComponentRegistry.ESSENCE_STORAGE, new ItemEssenceContainer(List.of(LUNAR), 7500)));

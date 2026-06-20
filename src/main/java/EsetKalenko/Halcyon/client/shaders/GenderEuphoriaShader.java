@@ -1,7 +1,7 @@
 package EsetKalenko.Halcyon.client.shaders;
 
 import com.cmdpro.databank.shaders.PostShaderInstance;
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.PostPass;
 import net.minecraft.resources.ResourceLocation;
@@ -9,7 +9,7 @@ import net.minecraft.resources.ResourceLocation;
 public class GenderEuphoriaShader extends PostShaderInstance {
     @Override
     public ResourceLocation getShaderLocation() {
-        return DataNEssence.locate("shaders/post/gender_euphoria.json");
+        return Halcyon.locate("shaders/post/gender_euphoria.json");
     }
     public float colorOffset;
     public float fade;

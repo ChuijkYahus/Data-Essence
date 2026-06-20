@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.data.computers.files.types;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.api.computer.ComputerFileType;
 import EsetKalenko.Halcyon.data.computers.files.TextFile;
 import EsetKalenko.Halcyon.screen.DataTabletScreen;
@@ -45,7 +45,7 @@ public class TextFileType extends ComputerFileType<TextFile> {
 
     @Override
     public ComputerFileIcon getIcon(TextFile file) {
-        return new ComputerFileIcon(DataNEssence.locate("textures/gui/computer.png"), 0, 166, 16, 16);
+        return new ComputerFileIcon(Halcyon.locate("textures/gui/computer.png"), 0, 166, 16, 16);
     }
 
     @Override

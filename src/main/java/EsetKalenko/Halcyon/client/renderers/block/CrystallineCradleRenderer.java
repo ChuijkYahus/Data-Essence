@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.client.renderers.block;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.block.production.CrystallineCradleBlockEntity;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -35,7 +35,7 @@ public class CrystallineCradleRenderer implements BlockEntityRenderer<Crystallin
         poseStack.pushPose();
         poseStack.translate(0.5, 0.25, 0.5);
         RenderSystem.enableBlend();
-        renderQuad(bufferSource.getBuffer(RenderType.entityTranslucent(DataNEssence.locate("textures/vfx/damage_circle.png"))), poseStack, -1*range, 0, -1*range, 1*range, 0, 1*range, 0, 0, 1, 1, packedLight, packedOverlay, color.getRGB());
+        renderQuad(bufferSource.getBuffer(RenderType.entityTranslucent(Halcyon.locate("textures/vfx/damage_circle.png"))), poseStack, -1*range, 0, -1*range, 1*range, 0, 1*range, 0, 0, 1, 1, packedLight, packedOverlay, color.getRGB());
         RenderSystem.disableBlend();
         poseStack.popPose();
     }

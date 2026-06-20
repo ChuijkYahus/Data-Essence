@@ -6,7 +6,7 @@ import com.cmdpro.databank.multiblock.Multiblock;
 import com.cmdpro.databank.multiblock.MultiblockManager;
 import com.cmdpro.databank.temperature.TemperatureUtil;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.api.block.Overheatable;
 import EsetKalenko.Halcyon.api.essence.EssenceBlockEntity;
 import EsetKalenko.Halcyon.api.essence.EssenceStorage;
@@ -40,7 +40,7 @@ public class EssenceDerivationSpikeBlockEntity extends BlockEntity implements Es
     public SingleEssenceContainer storage = new SingleEssenceContainer(EssenceTypeRegistry.ESSENCE.get(), 2000f);
     public int cooldown, temperature;
     public boolean isBroken, hasStructure, hasRedstone;
-    final Multiblock structure = MultiblockManager.multiblocks.get(DataNEssence.locate("generators/essence_derivation_spike"));
+    final Multiblock structure = MultiblockManager.multiblocks.get(Halcyon.locate("generators/essence_derivation_spike"));
 
     private final FluidTank coolantTank = new FluidTank(4000);
     public IFluidHandler getFluidHandler() {

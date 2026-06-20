@@ -4,7 +4,7 @@ import com.cmdpro.databank.model.DatabankModel;
 import com.cmdpro.databank.model.DatabankModels;
 import com.cmdpro.databank.model.blockentity.DatabankBlockEntityModel;
 import com.cmdpro.databank.model.blockentity.DatabankBlockEntityRenderer;
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.block.generation.IndustrialPlantSiphon;
 import EsetKalenko.Halcyon.block.generation.IndustrialPlantSiphonBlockEntity;
 import EsetKalenko.Halcyon.registry.EssenceTypeRegistry;
@@ -41,7 +41,7 @@ public class IndustrialPlantSiphonRenderer extends DatabankBlockEntityRenderer<I
     public static class Model extends DatabankBlockEntityModel<IndustrialPlantSiphonBlockEntity> {
         @Override
         public ResourceLocation getTextureLocation() {
-            return DataNEssence.locate("textures/block/industrial_plant_siphon.png");
+            return Halcyon.locate("textures/block/industrial_plant_siphon.png");
         }
 
         @Override
@@ -58,7 +58,7 @@ public class IndustrialPlantSiphonRenderer extends DatabankBlockEntityRenderer<I
         public DatabankModel model;
         public DatabankModel getModel() {
             if (model == null) {
-                model = DatabankModels.models.get(DataNEssence.locate("industrial_plant_siphon"));
+                model = DatabankModels.models.get(Halcyon.locate("industrial_plant_siphon"));
             }
             return model;
         }

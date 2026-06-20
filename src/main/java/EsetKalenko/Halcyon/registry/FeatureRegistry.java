@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.registry;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.worldgen.features.*;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.levelgen.feature.Feature;
@@ -11,7 +11,7 @@ import java.util.function.Supplier;
 
 public class FeatureRegistry {
     public static final DeferredRegister<Feature<?>> FEATURES = DeferredRegister.create(BuiltInRegistries.FEATURE,
-            DataNEssence.MOD_ID);
+            Halcyon.MOD_ID);
     public static final Supplier<Feature<NoneFeatureConfiguration>> ESSENCE_CRYSTAL = register("essence_crystal", () -> new EssenceCrystalFeature(NoneFeatureConfiguration.CODEC));
     public static final Supplier<Feature<NoneFeatureConfiguration>> CALCITE_SPIRE = register("calcite_spire", () -> new CalciteSpireFeature(NoneFeatureConfiguration.CODEC));
     public static final Supplier<Feature<NoneFeatureConfiguration>> SANCTUARY_TREE = register("sanctuary_tree", () -> new SanctuaryTreeFeature(NoneFeatureConfiguration.CODEC));

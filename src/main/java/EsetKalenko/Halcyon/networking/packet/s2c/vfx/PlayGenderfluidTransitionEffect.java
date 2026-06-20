@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.networking.packet.s2c.vfx;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.client.particle.MoteParticleOptions;
 import EsetKalenko.Halcyon.client.particle.RhombusParticleOptions;
 import EsetKalenko.Halcyon.client.particle.SmallCircleParticleOptions;
@@ -27,7 +27,7 @@ import java.util.List;
 
 public record PlayGenderfluidTransitionEffect(BlockPos pos, Vec3 itemPos) implements Message {
 
-    public static final Type<PlayGenderfluidTransitionEffect> TYPE = new Type<>(DataNEssence.locate("play_genderfluid_transition_effect"));
+    public static final Type<PlayGenderfluidTransitionEffect> TYPE = new Type<>(Halcyon.locate("play_genderfluid_transition_effect"));
 
     @Override
     public Type<? extends CustomPacketPayload> type() {

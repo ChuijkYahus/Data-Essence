@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.integration.emi;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.moddata.ClientPlayerUnlockedEntries;
 import EsetKalenko.Halcyon.recipe.HalcyonRecipe;
 import EsetKalenko.Halcyon.recipe.IHasRequiredKnowledge;
@@ -63,7 +63,7 @@ public abstract class DataNEssenceEMIRecipe implements EmiRecipe {
     @Override
     public void addWidgets(WidgetHolder widgets) {
         if (!isUnlocked()) {
-            ResourceLocation background = DataNEssence.locate("textures/gui/emi_recipe_locked.png");
+            ResourceLocation background = Halcyon.locate("textures/gui/emi_recipe_locked.png");
             int lightColor = 0xFFFF96B5;
             int darkColor = 0xFFF25EA1;
 

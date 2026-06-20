@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.screen;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.api.DataNEssenceRegistries;
 import EsetKalenko.Halcyon.api.essence.EssenceBarBackgroundTypes;
 import EsetKalenko.Halcyon.api.util.client.ClientEssenceBarUtil;
@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FluidMixerScreen extends AbstractContainerScreen<FluidMixerMenu> {
-    public static final ResourceLocation TEXTURE = DataNEssence.locate("textures/gui/fluid_mixer.png");
+    public static final ResourceLocation TEXTURE = Halcyon.locate("textures/gui/fluid_mixer.png");
     public FluidMixerScreen(FluidMixerMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
         super(pMenu, pPlayerInventory, pTitle);
     }

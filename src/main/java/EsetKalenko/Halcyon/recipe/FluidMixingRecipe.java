@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.recipe;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.registry.RecipeRegistry;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
@@ -99,7 +99,7 @@ public class FluidMixingRecipe implements Recipe<RecipeInputWithFluid>, IHasRequ
 
     @Override
     public ResourceLocation getMachineEntry() {
-        return DataNEssence.locate("machinery/fluid_mixer");
+        return Halcyon.locate("machinery/fluid_mixer");
     }
 
     @Override

@@ -1,11 +1,11 @@
 package EsetKalenko.Halcyon.client.renderers.block;
 
+import EsetKalenko.Halcyon.Halcyon;
 import com.cmdpro.databank.model.DatabankModel;
 import com.cmdpro.databank.model.DatabankModels;
 import com.cmdpro.databank.model.animation.DatabankAnimationState;
 import com.cmdpro.databank.model.blockentity.DatabankBlockEntityModel;
 import com.cmdpro.databank.model.blockentity.DatabankBlockEntityRenderer;
-import EsetKalenko.Halcyon.DataNEssence;
 import EsetKalenko.Halcyon.block.auxiliary.Charger;
 import EsetKalenko.Halcyon.block.auxiliary.ChargerBlockEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -54,7 +54,7 @@ public class ChargerRenderer extends DatabankBlockEntityRenderer<ChargerBlockEnt
 
         @Override
         public ResourceLocation getTextureLocation() {
-            return DataNEssence.locate("textures/block/charger.png");
+            return Halcyon.locate("textures/block/charger.png");
         }
 
         @Override
@@ -86,7 +86,7 @@ public class ChargerRenderer extends DatabankBlockEntityRenderer<ChargerBlockEnt
 
         public DatabankModel getModel() {
             if (model == null) {
-                model = DatabankModels.models.get(DataNEssence.locate("charger"));
+                model = DatabankModels.models.get(Halcyon.locate("charger"));
             }
             return model;
         }

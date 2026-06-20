@@ -1,7 +1,7 @@
 package EsetKalenko.Halcyon.data.minigames;
 
+import EsetKalenko.Halcyon.Halcyon;
 import com.cmdpro.databank.rendering.ColorUtil;
-import EsetKalenko.Halcyon.DataNEssence;
 import EsetKalenko.Halcyon.api.databank.Minigame;
 import EsetKalenko.Halcyon.config.DataNEssenceClientConfig;
 import EsetKalenko.Halcyon.registry.SoundRegistry;
@@ -11,14 +11,13 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.sounds.SoundEvents;
 
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ColorMixingMinigame extends Minigame {
-    public static final ResourceLocation TEXTURE = DataNEssence.locate("textures/gui/data_bank_minigames.png");
+    public static final ResourceLocation TEXTURE = Halcyon.locate("textures/gui/data_bank_minigames.png");
 
     public Color targetColor;
     public Color startColor;

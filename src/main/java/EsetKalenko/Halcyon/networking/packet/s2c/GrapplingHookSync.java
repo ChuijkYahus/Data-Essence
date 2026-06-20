@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.networking.packet.s2c;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.item.equipment.GrapplingHook;
 import EsetKalenko.Halcyon.networking.Message;
 import EsetKalenko.Halcyon.registry.AttachmentTypeRegistry;
@@ -33,7 +33,7 @@ public record GrapplingHookSync(int id, GrapplingHook.GrapplingHookData data) im
     public Type<? extends CustomPacketPayload> type() {
         return TYPE;
     }
-    public static final Type<GrapplingHookSync> TYPE = new Type<>(DataNEssence.locate("grappling_hook_sync"));
+    public static final Type<GrapplingHookSync> TYPE = new Type<>(Halcyon.locate("grappling_hook_sync"));
 
     public static GrapplingHookSync read(RegistryFriendlyByteBuf buf) {
         int id = buf.readInt();

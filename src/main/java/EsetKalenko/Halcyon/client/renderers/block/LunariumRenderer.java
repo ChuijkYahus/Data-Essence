@@ -1,10 +1,10 @@
 package EsetKalenko.Halcyon.client.renderers.block;
 
+import EsetKalenko.Halcyon.Halcyon;
 import com.cmdpro.databank.model.DatabankModel;
 import com.cmdpro.databank.model.DatabankModels;
 import com.cmdpro.databank.model.blockentity.DatabankBlockEntityModel;
 import com.cmdpro.databank.model.blockentity.DatabankBlockEntityRenderer;
-import EsetKalenko.Halcyon.DataNEssence;
 import EsetKalenko.Halcyon.block.processing.LunariumBlockEntity;
 import EsetKalenko.Halcyon.client.shaders.MachineOutputShader;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -37,13 +37,13 @@ public class LunariumRenderer extends DatabankBlockEntityRenderer<LunariumBlockE
         public DatabankModel model;
         public DatabankModel getModel() {
             if (model == null) {
-                model = DatabankModels.models.get(DataNEssence.locate("lunarium"));
+                model = DatabankModels.models.get(Halcyon.locate("lunarium"));
             }
             return model;
         }
         @Override
         public ResourceLocation getTextureLocation() {
-            return DataNEssence.locate("textures/block/lunarium.png");
+            return Halcyon.locate("textures/block/lunarium.png");
         }
 
         @Override

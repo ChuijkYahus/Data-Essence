@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.commands;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.api.item.ItemEssenceContainer;
 import EsetKalenko.Halcyon.api.util.DataTabletUtil;
 import EsetKalenko.Halcyon.api.util.PlayerDataUtil;
@@ -37,7 +37,7 @@ import java.util.Set;
 
 public class DataNEssenceCommands {
     public static void register(CommandDispatcher<CommandSourceStack> dispatcher){
-        dispatcher.register(Commands.literal(DataNEssence.MOD_ID)
+        dispatcher.register(Commands.literal(Halcyon.MOD_ID)
                 .requires(source -> source.hasPermission(4))
                 .then(Commands.literal("entry")
                         .then(Commands.argument("target", EntityArgument.player())
@@ -146,7 +146,7 @@ public class DataNEssenceCommands {
                     if (command.getSource().isPlayer()) {
                         command.getSource().getEntity().sendSystemMessage(Component.translatable("commands.halcyon.check_entry_overlaps.found", i.id.toString(), o.id.toString()));
                     } else {
-                        DataNEssence.LOGGER.warn("Entry \"" + i.id.toString() + "\" is overlapping with entry \"" + o.id.toString() + "\"");
+                        Halcyon.LOGGER.warn("Entry \"" + i.id.toString() + "\" is overlapping with entry \"" + o.id.toString() + "\"");
                     }
                 }
             }

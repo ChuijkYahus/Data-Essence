@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.networking.packet.s2c;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.api.util.client.ClientRenderingUtil;
 import EsetKalenko.Halcyon.moddata.ClientPlayerData;
 import EsetKalenko.Halcyon.networking.Message;
@@ -17,7 +17,7 @@ public record PlayerTierSync(int tier, boolean showIndicator) implements Message
     public Type<? extends CustomPacketPayload> type() {
         return TYPE;
     }
-    public static final Type<PlayerTierSync> TYPE = new Type<>(DataNEssence.locate("player_tier_sync"));
+    public static final Type<PlayerTierSync> TYPE = new Type<>(Halcyon.locate("player_tier_sync"));
 
     public static void write(RegistryFriendlyByteBuf pBuffer, PlayerTierSync obj) {
         pBuffer.writeInt(obj.tier);

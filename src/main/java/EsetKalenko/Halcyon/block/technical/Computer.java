@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.block.technical;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.api.util.ComputerUtil;
 import EsetKalenko.Halcyon.data.computers.ComputerTypeManager;
 import EsetKalenko.Halcyon.registry.ItemRegistry;
@@ -73,7 +73,7 @@ public class Computer extends Block implements EntityBlock {
         boolean hasGottenDataTablet = false;
 
         if ( player instanceof ServerPlayer serverPlayer ) {
-            AdvancementHolder advancement = serverWorld.getServer().getAdvancements().get(DataNEssence.locate("halcyon"));
+            AdvancementHolder advancement = serverWorld.getServer().getAdvancements().get(Halcyon.locate("halcyon"));
             if (advancement != null)
                 hasGottenDataTablet = serverPlayer.getAdvancements().getOrStartProgress(advancement).isDone();
         }

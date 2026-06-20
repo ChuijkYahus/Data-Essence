@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.networking.packet.s2c;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.networking.Message;
 import EsetKalenko.Halcyon.registry.AttachmentTypeRegistry;
 import net.minecraft.client.Minecraft;
@@ -29,7 +29,7 @@ public record DragonPartsSync(int id, boolean horns, boolean tail, boolean wings
     public Type<? extends CustomPacketPayload> type() {
         return TYPE;
     }
-    public static final Type<DragonPartsSync> TYPE = new Type<>(DataNEssence.locate("dragon_parts_sync"));
+    public static final Type<DragonPartsSync> TYPE = new Type<>(Halcyon.locate("dragon_parts_sync"));
 
     public static DragonPartsSync read(RegistryFriendlyByteBuf buf) {
         int id = buf.readInt();

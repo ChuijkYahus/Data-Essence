@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.recipe;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.registry.RecipeRegistry;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
@@ -67,7 +67,7 @@ public class EntropicProcessingRecipe implements Recipe<RecipeInput>, HalcyonRec
 
     @Override
     public ResourceLocation getMachineEntry() {
-        return DataNEssence.locate("machinery/synthesis_chamber");
+        return Halcyon.locate("machinery/synthesis_chamber");
     }
 
     public static class Serializer implements RecipeSerializer<EntropicProcessingRecipe> {

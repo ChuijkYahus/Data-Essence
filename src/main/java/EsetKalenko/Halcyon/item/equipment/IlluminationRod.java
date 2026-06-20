@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.item.equipment;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.api.item.ItemEssenceContainer;
 import EsetKalenko.Halcyon.registry.BlockRegistry;
 import EsetKalenko.Halcyon.registry.DataComponentRegistry;
@@ -28,7 +28,7 @@ import java.util.List;
 public class IlluminationRod extends Item {
     public int useCost = 10; // how much one light block costs to place.
 
-    public static ResourceLocation FUEL_ESSENCE_TYPE = DataNEssence.locate("essence");
+    public static ResourceLocation FUEL_ESSENCE_TYPE = Halcyon.locate("essence");
     public IlluminationRod(Properties properties) {
         super(properties.component(DataComponentRegistry.ESSENCE_STORAGE, new ItemEssenceContainer(List.of(FUEL_ESSENCE_TYPE), 5000)));
     }

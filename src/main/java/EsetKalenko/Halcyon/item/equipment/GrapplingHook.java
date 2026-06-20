@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.item.equipment;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.api.item.ItemEssenceContainer;
 import EsetKalenko.Halcyon.networking.ModMessages;
 import EsetKalenko.Halcyon.networking.packet.s2c.GrapplingHookSync;
@@ -23,7 +23,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class GrapplingHook extends Item {
-    public static ResourceLocation FUEL_ESSENCE_TYPE = DataNEssence.locate("essence");
+    public static ResourceLocation FUEL_ESSENCE_TYPE = Halcyon.locate("essence");
     public static float ESSENCE_COST = 5f;
     public GrapplingHook(Properties pProperties) {
         super(pProperties.component(DataComponentRegistry.ESSENCE_STORAGE, new ItemEssenceContainer(List.of(FUEL_ESSENCE_TYPE), 2500)));

@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.integration.emi.recipes;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.integration.emi.DataNEssenceEMIPlugin;
 import EsetKalenko.Halcyon.recipe.MineralPurificationRecipe;
 import dev.emi.emi.api.recipe.EmiRecipe;
@@ -62,8 +62,8 @@ public class EMIMineralPurificationRecipe implements EmiRecipe {
 
     @Override
     public void addWidgets(WidgetHolder widgets) {
-        ResourceLocation background = DataNEssence.locate("textures/gui/data_tablet_crafting2.png");
-        ResourceLocation emiIcons = DataNEssence.locate("textures/gui/emi_icons.png");
+        ResourceLocation background = Halcyon.locate("textures/gui/data_tablet_crafting2.png");
+        ResourceLocation emiIcons = Halcyon.locate("textures/gui/emi_icons.png");
 
         widgets.addTexture(background, 0, 0, getDisplayWidth(), getDisplayHeight(), 10, 136);
 

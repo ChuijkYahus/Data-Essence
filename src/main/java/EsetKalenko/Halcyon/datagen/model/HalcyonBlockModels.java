@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.datagen.model;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.block.DirectionalPillarBlock;
 import EsetKalenko.Halcyon.block.generation.EssenceBurner;
 import EsetKalenko.Halcyon.block.production.FluidCollector;
@@ -22,7 +22,7 @@ import java.util.function.Supplier;
 
 public class HalcyonBlockModels extends BlockStateProvider {
     public HalcyonBlockModels(PackOutput output, ExistingFileHelper exFileHelper) {
-        super(output, DataNEssence.MOD_ID, exFileHelper);
+        super(output, Halcyon.MOD_ID, exFileHelper);
     }
 
     @Override
@@ -44,16 +44,16 @@ public class HalcyonBlockModels extends BlockStateProvider {
         ancientDecoBlockWithItem(BlockRegistry.ANCIENT_GLYPH_STONE_MAKUTUIN);
         ancientDecoBlockWithItem(BlockRegistry.ANCIENT_GLYPH_STONE_ESSENCE);
 
-        parentedBlockWithItem(BlockRegistry.SHIELDLESS_ANCIENT_ROCK_BRICKS, DataNEssence.locate("ancient_rock_bricks"));
-        parentedBlockWithItem(BlockRegistry.SHIELDLESS_ANCIENT_ROCK_TILES, DataNEssence.locate("ancient_rock_tiles"));
+        parentedBlockWithItem(BlockRegistry.SHIELDLESS_ANCIENT_ROCK_BRICKS, Halcyon.locate("ancient_rock_bricks"));
+        parentedBlockWithItem(BlockRegistry.SHIELDLESS_ANCIENT_ROCK_TILES, Halcyon.locate("ancient_rock_tiles"));
         //parentedBlockWithItem(BlockRegistry.SHIELDLESS_ANCIENT_ROCK_COLUMN, DataNEssence.locate("ancient_rock_column")); // these 2 also do not gen properly. :slugdead:
         //parentedBlockWithItem(BlockRegistry.SHIELDLESS_ENERGIZED_ANCIENT_ROCK_COLUMN, DataNEssence.locate("energized_ancient_rock_column"));
-        parentedBlockWithItem(BlockRegistry.SHIELDLESS_ANCIENT_LANTERN, DataNEssence.locate("ancient_lantern"));
+        parentedBlockWithItem(BlockRegistry.SHIELDLESS_ANCIENT_LANTERN, Halcyon.locate("ancient_lantern"));
         //parentedBlockWithItem(BlockRegistry.SHIELDLESS_ANCIENT_SHELF, DataNEssence.locate("ancient_shelf")); // does not gen properly, multi-model block. done manually for now
-        parentedBlockWithItem(BlockRegistry.SHIELDLESS_ANCIENT_WINDOW, DataNEssence.locate("ancient_window"));
-        parentedBlockWithItem(BlockRegistry.SHIELDLESS_ANCIENT_GLYPH_STONE_BLANK, DataNEssence.locate("ancient_glyph_stone_blank"));
-        parentedBlockWithItem(BlockRegistry.SHIELDLESS_ANCIENT_GLYPH_STONE_ESSENCE, DataNEssence.locate("ancient_glyph_stone_essence"));
-        parentedBlockWithItem(BlockRegistry.SHIELDLESS_ANCIENT_GLYPH_STONE_MAKUTUIN, DataNEssence.locate("ancient_glyph_stone_makutuin"));
+        parentedBlockWithItem(BlockRegistry.SHIELDLESS_ANCIENT_WINDOW, Halcyon.locate("ancient_window"));
+        parentedBlockWithItem(BlockRegistry.SHIELDLESS_ANCIENT_GLYPH_STONE_BLANK, Halcyon.locate("ancient_glyph_stone_blank"));
+        parentedBlockWithItem(BlockRegistry.SHIELDLESS_ANCIENT_GLYPH_STONE_ESSENCE, Halcyon.locate("ancient_glyph_stone_essence"));
+        parentedBlockWithItem(BlockRegistry.SHIELDLESS_ANCIENT_GLYPH_STONE_MAKUTUIN, Halcyon.locate("ancient_glyph_stone_makutuin"));
 
         bufferDecoBlock(BlockRegistry.DECO_ESSENCE_BUFFER);
         bufferDecoBlock(BlockRegistry.DECO_ITEM_BUFFER);
@@ -115,23 +115,23 @@ public class HalcyonBlockModels extends BlockStateProvider {
 
         transparentBlockWithItemAndTint(BlockRegistry.SPIRE_GLASS);
 
-        stairsBlock((StairBlock)BlockRegistry.TRAVERSITE_ROAD_STAIRS.get(), DataNEssence.locate("block/traversite_road"));
-        slabBlock((SlabBlock) BlockRegistry.TRAVERSITE_ROAD_SLAB.get(), DataNEssence.locate("block/traversite_road"), DataNEssence.locate("block/traversite_road"));
+        stairsBlock((StairBlock)BlockRegistry.TRAVERSITE_ROAD_STAIRS.get(), Halcyon.locate("block/traversite_road"));
+        slabBlock((SlabBlock) BlockRegistry.TRAVERSITE_ROAD_SLAB.get(), Halcyon.locate("block/traversite_road"), Halcyon.locate("block/traversite_road"));
 
-        blockWithItemTintedOverlay(BlockRegistry.TRAVERSITE_ROAD_OPAL, ResourceLocation.fromNamespaceAndPath("opalescence", "block/opal"), DataNEssence.locate("block/traversite_road_opal_overlay"), DataNEssence.locate("block/traversite_road"));
-        stairsBlockTintedOverlay((StairBlock)BlockRegistry.TRAVERSITE_ROAD_STAIRS_OPAL.get(), ResourceLocation.fromNamespaceAndPath("opalescence", "block/opal"), DataNEssence.locate("block/traversite_road_opal_overlay"), DataNEssence.locate("block/traversite_road"));
-        slabBlockTintedOverlay((SlabBlock) BlockRegistry.TRAVERSITE_ROAD_SLAB_OPAL.get(), DataNEssence.locate("block/traversite_road_opal"), ResourceLocation.fromNamespaceAndPath("opalescence", "block/opal"), DataNEssence.locate("block/traversite_road_opal_overlay"), DataNEssence.locate("block/traversite_road"));
+        blockWithItemTintedOverlay(BlockRegistry.TRAVERSITE_ROAD_OPAL, ResourceLocation.fromNamespaceAndPath("opalescence", "block/opal"), Halcyon.locate("block/traversite_road_opal_overlay"), Halcyon.locate("block/traversite_road"));
+        stairsBlockTintedOverlay((StairBlock)BlockRegistry.TRAVERSITE_ROAD_STAIRS_OPAL.get(), ResourceLocation.fromNamespaceAndPath("opalescence", "block/opal"), Halcyon.locate("block/traversite_road_opal_overlay"), Halcyon.locate("block/traversite_road"));
+        slabBlockTintedOverlay((SlabBlock) BlockRegistry.TRAVERSITE_ROAD_SLAB_OPAL.get(), Halcyon.locate("block/traversite_road_opal"), ResourceLocation.fromNamespaceAndPath("opalescence", "block/opal"), Halcyon.locate("block/traversite_road_opal_overlay"), Halcyon.locate("block/traversite_road"));
     }
     private void pearlescentSpiral(Supplier<Block> blockRegistryObject) {
         ResourceLocation loc = BuiltInRegistries.BLOCK.getKey(blockRegistryObject.get());
         ResourceLocation base = ResourceLocation.fromNamespaceAndPath(loc.getNamespace(), ModelProvider.BLOCK_FOLDER + "/" + loc.getPath() + "_base");
         ResourceLocation middle = ResourceLocation.fromNamespaceAndPath(loc.getNamespace(), ModelProvider.BLOCK_FOLDER + "/" + loc.getPath());
         ResourceLocation upper = ResourceLocation.fromNamespaceAndPath(loc.getNamespace(), ModelProvider.BLOCK_FOLDER + "/" + loc.getPath() + "_top");
-        BlockModelBuilder lowerModel = models().withExistingParent(loc.getPath() + "_base", DataNEssence.locate("block/pearlescent_spiral_base"));
+        BlockModelBuilder lowerModel = models().withExistingParent(loc.getPath() + "_base", Halcyon.locate("block/pearlescent_spiral_base"));
         lowerModel.texture("0", middle);
         lowerModel.texture("1", base);
         lowerModel.texture("particle", middle);
-        BlockModelBuilder lowerTopModel = models().withExistingParent(loc.getPath() + "_base_top", DataNEssence.locate("block/pearlescent_spiral_base_top"));
+        BlockModelBuilder lowerTopModel = models().withExistingParent(loc.getPath() + "_base_top", Halcyon.locate("block/pearlescent_spiral_base_top"));
         lowerTopModel.texture("0", upper);
         lowerTopModel.texture("1", base);
         lowerTopModel.texture("particle", middle);

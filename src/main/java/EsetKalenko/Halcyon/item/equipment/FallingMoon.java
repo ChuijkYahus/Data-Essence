@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.item.equipment;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.api.item.ItemEssenceContainer;
 import EsetKalenko.Halcyon.entity.RifleLaser;
 import EsetKalenko.Halcyon.registry.DataComponentRegistry;
@@ -23,7 +23,7 @@ import java.util.List;
 
 public class FallingMoon extends Item {
 
-    public static ResourceLocation LUNAR = DataNEssence.locate("lunar_essence");
+    public static ResourceLocation LUNAR = Halcyon.locate("lunar_essence");
     private final int TICKS_PER_CHARGE = 40; // 2 seconds per charge level
     private final int COOLDOWN = 20;
 

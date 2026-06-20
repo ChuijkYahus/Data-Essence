@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.data.minigames;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.screen.DataBankScreen;
 import EsetKalenko.Halcyon.api.databank.Minigame;
 import com.mojang.blaze3d.platform.GlStateManager;
@@ -19,7 +19,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class WireMinigame extends Minigame {
-    public static final ResourceLocation TEXTURE = DataNEssence.locate("textures/gui/data_bank_minigames.png");
+    public static final ResourceLocation TEXTURE = Halcyon.locate("textures/gui/data_bank_minigames.png");
     public WireMinigame(Map<Vector2i, Tile> tiles) {
         setupTiles();
         this.tiles.putAll(tiles);

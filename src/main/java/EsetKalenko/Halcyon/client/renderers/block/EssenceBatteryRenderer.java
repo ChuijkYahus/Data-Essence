@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.client.renderers.block;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.block.storage.EssenceBatteryBlockEntity;
 import EsetKalenko.Halcyon.registry.EssenceTypeRegistry;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -64,7 +64,7 @@ public class EssenceBatteryRenderer implements BlockEntityRenderer<EssenceBatter
         }
     }
     EntityRenderDispatcher renderDispatcher;
-    public static final ResourceLocation OVERLAY = DataNEssence.locate("block/essence_battery_overlay");
+    public static final ResourceLocation OVERLAY = Halcyon.locate("block/essence_battery_overlay");
     public EssenceBatteryRenderer(BlockEntityRendererProvider.Context rendererProvider) {
         renderDispatcher = rendererProvider.getEntityRenderer();
     }

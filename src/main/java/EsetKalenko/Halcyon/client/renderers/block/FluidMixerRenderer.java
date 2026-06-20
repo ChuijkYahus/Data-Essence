@@ -4,7 +4,7 @@ import com.cmdpro.databank.model.DatabankModel;
 import com.cmdpro.databank.model.DatabankModels;
 import com.cmdpro.databank.model.blockentity.DatabankBlockEntityModel;
 import com.cmdpro.databank.model.blockentity.DatabankBlockEntityRenderer;
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.block.processing.FluidMixerBlockEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -89,7 +89,7 @@ public class FluidMixerRenderer extends DatabankBlockEntityRenderer<FluidMixerBl
     public static class Model extends DatabankBlockEntityModel<FluidMixerBlockEntity> {
         @Override
         public ResourceLocation getTextureLocation() {
-            return DataNEssence.locate("textures/block/fluid_mixer.png");
+            return Halcyon.locate("textures/block/fluid_mixer.png");
         }
 
         @Override
@@ -106,7 +106,7 @@ public class FluidMixerRenderer extends DatabankBlockEntityRenderer<FluidMixerBl
         public DatabankModel model;
         public DatabankModel getModel() {
             if (model == null) {
-                model = DatabankModels.models.get(DataNEssence.locate("fluid_mixer"));
+                model = DatabankModels.models.get(Halcyon.locate("fluid_mixer"));
             }
             return model;
         }

@@ -1,11 +1,11 @@
 package EsetKalenko.Halcyon.client.renderers.block;
 
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.client.shaders.MachineOutputShader;
 import com.cmdpro.databank.model.DatabankModel;
 import com.cmdpro.databank.model.DatabankModels;
 import com.cmdpro.databank.model.blockentity.DatabankBlockEntityModel;
 import com.cmdpro.databank.model.blockentity.DatabankBlockEntityRenderer;
-import EsetKalenko.Halcyon.DataNEssence;
 import EsetKalenko.Halcyon.block.production.MetalShaper;
 import EsetKalenko.Halcyon.block.production.MetalShaperBlockEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -75,7 +75,7 @@ public class MetalShaperRenderer extends DatabankBlockEntityRenderer<MetalShaper
 
         public DatabankModel getModel() {
             if (model == null) {
-                model = DatabankModels.models.get(DataNEssence.locate("metal_shaper"));
+                model = DatabankModels.models.get(Halcyon.locate("metal_shaper"));
             }
             return model;
         }
@@ -93,7 +93,7 @@ public class MetalShaperRenderer extends DatabankBlockEntityRenderer<MetalShaper
 
         @Override
         public ResourceLocation getTextureLocation() {
-            return DataNEssence.locate("textures/block/metal_shaper.png");
+            return Halcyon.locate("textures/block/metal_shaper.png");
         }
 
     }

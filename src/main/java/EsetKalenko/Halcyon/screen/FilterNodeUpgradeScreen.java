@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.screen;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.registry.DataComponentRegistry;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.gui.GuiGraphics;
@@ -13,7 +13,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.component.ItemContainerContents;
 
 public class FilterNodeUpgradeScreen extends AbstractContainerScreen<FilterNodeUpgradeMenu> {
-    public static final ResourceLocation TEXTURE = DataNEssence.locate("textures/gui/filter_node_upgrade.png");
+    public static final ResourceLocation TEXTURE = Halcyon.locate("textures/gui/filter_node_upgrade.png");
     public FilterNodeUpgradeScreen(FilterNodeUpgradeMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
         super(pMenu, pPlayerInventory, pTitle);
     }

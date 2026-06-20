@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.progression.advancement;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.advancements.critereon.*;
@@ -12,7 +12,7 @@ import java.util.Optional;
 
 public class FabricatorRecipeCraftedTrigger extends SimpleCriterionTrigger<FabricatorRecipeCraftedTrigger.Conditions> {
 
-    public static final ResourceLocation ID = DataNEssence.locate("fabricator_recipe_crafted");
+    public static final ResourceLocation ID = Halcyon.locate("fabricator_recipe_crafted");
 
     public void trigger(ServerPlayer player, ItemStack craftedStack) {
         this.trigger(player, (conditions -> conditions.matches(craftedStack)));

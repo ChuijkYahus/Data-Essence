@@ -1,7 +1,7 @@
 package EsetKalenko.Halcyon.client.shaders;
 
+import EsetKalenko.Halcyon.Halcyon;
 import com.cmdpro.databank.shaders.PostShaderInstance;
-import EsetKalenko.Halcyon.DataNEssence;
 import net.minecraft.client.renderer.PostPass;
 import net.minecraft.resources.ResourceLocation;
 import org.joml.Vector3f;
@@ -9,7 +9,7 @@ import org.joml.Vector3f;
 public class PingShader extends PostShaderInstance {
     @Override
     public ResourceLocation getShaderLocation() {
-        return DataNEssence.locate("shaders/post/ping.json");
+        return Halcyon.locate("shaders/post/ping.json");
     }
     public Vector3f pingPosition;
     public PingShader(Vector3f pingPosition) {

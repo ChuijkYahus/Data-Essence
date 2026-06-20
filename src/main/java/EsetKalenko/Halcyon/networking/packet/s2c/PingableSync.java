@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.networking.packet.s2c;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.data.pinging.PingableStructure;
 import EsetKalenko.Halcyon.data.pinging.PingableStructureManager;
 import EsetKalenko.Halcyon.data.pinging.PingableStructureSerializer;
@@ -40,7 +40,7 @@ public record PingableSync(Map<ResourceLocation, PingableStructure> structures) 
         return TYPE;
     }
 
-    public static final Type<PingableSync> TYPE = new Type<>(DataNEssence.locate("pingable_sync"));
+    public static final Type<PingableSync> TYPE = new Type<>(Halcyon.locate("pingable_sync"));
 
     private static class ClientHandler {
         public static void handle(PingableSync packet) {

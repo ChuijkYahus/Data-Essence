@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.networking.packet.s2c;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.moddata.ClientPlayerData;
 import EsetKalenko.Halcyon.networking.Message;
 import net.minecraft.client.Minecraft;
@@ -21,7 +21,7 @@ public record PlayerDataSync(Map<ResourceLocation, Boolean> unlockedEssences, Bl
     public Type<? extends CustomPacketPayload> type() {
         return TYPE;
     }
-    public static final Type<PlayerDataSync> TYPE = new Type<>(DataNEssence.locate("player_data_sync"));
+    public static final Type<PlayerDataSync> TYPE = new Type<>(Halcyon.locate("player_data_sync"));
 
     public static void write(RegistryFriendlyByteBuf buf, PlayerDataSync obj) {
         buf.writeMap(obj.unlockedEssences, FriendlyByteBuf::writeResourceLocation, FriendlyByteBuf::writeBoolean);

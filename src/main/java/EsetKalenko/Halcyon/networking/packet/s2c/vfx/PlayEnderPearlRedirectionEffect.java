@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.networking.packet.s2c.vfx;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.networking.Message;
 import EsetKalenko.Halcyon.registry.SoundRegistry;
 import net.minecraft.client.Minecraft;
@@ -21,7 +21,7 @@ import java.util.List;
 
 public record PlayEnderPearlRedirectionEffect(List<BlockPos> path) implements Message {
 
-    public static final Type<PlayEnderPearlRedirectionEffect> TYPE = new Type<>(DataNEssence.locate("play_ender_pearl_redirection_effect"));
+    public static final Type<PlayEnderPearlRedirectionEffect> TYPE = new Type<>(Halcyon.locate("play_ender_pearl_redirection_effect"));
 
     @Override
     public Type<? extends CustomPacketPayload> type() {

@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.data.datatablet;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.network.RegistryFriendlyByteBuf;
@@ -32,8 +32,8 @@ public class DataTab {
     public boolean alwaysShown;
     public DataTabPlacement placement;
     public record DataTabPlacement(ResourceLocation placeBefore, ResourceLocation placeAfter) {
-        public static final ResourceLocation IGNORED = DataNEssence.locate("ignored");
-        public static final ResourceLocation ALL = DataNEssence.locate("all");
+        public static final ResourceLocation IGNORED = Halcyon.locate("ignored");
+        public static final ResourceLocation ALL = Halcyon.locate("all");
         public static final StreamCodec<RegistryFriendlyByteBuf, DataTabPlacement> STREAM_CODEC = StreamCodec.of((pBuffer, pValue) -> {
             pBuffer.writeResourceLocation(pValue.placeBefore);
             pBuffer.writeResourceLocation(pValue.placeAfter);

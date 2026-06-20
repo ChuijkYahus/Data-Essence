@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.registry;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.progression.advancement.FabricatorRecipeCraftedTrigger;
 import net.minecraft.advancements.CriterionTrigger;
 import net.minecraft.core.registries.Registries;
@@ -10,7 +10,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 public class HalcyonCriteria {
 
     private static final DeferredRegister<CriterionTrigger<?>> REGISTER = DeferredRegister.create(
-            Registries.TRIGGER_TYPE, DataNEssence.MOD_ID
+            Registries.TRIGGER_TYPE, Halcyon.MOD_ID
     );
 
     public static FabricatorRecipeCraftedTrigger FABRICATOR_RECIPE_CRAFTED = new FabricatorRecipeCraftedTrigger();

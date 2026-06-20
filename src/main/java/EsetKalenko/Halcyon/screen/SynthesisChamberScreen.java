@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.screen;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.api.DataNEssenceRegistries;
 import EsetKalenko.Halcyon.api.essence.EssenceBarBackgroundTypes;
 import EsetKalenko.Halcyon.api.util.client.ClientRenderingUtil;
@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SynthesisChamberScreen extends AbstractContainerScreen<SynthesisChamberMenu> {
-    public static final ResourceLocation TEXTURE = DataNEssence.locate("textures/gui/synthesis_chamber.png");
+    public static final ResourceLocation TEXTURE = Halcyon.locate("textures/gui/synthesis_chamber.png");
     public SynthesisChamberScreen(SynthesisChamberMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
         super(pMenu, pPlayerInventory, pTitle);
     }

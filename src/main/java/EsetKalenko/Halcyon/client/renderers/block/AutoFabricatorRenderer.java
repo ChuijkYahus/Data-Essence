@@ -1,10 +1,10 @@
 package EsetKalenko.Halcyon.client.renderers.block;
 
+import EsetKalenko.Halcyon.Halcyon;
 import com.cmdpro.databank.model.DatabankModel;
 import com.cmdpro.databank.model.DatabankModels;
 import com.cmdpro.databank.model.blockentity.DatabankBlockEntityModel;
 import com.cmdpro.databank.model.blockentity.DatabankBlockEntityRenderer;
-import EsetKalenko.Halcyon.DataNEssence;
 import EsetKalenko.Halcyon.block.processing.AutoFabricatorBlockEntity;
 import EsetKalenko.Halcyon.client.shaders.MachineOutputShader;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -38,7 +38,7 @@ public class AutoFabricatorRenderer extends DatabankBlockEntityRenderer<AutoFabr
 
         @Override
         public ResourceLocation getTextureLocation() {
-            return DataNEssence.locate("textures/block/auto-fabricator.png");
+            return Halcyon.locate("textures/block/auto-fabricator.png");
         }
 
         @Override
@@ -57,7 +57,7 @@ public class AutoFabricatorRenderer extends DatabankBlockEntityRenderer<AutoFabr
 
         public DatabankModel getModel() {
             if (model == null) {
-                model = DatabankModels.models.get(DataNEssence.locate("auto-fabricator"));
+                model = DatabankModels.models.get(Halcyon.locate("auto-fabricator"));
             }
             return model;
         }

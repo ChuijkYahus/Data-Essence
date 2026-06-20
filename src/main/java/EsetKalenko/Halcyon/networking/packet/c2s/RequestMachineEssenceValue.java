@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.networking.packet.c2s;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.networking.Message;
 import EsetKalenko.Halcyon.networking.ModMessages;
 import EsetKalenko.Halcyon.networking.packet.s2c.MachineEssenceValueSync;
@@ -34,5 +34,5 @@ public record RequestMachineEssenceValue(BlockPos blockPos) implements Message {
     public Type<? extends CustomPacketPayload> type() {
         return TYPE;
     }
-    public static final Type<RequestMachineEssenceValue> TYPE = new Type<>(DataNEssence.locate("request_machine_essence_value"));
+    public static final Type<RequestMachineEssenceValue> TYPE = new Type<>(Halcyon.locate("request_machine_essence_value"));
 }

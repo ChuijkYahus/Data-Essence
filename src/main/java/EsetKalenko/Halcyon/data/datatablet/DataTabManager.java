@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.data.datatablet;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import com.google.gson.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.ResourceManager;
@@ -27,7 +27,7 @@ public class DataTabManager extends SimpleJsonResourceReloadListener {
     @Override
     protected void apply(Map<ResourceLocation, JsonElement> pObject, ResourceManager pResourceManager, ProfilerFiller pProfiler) {
         Entries.tabs.clear();
-        DataNEssence.LOGGER.info("[HALCYON] Adding Data Tablet Tabs");
+        Halcyon.LOGGER.info("[HALCYON] Adding Data Tablet Tabs");
         for (Map.Entry<ResourceLocation, JsonElement> i : pObject.entrySet()) {
             ResourceLocation location = i.getKey();
             if (location.getPath().startsWith("_")) {
@@ -40,12 +40,12 @@ public class DataTabManager extends SimpleJsonResourceReloadListener {
                     continue;
                 }
                 Entries.tabs.put(i.getKey(), tab);
-                DataNEssence.LOGGER.info("[HALCYON] Successfully added tab {}", location);
+                Halcyon.LOGGER.info("[HALCYON] Successfully added tab {}", location);
             } catch (IllegalArgumentException | JsonParseException e) {
-                DataNEssence.LOGGER.error("[HALCYON ERROR] Parsing error loading tab {}", location, e);
+                Halcyon.LOGGER.error("[HALCYON ERROR] Parsing error loading tab {}", location, e);
             }
         }
-        DataNEssence.LOGGER.info("[HALCYON] Loaded {} Data Tablet Tabs", Entries.tabs.size());
+        Halcyon.LOGGER.info("[HALCYON] Loaded {} Data Tablet Tabs", Entries.tabs.size());
         HashMap<DataTab.DataTabPlacement, List<DataTab>> placements = new HashMap<>();
         DataTab.DataTabPlacement bothIgnored = new DataTab.DataTabPlacement(DataTab.DataTabPlacement.IGNORED, DataTab.DataTabPlacement.IGNORED);
         DataTab.DataTabPlacement bothAll = new DataTab.DataTabPlacement(DataTab.DataTabPlacement.ALL, DataTab.DataTabPlacement.ALL);
@@ -68,17 +68,17 @@ public class DataTabManager extends SimpleJsonResourceReloadListener {
         for (DataTab i : toSort) {
             if (i.placement.placeBefore().equals(DataTab.DataTabPlacement.ALL)) {
                 if (i.placement.placeAfter().equals(DataTab.DataTabPlacement.ALL)) {
-                    DataNEssence.LOGGER.error("[HALCYON ERROR] Unable to sort {}, both \"place_after\" and \"place_before\" are set to \"halcyon:all\"", i.id);
+                    Halcyon.LOGGER.error("[HALCYON ERROR] Unable to sort {}, both \"place_after\" and \"place_before\" are set to \"halcyon:all\"", i.id);
                     continue;
                 }
                 if (!i.placement.placeAfter().equals(DataTab.DataTabPlacement.IGNORED)) {
-                    DataNEssence.LOGGER.error("[HALCYON ERROR] Unable to sort {}, \"place_before\" is set to \"halcyon:all\" but place_after is not ignored", i.id);
+                    Halcyon.LOGGER.error("[HALCYON ERROR] Unable to sort {}, \"place_before\" is set to \"halcyon:all\" but place_after is not ignored", i.id);
                     continue;
                 }
                 sorted.addFirst(i);
             } else if (i.placement.placeAfter().equals(DataTab.DataTabPlacement.ALL)) {
                 if (!i.placement.placeBefore().equals(DataTab.DataTabPlacement.IGNORED)) {
-                    DataNEssence.LOGGER.error("[HALCYON ERROR] Unable to sort {}, \"place_after\" is set to \"halcyon:all\" but place_before is not ignored", i.id);
+                    Halcyon.LOGGER.error("[HALCYON ERROR] Unable to sort {}, \"place_after\" is set to \"halcyon:all\" but place_before is not ignored", i.id);
                     continue;
                 }
                 sorted.addLast(i);
@@ -103,10 +103,10 @@ public class DataTabManager extends SimpleJsonResourceReloadListener {
             if (beforeErrored && afterErrored) {
                 String before = i.placement.placeBefore().toString();
                 String after = i.placement.placeBefore().toString();
-                DataNEssence.LOGGER.error("[HALCYON ERROR] Unable to sort {}, both \"{}\" and \"{}\" dont exist", i.id, before, after);
+                Halcyon.LOGGER.error("[HALCYON ERROR] Unable to sort {}, both \"{}\" and \"{}\" dont exist", i.id, before, after);
             } else {
                 String erroredValue = beforeErrored ? i.placement.placeBefore().toString() : afterErrored ? i.placement.placeAfter().toString() : "unknown";
-                DataNEssence.LOGGER.error("[HALCYON ERROR] Unable to sort {}, \"{}\" doesnt exist", i.id, erroredValue);
+                Halcyon.LOGGER.error("[HALCYON ERROR] Unable to sort {}, \"{}\" doesnt exist", i.id, erroredValue);
             }
         }
         errored.clear();
@@ -143,7 +143,7 @@ public class DataTabManager extends SimpleJsonResourceReloadListener {
             }
         }
         Entries.tabsSorted = sorted;
-        DataNEssence.LOGGER.info("[HALCYON] Sorted {} Data Tablet Tabs", Entries.tabsSorted.size());
+        Halcyon.LOGGER.info("[HALCYON] Sorted {} Data Tablet Tabs", Entries.tabsSorted.size());
     }
     private boolean isSpecial(ResourceLocation placement) {
         return placement.equals(DataTab.DataTabPlacement.ALL) || placement.equals(DataTab.DataTabPlacement.IGNORED);

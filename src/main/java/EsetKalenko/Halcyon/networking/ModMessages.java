@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.networking;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.networking.packet.c2s.PlayerChangeDriveData;
 import EsetKalenko.Halcyon.networking.packet.c2s.PlayerFinishDataBankMinigame;
 import EsetKalenko.Halcyon.networking.packet.c2s.PlayerSetItemHandlerLocked;
@@ -24,7 +24,7 @@ import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
 import net.neoforged.neoforge.network.handling.IPayloadContext;
 import net.neoforged.neoforge.network.registration.PayloadRegistrar;
 
-@EventBusSubscriber(modid = DataNEssence.MOD_ID)
+@EventBusSubscriber(modid = Halcyon.MOD_ID)
 public class ModMessages {
     public class Handler {
         public static <T extends CustomPacketPayload> void handle(T message, IPayloadContext ctx) {
@@ -59,7 +59,7 @@ public class ModMessages {
     }
     @SubscribeEvent
     public static void register(RegisterPayloadHandlersEvent event) {
-        PayloadRegistrar registrar = event.registrar(DataNEssence.MOD_ID)
+        PayloadRegistrar registrar = event.registrar(Halcyon.MOD_ID)
                 .versioned("1.0");
 
         //S2C

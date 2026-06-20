@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.screen;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
@@ -10,7 +10,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 public class ItemFilterScreen extends AbstractContainerScreen<ItemFilterMenu> {
-    public static final ResourceLocation TEXTURE = DataNEssence.locate("textures/gui/item_filter.png");
+    public static final ResourceLocation TEXTURE = Halcyon.locate("textures/gui/item_filter.png");
     public ItemFilterScreen(ItemFilterMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
         super(pMenu, pPlayerInventory, pTitle);
         imageHeight = 202;

@@ -4,7 +4,7 @@ import com.cmdpro.databank.model.DatabankModel;
 import com.cmdpro.databank.model.DatabankModels;
 import com.cmdpro.databank.model.entity.DatabankLivingEntityModel;
 import com.cmdpro.databank.model.entity.DatabankLivingEntityRenderer;
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.entity.AncientSentinel;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -25,7 +25,7 @@ public class AncientSentinelRenderer extends DatabankLivingEntityRenderer<Ancien
 
     @Override
     public ResourceLocation getTextureLocation(AncientSentinel pEntity) {
-        return DataNEssence.locate("textures/entity/ancient_sentinel.png");
+        return Halcyon.locate("textures/entity/ancient_sentinel.png");
     }
 
     @Override
@@ -67,13 +67,13 @@ public class AncientSentinelRenderer extends DatabankLivingEntityRenderer<Ancien
         public DatabankModel model;
         public DatabankModel getModel() {
             if (model == null) {
-                model = DatabankModels.models.get(DataNEssence.locate("ancient_sentinel"));
+                model = DatabankModels.models.get(Halcyon.locate("ancient_sentinel"));
             }
             return model;
         }
         @Override
         public ResourceLocation getTextureLocation() {
-            return DataNEssence.locate("textures/entity/ancient_sentinel.png");
+            return Halcyon.locate("textures/entity/ancient_sentinel.png");
         }
 
         @Override

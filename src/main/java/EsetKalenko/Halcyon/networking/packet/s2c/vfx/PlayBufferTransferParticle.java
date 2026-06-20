@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.networking.packet.s2c.vfx;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.client.particle.MoteParticleOptions;
 import EsetKalenko.Halcyon.networking.Message;
 import net.minecraft.client.Minecraft;
@@ -17,7 +17,7 @@ import java.awt.*;
 
 public record PlayBufferTransferParticle(BlockPos pos, Color color) implements Message {
 
-    public static final Type<PlayBufferTransferParticle> TYPE = new Type<>(DataNEssence.locate("play_buffer_transfer_particle"));
+    public static final Type<PlayBufferTransferParticle> TYPE = new Type<>(Halcyon.locate("play_buffer_transfer_particle"));
 
     @Override
     public Type<? extends CustomPacketPayload> type() {

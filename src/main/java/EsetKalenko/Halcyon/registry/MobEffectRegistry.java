@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.registry;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.effects.GenderEuphoria;
 import EsetKalenko.Halcyon.effects.Shrunken;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -13,7 +13,7 @@ import java.util.function.Supplier;
 
 public class MobEffectRegistry {
     public static final DeferredRegister<MobEffect> MOB_EFFECTS = DeferredRegister.create(BuiltInRegistries.MOB_EFFECT,
-            DataNEssence.MOD_ID);
+            Halcyon.MOD_ID);
 
     public static DeferredHolder<MobEffect, GenderEuphoria> GENDER_EUPHORIA = register("gender_euphoria", () ->
             new GenderEuphoria(MobEffectCategory.BENEFICIAL, 0xFFFFFF));

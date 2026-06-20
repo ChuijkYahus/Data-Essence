@@ -1,9 +1,9 @@
 package EsetKalenko.Halcyon.client.renderers.block;
+import EsetKalenko.Halcyon.Halcyon;
 import com.cmdpro.databank.model.DatabankModel;
 import com.cmdpro.databank.model.DatabankModels;
 import com.cmdpro.databank.model.blockentity.DatabankBlockEntityModel;
 import com.cmdpro.databank.model.blockentity.DatabankBlockEntityRenderer;
-import EsetKalenko.Halcyon.DataNEssence;
 import EsetKalenko.Halcyon.block.processing.FabricatorBlockEntity;
 import EsetKalenko.Halcyon.client.shaders.MachineOutputShader;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -157,13 +157,13 @@ public class FabricatorRenderer extends DatabankBlockEntityRenderer<FabricatorBl
         public DatabankModel model;
         public DatabankModel getModel() {
             if (model == null) {
-                model = DatabankModels.models.get(DataNEssence.locate("fabricator"));
+                model = DatabankModels.models.get(Halcyon.locate("fabricator"));
             }
             return model;
         }
         @Override
         public ResourceLocation getTextureLocation() {
-            return DataNEssence.locate("textures/block/fabricator.png");
+            return Halcyon.locate("textures/block/fabricator.png");
         }
         @Override
         public void setupModelPose(FabricatorBlockEntity pEntity, float partialTick) {

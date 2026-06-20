@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.fluid;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.api.block.GenderfluidGrowable;
 import EsetKalenko.Halcyon.networking.ModMessages;
 import EsetKalenko.Halcyon.networking.packet.s2c.vfx.PlayGenderfluidTransitionEffect;
@@ -119,12 +119,12 @@ public class Genderfluid extends ModFluidType {
         public static final IClientFluidTypeExtensions EXTENSIONS = new IClientFluidTypeExtensions() {
             @Override
             public ResourceLocation getStillTexture() {
-                return DataNEssence.locate("block/fluid/genderfluid_still");
+                return Halcyon.locate("block/fluid/genderfluid_still");
             }
 
             @Override
             public ResourceLocation getFlowingTexture() {
-                return DataNEssence.locate("block/fluid/genderfluid_flowing");
+                return Halcyon.locate("block/fluid/genderfluid_flowing");
             }
         };
         private static BaseFlowingFluid.Properties properties(ModFluidRegistryObject obj) {

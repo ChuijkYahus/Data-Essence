@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.data.minigames;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.api.databank.Minigame;
 import EsetKalenko.Halcyon.api.misc.SymbolTypes;
 import EsetKalenko.Halcyon.screen.DataBankScreen;
@@ -22,7 +22,7 @@ import java.util.*;
 import java.util.List;
 
 public class LaserMinigame extends Minigame {
-    public static final ResourceLocation TEXTURE = DataNEssence.locate("textures/gui/data_bank_minigames.png");
+    public static final ResourceLocation TEXTURE = Halcyon.locate("textures/gui/data_bank_minigames.png");
     public LaserMinigame(Map<Vector2i, Tile> tiles) {
         setupTiles();
         this.tiles.putAll(tiles);

@@ -1,7 +1,7 @@
 package EsetKalenko.Halcyon.screen;
 
+import EsetKalenko.Halcyon.Halcyon;
 import com.cmdpro.databank.rendering.ColorUtil;
-import EsetKalenko.Halcyon.DataNEssence;
 import EsetKalenko.Halcyon.SpecialConditionHandler;
 import EsetKalenko.Halcyon.api.datatablet.Page;
 import EsetKalenko.Halcyon.data.datatablet.DataTab;
@@ -32,13 +32,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DataTabletScreen extends Screen {
-    public static final ResourceLocation TEXTURE_FRAME = DataNEssence.locate("textures/gui/data_tablet_frame.png");
-    public static final ResourceLocation TEXTURE_MAIN = DataNEssence.locate("textures/gui/data_tablet.png");
-    public static final ResourceLocation TEXTURE_PAGE = DataNEssence.locate("textures/gui/data_tablet_page.png");
-    public static final ResourceLocation TEXTURE_CRAFTING = DataNEssence.locate("textures/gui/data_tablet_crafting.png");
-    public static final ResourceLocation TEXTURE_CRAFTING2 = DataNEssence.locate("textures/gui/data_tablet_crafting2.png");
-    public static final ResourceLocation TEXTURE_CRAFTING_LUNAR = DataNEssence.locate("textures/gui/data_tablet_crafting_lunar.png");
-    public static final ResourceLocation TEXTURE_MISC = DataNEssence.locate("textures/gui/data_tablet_misc.png");
+    public static final ResourceLocation TEXTURE_FRAME = Halcyon.locate("textures/gui/data_tablet_frame.png");
+    public static final ResourceLocation TEXTURE_MAIN = Halcyon.locate("textures/gui/data_tablet.png");
+    public static final ResourceLocation TEXTURE_PAGE = Halcyon.locate("textures/gui/data_tablet_page.png");
+    public static final ResourceLocation TEXTURE_CRAFTING = Halcyon.locate("textures/gui/data_tablet_crafting.png");
+    public static final ResourceLocation TEXTURE_CRAFTING2 = Halcyon.locate("textures/gui/data_tablet_crafting2.png");
+    public static final ResourceLocation TEXTURE_CRAFTING_LUNAR = Halcyon.locate("textures/gui/data_tablet_crafting_lunar.png");
+    public static final ResourceLocation TEXTURE_MISC = Halcyon.locate("textures/gui/data_tablet_misc.png");
 
     public static int imageWidth = 256;
     public static int imageHeight = 166;

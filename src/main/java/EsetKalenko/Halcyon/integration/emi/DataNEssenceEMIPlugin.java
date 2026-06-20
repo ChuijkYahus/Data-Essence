@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.integration.emi;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.integration.emi.recipes.*;
 import EsetKalenko.Halcyon.recipe.*;
 import EsetKalenko.Halcyon.registry.BlockRegistry;
@@ -21,7 +21,7 @@ import net.minecraft.world.item.crafting.RecipeManager;
 
 @EmiEntrypoint
 public class DataNEssenceEMIPlugin implements EmiPlugin {
-    public static final ResourceLocation EMI_ICONS = ResourceLocation.fromNamespaceAndPath(DataNEssence.MOD_ID,"textures/gui/emi_icons.png");
+    public static final ResourceLocation EMI_ICONS = ResourceLocation.fromNamespaceAndPath(Halcyon.MOD_ID,"textures/gui/emi_icons.png");
 
     public static final EmiStack FABRICATOR_WORKSTATION = EmiStack.of(BlockRegistry.FABRICATOR.get());
     public static final EmiStack LUNARIUM_WORKSTATION = EmiStack.of(BlockRegistry.LUNARIUM.get());
@@ -35,15 +35,15 @@ public class DataNEssenceEMIPlugin implements EmiPlugin {
     public static final EmiStack DRYING_TABLE_WORKSTATION = EmiStack.of(BlockRegistry.DRYING_TABLE.get());
     public static final EmiStack MINERAL_PURIFICATION_CHAMBER_WORKSTATION = EmiStack.of(BlockRegistry.MINERAL_PURIFICATION_CHAMBER.get());
 
-    public static final EmiRecipeCategory FABRICATION = new EmiRecipeCategory(DataNEssence.locate("fabrication"), FABRICATOR_WORKSTATION, new EmiTexture(EMI_ICONS, 0, 0, 16, 16));
-    public static final EmiRecipeCategory INFUSION = new EmiRecipeCategory(DataNEssence.locate("infusion"), INFUSER_WORKSTATION, new EmiTexture(EMI_ICONS, 16, 0, 16, 16));
-    public static final EmiRecipeCategory ENTROPIC_PROCESSING = new EmiRecipeCategory(DataNEssence.locate("entropic_processing"), ENTROPIC_PROCESSER_WORKSTATION, new EmiTexture(EMI_ICONS, 32, 0, 16, 16));
-    public static final EmiRecipeCategory FLUID_MIXING = new EmiRecipeCategory(DataNEssence.locate("fluid_mixing"), FLUID_MIXER_WORKSTATION, new EmiTexture(EMI_ICONS, 48, 0, 16, 16));
-    public static final EmiRecipeCategory SYNTHESIS = new EmiRecipeCategory(DataNEssence.locate("synthesis"), SYNTHESIS_CHAMBER_WORKSTATION, new EmiTexture(EMI_ICONS, 64, 0, 16, 16));
-    public static final EmiRecipeCategory METAL_SHAPING = new EmiRecipeCategory(DataNEssence.locate("metal_shaping"), METAL_SHAPER_WORKSTATION, new EmiTexture(EMI_ICONS, 80, 0, 16, 16));
-    public static final EmiRecipeCategory MELTING = new EmiRecipeCategory(DataNEssence.locate("melting"), MELTER_WORKSTATION, new EmiTexture(EMI_ICONS, 96, 0, 16, 16));
-    public static final EmiRecipeCategory DRYING = new EmiRecipeCategory(DataNEssence.locate("drying"), DRYING_TABLE_WORKSTATION, new EmiTexture(EMI_ICONS, 112, 0, 16, 16));
-    public static final EmiRecipeCategory MINERAL_PURIFICATION = new EmiRecipeCategory(DataNEssence.locate("mineral_purification"), MINERAL_PURIFICATION_CHAMBER_WORKSTATION, new EmiTexture(EMI_ICONS, 128, 0, 16, 16));
+    public static final EmiRecipeCategory FABRICATION = new EmiRecipeCategory(Halcyon.locate("fabrication"), FABRICATOR_WORKSTATION, new EmiTexture(EMI_ICONS, 0, 0, 16, 16));
+    public static final EmiRecipeCategory INFUSION = new EmiRecipeCategory(Halcyon.locate("infusion"), INFUSER_WORKSTATION, new EmiTexture(EMI_ICONS, 16, 0, 16, 16));
+    public static final EmiRecipeCategory ENTROPIC_PROCESSING = new EmiRecipeCategory(Halcyon.locate("entropic_processing"), ENTROPIC_PROCESSER_WORKSTATION, new EmiTexture(EMI_ICONS, 32, 0, 16, 16));
+    public static final EmiRecipeCategory FLUID_MIXING = new EmiRecipeCategory(Halcyon.locate("fluid_mixing"), FLUID_MIXER_WORKSTATION, new EmiTexture(EMI_ICONS, 48, 0, 16, 16));
+    public static final EmiRecipeCategory SYNTHESIS = new EmiRecipeCategory(Halcyon.locate("synthesis"), SYNTHESIS_CHAMBER_WORKSTATION, new EmiTexture(EMI_ICONS, 64, 0, 16, 16));
+    public static final EmiRecipeCategory METAL_SHAPING = new EmiRecipeCategory(Halcyon.locate("metal_shaping"), METAL_SHAPER_WORKSTATION, new EmiTexture(EMI_ICONS, 80, 0, 16, 16));
+    public static final EmiRecipeCategory MELTING = new EmiRecipeCategory(Halcyon.locate("melting"), MELTER_WORKSTATION, new EmiTexture(EMI_ICONS, 96, 0, 16, 16));
+    public static final EmiRecipeCategory DRYING = new EmiRecipeCategory(Halcyon.locate("drying"), DRYING_TABLE_WORKSTATION, new EmiTexture(EMI_ICONS, 112, 0, 16, 16));
+    public static final EmiRecipeCategory MINERAL_PURIFICATION = new EmiRecipeCategory(Halcyon.locate("mineral_purification"), MINERAL_PURIFICATION_CHAMBER_WORKSTATION, new EmiTexture(EMI_ICONS, 128, 0, 16, 16));
 
     // TODO this Essence Furnace should have a custom tooltip, because *polish*
     public static ItemStack ESSENCE_FURNACE = new ItemStack(BlockRegistry.ESSENCE_FURNACE.get().asItem());

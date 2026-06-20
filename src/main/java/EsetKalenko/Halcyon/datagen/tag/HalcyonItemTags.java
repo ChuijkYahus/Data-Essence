@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.datagen.tag;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.registry.BlockRegistry;
 import EsetKalenko.Halcyon.registry.ItemRegistry;
 import EsetKalenko.Halcyon.registry.HalcyonTags;
@@ -20,7 +20,7 @@ import java.util.concurrent.CompletableFuture;
 public class HalcyonItemTags extends ItemTagsProvider {
     public HalcyonItemTags(PackOutput p_275343_, CompletableFuture<HolderLookup.Provider> p_275729_,
                            CompletableFuture<TagLookup<Block>> p_275322_, @Nullable ExistingFileHelper existingFileHelper) {
-        super(p_275343_, p_275729_, p_275322_, DataNEssence.MOD_ID, existingFileHelper);
+        super(p_275343_, p_275729_, p_275322_, Halcyon.MOD_ID, existingFileHelper);
     }
 
     @Override

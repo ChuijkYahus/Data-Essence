@@ -1,9 +1,9 @@
 package EsetKalenko.Halcyon.api.block;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import net.minecraft.resources.ResourceLocation;
 
 public interface TraversiteBlock {
-    ResourceLocation TRAVERSITE_ROAD_SPEED_UUID = DataNEssence.locate("traversite_road_speed");
+    ResourceLocation TRAVERSITE_ROAD_SPEED_UUID = Halcyon.locate("traversite_road_speed");
     float getBoost();
 }

@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.screen;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.data.computers.ClientComputerData;
 import EsetKalenko.Halcyon.api.computer.ComputerFile;
 import EsetKalenko.Halcyon.api.computer.ComputerFileType;
@@ -110,7 +110,7 @@ public class ComputerScreen extends Screen {
         pGuiGraphics.blit(TEXTURE, x, y, 0, 0, imageWidth, imageHeight);
     }
 
-    public static final ResourceLocation TEXTURE = DataNEssence.locate("textures/gui/computer.png");
+    public static final ResourceLocation TEXTURE = Halcyon.locate("textures/gui/computer.png");
     @Override
     public void render(GuiGraphics pGuiGraphics, int pMouseX, int pMouseY, float pPartialTick) {
         super.render(pGuiGraphics, pMouseX, pMouseY, pPartialTick);

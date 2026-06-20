@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.networking.packet.c2s;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.api.util.DataTabletUtil;
 import EsetKalenko.Halcyon.networking.Message;
 import EsetKalenko.Halcyon.registry.AttachmentTypeRegistry;
@@ -38,5 +38,5 @@ public record PlayerFinishDataBankMinigame(ResourceLocation entry) implements Me
     public Type<? extends CustomPacketPayload> type() {
         return TYPE;
     }
-    public static final Type<PlayerFinishDataBankMinigame> TYPE = new Type<>(DataNEssence.locate("player_finish_data_bank_minigame"));
+    public static final Type<PlayerFinishDataBankMinigame> TYPE = new Type<>(Halcyon.locate("player_finish_data_bank_minigame"));
 }

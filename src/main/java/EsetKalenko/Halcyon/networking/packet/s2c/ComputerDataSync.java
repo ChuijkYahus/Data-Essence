@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.networking.packet.s2c;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.data.computers.ClientComputerData;
 import EsetKalenko.Halcyon.data.computers.ComputerData;
 import EsetKalenko.Halcyon.data.computers.ComputerTypeSerializer;
@@ -32,7 +32,7 @@ public record ComputerDataSync(ComputerData data) implements Message {
     public Type<? extends CustomPacketPayload> type() {
         return TYPE;
     }
-    public static final Type<ComputerDataSync> TYPE = new Type<>(DataNEssence.locate("computer_data_sync"));
+    public static final Type<ComputerDataSync> TYPE = new Type<>(Halcyon.locate("computer_data_sync"));
     private static class ClientHandler {
         public static void openScreen() {
             Minecraft.getInstance().setScreen(new ComputerScreen(Component.empty()));

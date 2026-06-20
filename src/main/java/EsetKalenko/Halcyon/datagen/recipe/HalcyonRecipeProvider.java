@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.datagen.recipe;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.api.DataNEssenceRegistries;
 import EsetKalenko.Halcyon.registry.BlockRegistry;
 import EsetKalenko.Halcyon.registry.EssenceTypeRegistry;
@@ -26,35 +26,35 @@ public class HalcyonRecipeProvider extends RecipeProvider {
     @Override
     protected void buildRecipes(RecipeOutput output) {
         // Essence Shard Conversions
-        new InfusionRecipeBuilder(new ItemStack(ItemRegistry.ESSENCE_SHARD.get()), Ingredient.of(Items.AMETHYST_SHARD), DataNEssence.locate("basics/essence_crystals"), -1, Map.of(DataNEssenceRegistries.ESSENCE_TYPE_REGISTRY.getKey(EssenceTypeRegistry.ESSENCE.get()), 100f)).unlockedBy("has_shard", has(Items.AMETHYST_SHARD)).save(output);
+        new InfusionRecipeBuilder(new ItemStack(ItemRegistry.ESSENCE_SHARD.get()), Ingredient.of(Items.AMETHYST_SHARD), Halcyon.locate("basics/essence_crystals"), -1, Map.of(DataNEssenceRegistries.ESSENCE_TYPE_REGISTRY.getKey(EssenceTypeRegistry.ESSENCE.get()), 100f)).unlockedBy("has_shard", has(Items.AMETHYST_SHARD)).save(output);
         // new InfusionRecipeBuilder(new ItemStack(ItemRegistry.LUNAR_ESSENCE_SHARD.get()), Ingredient.of(Items.AMETHYST_SHARD), DataNEssence.locate("basics/lunar_strikes"), -1, Map.of(DataNEssenceRegistries.ESSENCE_TYPE_REGISTRY.getKey(EssenceTypeRegistry.LUNAR_ESSENCE.get()), 100f)).unlockedBy("has_shard", has(Items.AMETHYST_SHARD)).save(output);
 
         // Industrial Infuser Recipes
         new InfusionRecipeBuilder(
                 new ItemStack(Items.NETHERITE_SCRAP, 2),
                 Ingredient.of(Items.ANCIENT_DEBRIS),
-                DataNEssence.locate("machinery/industrial_infuser_processing"), -1,
+                Halcyon.locate("machinery/industrial_infuser_processing"), -1,
                 Map.of(DataNEssenceRegistries.ESSENCE_TYPE_REGISTRY.getKey(EssenceTypeRegistry.ESSENCE.get()), 500f)
         ).unlockedBy("has_debris", has(Items.ANCIENT_DEBRIS)).save(output);
 
         new InfusionRecipeBuilder(
                 new ItemStack(Items.GLOWSTONE_DUST, 2),
                 Ingredient.of(Items.GLOW_BERRIES),
-                DataNEssence.locate("machinery/industrial_infuser_processing"), -1,
+                Halcyon.locate("machinery/industrial_infuser_processing"), -1,
                 Map.of(DataNEssenceRegistries.ESSENCE_TYPE_REGISTRY.getKey(EssenceTypeRegistry.ESSENCE.get()), 100f)
         ).unlockedBy("has_berry", has(Items.GLOW_BERRIES)).save(output);
 
         new InfusionRecipeBuilder(
                 new ItemStack(BlockRegistry.TRAVERSITE_ROAD.get().asItem()),
                 Ingredient.of( Items.DIORITE, Items.CALCITE ),
-                DataNEssence.locate("tools/traversite_road"), -1,
+                Halcyon.locate("tools/traversite_road"), -1,
                 Map.of(DataNEssenceRegistries.ESSENCE_TYPE_REGISTRY.getKey(EssenceTypeRegistry.ESSENCE.get()), 50f)
         ).unlockedBy("has_diorite", has(Items.DIORITE)).save(output);
 
         new InfusionRecipeBuilder(
                 new ItemStack(Items.CHARCOAL, 2),
                 Ingredient.of(ItemTags.LOGS_THAT_BURN),
-                DataNEssence.locate("machinery/industrial_infuser_processing"), -1,
+                Halcyon.locate("machinery/industrial_infuser_processing"), -1,
                 Map.of(DataNEssenceRegistries.ESSENCE_TYPE_REGISTRY.getKey(EssenceTypeRegistry.ESSENCE.get()), 80f)
         ).unlockedBy("has_log", has(ItemTags.LOGS_THAT_BURN)).save(output);
     }

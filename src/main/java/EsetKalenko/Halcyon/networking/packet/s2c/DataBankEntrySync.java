@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.networking.packet.s2c;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.networking.Message;
 import EsetKalenko.Halcyon.screen.DataBankScreen;
 import EsetKalenko.Halcyon.data.databank.DataBankEntries;
@@ -37,7 +37,7 @@ public record DataBankEntrySync(Map<ResourceLocation, DataBankEntry> entries) im
     public Type<? extends CustomPacketPayload> type() {
         return TYPE;
     }
-    public static final Type<DataBankEntrySync> TYPE = new Type<>(DataNEssence.locate("data_bank_entry_sync"));
+    public static final Type<DataBankEntrySync> TYPE = new Type<>(Halcyon.locate("data_bank_entry_sync"));
     private static class ClientHandler {
         public static void openScreen() {
             Minecraft.getInstance().setScreen(new DataBankScreen(Component.empty()));

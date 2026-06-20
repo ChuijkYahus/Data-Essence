@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.item;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.api.node.item.INodeUpgrade;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
@@ -16,7 +16,7 @@ public class SpeedNodeUpgrade extends Item implements INodeUpgrade {
 
     @Override
     public Object getValue(ItemStack upgrade, ResourceLocation id, Object originalValue, BlockEntity node) {
-        if (id.equals(DataNEssence.locate("speed_multiplier"))) {
+        if (id.equals(Halcyon.locate("speed_multiplier"))) {
             return ((float)originalValue)+multiplierAddition;
         }
         return originalValue;

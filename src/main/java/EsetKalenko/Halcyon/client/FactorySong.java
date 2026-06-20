@@ -1,7 +1,7 @@
 package EsetKalenko.Halcyon.client;
 
+import EsetKalenko.Halcyon.Halcyon;
 import com.cmdpro.databank.misc.SoundUtil;
-import EsetKalenko.Halcyon.DataNEssence;
 import EsetKalenko.Halcyon.config.DataNEssenceClientConfig;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-@EventBusSubscriber(value = Dist.CLIENT, modid = DataNEssence.MOD_ID)
+@EventBusSubscriber(value = Dist.CLIENT, modid = Halcyon.MOD_ID)
 public class FactorySong {
     public static final HashMap<ResourceLocation, FactoryLoop> FACTORY_LOOPS = new HashMap<>();
     private static float lastMasterVolume = 1.0f;

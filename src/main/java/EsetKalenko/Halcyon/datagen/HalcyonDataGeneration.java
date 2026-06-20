@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.datagen;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.datagen.loot.HalcyonLootTables;
 import EsetKalenko.Halcyon.datagen.model.HalcyonBlockModels;
 import EsetKalenko.Halcyon.datagen.model.HalcyonItemModels;
@@ -19,7 +19,7 @@ import net.neoforged.neoforge.data.event.GatherDataEvent;
 
 import java.util.concurrent.CompletableFuture;
 
-@EventBusSubscriber(modid = DataNEssence.MOD_ID)
+@EventBusSubscriber(modid = Halcyon.MOD_ID)
 public class HalcyonDataGeneration {
     @SubscribeEvent
     public static void gatherData(GatherDataEvent event) {

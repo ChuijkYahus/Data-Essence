@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.networking.packet.s2c;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.client.StructureSongs;
 import EsetKalenko.Halcyon.networking.Message;
 import net.minecraft.client.Minecraft;
@@ -37,7 +37,7 @@ public record StructureMusicSync(ResourceLocation music, boolean schedule) imple
         return TYPE;
     }
 
-    public static final Type<StructureMusicSync> TYPE = new Type<>(DataNEssence.locate("structure_music_sync"));
+    public static final Type<StructureMusicSync> TYPE = new Type<>(Halcyon.locate("structure_music_sync"));
 
     public static StructureMusicSync read(RegistryFriendlyByteBuf buf) {
         ResourceLocation music = buf.readResourceLocation();

@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.data.databank;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import com.google.gson.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.ResourceManager;
@@ -30,7 +30,7 @@ public class DataBankTypeManager extends SimpleJsonResourceReloadListener {
     protected void apply(Map<ResourceLocation, JsonElement> pObject, ResourceManager pResourceManager, ProfilerFiller pProfiler) {
         types = new HashMap<>();
         Map<ResourceLocation, ResourceLocation[]> removals = new HashMap<>();
-        DataNEssence.LOGGER.info("[HALCYON] Adding Data Bank Types");
+        Halcyon.LOGGER.info("[HALCYON] Adding Data Bank Types");
         for (Map.Entry<ResourceLocation, JsonElement> i : pObject.entrySet()) {
             ResourceLocation location = i.getKey();
             if (location.getPath().startsWith("_")) {
@@ -50,9 +50,9 @@ public class DataBankTypeManager extends SimpleJsonResourceReloadListener {
                     removals2.addAll(List.of(removals.getOrDefault(i.getKey(), new ResourceLocation[0])));
                     removals.put(i.getKey(), removals2.toArray(new ResourceLocation[0]));
                 }
-                DataNEssence.LOGGER.info("[HALCYON] Successfully added entry {}", location);
+                Halcyon.LOGGER.info("[HALCYON] Successfully added entry {}", location);
             } catch (IllegalArgumentException | JsonParseException e) {
-                DataNEssence.LOGGER.error("[HALCYON] Parsing error loading data bank type {}", location, e);
+                Halcyon.LOGGER.error("[HALCYON] Parsing error loading data bank type {}", location, e);
             }
         }
         for (Map.Entry<ResourceLocation, ResourceLocation[]> i : removals.entrySet()) {
@@ -61,7 +61,7 @@ public class DataBankTypeManager extends SimpleJsonResourceReloadListener {
             idsList.removeAll(List.of(ids));
             types.put(i.getKey(), idsList.toArray(new ResourceLocation[0]));
         }
-        DataNEssence.LOGGER.info("[HALCYON] Loaded {} Data Bank Types", types.size());
+        Halcyon.LOGGER.info("[HALCYON] Loaded {} Data Bank Types", types.size());
     }
     public static DataBankTypeSerializer serializer = new DataBankTypeSerializer();
 }

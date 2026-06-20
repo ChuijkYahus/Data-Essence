@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.screen;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.api.databank.Minigame;
 import EsetKalenko.Halcyon.api.databank.MinigameCreator;
 import EsetKalenko.Halcyon.data.databank.DataBankEntries;
@@ -29,7 +29,7 @@ import java.util.*;
 import java.util.List;
 
 public class DataBankScreen extends Screen {
-    public static final ResourceLocation TEXTURE = DataNEssence.locate("textures/gui/data_bank.png");
+    public static final ResourceLocation TEXTURE = Halcyon.locate("textures/gui/data_bank.png");
     public DataBankScreen(Component pTitle) {
         super(pTitle);
         minigameCompletionWait = -1;

@@ -30,8 +30,8 @@ import static EsetKalenko.Halcyon.integration.DataNEssenceIntegration.*;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod("halcyon")
-@EventBusSubscriber(modid = DataNEssence.MOD_ID)
-public class DataNEssence
+@EventBusSubscriber(modid = Halcyon.MOD_ID)
+public class Halcyon
 {
     public static final String MOD_ID = "halcyon";
     // Directly reference a slf4j logger
@@ -45,7 +45,7 @@ public class DataNEssence
         return ResourceLocation.fromNamespaceAndPath(MOD_ID, path);
     }
 
-    public DataNEssence(IEventBus bus)
+    public Halcyon(IEventBus bus)
     {
         ModLoadingContext modLoadingContext = ModLoadingContext.get();
         modLoadingContext.getActiveContainer().registerConfig(ModConfig.Type.COMMON, DataNEssenceConfig.COMMON_SPEC, "halcyon.toml");

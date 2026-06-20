@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.screen;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.api.DataNEssenceRegistries;
 import EsetKalenko.Halcyon.api.essence.EssenceBarBackgroundTypes;
 import EsetKalenko.Halcyon.api.util.client.ClientEssenceBarUtil;
@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EntropicProcessorScreen extends AbstractContainerScreen<EntropicProcessorMenu> {
-    public static final ResourceLocation TEXTURE = DataNEssence.locate("textures/gui/entropic_processor.png");
+    public static final ResourceLocation TEXTURE = Halcyon.locate("textures/gui/entropic_processor.png");
     public EntropicProcessorScreen(EntropicProcessorMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
         super(pMenu, pPlayerInventory, pTitle);
     }

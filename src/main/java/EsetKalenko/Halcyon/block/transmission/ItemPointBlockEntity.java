@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.block.transmission;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.api.node.ICustomItemPointBehaviour;
 import EsetKalenko.Halcyon.api.node.block.BaseCapabilityPointBlockEntity;
 import EsetKalenko.Halcyon.api.util.BlockPosEdge;
@@ -24,7 +24,7 @@ import java.awt.*;
 import java.util.List;
 
 public class ItemPointBlockEntity extends BaseCapabilityPointBlockEntity {
-    public static final ResourceLocation ALLOWED_ITEMSTACKS = DataNEssence.locate("allowed_itemstacks");
+    public static final ResourceLocation ALLOWED_ITEMSTACKS = Halcyon.locate("allowed_itemstacks");
 
     public ItemPointBlockEntity(BlockPos pos, BlockState state) {
         super(BlockEntityRegistry.ITEM_POINT.get(), pos, state);

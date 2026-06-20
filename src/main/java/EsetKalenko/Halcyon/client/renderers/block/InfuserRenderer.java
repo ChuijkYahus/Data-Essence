@@ -4,7 +4,7 @@ import com.cmdpro.databank.model.DatabankModel;
 import com.cmdpro.databank.model.DatabankModels;
 import com.cmdpro.databank.model.blockentity.DatabankBlockEntityModel;
 import com.cmdpro.databank.model.blockentity.DatabankBlockEntityRenderer;
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.block.processing.InfuserBlockEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
@@ -35,13 +35,13 @@ public class InfuserRenderer extends DatabankBlockEntityRenderer<InfuserBlockEnt
         public DatabankModel model;
         public DatabankModel getModel() {
             if (model == null) {
-                model = DatabankModels.models.get(DataNEssence.locate("infuser"));
+                model = DatabankModels.models.get(Halcyon.locate("infuser"));
             }
             return model;
         }
         @Override
         public ResourceLocation getTextureLocation() {
-            return DataNEssence.locate("textures/block/infuser.png");
+            return Halcyon.locate("textures/block/infuser.png");
         }
 
         @Override

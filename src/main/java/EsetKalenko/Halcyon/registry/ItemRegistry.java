@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.registry;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.api.item.ShardSublimatableItem;
 import EsetKalenko.Halcyon.api.item.FuelItem;
 import EsetKalenko.Halcyon.item.*;
@@ -16,7 +16,7 @@ import java.util.Map;
 import java.util.function.Supplier;
 
 public class ItemRegistry {
-    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(BuiltInRegistries.ITEM, DataNEssence.MOD_ID);
+    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(BuiltInRegistries.ITEM, Halcyon.MOD_ID);
     // Lenses
     public static final Supplier<Item> HARMING_LENS = register("harming_lens", () -> new HarmingLens(new Item.Properties().stacksTo(1)));
     public static final Supplier<Item> HEALING_LENS = register("healing_lens", () -> new HealingLens(new Item.Properties().stacksTo(1)));
@@ -28,10 +28,10 @@ public class ItemRegistry {
     // Tools
     public static final Supplier<Item> ESSENCE_REDIRECTOR = register("essence_redirector", () -> new EssenceRedirector(new Item.Properties().stacksTo(1)));
     public static final Supplier<Item> DATA_DRIVE = register("data_drive", () -> new DataDrive(new Item.Properties()));
-    public static final Supplier<Item> MOLD_ROD = register("rod_mold", () -> new Item(new Item.Properties().component(DataComponentRegistry.SHAPING_IMPRESSION, DataNEssence.locate("metal_shaping/conductance_rod"))));
-    public static final Supplier<Item> MOLD_PANEL = register("panel_mold", () -> new Item(new Item.Properties().component(DataComponentRegistry.SHAPING_IMPRESSION, DataNEssence.locate("metal_shaping/capacitance_panel"))));
-    public static final Supplier<Item> ECLIPTRUM_MOLD_ROD = register("rod_mold_ecliptrum", () -> new Item(new Item.Properties().component(DataComponentRegistry.SHAPING_IMPRESSION, DataNEssence.locate("metal_shaping/transformative_rod"))));
-    public static final Supplier<Item> ECLIPTRUM_MOLD_PANEL = register("panel_mold_ecliptrum", () -> new Item(new Item.Properties().component(DataComponentRegistry.SHAPING_IMPRESSION, DataNEssence.locate("metal_shaping/reflective_panel"))));
+    public static final Supplier<Item> MOLD_ROD = register("rod_mold", () -> new Item(new Item.Properties().component(DataComponentRegistry.SHAPING_IMPRESSION, Halcyon.locate("metal_shaping/conductance_rod"))));
+    public static final Supplier<Item> MOLD_PANEL = register("panel_mold", () -> new Item(new Item.Properties().component(DataComponentRegistry.SHAPING_IMPRESSION, Halcyon.locate("metal_shaping/capacitance_panel"))));
+    public static final Supplier<Item> ECLIPTRUM_MOLD_ROD = register("rod_mold_ecliptrum", () -> new Item(new Item.Properties().component(DataComponentRegistry.SHAPING_IMPRESSION, Halcyon.locate("metal_shaping/transformative_rod"))));
+    public static final Supplier<Item> ECLIPTRUM_MOLD_PANEL = register("panel_mold_ecliptrum", () -> new Item(new Item.Properties().component(DataComponentRegistry.SHAPING_IMPRESSION, Halcyon.locate("metal_shaping/reflective_panel"))));
     public static final Supplier<Item> THERMOMETER = register("thermometer", () -> new Thermometer(new Item.Properties().stacksTo(1)));
     public static final Supplier<Item> LOCATOR = register("locator", () -> new Locator(new Item.Properties()
             .stacksTo(1)

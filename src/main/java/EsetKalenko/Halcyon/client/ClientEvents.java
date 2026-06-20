@@ -1,11 +1,11 @@
 package EsetKalenko.Halcyon.client;
 
+import EsetKalenko.Halcyon.Halcyon;
 import com.cmdpro.databank.misc.RenderingUtil;
 import com.cmdpro.databank.rendering.ColorUtil;
 import com.cmdpro.databank.rendering.RenderHandler;
 import com.cmdpro.databank.rendering.RenderProjectionUtil;
 import com.cmdpro.databank.rendering.ShaderHelper;
-import EsetKalenko.Halcyon.DataNEssence;
 import EsetKalenko.Halcyon.api.DataNEssenceRegistries;
 import EsetKalenko.Halcyon.api.essence.EssenceBlockEntity;
 import EsetKalenko.Halcyon.api.essence.EssenceType;
@@ -82,7 +82,7 @@ import java.util.List;
 import static EsetKalenko.Halcyon.client.gui.PingsGuiLayer.pings;
 import static com.mojang.blaze3d.platform.GlConst.GL_DRAW_FRAMEBUFFER;
 
-@EventBusSubscriber(value = Dist.CLIENT, modid = DataNEssence.MOD_ID)
+@EventBusSubscriber(value = Dist.CLIENT, modid = Halcyon.MOD_ID)
 public class ClientEvents {
     public static RenderTarget tempRenderTarget;
 

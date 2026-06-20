@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.integration.emi.recipes;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.api.DataNEssenceRegistries;
 import EsetKalenko.Halcyon.api.essence.EssenceBarBackgroundType;
 import EsetKalenko.Halcyon.api.essence.EssenceBarBackgroundTypes;
@@ -12,7 +12,6 @@ import EsetKalenko.Halcyon.recipe.IFabricationRecipe;
 import EsetKalenko.Halcyon.recipe.ShapedFabricationRecipe;
 import EsetKalenko.Halcyon.recipe.ShapelessFabricationRecipe;
 import EsetKalenko.Halcyon.registry.EssenceTypeRegistry;
-import EsetKalenko.Halcyon.screen.DataTabletScreen;
 
 import com.google.common.collect.Lists;
 import dev.emi.emi.api.stack.EmiIngredient;
@@ -139,9 +138,9 @@ public class EMIFabricationRecipe extends DataNEssenceEMIRecipe {
 
     public ResourceLocation getBackingTextureForTier() {
         if ( essenceCost.containsKey(EssenceTypeRegistry.LUNAR_ESSENCE.get() ))
-            return DataNEssence.locate("textures/gui/data_tablet_crafting_lunar.png");
+            return Halcyon.locate("textures/gui/data_tablet_crafting_lunar.png");
 
-        return DataNEssence.locate("textures/gui/data_tablet_crafting.png");
+        return Halcyon.locate("textures/gui/data_tablet_crafting.png");
     }
 
     public EssenceBarBackgroundType getBarTypeForTier() {

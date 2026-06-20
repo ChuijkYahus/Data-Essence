@@ -1,8 +1,8 @@
 package EsetKalenko.Halcyon.client.gui;
 
+import EsetKalenko.Halcyon.Halcyon;
 import com.cmdpro.databank.rendering.ColorUtil;
 import com.cmdpro.databank.shaders.PostShaderManager;
-import EsetKalenko.Halcyon.DataNEssence;
 import EsetKalenko.Halcyon.data.pinging.PingableStructure;
 import EsetKalenko.Halcyon.data.pinging.StructurePing;
 import com.mojang.blaze3d.systems.RenderSystem;
@@ -56,7 +56,7 @@ public class PingsGuiLayer implements LayeredDraw.Layer {
                 if (!i.getKey().known) {
                     u = 0;
                     v = 0;
-                    texture = DataNEssence.locate("textures/gui/structure_icons.png");
+                    texture = Halcyon.locate("textures/gui/structure_icons.png");
                 }
                 guiGraphics.setColor(color.getRed()/255f, color.getGreen()/255f, color.getBlue()/255f, 1.0F);
                 guiGraphics.blit(texture, x, y, u, v, 16, 16);

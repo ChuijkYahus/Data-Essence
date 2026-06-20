@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.registry;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.api.misc.BlockPosNetworks;
 import EsetKalenko.Halcyon.api.util.BlockPosGraph;
 import EsetKalenko.Halcyon.block.auxiliary.TwiningLanternBlockEntity;
@@ -18,7 +18,7 @@ import java.util.function.Supplier;
 
 public class AttachmentTypeRegistry {
     public static final DeferredRegister<AttachmentType<?>> ATTACHMENT_TYPES = DeferredRegister.create(NeoForgeRegistries.Keys.ATTACHMENT_TYPES,
-            DataNEssence.MOD_ID);
+            Halcyon.MOD_ID);
     public static final Supplier<AttachmentType<ArrayList<StructureProtectorBlockEntity>>> STRUCTURE_CONTROLLERS =
             register("structure_controllers", () -> AttachmentType.builder(() -> new ArrayList<StructureProtectorBlockEntity>()).build());
     public static final Supplier<AttachmentType<ArrayList<TwiningLanternBlockEntity>>> TWINING_LANTERNS =

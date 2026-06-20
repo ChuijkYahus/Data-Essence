@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.data.minigames;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.api.CommonVariables;
 import EsetKalenko.Halcyon.registry.SoundRegistry;
 import EsetKalenko.Halcyon.screen.DataBankScreen;
@@ -19,7 +19,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public class MinesweeperMinigame extends Minigame {
-    public static final ResourceLocation TEXTURE = DataNEssence.locate("textures/gui/data_bank_minigames.png");
+    public static final ResourceLocation TEXTURE = Halcyon.locate("textures/gui/data_bank_minigames.png");
     public MinesweeperMinigame(int bombCount, int size) {
         this.bombCount = bombCount;
         this.size = size;

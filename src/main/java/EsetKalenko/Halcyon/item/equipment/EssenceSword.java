@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.item.equipment;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.api.item.AdjustableAttributes;
 import EsetKalenko.Halcyon.api.item.ItemEssenceContainer;
 import EsetKalenko.Halcyon.entity.EssenceSlashProjectile;
@@ -39,7 +39,7 @@ public class EssenceSword extends SwordItem implements AdjustableAttributes {
             14,
             () -> Ingredient.of(ItemRegistry.ESSENCE_SHARD.get())
     );
-    public static ResourceLocation FUEL_ESSENCE_TYPE = DataNEssence.locate("essence");
+    public static ResourceLocation FUEL_ESSENCE_TYPE = Halcyon.locate("essence");
     final int COST_SLASH = 100;
     final int COST_HIT = 10;
 

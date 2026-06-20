@@ -74,7 +74,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-@EventBusSubscriber(modid = DataNEssence.MOD_ID)
+@EventBusSubscriber(modid = Halcyon.MOD_ID)
 public class ModEvents {
     @SubscribeEvent
     public static void onLivingEntityTick(EntityTickEvent.Pre event) {
@@ -308,14 +308,14 @@ public class ModEvents {
             if (registry.isEmpty())
                 return;
 
-            if ( structuresAt.contains( registry.get().get( DataNEssence.locate("abandoned_factory") ) ) ) {
+            if ( structuresAt.contains( registry.get().get( Halcyon.locate("abandoned_factory") ) ) ) {
                 ModMessages.sendToPlayer(
-                        new StructureMusicSync( DataNEssence.locate("ost.abandoned_factory"), true ),
+                        new StructureMusicSync( Halcyon.locate("ost.abandoned_factory"), true ),
                         player
                 );
             } else {
                 ModMessages.sendToPlayer(
-                        new StructureMusicSync( DataNEssence.locate("ost.abandoned_factory"), false ),
+                        new StructureMusicSync( Halcyon.locate("ost.abandoned_factory"), false ),
                         player
                 );
             }

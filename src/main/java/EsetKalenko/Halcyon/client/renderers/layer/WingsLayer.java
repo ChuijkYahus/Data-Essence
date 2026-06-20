@@ -1,12 +1,12 @@
 package EsetKalenko.Halcyon.client.renderers.layer;
 
+import EsetKalenko.Halcyon.Halcyon;
 import com.cmdpro.databank.model.DatabankModel;
 import com.cmdpro.databank.model.DatabankModels;
 import com.cmdpro.databank.model.ModelPose;
 import com.cmdpro.databank.model.animation.DatabankAnimationReference;
 import com.cmdpro.databank.model.animation.DatabankAnimationState;
 import com.cmdpro.databank.model.entity.DatabankEntityModel;
-import EsetKalenko.Halcyon.DataNEssence;
 import EsetKalenko.Halcyon.registry.AttachmentTypeRegistry;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.model.*;
@@ -22,7 +22,7 @@ import net.minecraft.world.phys.Vec3;
 import org.joml.Vector3f;
 
 public class WingsLayer<T extends Player, M extends HumanoidModel<T>> extends RenderLayer<T, M> {
-    public static final ResourceLocation wingsTexture = DataNEssence.locate("textures/entity/wings.png");
+    public static final ResourceLocation wingsTexture = Halcyon.locate("textures/entity/wings.png");
     private final WingsModel wingsModel;
     public WingsLayer(RenderLayerParent<T, M> pRenderer, EntityModelSet pModelSet) {
         super(pRenderer);
@@ -77,7 +77,7 @@ public class WingsLayer<T extends Player, M extends HumanoidModel<T>> extends Re
 
         public DatabankModel getModel() {
             if (model == null) {
-                model = DatabankModels.models.get(DataNEssence.locate("wings"));
+                model = DatabankModels.models.get(Halcyon.locate("wings"));
                 animState.updateAnimDefinitions(getModel());
             }
             return model;

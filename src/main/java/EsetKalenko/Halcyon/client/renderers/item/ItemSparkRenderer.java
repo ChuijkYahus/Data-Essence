@@ -15,7 +15,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.inventory.Slot;
 import org.joml.Matrix4f;
 import EsetKalenko.Halcyon.registry.ItemRegistry;
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -24,7 +24,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.Set;
 
-@EventBusSubscriber(modid = DataNEssence.MOD_ID, value = Dist.CLIENT)
+@EventBusSubscriber(modid = Halcyon.MOD_ID, value = Dist.CLIENT)
 public class ItemSparkRenderer {
 
     private static final Random RANDOM = new Random();
@@ -174,7 +174,7 @@ public class ItemSparkRenderer {
         float maxEssence = ItemEssenceContainer.getMaxEssence(stack);
         if (maxEssence <= 0) return 0.0f;
 
-        float currentEssence = ItemEssenceContainer.getEssence(stack, DataNEssence.locate("essence"));
+        float currentEssence = ItemEssenceContainer.getEssence(stack, Halcyon.locate("essence"));
         return Math.min(1.0f, (float) currentEssence / maxEssence);
     }
 

@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.registry;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import net.minecraft.Util;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -18,7 +18,7 @@ import java.util.function.Supplier;
 
 public class ArmorMaterialRegistry {
     public static final DeferredRegister<ArmorMaterial> ARMOR_MATERIALS = DeferredRegister.create(BuiltInRegistries.ARMOR_MATERIAL,
-            DataNEssence.MOD_ID);
+            Halcyon.MOD_ID);
     public static final Holder<ArmorMaterial> PRIMITIVE_ANTI_GRAVITY_PACK = register("primitive_anti_gravity_pack", () -> new ArmorMaterial(
             Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
                 map.put(ArmorItem.Type.CHESTPLATE, 2);
@@ -27,7 +27,7 @@ public class ArmorMaterialRegistry {
             SoundEvents.ARMOR_EQUIP_GENERIC,
             () -> Ingredient.of(Tags.Items.INGOTS_COPPER), List.of(
             new ArmorMaterial.Layer(
-                    DataNEssence.locate("primitive_anti_gravity_pack")
+                    Halcyon.locate("primitive_anti_gravity_pack")
             )
     ),
             0,
@@ -41,7 +41,7 @@ public class ArmorMaterialRegistry {
             SoundEvents.ARMOR_EQUIP_GENERIC,
             () -> Ingredient.of(ItemRegistry.ECLIPTRUM_INGOT.get()), List.of(
             new ArmorMaterial.Layer(
-                    DataNEssence.locate("anti_gravity_pack")
+                    Halcyon.locate("anti_gravity_pack")
             )
     ),
             0,
@@ -56,7 +56,7 @@ public class ArmorMaterialRegistry {
             SoundRegistry.EQUIP_TRAVERSITE_TRUDGERS,
             () -> Ingredient.of(Tags.Items.LEATHERS), List.of(
             new ArmorMaterial.Layer(
-                    DataNEssence.locate("traversite_trudgers")
+                    Halcyon.locate("traversite_trudgers")
             )
     ),
             0,

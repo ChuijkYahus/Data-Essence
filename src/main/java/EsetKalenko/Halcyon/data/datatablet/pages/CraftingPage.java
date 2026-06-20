@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.data.datatablet.pages;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.moddata.ClientPlayerUnlockedEntries;
 import EsetKalenko.Halcyon.recipe.HalcyonRecipe;
 import EsetKalenko.Halcyon.recipe.IHasRequiredKnowledge;
@@ -104,7 +104,7 @@ public class CraftingPage extends TextPage {
         int backgroundWidth = 123;
         int backgroundHeight = 60;
 
-        graphics.blit( DataNEssence.locate("textures/gui/emi_recipe_locked.png") , xOffset + x, yOffset + y, 0, 0, backgroundWidth, backgroundHeight);
+        graphics.blit( Halcyon.locate("textures/gui/emi_recipe_locked.png") , xOffset + x, yOffset + y, 0, 0, backgroundWidth, backgroundHeight);
 
         // forgive the bad code, adapted from TextPage while terrified ~Eset
         var line1 = Component.translatable("emi.halcyon.recipe_locked_line_1");

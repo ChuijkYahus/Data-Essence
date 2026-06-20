@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.networking.packet.s2c;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.api.DataNEssenceRegistries;
 import EsetKalenko.Halcyon.api.essence.EssenceBlockEntity;
 import EsetKalenko.Halcyon.api.essence.EssenceType;
@@ -34,7 +34,7 @@ public record MachineEssenceValueSync(BlockPos pos, Map<EssenceType, Float> valu
     public Type<? extends CustomPacketPayload> type() {
         return TYPE;
     }
-    public static final Type<MachineEssenceValueSync> TYPE = new Type<>(DataNEssence.locate("machine_essence_value_sync"));
+    public static final Type<MachineEssenceValueSync> TYPE = new Type<>(Halcyon.locate("machine_essence_value_sync"));
 
     public static MachineEssenceValueSync read(RegistryFriendlyByteBuf buf) {
         BlockPos pos = buf.readBlockPos();

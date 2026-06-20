@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.data.computers;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import com.google.gson.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.ResourceManager;
@@ -27,7 +27,7 @@ public class ComputerTypeManager extends SimpleJsonResourceReloadListener {
     @Override
     protected void apply(Map<ResourceLocation, JsonElement> pObject, ResourceManager pResourceManager, ProfilerFiller pProfiler) {
         types = new HashMap<>();
-        DataNEssence.LOGGER.info("[HALCYON] Adding Computer Types");
+        Halcyon.LOGGER.info("[HALCYON] Adding Computer Types");
         for (Map.Entry<ResourceLocation, JsonElement> i : pObject.entrySet()) {
             ResourceLocation location = i.getKey();
             if (location.getPath().startsWith("_")) {
@@ -38,12 +38,12 @@ public class ComputerTypeManager extends SimpleJsonResourceReloadListener {
                 JsonObject obj = i.getValue().getAsJsonObject();
                 ComputerData data = serializer.read(i.getKey(), obj);
                 types.put(i.getKey(), data);
-                DataNEssence.LOGGER.info("[HALCYON] Successfully added computer type {}", location);
+                Halcyon.LOGGER.info("[HALCYON] Successfully added computer type {}", location);
             } catch (IllegalArgumentException | JsonParseException e) {
-                DataNEssence.LOGGER.error("[HALCYON] Parsing error loading computer type {}", location, e);
+                Halcyon.LOGGER.error("[HALCYON] Parsing error loading computer type {}", location, e);
             }
         }
-        DataNEssence.LOGGER.info("[HALCYON] Loaded {} computer types", types.size());
+        Halcyon.LOGGER.info("[HALCYON] Loaded {} computer types", types.size());
     }
     public static ComputerTypeSerializer serializer = new ComputerTypeSerializer();
 }

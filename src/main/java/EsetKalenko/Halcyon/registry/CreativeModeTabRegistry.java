@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.registry;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
@@ -12,7 +12,7 @@ import java.util.function.Supplier;
 
 public class CreativeModeTabRegistry {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(BuiltInRegistries.CREATIVE_MODE_TAB,
-            DataNEssence.MOD_ID);
+            Halcyon.MOD_ID);
 
     public static Supplier<CreativeModeTab> ITEMS = register("halcyon_items", () ->
             CreativeModeTab.builder().icon(() -> new ItemStack(ItemRegistry.DATA_TABLET.get()))

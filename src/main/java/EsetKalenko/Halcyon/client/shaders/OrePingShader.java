@@ -1,11 +1,11 @@
 package EsetKalenko.Halcyon.client.shaders;
 
+import EsetKalenko.Halcyon.Halcyon;
 import com.cmdpro.databank.mixin.client.BufferSourceMixin;
 import com.cmdpro.databank.mixin.client.RenderBuffersMixin;
 import com.cmdpro.databank.rendering.RenderHandler;
 import com.cmdpro.databank.rendering.ShaderHelper;
 import com.cmdpro.databank.shaders.PostShaderInstance;
-import EsetKalenko.Halcyon.DataNEssence;
 import EsetKalenko.Halcyon.networking.packet.s2c.AddScannedOre;
 import EsetKalenko.Halcyon.registry.HalcyonTags;
 import com.mojang.blaze3d.pipeline.MainTarget;
@@ -39,11 +39,11 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
-@EventBusSubscriber(value = Dist.CLIENT, modid = DataNEssence.MOD_ID)
+@EventBusSubscriber(value = Dist.CLIENT, modid = Halcyon.MOD_ID)
 public class OrePingShader extends PostShaderInstance {
     @Override
     public ResourceLocation getShaderLocation() {
-        return DataNEssence.locate("shaders/post/hologram.json");
+        return Halcyon.locate("shaders/post/hologram.json");
     }
     @Override
     public void setUniforms(PostPass instance) {
@@ -225,7 +225,7 @@ public class OrePingShader extends PostShaderInstance {
         private static final Map<RenderType, RenderType> remappedTypes = new IdentityHashMap<>();
 
         private HologramRenderType(RenderType original) {
-            super(String.format("%s_%s_hologram", original.toString(), DataNEssence.MOD_ID), original.format(), original.mode(), original.bufferSize(), original.affectsCrumbling(), true, () -> {
+            super(String.format("%s_%s_hologram", original.toString(), Halcyon.MOD_ID), original.format(), original.mode(), original.bufferSize(), original.affectsCrumbling(), true, () -> {
                 original.setupRenderState();
 
                 RenderSystem.disableDepthTest();

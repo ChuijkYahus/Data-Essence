@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.data.databank;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import com.google.gson.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.ResourceManager;
@@ -27,7 +27,7 @@ public class DataBankEntryManager extends SimpleJsonResourceReloadListener {
     @Override
     protected void apply(Map<ResourceLocation, JsonElement> pObject, ResourceManager pResourceManager, ProfilerFiller pProfiler) {
         DataBankEntries.entries.clear();
-        DataNEssence.LOGGER.info("[HALCYON] Adding Data Bank Entries");
+        Halcyon.LOGGER.info("[HALCYON] Adding Data Bank Entries");
         for (Map.Entry<ResourceLocation, JsonElement> i : pObject.entrySet()) {
             ResourceLocation location = i.getKey();
             if (location.getPath().startsWith("_")) {
@@ -40,12 +40,12 @@ public class DataBankEntryManager extends SimpleJsonResourceReloadListener {
                     continue;
                 }
                 DataBankEntries.entries.put(i.getKey(), entry);
-                DataNEssence.LOGGER.info("[HALCYON] Successfully added entry {}", location);
+                Halcyon.LOGGER.info("[HALCYON] Successfully added entry {}", location);
             } catch (IllegalArgumentException | JsonParseException e) {
-                DataNEssence.LOGGER.error("[HALCYON ERROR] Parsing error loading data bank entry {}", location, e);
+                Halcyon.LOGGER.error("[HALCYON ERROR] Parsing error loading data bank entry {}", location, e);
             }
         }
-        DataNEssence.LOGGER.info("[HALCYON] Loaded {} Data Bank Entries", DataBankEntries.entries.size());
+        Halcyon.LOGGER.info("[HALCYON] Loaded {} Data Bank Entries", DataBankEntries.entries.size());
     }
     public static DataBankEntrySerializer serializer = new DataBankEntrySerializer();
     protected DataBankEntry deserializeEntry(ResourceLocation id, JsonObject json) {

@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.networking.packet.s2c;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.networking.Message;
 import EsetKalenko.Halcyon.screen.dev.DataTabletEditorScreen;
 import net.minecraft.client.Minecraft;
@@ -28,7 +28,7 @@ public record OpenEntryEditor() implements Message {
     public Type<? extends CustomPacketPayload> type() {
         return TYPE;
     }
-    public static final Type<OpenEntryEditor> TYPE = new Type<>(DataNEssence.locate("open_entry_editor"));
+    public static final Type<OpenEntryEditor> TYPE = new Type<>(Halcyon.locate("open_entry_editor"));
 
     private static class ClientHandler {
         public static void handle(OpenEntryEditor packet) {

@@ -1,11 +1,11 @@
 package EsetKalenko.Halcyon.client.renderers.block;
 
+import EsetKalenko.Halcyon.Halcyon;
 import com.cmdpro.databank.model.DatabankModel;
 import com.cmdpro.databank.model.DatabankModels;
 import com.cmdpro.databank.model.blockentity.DatabankBlockEntityModel;
 import com.cmdpro.databank.model.blockentity.DatabankBlockEntityRenderer;
 
-import EsetKalenko.Halcyon.DataNEssence;
 import EsetKalenko.Halcyon.block.generation.EssenceDerivationSpikeBlockEntity;
 
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
@@ -19,7 +19,7 @@ public class EssenceDerivationSpikeRenderer extends DatabankBlockEntityRenderer<
     public static class Model extends DatabankBlockEntityModel<EssenceDerivationSpikeBlockEntity> {
         @Override
         public ResourceLocation getTextureLocation() {
-            return DataNEssence.locate("textures/block/essence_derivation_spike.png");
+            return Halcyon.locate("textures/block/essence_derivation_spike.png");
         }
 
         @Override
@@ -35,7 +35,7 @@ public class EssenceDerivationSpikeRenderer extends DatabankBlockEntityRenderer<
         public DatabankModel model;
         public DatabankModel getModel() {
             if (model == null) {
-                model = DatabankModels.models.get(DataNEssence.locate("essence_derivation_spike"));
+                model = DatabankModels.models.get(Halcyon.locate("essence_derivation_spike"));
             }
             return model;
         }

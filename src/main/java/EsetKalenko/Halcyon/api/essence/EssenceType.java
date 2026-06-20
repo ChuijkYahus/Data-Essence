@@ -1,14 +1,14 @@
 package EsetKalenko.Halcyon.api.essence;
 
 import com.cmdpro.databank.misc.ColorGradient;
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 
 import java.awt.*;
 
 public class EssenceType {
-    public static final ResourceLocation ESSENCE_BAR_LOCATION = DataNEssence.locate("textures/gui/essence_bars.png");
+    public static final ResourceLocation ESSENCE_BAR_LOCATION = Halcyon.locate("textures/gui/essence_bars.png");
 
     public final Component name;
     public final int tier;

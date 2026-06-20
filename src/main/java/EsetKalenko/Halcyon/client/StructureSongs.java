@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.client;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.config.DataNEssenceClientConfig;
 import com.cmdpro.databank.misc.SoundUtil;
 import net.minecraft.client.Minecraft;
@@ -20,7 +20,7 @@ import net.neoforged.neoforge.client.event.ClientTickEvent;
 
 import java.util.HashMap;
 
-@EventBusSubscriber(value = Dist.CLIENT, modid = DataNEssence.MOD_ID)
+@EventBusSubscriber(value = Dist.CLIENT, modid = Halcyon.MOD_ID)
 public class StructureSongs {
     public static final HashMap<ResourceLocation, StructureMusic> STRUCTURE_SONGS = new HashMap<>();
 

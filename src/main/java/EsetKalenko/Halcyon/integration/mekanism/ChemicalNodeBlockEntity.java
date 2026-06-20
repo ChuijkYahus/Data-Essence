@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.integration.mekanism;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.api.node.block.BaseCapabilityPointBlockEntity;
 import EsetKalenko.Halcyon.api.util.BlockPosEdge;
 import EsetKalenko.Halcyon.config.DataNEssenceConfig;
@@ -24,7 +24,7 @@ import java.util.List;
 import static EsetKalenko.Halcyon.integration.DataNEssenceIntegration.BLOCK_CHEMICAL;
 
 public class ChemicalNodeBlockEntity extends BaseCapabilityPointBlockEntity {
-    public static final ResourceLocation ALLOWED_CHEMICALS = DataNEssence.locate("allowed_chemicals");
+    public static final ResourceLocation ALLOWED_CHEMICALS = Halcyon.locate("allowed_chemicals");
 
     public ChemicalNodeBlockEntity(BlockPos pPos, BlockState pBlockState) {
         super(BlockEntityRegistry.CHEMICAL_NODE.get(), pPos, pBlockState);

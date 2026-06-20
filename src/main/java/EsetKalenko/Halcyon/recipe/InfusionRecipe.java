@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.recipe;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.registry.RecipeRegistry;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
@@ -85,7 +85,7 @@ public class InfusionRecipe implements IHasEssenceCost, IHasRequiredKnowledge, R
 
     @Override
     public ResourceLocation getMachineEntry() {
-        return DataNEssence.locate("machinery/infuser");
+        return Halcyon.locate("machinery/infuser");
     }
 
     public static class Serializer implements RecipeSerializer<InfusionRecipe> {

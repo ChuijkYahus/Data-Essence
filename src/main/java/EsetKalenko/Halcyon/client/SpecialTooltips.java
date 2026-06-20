@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.client;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.api.essence.EssenceType;
 import EsetKalenko.Halcyon.datamaps.DataNEssenceDatamaps;
 import EsetKalenko.Halcyon.datamaps.PlantSiphonEssenceMap;
@@ -21,7 +21,7 @@ import java.util.HashMap;
 import java.util.function.Consumer;
 import java.util.function.Function;
 
-@EventBusSubscriber(value = Dist.CLIENT, modid = DataNEssence.MOD_ID)
+@EventBusSubscriber(value = Dist.CLIENT, modid = Halcyon.MOD_ID)
 public class SpecialTooltips {
     private static final HashMap<Function<ItemTooltipEvent, Boolean>, Consumer<ItemTooltipEvent>> TOOLTIPS = new HashMap<>();
 

@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.networking.packet.c2s;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.api.misc.ILockableContainer;
 import EsetKalenko.Halcyon.api.LockableItemHandler;
 import EsetKalenko.Halcyon.networking.Message;
@@ -41,5 +41,5 @@ public record PlayerSetItemHandlerLocked(BlockPos blockPos, boolean locked) impl
     public Type<? extends CustomPacketPayload> type() {
         return TYPE;
     }
-    public static final Type<PlayerSetItemHandlerLocked> TYPE = new Type<>(DataNEssence.locate("player_set_item_handler_locked"));
+    public static final Type<PlayerSetItemHandlerLocked> TYPE = new Type<>(Halcyon.locate("player_set_item_handler_locked"));
 }

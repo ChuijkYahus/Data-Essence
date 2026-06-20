@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.networking.packet.s2c;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.api.util.client.ClientRenderingUtil;
 import EsetKalenko.Halcyon.moddata.ClientPlayerUnlockedEntries;
 import EsetKalenko.Halcyon.networking.Message;
@@ -22,7 +22,7 @@ public record UnlockedEntrySync(List<ResourceLocation> unlocked, HashMap<Resourc
     public Type<? extends CustomPacketPayload> type() {
         return TYPE;
     }
-    public static final Type<UnlockedEntrySync> TYPE = new Type<>(DataNEssence.locate("unlocked_entry_sync"));
+    public static final Type<UnlockedEntrySync> TYPE = new Type<>(Halcyon.locate("unlocked_entry_sync"));
 
     public static void write(RegistryFriendlyByteBuf buf, UnlockedEntrySync obj) {
         buf.writeCollection(obj.unlocked, FriendlyByteBuf::writeResourceLocation);

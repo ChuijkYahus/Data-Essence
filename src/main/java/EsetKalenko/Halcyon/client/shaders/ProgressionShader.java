@@ -1,13 +1,13 @@
 package EsetKalenko.Halcyon.client.shaders;
 
+import EsetKalenko.Halcyon.Halcyon;
 import com.cmdpro.databank.shaders.PostShaderInstance;
-import EsetKalenko.Halcyon.DataNEssence;
 import net.minecraft.resources.ResourceLocation;
 
 public class ProgressionShader extends PostShaderInstance {
     @Override
     public ResourceLocation getShaderLocation() {
-        return DataNEssence.locate("shaders/post/progression.json");
+        return Halcyon.locate("shaders/post/progression.json");
     }
 
     @Override

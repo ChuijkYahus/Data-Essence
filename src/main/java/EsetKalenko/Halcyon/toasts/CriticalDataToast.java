@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.toasts;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.data.datatablet.Entry;
 import EsetKalenko.Halcyon.registry.SoundRegistry;
 import net.minecraft.client.gui.GuiGraphics;
@@ -15,7 +15,7 @@ import net.minecraft.util.Mth;
 import java.util.List;
 
 public class CriticalDataToast implements Toast {
-    private static final ResourceLocation TEXTURE = DataNEssence.locate("critical_data_toast");
+    private static final ResourceLocation TEXTURE = Halcyon.locate("critical_data_toast");
     public Entry entry;
     public boolean playedSound;
     public CriticalDataToast(Entry entry) {

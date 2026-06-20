@@ -1,10 +1,10 @@
 package EsetKalenko.Halcyon.client.renderers.block;
 
+import EsetKalenko.Halcyon.Halcyon;
 import com.cmdpro.databank.model.DatabankModel;
 import com.cmdpro.databank.model.DatabankModels;
 import com.cmdpro.databank.model.blockentity.DatabankBlockEntityModel;
 import com.cmdpro.databank.model.blockentity.DatabankBlockEntityRenderer;
-import EsetKalenko.Halcyon.DataNEssence;
 import EsetKalenko.Halcyon.api.pearlnetwork.PearlNetworkBlockRenderHelper;
 import EsetKalenko.Halcyon.block.transportation.EnderPearlCapture;
 import EsetKalenko.Halcyon.block.transportation.EnderPearlCaptureBlockEntity;
@@ -58,14 +58,14 @@ public class EnderPearlCaptureRenderer extends DatabankBlockEntityRenderer<Ender
         public DatabankModel model;
         public DatabankModel getModel() {
             if (model == null) {
-                model = DatabankModels.models.get(DataNEssence.locate("ender_pearl_capture"));
+                model = DatabankModels.models.get(Halcyon.locate("ender_pearl_capture"));
             }
             return model;
         }
 
         @Override
         public ResourceLocation getTextureLocation() {
-            return DataNEssence.locate("textures/block/ender_pearl_capture.png");
+            return Halcyon.locate("textures/block/ender_pearl_capture.png");
         }
 
         @Override

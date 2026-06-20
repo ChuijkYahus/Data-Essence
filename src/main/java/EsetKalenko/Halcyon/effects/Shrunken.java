@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.effects;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -10,7 +10,7 @@ public class Shrunken extends MobEffect {
     public Shrunken(MobEffectCategory pCategory, int pColor) {
         super(pCategory, pColor);
         addAttributeModifier(
-                Attributes.SCALE, DataNEssence.locate("effect.shrunken"), -0.5F, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL
+                Attributes.SCALE, Halcyon.locate("effect.shrunken"), -0.5F, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL
         );
     }
 }

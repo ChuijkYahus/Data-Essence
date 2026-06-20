@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.datagen.recipe;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.recipe.InfusionRecipe;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.advancements.AdvancementRequirements;
@@ -29,7 +29,7 @@ public class InfusionRecipeBuilder extends HalcyonRecipeBuilder {
 
     @Override
     public void save(RecipeOutput output, ResourceLocation id) {
-        id = DataNEssence.locate("infusion/"+id.getPath());
+        id = Halcyon.locate("infusion/"+id.getPath());
         Advancement.Builder advancement = output.advancement()
                 .addCriterion("has_the_recipe", RecipeUnlockedTrigger.unlocked(id))
                 .rewards(AdvancementRewards.Builder.recipe(id))

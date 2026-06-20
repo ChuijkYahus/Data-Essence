@@ -1,8 +1,8 @@
 package EsetKalenko.Halcyon.client.renderers.entity;
 
+import EsetKalenko.Halcyon.Halcyon;
 import com.cmdpro.databank.misc.TrailRender;
 import com.cmdpro.databank.rendering.RenderHandler;
-import EsetKalenko.Halcyon.DataNEssence;
 import EsetKalenko.Halcyon.entity.EssenceSlashProjectile;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -81,7 +81,7 @@ public class EssenceSlashRenderer extends EntityRenderer<EssenceSlashProjectile>
         );
     }
     public ResourceLocation getTextureLocation(EssenceSlashProjectile pEntity) {
-        return DataNEssence.locate("textures/entity/essence_slash.png");
+        return Halcyon.locate("textures/entity/essence_slash.png");
     }
 
     @Override

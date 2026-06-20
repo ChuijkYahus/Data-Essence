@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.toasts;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.registry.SoundRegistry;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.toasts.Toast;
@@ -10,7 +10,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 
 public class TierToast implements Toast {
-    private static final ResourceLocation TEXTURE = DataNEssence.locate("tier_toast");
+    private static final ResourceLocation TEXTURE = Halcyon.locate("tier_toast");
     public int tier;
     public boolean playedSound;
     public TierToast(int tier) {

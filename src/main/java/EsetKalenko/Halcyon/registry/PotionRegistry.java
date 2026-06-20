@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.registry;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -15,10 +15,10 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
 
-@EventBusSubscriber(modid = DataNEssence.MOD_ID)
+@EventBusSubscriber(modid = Halcyon.MOD_ID)
 public class PotionRegistry {
     public static final DeferredRegister<Potion> POTIONS = DeferredRegister.create(BuiltInRegistries.POTION,
-            DataNEssence.MOD_ID);
+            Halcyon.MOD_ID);
     public static final Holder<Potion> GENDER_EUPHORIA = register("gender_euphoria", () -> new Potion(new MobEffectInstance(MobEffectRegistry.GENDER_EUPHORIA, 30*20)));
     public static final Holder<Potion> LONG_GENDER_EUPHORIA = register("long_gender_euphoria", () -> new Potion(new MobEffectInstance(MobEffectRegistry.GENDER_EUPHORIA, 60*20)));
 

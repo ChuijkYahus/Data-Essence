@@ -1,9 +1,9 @@
 package EsetKalenko.Halcyon.networking.packet.s2c;
 
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.client.shaders.PingShader;
 import com.cmdpro.databank.shaders.PostShaderInstance;
 import com.cmdpro.databank.shaders.PostShaderManager;
-import EsetKalenko.Halcyon.DataNEssence;
 import EsetKalenko.Halcyon.config.DataNEssenceClientConfig;
 import EsetKalenko.Halcyon.networking.Message;
 import net.minecraft.client.Minecraft;
@@ -31,7 +31,7 @@ public record CreatePingShader(Vec3 position) implements Message {
     public Type<? extends CustomPacketPayload> type() {
         return TYPE;
     }
-    public static final Type<CreatePingShader> TYPE = new Type<>(DataNEssence.locate("create_ping_shader"));
+    public static final Type<CreatePingShader> TYPE = new Type<>(Halcyon.locate("create_ping_shader"));
     private static class ClientHandler {
         public static void startShader(Vec3 position) {
             if (DataNEssenceClientConfig.pingShader) {

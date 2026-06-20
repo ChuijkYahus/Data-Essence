@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.block.transmission;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.api.node.ICustomFluidPointBehaviour;
 import EsetKalenko.Halcyon.api.node.block.BaseCapabilityPointBlockEntity;
 import EsetKalenko.Halcyon.api.util.BlockPosEdge;
@@ -23,7 +23,7 @@ import java.awt.*;
 import java.util.List;
 
 public class FluidPointBlockEntity extends BaseCapabilityPointBlockEntity {
-    public static final ResourceLocation ALLOWED_FLUIDSTACKS = DataNEssence.locate("allowed_fluidstacks");
+    public static final ResourceLocation ALLOWED_FLUIDSTACKS = Halcyon.locate("allowed_fluidstacks");
 
     public FluidPointBlockEntity(BlockPos pos, BlockState state) {
         super(BlockEntityRegistry.FLUID_POINT.get(), pos, state);

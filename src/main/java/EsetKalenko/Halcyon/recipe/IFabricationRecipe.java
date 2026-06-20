@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.recipe;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.registry.BlockRegistry;
 import EsetKalenko.Halcyon.registry.RecipeRegistry;
 import net.minecraft.resources.ResourceLocation;
@@ -26,6 +26,6 @@ public interface IFabricationRecipe extends Recipe<CraftingInput>, IHasRequiredK
 
     @Override
     default ResourceLocation getMachineEntry() {
-        return DataNEssence.locate("basics/fabricator");
+        return Halcyon.locate("basics/fabricator");
     }
 }

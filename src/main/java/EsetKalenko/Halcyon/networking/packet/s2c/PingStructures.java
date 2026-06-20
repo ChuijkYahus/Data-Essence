@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.networking.packet.s2c;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.client.gui.PingsGuiLayer;
 import EsetKalenko.Halcyon.data.pinging.StructurePing;
 import EsetKalenko.Halcyon.networking.Message;
@@ -30,7 +30,7 @@ public record PingStructures(List<StructurePing> structures) implements Message 
     public Type<? extends CustomPacketPayload> type() {
         return TYPE;
     }
-    public static final Type<PingStructures> TYPE = new Type<>(DataNEssence.locate("ping_structures"));
+    public static final Type<PingStructures> TYPE = new Type<>(Halcyon.locate("ping_structures"));
     private static class ClientHandler {
         public static void addPings(List<StructurePing> pings) {
             for (StructurePing i : pings) {

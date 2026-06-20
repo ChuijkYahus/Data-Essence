@@ -1,7 +1,7 @@
 package EsetKalenko.Halcyon.networking.packet.s2c;
 
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.networking.Message;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
@@ -18,7 +18,7 @@ public record AddScannedOre(HashMap<BlockPos, Integer> ores) implements Message 
 
     public static HashMap<BlockPos, Integer> scanned = new HashMap<>();
 
-    public static final Type<AddScannedOre> TYPE = new Type<>(DataNEssence.locate("add_scanned_ore"));
+    public static final Type<AddScannedOre> TYPE = new Type<>(Halcyon.locate("add_scanned_ore"));
 
     @Override
     public Type<? extends CustomPacketPayload> type() {

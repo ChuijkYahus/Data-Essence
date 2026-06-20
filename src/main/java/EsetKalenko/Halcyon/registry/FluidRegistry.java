@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.registry;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.fluid.CooledWater;
 import EsetKalenko.Halcyon.fluid.Genderfluid;
 import EsetKalenko.Halcyon.fluid.ModFluidRegistryObject;
@@ -16,10 +16,10 @@ import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
 import java.util.function.Supplier;
 
-@EventBusSubscriber(value = Dist.CLIENT, modid = DataNEssence.MOD_ID)
+@EventBusSubscriber(value = Dist.CLIENT, modid = Halcyon.MOD_ID)
 public class FluidRegistry {
-    public static DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(BuiltInRegistries.FLUID, DataNEssence.MOD_ID);
-    public static final DeferredRegister<FluidType> FLUID_TYPES = DeferredRegister.create(NeoForgeRegistries.FLUID_TYPES, DataNEssence.MOD_ID);
+    public static DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(BuiltInRegistries.FLUID, Halcyon.MOD_ID);
+    public static final DeferredRegister<FluidType> FLUID_TYPES = DeferredRegister.create(NeoForgeRegistries.FLUID_TYPES, Halcyon.MOD_ID);
 
     public static final ModFluidRegistryObject GENDERFLUID = ModFluidRegistryObject.register("genderfluid", new Genderfluid());
     public static final ModFluidRegistryObject COOLED_WATER = ModFluidRegistryObject.register("cooled_water", new CooledWater());

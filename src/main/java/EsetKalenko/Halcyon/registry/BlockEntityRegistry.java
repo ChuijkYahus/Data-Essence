@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.registry;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.block.auxiliary.*;
 import EsetKalenko.Halcyon.block.processing.*;
 import EsetKalenko.Halcyon.block.production.*;
@@ -30,7 +30,7 @@ import java.util.function.Supplier;
 
 public class BlockEntityRegistry {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES =
-            DeferredRegister.create(BuiltInRegistries.BLOCK_ENTITY_TYPE, DataNEssence.MOD_ID);
+            DeferredRegister.create(BuiltInRegistries.BLOCK_ENTITY_TYPE, Halcyon.MOD_ID);
     public static final Supplier<BlockEntityType<FluidMixerBlockEntity>> FLUID_MIXER =
             register("fluid_mixer", () ->
                     BlockEntityType.Builder.of(FluidMixerBlockEntity::new,

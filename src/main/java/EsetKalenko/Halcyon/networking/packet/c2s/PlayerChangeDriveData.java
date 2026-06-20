@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.networking.packet.c2s;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.networking.Message;
 import EsetKalenko.Halcyon.registry.AttachmentTypeRegistry;
 import EsetKalenko.Halcyon.registry.DataComponentRegistry;
@@ -48,5 +48,5 @@ public record PlayerChangeDriveData(ResourceLocation entry, int completionStage,
     public Type<? extends CustomPacketPayload> type() {
         return TYPE;
     }
-    public static final Type<PlayerChangeDriveData> TYPE = new Type<>(DataNEssence.locate("player_change_data_drive_data"));
+    public static final Type<PlayerChangeDriveData> TYPE = new Type<>(Halcyon.locate("player_change_data_drive_data"));
 }

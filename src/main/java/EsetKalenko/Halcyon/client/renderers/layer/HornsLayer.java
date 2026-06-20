@@ -4,7 +4,7 @@ import com.cmdpro.databank.model.DatabankModel;
 import com.cmdpro.databank.model.DatabankModels;
 import com.cmdpro.databank.model.ModelPose;
 import com.cmdpro.databank.model.entity.DatabankEntityModel;
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.registry.AttachmentTypeRegistry;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.model.HumanoidModel;
@@ -21,7 +21,7 @@ import net.minecraft.world.phys.Vec3;
 import org.joml.Vector3f;
 
 public class HornsLayer<T extends Player, M extends HumanoidModel<T>> extends RenderLayer<T, M> {
-    public static final ResourceLocation hornsTexture = DataNEssence.locate("textures/entity/horns.png");
+    public static final ResourceLocation hornsTexture = Halcyon.locate("textures/entity/horns.png");
     private final HornsModel hornsModel;
     public HornsLayer(RenderLayerParent<T, M> pRenderer, EntityModelSet pModelSet) {
         super(pRenderer);
@@ -66,7 +66,7 @@ public class HornsLayer<T extends Player, M extends HumanoidModel<T>> extends Re
 
         public DatabankModel getModel() {
             if (model == null) {
-                model = DatabankModels.models.get(DataNEssence.locate("horns"));
+                model = DatabankModels.models.get(Halcyon.locate("horns"));
             }
             return model;
         }

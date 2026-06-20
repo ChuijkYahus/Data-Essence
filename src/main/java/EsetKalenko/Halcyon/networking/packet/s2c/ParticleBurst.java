@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.networking.packet.s2c;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.client.particle.MoteParticleOptions;
 import EsetKalenko.Halcyon.networking.Message;
 import net.minecraft.client.Minecraft;
@@ -16,7 +16,7 @@ import java.awt.*;
 
 public record ParticleBurst(Vec3 pos, Color color, int amount, float speed) implements Message {
 
-    public static final Type<ParticleBurst> TYPE = new Type<>(DataNEssence.locate("particle_burst"));
+    public static final Type<ParticleBurst> TYPE = new Type<>(Halcyon.locate("particle_burst"));
 
     @Override
     public Type<? extends CustomPacketPayload> type() {

@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.client.shaders;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import com.mojang.blaze3d.vertex.DefaultVertexFormat;
 import com.mojang.blaze3d.vertex.VertexFormat;
 import com.mojang.blaze3d.vertex.VertexFormatElement;
@@ -12,7 +12,7 @@ import net.neoforged.neoforge.client.event.RegisterShadersEvent;
 
 import java.io.IOException;
 
-@EventBusSubscriber(value = Dist.CLIENT, modid = DataNEssence.MOD_ID)
+@EventBusSubscriber(value = Dist.CLIENT, modid = Halcyon.MOD_ID)
 public class DataNEssenceCoreShaders {
     public static final VertexFormat POSITION_NORMAL = VertexFormat.builder().add("Position", VertexFormatElement.POSITION).add("Normal", VertexFormatElement.NORMAL).build();
     public static ShaderInstance WARPING_POINT;
@@ -29,8 +29,8 @@ public class DataNEssenceCoreShaders {
     }
     @SubscribeEvent
     public static void shaderRegistry(RegisterShadersEvent event) throws IOException {
-        event.registerShader(new ShaderInstance(event.getResourceProvider(), DataNEssence.locate("warping_point"), DefaultVertexFormat.PARTICLE), shader -> { WARPING_POINT = shader; });
-        event.registerShader(new ShaderInstance(event.getResourceProvider(), DataNEssence.locate("wires"), DefaultVertexFormat.POSITION_COLOR_NORMAL), shader -> { WIRES = shader; });
-        event.registerShader(new ShaderInstance(event.getResourceProvider(), DataNEssence.locate("essence_bridge"), DefaultVertexFormat.POSITION_TEX_COLOR_NORMAL), shader -> { ESSENCE_BRIDGE = shader; });
+        event.registerShader(new ShaderInstance(event.getResourceProvider(), Halcyon.locate("warping_point"), DefaultVertexFormat.PARTICLE), shader -> { WARPING_POINT = shader; });
+        event.registerShader(new ShaderInstance(event.getResourceProvider(), Halcyon.locate("wires"), DefaultVertexFormat.POSITION_COLOR_NORMAL), shader -> { WIRES = shader; });
+        event.registerShader(new ShaderInstance(event.getResourceProvider(), Halcyon.locate("essence_bridge"), DefaultVertexFormat.POSITION_TEX_COLOR_NORMAL), shader -> { ESSENCE_BRIDGE = shader; });
     }
 }

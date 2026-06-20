@@ -5,7 +5,7 @@ import com.cmdpro.databank.misc.TrailLeftoverHandler;
 import com.cmdpro.databank.misc.TrailRender;
 import com.cmdpro.databank.rendering.RenderHandler;
 import com.cmdpro.databank.rendering.RenderTypeHandler;
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.registry.DamageTypeRegistry;
 import net.minecraft.client.renderer.LightTexture;
 import net.minecraft.nbt.CompoundTag;
@@ -168,10 +168,10 @@ public class EssenceSlashProjectile extends Projectile {
     public List<TrailRender> getTrails() {
         if (trails == null) {
             trails = new ArrayList<>();
-            trails.add(new TrailRender(getTrailOffset(0), 20, 20, 0.05f, DataNEssence.locate("textures/vfx/trail.png"),
+            trails.add(new TrailRender(getTrailOffset(0), 20, 20, 0.05f, Halcyon.locate("textures/vfx/trail.png"),
                     RenderTypeHandler::transparent
             ).setShrink(true).startTicking());
-            trails.add(new TrailRender(getTrailOffset(1), 20, 20, 0.05f, DataNEssence.locate("textures/vfx/trail.png"),
+            trails.add(new TrailRender(getTrailOffset(1), 20, 20, 0.05f, Halcyon.locate("textures/vfx/trail.png"),
                     RenderTypeHandler::transparent
             ).setShrink(true).startTicking());
         }

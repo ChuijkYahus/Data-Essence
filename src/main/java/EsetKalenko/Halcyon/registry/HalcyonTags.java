@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.registry;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
@@ -23,7 +23,7 @@ public class HalcyonTags {
         public static final TagKey<Block> STRUCTURE_PROTECTOR_IGNORED = tag("structure_protector_ignored");
 
         private static TagKey<Block> tag(String name) {
-            return BlockTags.create(DataNEssence.locate(name));
+            return BlockTags.create(Halcyon.locate(name));
         }
     }
     public static class Items {
@@ -63,12 +63,12 @@ public class HalcyonTags {
         public static final TagKey<Item> WIP = tag ("wip");
 
         private static TagKey<Item> tag(String name) {
-            return ItemTags.create(DataNEssence.locate(name));
+            return ItemTags.create(Halcyon.locate(name));
         }
     }
     public static class EntityTypes {
         private static TagKey<EntityType<?>> tag(String name) {
-            return TagKey.create(Registries.ENTITY_TYPE, DataNEssence.locate(name));
+            return TagKey.create(Registries.ENTITY_TYPE, Halcyon.locate(name));
         }
     }
 }

@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.fluid;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.*;
@@ -57,12 +57,12 @@ public class CooledWater extends ModFluidType {
         public static final IClientFluidTypeExtensions EXTENSIONS = new IClientFluidTypeExtensions() {
             @Override
             public ResourceLocation getStillTexture() {
-                return DataNEssence.locate("block/fluid/cooled_water_still");
+                return Halcyon.locate("block/fluid/cooled_water_still");
             }
 
             @Override
             public ResourceLocation getFlowingTexture() {
-                return DataNEssence.locate("block/fluid/cooled_water_flowing");
+                return Halcyon.locate("block/fluid/cooled_water_flowing");
             }
         };
         private static BaseFlowingFluid.Properties properties(ModFluidRegistryObject obj) {

@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.data.pinging;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import com.google.gson.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.ResourceManager;
@@ -30,7 +30,7 @@ public class PingableStructureManager extends SimpleJsonResourceReloadListener {
     @Override
     protected void apply(Map<ResourceLocation, JsonElement> pObject, ResourceManager pResourceManager, ProfilerFiller pProfiler) {
         types = new HashMap<>();
-        DataNEssence.LOGGER.info("[HALCYON] Adding Pingable Structures");
+        Halcyon.LOGGER.info("[HALCYON] Adding Pingable Structures");
         for (Map.Entry<ResourceLocation, JsonElement> i : pObject.entrySet()) {
             ResourceLocation location = i.getKey();
             if (location.getPath().startsWith("_")) {
@@ -41,12 +41,12 @@ public class PingableStructureManager extends SimpleJsonResourceReloadListener {
                 JsonObject obj = i.getValue().getAsJsonObject();
                 PingableStructure data = serializer.read(i.getKey(), obj);
                 types.put(i.getKey(), data);
-                DataNEssence.LOGGER.info("[HALCYON] Successfully added pingable structure {}", location);
+                Halcyon.LOGGER.info("[HALCYON] Successfully added pingable structure {}", location);
             } catch (IllegalArgumentException | JsonParseException e) {
-                DataNEssence.LOGGER.error("[HALCYON ERROR] Parsing error loading pingable structure {}", location, e);
+                Halcyon.LOGGER.error("[HALCYON ERROR] Parsing error loading pingable structure {}", location, e);
             }
         }
-        DataNEssence.LOGGER.info("[HALCYON] Loaded {} pingable structures", types.size());
+        Halcyon.LOGGER.info("[HALCYON] Loaded {} pingable structures", types.size());
     }
 
     public static PingableStructureSerializer serializer = new PingableStructureSerializer();

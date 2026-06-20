@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.config;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.neoforge.common.ModConfigSpec;
 import org.apache.commons.lang3.tuple.Pair;
@@ -68,7 +68,7 @@ public class DataNEssenceClientConfig {
             factorySongVolume = CLIENT.factorySongVolumeValue.get();
             structureSongVolume = CLIENT.structureSongVolumeValue.get();
         } catch (Exception e) {
-            DataNEssence.LOGGER.warn("[HALCYON] Failed to load client config!");
+            Halcyon.LOGGER.warn("[HALCYON] Failed to load client config!");
             e.printStackTrace();
         }
     }

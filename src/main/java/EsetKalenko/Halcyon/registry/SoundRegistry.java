@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.registry;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.client.FactorySong;
 import EsetKalenko.Halcyon.client.StructureSongs;
 import net.minecraft.core.Holder;
@@ -10,7 +10,7 @@ import net.neoforged.fml.loading.FMLEnvironment;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class SoundRegistry {
-    public static final DeferredRegister<SoundEvent> SOUND_EVENTS = DeferredRegister.create(BuiltInRegistries.SOUND_EVENT, DataNEssence.MOD_ID);
+    public static final DeferredRegister<SoundEvent> SOUND_EVENTS = DeferredRegister.create(BuiltInRegistries.SOUND_EVENT, Halcyon.MOD_ID);
 
     //Misc
     public static final Holder<SoundEvent> CRITICAL_DATA_UNLOCKED = createBasicSound("critical_data_unlocked");
@@ -105,11 +105,11 @@ public class SoundRegistry {
 
     public static Holder<SoundEvent> createBasicSound(String name) {
         return SOUND_EVENTS.register(name,
-                () -> SoundEvent.createVariableRangeEvent(DataNEssence.locate(name)));
+                () -> SoundEvent.createVariableRangeEvent(Halcyon.locate(name)));
     }
 
     public static Holder<SoundEvent> createStructureSong(String name) {
-        var identifier = DataNEssence.locate(name);
+        var identifier = Halcyon.locate(name);
         var sound = SOUND_EVENTS.register(name, () -> SoundEvent.createVariableRangeEvent(identifier));
         if (FMLEnvironment.dist.isClient()) {
             StructureSongs.addStructureSong(identifier);
@@ -118,7 +118,7 @@ public class SoundRegistry {
     }
 
     public static Holder<SoundEvent> createBasicFactoryLoopSound(String name) {
-        var identifier = DataNEssence.locate(name);
+        var identifier = Halcyon.locate(name);
         var sound = SOUND_EVENTS.register(name, () -> SoundEvent.createVariableRangeEvent(identifier));
         if (FMLEnvironment.dist.isClient()) {
             FactorySong.addFactorySongSound(identifier);

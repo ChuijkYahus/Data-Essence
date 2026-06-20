@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.datagen.tag;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.EntityTypeTagsProvider;
@@ -11,7 +11,7 @@ import java.util.concurrent.CompletableFuture;
 
 public class HalcyonEntityTags extends EntityTypeTagsProvider {
     public HalcyonEntityTags(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, @Nullable ExistingFileHelper existingFileHelper) {
-        super(output, lookupProvider, DataNEssence.MOD_ID, existingFileHelper);
+        super(output, lookupProvider, Halcyon.MOD_ID, existingFileHelper);
     }
 
     @Override

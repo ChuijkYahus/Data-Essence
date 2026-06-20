@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.networking.packet.s2c;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.data.datatablet.*;
 import EsetKalenko.Halcyon.networking.Message;
 import EsetKalenko.Halcyon.screen.DataTabletScreen;
@@ -37,7 +37,7 @@ public record EntrySync(Map<ResourceLocation, Entry> entries, List<ResourceLocat
     public Type<? extends CustomPacketPayload> type() {
         return TYPE;
     }
-    public static final Type<EntrySync> TYPE = new Type<>(DataNEssence.locate("entry_sync"));
+    public static final Type<EntrySync> TYPE = new Type<>(Halcyon.locate("entry_sync"));
 
     private static class ClientHandler {
         public static void handle(EntrySync packet) {

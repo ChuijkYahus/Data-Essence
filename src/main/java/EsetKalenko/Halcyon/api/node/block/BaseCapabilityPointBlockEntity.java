@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.api.node.block;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.api.misc.BlockPosNetworks;
 import EsetKalenko.Halcyon.api.node.item.INodeUpgrade;
 import EsetKalenko.Halcyon.api.util.BlockPosEdge;
@@ -80,10 +80,10 @@ public abstract class BaseCapabilityPointBlockEntity extends BlockEntity {
         return value;
     }
     public float getFinalSpeed(float value) {
-        return value*getValue(DataNEssence.locate("speed_multiplier"), 1f);
+        return value*getValue(Halcyon.locate("speed_multiplier"), 1f);
     }
     public int getFinalSpeed(int value) {
-        return (int)(value*getValue(DataNEssence.locate("speed_multiplier"), 1f));
+        return (int)(value*getValue(Halcyon.locate("speed_multiplier"), 1f));
     }
 
     public BaseCapabilityPointBlockEntity(BlockEntityType<?> pType, BlockPos pPos, BlockState pBlockState) {

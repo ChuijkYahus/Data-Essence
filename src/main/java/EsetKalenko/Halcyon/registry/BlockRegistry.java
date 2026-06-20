@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.registry;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.api.block.SpreadingPlant;
 
 import EsetKalenko.Halcyon.api.item.ShardSublimatableBlockItem;
@@ -70,7 +70,7 @@ public class BlockRegistry {
     }
 
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(BuiltInRegistries.BLOCK,
-            DataNEssence.MOD_ID);
+            Halcyon.MOD_ID);
     public static final DeferredRegister<Item> ITEMS = ItemRegistry.ITEMS;
 
     // World
@@ -312,13 +312,13 @@ public class BlockRegistry {
             object -> () -> new EssenceBatteryItem(
                     object.get(),
                     new Item.Properties(),
-                    DataNEssence.locate("essence")));
+                    Halcyon.locate("essence")));
     public static final Supplier<Block> LUNAR_ESSENCE_BATTERY = register("lunar_essence_battery",
             () -> new LunarEssenceBattery(getMachineProperties()),
             object -> () -> new EssenceBatteryItem(
                     object.get(),
                     new Item.Properties(),
-                    DataNEssence.locate("lunar_essence")));
+                    Halcyon.locate("lunar_essence")));
     public static final Supplier<Block> NATURAL_ESSENCE_BATTERY = register("natural_essence_battery",
             () -> new NaturalEssenceBattery(getMachineProperties()),
             object -> () -> new BlockItem(object.get(), new Item.Properties()));

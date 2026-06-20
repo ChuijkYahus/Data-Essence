@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.api.misc;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import net.minecraft.resources.ResourceLocation;
 
 import java.util.HashMap;
@@ -34,48 +34,48 @@ public class SymbolTypes {
          */
 
         // The Cities - also used to represent the seven colors
-        symbols.put(DataNEssence.locate("shar"), new SymbolType(
+        symbols.put(Halcyon.locate("shar"), new SymbolType(
                 SymbolType.getSymbolLocation(SymbolType.SYMBOL_LOCATION, 0, 0),
                 SymbolType.getSymbolLocation(SymbolType.SYMBOL_LOCATION, 32, 0),
                 SymbolType.getSymbolLocation(SymbolType.SYMBOL_LOCATION, 32, 16)
         ));
-        symbols.put(DataNEssence.locate("besar"), new SymbolType(
+        symbols.put(Halcyon.locate("besar"), new SymbolType(
                 SymbolType.getSymbolLocation(SymbolType.SYMBOL_LOCATION, 0, 0),
                 SymbolType.getSymbolLocation(SymbolType.SYMBOL_LOCATION, 32, 32),
                 SymbolType.getSymbolLocation(SymbolType.SYMBOL_LOCATION, 32, 48)
         ));
-        symbols.put(DataNEssence.locate("nula"), new SymbolType(
+        symbols.put(Halcyon.locate("nula"), new SymbolType(
                 SymbolType.getSymbolLocation(SymbolType.SYMBOL_LOCATION, 0, 0),
                 SymbolType.getSymbolLocation(SymbolType.SYMBOL_LOCATION, 32, 64),
                 SymbolType.getSymbolLocation(SymbolType.SYMBOL_LOCATION, 32, 80)
         ));
-        symbols.put(DataNEssence.locate("eniro"), new SymbolType(
+        symbols.put(Halcyon.locate("eniro"), new SymbolType(
                 SymbolType.getSymbolLocation(SymbolType.SYMBOL_LOCATION, 0, 0),
                 SymbolType.getSymbolLocation(SymbolType.SYMBOL_LOCATION, 32, 96),
                 SymbolType.getSymbolLocation(SymbolType.SYMBOL_LOCATION, 32, 112)
         ));
-        symbols.put(DataNEssence.locate("ipari"), new SymbolType(
+        symbols.put(Halcyon.locate("ipari"), new SymbolType(
                 SymbolType.getSymbolLocation(SymbolType.SYMBOL_LOCATION, 0, 0),
                 SymbolType.getSymbolLocation(SymbolType.SYMBOL_LOCATION, 32, 128),
                 SymbolType.getSymbolLocation(SymbolType.SYMBOL_LOCATION, 32, 144)
         ));
-        symbols.put(DataNEssence.locate("koru"), new SymbolType(
+        symbols.put(Halcyon.locate("koru"), new SymbolType(
                 SymbolType.getSymbolLocation(SymbolType.SYMBOL_LOCATION, 0, 0),
                 SymbolType.getSymbolLocation(SymbolType.SYMBOL_LOCATION, 32, 160),
                 SymbolType.getSymbolLocation(SymbolType.SYMBOL_LOCATION, 32, 176)
         ));
-        symbols.put(DataNEssence.locate("aru"), new SymbolType(
+        symbols.put(Halcyon.locate("aru"), new SymbolType(
                 SymbolType.getSymbolLocation(SymbolType.SYMBOL_LOCATION, 0, 0),
                 SymbolType.getSymbolLocation(SymbolType.SYMBOL_LOCATION, 32, 192),
                 SymbolType.getSymbolLocation(SymbolType.SYMBOL_LOCATION, 32, 208)
         ));
     }
 
-    public static SymbolType SHAR = SymbolTypes.symbols.get( DataNEssence.locate("shar") );
-    public static SymbolType BESAR = SymbolTypes.symbols.get( DataNEssence.locate("besar") );
-    public static SymbolType NULA = SymbolTypes.symbols.get( DataNEssence.locate("nula") );
-    public static SymbolType ENIRO = SymbolTypes.symbols.get( DataNEssence.locate("eniro") );
-    public static SymbolType IPARI = SymbolTypes.symbols.get( DataNEssence.locate("ipari") );
-    public static SymbolType KORU = SymbolTypes.symbols.get( DataNEssence.locate("koru") );
-    public static SymbolType ARU = SymbolTypes.symbols.get( DataNEssence.locate("aru") );
+    public static SymbolType SHAR = SymbolTypes.symbols.get( Halcyon.locate("shar") );
+    public static SymbolType BESAR = SymbolTypes.symbols.get( Halcyon.locate("besar") );
+    public static SymbolType NULA = SymbolTypes.symbols.get( Halcyon.locate("nula") );
+    public static SymbolType ENIRO = SymbolTypes.symbols.get( Halcyon.locate("eniro") );
+    public static SymbolType IPARI = SymbolTypes.symbols.get( Halcyon.locate("ipari") );
+    public static SymbolType KORU = SymbolTypes.symbols.get( Halcyon.locate("koru") );
+    public static SymbolType ARU = SymbolTypes.symbols.get( Halcyon.locate("aru") );
 }

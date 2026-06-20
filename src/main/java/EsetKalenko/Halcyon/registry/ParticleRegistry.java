@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.registry;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.client.particle.*;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.particles.ParticleType;
@@ -14,7 +14,7 @@ import java.util.function.Supplier;
 
 public class ParticleRegistry {
     public static final DeferredRegister<ParticleType<?>> PARTICLE_TYPES = DeferredRegister.create(BuiltInRegistries.PARTICLE_TYPE,
-            DataNEssence.MOD_ID);
+            Halcyon.MOD_ID);
     public static final Supplier<SimpleParticleType> ESSENCE_SPARKLE =
             register("essence_sparkle", () -> new SimpleParticleType(false));
     public static final Supplier<SimpleParticleType> SANCTUARY_SPARKLE =

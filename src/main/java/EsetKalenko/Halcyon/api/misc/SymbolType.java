@@ -1,11 +1,11 @@
 package EsetKalenko.Halcyon.api.misc;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.resources.ResourceLocation;
 
 public class SymbolType {
-    public static final ResourceLocation SYMBOL_LOCATION = DataNEssence.locate("textures/gui/symbols.png");
+    public static final ResourceLocation SYMBOL_LOCATION = Halcyon.locate("textures/gui/symbols.png");
     public final SymbolLocation largeSymbol, normalSymbol, smallSymbol;
     public SymbolType(SymbolLocation largeSymbol, SymbolLocation normalSymbol, SymbolLocation smallSymbol) {
         this.largeSymbol = largeSymbol;

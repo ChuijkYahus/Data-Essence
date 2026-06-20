@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.registry;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.damagesource.DamageType;
@@ -9,7 +9,7 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import net.neoforged.neoforge.event.entity.living.LivingShieldBlockEvent;
 
-@EventBusSubscriber(modid = DataNEssence.MOD_ID)
+@EventBusSubscriber(modid = Halcyon.MOD_ID)
 public class DamageTypeRegistry {
     public static final ResourceKey<DamageType> magicProjectile = damageType("magic_projectile");
     public static final ResourceKey<DamageType> laser = damageType("laser");
@@ -20,7 +20,7 @@ public class DamageTypeRegistry {
     public static final ResourceKey<DamageType> ancientProjectile = damageType("ancient_projectile");
 
     private static ResourceKey<DamageType> damageType(String name) {
-        return ResourceKey.create(Registries.DAMAGE_TYPE, DataNEssence.locate(name));
+        return ResourceKey.create(Registries.DAMAGE_TYPE, Halcyon.locate(name));
     }
 
 

@@ -1,8 +1,8 @@
 package EsetKalenko.Halcyon.item.equipment;
 
+import EsetKalenko.Halcyon.Halcyon;
 import com.cmdpro.databank.DatabankUtils;
 import com.cmdpro.databank.hidden.types.BlockHiddenType;
-import EsetKalenko.Halcyon.DataNEssence;
 import EsetKalenko.Halcyon.api.item.ItemEssenceContainer;
 import EsetKalenko.Halcyon.networking.ModMessages;
 import EsetKalenko.Halcyon.networking.packet.s2c.AddScannedOre;
@@ -33,7 +33,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public class OreScanner extends Item {
-    public static ResourceLocation FUEL_ESSENCE_TYPE = DataNEssence.locate("essence");
+    public static ResourceLocation FUEL_ESSENCE_TYPE = Halcyon.locate("essence");
     public static int ESSENCE_COST = 50;
     public OreScanner(Properties pProperties) {
         super(pProperties.component(DataComponentRegistry.ESSENCE_STORAGE, new ItemEssenceContainer(List.of(FUEL_ESSENCE_TYPE), 2500)));

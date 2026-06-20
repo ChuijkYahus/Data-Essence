@@ -1,9 +1,9 @@
 package EsetKalenko.Halcyon.api.node.block;
 
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.api.util.BlockPosEdge;
 import com.cmdpro.databank.model.animation.DatabankAnimationReference;
 import com.cmdpro.databank.model.animation.DatabankAnimationState;
-import EsetKalenko.Halcyon.DataNEssence;
 import EsetKalenko.Halcyon.api.misc.BlockPosNetworks;
 import EsetKalenko.Halcyon.api.node.item.INodeUpgrade;
 import EsetKalenko.Halcyon.client.particle.CircleParticleOptions;
@@ -77,10 +77,10 @@ public abstract class BaseEssencePointBlockEntity extends BlockEntity {
         return value;
     }
     public float getFinalSpeed(float value) {
-        return value*getValue(DataNEssence.locate("speed_multiplier"), 1f);
+        return value*getValue(Halcyon.locate("speed_multiplier"), 1f);
     }
     public int getFinalSpeed(int value) {
-        return (int)(value*getValue(DataNEssence.locate("speed_multiplier"), 1f));
+        return (int)(value*getValue(Halcyon.locate("speed_multiplier"), 1f));
     }
 
     public BaseEssencePointBlockEntity(BlockEntityType<?> pType, BlockPos pPos, BlockState pBlockState) {

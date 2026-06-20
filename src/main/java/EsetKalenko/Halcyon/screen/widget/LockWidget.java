@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.screen.widget;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.api.LockableItemHandler;
 import EsetKalenko.Halcyon.networking.ModMessages;
 import EsetKalenko.Halcyon.networking.packet.c2s.PlayerSetItemHandlerLocked;
@@ -16,7 +16,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.entity.BlockEntity;
 
 public class LockWidget extends AbstractWidget {
-    public static final ResourceLocation TEXTURE = DataNEssence.locate("textures/gui/widgets.png");
+    public static final ResourceLocation TEXTURE = Halcyon.locate("textures/gui/widgets.png");
     public BlockEntity entity;
     public LockableItemHandler handler;
     public LockWidget(BlockEntity entity, LockableItemHandler handler, int pX, int pY) {

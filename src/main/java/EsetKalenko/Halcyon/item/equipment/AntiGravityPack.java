@@ -1,6 +1,6 @@
 package EsetKalenko.Halcyon.item.equipment;
 
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.api.item.ItemEssenceContainer;
 import EsetKalenko.Halcyon.registry.ArmorMaterialRegistry;
 import EsetKalenko.Halcyon.registry.DataComponentRegistry;
@@ -19,11 +19,11 @@ import net.minecraft.world.level.Level;
 import java.util.List;
 
 public class AntiGravityPack extends ArmorItem {
-    public static final ResourceLocation GRAVITY_ATTRIBUTE = DataNEssence.locate("anti_gravity_pack_gravity");
-    public static final ResourceLocation FALL_HEIGHT_ATTRIBUTE = DataNEssence.locate("anti_gravity_pack_fall_height");
+    public static final ResourceLocation GRAVITY_ATTRIBUTE = Halcyon.locate("anti_gravity_pack_gravity");
+    public static final ResourceLocation FALL_HEIGHT_ATTRIBUTE = Halcyon.locate("anti_gravity_pack_fall_height");
     public static final AttributeModifier GRAVITY_MODIFIER = new AttributeModifier(GRAVITY_ATTRIBUTE, -0.8, AttributeModifier.Operation.ADD_MULTIPLIED_BASE);
     public static final AttributeModifier FALL_HEIGHT_MODIFIER = new AttributeModifier(FALL_HEIGHT_ATTRIBUTE, 2.5, AttributeModifier.Operation.ADD_MULTIPLIED_BASE);
-    public static ResourceLocation FUEL_ESSENCE_TYPE = DataNEssence.locate("lunar_essence");
+    public static ResourceLocation FUEL_ESSENCE_TYPE = Halcyon.locate("lunar_essence");
     public AntiGravityPack(Properties pProperties) {
         super(ArmorMaterialRegistry.ANTI_GRAVITY_PACK, Type.CHESTPLATE, pProperties.component(DataComponentRegistry.ESSENCE_STORAGE, new ItemEssenceContainer(List.of(FUEL_ESSENCE_TYPE), 3000)));
     }

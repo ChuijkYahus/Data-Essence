@@ -3,7 +3,7 @@ package EsetKalenko.Halcyon.client;
 import com.cmdpro.databank.rendering.ColorUtil;
 import com.cmdpro.databank.shaders.PostShaderInstance;
 import com.cmdpro.databank.shaders.PostShaderManager;
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.api.item.ItemDecorators;
 import EsetKalenko.Halcyon.api.item.ItemEssenceContainer;
 import EsetKalenko.Halcyon.api.util.client.AnimatedBlockItemUtil;
@@ -44,7 +44,7 @@ import java.awt.*;
 
 import static EsetKalenko.Halcyon.integration.DataNEssenceIntegration.hasOpalescence;
 
-@EventBusSubscriber(value = Dist.CLIENT, modid = DataNEssence.MOD_ID)
+@EventBusSubscriber(value = Dist.CLIENT, modid = Halcyon.MOD_ID)
 public class ClientStartupEvents {
     public static PostShaderInstance progressionShader;
     public static PostShaderInstance genderEuphoriaShader;
@@ -53,12 +53,12 @@ public class ClientStartupEvents {
 
     @SubscribeEvent
     public static void registerGuiLayers(RegisterGuiLayersEvent event) {
-        event.registerAboveAll(DataNEssence.locate("pings"), new PingsGuiLayer());
+        event.registerAboveAll(Halcyon.locate("pings"), new PingsGuiLayer());
     }
 
     @SubscribeEvent
     public static void registerDimensionSpecialEffects(RegisterDimensionSpecialEffectsEvent event) {
-        event.register(DataNEssence.locate("sanctuary"), new SanctuarySpecialEffects());
+        event.register(Halcyon.locate("sanctuary"), new SanctuarySpecialEffects());
     }
 
     @SubscribeEvent
@@ -125,16 +125,16 @@ public class ClientStartupEvents {
             EntityRenderers.register(EntityRegistry.LUNAR_STRIKE.get(), LunarStrikeRenderer::new);
             EntityRenderers.register(EntityRegistry.RIFLE_LASER.get(), RifleLaserRenderer::new);
 
-            ItemProperties.register(ItemRegistry.MUSIC_DISC_PLAYER.get(), DataNEssence.locate("playing"), (stack, level, entity, seed) -> {
+            ItemProperties.register(ItemRegistry.MUSIC_DISC_PLAYER.get(), Halcyon.locate("playing"), (stack, level, entity, seed) -> {
                 if (stack.has(DataComponentRegistry.PLAYING_MUSIC)) {
                     return 1;
                 }
                 return 0;
             });
-            ItemProperties.register(ItemRegistry.GRAPPLING_HOOK.get(), DataNEssence.locate("charged"), chargedGrapplingHookProperty);
-            ItemProperties.register(ItemRegistry.GRAPPLING_HOOK.get(), DataNEssence.locate("using"), usingGrapplingHookProperty);
-            ItemProperties.register(ItemRegistry.TRANS_GRAPPLING_HOOK.get(), DataNEssence.locate("charged"), chargedGrapplingHookProperty);
-            ItemProperties.register(ItemRegistry.TRANS_GRAPPLING_HOOK.get(), DataNEssence.locate("using"), usingGrapplingHookProperty);
+            ItemProperties.register(ItemRegistry.GRAPPLING_HOOK.get(), Halcyon.locate("charged"), chargedGrapplingHookProperty);
+            ItemProperties.register(ItemRegistry.GRAPPLING_HOOK.get(), Halcyon.locate("using"), usingGrapplingHookProperty);
+            ItemProperties.register(ItemRegistry.TRANS_GRAPPLING_HOOK.get(), Halcyon.locate("charged"), chargedGrapplingHookProperty);
+            ItemProperties.register(ItemRegistry.TRANS_GRAPPLING_HOOK.get(), Halcyon.locate("using"), usingGrapplingHookProperty);
 
             progressionShader = new ProgressionShader();
             PostShaderManager.addShader(progressionShader);
@@ -167,28 +167,28 @@ public class ClientStartupEvents {
 
     @SubscribeEvent
     public static void registerClientExtensions(RegisterClientExtensionsEvent event) {
-        event.registerItem(AnimatedBlockItemUtil.createBasicExtensions(DataNEssence.locate("textures/block/auto-fabricator.png"), DataNEssence.locate("auto-fabricator")), BlockRegistry.AUTO_FABRICATOR.get().asItem());
-        event.registerItem(AnimatedBlockItemUtil.createBasicExtensions(DataNEssence.locate("textures/block/charger.png"), DataNEssence.locate("charger")), BlockRegistry.CHARGER.get().asItem());
-        event.registerItem(AnimatedBlockItemUtil.createBasicExtensions(DataNEssence.locate("textures/block/entropic_processor.png"), DataNEssence.locate("entropic_processor")), BlockRegistry.ENTROPIC_PROCESSOR.get().asItem());
-        event.registerItem(AnimatedBlockItemUtil.createBasicExtensions(DataNEssence.locate("textures/block/essence_point.png"), DataNEssence.locate("essence_point")), BlockRegistry.ESSENCE_POINT.get().asItem());
-        event.registerItem(AnimatedBlockItemUtil.createBasicExtensions(DataNEssence.locate("textures/block/exotic_essence_point.png"), DataNEssence.locate("essence_point")), BlockRegistry.EXOTIC_ESSENCE_POINT.get().asItem());
-        event.registerItem(AnimatedBlockItemUtil.createBasicExtensions(DataNEssence.locate("textures/block/fabricator.png"), DataNEssence.locate("fabricator")), BlockRegistry.FABRICATOR.get().asItem());
-        event.registerItem(AnimatedBlockItemUtil.createBasicExtensions(DataNEssence.locate("textures/block/lunarium.png"), DataNEssence.locate("lunarium")), BlockRegistry.LUNARIUM.get().asItem());
-        event.registerItem(AnimatedBlockItemUtil.createBasicExtensions(DataNEssence.locate("textures/block/fluid_point.png"), DataNEssence.locate("essence_point")), BlockRegistry.FLUID_POINT.get().asItem());
-        event.registerItem(AnimatedBlockItemUtil.createBasicExtensions(DataNEssence.locate("textures/block/infuser.png"), DataNEssence.locate("infuser")), BlockRegistry.INFUSER.get().asItem());
-        event.registerItem(AnimatedBlockItemUtil.createBasicExtensions(DataNEssence.locate("textures/block/item_point.png"), DataNEssence.locate("essence_point")), BlockRegistry.ITEM_POINT.get().asItem());
-        event.registerItem(AnimatedBlockItemUtil.createBasicExtensions(DataNEssence.locate("textures/block/lunar_node.png"), DataNEssence.locate("essence_point")), BlockRegistry.LUNAR_ESSENCE_POINT.get().asItem());
-        event.registerItem(AnimatedBlockItemUtil.createBasicExtensions(DataNEssence.locate("textures/block/natural_essence_point.png"), DataNEssence.locate("essence_point")), BlockRegistry.NATURAL_ESSENCE_POINT.get().asItem());
-        event.registerItem(AnimatedBlockItemUtil.createBasicExtensions(DataNEssence.locate("textures/block/fluid_mixer.png"), DataNEssence.locate("fluid_mixer")), BlockRegistry.FLUID_MIXER.get().asItem());
-        event.registerItem(AnimatedBlockItemUtil.createBasicExtensions(DataNEssence.locate("textures/block/metal_shaper.png"), DataNEssence.locate("metal_shaper")), BlockRegistry.METAL_SHAPER.get().asItem());
-        event.registerItem(AnimatedBlockItemUtil.createBasicExtensions(DataNEssence.locate("textures/block/industrial_plant_siphon.png"), DataNEssence.locate("industrial_plant_siphon")), BlockRegistry.INDUSTRIAL_PLANT_SIPHON.get().asItem());
-        event.registerItem(AnimatedBlockItemUtil.createBasicExtensions(DataNEssence.locate("textures/block/chemical_node.png"), DataNEssence.locate("essence_point")), BlockRegistry.CHEMICAL_NODE.get().asItem());
-        event.registerItem(AnimatedBlockItemUtil.createBasicExtensions(DataNEssence.locate("textures/block/ender_pearl_capture.png"), DataNEssence.locate("ender_pearl_capture")), BlockRegistry.ENDER_PEARL_CAPTURE.get().asItem());
-        event.registerItem(AnimatedBlockItemUtil.createBasicExtensions(DataNEssence.locate("textures/block/ender_pearl_relay.png"), DataNEssence.locate("ender_pearl_relay")), BlockRegistry.ENDER_PEARL_RELAY.get().asItem());
-        event.registerItem(AnimatedBlockItemUtil.createBasicExtensions(DataNEssence.locate("textures/block/ender_pearl_destination.png"), DataNEssence.locate("ender_pearl_destination")), BlockRegistry.ENDER_PEARL_DESTINATION.get().asItem());
-        event.registerItem(AnimatedBlockItemUtil.createBasicExtensions(DataNEssence.locate("textures/block/survey_tunneler.png"), DataNEssence.locate("survey_tunneler")), BlockRegistry.SURVEY_TUNNELER.get().asItem());
-        event.registerItem(AnimatedBlockItemUtil.createBasicExtensions(DataNEssence.locate("textures/block/essence_derivation_spike.png"), DataNEssence.locate("essence_derivation_spike")), BlockRegistry.ESSENCE_DERIVATION_SPIKE.get().asItem());
-        event.registerItem(AnimatedBlockItemUtil.createBasicExtensions(DataNEssence.locate("textures/block/rf_node.png"), DataNEssence.locate("essence_point")), BlockRegistry.RF_NODE.get().asItem());
+        event.registerItem(AnimatedBlockItemUtil.createBasicExtensions(Halcyon.locate("textures/block/auto-fabricator.png"), Halcyon.locate("auto-fabricator")), BlockRegistry.AUTO_FABRICATOR.get().asItem());
+        event.registerItem(AnimatedBlockItemUtil.createBasicExtensions(Halcyon.locate("textures/block/charger.png"), Halcyon.locate("charger")), BlockRegistry.CHARGER.get().asItem());
+        event.registerItem(AnimatedBlockItemUtil.createBasicExtensions(Halcyon.locate("textures/block/entropic_processor.png"), Halcyon.locate("entropic_processor")), BlockRegistry.ENTROPIC_PROCESSOR.get().asItem());
+        event.registerItem(AnimatedBlockItemUtil.createBasicExtensions(Halcyon.locate("textures/block/essence_point.png"), Halcyon.locate("essence_point")), BlockRegistry.ESSENCE_POINT.get().asItem());
+        event.registerItem(AnimatedBlockItemUtil.createBasicExtensions(Halcyon.locate("textures/block/exotic_essence_point.png"), Halcyon.locate("essence_point")), BlockRegistry.EXOTIC_ESSENCE_POINT.get().asItem());
+        event.registerItem(AnimatedBlockItemUtil.createBasicExtensions(Halcyon.locate("textures/block/fabricator.png"), Halcyon.locate("fabricator")), BlockRegistry.FABRICATOR.get().asItem());
+        event.registerItem(AnimatedBlockItemUtil.createBasicExtensions(Halcyon.locate("textures/block/lunarium.png"), Halcyon.locate("lunarium")), BlockRegistry.LUNARIUM.get().asItem());
+        event.registerItem(AnimatedBlockItemUtil.createBasicExtensions(Halcyon.locate("textures/block/fluid_point.png"), Halcyon.locate("essence_point")), BlockRegistry.FLUID_POINT.get().asItem());
+        event.registerItem(AnimatedBlockItemUtil.createBasicExtensions(Halcyon.locate("textures/block/infuser.png"), Halcyon.locate("infuser")), BlockRegistry.INFUSER.get().asItem());
+        event.registerItem(AnimatedBlockItemUtil.createBasicExtensions(Halcyon.locate("textures/block/item_point.png"), Halcyon.locate("essence_point")), BlockRegistry.ITEM_POINT.get().asItem());
+        event.registerItem(AnimatedBlockItemUtil.createBasicExtensions(Halcyon.locate("textures/block/lunar_node.png"), Halcyon.locate("essence_point")), BlockRegistry.LUNAR_ESSENCE_POINT.get().asItem());
+        event.registerItem(AnimatedBlockItemUtil.createBasicExtensions(Halcyon.locate("textures/block/natural_essence_point.png"), Halcyon.locate("essence_point")), BlockRegistry.NATURAL_ESSENCE_POINT.get().asItem());
+        event.registerItem(AnimatedBlockItemUtil.createBasicExtensions(Halcyon.locate("textures/block/fluid_mixer.png"), Halcyon.locate("fluid_mixer")), BlockRegistry.FLUID_MIXER.get().asItem());
+        event.registerItem(AnimatedBlockItemUtil.createBasicExtensions(Halcyon.locate("textures/block/metal_shaper.png"), Halcyon.locate("metal_shaper")), BlockRegistry.METAL_SHAPER.get().asItem());
+        event.registerItem(AnimatedBlockItemUtil.createBasicExtensions(Halcyon.locate("textures/block/industrial_plant_siphon.png"), Halcyon.locate("industrial_plant_siphon")), BlockRegistry.INDUSTRIAL_PLANT_SIPHON.get().asItem());
+        event.registerItem(AnimatedBlockItemUtil.createBasicExtensions(Halcyon.locate("textures/block/chemical_node.png"), Halcyon.locate("essence_point")), BlockRegistry.CHEMICAL_NODE.get().asItem());
+        event.registerItem(AnimatedBlockItemUtil.createBasicExtensions(Halcyon.locate("textures/block/ender_pearl_capture.png"), Halcyon.locate("ender_pearl_capture")), BlockRegistry.ENDER_PEARL_CAPTURE.get().asItem());
+        event.registerItem(AnimatedBlockItemUtil.createBasicExtensions(Halcyon.locate("textures/block/ender_pearl_relay.png"), Halcyon.locate("ender_pearl_relay")), BlockRegistry.ENDER_PEARL_RELAY.get().asItem());
+        event.registerItem(AnimatedBlockItemUtil.createBasicExtensions(Halcyon.locate("textures/block/ender_pearl_destination.png"), Halcyon.locate("ender_pearl_destination")), BlockRegistry.ENDER_PEARL_DESTINATION.get().asItem());
+        event.registerItem(AnimatedBlockItemUtil.createBasicExtensions(Halcyon.locate("textures/block/survey_tunneler.png"), Halcyon.locate("survey_tunneler")), BlockRegistry.SURVEY_TUNNELER.get().asItem());
+        event.registerItem(AnimatedBlockItemUtil.createBasicExtensions(Halcyon.locate("textures/block/essence_derivation_spike.png"), Halcyon.locate("essence_derivation_spike")), BlockRegistry.ESSENCE_DERIVATION_SPIKE.get().asItem());
+        event.registerItem(AnimatedBlockItemUtil.createBasicExtensions(Halcyon.locate("textures/block/rf_node.png"), Halcyon.locate("essence_point")), BlockRegistry.RF_NODE.get().asItem());
     }
 
     @SubscribeEvent

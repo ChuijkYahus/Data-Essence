@@ -7,7 +7,7 @@ import com.cmdpro.databank.model.blockentity.DatabankBlockEntityModel;
 import com.cmdpro.databank.model.blockentity.DatabankBlockEntityRenderer;
 import com.cmdpro.databank.rendering.ColorUtil;
 import com.cmdpro.databank.rendering.RenderHandler;
-import EsetKalenko.Halcyon.DataNEssence;
+import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.api.util.client.ClientRenderingUtil;
 import EsetKalenko.Halcyon.block.transmission.EssencePoint;
 import EsetKalenko.Halcyon.api.node.block.BaseCapabilityPointBlockEntity;
@@ -159,7 +159,7 @@ public abstract class BaseCapabilityPointRenderer<T extends BaseCapabilityPointB
         }
 
         public DatabankModel getModel() {
-            return DatabankModels.models.get(DataNEssence.locate("essence_point"));
+            return DatabankModels.models.get(Halcyon.locate("essence_point"));
         }
     }
 
@@ -171,7 +171,7 @@ public abstract class BaseCapabilityPointRenderer<T extends BaseCapabilityPointB
 
         @Override
         public DatabankModel getModel() {
-            return DatabankModels.models.get(DataNEssence.locate("node_relay"));
+            return DatabankModels.models.get(Halcyon.locate("node_relay"));
         }
     }
 }
