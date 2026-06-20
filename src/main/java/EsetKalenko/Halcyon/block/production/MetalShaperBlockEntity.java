@@ -56,6 +56,8 @@ public class MetalShaperBlockEntity extends BlockEntity implements MenuProvider,
             ));
     public AnimationDefinition anim;
     public ItemStack item;
+    public ItemStack impression;
+    public ItemStack result;
     public MetalShaperRecipe recipe;
     public int workTime;
     public int maxWorkTime;
@@ -130,6 +132,8 @@ public class MetalShaperBlockEntity extends BlockEntity implements MenuProvider,
     public MetalShaperBlockEntity(BlockPos pos, BlockState state) {
         super(BlockEntityRegistry.METAL_SHAPER.get(), pos, state);
         item = ItemStack.EMPTY;
+        impression = ItemStack.EMPTY;
+        result = ItemStack.EMPTY;
     }
 
     @Override
@@ -150,6 +154,8 @@ public class MetalShaperBlockEntity extends BlockEntity implements MenuProvider,
         CompoundTag tag = pkt.getTag();
         storage.fromNbt(tag.getCompound("EssenceStorage"));
         item = ItemStack.parseOptional(pRegistries, tag.getCompound("item"));
+        impression = ItemStack.parseOptional(pRegistries, tag.getCompound("impression"));
+        result = ItemStack.parseOptional(pRegistries, tag.getCompound("result"));
         workTime = tag.getInt("workTime");
         itemHandler.deserializeNBT(pRegistries, tag.getCompound("itemHandler"));
         maxWorkTime = tag.getInt("maxWorkTime");
@@ -160,6 +166,8 @@ public class MetalShaperBlockEntity extends BlockEntity implements MenuProvider,
         CompoundTag tag = new CompoundTag();
         tag.put("EssenceStorage", storage.toNbt());
         tag.put("item", item.saveOptional(pRegistries));
+        tag.put("impression", impression.saveOptional(pRegistries));
+        tag.put("result", result.saveOptional(pRegistries));
         tag.putInt("workTime", workTime);
         tag.putInt("maxWorkTime", recipe == null ? -1 : recipe.getTime());
         tag.put("itemHandler", itemHandler.serializeNBT(pRegistries));
@@ -232,8 +240,11 @@ public class MetalShaperBlockEntity extends BlockEntity implements MenuProvider,
                 workTime = 0;
             }
             this.recipe = recipe.value();
+            this.result = recipe.value().getResultItem(level.registryAccess());
+
         } else {
             this.recipe = null;
+            this.result = ItemStack.EMPTY;
         }
     }
 
