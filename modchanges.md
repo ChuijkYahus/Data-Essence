@@ -1,3 +1,5 @@
+**This is a world-breaking update! You _MUST_ start a new world after updating!**
+
 ### Additions
 - Astronomy Towers (Esét)
 - Shards of Transformation, and the means to obtain them (Esét)
@@ -22,7 +24,7 @@
 - Modid rename - "datanessence" -> "halcyon" (Esét)
 - Changed click sounds for Shifting Hues to all be ui_click (Esét)
 - Data Bank Entries are now more vague on what they unlock (Esét)
-- Moved Mineral-Finding Rod to t3
+- Moved Mineral-Finding Rod to t3 (Esét)
 - Rethemed the Metal Shaper's work process and mold items to be more akin to 3d printing
 - Updated zh_cn translation (ChuijkYahus)
 - Shard Burners now spawn gaseous clouds when they sublimate shards (Esét)

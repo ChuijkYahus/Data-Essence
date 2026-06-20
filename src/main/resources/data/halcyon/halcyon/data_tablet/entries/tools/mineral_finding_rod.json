@@ -30,8 +30,7 @@
     "translate": "data_tablet.pages.mineral_finding_rod.flavor"
   },
   "parents": [
-    "halcyon:basics/lensing_crystals",
-    "halcyon:basics/plants",
-    "halcyon:tools/charger"
+    "halcyon:tools/charger",
+    "halcyon:machinery_transformation/lunarium"
   ]
 }

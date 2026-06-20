@@ -2,7 +2,7 @@
   "icon": {
     "id": "halcyon:mineral_finding_rod"
   },
-  "tier": 2,
+  "tier": 3,
   "name": {
     "translate": "data_tablet.databank_generic_tool"
   },
