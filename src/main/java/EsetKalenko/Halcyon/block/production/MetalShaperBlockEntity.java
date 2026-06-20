@@ -158,6 +158,7 @@ public class MetalShaperBlockEntity extends BlockEntity implements MenuProvider,
         result = ItemStack.parseOptional(pRegistries, tag.getCompound("result"));
         workTime = tag.getInt("workTime");
         itemHandler.deserializeNBT(pRegistries, tag.getCompound("itemHandler"));
+        moldHandler.deserializeNBT(pRegistries, tag.getCompound("inventoryDrive"));
         maxWorkTime = tag.getInt("maxWorkTime");
     }
 
@@ -171,6 +172,7 @@ public class MetalShaperBlockEntity extends BlockEntity implements MenuProvider,
         tag.putInt("workTime", workTime);
         tag.putInt("maxWorkTime", recipe == null ? -1 : recipe.getTime());
         tag.put("itemHandler", itemHandler.serializeNBT(pRegistries));
+        tag.put("inventoryDrive", moldHandler.serializeNBT(pRegistries));
         return tag;
     }
 
