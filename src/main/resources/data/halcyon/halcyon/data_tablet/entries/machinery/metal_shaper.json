@@ -27,9 +27,15 @@
       "recipes": [
         "halcyon:crafting/panel_mold",
         "halcyon:crafting/rod_mold"
-      ]
+      ],
+      "text": {
+        "translate": "data_tablet.pages.metal_shaper.page3.text"
+      }
     }
   ],
+  "flavor": {
+    "translate": "data_tablet.pages.metal_shaper.flavor"
+  },
   "name": {
     "translate": "data_tablet.pages.metal_shaper.name"
   },
