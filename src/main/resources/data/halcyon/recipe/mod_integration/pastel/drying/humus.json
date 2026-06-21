@@ -1,0 +1,18 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "pastel"
+    }
+  ],
+  "type": "halcyon:drying",
+  "time": 800,
+  "input": {
+    "id": "pastel:humus",
+    "amount": 100
+  },
+  "result": {
+    "id": "minecraft:dirt",
+    "count": 1
+  }
+}

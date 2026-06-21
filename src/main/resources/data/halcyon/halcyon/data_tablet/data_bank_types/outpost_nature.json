@@ -18,7 +18,8 @@
     "halcyon:tier_3/frozen_moonlight",
     "halcyon:tier_3/mineral_finding_rod",
     { "value": "halcyon:tier_1/integration_malum", "required": false },
-    { "value": "halcyon:tier_3/integration_malum_lunar", "required": false }
+    { "value": "halcyon:tier_3/integration_malum_lunar", "required": false },
+    { "value": "halcyon:tier_3/integration_pastel_fluid_drying", "required": false }
   ],
   "remove": [
   ]
