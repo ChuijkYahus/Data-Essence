@@ -133,8 +133,33 @@ public class LunariumBlockEntity extends BaseFabricatorBlockEntity implements Me
                                 Mth.nextDouble(world.random, 0.01, 0.2),
                                 Mth.nextDouble(world.random, -0.4, 0.4)
                         );
+                }
 
-                    // TODO Vfx; crafting finalization rays from ecliptrum capstones to machine
+                // Vfx; crafting finalization rays from ecliptrum capstones to machine
+                if ( lunarium.time >= lunarium.maxTime - 3 ) {
+                    var rayPart = new CircleParticleOptions()
+                            .setColor(new Color(0xFFE3AA))
+                            .setAdditive(true)
+                            .setFriction(0f)
+                            .setGravity(0f);
+
+                    var center = pos.getCenter().subtract(0, 0.5, 0);
+
+                    for (int ray = 0; ray < 4; ray++) {
+                        var origin = center.add(
+                                vfxWispOffsets[ray].getX(),
+                                vfxWispOffsets[ray].getY(),
+                                vfxWispOffsets[ray].getZ()
+                        );
+                        var direction = center.subtract(origin).normalize();
+
+                        for ( int segment = 0; segment < 60; segment++ ) {
+                            direction = direction.add( center.subtract(origin).normalize().multiply(0.1, 0.1, 0.1) );
+                            var position = origin.add(direction);
+
+                            world.addParticle(rayPart, position.x, position.y, position.z, 0, 0, 0);
+                        }
+                    }
                 }
 
                 // Song
