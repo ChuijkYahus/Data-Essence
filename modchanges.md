@@ -17,6 +17,7 @@
 - Some more Pastel compat recipes (Esét)
 - Some Malum compat recipes (Esét)
 - Added energy value tooltip to Shard Burner gui (Esét)
+- Added drying recipe for milk into slime (Esét)
 
 ### Removals
 - Config value for Tidal Energy Battery capacities (Esét)
