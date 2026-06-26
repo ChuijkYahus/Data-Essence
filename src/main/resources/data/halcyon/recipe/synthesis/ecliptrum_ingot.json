@@ -8,5 +8,6 @@
   "time": 200,
   "result": { "id": "halcyon:ecliptrum_ingot", "count": 2 },
   "entry": "halcyon:machinery_transformation/ecliptrum",
-  "completion_stage": 0
+  "completion_stage": 0,
+  "reveal_in_emi_when_incomplete": false
 }

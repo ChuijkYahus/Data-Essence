@@ -18,13 +18,15 @@ public class InfusionRecipeBuilder extends HalcyonRecipeBuilder {
     private final ResourceLocation entry;
     private final int completionStage;
     private final Map<ResourceLocation, Float> essenceCost;
+    private final boolean revealInEMIWhenIncomplete;
 
-    public InfusionRecipeBuilder(ItemStack result, Ingredient input, ResourceLocation entry, int completionStage, Map<ResourceLocation, Float> essenceCost) {
+    public InfusionRecipeBuilder(ItemStack result, Ingredient input, ResourceLocation entry, int completionStage, Map<ResourceLocation, Float> essenceCost, boolean revealInEMIWhenIncomplete) {
         super(result);
         this.input = input;
         this.entry = entry;
         this.completionStage = completionStage;
         this.essenceCost = essenceCost;
+        this.revealInEMIWhenIncomplete = revealInEMIWhenIncomplete;
     }
 
     @Override
@@ -35,7 +37,7 @@ public class InfusionRecipeBuilder extends HalcyonRecipeBuilder {
                 .rewards(AdvancementRewards.Builder.recipe(id))
                 .requirements(AdvancementRequirements.Strategy.OR);
         this.criteria.forEach(advancement::addCriterion);
-        InfusionRecipe recipe = new InfusionRecipe(this.result, this.input, this.entry, this.completionStage, this.essenceCost);
+        InfusionRecipe recipe = new InfusionRecipe(this.result, this.input, this.entry, this.completionStage, this.essenceCost, this.revealInEMIWhenIncomplete);
         output.accept(id, recipe, advancement.build(id.withPrefix("recipes/infusion/")));
     }
 }

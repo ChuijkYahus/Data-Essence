@@ -26,9 +26,10 @@ public class FluidMixingRecipe implements Recipe<RecipeInputWithFluid>, IHasRequ
     private final float essenceCost;
     private final ResourceLocation entry;
     private final int completionStage;
+    private final boolean revealInEMIWhenIncomplete;
 
     public FluidMixingRecipe(FluidStack output,
-                             FluidStack input, Optional<FluidStack> input2, Optional<Ingredient> input3, int time, float essenceCost, ResourceLocation entry, int completionStage) {
+                             FluidStack input, Optional<FluidStack> input2, Optional<Ingredient> input3, int time, float essenceCost, ResourceLocation entry, int completionStage, boolean revealInEMIWhenIncomplete) {
         this.output = output;
         this.input = input;
         this.input2 = input2;
@@ -37,30 +38,42 @@ public class FluidMixingRecipe implements Recipe<RecipeInputWithFluid>, IHasRequ
         this.essenceCost = essenceCost;
         this.entry = entry;
         this.completionStage = completionStage;
+        this.revealInEMIWhenIncomplete = revealInEMIWhenIncomplete;
     }
+
     @Override
     public int getCompletionStage() {
         return completionStage;
     }
 
+    @Override
+    public boolean revealInEMIWhenIncomplete() {
+        return revealInEMIWhenIncomplete;
+    }
+
     public float getEssenceCost() {
         return essenceCost;
     }
+
     public int getTime() {
         return time;
     }
+
     public FluidStack getInput1() {
         return input;
     }
+
     public FluidStack getInput2() {
         return input2.orElse(FluidStack.EMPTY);
     }
+
     @Override
     public NonNullList<Ingredient> getIngredients() {
         NonNullList<Ingredient> list = NonNullList.create();
         input3.ifPresent(list::add);
         return list;
     }
+
     @Override
     public boolean matches(RecipeInputWithFluid pContainer, Level pLevel) {
         if (FluidStack.isSameFluidSameComponents(input, pContainer.getFluid(0)) && (input2.isEmpty() || FluidStack.isSameFluidSameComponents(input2.get(), pContainer.getFluid(1))) && (input3.isEmpty() || input3.get().test(pContainer.getItem(0)))) {
@@ -73,9 +86,11 @@ public class FluidMixingRecipe implements Recipe<RecipeInputWithFluid>, IHasRequ
     public ItemStack assemble(RecipeInputWithFluid pContainer, HolderLookup.Provider pRegistryAccess) {
         return ItemStack.EMPTY;
     }
+
     public FluidStack getOutput() {
         return output;
     }
+
     @Override
     public boolean canCraftInDimensions(int pWidth, int pHeight) {
         return true;
@@ -116,7 +131,8 @@ public class FluidMixingRecipe implements Recipe<RecipeInputWithFluid>, IHasRequ
                 Codec.INT.fieldOf("time").forGetter((r) -> r.time),
                 Codec.FLOAT.optionalFieldOf("essenceCost", 0f).forGetter(r -> r.essenceCost),
                 ResourceLocation.CODEC.fieldOf("entry").forGetter((r) -> r.entry),
-                Codec.INT.optionalFieldOf("completion_stage", -1).forGetter((r) -> r.completionStage)
+                Codec.INT.optionalFieldOf("completion_stage", -1).forGetter((r) -> r.completionStage),
+                Codec.BOOL.optionalFieldOf("reveal_in_emi_when_incomplete", true).forGetter((r -> r.revealInEMIWhenIncomplete))
         ).apply(instance, FluidMixingRecipe::new));
 
         public static final StreamCodec<RegistryFriendlyByteBuf, FluidMixingRecipe> STREAM_CODEC = StreamCodec.of(
@@ -131,6 +147,7 @@ public class FluidMixingRecipe implements Recipe<RecipeInputWithFluid>, IHasRequ
                     buf.writeFloat(obj.essenceCost);
                     buf.writeResourceLocation(obj.entry);
                     buf.writeInt(obj.completionStage);
+                    buf.writeBoolean(obj.revealInEMIWhenIncomplete);
                 },
                 (buf) -> {
                     FluidStack output = FluidStack.STREAM_CODEC.decode(buf);
@@ -149,7 +166,8 @@ public class FluidMixingRecipe implements Recipe<RecipeInputWithFluid>, IHasRequ
                     float essenceCost = buf.readFloat();
                     ResourceLocation entry = buf.readResourceLocation();
                     int completionStage = buf.readInt();
-                    return new FluidMixingRecipe(output, input, input2, input3, time, essenceCost, entry, completionStage);
+                    boolean revealInEMIWhenIncomplete = buf.readBoolean();
+                    return new FluidMixingRecipe(output, input, input2, input3, time, essenceCost, entry, completionStage, revealInEMIWhenIncomplete);
                 }
         );
 

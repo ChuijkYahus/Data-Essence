@@ -23,26 +23,30 @@ public class InfusionRecipe implements IHasEssenceCost, IHasRequiredKnowledge, R
     private final ResourceLocation entry;
     private final int completionStage;
     private final Map<ResourceLocation, Float> essenceCost;
+    private final boolean revealInEMIWhenIncomplete;
 
     public InfusionRecipe(ItemStack output,
-                          Ingredient input, ResourceLocation entry, int completionStage, Map<ResourceLocation, Float> essenceCost) {
+                          Ingredient input, ResourceLocation entry, int completionStage, Map<ResourceLocation, Float> essenceCost, boolean revealInEMIWhenIncomplete) {
         this.output = output;
         this.input = input;
         this.entry = entry;
         this.completionStage = completionStage;
         this.essenceCost = essenceCost;
+        this.revealInEMIWhenIncomplete = revealInEMIWhenIncomplete;
     }
 
     @Override
     public Map<ResourceLocation, Float> getEssenceCost() {
         return essenceCost;
     }
+
     @Override
     public NonNullList<Ingredient> getIngredients() {
         NonNullList<Ingredient> list = NonNullList.create();
         list.add(input);
         return list;
     }
+
     @Override
     public boolean matches(RecipeInput pContainer, Level pLevel) {
         return input.test(pContainer.getItem(0));
@@ -88,13 +92,19 @@ public class InfusionRecipe implements IHasEssenceCost, IHasRequiredKnowledge, R
         return Halcyon.locate("machinery/infuser");
     }
 
+    @Override
+    public boolean revealInEMIWhenIncomplete() {
+        return revealInEMIWhenIncomplete;
+    }
+
     public static class Serializer implements RecipeSerializer<InfusionRecipe> {
         public static final MapCodec<InfusionRecipe> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
                 ItemStack.CODEC.fieldOf("result").forGetter(r -> r.output),
                 Ingredient.CODEC.fieldOf("input").forGetter(r -> r.input),
                 ResourceLocation.CODEC.fieldOf("entry").forGetter((r) -> r.entry),
                 Codec.INT.optionalFieldOf("completion_stage", -1).forGetter((r) -> r.completionStage),
-                Codec.unboundedMap(ResourceLocation.CODEC, Codec.FLOAT).fieldOf("essenceCost").forGetter(r -> r.essenceCost)
+                Codec.unboundedMap(ResourceLocation.CODEC, Codec.FLOAT).fieldOf("essenceCost").forGetter(r -> r.essenceCost),
+                Codec.BOOL.optionalFieldOf("reveal_in_emi_when_incomplete", true).forGetter((r -> r.revealInEMIWhenIncomplete))
         ).apply(instance, InfusionRecipe::new));
 
         public static final StreamCodec<RegistryFriendlyByteBuf, InfusionRecipe> STREAM_CODEC = StreamCodec.of(
@@ -104,6 +114,7 @@ public class InfusionRecipe implements IHasEssenceCost, IHasRequiredKnowledge, R
                     buf.writeResourceLocation(obj.entry);
                     buf.writeInt(obj.completionStage);
                     buf.writeMap(obj.essenceCost, FriendlyByteBuf::writeResourceLocation, FriendlyByteBuf::writeFloat);
+                    buf.writeBoolean(obj.revealInEMIWhenIncomplete);
                 },
                 (buf) -> {
                     ItemStack output = ItemStack.STREAM_CODEC.decode(buf);
@@ -111,7 +122,8 @@ public class InfusionRecipe implements IHasEssenceCost, IHasRequiredKnowledge, R
                     ResourceLocation entry = buf.readResourceLocation();
                     int completionStage = buf.readInt();
                     Map<ResourceLocation, Float> essenceCost = buf.readMap(FriendlyByteBuf::readResourceLocation, FriendlyByteBuf::readFloat);
-                    return new InfusionRecipe(output, input, entry, completionStage, essenceCost);
+                    boolean revealInEMIWhenIncomplete = buf.readBoolean();
+                    return new InfusionRecipe(output, input, entry, completionStage, essenceCost, revealInEMIWhenIncomplete);
                 }
         );
 

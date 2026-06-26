@@ -31,6 +31,8 @@
 - Shard Burners now spawn gaseous clouds when they sublimate shards (Esét)
 - Shard Burners' sublimatable items are now data driven (Esét)
 - Buffed Tethergrass spread rates (Esét)
+- Recipes now hide in EMI if you do not have the data for their machine, like in the Data Tablet (Esét)
+- Recipes are able to be hidden in EMI if their associated data entry is incomplete no matter what (Esét) 
 
 ### Fixes
 - Improved Node performance by switching from JGraphT to JGAlgo (Vonr)

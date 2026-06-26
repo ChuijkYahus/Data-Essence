@@ -2,6 +2,7 @@ package EsetKalenko.Halcyon.integration.emi.recipes;
 
 import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.integration.emi.DataNEssenceEMIPlugin;
+import EsetKalenko.Halcyon.integration.emi.DataNEssenceEMIRecipe;
 import EsetKalenko.Halcyon.recipe.MeltingRecipe;
 import dev.emi.emi.api.recipe.EmiRecipe;
 import dev.emi.emi.api.recipe.EmiRecipeCategory;
@@ -16,13 +17,14 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Arrays;
 import java.util.List;
 
-public class EMIMeltingRecipe implements EmiRecipe {
+public class EMIMeltingRecipe extends DataNEssenceEMIRecipe {
     private final ResourceLocation id;
     private final List<EmiIngredient> input;
     private final List<EmiStack> output;
     private final int time;
 
     public EMIMeltingRecipe(ResourceLocation id, MeltingRecipe recipe) {
+        super(DataNEssenceEMIPlugin.MELTING, id, null, 123, 60);
         this.id = id;
         this.input = recipe.getIngredients().stream().map(s -> EmiIngredient.of(Arrays.stream(s.getItems()).map(EmiStack::of).toList())).toList();
         this.output = List.of(EmiStack.of(recipe.getOutput().getFluid(), recipe.getOutput().getAmount()));
@@ -60,7 +62,7 @@ public class EMIMeltingRecipe implements EmiRecipe {
     }
 
     @Override
-    public void addWidgets(WidgetHolder widgetHolder) {
+    public void addUnlockedWidgets(WidgetHolder widgetHolder) {
         ResourceLocation background = Halcyon.locate("textures/gui/data_tablet_crafting2.png");
 
         widgetHolder.addTexture(background, 0, 0, getDisplayWidth(), getDisplayHeight(), 10, 196);

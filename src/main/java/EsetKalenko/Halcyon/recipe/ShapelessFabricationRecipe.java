@@ -27,8 +27,9 @@ public class ShapelessFabricationRecipe implements IFabricationRecipe {
     final NonNullList<Ingredient> ingredients;
     private final boolean isSimple;
     final int time;
+    private final boolean revealInEMIWhenIncomplete;
 
-    public ShapelessFabricationRecipe(ItemStack result, NonNullList<Ingredient> ingredients, ResourceLocation entry, int completionStage, Map<ResourceLocation, Float> essenceCost, int time) {
+    public ShapelessFabricationRecipe(ItemStack result, NonNullList<Ingredient> ingredients, ResourceLocation entry, int completionStage, Map<ResourceLocation, Float> essenceCost, int time, boolean revealInEMIWhenIncomplete) {
         this.entry = entry;
         this.completionStage = completionStage;
         this.essenceCost = essenceCost;
@@ -36,6 +37,7 @@ public class ShapelessFabricationRecipe implements IFabricationRecipe {
         this.ingredients = ingredients;
         this.isSimple = ingredients.stream().allMatch(Ingredient::isSimple);
         this.time = time;
+        this.revealInEMIWhenIncomplete = revealInEMIWhenIncomplete;
     }
 
     @Override
@@ -104,6 +106,11 @@ public class ShapelessFabricationRecipe implements IFabricationRecipe {
     }
 
     @Override
+    public boolean revealInEMIWhenIncomplete() {
+        return revealInEMIWhenIncomplete;
+    }
+
+    @Override
     public Map<ResourceLocation, Float> getEssenceCost() {
         return essenceCost;
     }
@@ -131,7 +138,8 @@ public class ShapelessFabricationRecipe implements IFabricationRecipe {
                 ResourceLocation.CODEC.fieldOf("entry").forGetter((r) -> r.entry),
                 Codec.INT.optionalFieldOf("completion_stage", -1).forGetter((r) -> r.completionStage),
                 Codec.unboundedMap(ResourceLocation.CODEC, Codec.FLOAT).fieldOf("essenceCost").forGetter(r -> r.essenceCost),
-                Codec.INT.optionalFieldOf("time", 20).forGetter((r) -> r.time)
+                Codec.INT.optionalFieldOf("time", 20).forGetter((r) -> r.time),
+                Codec.BOOL.optionalFieldOf("reveal_in_emi_when_incomplete", true).forGetter((r -> r.revealInEMIWhenIncomplete))
         ).apply(instance, ShapelessFabricationRecipe::new));
 
         public static final StreamCodec<RegistryFriendlyByteBuf, ShapelessFabricationRecipe> STREAM_CODEC = StreamCodec.of(
@@ -147,6 +155,7 @@ public class ShapelessFabricationRecipe implements IFabricationRecipe {
                     buf.writeInt(obj.completionStage);
                     buf.writeMap(obj.essenceCost, FriendlyByteBuf::writeResourceLocation, FriendlyByteBuf::writeFloat);
                     buf.writeInt(obj.time);
+                    buf.writeBoolean(obj.revealInEMIWhenIncomplete);
                 },
                 (buf) -> {
                     int i = buf.readVarInt();
@@ -157,7 +166,8 @@ public class ShapelessFabricationRecipe implements IFabricationRecipe {
                     int completionStage = buf.readInt();
                     Map<ResourceLocation, Float> essenceCost = buf.readMap(FriendlyByteBuf::readResourceLocation, FriendlyByteBuf::readFloat);
                     int time = buf.readInt();
-                    return new ShapelessFabricationRecipe(itemstack, nonnulllist, entry, completionStage, essenceCost, time);
+                    boolean revealInEMIWhenIncomplete = buf.readBoolean();
+                    return new ShapelessFabricationRecipe(itemstack, nonnulllist, entry, completionStage, essenceCost, time, revealInEMIWhenIncomplete);
                 }
         );
 
