@@ -1,11 +1,11 @@
 package EsetKalenko.Halcyon.block.auxiliary;
 
+import EsetKalenko.Halcyon.datamaps.HalcyonDatamaps;
 import com.cmdpro.databank.rendering.ColorUtil;
 import EsetKalenko.Halcyon.api.DataNEssenceRegistries;
 import EsetKalenko.Halcyon.api.essence.EssenceBlockEntity;
 import EsetKalenko.Halcyon.api.essence.EssenceStorage;
 import EsetKalenko.Halcyon.api.essence.EssenceType;
-import EsetKalenko.Halcyon.api.item.ShardSublimatableItem;
 import EsetKalenko.Halcyon.registry.BlockEntityRegistry;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -17,6 +17,7 @@ import net.minecraft.nbt.Tag;
 import net.minecraft.network.Connection;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -32,7 +33,7 @@ import java.util.stream.Collectors;
 
 public class EssenceReaderBlockEntity extends BlockEntity {
     public Set<EssenceType> selectedEssences;
-    public ShardSublimatableItem selectedShard; // for purposes of the renderer, because I have no idea how to do this otherwise ~Eset
+    public Item selectedShard; // for purposes of the renderer, because I have no idea how to do this otherwise ~Eset
     private int signal;
 
     public EssenceReaderBlockEntity(BlockPos pPos, BlockState pBlockState) {
@@ -46,9 +47,14 @@ public class EssenceReaderBlockEntity extends BlockEntity {
             updateBlock();
             return true;
         } else {
-            if (stack.getItem() instanceof ShardSublimatableItem shard) {
-                selectedEssences = shard.getContainedEnergy().keySet().stream().map(Supplier::get).collect(Collectors.toSet());
-                selectedShard = shard;
+            if (isItemValid(stack)) {
+                var sublimationData = stack.getItemHolder().getData(HalcyonDatamaps.SHARD_SUBLIMATION);
+
+                selectedEssences = sublimationData.energyContained()
+                        .keySet().stream()
+                        .map(DataNEssenceRegistries.ESSENCE_TYPE_REGISTRY::get)
+                        .collect(Collectors.toSet());
+                selectedShard = stack.getItem();
                 updateBlock();
                 return true;
             }
@@ -57,7 +63,7 @@ public class EssenceReaderBlockEntity extends BlockEntity {
     }
 
     public boolean isItemValid(ItemStack stack) {
-        if (stack.getItem() instanceof ShardSublimatableItem shard) {
+        if (stack.getItemHolder().getData(HalcyonDatamaps.SHARD_SUBLIMATION) != null) {
             return true;
         }
         return false;

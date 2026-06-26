@@ -1,13 +1,13 @@
 package EsetKalenko.Halcyon.block.generation;
 
+import EsetKalenko.Halcyon.api.DataNEssenceRegistries;
 import EsetKalenko.Halcyon.api.block.Machine;
 import EsetKalenko.Halcyon.api.essence.EssenceBlockEntity;
 import EsetKalenko.Halcyon.api.essence.EssenceStorage;
-import EsetKalenko.Halcyon.api.essence.EssenceType;
 import EsetKalenko.Halcyon.api.essence.container.MultiEssenceContainer;
-import EsetKalenko.Halcyon.api.item.ShardSublimatable;
 import EsetKalenko.Halcyon.api.util.BufferUtil;
 import EsetKalenko.Halcyon.client.particle.CircleShadeParticleOptions;
+import EsetKalenko.Halcyon.datamaps.HalcyonDatamaps;
 import EsetKalenko.Halcyon.registry.BlockEntityRegistry;
 import EsetKalenko.Halcyon.registry.EssenceTypeRegistry;
 import EsetKalenko.Halcyon.screen.EssenceBurnerMenu;
@@ -18,6 +18,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.Connection;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
 import net.minecraft.world.*;
 import net.minecraft.world.entity.item.ItemEntity;
@@ -42,6 +43,11 @@ import java.util.function.Supplier;
 
 public class EssenceBurnerBlockEntity extends BlockEntity implements MenuProvider, EssenceBlockEntity, Machine {
     public MultiEssenceContainer storage = new MultiEssenceContainer(List.of(EssenceTypeRegistry.ESSENCE.get(), EssenceTypeRegistry.LUNAR_ESSENCE.get(), EssenceTypeRegistry.NATURAL_ESSENCE.get(), EssenceTypeRegistry.EXOTIC_ESSENCE.get()), 1000);
+    public boolean lit;
+    public float burnTime;
+    public float maxBurnTime;
+    public float essenceBurnCooldown;
+
     @Override
     public EssenceStorage getStorage() {
         return storage;
@@ -56,7 +62,7 @@ public class EssenceBurnerBlockEntity extends BlockEntity implements MenuProvide
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
             if (slot == 0) {
-                return stack.getItem() instanceof ShardSublimatable;
+                return stack.getItemHolder().getData(HalcyonDatamaps.SHARD_SUBLIMATION) != null;
             }
             if (slot == 1) {
                 return stack.getBurnTime(RecipeType.SMELTING) > 0;
@@ -64,9 +70,6 @@ public class EssenceBurnerBlockEntity extends BlockEntity implements MenuProvide
             return super.isItemValid(slot, stack);
         }
     };
-    public float burnTime;
-    public float maxBurnTime;
-    public float essenceBurnCooldown;
 
     public void drops() {
         SimpleContainer inventory = getInv();
@@ -79,10 +82,13 @@ public class EssenceBurnerBlockEntity extends BlockEntity implements MenuProvide
         super(BlockEntityRegistry.ESSENCE_BURNER.get(), pos, state);
         maxBurnTime = 1;
     }
+
     public IItemHandler getItemHandler() {
         return itemHandler;
     }
+
     private final CombinedInvWrapper combinedInvWrapper = new CombinedInvWrapper(itemHandler);
+
     public CombinedInvWrapper getCombinedInvWrapper() {
         return combinedInvWrapper;
     }
@@ -120,6 +126,7 @@ public class EssenceBurnerBlockEntity extends BlockEntity implements MenuProvide
         tag.putFloat("essenceBurnCooldown", essenceBurnCooldown);
         super.saveAdditional(tag, pRegistries);
     }
+
     @Override
     public void loadAdditional(CompoundTag nbt, HolderLookup.Provider pRegistries) {
         super.loadAdditional(nbt, pRegistries);
@@ -129,6 +136,7 @@ public class EssenceBurnerBlockEntity extends BlockEntity implements MenuProvide
         burnTime = nbt.getFloat("burnTime");
         essenceBurnCooldown = nbt.getFloat("essenceBurnCooldown");
     }
+
     public SimpleContainer getInv() {
         SimpleContainer inventory = new SimpleContainer(itemHandler.getSlots());
         for (int i = 0; i < itemHandler.getSlots(); i++) {
@@ -136,72 +144,85 @@ public class EssenceBurnerBlockEntity extends BlockEntity implements MenuProvide
         }
         return inventory;
     }
-    public boolean lit;
+
     public static void tick(Level world, BlockPos pos, BlockState pState, EssenceBurnerBlockEntity burner) {
         if (!world.isClientSide()) {
             BufferUtil.getItemsFromBuffersBelow(burner, burner.itemHandler);
             burner.lit = false;
-            if (burner.itemHandler.getStackInSlot(0).getItem() instanceof ShardSublimatable sublimatableItem) {
-                boolean hasSpaceToGenerate = true;
-                for (Map.Entry<Supplier<EssenceType>, Float> i : sublimatableItem.getContainedEnergy().entrySet()) {
-                    if (burner.storage.getEssence(i.getKey().get())+i.getValue() > burner.storage.getMaxEssence()) {
-                        hasSpaceToGenerate = false;
-                        break;
+
+            if (burner.itemHandler.getStackInSlot(0).getItemHolder().getData(HalcyonDatamaps.SHARD_SUBLIMATION) == null)
+                return;
+
+            var sublimationData = burner.itemHandler.getStackInSlot(0).getItemHolder().getData(HalcyonDatamaps.SHARD_SUBLIMATION);
+
+            boolean hasSpaceToGenerate = true;
+            for (Map.Entry<ResourceLocation, Float> energy : sublimationData.energyContained().entrySet()) {
+                if ( burner.storage.getEssence(DataNEssenceRegistries.ESSENCE_TYPE_REGISTRY.get(energy.getKey()))
+                        + energy.getValue() > burner.storage.getMaxEssence()) {
+                    hasSpaceToGenerate = false;
+                    break;
+                }
+            }
+
+            if (burner.burnTime <= 0) {
+                burner.essenceBurnCooldown = 0;
+                if (hasSpaceToGenerate) {
+                    var fuel = burner.itemHandler.getStackInSlot(1);
+
+                    if (fuel.getBurnTime(RecipeType.SMELTING) > 0) {
+                        burner.maxBurnTime = fuel.getBurnTime(RecipeType.SMELTING);
+                        burner.itemHandler.extractItem(1, 1, false);
+
+                        if ( fuel.hasCraftingRemainingItem() ) {
+                            var remainder = fuel.getCraftingRemainingItem();
+                            world.addFreshEntity(new ItemEntity(world, pos.getCenter().x, pos.getCenter().y+0.6, pos.getCenter().z, remainder));
+                        }
+
+                        burner.burnTime = burner.maxBurnTime;
+                        burner.lit = true;
                     }
                 }
-                if (burner.burnTime <= 0) {
-                    burner.essenceBurnCooldown = 0;
+            } else {
+                burner.lit = true;
+                burner.essenceBurnCooldown--;
+                burner.burnTime--;
+                if (burner.essenceBurnCooldown <= 0) {
                     if (hasSpaceToGenerate) {
-                        var fuel = burner.itemHandler.getStackInSlot(1);
-
-                        if (fuel.getBurnTime(RecipeType.SMELTING) > 0) {
-                            burner.maxBurnTime = fuel.getBurnTime(RecipeType.SMELTING);
-                            burner.itemHandler.extractItem(1, 1, false);
-
-                            if ( fuel.hasCraftingRemainingItem() ) {
-                                var remainder = fuel.getCraftingRemainingItem();
-                                world.addFreshEntity(new ItemEntity(world, pos.getCenter().x, pos.getCenter().y+0.6, pos.getCenter().z, remainder));
-                            }
-
-                            burner.burnTime = burner.maxBurnTime;
-                            burner.lit = true;
+                        burner.itemHandler.extractItem(0, 1, false);
+                        for (Map.Entry<ResourceLocation, Float> energy : sublimationData.energyContained().entrySet()) {
+                            burner.storage.addEssence(DataNEssenceRegistries.ESSENCE_TYPE_REGISTRY.get(energy.getKey()),
+                                    energy.getValue());
                         }
-                    }
-                } else {
-                    burner.lit = true;
-                    burner.essenceBurnCooldown--;
-                    burner.burnTime--;
-                    if (burner.essenceBurnCooldown <= 0) {
-                        if (hasSpaceToGenerate) {
-                            burner.itemHandler.extractItem(0, 1, false);
-                            for (Map.Entry<Supplier<EssenceType>, Float> i : sublimatableItem.getContainedEnergy().entrySet()) {
-                                burner.storage.addEssence(i.getKey().get(), i.getValue());
-                            }
-                            burner.essenceBurnCooldown = 50;
-                        }
+                        burner.essenceBurnCooldown = 50;
                     }
                 }
             }
+
             if (burner.lit != pState.getValue(EssenceBurner.LIT)) {
                 BlockState state = pState.setValue(EssenceBurner.LIT, burner.lit);
                 burner.level.setBlock(pos, state, 3);
             }
+
             burner.updateBlock();
         } else {
 
             if (burner.essenceBurnCooldown <= 1
                     && pState.getValue(EssenceBurner.LIT)
-                    && burner.itemHandler.getStackInSlot(0).getItem() instanceof ShardSublimatable sublimatableItem ) {
+                    && burner.itemHandler.getStackInSlot(0).getItemHolder().getData(HalcyonDatamaps.SHARD_SUBLIMATION) != null) {
 
-                for (Map.Entry<Supplier<EssenceType>, Float> tide : sublimatableItem.getContainedEnergy().entrySet()) {
+                var sublimationData = burner.itemHandler.getStackInSlot(0).getItemHolder().getData(HalcyonDatamaps.SHARD_SUBLIMATION);
+                for (Map.Entry<ResourceLocation, Float> tide : sublimationData.energyContained().entrySet()) {
+                    var tideKey = DataNEssenceRegistries.ESSENCE_TYPE_REGISTRY.get(tide.getKey());
+                    if (tideKey == null)
+                        continue;
 
-                    if (burner.storage.getEssence(tide.getKey().get())+tide.getValue() > burner.storage.getMaxEssence()) {
+                    if (burner.storage.getEssence(tideKey) + tide.getValue() > burner.storage.getMaxEssence()) {
                         continue;
                     }
 
                     // sublimation particles
                     var cloud = new CircleShadeParticleOptions()
-                            .setColor(new Color(tide.getKey().get().color))
+                            .setColor(new Color(tideKey.color))
                             .setAdditive(true)
                             .setFriction(0f)
                             .setGravity(0f)

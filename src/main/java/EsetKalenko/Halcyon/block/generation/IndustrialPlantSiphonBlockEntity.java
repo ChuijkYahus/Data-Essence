@@ -1,5 +1,6 @@
 package EsetKalenko.Halcyon.block.generation;
 
+import EsetKalenko.Halcyon.datamaps.HalcyonDatamaps;
 import com.cmdpro.databank.model.animation.DatabankAnimationReference;
 import com.cmdpro.databank.model.animation.DatabankAnimationState;
 import EsetKalenko.Halcyon.api.block.Machine;
@@ -8,7 +9,6 @@ import EsetKalenko.Halcyon.api.essence.EssenceStorage;
 import EsetKalenko.Halcyon.api.essence.container.SingleEssenceContainer;
 import EsetKalenko.Halcyon.api.util.BufferUtil;
 import EsetKalenko.Halcyon.client.FactorySong;
-import EsetKalenko.Halcyon.datamaps.DataNEssenceDatamaps;
 import EsetKalenko.Halcyon.datamaps.PlantSiphonEssenceMap;
 import EsetKalenko.Halcyon.registry.BlockEntityRegistry;
 import EsetKalenko.Halcyon.registry.EssenceTypeRegistry;
@@ -68,7 +68,7 @@ public class IndustrialPlantSiphonBlockEntity extends BlockEntity implements Men
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
             if (slot == 0) {
-                return stack.getItemHolder().getData(DataNEssenceDatamaps.PLANT_SIPHON_ESSENCE) != null;
+                return stack.getItemHolder().getData(HalcyonDatamaps.PLANT_SIPHON_ESSENCE) != null;
             }
             return super.isItemValid(slot, stack);
         }
@@ -165,7 +165,7 @@ public class IndustrialPlantSiphonBlockEntity extends BlockEntity implements Men
     }
 
     public float getGenerationTicks(IndustrialPlantSiphonBlockEntity tile) {
-        PlantSiphonEssenceMap map = tile.itemHandler.getStackInSlot(0).getItemHolder().getData(DataNEssenceDatamaps.PLANT_SIPHON_ESSENCE);
+        PlantSiphonEssenceMap map = tile.itemHandler.getStackInSlot(0).getItemHolder().getData(HalcyonDatamaps.PLANT_SIPHON_ESSENCE);
         if (map != null) {
             return map.ticks();
         }
@@ -173,7 +173,7 @@ public class IndustrialPlantSiphonBlockEntity extends BlockEntity implements Men
     }
 
     public float getEssenceProduced(IndustrialPlantSiphonBlockEntity tile) {
-        PlantSiphonEssenceMap map = tile.itemHandler.getStackInSlot(0).getItemHolder().getData(DataNEssenceDatamaps.PLANT_SIPHON_ESSENCE);
+        PlantSiphonEssenceMap map = tile.itemHandler.getStackInSlot(0).getItemHolder().getData(HalcyonDatamaps.PLANT_SIPHON_ESSENCE);
         if (map != null) {
             return map.amountPerTick();
         }
@@ -181,7 +181,7 @@ public class IndustrialPlantSiphonBlockEntity extends BlockEntity implements Men
     }
 
     public float getTickTime(IndustrialPlantSiphonBlockEntity tile) {
-        PlantSiphonEssenceMap map = tile.itemHandler.getStackInSlot(0).getItemHolder().getData(DataNEssenceDatamaps.PLANT_SIPHON_ESSENCE);
+        PlantSiphonEssenceMap map = tile.itemHandler.getStackInSlot(0).getItemHolder().getData(HalcyonDatamaps.PLANT_SIPHON_ESSENCE);
         if (map != null) {
             return map.ticks();
         }

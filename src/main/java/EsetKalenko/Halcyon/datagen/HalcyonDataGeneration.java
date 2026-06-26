@@ -5,7 +5,7 @@ import EsetKalenko.Halcyon.datagen.loot.HalcyonLootTables;
 import EsetKalenko.Halcyon.datagen.model.HalcyonBlockModels;
 import EsetKalenko.Halcyon.datagen.model.HalcyonItemModels;
 import EsetKalenko.Halcyon.datagen.recipe.HalcyonRecipeProvider;
-import EsetKalenko.Halcyon.datagen.datamap.PlantSiphonEssenceProvider;
+import EsetKalenko.Halcyon.datagen.datamap.DataMapProvider;
 import EsetKalenko.Halcyon.datagen.tag.HalcyonBlockTags;
 import EsetKalenko.Halcyon.datagen.tag.HalcyonEntityTags;
 import EsetKalenko.Halcyon.datagen.tag.HalcyonItemTags;
@@ -28,16 +28,20 @@ public class HalcyonDataGeneration {
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
+        // Loot
         generator.addProvider(event.includeServer(), HalcyonLootTables.create(packOutput, event.getLookupProvider()));
 
+        // Models
         generator.addProvider(event.includeClient(), new HalcyonBlockModels(packOutput, existingFileHelper));
         generator.addProvider(event.includeClient(), new HalcyonItemModels(packOutput, existingFileHelper));
 
-        generator.addProvider(event.includeServer(), new PlantSiphonEssenceProvider(packOutput, lookupProvider));
+        // Data Maps and Tags
+        generator.addProvider(event.includeServer(), new DataMapProvider(packOutput, lookupProvider));
 
         HalcyonBlockTags blockTagGenerator = generator.addProvider(event.includeServer(),
                 new HalcyonBlockTags(packOutput, lookupProvider, existingFileHelper));
-        generator.addProvider(event.includeServer(), new HalcyonItemTags(packOutput, lookupProvider, blockTagGenerator.contentsGetter(), existingFileHelper));
+        generator.addProvider(event.includeServer(), new HalcyonItemTags(packOutput, lookupProvider,
+                blockTagGenerator.contentsGetter(), existingFileHelper));
         generator.addProvider(event.includeServer(), new HalcyonEntityTags(packOutput, lookupProvider, existingFileHelper));
 
         // Recipes

@@ -3,7 +3,6 @@ package EsetKalenko.Halcyon.registry;
 import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.api.block.SpreadingPlant;
 
-import EsetKalenko.Halcyon.api.item.ShardSublimatableBlockItem;
 import EsetKalenko.Halcyon.block.DirectionalPillarBlock;
 import EsetKalenko.Halcyon.block.auxiliary.*;
 import EsetKalenko.Halcyon.block.decoration.*;
@@ -529,17 +528,15 @@ public class BlockRegistry {
                     .mapColor(MapColor.COLOR_MAGENTA)
                     .lightLevel((state) -> 7)
                     .noOcclusion()),
-            object -> () -> new ShardSublimatableBlockItem(object.get(),
-                    new Item.Properties(),
-                    Map.of(EssenceTypeRegistry.ESSENCE, 900f)));
+            object -> () -> new BlockItem(object.get(),
+                    new Item.Properties()));
     public static final Supplier<Block> BLOCK_OF_TRANSFORMATION = register("block_of_transformation",
             () -> new TransparentBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK)
                     .mapColor(MapColor.COLOR_YELLOW)
                     .lightLevel((state) -> 7)
                     .noOcclusion()),
-            object -> () -> new ShardSublimatableBlockItem(object.get(),
-                    new Item.Properties(),
-                    Map.of(EssenceTypeRegistry.LUNAR_ESSENCE, 900f)));
+            object -> () -> new BlockItem(object.get(),
+                    new Item.Properties()));
 
 
     private static <T extends Block> Supplier<T> registerBlock(final String name,
