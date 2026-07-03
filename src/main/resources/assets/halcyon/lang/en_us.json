@@ -32,6 +32,7 @@
   "item.halcyon.data_drive.text": "Select the data to load onto this Data Drive",
   "item.halcyon.data_drive.incomplete": "Incomplete (Stage %1$s/%2$s)",
   "item.halcyon.data_tablet": "Data Tablet",
+  "item.halcyon.data_tablet.description": "A smooth, dark slab of purple metal with an embedded touchscreen and interfacing port. Inscribed on the back, a stylized bird. Running your hand along the tablet's surface you cannot feel any buttons nor openings; hopefully that means you do not need to charge it somehow.",
   "item.halcyon.diamond_shard": "Diamond Shard",
   "item.halcyon.ecliptrum_cog": "Ecliptrum Cog",
   "item.halcyon.ecliptrum_cog_assembly_2x": "Simple Ecliptrum Cog Assembly",
@@ -866,6 +867,7 @@
   "advancements.halcyon.visit_sanctuary.title": "You Will No More Than Witness Here",
   "advancements.halcyon.visit_sanctuary.description": "Travel across into another Realm.",
 
+  "tooltip.halcyon.inspect": "Inspect (hold shift)",
   "tooltip.halcyon.progression_requirement": " ◇ Further experimentation is needed.",
   "tooltip.halcyon.toggle_lock": "Toggle Slot Locking",
   "tooltip.halcyon.save_and_exit": "Save and Exit",
