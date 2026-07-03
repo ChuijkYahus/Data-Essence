@@ -43,6 +43,7 @@ public class HalcyonItemModels extends ItemModelProvider {
         simpleItem(ItemRegistry.DATA_TABLET);
         simpleItem(ItemRegistry.DATA_DRIVE);
         simpleItem(ItemRegistry.COGNIZANT_CUBE);
+        simpleItem(ItemRegistry.CONDUCTORS_LULLABY_MUSIC_DISC);
         simpleItem(ItemRegistry.UNDER_THE_SKY_MUSIC_DISC);
         simpleItem(ItemRegistry.ESSENCE_SHARD);
         simpleItem(ItemRegistry.SHARD_OF_TRANSFORMATION);

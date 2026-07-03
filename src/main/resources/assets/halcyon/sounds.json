@@ -5,6 +5,12 @@
         ],
         "stream": true
     },
+    "ost.conductors_lullaby": {
+        "sounds": [
+            "halcyon:ost/conductors_lullaby"
+        ],
+        "stream": true
+    },
     "ost.factory_loops.fabricator": {
         "sounds": [
             "halcyon:ost/factory_loops/fabricator"

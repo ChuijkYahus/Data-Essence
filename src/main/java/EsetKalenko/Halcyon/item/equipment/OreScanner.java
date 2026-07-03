@@ -44,7 +44,7 @@ public class OreScanner extends Item {
         if (!pLevel.isClientSide) {
             ItemStack stack = pPlayer.getItemInHand(pUsedHand);
             if (ItemEssenceContainer.getEssence(stack, FUEL_ESSENCE_TYPE) >= ESSENCE_COST) {
-                pLevel.playSound(null, pPlayer.blockPosition(), SoundRegistry.LOCATOR_PING.value(), SoundSource.PLAYERS);
+                pLevel.playSound(null, pPlayer.blockPosition(), SoundRegistry.ORE_SCANNER_PING.value(), SoundSource.PLAYERS);
                 ModMessages.sendToPlayersNear(new CreatePingShader(pPlayer.position()), (ServerLevel)pLevel, pPlayer.position(), 128);
                 AABB bounds = AABB.ofSize(pPlayer.getBoundingBox().getCenter(), 32, 32, 32);
                 HashMap<BlockPos, Integer> ores = new HashMap<>();

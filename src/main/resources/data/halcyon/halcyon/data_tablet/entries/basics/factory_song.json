@@ -11,6 +11,15 @@
       "text": {
         "translate": "data_tablet.pages.factory_song.page1.text"
       }
+    },
+    {
+      "type": "halcyon:crafting",
+      "recipes": [
+        "halcyon:infusion/music_disc_conductors_lullaby"
+      ],
+      "text": {
+        "translate": "data_tablet.pages.factory_song.page2.text"
+      }
     }
   ],
   "name": {

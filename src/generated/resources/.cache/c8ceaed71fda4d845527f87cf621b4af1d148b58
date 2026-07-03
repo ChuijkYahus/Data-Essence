@@ -1,4 +1,4 @@
-// 1.21.1	2026-06-19T22:34:43.973062547	Item Models: halcyon
+// 1.21.1	2026-07-03T12:38:19.983744674	Item Models: halcyon
 af677b5e77a07c01ddb46562958353f0c16bc0cc assets/halcyon/models/item/acceleration_lens.json
 dbf78d5b873afd0976e534f9a94f76a01d0f5980 assets/halcyon/models/item/ancient_lantern.json
 0485218bf9b229b4ed50d2b93ca5e7533e0c2d77 assets/halcyon/models/item/ancient_rock_bricks.json
@@ -14,6 +14,7 @@ dbf78d5b873afd0976e534f9a94f76a01d0f5980 assets/halcyon/models/item/ancient_lant
 50ecf802015f06f8cc4d81f733f2159aa64bae07 assets/halcyon/models/item/coal_lump.json
 4456f5dc2822da324d1d99dcef31e0afe5e9a7a4 assets/halcyon/models/item/cognizant_cube.json
 76cc13eb0054f885af06cb3ae03c4a0213a199a2 assets/halcyon/models/item/conductance_rod.json
+51c769633d8649d72091604ddce418c72ea52e8b assets/halcyon/models/item/conductors_lullaby_music_disc.json
 3b3a5eb067509bb6415d3cddade944a49c80b0f0 assets/halcyon/models/item/copper_nugget.json
 415b46886a88c366d01d682d2bfb6aee883823f6 assets/halcyon/models/item/copper_shell.json
 d4cd2fb6d656760fa00daf3f605aad282a498445 assets/halcyon/models/item/crystal_of_transformation.json

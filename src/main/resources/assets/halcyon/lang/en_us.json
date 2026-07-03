@@ -23,6 +23,7 @@
   "item.halcyon.coal_lump": "Coal Lump",
   "item.halcyon.cognizant_cube": "Cognizant Cube",
   "item.halcyon.conductance_rod": "Conductance Rod",
+  "item.halcyon.conductors_lullaby_music_disc": "Music Disc",
   "item.halcyon.copper_nugget": "Copper Nugget",
   "item.halcyon.copper_shell": "Copper Shell",
   "item.halcyon.data_drive": "Data Drive",
@@ -291,6 +292,7 @@
   "entity.halcyon.black_hole": "Black Hole",
   "entity.halcyon.essence_slash": "Light Slash",
 
+  "jukebox_song.halcyon.conductors_lullaby": "Fuzzy - Conductor's Lullaby",
   "jukebox_song.halcyon.under_the_sky": "DavidRarria09 - UnderTheSky",
 
   "computer.arekkos_vault.arekko_01": "[ CRYOSTASIS OVERVIEW ]\n ◇ Chamber 1: Empty\n ◇ Chamber 2: Arekko Bulok-Entee [Tier 8]\n\nNotes: Arekko insisted upon being sealed with their Data Tablet. This is a security risk - if the chamber is breached, all our collected knowledge goes into the hands of the would-be invader. They would not back down from this request however, so we begrudgingly allowed it.",
@@ -438,6 +440,7 @@
   "data_tablet.pages.factory_song.flavor": " ◇ Symphonic harmonics",
   "data_tablet.pages.factory_song.name": "Song of the Factory",
   "data_tablet.pages.factory_song.page1.text": "As it may be immediately noticed by making use of the Industrial Tide in a Fabricator, the Tides tend to present themselves in melodies, kept in tune by some unseen force. We have called this phenomenon the Factory Song.\n\nNot all machines produce or consume Tidal Energy in enough quantity or significance to be considered a part of the Factory Song. Generally, the more \"important\" a machine is, the more likely it will feature a melodic line. A fully-equipped factory is therefore quite the symphony, while the simple machines a novice researcher works with nets a rather less elaborate performance.",
+  "data_tablet.pages.factory_song.page2.text": "When one has proven themselves a worthy Factory Conductor they may acquire a record etched with a Conductor's Lullaby, a piece inspired by the Tidal resonances.",
   "data_tablet.pages.frozen_moonlight.flavor": " ◇ Frozen assets",
   "data_tablet.pages.frozen_moonlight.name": "Frozen Moonlight",
   "data_tablet.pages.frozen_moonlight.page1.incomplete_text": "We have not yet fully examined those large Phenuan ice spikes. There may be treasures, or other things of value, hidden in the ice.",

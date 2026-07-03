@@ -1,0 +1,16 @@
+{
+  "type": "halcyon:infusion",
+  "essenceCost": {
+    "halcyon:essence": 1000,
+    "halcyon:lunar_essence": 1000
+  },
+  "entry": "halcyon:basics/factory_song",
+  "input": {
+    "tag": "c:music_discs",
+    "count": 1
+  },
+  "result": {
+    "id": "halcyon:conductors_lullaby_music_disc",
+    "count": 1
+  }
+}

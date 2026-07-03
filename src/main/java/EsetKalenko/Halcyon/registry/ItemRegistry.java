@@ -125,6 +125,7 @@ public class ItemRegistry {
     public static final Supplier<Item> FILTER_UPGRADE = register("filter_upgrade", () -> new FilterNodeUpgrade(new Item.Properties().component(DataComponents.CONTAINER, ItemContainerContents.EMPTY)));
 
     // Music Discs
+    public static final Supplier<Item> CONDUCTORS_LULLABY_MUSIC_DISC = register("conductors_lullaby_music_disc", () -> new Item(new Item.Properties().stacksTo(1).rarity(Rarity.RARE).jukeboxPlayable(JukeboxSongRegistry.CONDUCTORS_LULLABY)));
     public static final Supplier<Item> UNDER_THE_SKY_MUSIC_DISC = register("under_the_sky_music_disc", () -> new Item(new Item.Properties().stacksTo(1).rarity(Rarity.RARE).jukeboxPlayable(JukeboxSongRegistry.UNDER_THE_SKY)));
 
     // Technical items, used for rendering

@@ -18,6 +18,7 @@
 - Some Malum compat recipes (Esét)
 - Added energy value tooltip to Shard Burner gui (Esét)
 - Added drying recipe for milk into slime (Esét)
+- Added "Conductor's Lullaby" music disc (Esét, Fuzzy)
 
 ### Removals
 - Config value for Tidal Energy Battery capacities (Esét)
