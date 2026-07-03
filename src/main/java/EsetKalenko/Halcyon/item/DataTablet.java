@@ -83,11 +83,13 @@ public class DataTablet extends Item {
 
         if ( flag.hasShiftDown() ) {
             tooltip.add(
-                    Component.translatable("item.halcyon.data_tablet.description").withStyle(Style.EMPTY).withColor(0x9F8FC2)
+                    Component.translatable("item.halcyon.data_tablet.description").withStyle(Style.EMPTY
+                            .withColor(0x9F8FC2))
             );
         } else {
             tooltip.add(
-                    Component.translatable("tooltip.halcyon.inspect").withStyle(Style.EMPTY).withColor(0x9F8FC2)
+                    Component.translatable("tooltip.halcyon.inspect").withStyle(Style.EMPTY
+                            .withColor(0x9F8FC2))
             );
         }
     }
