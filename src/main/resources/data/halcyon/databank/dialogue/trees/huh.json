@@ -1,0 +1,121 @@
+{
+  "speakers": {
+    "arekko_neutral": {
+      "name": {
+        "text": "Arekko"
+      },
+      "portrait": "halcyon:textures/gui/arekko_neutral.png"
+    }
+  },
+  "entries": {
+    "initia": {
+      "text": {
+        "text": "..."
+      },
+      "speaker": "arekko_neutral",
+      "style": "databank:golden",
+      "choices": [
+        {
+          "text": {
+            "text": "Hello?"
+          },
+          "actions": [
+            {
+              "type": "databank:switch_entry",
+              "entry": "hello"
+            }
+          ]
+        }
+      ]
+    },
+    "hello": {
+      "text": {
+        "text": "A Phenuan? Of course... of course it would be one of you. Tell me, Phenuan, am I the only Makutuin you've seen? Are there others out there that yet live?"
+      },
+      "speaker": "arekko_neutral",
+      "style": "databank:golden",
+      "choices": [
+        {
+          "text": {
+            "text": "No, you're the only one."
+          },
+          "actions": [
+            {
+              "type": "databank:switch_entry",
+              "entry": "no_youre_the_only_one"
+            }
+          ]
+        }
+      ]
+    },
+    "no_youre_the_only_one": {
+      "text": {
+        "text": "...\nI suppose that's to be expected. Well then, Phenuan. You've come this far, figured out how the Cryochambers work. Now what do you seek? If it was an end to my people you wanted, you wouldn't have been so cordial with the last living Makutuin. So, go on."
+      },
+      "speaker": "arekko_neutral",
+      "style": "databank:golden",
+      "choices": [
+        {
+          "text": {
+            "text": "I found some strange data..."
+          },
+          "actions": [
+            {
+              "type": "databank:switch_entry",
+              "entry": "strange_data"
+            }
+          ]
+        },
+        {
+          "text": {
+            "text": "You must have so many answers."
+          },
+          "actions": [
+            {
+              "type": "databank:switch_entry",
+              "entry": "so_many_answers"
+            }
+          ]
+        }
+      ]
+    },
+    "strange_data": {
+      "text": {
+        "text": "Strange data, you say? So you *have* been studying what we left behind. This is intriguing.... Please, tell me more."
+      },
+      "speaker": "arekko_neutral",
+      "style": "databank:golden",
+      "choices": [
+        {
+          "text": {
+            "text": "Maybe later. [End conversation]"
+          },
+          "actions": [
+            {
+              "type": "databank:close"
+            }
+          ]
+        }
+      ]
+    },
+    "so_many_answers": {
+      "text": {
+        "text": "Yes, I see the questions in your eyes. But, since I have many of my own, I propose a trade. An answer for an answer. I hope that you will be understanding, Phenuan."
+      },
+      "speaker": "arekko_neutral",
+      "style": "databank:golden",
+      "choices": [
+        {
+          "text": {
+            "text": "Maybe later. [End conversation]"
+          },
+          "actions": [
+            {
+              "type": "databank:close"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
