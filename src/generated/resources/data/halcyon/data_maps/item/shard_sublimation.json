@@ -1,0 +1,24 @@
+{
+  "values": {
+    "halcyon:block_of_industry": {
+      "energy_contained": {
+        "halcyon:essence": 900.0
+      }
+    },
+    "halcyon:block_of_transformation": {
+      "energy_contained": {
+        "halcyon:lunar_essence": 900.0
+      }
+    },
+    "halcyon:essence_shard": {
+      "energy_contained": {
+        "halcyon:essence": 100.0
+      }
+    },
+    "halcyon:shard_of_transformation": {
+      "energy_contained": {
+        "halcyon:lunar_essence": 100.0
+      }
+    }
+  }
+}

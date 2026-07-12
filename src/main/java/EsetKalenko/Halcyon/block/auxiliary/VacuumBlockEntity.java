@@ -40,6 +40,7 @@ public class VacuumBlockEntity extends BlockEntity {
                     i.hasImpulse = true;
                 }
             }
+
             List<ItemEntity> itemsBeingCollected = world.getEntitiesOfClass(ItemEntity.class, AABB.ofSize(pos.getCenter(), 3, 3, 3));
             IItemHandler itemHandler = world.getCapability(Capabilities.ItemHandler.BLOCK, pos.above(), Direction.DOWN);
             if (itemHandler != null) {
@@ -47,6 +48,11 @@ public class VacuumBlockEntity extends BlockEntity {
                 for (ItemEntity i : itemsBeingCollected) {
                     ItemStack copy = i.getItem().copy();
                     if (!copy.isEmpty()) {
+
+                        if ( world.getBlockEntity(pos.above()) instanceof ItemFilterBlockEntity filter
+                                && !pBlockEntity.doesItemMatchFilters(i.getItem(), filter))
+                            continue;
+
                         for (int o = 0; o < itemHandler.getSlots(); o++) {
                             ItemStack stack = itemHandler.getStackInSlot(o);
                             if (stack.is(copy.getItem()) || stack.isEmpty()) {

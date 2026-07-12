@@ -6,7 +6,7 @@
     }
   ],
   "type": "halcyon:drying",
-  "time": 800,
+  "time": 500,
   "input": {
     "id": "pastel:humus",
     "amount": 100

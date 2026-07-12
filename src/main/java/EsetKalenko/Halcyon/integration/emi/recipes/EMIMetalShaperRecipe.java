@@ -2,6 +2,7 @@ package EsetKalenko.Halcyon.integration.emi.recipes;
 
 import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.integration.emi.DataNEssenceEMIPlugin;
+import EsetKalenko.Halcyon.integration.emi.DataNEssenceEMIRecipe;
 import EsetKalenko.Halcyon.recipe.MetalShaperRecipe;
 import dev.emi.emi.api.recipe.EmiRecipe;
 import dev.emi.emi.api.recipe.EmiRecipeCategory;
@@ -17,13 +18,14 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Arrays;
 import java.util.List;
 
-public class EMIMetalShaperRecipe implements EmiRecipe {
+public class EMIMetalShaperRecipe extends DataNEssenceEMIRecipe {
     private final ResourceLocation id;
     private final List<EmiIngredient> input;
     private final List<EmiStack> output;
     private final int time;
 
     public EMIMetalShaperRecipe(ResourceLocation id, MetalShaperRecipe recipe) {
+        super(DataNEssenceEMIPlugin.METAL_SHAPING, id, null, 123, 60);
         this.id = id;
         this.input = recipe.getIngredients().stream().map(s -> EmiIngredient.of(Arrays.stream(s.getItems()).map(EmiStack::of).toList())).toList();
         this.output = List.of(EmiStack.of(recipe.getResultItem(Minecraft.getInstance().level.registryAccess())));
@@ -60,7 +62,7 @@ public class EMIMetalShaperRecipe implements EmiRecipe {
     }
 
     @Override
-    public void addWidgets(WidgetHolder widgetHolder) {
+    public void addUnlockedWidgets(WidgetHolder widgetHolder) {
         ResourceLocation background = Halcyon.locate("textures/gui/data_tablet_crafting.png");
 
         widgetHolder.addTexture(background, 0, 0, getDisplayWidth(), getDisplayHeight(), 133, 16);

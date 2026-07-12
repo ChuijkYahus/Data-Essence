@@ -16,7 +16,6 @@ import net.minecraft.resources.ResourceLocation;
 import javax.annotation.Nullable;
 import java.util.List;
 
-// Heavily derived from https://github.com/DaFuqs/Spectrum/blob/1.20.1-aria-for-painters/src/main/java/de/dafuqs/spectrum/compat/emi/SpectrumEmiRecipe.java
 public abstract class DataNEssenceEMIRecipe implements EmiRecipe {
     public static final Component lockedText1 = Component.translatable("emi.halcyon.recipe_locked_line_1");
     public static final Component lockedText2 = Component.translatable("emi.halcyon.recipe_locked_line_2");
@@ -36,24 +35,34 @@ public abstract class DataNEssenceEMIRecipe implements EmiRecipe {
     }
 
     public boolean isUnlocked() {
-        return recipeUnlockEntry == null || hasData(recipeUnlockEntry, recipe);
+        return hasData(recipeUnlockEntry);
     }
 
-    public boolean hasData(ResourceLocation dataEntry, ResourceLocation recipe) {
+    public boolean hasBaseUnderstanding() {
+        if ( getBackingRecipe().value() instanceof HalcyonRecipe halcyonRecipe )
+            return ClientPlayerUnlockedEntries.getUnlocked().contains(halcyonRecipe.getMachineEntry());
+        return true;
+    }
+
+    /**
+     * Returns whether the player has the required data to see this entry. If the provided location is null,
+     * then it instead returns whether they have the data for the machine that makes it.
+     */
+    public boolean hasData(ResourceLocation dataEntry) {
+        if ( dataEntry == null )
+            return hasBaseUnderstanding();
+
         var dataLockedRecipe = (IHasRequiredKnowledge) getBackingRecipe().value();
         var known = false;
-        var hasBaseUnderstanding = false;
+        var hasBaseUnderstanding = hasBaseUnderstanding();
 
-        // first, do we even know about the machine the recipe is in? TODO separate method
-        if ( dataLockedRecipe instanceof HalcyonRecipe halcyonRecipe )
-            hasBaseUnderstanding = ClientPlayerUnlockedEntries.getUnlocked().contains(halcyonRecipe.getMachineEntry());
-
-        // second, is this unlocked, or incomplete and we are at the right stage?
+        // is this unlocked, or incomplete and we are at the right stage?
         known = ClientPlayerUnlockedEntries.getUnlocked().contains(dataEntry)
                 || ( ClientPlayerUnlockedEntries.getIncomplete().containsKey(dataEntry)
                 && ClientPlayerUnlockedEntries.getIncomplete().get(dataEntry) >= dataLockedRecipe.getCompletionStage());
 
-        // third, is this recipe marked to show up in EMI before completion at all?
+        if ( ClientPlayerUnlockedEntries.getIncomplete().containsKey(dataEntry) && !dataLockedRecipe.revealInEMIWhenIncomplete() )
+            return false;
 
         return hasBaseUnderstanding && known;
     }

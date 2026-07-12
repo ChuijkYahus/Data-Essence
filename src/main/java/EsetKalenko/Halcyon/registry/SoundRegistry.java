@@ -86,6 +86,7 @@ public class SoundRegistry {
     public static final Holder<SoundEvent> ANCIENT_SENTINEL_PROJECTILE_HIT_BLOCK = createBasicSound("entity.ancient_sentinel_projectile.hit_block");
 
     //Music
+    public static final Holder<SoundEvent> CONDUCTORS_LULLABY = createBasicSound("ost.conductors_lullaby");
     public static final Holder<SoundEvent> UNDER_THE_SKY = createBasicSound("music.under_the_sky");
 
     // Structures

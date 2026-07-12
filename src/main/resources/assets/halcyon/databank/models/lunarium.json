@@ -340,6 +340,147 @@
       "length": 0,
       "looping": true,
       "animation": []
+    },
+    "hand2": {
+      "length": 0,
+      "looping": true,
+      "animation": [
+        {
+          "bone": "shoulder",
+          "target": "rotation",
+          "keyframes": [
+            {
+              "timestamp": 0,
+              "target": [
+                0,
+                0,
+                -42.5
+              ],
+              "interpolation": "linear"
+            }
+          ]
+        },
+        {
+          "bone": "upper_arm",
+          "target": "rotation",
+          "keyframes": [
+            {
+              "timestamp": 0,
+              "target": [
+                7.5,
+                0,
+                0
+              ],
+              "interpolation": "linear"
+            }
+          ]
+        },
+        {
+          "bone": "elbow",
+          "target": "rotation",
+          "keyframes": [
+            {
+              "timestamp": 0,
+              "target": [
+                22.5,
+                0,
+                0
+              ],
+              "interpolation": "linear"
+            }
+          ]
+        },
+        {
+          "bone": "forearm",
+          "target": "rotation",
+          "keyframes": [
+            {
+              "timestamp": 0,
+              "target": [
+                0,
+                0,
+                65
+              ],
+              "interpolation": "linear"
+            }
+          ]
+        },
+        {
+          "bone": "wrist",
+          "target": "rotation",
+          "keyframes": [
+            {
+              "timestamp": 0,
+              "target": [
+                50.3627,
+                71.6768,
+                34.798
+              ],
+              "interpolation": "linear"
+            }
+          ]
+        },
+        {
+          "bone": "shoulder2",
+          "target": "rotation",
+          "keyframes": [
+            {
+              "timestamp": 0,
+              "target": [
+                0,
+                0,
+                -17.5
+              ],
+              "interpolation": "linear"
+            }
+          ]
+        },
+        {
+          "bone": "upper_arm2",
+          "target": "rotation",
+          "keyframes": [
+            {
+              "timestamp": 0,
+              "target": [
+                15.9479,
+                7.301,
+                -48.9759
+              ],
+              "interpolation": "linear"
+            }
+          ]
+        },
+        {
+          "bone": "forearm2",
+          "target": "rotation",
+          "keyframes": [
+            {
+              "timestamp": 0,
+              "target": [
+                14.2735,
+                6.6908,
+                106.495
+              ],
+              "interpolation": "linear"
+            }
+          ]
+        },
+        {
+          "bone": "wrist2",
+          "target": "rotation",
+          "keyframes": [
+            {
+              "timestamp": 0,
+              "target": [
+                0,
+                0,
+                25
+              ],
+              "interpolation": "linear"
+            }
+          ]
+        }
+      ]
     }
   },
   "parts": [

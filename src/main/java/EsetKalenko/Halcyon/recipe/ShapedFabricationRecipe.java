@@ -24,14 +24,16 @@ public class ShapedFabricationRecipe implements IFabricationRecipe {
     final ShapedRecipePattern pattern;
     final ItemStack result;
     final int time;
+    private final boolean revealInEMIWhenIncomplete;
 
-    public ShapedFabricationRecipe(ShapedRecipePattern pPattern, ItemStack pResult, ResourceLocation entry, int completionStage, Map<ResourceLocation, Float> essenceCost, int time) {
+    public ShapedFabricationRecipe(ShapedRecipePattern pPattern, ItemStack pResult, ResourceLocation entry, int completionStage, Map<ResourceLocation, Float> essenceCost, int time, boolean revealInEMIWhenIncomplete) {
         this.entry = entry;
         this.completionStage = completionStage;
         this.essenceCost = essenceCost;
         this.pattern = pPattern;
         this.result = pResult;
         this.time = time;
+        this.revealInEMIWhenIncomplete = revealInEMIWhenIncomplete;
     }
 
     @Override
@@ -100,6 +102,11 @@ public class ShapedFabricationRecipe implements IFabricationRecipe {
         return entry;
     }
 
+    @Override
+    public boolean revealInEMIWhenIncomplete() {
+        return revealInEMIWhenIncomplete;
+    }
+
 
 
     @Override
@@ -114,7 +121,8 @@ public class ShapedFabricationRecipe implements IFabricationRecipe {
                 ResourceLocation.CODEC.fieldOf("entry").forGetter((r) -> r.entry),
                 Codec.INT.optionalFieldOf("completion_stage", -1).forGetter((r) -> r.completionStage),
                 Codec.unboundedMap(ResourceLocation.CODEC, Codec.FLOAT).fieldOf("essenceCost").forGetter(r -> r.essenceCost),
-                Codec.INT.optionalFieldOf("time", 20).forGetter((r) -> r.time)
+                Codec.INT.optionalFieldOf("time", 20).forGetter((r) -> r.time),
+                Codec.BOOL.optionalFieldOf("reveal_in_emi_when_incomplete", true).forGetter((r -> r.revealInEMIWhenIncomplete))
         ).apply(instance, ShapedFabricationRecipe::new));
 
         public static final StreamCodec<RegistryFriendlyByteBuf, ShapedFabricationRecipe> STREAM_CODEC = StreamCodec.of(
@@ -125,6 +133,7 @@ public class ShapedFabricationRecipe implements IFabricationRecipe {
                     buf.writeInt(obj.completionStage);
                     buf.writeMap(obj.essenceCost, FriendlyByteBuf::writeResourceLocation, FriendlyByteBuf::writeFloat);
                     buf.writeInt(obj.time);
+                    buf.writeBoolean(obj.revealInEMIWhenIncomplete);
                 },
                 (buf) -> {
                     ShapedRecipePattern shapedrecipepattern = ShapedRecipePattern.STREAM_CODEC.decode(buf);
@@ -133,7 +142,8 @@ public class ShapedFabricationRecipe implements IFabricationRecipe {
                     int completionStage = buf.readInt();
                     Map<ResourceLocation, Float> essenceCost = buf.readMap(FriendlyByteBuf::readResourceLocation, FriendlyByteBuf::readFloat);
                     int time = buf.readInt();
-                    return new ShapedFabricationRecipe(shapedrecipepattern, itemstack, entry, completionStage, essenceCost, time);
+                    boolean revealInEMIWhenIncomplete = buf.readBoolean();
+                    return new ShapedFabricationRecipe(shapedrecipepattern, itemstack, entry, completionStage, essenceCost, time, revealInEMIWhenIncomplete);
                 }
         );
         public static final Serializer INSTANCE = new Serializer();

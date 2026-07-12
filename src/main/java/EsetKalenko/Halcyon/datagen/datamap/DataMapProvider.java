@@ -1,8 +1,12 @@
 package EsetKalenko.Halcyon.datagen.datamap;
 
-import EsetKalenko.Halcyon.datamaps.DataNEssenceDatamaps;
+import EsetKalenko.Halcyon.api.DataNEssenceRegistries;
+import EsetKalenko.Halcyon.datamaps.HalcyonDatamaps;
 import EsetKalenko.Halcyon.datamaps.PlantSiphonEssenceMap;
+import EsetKalenko.Halcyon.datamaps.ShardSublimationMap;
 import EsetKalenko.Halcyon.registry.BlockRegistry;
+import EsetKalenko.Halcyon.registry.EssenceTypeRegistry;
+import EsetKalenko.Halcyon.registry.ItemRegistry;
 import earth.terrarium.pastel.registries.PastelBlocks;
 import earth.terrarium.pastel.registries.PastelItems;
 import net.minecraft.core.Holder;
@@ -14,19 +18,19 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.conditions.ModLoadedCondition;
-import net.neoforged.neoforge.common.data.DataMapProvider;
 
+import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 
-public class PlantSiphonEssenceProvider extends DataMapProvider {
+public class DataMapProvider extends net.neoforged.neoforge.common.data.DataMapProvider {
 
-    public PlantSiphonEssenceProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookupProvider) {
+    public DataMapProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> lookupProvider) {
         super(packOutput, lookupProvider);
     }
 
     @Override
     protected void gather() {
-        this.builder(DataNEssenceDatamaps.PLANT_SIPHON_ESSENCE)
+        this.builder(HalcyonDatamaps.PLANT_SIPHON_ESSENCE)
                 .add(Tags.Items.CROPS, new PlantSiphonEssenceMap(20, 2), false)
                 .add(Tags.Items.MUSHROOMS, new PlantSiphonEssenceMap(20, 2), false)
                 .add(Tags.Items.SEEDS, new PlantSiphonEssenceMap(10, 2), false)
@@ -65,6 +69,22 @@ public class PlantSiphonEssenceProvider extends DataMapProvider {
                 .add(getHolder(PastelBlocks.JADEITE_LOTUS_FLOWER.asItem()), new PlantSiphonEssenceMap(100, 8), false, new ModLoadedCondition("pastel"))
                 .add(getHolder(PastelBlocks.NEPHRITE_BLOSSOM_BULB.asItem()), new PlantSiphonEssenceMap(100, 8), false, new ModLoadedCondition("pastel"))
                 .add(PastelItems.NECTARDEW_BURGEON, new PlantSiphonEssenceMap(100, 16), false, new ModLoadedCondition("pastel"));
+
+
+        // TODO find a way to split the maps into their own files. neo...
+        this.builder(HalcyonDatamaps.SHARD_SUBLIMATION)
+                .add(getHolder(ItemRegistry.ESSENCE_SHARD.get()), new ShardSublimationMap( Map.of(
+                        DataNEssenceRegistries.ESSENCE_TYPE_REGISTRY.getKey(EssenceTypeRegistry.ESSENCE.get()), 100f
+                ) ), false)
+                .add(getHolder(ItemRegistry.SHARD_OF_TRANSFORMATION.get()), new ShardSublimationMap( Map.of(
+                        DataNEssenceRegistries.ESSENCE_TYPE_REGISTRY.getKey(EssenceTypeRegistry.LUNAR_ESSENCE.get()), 100f
+                ) ), false)
+                .add(getHolder(BlockRegistry.BLOCK_OF_INDUSTRY.get().asItem()), new ShardSublimationMap( Map.of(
+                        DataNEssenceRegistries.ESSENCE_TYPE_REGISTRY.getKey(EssenceTypeRegistry.ESSENCE.get()), 900f
+                ) ), false)
+                .add(getHolder(BlockRegistry.BLOCK_OF_TRANSFORMATION.get().asItem()), new ShardSublimationMap( Map.of(
+                        DataNEssenceRegistries.ESSENCE_TYPE_REGISTRY.getKey(EssenceTypeRegistry.LUNAR_ESSENCE.get()), 900f
+                ) ), false);
     }
     private Holder<Item> getHolder(Item item) {
         return BuiltInRegistries.ITEM.wrapAsHolder(item);

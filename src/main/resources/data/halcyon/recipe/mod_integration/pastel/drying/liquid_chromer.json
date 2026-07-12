@@ -6,7 +6,7 @@
     }
   ],
   "type": "halcyon:drying",
-  "time": 800,
+  "time": 1000,
   "input": {
     "id": "pastel:liquid_crystal",
     "amount": 1000

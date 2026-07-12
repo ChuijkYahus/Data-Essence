@@ -18,16 +18,17 @@
     {
       "type": "halcyon:crafting",
       "recipes": [
-        "halcyon:fabrication/machines/drying_table",
-        "halcyon:drying/lava_to_magma"
+        "halcyon:fabrication/machines/drying_table"
       ]
     },
     {
       "type": "halcyon:crafting",
       "recipes": [
+        "halcyon:drying/lava_to_magma",
         "halcyon:drying/lava_to_stone",
         "halcyon:drying/water_to_clay",
-        "halcyon:drying/water_to_mud"
+        "halcyon:drying/water_to_mud",
+        "halcyon:drying/milk_to_slimeball"
       ]
     }
   ],

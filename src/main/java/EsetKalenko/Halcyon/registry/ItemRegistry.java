@@ -1,7 +1,6 @@
 package EsetKalenko.Halcyon.registry;
 
 import EsetKalenko.Halcyon.Halcyon;
-import EsetKalenko.Halcyon.api.item.ShardSublimatableItem;
 import EsetKalenko.Halcyon.api.item.FuelItem;
 import EsetKalenko.Halcyon.item.*;
 import EsetKalenko.Halcyon.item.equipment.*;
@@ -55,8 +54,8 @@ public class ItemRegistry {
     public static final Supplier<Item> FALLING_MOON = register("falling_moon", () -> new FallingMoon(new Item.Properties().stacksTo(1)));
 
     // Essence Shards
-    public static final Supplier<Item> ESSENCE_SHARD = register("essence_shard", () -> new ShardSublimatableItem(new Item.Properties(), Map.of(EssenceTypeRegistry.ESSENCE, 100f)));
-    public static final Supplier<Item> SHARD_OF_TRANSFORMATION = register("shard_of_transformation", () -> new ShardSublimatableItem(new Item.Properties(), Map.of(EssenceTypeRegistry.LUNAR_ESSENCE, 100f)));
+    public static final Supplier<Item> ESSENCE_SHARD = register("essence_shard", () -> new Item(new Item.Properties()));
+    public static final Supplier<Item> SHARD_OF_TRANSFORMATION = register("shard_of_transformation", () -> new Item(new Item.Properties()));
 
     // Wires
     public static final Supplier<Item> ESSENCE_WIRE = register("essence_wire", () -> new Item(new Item.Properties()));
@@ -126,6 +125,7 @@ public class ItemRegistry {
     public static final Supplier<Item> FILTER_UPGRADE = register("filter_upgrade", () -> new FilterNodeUpgrade(new Item.Properties().component(DataComponents.CONTAINER, ItemContainerContents.EMPTY)));
 
     // Music Discs
+    public static final Supplier<Item> CONDUCTORS_LULLABY_MUSIC_DISC = register("conductors_lullaby_music_disc", () -> new Item(new Item.Properties().stacksTo(1).rarity(Rarity.RARE).jukeboxPlayable(JukeboxSongRegistry.CONDUCTORS_LULLABY)));
     public static final Supplier<Item> UNDER_THE_SKY_MUSIC_DISC = register("under_the_sky_music_disc", () -> new Item(new Item.Properties().stacksTo(1).rarity(Rarity.RARE).jukeboxPlayable(JukeboxSongRegistry.UNDER_THE_SKY)));
 
     // Technical items, used for rendering

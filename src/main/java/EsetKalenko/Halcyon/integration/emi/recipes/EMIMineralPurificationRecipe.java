@@ -2,6 +2,7 @@ package EsetKalenko.Halcyon.integration.emi.recipes;
 
 import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.integration.emi.DataNEssenceEMIPlugin;
+import EsetKalenko.Halcyon.integration.emi.DataNEssenceEMIRecipe;
 import EsetKalenko.Halcyon.recipe.MineralPurificationRecipe;
 import dev.emi.emi.api.recipe.EmiRecipe;
 import dev.emi.emi.api.recipe.EmiRecipeCategory;
@@ -17,13 +18,14 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Arrays;
 import java.util.List;
 
-public class EMIMineralPurificationRecipe implements EmiRecipe {
+public class EMIMineralPurificationRecipe extends DataNEssenceEMIRecipe {
     private final ResourceLocation id;
     private final List<EmiIngredient> input;
     private final List<EmiStack> output;
     private final int time;
 
     public EMIMineralPurificationRecipe(ResourceLocation id, MineralPurificationRecipe recipe) {
+        super(DataNEssenceEMIPlugin.MINERAL_PURIFICATION, id, null, 123, 60);
         this.id = id;
         this.input = recipe.getIngredients().stream().map(s -> EmiIngredient.of(Arrays.stream(s.getItems()).map(EmiStack::of).toList())).toList();
         this.output = List.of(EmiStack.of(recipe.getResultItem(Minecraft.getInstance().level.registryAccess())), EmiStack.of(recipe.getNuggetOutput(Minecraft.getInstance().level.registryAccess())));
@@ -61,7 +63,7 @@ public class EMIMineralPurificationRecipe implements EmiRecipe {
     }
 
     @Override
-    public void addWidgets(WidgetHolder widgets) {
+    public void addUnlockedWidgets(WidgetHolder widgets) {
         ResourceLocation background = Halcyon.locate("textures/gui/data_tablet_crafting2.png");
         ResourceLocation emiIcons = Halcyon.locate("textures/gui/emi_icons.png");
 

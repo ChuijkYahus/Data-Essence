@@ -1,0 +1,8 @@
+{
+  "comparator_output": 9,
+  "description": {
+    "translate": "jukebox_song.halcyon.conductors_lullaby"
+  },
+  "length_in_seconds": 209.0,
+  "sound_event": "halcyon:ost.conductors_lullaby"
+}

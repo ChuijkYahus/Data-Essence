@@ -23,20 +23,26 @@ import javax.annotation.Nullable;
 import java.awt.*;
 
 public class AncientSentinelProjectile extends Projectile {
-
     public int time;
+    Vec3 previousPos;
+    public int blockInvincibility;
+    boolean hasAimed = false;
+
     public AncientSentinelProjectile(EntityType<AncientSentinelProjectile> entityType, Level world) {
         super(entityType, world);
     }
+
     protected AncientSentinelProjectile(EntityType<AncientSentinelProjectile> entityType, double x, double y, double z, Level world) {
         this(entityType, world);
         this.setPos(x, y, z);
     }
+
     public AncientSentinelProjectile(EntityType<AncientSentinelProjectile> entityType, LivingEntity shooter, Level world) {
         this(entityType, shooter.getX(), shooter.getEyeY() - (double)0.1F, shooter.getZ(), world);
         this.setOwner(shooter);
         this.setDeltaMovement(shooter.getLookAngle().multiply(0.5, 0.5, 0.5));
     }
+
     @Override
     protected void onHitBlock(BlockHitResult hit) {
         float pitch = Mth.nextFloat(getRandom(), 0.9f, 1.1f);
@@ -49,11 +55,13 @@ public class AncientSentinelProjectile extends Projectile {
         level().playSound(null, blockPosition(), SoundRegistry.ANCIENT_SENTINEL_PROJECTILE_HIT_BLOCK.value(), SoundSource.HOSTILE, 1.0f, pitch);
         super.onHitBlock(hit);
     }
+
     @Override
     public void addAdditionalSaveData(CompoundTag tag) {
         super.addAdditionalSaveData(tag);
         tag.putInt("time", (int)this.time);
     }
+
     @Override
     public void readAdditionalSaveData(CompoundTag tag) {
         super.readAdditionalSaveData(tag);
@@ -64,13 +72,12 @@ public class AncientSentinelProjectile extends Projectile {
     protected EntityHitResult findHitEntity(Vec3 p_36758_, Vec3 p_36759_) {
         return ProjectileUtil.getEntityHitResult(this.level(), this, p_36758_, p_36759_, this.getBoundingBox().expandTowards(this.getDeltaMovement()).inflate(1.0D), this::canHitEntity);
     }
-    Vec3 previousPos;
 
     @Override
     protected void defineSynchedData(SynchedEntityData.Builder pBuilder) {
 
     }
-    public int blockInvincibility;
+
     public void reAim() {
         Entity entity = getOwner();
         if (entity != null) {
@@ -81,7 +88,7 @@ public class AncientSentinelProjectile extends Projectile {
             blockInvincibility = 2;
         }
     }
-    boolean hasAimed = false;
+
     @Override
     public void tick() {
         previousPos = position();
@@ -177,6 +184,7 @@ public class AncientSentinelProjectile extends Projectile {
         }
         remove(RemovalReason.KILLED);
     }
+
     public static class ClientMethods {
         public static void particle(RandomSource random, Vec3 pos, Level level) {
             for (int i = 0; i < 3; i++) {

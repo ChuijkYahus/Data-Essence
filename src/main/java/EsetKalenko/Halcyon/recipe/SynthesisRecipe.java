@@ -25,9 +25,10 @@ public class SynthesisRecipe implements Recipe<RecipeInput>, IHasEssenceCost, IH
     private final Map<ResourceLocation, Float> essenceCost;
     private final ResourceLocation entry;
     private final int completionStage;
+    private final boolean revealInEMIWhenIncomplete;
 
     public SynthesisRecipe(ItemStack output,
-                           Ingredient input, Ingredient input2, int time, Map<ResourceLocation, Float> essenceCost, ResourceLocation entry, int completionStage) {
+                           Ingredient input, Ingredient input2, int time, Map<ResourceLocation, Float> essenceCost, ResourceLocation entry, int completionStage, boolean revealInEMIWhenIncomplete) {
         this.output = output;
         this.input = input;
         this.input2 = input2;
@@ -35,6 +36,7 @@ public class SynthesisRecipe implements Recipe<RecipeInput>, IHasEssenceCost, IH
         this.essenceCost = essenceCost;
         this.entry = entry;
         this.completionStage = completionStage;
+        this.revealInEMIWhenIncomplete = revealInEMIWhenIncomplete;
     }
 
     @Override
@@ -97,6 +99,11 @@ public class SynthesisRecipe implements Recipe<RecipeInput>, IHasEssenceCost, IH
         return Halcyon.locate("machinery/synthesis_chamber");
     }
 
+    @Override
+    public boolean revealInEMIWhenIncomplete() {
+        return revealInEMIWhenIncomplete;
+    }
+
     public static class Serializer implements RecipeSerializer<SynthesisRecipe> {
         public static final MapCodec<SynthesisRecipe> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
                 ItemStack.CODEC.fieldOf("result").forGetter(r -> r.output),
@@ -105,7 +112,8 @@ public class SynthesisRecipe implements Recipe<RecipeInput>, IHasEssenceCost, IH
                 Codec.INT.fieldOf("time").forGetter((r) -> r.time),
                 Codec.unboundedMap(ResourceLocation.CODEC, Codec.FLOAT).fieldOf("essenceCost").forGetter(r -> r.essenceCost),
                 ResourceLocation.CODEC.fieldOf("entry").forGetter((r) -> r.entry),
-                Codec.INT.optionalFieldOf("completion_stage", -1).forGetter((r) -> r.completionStage)
+                Codec.INT.optionalFieldOf("completion_stage", -1).forGetter((r) -> r.completionStage),
+                Codec.BOOL.optionalFieldOf("reveal_in_emi_when_incomplete", true).forGetter((r -> r.revealInEMIWhenIncomplete))
         ).apply(instance, SynthesisRecipe::new));
 
         public static final StreamCodec<RegistryFriendlyByteBuf, SynthesisRecipe> STREAM_CODEC = StreamCodec.of(
@@ -117,6 +125,7 @@ public class SynthesisRecipe implements Recipe<RecipeInput>, IHasEssenceCost, IH
                     buf.writeMap(obj.essenceCost, FriendlyByteBuf::writeResourceLocation, FriendlyByteBuf::writeFloat);
                     buf.writeResourceLocation(obj.entry);
                     buf.writeInt(obj.completionStage);
+                    buf.writeBoolean(obj.revealInEMIWhenIncomplete);
                 },
                 (buf) -> {
                     ItemStack output = ItemStack.STREAM_CODEC.decode(buf);
@@ -126,7 +135,8 @@ public class SynthesisRecipe implements Recipe<RecipeInput>, IHasEssenceCost, IH
                     Map<ResourceLocation, Float> essenceCost = buf.readMap(FriendlyByteBuf::readResourceLocation, FriendlyByteBuf::readFloat);
                     ResourceLocation entry = buf.readResourceLocation();
                     int completionStage = buf.readInt();
-                    return new SynthesisRecipe(output, input, input2, time, essenceCost, entry, completionStage);
+                    boolean revealInEMIWhenIncomplete = buf.readBoolean();
+                    return new SynthesisRecipe(output, input, input2, time, essenceCost, entry, completionStage, revealInEMIWhenIncomplete);
                 }
         );
 

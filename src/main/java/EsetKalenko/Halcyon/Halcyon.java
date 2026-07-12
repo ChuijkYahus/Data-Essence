@@ -355,6 +355,7 @@ public class Halcyon
             // Loot Items
             event.accept(ItemRegistry.COGNIZANT_CUBE.get());
             event.accept(ItemRegistry.MUSIC_DISC_PLAYER.get());
+            event.accept(ItemRegistry.CONDUCTORS_LULLABY_MUSIC_DISC.get());
             event.accept(ItemRegistry.UNDER_THE_SKY_MUSIC_DISC.get());
         }
         if (event.getTabKey() == CreativeModeTabRegistry.getKey(CreativeModeTabRegistry.BLOCKS.get())) {

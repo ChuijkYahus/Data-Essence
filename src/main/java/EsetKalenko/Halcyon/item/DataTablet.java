@@ -7,9 +7,11 @@ import EsetKalenko.Halcyon.data.datatablet.Entry;
 import EsetKalenko.Halcyon.registry.AttachmentTypeRegistry;
 import EsetKalenko.Halcyon.registry.ItemRegistry;
 import EsetKalenko.Halcyon.screen.DataTabletScreen;
+import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.Style;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -17,6 +19,7 @@ import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 
@@ -71,6 +74,23 @@ public class DataTablet extends Item {
     public static class Client {
         public static void openScreen() {
             Minecraft.getInstance().setScreen(new DataTabletScreen(Component.empty()));
+        }
+    }
+
+    @Override
+    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag flag) {
+        super.appendHoverText(stack, context, tooltip, flag);
+
+        if ( flag.hasShiftDown() ) {
+            tooltip.add(
+                    Component.translatable("item.halcyon.data_tablet.description").withStyle(Style.EMPTY
+                            .withColor(0x9F8FC2))
+            );
+        } else {
+            tooltip.add(
+                    Component.translatable("tooltip.halcyon.inspect").withStyle(Style.EMPTY
+                            .withColor(0x9F8FC2))
+            );
         }
     }
 }

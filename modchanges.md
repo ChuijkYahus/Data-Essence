@@ -16,6 +16,9 @@
 - Malum compat for the Mineral Purification Chamber (Esét)
 - Some more Pastel compat recipes (Esét)
 - Some Malum compat recipes (Esét)
+- Added energy value tooltip to Shard Burner gui (Esét)
+- Added drying recipe for milk into slime (Esét)
+- Added "Conductor's Lullaby" music disc (Esét, Fuzzy)
 
 ### Removals
 - Config value for Tidal Energy Battery capacities (Esét)
@@ -28,7 +31,10 @@
 - Rethemed the Metal Shaper's work process and mold items to be more akin to 3d printing (Esét)
 - Updated zh_cn translation (ChuijkYahus)
 - Shard Burners now spawn gaseous clouds when they sublimate shards (Esét)
+- Shard Burners' sublimatable items are now data driven (Esét)
 - Buffed Tethergrass spread rates (Esét)
+- Recipes now hide in EMI if you do not have the data for their machine, like in the Data Tablet (Esét)
+- Recipes are able to be hidden in EMI if their associated data entry is incomplete no matter what (Esét) 
 
 ### Fixes
 - Improved Node performance by switching from JGraphT to JGAlgo (Vonr)

@@ -1,8 +1,8 @@
-// 1.21.1	2026-06-19T22:34:43.971219465	Tags for minecraft:item mod id halcyon
+// 1.21.1	2026-07-03T12:39:21.73923484	Tags for minecraft:item mod id halcyon
 44c0dd0f8e589310fa2f008f13cf0f0003508967 data/c/tags/item/armors.json
 fc3f55950ce15cf7fb538bbd87ed2175a35d1a7b data/c/tags/item/gems.json
 4b8c7d45502e3d351747c096f8a92f57030ad921 data/c/tags/item/glass_blocks.json
-62b0c68c70ac0d71838a7c73ecdf03a3af287d8c data/c/tags/item/music_discs.json
+3672902d71f88be27ac29fcea2c209878040b61d data/c/tags/item/music_discs.json
 d0f5156e6232c6801413f34ccc4a86516dad726d data/c/tags/item/ores.json
 d0f5156e6232c6801413f34ccc4a86516dad726d data/c/tags/item/ores_in_ground/stone.json
 2a1e3069db0a2fad6e6630d07789c31485c90382 data/c/tags/item/tools/wrench.json

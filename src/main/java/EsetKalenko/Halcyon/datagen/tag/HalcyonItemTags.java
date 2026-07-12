@@ -133,6 +133,7 @@ public class HalcyonItemTags extends ItemTagsProvider {
         this.tag(Tags.Items.GLASS_BLOCKS)
                 .add(BlockRegistry.SPIRE_GLASS.get().asItem());
         this.tag(Tags.Items.MUSIC_DISCS)
+                .add(ItemRegistry.CONDUCTORS_LULLABY_MUSIC_DISC.get())
                 .add(ItemRegistry.UNDER_THE_SKY_MUSIC_DISC.get());
 
         this.tag(HalcyonTags.Items.WIP)
