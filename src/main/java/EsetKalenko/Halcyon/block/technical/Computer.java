@@ -3,6 +3,7 @@ package EsetKalenko.Halcyon.block.technical;
 import EsetKalenko.Halcyon.Halcyon;
 import EsetKalenko.Halcyon.api.util.ComputerUtil;
 import EsetKalenko.Halcyon.data.computers.ComputerTypeManager;
+import EsetKalenko.Halcyon.item.Locator;
 import EsetKalenko.Halcyon.registry.ItemRegistry;
 import net.minecraft.advancements.AdvancementHolder;
 import net.minecraft.core.BlockPos;
@@ -78,7 +79,7 @@ public class Computer extends Block implements EntityBlock {
                 hasGottenDataTablet = serverPlayer.getAdvancements().getOrStartProgress(advancement).isDone();
         }
 
-        if (!player.getInventory().contains(signalTracker) && !hasGottenDataTablet) {
+        if (!player.getInventory().contains( (stack) -> stack.getItem() instanceof Locator) && !hasGottenDataTablet) {
             player.addItem(signalTracker);
             player.displayClientMessage(Component.translatable("block.halcyon.computer.obtain_signal_tracker"), true);
             world.playSound(null, pos, SoundEvents.ITEM_PICKUP, SoundSource.PLAYERS);
