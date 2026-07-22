@@ -123,7 +123,8 @@ repositories {
     flatDir {
         dir 'libs'
     }
-    maven { url = "https://maven.terraformersmc.com/" } // EMI
+    //maven { url = "https://maven.terraformersmc.com/" } // EMI
+    maven { url = "https://maven.gnomecraft.net/releases" } // EMI (terraformers is kill)
     maven { url = "https://api.modrinth.com/maven" } // Sodium, Iris, Opalescence, Pastel, Malum
     maven { url = "https://modmaven.dev/" } // Mekanism
     maven { url = "https://maven.ryanhcode.dev/releases" } // Sable
@@ -166,6 +167,7 @@ dependencies {
         implementation ("earth.terrarium:Pastel:${pastel_version}") {
             exclude (group: "me.shedaniel.cloth", module: "cloth-config-neoforge")
             exclude (group: "com.klikli_dev", module: "modonomicon-1.21.1-neoforge")
+            exclude (group: "dev.emi", module: "emi-neoforge")
         }
         runtimeOnly "maven.modrinth:modonomicon:1.21.1-1.114.4"
         runtimeOnly "maven.modrinth:cloth-config:15.0.140+neoforge"
